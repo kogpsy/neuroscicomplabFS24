@@ -1,8 +1,9 @@
-# Neurowissenschaft im Computerlab FS23 - Quarto
+Website and slides for the course "Neurowissenschaft im Computerlab FS 24".
 
-Website and slides for the course "Neurowissenschaft im Computerlab FS 23".
+[Online script](https://kogpsy.github.io/neuroscicomplabFS24/)
 
-[Online script](https://kogpsy.github.io/neuroscicomplabFS23/)
+This website relies heavily on previous versions of this website and course build by Andrew Ellis.
+
 
 
 ## Development
