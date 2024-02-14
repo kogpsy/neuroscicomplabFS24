@@ -1,0 +1,102 @@
+---
+title: "Wichtiges zum Kurs"
+# description: Inhalt des Kurses.
+author:
+  - name: Gerda Wyssen
+    url: https://github.com/gwyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: 
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459
+license: CC BY
+citation: false
+# bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+
+# Inhalte der Lehrveranstaltung
+
+In diesem anwendungsorientierten Kurs erwerben Sie Wissen über Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften.
+Wir behandeln im Rahmen der Veranstaltung folgende Inhalte:
+
+- Wichtige Programmiersprachen und - umgebungen in den Neurowissenschaften
+- Programmieren von computerbasierten Experimenten (mit PsychoPy)
+- Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices", Data Cleaning, Reproduzierbarkeit)
+- Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)
+- Interpretation und kritische Einordnung von Analyseergebnissen 
+
+# Aufbau der Lehrveranstaltung
+
+In diesem Kurs legen wir besonderen Fokus auf Anwendungskenntnisse, deshalb setzen sich die Termine zusammen aus Inputs, wie auch Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. Die Aufteilung ist stark vom jeweiligen Thema anhängig. Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet. 
+
+Die Teilnehmenden in diesem Kurs haben sehr unterschiedliches Vorwissen. Dies ist eine Stärke dieses Kurses und der Austausch untereinander in den Hands-on Sessions macht deshalb d sehr erfahrungsgemäss viel Sinn. Studierende mit Hintergrund in der Informatik können so zum Beispiel  wertvolle Hinweise zur Optimierung von Code geben, während Psychologiestudierende viel Vorwissen über neuropsychologische Prozesse besitzen, welche beim Planen und Umsetzen von Experimenten sowie beim Verstehen von Verhaltensdatensätzen hilfreich sind.
+
+
+# Organisatorisches
+
+## Ilias
+
+Unter diesen Links finden Sie die Iliasgruppen:
+
+ILIAS (Montag) 👉 [468703-FS2024-0](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2926130.html)
+
+ILIAS (Mittwoch) 👉 [468703-FS2024-1](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2880593.html)
+
+
+## Kursvoraussetzungen
+Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. Sie benötigen in der Veranstaltung deshalb einen eigenen Laptop (Tablets sind nicht geeignet!) mit ca. 20 GB freiem Speicherplatz und mit einer installierten (aktuellen) Version von R und RStudio ([Link zum Download von R und RStudio](https://posit.co/download/rstudio-desktop/)).
+
+R Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (<https://methodenlehre.github.io/einfuehrung-in-R/>) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham.
+
+
+# Leistungsnachweise
+
+Der Kurs gibt 5 ETCS, die Leistung setzt sich aus dem Besuch des Kurses und dem Erbringen von Leistungsnachweisen zusammen.
+
+## Anwesenheit
+
+Die Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir dies aber einführen.
+
+Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Eigenstudium, wir können jedoch nicht für die Vollständigkeit garantieren. Hilfestellung beim Programmieren und Verstehen der Inhalte bieten wir während der Kurszeiten an, aus zeitlichen Gründen können wir keine Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten. Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage.
+
+
+## Form der Leistungsnachweise
+
+Leistungsnachweise werden in Form von __vier Übungen__,  __zwei Quizzes__ und __einem Glossareintrag__ erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag. 
+
+Alle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html).
+
+### Übungen
+Die Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.
+
+### Quizzes
+Das erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.
+
+### Glossareintrag
+Wir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden.
+
+
+
+ 
+<!-- ## Peer Feedback Weiteres
+
+Diese Veranstaltung gibt es zum 4. Mal, jedes Jahr wurde eine Guidelines -->
+
+<!-- Die Evaluation der Übungen erfolgt in Form von __Peer-Feedback__; dies bedeutet, dass Sie nach dem Abgabetermin aufgefordert werden, zu den Übungen von zufällig ausgewählten Mitstudierenden Feedback zu geben. Danach erhalten Sie selber von anderen Mitstudierenden Feedback zu Ihrer Übung. Das Peer-Feedback ist somit Teil des Leistungsnachweises. Auf Ilias finden Sie Informationen zur Art und Form des Feedbacks passend zur Übung. Grundsätzliche Guidelines zum Peer-Feedback finden Sie untenstehend. -->
+
+<!-- Wissenschaftliche Artikel werden von Forschenden aus denselben/ähnlichen Forschungsgebieten begutachtet. In diesem Kurs wählen wir für das Feedback zu den Übungen ebenfalls dieses Prinzip des *peer review*. Für jede Übung erhalten Sie einen klaren Begutachtungsauftrag mit Fragen wie z.B. *Was würde die Grafik informativer machen?*. Wir bitten Sie, beim Verfassen des Peer-Feedbacks folgende Richtlinien zu beachten: -->
+
+<!-- - **be kind**: Seien Sie freundlich. Wählen Sie Ihre Rückmeldungspunkte sorgfältig. Nehmen Sie sich Zeit und geben Sie nicht sehr knappes, verspätetes oder gar kein Feedback. Schreiben Sie was Ihnen positiv aufgefallen ist und unbedingt beibehalten werden sollte. -->
+
+<!-- - **be specific**: Beschreiben Sie das Problem oder die Kritikpunkte präzise und spezifisch (statt z.B. *"Code läuft nicht"* könnten Sie schreiben *"in Zeile 34 gibt es eine Fehlermeldung, es scheint die Variable wurde falsch benannt, ..."*) -->
+
+<!-- - **be helpful**: Seien Sie konstruktiv. Es gibt immer etwas was verbessert werden könnte. Beschreiben Sie diese Punkte und fügen Sie bestenfalls einen Lösungsansatz oder -vorschlag hinzu (statt z.B. *"die Farben sind nicht geeignet für farbenblinde Personen"* könnten Sie schreiben *"die [`viridis`](https://sjmgarnier.github.io/viridis/) Palette würde die Grafik für farbenblinde Personen zugänglich machen"*). -->
+
+
+<!-- Wertvolles und konstruktives Feedback zu geben benötigt Zeit. Deshalb planen Sie sich bitte ca. 1 Lektion für das jeweilige Peer Feedback ein. -->

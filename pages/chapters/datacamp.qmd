@@ -1,0 +1,68 @@
+---
+title: "DataCamp"
+# description: Programmiersprachen lernen, Software
+author:
+  - name: Gerda Wyssen
+    url: https://github.com/gwyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: 
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459    
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+
+## DataCamp
+
+[DataCamp](https://www.datacamp.com/) ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot. 
+
+Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren: 
+
+👉🏼 [Einladungslink DataCamp Registration](https://www.datacamp.com/groups/shared_links/2351772137d0a73c8756d3c9e79c8cfe6dd482377e6e80aa8a24d895b0edd7e8)
+
+
+Wir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.
+
+
+
+
+
+<!-- ## Hands-on session -->
+
+<!-- Wir werden in der zweiten Sitzung mit Psychopy und Python ein Experiment erstellen. In Psychopy können Sie viel sehr über die grafische Oberfläche; es gibt jedoch einige kleine Dinge, welche wir mit Python selber coden müssen. Deshalb wäre es für Sie hilfreich, wenn Sie sich vorher auf der DataCamp Website ein wenig mit Python vertraut machen. -->
+
+<!-- ### 1 - Python Basics -->
+<!-- Je nachdem wie viel Erfahrung Sie mit Python haben, können Sie sich entweder für den Kurs "Introduction to Python" oder "Intermediate Python" entscheiden. -->
+
+<!-- 👉🏼 [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science) -->
+
+<!-- 👉🏼 [Intermediate Python](https://app.datacamp.com/learn/courses/intermediate-python) -->
+
+<!-- Für fortgeschrittene empfehlen wir die Kurse: -->
+
+<!-- 👉🏼 [Python Data Science Toolbox (Part 1)](https://app.datacamp.com/learn/courses/python-data-science-toolbox-part-1) -->
+
+<!-- 👉🏼 [Python Data Science Toolbox (Part 2)](https://app.datacamp.com/learn/courses/python-data-science-toolbox-part-2) -->
+
+
+<!-- Diese Kurse sind nicht obligatorisch; Sie brauchen für PsychoPy wirklich nur Grundkenntnisse. Python ist aber sowohl in der Forschung als der Privatwirtschaft sehr beliebt und Sie werden es sicherlich noch öfters brauchen, wenn Sie sich mit Datenanalyse beschäftigen. -->
+
+<!-- ### 2 - Python Code mit ChatGPT generieren -->
+
+<!-- Dies benötigt einen ChatGPT Account; einen solchen können Sie bei OpenAI gratis erstellen. -->
+
+<!-- 👉🏼 [chat.openai.com/chat](https://chat.openai.com/chat) -->
+
+<!-- Versuchen Sie, mit ChatGPT ein paar Zeilen Python Code zu generieren. Sie können hierzu einige Beispiele als den DataCamp Kursen verwenden. -->
+
+<!-- - Kann ChatGPT die Aufgaben lösen? -->
+<!-- - Wie kann Ihnen ChatGPT helfen, Code zu schreiben? -->
+<!-- - Was müssen Sie beachten, wenn Sie Code von ChatGPT verwenden? -->

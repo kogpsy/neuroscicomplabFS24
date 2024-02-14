@@ -1,0 +1,14 @@
+---
+title: "Neurowissenschaft Computerlab"
+about:
+    template: jolla
+    image: assets/logo_landing.png
+    links:
+    - text: Gerda Wyssen
+      href: mailto:gerda.wyssen@unibe.ch
+    - text: Daniel Fitze
+      href: mailto:daniel.fitze@unibe.ch
+---
+
+Frühjahrssemester 2024    
+

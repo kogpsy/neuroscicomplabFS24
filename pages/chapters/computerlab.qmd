@@ -1,0 +1,56 @@
+---
+title: "Computerlab"
+author:
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+## Plan
+Wofür braucht ein Neurowissenschaftler den Computer
+
+Daten zentral 
+
+
+- Basics
+  - programmieren ect.
+  
+- Experiment programmieren
+  - Abbildung stimulations & response modalitäten
+  - Beispielexperimente/Experimentallogiken
+    - Moog
+    - EEG
+    - Gait/Posturo
+    - fMRI
+    -
+
+- Daten erheben 
+  - Bash
+  - daten abspeichern
+  
+- Data wrangling
+  - placo log file von carlo
+
+- Data viz
+
+- Data analysis
+  - r vs. SPSS
+
+- Data communication
+  - latex
+
+=> zwingendermassen benötigte tools
+=> lab => anwendung
+

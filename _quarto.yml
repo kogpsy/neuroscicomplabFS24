@@ -1,0 +1,102 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+  - index.qmd
+  - pages/admin/*.qmd
+  - pages/chapters/*.qmd
+#  - pages/exercises/exercise_*.qmd
+#  - pages/solutions/solution_*.qmd
+
+website:
+  title: Neurowissenschaft Computerlab
+  site-url: https://kogpsy.github.io/neuroscicomplabFS24/
+  favicon: /assets/logo_landing.png
+  reader-mode: true
+  navbar:
+    logo: /assets/logo.png
+    background: primary
+    right:
+    - text: "\U0001F5C4️ Admin"
+      menu:
+      - text: "\U0001F4DA Wichtiges zum Kurs"
+        file: pages/admin/wichtiges.qmd
+      - text: "\U0001F4DD Terminübersicht"
+        file: pages/admin/termine.qmd
+  sidebar:
+    style: floating
+    search: true
+    contents:
+    - section: Einführung
+      contents:
+       - pages/chapters/datacamp.qmd
+       - pages/chapters/quiz_one.qmd
+       # - pages/chapters/computerlab.qmd
+       # - pages/chapters/programmieren_1.qmd
+       # - pages/chapters/programmieren_2.qmd
+       # - pages/chapters/setup.qmd
+
+    - section: Experimente programmieren
+      contents:
+     # - pages/chapters/psychopy_experiments.qmd
+     # - pages/chapters/experiment_stepbystep.qmd
+     # - pages/chapters/uebung_1_experiment.qmd
+     #
+    - section: Data wrangling
+      contents:
+     # - pages/chapters/reproducibility.qmd
+     # - pages/chapters/importing_data.qmd
+     # - pages/chapters/functions-loops.qmd
+     # - pages/chapters/importing_data-2.qmd
+     # - pages/chapters/summarizing-data.qmd
+     # - pages/chapters/uebung_2_data_wrangling.qmd
+     # - pages/chapters/rmarkdown.qmd
+
+    - section: Daten visualisieren
+      contents:
+     # - pages/chapters/data_visualization_1.qmd
+     # - pages/chapters/data_visualization_2.qmd
+
+    - section: Analysemethoden
+      contents:
+     # - pages/chapters/bayesian-statistics-1.qmd
+     # - pages/chapters/bayesian-statistics-2.qmd
+     # - pages/chapters/bayesian-statistics-3.qmd
+     # - pages/chapters/uebung-5_bayesian_data_analysis.qmd
+
+    - section: Modellierung von Daten
+      contents:
+    # - section: Signal Detection Theory
+      # contents:
+     # - pages/chapters/signal-detection-1.qmd
+     # - pages/chapters/signal-detection-2.qmd
+
+  page-footer:
+    right:
+    - icon: github
+      href: https://github.com/kogpsy/neuroscicomplabFS24
+format:
+  html:
+    theme:
+      light:
+      - flatly
+      - styles/light.scss
+      dark:
+      - darkly
+      - styles/dark.scss
+    css:
+    - /styles/global.css
+    - include/webex.css
+    link-external-newwindow: true
+    include-after-body: include/webex.js
+execute:
+  cache: true
+  freeze: true
+  execute-dir: project
+callout-icon: true
+callout-tip-caption: Lösung
+callout-note-caption: Vertiefung
+callout-important-caption: Leistungsnachweis
+callout-caution-caption: Hands-on
+editor:
+  render-on-save: true

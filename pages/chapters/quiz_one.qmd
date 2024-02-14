@@ -1,0 +1,32 @@
+---
+title: "Quiz 1"
+author:
+  - name: Gerda Wyssen
+    url: https://github.com/gwyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: 
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459    
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+
+## Quiz 1
+
+Sie finden das erste Quiz in Ihrer Iliasgruppe:
+
+ILIAS (Montag) 👉 [468703-FS2024-0](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2926130.html)
+
+ILIAS (Mittwoch) 👉 [468703-FS2024-1](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2880593.html)
+
+Sie haben in der Veranstaltung Zeit das Quiz auszufüllen.
+Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen.
+
