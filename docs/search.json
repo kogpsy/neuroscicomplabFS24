@@ -1,45 +1,17 @@
 [
   {
-    "objectID": "pages/chapters/setup.html",
-    "href": "pages/chapters/setup.html",
-    "title": "Setup",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Neurowissenschaft Computerlab",
     "section": "",
-    "text": "R\n\n\nR Studio\n\n\nPsychoPy\n\n\nJASP\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{fitze,\n  author = {Fitze, Daniel and Wyssen, Gerda},\n  title = {Setup},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/setup.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFitze, Daniel, and Gerda Wyssen. n.d. “Setup.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/setup.html."
+    "text": "Frühjahrssemester 2024"
   },
   {
-    "objectID": "pages/chapters/programmieren_2.html",
-    "href": "pages/chapters/programmieren_2.html",
-    "title": "Automatisieren",
+    "objectID": "pages/admin/termine.html",
+    "href": "pages/admin/termine.html",
+    "title": "Terminübersicht",
     "section": "",
-    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden"
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html#r-online-compiler-um-code-zu-testen",
-    "href": "pages/chapters/programmieren_2.html#r-online-compiler-um-code-zu-testen",
-    "title": "Automatisieren",
-    "section": "R Online Compiler um Code zu testen",
-    "text": "R Online Compiler um Code zu testen\nhttps://www.programiz.com/r/online-compiler/\nWir nun zwei Programmierkonzepte kennenlernen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp.\n\n\n\n\n\n\nDatacamp\n\n\n\n\n\n\nFalls Sie eine Einführung in Programmierkonzepte (Conditionals and Control Flow, Functions, Loops) benötigen, empfehlen wir Ihnen den Datacamp Kurs Intermediate R."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "title": "Automatisieren",
-    "section": "Alternativen zu for-Loops",
-    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply eine Liste retournieren kann.\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\nWarning: Paket 'ggplot2' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'tibble' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'dplyr' wurde unter R Version 4.2.3 erstellt\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html",
-    "href": "pages/chapters/datacamp.html",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24."
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html#datacamp",
-    "href": "pages/chapters/datacamp.html#datacamp",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24."
+    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
   },
   {
     "objectID": "pages/admin/wichtiges.html",
@@ -77,20 +49,6 @@
     "text": "Form der Leistungsnachweise\nLeistungsnachweise werden in Form von vier Übungen, zwei Quizzes und einem Glossareintrag erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag.\nAlle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie hier.\n\nÜbungen\nDie Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.\n\n\nQuizzes\nDas erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.\n\n\nGlossareintrag\nWir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Neurowissenschaft Computerlab",
-    "section": "",
-    "text": "Frühjahrssemester 2024"
-  },
-  {
-    "objectID": "pages/admin/termine.html",
-    "href": "pages/admin/termine.html",
-    "title": "Terminübersicht",
-    "section": "",
-    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\nVerwendung von LLMs (z.B. ChatGPT)\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
-  },
-  {
     "objectID": "pages/chapters/computerlab.html",
     "href": "pages/chapters/computerlab.html",
     "title": "Computerlab",
@@ -103,6 +61,20 @@
     "title": "Computerlab",
     "section": "",
     "text": "Wofür braucht ein Neurowissenschaftler den Computer\nDaten zentral\n\nBasics\n\nprogrammieren ect.\n\nExperiment programmieren\n\nAbbildung stimulations & response modalitäten\nBeispielexperimente/Experimentallogiken\n\nMoog\nEEG\nGait/Posturo\nfMRI\n\n\n\nDaten erheben\n\nBash\ndaten abspeichern\n\nData wrangling\n\nplaco log file von carlo\n\nData viz\nData analysis\n\nr vs. SPSS\n\nData communication\n\nlatex\n\n\n=&gt; zwingendermassen benötigte tools =&gt; lab =&gt; anwendung"
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html",
+    "href": "pages/chapters/datacamp.html",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24."
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html#datacamp",
+    "href": "pages/chapters/datacamp.html#datacamp",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24."
   },
   {
     "objectID": "pages/chapters/programmieren_1.html",
@@ -140,6 +112,27 @@
     "text": "R\nAb der vierten Sitzung werden wir viel mit R arbeiten, um Daten aufzubereiten und grafisch darzustellen. Dafür müssen Sie die aktuelle Version von R installieren. Diese ist zurzeit R 4.2.2, und kann unter folgender URL geladen werden:\nR 👉 https://cloud.r-project.org/\nWir empfehlen für die Arbeit mit R die RStudio IDE zu verwenden. Diese ist kostenlos und kann unter folgender URL heruntergeladen werden:\nRStudio 👉 https://www.rstudio.com/products/rstudio/download/#download"
   },
   {
+    "objectID": "pages/chapters/programmieren_2.html",
+    "href": "pages/chapters/programmieren_2.html",
+    "title": "Automatisieren",
+    "section": "",
+    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden"
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html#r-online-compiler-um-code-zu-testen",
+    "href": "pages/chapters/programmieren_2.html#r-online-compiler-um-code-zu-testen",
+    "title": "Automatisieren",
+    "section": "R Online Compiler um Code zu testen",
+    "text": "R Online Compiler um Code zu testen\nhttps://www.programiz.com/r/online-compiler/\nWir nun zwei Programmierkonzepte kennenlernen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp.\n\n\n\n\n\n\nDatacamp\n\n\n\n\n\n\nFalls Sie eine Einführung in Programmierkonzepte (Conditionals and Control Flow, Functions, Loops) benötigen, empfehlen wir Ihnen den Datacamp Kurs Intermediate R."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "title": "Automatisieren",
+    "section": "Alternativen zu for-Loops",
+    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply eine Liste retournieren kann.\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\nWarning: Paket 'ggplot2' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'tibble' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'dplyr' wurde unter R Version 4.2.3 erstellt\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
+  },
+  {
     "objectID": "pages/chapters/quiz_one.html",
     "href": "pages/chapters/quiz_one.html",
     "title": "Quiz 1",
@@ -152,5 +145,12 @@
     "title": "Quiz 1",
     "section": "",
     "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
+  },
+  {
+    "objectID": "pages/chapters/setup.html",
+    "href": "pages/chapters/setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "R\n\n\nR Studio\n\n\nPsychoPy\n\n\nJASP\n\n\n\n\nReuseCC BY-SA 4.0CitationBibTeX citation:@online{fitze,\n  author = {Fitze, Daniel and Wyssen, Gerda},\n  title = {Setup},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/setup.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFitze, Daniel, and Gerda Wyssen. n.d. “Setup.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/setup.html."
   }
 ]
