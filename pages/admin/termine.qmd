@@ -27,11 +27,11 @@ An den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vor
 
 `Sitzung 1 (19./21. Februrar 2024)`
 
--   Einführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)
+-   Einführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)
 
 <!-- - *Hands-on: Sprachen vergleichen, Funktionen und Loops nutzen und schreiben, Verwendung LLMs, ChatGPT und RTutor.ai* -->
 
--   Verwendung von LLMs (z.B. ChatGPT)
+<!---   Verwendung von LLMs (z.B. ChatGPT) -->
 
 -   Installieren der für den Kurs benötigten Software
 
