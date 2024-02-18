@@ -32,7 +32,9 @@ Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgend
 Wir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.
 
 
+👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r)
 
+👉🏼 Als Einführung in Python eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science)
 
 
 <!-- ## Hands-on session -->
