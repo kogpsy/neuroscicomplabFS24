@@ -29,12 +29,12 @@ website:
     contents:
     - section: Einführung
       contents:
+       - pages/chapters/computerlab.qmd
+       - pages/chapters/programmieren_1.qmd
        - pages/chapters/datacamp.qmd
+       - pages/chapters/programmieren_2.qmd
        - pages/chapters/quiz_one.qmd
-       # - pages/chapters/computerlab.qmd
-       # - pages/chapters/programmieren_1.qmd
-       # - pages/chapters/programmieren_2.qmd
-       # - pages/chapters/setup.qmd
+       - pages/chapters/setup.qmd
 
     - section: Experimente programmieren
       contents:

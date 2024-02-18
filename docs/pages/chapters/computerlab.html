@@ -121,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Computerlab</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/computerlab.html">Einführung</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/computerlab.html">Computerlab</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,14 +152,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Computerlab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sprachen &amp; Umgebungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/datacamp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DataCamp</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
       </ul>
@@ -194,7 +218,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#plan" id="toc-plan" class="nav-link active" data-scroll-target="#plan">Plan</a></li>
+  <li><a href="#neurocomp-lab" id="toc-neurocomp-lab" class="nav-link active" data-scroll-target="#neurocomp-lab">NeuroComp Lab</a></li>
+  <li><a href="#fragestellung-entwickeln" id="toc-fragestellung-entwickeln" class="nav-link" data-scroll-target="#fragestellung-entwickeln">Fragestellung entwickeln</a></li>
+  <li><a href="#experiment-erstellen-daten-erheben" id="toc-experiment-erstellen-daten-erheben" class="nav-link" data-scroll-target="#experiment-erstellen-daten-erheben">Experiment erstellen &amp; Daten erheben</a></li>
+  <li><a href="#daten-wrangling" id="toc-daten-wrangling" class="nav-link" data-scroll-target="#daten-wrangling">Daten wrangling</a></li>
+  <li><a href="#daten-analyse" id="toc-daten-analyse" class="nav-link" data-scroll-target="#daten-analyse">Daten analyse</a></li>
+  <li><a href="#daten-kommunizieren" id="toc-daten-kommunizieren" class="nav-link" data-scroll-target="#daten-kommunizieren">Daten kommunizieren</a></li>
+  <li><a href="#daten-visualisieren" id="toc-daten-visualisieren" class="nav-link" data-scroll-target="#daten-visualisieren">Daten visualisieren</a></li>
   </ul>
 </nav>
     </div>
@@ -243,47 +273,153 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="plan" class="level2">
-<h2 class="anchored" data-anchor-id="plan">Plan</h2>
-<p>Wofür braucht ein Neurowissenschaftler den Computer</p>
-<p>Daten zentral</p>
+<section id="neurocomp-lab" class="level2">
+<h2 class="anchored" data-anchor-id="neurocomp-lab">NeuroComp Lab</h2>
+<p>In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.</p>
+<p>Als Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert.</p>
+</section>
+<section id="fragestellung-entwickeln" class="level1">
+<h1>Fragestellung entwickeln</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <ul>
-<li><p>Basics</p>
+<li>Literaturverwaltungsprogramme
 <ul>
-<li>programmieren ect.</li>
+<li>z.B. Zotero</li>
 </ul></li>
-<li><p>Experiment programmieren</p>
+<li>Schon vorhandene Daten</li>
+<li>Pilot Daten</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="img/git.png" class="img-fluid" data-fig-align="center" alt="git"> <a href="https://github.com/yulkang/SubjDecTime/tree/master">repo</a> / <a href="https://doi.org/10.1016/j.cub.2017.06.047">paper</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="experiment-erstellen-daten-erheben" class="level1">
+<h1>Experiment erstellen &amp; Daten erheben</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <ul>
-<li>Abbildung stimulations &amp; response modalitäten</li>
-<li>Beispielexperimente/Experimentallogiken
+<li>Logik des Experiments
 <ul>
-<li>Moog</li>
-<li>EEG</li>
-<li>Gait/Posturo</li>
-<li>fMRI</li>
-<li></li>
+<li>Was passiert wann wie häufig</li>
 </ul></li>
-</ul></li>
-<li><p>Daten erheben</p>
+<li>Manipulation
 <ul>
-<li>Bash</li>
-<li>daten abspeichern</li>
+<li>within/between</li>
 </ul></li>
-<li><p>Data wrangling</p>
+<li>Stimulation
 <ul>
-<li>placo log file von carlo</li>
+<li>z.B. Bild und Beschleunigung</li>
 </ul></li>
-<li><p>Data viz</p></li>
-<li><p>Data analysis</p>
+<li>Messungen
 <ul>
-<li>r vs.&nbsp;SPSS</li>
-</ul></li>
-<li><p>Data communication</p>
-<ul>
-<li>latex</li>
+<li>z.B. Antwort und Reaktionszeit</li>
 </ul></li>
 </ul>
-<p>=&gt; zwingendermassen benötigte tools =&gt; lab =&gt; anwendung</p>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/moog.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="daten-wrangling" class="level1">
+<h1>Daten wrangling</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<ul>
+<li>Daten vorverarbeiten</li>
+<li>Daten aus verschiedenen Quellen zusammenführen</li>
+<li>Daten zusammenfassen</li>
+<li>Daten richtig sichern</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/dplyr.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="daten-analyse" class="level1">
+<h1>Daten analyse</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<blockquote class="blockquote">
+<p>R is like editing a recipe in a text editor, and SPSS is like having to dictate the whole recipe on tape every time you add a pinch of salt (J.K. Lindeløv; <a href="https://lindeloev.net/spss-is-dying/">Quelle</a>).</p>
+</blockquote>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/brms.png" class="img-fluid figure-img" width="250"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="daten-kommunizieren" class="level1">
+<h1>Daten kommunizieren</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<ul>
+<li>Paper schreiben
+<ul>
+<li>LaTeX, Overleaf, <del>Word</del></li>
+<li>z.B. Zotero</li>
+</ul></li>
+<li>Shiny Apps (z.B. <a href="https://gallery.shinyapps.io/051-movie-explorer/">Movie Explorer</a>)</li>
+<li>Pre Prints/Blogs</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/latex.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="daten-visualisieren" class="level1">
+<h1>Daten visualisieren</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<ul>
+<li><strong>Visualisierung ist bei allen Schritten zentral</strong></li>
+<li>Information aus bestehenden Daten bekommen</li>
+<li>Kontrollieren ob Experiment richtig implementiert ist</li>
+<li>Deskriptive Analyse</li>
+<li>Kommunikation von Resultaten</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ggplot2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>

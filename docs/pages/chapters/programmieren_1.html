@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Sprachen &amp; Umgebungen</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/computerlab.html">Einführung</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/programmieren_1.html">Sprachen &amp; Umgebungen</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,14 +188,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computerlab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Sprachen &amp; Umgebungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/datacamp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">DataCamp</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
       </ul>
@@ -232,16 +256,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#programmiersprachen" id="toc-programmiersprachen" class="nav-link active" data-scroll-target="#programmiersprachen">Programmiersprachen</a>
   <ul class="collapse">
-  <li><a href="#matlab" id="toc-matlab" class="nav-link" data-scroll-target="#matlab">Matlab</a></li>
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
-  <li><a href="#bash" id="toc-bash" class="nav-link" data-scroll-target="#bash">Bash</a></li>
   <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit">Fazit</a></li>
   </ul></li>
-  <li><a href="#in-dieser-veranstaltung-verwendete-software" id="toc-in-dieser-veranstaltung-verwendete-software" class="nav-link" data-scroll-target="#in-dieser-veranstaltung-verwendete-software">In dieser Veranstaltung verwendete Software</a></li>
-  <li><a href="#python-1" id="toc-python-1" class="nav-link" data-scroll-target="#python-1">Python</a></li>
-  <li><a href="#r-1" id="toc-r-1" class="nav-link" data-scroll-target="#r-1">R</a></li>
+  <li><a href="#programmierumgebungen" id="toc-programmierumgebungen" class="nav-link" data-scroll-target="#programmierumgebungen">Programmierumgebungen</a></li>
   </ul>
 </nav>
     </div>
@@ -307,9 +324,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="programmiersprachen" class="level2">
 <h2 class="anchored" data-anchor-id="programmiersprachen">Programmiersprachen</h2>
-<p>Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über drei häufig verwendete Programmiersprachen (Matlab, Python und R) verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.</p>
-<section id="matlab" class="level3">
-<h3 class="anchored" data-anchor-id="matlab">Matlab</h3>
+<p>Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über häufig verwendete Programmiersprachen verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/matlab.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
 <p>Matlab ist ein Software für numerische Anwendung, welche in den Ingenieurwissenschaften, Naturwissenschaften und der Mathematik weit verbreitet ist.</p>
 <section id="stärken" class="level4">
 <h4 class="anchored" data-anchor-id="stärken">👍🏼 Stärken:</h4>
@@ -329,8 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="typische-anwendung" class="level4">
 <h4 class="anchored" data-anchor-id="typische-anwendung">Typische Anwendung:</h4>
 <ul>
-<li>Datenverarbeitung und -analyse,</li>
-<li>Signalverarbeitung</li>
+<li>Datenverarbeitung und -analyse</li>
 <li>Visualisierung</li>
 <li>Viele fMRI Forscher arbeiten mit Matlab, da es dafür eine spezielle Toolbox gibt: <a href="https://www.fil.ion.ucl.ac.uk/spm/software/spm12/">SPM</a></li>
 <li>Experimente programmieren, z.B. mit <a href="http://psychtoolbox.org/">Psychtoolbox</a></li>
@@ -342,11 +361,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">fs</span> <span class="op">=</span> <span class="fl">1000</span><span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="va">numel</span>(<span class="va">data</span>)<span class="op">-</span><span class="fl">1</span>)<span class="op">/</span><span class="va">fs</span><span class="op">;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">data</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/python.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
 <p>Python ist eine allgemeine (general purpose) Programmiersprache, die in vielen verschiedenen Bereichen wie wissenschaftlichem Rechnen, Datenanalyse und maschinellem Lernen weit verbreitet ist.</p>
+</section>
 <section id="stärken-1" class="level4">
 <h4 class="anchored" data-anchor-id="stärken-1">👍🏼 Stärken:</h4>
 <ul>
@@ -377,11 +398,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'data.csv'</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>data, x<span class="op">=</span><span class="st">'time'</span>, y<span class="op">=</span><span class="st">'voltage'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/r.png" class="img-fluid figure-img" width="150"></p>
+</figure>
+</div>
+<p>R ist eine Programmiersprache für statistisches Rechnen und Grafiken.</p>
 </section>
-</section>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>R ist eine Programmiersprache und Umgebung für statistisches Rechnen und Grafiken.</p>
 <section id="stärken-2" class="level4">
 <h4 class="anchored" data-anchor-id="stärken-2">👍🏼 Stärken:</h4>
 <ul>
@@ -411,34 +434,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>voltage)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/julia.png" class="img-fluid figure-img" width="200"></p>
+</figure>
+</div>
+<p>Julia ist eine allgemeine (general purpose) Programmierspache, die vor allem für numerisches und wissenschaftliches Rechnen entwickelt wurde.</p>
 </section>
+<section id="stärken-3" class="level4">
+<h4 class="anchored" data-anchor-id="stärken-3">👍🏼 Stärken:</h4>
+<ul>
+<li>Entwickelt von Mathematikern für scientific computing</li>
+<li>Leistungsstark und schnell</li>
+<li>Open-source und kostenlos</li>
+</ul>
 </section>
-<section id="julia" class="level3">
-<h3 class="anchored" data-anchor-id="julia">Julia</h3>
+<section id="schwächen-3" class="level4">
+<h4 class="anchored" data-anchor-id="schwächen-3">👎🏼 Schwächen:</h4>
+<ul>
+<li>wenig verbreitet</li>
+</ul>
 </section>
-<section id="bash" class="level3">
-<h3 class="anchored" data-anchor-id="bash">Bash</h3>
+<section id="typische-anwendung-3" class="level4">
+<h4 class="anchored" data-anchor-id="typische-anwendung-3">Typische Anwendung:</h4>
+<ul>
+<li>Datenverarbeitung und -analyse,</li>
+<li>Signalverarbeitung</li>
+<li>Visualisierung</li>
+<li>Machine learning und Künstliche Intelligenz</li>
+</ul>
+</section>
+<section id="beispielcode-3" class="level4">
+<h4 class="anchored" data-anchor-id="beispielcode-3">Beispielcode:</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CSV</span>, <span class="bu">DataFrames</span>, <span class="bu">AlgebraOfGraphics</span>, <span class="bu">CairoMakie</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> CSV.<span class="fu">read</span>(<span class="ch">'data.csv'</span>, DataFrame)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(dat) <span class="op">*</span> <span class="fu">visual</span>(Lines) <span class="op">*</span> <span class="fu">mapping</span>(<span class="op">:</span>time, <span class="op">:</span>voltage) <span class="op">|&gt;</span> <span class="fu">draw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/bash.png" class="img-fluid figure-img" width="250"></p>
+</figure>
+</div>
+<p>Bash ist eine Mensch-Maschine-Schnittstelle und dient als Grundlage unixbasierter Betriebssysteme (Linux, macOS). Mit Bash-Skripts können repetitive Aufgaben automatisiert werden, was Fehler vermeidet und komplexe Aufgaben vereinfacht.</p>
+</section>
+<section id="stärken-4" class="level4">
+<h4 class="anchored" data-anchor-id="stärken-4">👍🏼 Stärken:</h4>
+<ul>
+<li>Einfaches Konzept und Verwendung</li>
+<li>Bereits instaliert (nicht auf Windows)</li>
+</ul>
+</section>
+<section id="schwächen-4" class="level4">
+<h4 class="anchored" data-anchor-id="schwächen-4">👎🏼 Schwächen:</h4>
+<ul>
+<li>Steile Lernkurve</li>
+<li>Umstellung notwendig von GUI</li>
+</ul>
+</section>
+<section id="typische-anwendung-4" class="level4">
+<h4 class="anchored" data-anchor-id="typische-anwendung-4">Typische Anwendung:</h4>
+<ul>
+<li>Automatisierung</li>
+<li>einfache bis komplexe Applikationen</li>
+<li>Interaktion mit dem <a href="https://www.unibe.ch/universitaet/campus__und__infrastruktur/rund_um_computer/soft_und_hardware/hardware/hochleistungsrechner_hpc_grid/index_ger.html">High Performance Computing Cluster</a> der Universität Bern</li>
+</ul>
+</section>
+<section id="beispielcode-4" class="level4">
+<h4 class="anchored" data-anchor-id="beispielcode-4">Beispielcode:</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Enter Your Name"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">read</span> <span class="va">name</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">"\n Welcome </span><span class="va">$name</span><span class="st"> \n\n"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="fazit" class="level3">
 <h3 class="anchored" data-anchor-id="fazit">Fazit</h3>
-<p>Matlab, Python und R sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.</p>
+<p>Diese Sprachen sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.</p>
 <p>Um mehr zu erfahren, erkunden Sie die umfangreichen Online-Ressourcen und Dokumentationen für jede Sprache.</p>
 </section>
 </section>
-<section id="in-dieser-veranstaltung-verwendete-software" class="level2">
-<h2 class="anchored" data-anchor-id="in-dieser-veranstaltung-verwendete-software">In dieser Veranstaltung verwendete Software</h2>
-<p>Wir haben uns entschieden, in dieser Veranstaltung Python zu verwenden, um ein Experiment zu erstellen, und R für die Analyse der Daten. Matlab wird nicht verwendet; einerseits da es kommerziell ist, andererseits weil es aus unserer Sicht nicht die beste Wahl für die Analyse von Verhaltensdaten ist. Ausserdem ist es schon schwierig genug, eine Programmiersprache zu lernen, ohne gleichzeitig noch zwei weitere zu lernen.</p>
-</section>
-<section id="python-1" class="level2">
-<h2 class="anchored" data-anchor-id="python-1">Python</h2>
-<p>Wenn Sie Python suf Ihrem Rechner installieren wollen, können Sie entweder den offiziellen Installer <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> downloaden, oder die Anaconda Distribution <a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a> verwenden. Die Anaconda Distribution ist eine Python-Distribution, die viele nützliche Pakete enthält, die für wissenschaftliches Rechnen und Datenanalyse verwendet werden. Wenn man tatsächlich mit Python arbeiten will, empfiehlt es sich, die Anaconda Distribution zu benutzen. Wir werden in dieser Veranstaltung Python benutzen, um ein Experiment zu programmieren. Dafür reicht es aus, den PsychoPy Installer zu verwenden; diesen finden Sie unter diesem Link: <a href="https://www.psychopy.org/">PsychoPy</a>. PsychoPy ist ein Python-basiertes Tool, mit dem sich sowohl in einer grafischen Benutzeroberfläche (GUI) als auch mit Python Code Experimente programmieren lassen.</p>
-</section>
-<section id="r-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-1">R</h2>
-<p>Ab der vierten Sitzung werden wir viel mit R arbeiten, um Daten aufzubereiten und grafisch darzustellen. Dafür müssen Sie die <strong>aktuelle</strong> Version von R installieren. Diese ist zurzeit R 4.2.2, und kann unter folgender URL geladen werden:</p>
-<p>R 👉 <a href="https://cloud.r-project.org/">https://cloud.r-project.org/</a></p>
-<p>Wir empfehlen für die Arbeit mit R die RStudio IDE zu verwenden. Diese ist kostenlos und kann unter folgender URL heruntergeladen werden:</p>
-<p>RStudio 👉 <a href="https://www.rstudio.com/products/rstudio/download/#download">https://www.rstudio.com/products/rstudio/download/#download</a></p>
+<section id="programmierumgebungen" class="level2">
+<h2 class="anchored" data-anchor-id="programmierumgebungen">Programmierumgebungen</h2>
+<p>Eine IDE kombiniert häufig verwendete Entwicklertools in einer grafischen Benutzeroberfläche. Typischerweise handelt es sich dabei um Funktionen wie Softwarebearbeitung, Erstellung und Testen von Code.</p>
+<p>In diesem Kurs werden wir RStudio verwenden.</p>
 
 
 </section>

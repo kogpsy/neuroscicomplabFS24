@@ -1,7 +1,7 @@
 ---
 title: "Automatisieren"
 description: Ein Exkurs zu den Themen Conditionals, Funktionen und Loops.
-date: "2023-03-20"
+# date: "2023-03-20"
 author:
   - name: Daniel Fitze
     # url: https://github.com/awellis
@@ -32,12 +32,15 @@ In der heutigen Sitzung lernen wir:
 - Conditionals und Control Flow
 - Funktionen erstellen
 - Loops anwenden
+
+Führen Sie die folgenden Code Beispiele auf Ihrem Computer aus. Wenn Sie R und RStudio noch nicht installiert haben, verwenden Sie diese [online R Konsole](https://www.programiz.com/r/online-compiler/).
 :::
 
-## R Online Compiler um Code zu testen
-https://www.programiz.com/r/online-compiler/
 
-Wir nun zwei Programmierkonzepte kennenlernen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp.
+
+
+
+Wir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp.
 
 
 :::{.callout-caution collapse="true"}
@@ -231,7 +234,6 @@ vegetables <- c("carrot", "potato", "tomato", "cucumber")
 Wir erstellen nun eine zufällige Liste von Früchten und Gemüse. 
 
 ```{r}
-```{r}
 set.seed(589)
 foods <- sample(c(sample(fruits, 3), sample(vegetables, 3)))
 foods
@@ -293,7 +295,7 @@ Es gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren,
 
 ### `lapply` und `sapply`
 
-`lapply` und `sapply` sind zwei Funktionen, welche über Listen iterieren. `lapply` und `sapply` sind sehr ähnlich. `lapply` gibt eine Liste zurück, während `sapply` eine Liste retournieren kann.
+`lapply` und `sapply` sind zwei Funktionen, welche über Listen iterieren. `lapply` und `sapply` sind sehr ähnlich. `lapply` gibt eine Liste zurück, während `sapply` versucht den output zu vereinfachen (Vektor, Matrix).
 
 
 Als Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel). 
