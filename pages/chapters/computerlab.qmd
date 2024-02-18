@@ -18,39 +18,109 @@ format:
     html:
         toc: true
 ---
-## Plan
-Wofür braucht ein Neurowissenschaftler den Computer
+## NeuroComp Lab
+In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen. 
 
-Daten zentral 
+Als Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert.
 
+# Fragestellung entwickeln
+:::: {layout="[ 50, 50 ]"}
 
-- Basics
-  - programmieren ect.
+::: {#first-column}
+- Literaturverwaltungsprogramme
+  - z.B. Zotero 
+- Schon vorhandene Daten
+- Pilot Daten
+:::
+
+::: {#second-column}
+![git](img/git.png){fig-align="center"}
+[repo](https://github.com/yulkang/SubjDecTime/tree/master) /  [paper](https://doi.org/10.1016/j.cub.2017.06.047)
+:::
+
+::::
+
+# Experiment erstellen & Daten erheben
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+- Logik des Experiments
+  - Was passiert wann wie häufig
+- Manipulation
+  - within/between
+- Stimulation
+  - z.B. Bild und Beschleunigung
+- Messungen
+  - z.B. Antwort und Reaktionszeit
+:::
+
+::: {#second-column}
+![](img/moog.jpg){fig-align="center"}
+:::
+
+::::
   
-- Experiment programmieren
-  - Abbildung stimulations & response modalitäten
-  - Beispielexperimente/Experimentallogiken
-    - Moog
-    - EEG
-    - Gait/Posturo
-    - fMRI
-    -
+# Daten wrangling
+:::: {layout="[ 50, 50 ]"}
 
-- Daten erheben 
-  - Bash
-  - daten abspeichern
-  
-- Data wrangling
-  - placo log file von carlo
+::: {#first-column}
+- Daten vorverarbeiten
+- Daten aus verschiedenen Quellen zusammenführen
+- Daten zusammenfassen
+- Daten richtig sichern
+:::
 
-- Data viz
+::: {#second-column}
+![](img/dplyr.png){fig-align="center"}
+:::
 
-- Data analysis
-  - r vs. SPSS
+::::
 
-- Data communication
-  - latex
 
-=> zwingendermassen benötigte tools
-=> lab => anwendung
+# Daten analyse
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+> R is like editing a recipe in a text editor, and SPSS is like having to dictate the whole recipe on tape every time you add a pinch of salt (J.K. Lindeløv; [Quelle](https://lindeloev.net/spss-is-dying/)).
+:::
+
+::: {#second-column}
+![](img/brms.png){width=250 fig-align="center"}
+:::
+
+::::
+
+# Daten kommunizieren
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+- Paper schreiben
+  - LaTeX, Overleaf, ~~Word~~
+  - z.B. Zotero 
+- Shiny Apps (z.B. [Movie Explorer](https://gallery.shinyapps.io/051-movie-explorer/))
+- Pre Prints/Blogs
+:::
+
+::: {#second-column}
+![](img/latex.png){fig-align="center"}
+:::
+
+::::
+
+# Daten visualisieren
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+- __Visualisierung ist bei allen Schritten zentral__
+- Information aus bestehenden Daten bekommen
+- Kontrollieren ob Experiment richtig implementiert ist
+- Deskriptive Analyse
+- Kommunikation von Resultaten
+:::
+
+::: {#second-column}
+![](img/ggplot2.png){fig-align="center"}
+:::
+
+::::
 
