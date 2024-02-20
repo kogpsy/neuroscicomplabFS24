@@ -1,0 +1,51 @@
+---
+title: "Neurowissenschaft"
+author:
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+# Allgemein
+In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht.
+
+[Link Uni](https://www.philhum.unibe.ch/studium/studienprogramme/neurowissenschaft/index_ger.html)
+
+## Hauptbereiche der Neurowissenschaften
+| Bereich | Beschreibung |
+|---------|--------------|
+| Behavioral neuroscience | Einfluss des Gehirns auf Verhalten |
+| Clinical neuroscience | Störungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation |
+| Computational neuroscience | Simulation und Modellierung von Hirnfunktionen |
+| Cultural neuroscience | Einfluss kultureller Faktoren auf das Gehirn |
+| Developmental neuroscience | Entwicklung des Nervensystems über die ganze Alterspanne |
+| Molecular and cellular neuroscience | Rolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems |
+| Neuroengineering | neuronale Systeme verstehen, ersetzen, reparieren oder verbessern |
+| Neuroimaging | Teilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn | 
+| Neuroinformatics | Entwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten |
+| Neurolinguistics | Rolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache |
+| Neurophysiology | Rolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen |
+
+[Quelle](https://www.medicalnewstoday.com/articles/248680#major-branches)
+
+Aufteilung nach:
+
+* Untersuchter Spezies
+  * z.B. Mensch, Affe, Zebrafisch, Fruchtfliege
+* verwendeter Methode
+  * z.B. EEG, fMRI, Verhalten
+
+# Einschränkung
+Dieses Nebenfach fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant und interessant sind, wie zum Beispiel die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.
