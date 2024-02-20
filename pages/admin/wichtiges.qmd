@@ -3,7 +3,6 @@ title: "Wichtiges zum Kurs"
 # description: Inhalt des Kurses.
 author:
   - name: Gerda Wyssen
-    url: https://github.com/gwyssen
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
@@ -34,6 +33,12 @@ Wir behandeln im Rahmen der Veranstaltung folgende Inhalte:
 # Aufbau der Lehrveranstaltung
 
 In diesem Kurs legen wir besonderen Fokus auf Anwendungskenntnisse, deshalb setzen sich die Termine zusammen aus Inputs, wie auch Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. Die Aufteilung ist stark vom jeweiligen Thema anhängig. Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet. 
+
+::: callout-caution
+## Hands-on
+
+Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf der Website finden Sie die Aufgaben in diesen Hands-on Blöcken.
+:::
 
 Die Teilnehmenden in diesem Kurs haben sehr unterschiedliches Vorwissen. Dies ist eine Stärke dieses Kurses und der Austausch untereinander in den Hands-on Sessions macht deshalb d sehr erfahrungsgemäss viel Sinn. Studierende mit Hintergrund in der Informatik können so zum Beispiel  wertvolle Hinweise zur Optimierung von Code geben, während Psychologiestudierende viel Vorwissen über neuropsychologische Prozesse besitzen, welche beim Planen und Umsetzen von Experimenten sowie beim Verstehen von Verhaltensdatensätzen hilfreich sind.
 

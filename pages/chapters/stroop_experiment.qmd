@@ -2,11 +2,6 @@
 title: "Stroop Paradigma"
 description: Programmieren eines klassischen neuropsychologischen Tests mit PsychoPy.
 author:
-  - name: Andrew Ellis
-    url: https://github.com/awellis
-    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
-    affiliation-url: https://www.kog.psy.unibe.ch
-    orcid: 0000-0002-2788-936X
   - name: Gerda Wyssen
     # url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
