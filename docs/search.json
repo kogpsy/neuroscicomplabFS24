@@ -1,52 +1,199 @@
 [
   {
-    "objectID": "pages/chapters/stroop_experiment.html",
-    "href": "pages/chapters/stroop_experiment.html",
-    "title": "Stroop Paradigma",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Neurowissenschaft Computerlab",
     "section": "",
-    "text": "Erstellen Sie einen Stroop Stimulus. Beachten Sie folgende Aspekte:\n\nTiming (Stimulusdauer): 1500 ms\nFarbe\nGrösse: gut sichtbar\nKohärenz: 0.08\nField size: 75% des Displays\n\n(Die Bewegungsrichtung können Sie noch vernachlässigen.)"
+    "text": "Frühjahrssemester 2024"
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#stimuli",
-    "href": "pages/chapters/stroop_experiment.html#stimuli",
-    "title": "Stroop Paradigma",
+    "objectID": "pages/admin/termine.html",
+    "href": "pages/admin/termine.html",
+    "title": "Terminübersicht",
     "section": "",
-    "text": "Erstellen Sie einen Stroop Stimulus. Beachten Sie folgende Aspekte:\n\nTiming (Stimulusdauer): 1500 ms\nFarbe\nGrösse: gut sichtbar\nKohärenz: 0.08\nField size: 75% des Displays\n\n(Die Bewegungsrichtung können Sie noch vernachlässigen.)"
+    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#trialschleife",
-    "href": "pages/chapters/stroop_experiment.html#trialschleife",
-    "title": "Stroop Paradigma",
-    "section": "2. Trialschleife",
-    "text": "2. Trialschleife\nErstellen Sie eine Trial-Schleife.\n\nFixation 1 (100/350/800/1200 ms) (Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)\nCue (1000 ms)\nFixation 2 (3400/4000/4500/5000 ms) (Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)\nDots (1500 ms)\nFeedback\nTiming (ITI: Inter-Trial-Intervall)\nAntwort der Versuchsperson aufnehmen\n\n(Die Variation der Bewegungsrichtung und des Vorwissens können Sie noch vernachlässigen.)"
+    "objectID": "pages/admin/wichtiges.html",
+    "href": "pages/admin/wichtiges.html",
+    "title": "Wichtiges zum Kurs",
+    "section": "",
+    "text": "In diesem anwendungsorientierten Kurs erwerben Sie Wissen über Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften. Wir behandeln im Rahmen der Veranstaltung folgende Inhalte:\n\nWichtige Programmiersprachen und - umgebungen in den Neurowissenschaften\nProgrammieren von computerbasierten Experimenten (mit PsychoPy)\nProgrammieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices”, Data Cleaning, Reproduzierbarkeit)\nAnalysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)\nInterpretation und kritische Einordnung von Analyseergebnissen"
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#bedingungen",
-    "href": "pages/chapters/stroop_experiment.html#bedingungen",
-    "title": "Stroop Paradigma",
-    "section": "3. Bedingungen",
-    "text": "3. Bedingungen\n\nVariieren Sie die Bewegungsrichtung der Random Dots mit dem conditions.csv file: Bewegungsrichtung ist zu 50% rechts, zu 50% links.\nVariieren Sie den Cue fürs Vorwissen in jedem Trial mit dem conditions.csv file: Der Cue kann valide (4x), invalide (2x) oder neutral (4x) sein. Die Bewegungsrichtungen müssen auf alle Bedingungen gleich verteilt sein."
+    "objectID": "pages/admin/wichtiges.html#ilias",
+    "href": "pages/admin/wichtiges.html#ilias",
+    "title": "Wichtiges zum Kurs",
+    "section": "Ilias",
+    "text": "Ilias\nUnter diesen Links finden Sie die Iliasgruppen:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1"
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#instruktion-und-debriefing",
-    "href": "pages/chapters/stroop_experiment.html#instruktion-und-debriefing",
-    "title": "Stroop Paradigma",
-    "section": "4. Instruktion und Debriefing",
-    "text": "4. Instruktion und Debriefing\n\nFügen Sie zu Beginn des Experiments eine Instruktion hinzu.\nFügen Sie am Ende des Experiments ein Debriefing hinzu."
+    "objectID": "pages/admin/wichtiges.html#kursvoraussetzungen",
+    "href": "pages/admin/wichtiges.html#kursvoraussetzungen",
+    "title": "Wichtiges zum Kurs",
+    "section": "Kursvoraussetzungen",
+    "text": "Kursvoraussetzungen\nWir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. Sie benötigen in der Veranstaltung deshalb einen eigenen Laptop (Tablets sind nicht geeignet!) mit ca. 20 GB freiem Speicherplatz und mit einer installierten (aktuellen) Version von R und RStudio (Link zum Download von R und RStudio).\nR Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher „Advanced R” und „R for Data Scientists” von Hadley Wickham."
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#test",
-    "href": "pages/chapters/stroop_experiment.html#test",
-    "title": "Stroop Paradigma",
-    "section": "5. Test",
-    "text": "5. Test\nFühren Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die untenstehenden Infos auf jeder Zeile vorhanden?\n\nVersuchspersonennummer\nRichtung des Stimulus\nCue / Vorwissen\nAntwort der Versuchsperson\nAntwortdauer der Versuchsperson"
+    "objectID": "pages/admin/wichtiges.html#anwesenheit",
+    "href": "pages/admin/wichtiges.html#anwesenheit",
+    "title": "Wichtiges zum Kurs",
+    "section": "Anwesenheit",
+    "text": "Anwesenheit\nDie Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir dies aber einführen.\nDas Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Eigenstudium, wir können jedoch nicht für die Vollständigkeit garantieren. Hilfestellung beim Programmieren und Verstehen der Inhalte bieten wir während der Kurszeiten an, aus zeitlichen Gründen können wir keine Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten. Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage."
   },
   {
-    "objectID": "pages/chapters/stroop_experiment.html#übungsexperiment",
-    "href": "pages/chapters/stroop_experiment.html#übungsexperiment",
-    "title": "Stroop Paradigma",
-    "section": "6. Übungsexperiment",
-    "text": "6. Übungsexperiment\n\nLaden Sie hier das Experiment für Übung 1 herunter.\nVergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf?"
+    "objectID": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
+    "href": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
+    "title": "Wichtiges zum Kurs",
+    "section": "Form der Leistungsnachweise",
+    "text": "Form der Leistungsnachweise\nLeistungsnachweise werden in Form von vier Übungen, zwei Quizzes und einem Glossareintrag erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag.\nAlle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie hier.\n\nÜbungen\nDie Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.\n\n\nQuizzes\nDas erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.\n\n\nGlossareintrag\nWir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden."
+  },
+  {
+    "objectID": "pages/chapters/computerlab.html",
+    "href": "pages/chapters/computerlab.html",
+    "title": "Computerlab",
+    "section": "",
+    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
+  },
+  {
+    "objectID": "pages/chapters/computerlab.html#neurocomp-lab",
+    "href": "pages/chapters/computerlab.html#neurocomp-lab",
+    "title": "Computerlab",
+    "section": "",
+    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html",
+    "href": "pages/chapters/datacamp.html",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html#datacamp",
+    "href": "pages/chapters/datacamp.html#datacamp",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaft.html",
+    "href": "pages/chapters/neurowissenschaft.html",
+    "title": "Neurowissenschaft",
+    "section": "",
+    "text": "In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht.\nLink Uni\n\n\n\n\n\n\n\n\n\nBereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaft.html#hauptbereiche-der-neurowissenschaften",
+    "href": "pages/chapters/neurowissenschaft.html#hauptbereiche-der-neurowissenschaften",
+    "title": "Neurowissenschaft",
+    "section": "",
+    "text": "Bereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "",
+    "text": "In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht. Neurowissenschaften sind ein sehr weites Forschungsbereich in dem unterschiedlichste und zahlreiche Themen bearbeitet werden. Zur Neurowissenschaft zählen u.a. folgende Bereiche:\n\n\n\n\n\n\n\nBereich\nBeschreibung\n\n\n\n\nAffective neuroscience\nZusammenhang Gehirn und emotionale Zustände\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nCognitive neuroscience\nNeuronale Grundlagen von kognitiven Prozessen\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nEvolutionary neuroscience\nEvolution des Nervensystems\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems sowie meuronale Prozesse auf Zellebene\n\n\nNeuroanatomy\nAnatomie des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeurochemistry\nChemische Prozesse im Nervensystem und Neurotransmitter sowie psychopharmakologische Anwendungen\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim Erwerben, Speichern, Verstehen und Ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\nNeuropsychology\nNeuropsychologische Prozesse und Krankheitsbilder\n\n\nSensory neuroscience\nSensorische Systeme und die Interpretation deren Informationen durch das Nervensystem\n\n\nSocial neuroscience\nNeuronale Grundlagen von sozialen Prozessen und Verhalten\n\n\nSystems neuroscience\nFunktion von neuronalen Verbindungen und Systemen\n\n\n\n\nDas Nebenfach Neurowissenschaften an der Universität Bern fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant sind, wie z. B. die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.\n\nQuelle: Wikipedia\nNeurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen), in diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.\nKognitive Neurowissenschaften sind eng verknüpft mit Forschungsbereichen, wie beispielsweise der Psychologie, der Linguistik, künstlicher Intelligenz, Philosophie und Anthropologie:\n\n\n\nGrafik von O. Guest (2024) modifiziert nach dem Paper van Rooji et al. 2023: Reclaiming AI as a theoretical tool for cognitive science\n\n\n\nWer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert, dem ist dieses Paper von Rooji et al. sehr zu empfehlen."
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "Wichtige Elemente von Experimenten",
+    "text": "Wichtige Elemente von Experimenten\n\n\n\n\n\n\nHands-on"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften",
+    "text": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften\n\nPräzision: Räumlich und zeitlich\nEine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat.\n\n\nKomplexität: Zu untersuchender Prozess und Störprozesse\nOft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?\nEin Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!\nSie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie nicht interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.\n\n\nDatenerhebung: Teuer und anspruchsvoll\nBildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_1.html",
+    "href": "pages/chapters/programmieren_1.html",
+    "title": "Sprachen & Umgebungen",
+    "section": "",
+    "text": "Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über häufig verwendete Programmiersprachen verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.\n\n\n\n\n\nMatlab ist ein Software für numerische Anwendung, welche in den Ingenieurwissenschaften, Naturwissenschaften und der Mathematik weit verbreitet ist.\n\n\n\nLeistungsstarke Matrix- und Vektoroperationen, gut geeignet für Matrix-basierte Operationen, die in der Neurowissenschaftlichen Forschung häufig vorkommen.\nUmfangreiche Bibliothek von integrierten Funktionen für wissenschaftliches Rechnen.\n\n\n\n\n\nTeuer\nWeniger flexibel als Python oder R in Bezug auf Datenarten und Strukturen.\nMatlab is kommerziell und proprietär. Dies bedeutet man muss teuere Lizenzen kaufen, und der Source Code der Software ist nicht offen.\n\n\n\n\n\nDatenverarbeitung und -analyse\nVisualisierung\nViele fMRI Forscher arbeiten mit Matlab, da es dafür eine spezielle Toolbox gibt: SPM\nExperimente programmieren, z.B. mit Psychtoolbox\n\n\n\n\nload('data.mat')\nfs = 1000;\nt = (0:numel(data)-1)/fs;\nplot(t, data)\n\n\n\n\n\nPython ist eine allgemeine (general purpose) Programmiersprache, die in vielen verschiedenen Bereichen wie wissenschaftlichem Rechnen, Datenanalyse und maschinellem Lernen weit verbreitet ist.\n\n\n\n\nEine Vielzahl von Bibliotheken und Modulen wie NumPy, SciPy und Pandas, die leistungsstarke Werkzeuge für wissenschaftliches Rechnen und Datenanalyse bieten.\nDatenanalysewerkzeuge wie Pandas-Dataframes, die Seaborn-Visualisierungsbibliothek, und Jupyter Notebooks.\nOpen-source und kostenlos\n\n\n\n\n\nKann in einigen numerischen Berechnungen langsamer sein als Matlab.\nDa Python eine allgemeine Sprache ist, muss man für numerische Anwendungen immer verschiedene Packages importieren (z.B.) numpy, wenn man damit rechnen will. Dies führt zu weniger gut lesbarem Code.\n\n\n\n\n\nDatenverarbeitung und -analyse,\nVisualisierung\nMachine learning und Künstliche Intelligenz\nExperimente programmieren, z.B. mit PsychoPy\n\n\n\n\nimport pandas as pd\nimport seaborn as sns\ndata = pd.read_csv('data.csv')\nsns.lineplot(data=data, x='time', y='voltage')\n\n\n\n\n\nR ist eine Programmiersprache für statistisches Rechnen und Grafiken.\n\n\n\n\nEntwickelt von Statistikern für statistisches Rechnen und Grafiken.\nEine große Bibliothek von statistischen Werkzeugen und Paketen, einschliesslich Visualisierungspackages (grammar of graphics).\nOpen-source und kostenlos\ntidyverse Packages für Data Wrangling (sehr elegante Syntax, um mit Daten zu arbeiten).\n\n\n\n\n\nSteilere Lernkurve als Python.\nKann in einigen numerischen Berechnungen langsamer sein als Matlab oder Python.\nEntwickelt von Statistiker (nicht von Software Designers). R gilt als sehr idiosynkratisch.\n\n\n\n\n\nStatistische Analyse\nDatenvisualisierung. R hat eine sehr gute Bibliothek für Grafiken, die ggplot2 Bibliothek. Diese Bibliothek verwendet die sogenannte grammar of graphics (GoG) - eine Methode, um Daten in Grafiken zu visualisieren. Die GoG ist eine sehr elegante und effiziente Methode, um Daten zu visualisieren.\n\n\n\n\nlibrary(tidyverse)\ndata &lt;- read.csv('data.csv')\nggplot(data, aes(x=time, y=voltage)) + geom_line()\n\n\n\n\n\nJulia ist eine allgemeine (general purpose) Programmierspache, die vor allem für numerisches und wissenschaftliches Rechnen entwickelt wurde.\n\n\n\n\nEntwickelt von Mathematikern für scientific computing\nLeistungsstark und schnell\nOpen-source und kostenlos\n\n\n\n\n\nwenig verbreitet\n\n\n\n\n\nDatenverarbeitung und -analyse,\nSignalverarbeitung\nVisualisierung\nMachine learning und Künstliche Intelligenz\n\n\n\n\nusing CSV, DataFrames, AlgebraOfGraphics, CairoMakie\ndat = CSV.read('data.csv', DataFrame)\ndata(dat) * visual(Lines) * mapping(:time, :voltage) |&gt; draw()\n\n\n\n\n\nBash ist eine Mensch-Maschine-Schnittstelle und dient als Grundlage unixbasierter Betriebssysteme (Linux, macOS). Mit Bash-Skripts können repetitive Aufgaben automatisiert werden, was Fehler vermeidet und komplexe Aufgaben vereinfacht.\n\n\n\n\nEinfaches Konzept und Verwendung\nBereits instaliert (nicht auf Windows)\n\n\n\n\n\nSteile Lernkurve\nUmstellung notwendig von GUI\n\n\n\n\n\nAutomatisierung\neinfache bis komplexe Applikationen\nInteraktion mit dem High Performance Computing Cluster der Universität Bern\n\n\n\n\n#!/bin/bash\necho \"Enter Your Name\"\nread name\nprintf \"\\n Welcome $name \\n\\n\"\n\n\n\nDiese Sprachen sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.\nUm mehr zu erfahren, erkunden Sie die umfangreichen Online-Ressourcen und Dokumentationen für jede Sprache."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_1.html#programmiersprachen",
+    "href": "pages/chapters/programmieren_1.html#programmiersprachen",
+    "title": "Sprachen & Umgebungen",
+    "section": "",
+    "text": "Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über häufig verwendete Programmiersprachen verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.\n\n\n\n\n\nMatlab ist ein Software für numerische Anwendung, welche in den Ingenieurwissenschaften, Naturwissenschaften und der Mathematik weit verbreitet ist.\n\n\n\nLeistungsstarke Matrix- und Vektoroperationen, gut geeignet für Matrix-basierte Operationen, die in der Neurowissenschaftlichen Forschung häufig vorkommen.\nUmfangreiche Bibliothek von integrierten Funktionen für wissenschaftliches Rechnen.\n\n\n\n\n\nTeuer\nWeniger flexibel als Python oder R in Bezug auf Datenarten und Strukturen.\nMatlab is kommerziell und proprietär. Dies bedeutet man muss teuere Lizenzen kaufen, und der Source Code der Software ist nicht offen.\n\n\n\n\n\nDatenverarbeitung und -analyse\nVisualisierung\nViele fMRI Forscher arbeiten mit Matlab, da es dafür eine spezielle Toolbox gibt: SPM\nExperimente programmieren, z.B. mit Psychtoolbox\n\n\n\n\nload('data.mat')\nfs = 1000;\nt = (0:numel(data)-1)/fs;\nplot(t, data)\n\n\n\n\n\nPython ist eine allgemeine (general purpose) Programmiersprache, die in vielen verschiedenen Bereichen wie wissenschaftlichem Rechnen, Datenanalyse und maschinellem Lernen weit verbreitet ist.\n\n\n\n\nEine Vielzahl von Bibliotheken und Modulen wie NumPy, SciPy und Pandas, die leistungsstarke Werkzeuge für wissenschaftliches Rechnen und Datenanalyse bieten.\nDatenanalysewerkzeuge wie Pandas-Dataframes, die Seaborn-Visualisierungsbibliothek, und Jupyter Notebooks.\nOpen-source und kostenlos\n\n\n\n\n\nKann in einigen numerischen Berechnungen langsamer sein als Matlab.\nDa Python eine allgemeine Sprache ist, muss man für numerische Anwendungen immer verschiedene Packages importieren (z.B.) numpy, wenn man damit rechnen will. Dies führt zu weniger gut lesbarem Code.\n\n\n\n\n\nDatenverarbeitung und -analyse,\nVisualisierung\nMachine learning und Künstliche Intelligenz\nExperimente programmieren, z.B. mit PsychoPy\n\n\n\n\nimport pandas as pd\nimport seaborn as sns\ndata = pd.read_csv('data.csv')\nsns.lineplot(data=data, x='time', y='voltage')\n\n\n\n\n\nR ist eine Programmiersprache für statistisches Rechnen und Grafiken.\n\n\n\n\nEntwickelt von Statistikern für statistisches Rechnen und Grafiken.\nEine große Bibliothek von statistischen Werkzeugen und Paketen, einschliesslich Visualisierungspackages (grammar of graphics).\nOpen-source und kostenlos\ntidyverse Packages für Data Wrangling (sehr elegante Syntax, um mit Daten zu arbeiten).\n\n\n\n\n\nSteilere Lernkurve als Python.\nKann in einigen numerischen Berechnungen langsamer sein als Matlab oder Python.\nEntwickelt von Statistiker (nicht von Software Designers). R gilt als sehr idiosynkratisch.\n\n\n\n\n\nStatistische Analyse\nDatenvisualisierung. R hat eine sehr gute Bibliothek für Grafiken, die ggplot2 Bibliothek. Diese Bibliothek verwendet die sogenannte grammar of graphics (GoG) - eine Methode, um Daten in Grafiken zu visualisieren. Die GoG ist eine sehr elegante und effiziente Methode, um Daten zu visualisieren.\n\n\n\n\nlibrary(tidyverse)\ndata &lt;- read.csv('data.csv')\nggplot(data, aes(x=time, y=voltage)) + geom_line()\n\n\n\n\n\nJulia ist eine allgemeine (general purpose) Programmierspache, die vor allem für numerisches und wissenschaftliches Rechnen entwickelt wurde.\n\n\n\n\nEntwickelt von Mathematikern für scientific computing\nLeistungsstark und schnell\nOpen-source und kostenlos\n\n\n\n\n\nwenig verbreitet\n\n\n\n\n\nDatenverarbeitung und -analyse,\nSignalverarbeitung\nVisualisierung\nMachine learning und Künstliche Intelligenz\n\n\n\n\nusing CSV, DataFrames, AlgebraOfGraphics, CairoMakie\ndat = CSV.read('data.csv', DataFrame)\ndata(dat) * visual(Lines) * mapping(:time, :voltage) |&gt; draw()\n\n\n\n\n\nBash ist eine Mensch-Maschine-Schnittstelle und dient als Grundlage unixbasierter Betriebssysteme (Linux, macOS). Mit Bash-Skripts können repetitive Aufgaben automatisiert werden, was Fehler vermeidet und komplexe Aufgaben vereinfacht.\n\n\n\n\nEinfaches Konzept und Verwendung\nBereits instaliert (nicht auf Windows)\n\n\n\n\n\nSteile Lernkurve\nUmstellung notwendig von GUI\n\n\n\n\n\nAutomatisierung\neinfache bis komplexe Applikationen\nInteraktion mit dem High Performance Computing Cluster der Universität Bern\n\n\n\n\n#!/bin/bash\necho \"Enter Your Name\"\nread name\nprintf \"\\n Welcome $name \\n\\n\"\n\n\n\nDiese Sprachen sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.\nUm mehr zu erfahren, erkunden Sie die umfangreichen Online-Ressourcen und Dokumentationen für jede Sprache."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_1.html#programmierumgebungen",
+    "href": "pages/chapters/programmieren_1.html#programmierumgebungen",
+    "title": "Sprachen & Umgebungen",
+    "section": "Programmierumgebungen",
+    "text": "Programmierumgebungen\nEine IDE kombiniert häufig verwendete Entwicklertools in einer grafischen Benutzeroberfläche. Typischerweise handelt es sich dabei um Funktionen wie Softwarebearbeitung, Erstellung und Testen von Code.\nIn diesem Kurs werden wir RStudio verwenden."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html",
+    "href": "pages/chapters/programmieren_2.html",
+    "title": "Automatisieren",
+    "section": "",
+    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden\n\nFühren Sie die folgenden Code Beispiele auf Ihrem Computer aus. Wenn Sie R und RStudio noch nicht installiert haben, verwenden Sie diese online R Konsole.\nWir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "title": "Automatisieren",
+    "section": "Alternativen zu for-Loops",
+    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply versucht den output zu vereinfachen (Vektor, Matrix).\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
+  },
+  {
+    "objectID": "pages/chapters/psychopy_experiments.html",
+    "href": "pages/chapters/psychopy_experiments.html",
+    "title": "Verhaltensexperimente mit PsychoPy",
+    "section": "",
+    "text": "In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Hierbei schauen wir uns konkret Experimente aus der Wahrnehmungs- und Entscheidungsforschung (LINK RANDOM DOT) sowie der Neuropsychologie (STROOP) an und programmieren diese selber mithilfe von PsychoPy.\nPsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. (Peirce et al. 2019)\nHier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy.\nHier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:"
+  },
+  {
+    "objectID": "pages/chapters/psychopy_experiments.html#builder-gui-und-code",
+    "href": "pages/chapters/psychopy_experiments.html#builder-gui-und-code",
+    "title": "Verhaltensexperimente mit PsychoPy",
+    "section": "Builder (GUI) und Code",
+    "text": "Builder (GUI) und Code\nExperimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Buildermodus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können."
+  },
+  {
+    "objectID": "pages/chapters/psychopy_experiments.html#vorprogrammierte-stimulus-elemente",
+    "href": "pages/chapters/psychopy_experiments.html#vorprogrammierte-stimulus-elemente",
+    "title": "Verhaltensexperimente mit PsychoPy",
+    "section": "Vorprogrammierte Stimulus Elemente",
+    "text": "Vorprogrammierte Stimulus Elemente\nIn PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen."
+  },
+  {
+    "objectID": "pages/chapters/psychopy_experiments.html#datenspeicherung",
+    "href": "pages/chapters/psychopy_experiments.html#datenspeicherung",
+    "title": "Verhaltensexperimente mit PsychoPy",
+    "section": "Datenspeicherung",
+    "text": "Datenspeicherung\nWenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der Versuchspersonen-ID, dem Namen des Experiments, und dem aktuellen Datum inkl. Uhrzeit zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name data abgelegt.\n\nBei der Wahl vom Datenfile-Namen empfiehlt es sich immer Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird."
+  },
+  {
+    "objectID": "pages/chapters/psychopy_experiments.html#online-experimente",
+    "href": "pages/chapters/psychopy_experiments.html#online-experimente",
+    "title": "Verhaltensexperimente mit PsychoPy",
+    "section": "Online Experimente",
+    "text": "Online Experimente\nMit Pavlovia können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf gitlab ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes."
+  },
+  {
+    "objectID": "pages/chapters/quiz_one.html",
+    "href": "pages/chapters/quiz_one.html",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
+  },
+  {
+    "objectID": "pages/chapters/quiz_one.html#quiz-1",
+    "href": "pages/chapters/quiz_one.html#quiz-1",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
   },
   {
     "objectID": "pages/chapters/random_dot_experiment.html",
@@ -98,202 +245,6 @@
     "text": "6. Übungsexperiment\n\nLaden Sie hier das Experiment für Übung 1 herunter.\nVergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf?"
   },
   {
-    "objectID": "pages/chapters/psychopy_experiments.html",
-    "href": "pages/chapters/psychopy_experiments.html",
-    "title": "Verhaltensexperimente mit PsychoPy",
-    "section": "",
-    "text": "In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Hierbei schauen wir uns konkret Experimente aus der Wahrnehmungs- und Entscheidungsforschung (LINK RANDOM DOT) sowie der Neuropsychologie (STROOP) an und programmieren diese selber mithilfe von PsychoPy.\nPsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. (Peirce et al. 2019)\nHier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy.\nHier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:"
-  },
-  {
-    "objectID": "pages/chapters/psychopy_experiments.html#builder-gui-und-code",
-    "href": "pages/chapters/psychopy_experiments.html#builder-gui-und-code",
-    "title": "Verhaltensexperimente mit PsychoPy",
-    "section": "Builder (GUI) und Code",
-    "text": "Builder (GUI) und Code\nExperimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Buildermodus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können."
-  },
-  {
-    "objectID": "pages/chapters/psychopy_experiments.html#vorprogrammierte-stimulus-elemente",
-    "href": "pages/chapters/psychopy_experiments.html#vorprogrammierte-stimulus-elemente",
-    "title": "Verhaltensexperimente mit PsychoPy",
-    "section": "Vorprogrammierte Stimulus Elemente",
-    "text": "Vorprogrammierte Stimulus Elemente\nIn PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen."
-  },
-  {
-    "objectID": "pages/chapters/psychopy_experiments.html#datenspeicherung",
-    "href": "pages/chapters/psychopy_experiments.html#datenspeicherung",
-    "title": "Verhaltensexperimente mit PsychoPy",
-    "section": "Datenspeicherung",
-    "text": "Datenspeicherung\nWenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der Versuchspersonen-ID, dem Namen des Experiments, und dem aktuellen Datum inkl. Uhrzeit zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name data abgelegt.\n\nBei der Wahl vom Datenfile-Namen empfiehlt es sich immer Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird."
-  },
-  {
-    "objectID": "pages/chapters/psychopy_experiments.html#online-experimente",
-    "href": "pages/chapters/psychopy_experiments.html#online-experimente",
-    "title": "Verhaltensexperimente mit PsychoPy",
-    "section": "Online Experimente",
-    "text": "Online Experimente\nMit Pavlovia können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf gitlab ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_1.html",
-    "href": "pages/chapters/programmieren_1.html",
-    "title": "Sprachen & Umgebungen",
-    "section": "",
-    "text": "Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über häufig verwendete Programmiersprachen verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.\n\n\n\n\n\nMatlab ist ein Software für numerische Anwendung, welche in den Ingenieurwissenschaften, Naturwissenschaften und der Mathematik weit verbreitet ist.\n\n\n\nLeistungsstarke Matrix- und Vektoroperationen, gut geeignet für Matrix-basierte Operationen, die in der Neurowissenschaftlichen Forschung häufig vorkommen.\nUmfangreiche Bibliothek von integrierten Funktionen für wissenschaftliches Rechnen.\n\n\n\n\n\nTeuer\nWeniger flexibel als Python oder R in Bezug auf Datenarten und Strukturen.\nMatlab is kommerziell und proprietär. Dies bedeutet man muss teuere Lizenzen kaufen, und der Source Code der Software ist nicht offen.\n\n\n\n\n\nDatenverarbeitung und -analyse\nVisualisierung\nViele fMRI Forscher arbeiten mit Matlab, da es dafür eine spezielle Toolbox gibt: SPM\nExperimente programmieren, z.B. mit Psychtoolbox\n\n\n\n\nload('data.mat')\nfs = 1000;\nt = (0:numel(data)-1)/fs;\nplot(t, data)\n\n\n\n\n\nPython ist eine allgemeine (general purpose) Programmiersprache, die in vielen verschiedenen Bereichen wie wissenschaftlichem Rechnen, Datenanalyse und maschinellem Lernen weit verbreitet ist.\n\n\n\n\nEine Vielzahl von Bibliotheken und Modulen wie NumPy, SciPy und Pandas, die leistungsstarke Werkzeuge für wissenschaftliches Rechnen und Datenanalyse bieten.\nDatenanalysewerkzeuge wie Pandas-Dataframes, die Seaborn-Visualisierungsbibliothek, und Jupyter Notebooks.\nOpen-source und kostenlos\n\n\n\n\n\nKann in einigen numerischen Berechnungen langsamer sein als Matlab.\nDa Python eine allgemeine Sprache ist, muss man für numerische Anwendungen immer verschiedene Packages importieren (z.B.) numpy, wenn man damit rechnen will. Dies führt zu weniger gut lesbarem Code.\n\n\n\n\n\nDatenverarbeitung und -analyse,\nVisualisierung\nMachine learning und Künstliche Intelligenz\nExperimente programmieren, z.B. mit PsychoPy\n\n\n\n\nimport pandas as pd\nimport seaborn as sns\ndata = pd.read_csv('data.csv')\nsns.lineplot(data=data, x='time', y='voltage')\n\n\n\n\n\nR ist eine Programmiersprache für statistisches Rechnen und Grafiken.\n\n\n\n\nEntwickelt von Statistikern für statistisches Rechnen und Grafiken.\nEine große Bibliothek von statistischen Werkzeugen und Paketen, einschliesslich Visualisierungspackages (grammar of graphics).\nOpen-source und kostenlos\ntidyverse Packages für Data Wrangling (sehr elegante Syntax, um mit Daten zu arbeiten).\n\n\n\n\n\nSteilere Lernkurve als Python.\nKann in einigen numerischen Berechnungen langsamer sein als Matlab oder Python.\nEntwickelt von Statistiker (nicht von Software Designers). R gilt als sehr idiosynkratisch.\n\n\n\n\n\nStatistische Analyse\nDatenvisualisierung. R hat eine sehr gute Bibliothek für Grafiken, die ggplot2 Bibliothek. Diese Bibliothek verwendet die sogenannte grammar of graphics (GoG) - eine Methode, um Daten in Grafiken zu visualisieren. Die GoG ist eine sehr elegante und effiziente Methode, um Daten zu visualisieren.\n\n\n\n\nlibrary(tidyverse)\ndata &lt;- read.csv('data.csv')\nggplot(data, aes(x=time, y=voltage)) + geom_line()\n\n\n\n\n\nJulia ist eine allgemeine (general purpose) Programmierspache, die vor allem für numerisches und wissenschaftliches Rechnen entwickelt wurde.\n\n\n\n\nEntwickelt von Mathematikern für scientific computing\nLeistungsstark und schnell\nOpen-source und kostenlos\n\n\n\n\n\nwenig verbreitet\n\n\n\n\n\nDatenverarbeitung und -analyse,\nSignalverarbeitung\nVisualisierung\nMachine learning und Künstliche Intelligenz\n\n\n\n\nusing CSV, DataFrames, AlgebraOfGraphics, CairoMakie\ndat = CSV.read('data.csv', DataFrame)\ndata(dat) * visual(Lines) * mapping(:time, :voltage) |&gt; draw()\n\n\n\n\n\nBash ist eine Mensch-Maschine-Schnittstelle und dient als Grundlage unixbasierter Betriebssysteme (Linux, macOS). Mit Bash-Skripts können repetitive Aufgaben automatisiert werden, was Fehler vermeidet und komplexe Aufgaben vereinfacht.\n\n\n\n\nEinfaches Konzept und Verwendung\nBereits instaliert (nicht auf Windows)\n\n\n\n\n\nSteile Lernkurve\nUmstellung notwendig von GUI\n\n\n\n\n\nAutomatisierung\neinfache bis komplexe Applikationen\nInteraktion mit dem High Performance Computing Cluster der Universität Bern\n\n\n\n\n#!/bin/bash\necho \"Enter Your Name\"\nread name\nprintf \"\\n Welcome $name \\n\\n\"\n\n\n\nDiese Sprachen sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.\nUm mehr zu erfahren, erkunden Sie die umfangreichen Online-Ressourcen und Dokumentationen für jede Sprache."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_1.html#programmiersprachen",
-    "href": "pages/chapters/programmieren_1.html#programmiersprachen",
-    "title": "Sprachen & Umgebungen",
-    "section": "",
-    "text": "Programmiersprachen sind essentielle Werkzeuge für die Neurowissenschaftliche Forschung. Wir werden uns zuerst einen kurzen Überblick über häufig verwendete Programmiersprachen verschaffen und kurz deren Verwendungszwecke und Vor- und Nachteile diskutieren.\n\n\n\n\n\nMatlab ist ein Software für numerische Anwendung, welche in den Ingenieurwissenschaften, Naturwissenschaften und der Mathematik weit verbreitet ist.\n\n\n\nLeistungsstarke Matrix- und Vektoroperationen, gut geeignet für Matrix-basierte Operationen, die in der Neurowissenschaftlichen Forschung häufig vorkommen.\nUmfangreiche Bibliothek von integrierten Funktionen für wissenschaftliches Rechnen.\n\n\n\n\n\nTeuer\nWeniger flexibel als Python oder R in Bezug auf Datenarten und Strukturen.\nMatlab is kommerziell und proprietär. Dies bedeutet man muss teuere Lizenzen kaufen, und der Source Code der Software ist nicht offen.\n\n\n\n\n\nDatenverarbeitung und -analyse\nVisualisierung\nViele fMRI Forscher arbeiten mit Matlab, da es dafür eine spezielle Toolbox gibt: SPM\nExperimente programmieren, z.B. mit Psychtoolbox\n\n\n\n\nload('data.mat')\nfs = 1000;\nt = (0:numel(data)-1)/fs;\nplot(t, data)\n\n\n\n\n\nPython ist eine allgemeine (general purpose) Programmiersprache, die in vielen verschiedenen Bereichen wie wissenschaftlichem Rechnen, Datenanalyse und maschinellem Lernen weit verbreitet ist.\n\n\n\n\nEine Vielzahl von Bibliotheken und Modulen wie NumPy, SciPy und Pandas, die leistungsstarke Werkzeuge für wissenschaftliches Rechnen und Datenanalyse bieten.\nDatenanalysewerkzeuge wie Pandas-Dataframes, die Seaborn-Visualisierungsbibliothek, und Jupyter Notebooks.\nOpen-source und kostenlos\n\n\n\n\n\nKann in einigen numerischen Berechnungen langsamer sein als Matlab.\nDa Python eine allgemeine Sprache ist, muss man für numerische Anwendungen immer verschiedene Packages importieren (z.B.) numpy, wenn man damit rechnen will. Dies führt zu weniger gut lesbarem Code.\n\n\n\n\n\nDatenverarbeitung und -analyse,\nVisualisierung\nMachine learning und Künstliche Intelligenz\nExperimente programmieren, z.B. mit PsychoPy\n\n\n\n\nimport pandas as pd\nimport seaborn as sns\ndata = pd.read_csv('data.csv')\nsns.lineplot(data=data, x='time', y='voltage')\n\n\n\n\n\nR ist eine Programmiersprache für statistisches Rechnen und Grafiken.\n\n\n\n\nEntwickelt von Statistikern für statistisches Rechnen und Grafiken.\nEine große Bibliothek von statistischen Werkzeugen und Paketen, einschliesslich Visualisierungspackages (grammar of graphics).\nOpen-source und kostenlos\ntidyverse Packages für Data Wrangling (sehr elegante Syntax, um mit Daten zu arbeiten).\n\n\n\n\n\nSteilere Lernkurve als Python.\nKann in einigen numerischen Berechnungen langsamer sein als Matlab oder Python.\nEntwickelt von Statistiker (nicht von Software Designers). R gilt als sehr idiosynkratisch.\n\n\n\n\n\nStatistische Analyse\nDatenvisualisierung. R hat eine sehr gute Bibliothek für Grafiken, die ggplot2 Bibliothek. Diese Bibliothek verwendet die sogenannte grammar of graphics (GoG) - eine Methode, um Daten in Grafiken zu visualisieren. Die GoG ist eine sehr elegante und effiziente Methode, um Daten zu visualisieren.\n\n\n\n\nlibrary(tidyverse)\ndata &lt;- read.csv('data.csv')\nggplot(data, aes(x=time, y=voltage)) + geom_line()\n\n\n\n\n\nJulia ist eine allgemeine (general purpose) Programmierspache, die vor allem für numerisches und wissenschaftliches Rechnen entwickelt wurde.\n\n\n\n\nEntwickelt von Mathematikern für scientific computing\nLeistungsstark und schnell\nOpen-source und kostenlos\n\n\n\n\n\nwenig verbreitet\n\n\n\n\n\nDatenverarbeitung und -analyse,\nSignalverarbeitung\nVisualisierung\nMachine learning und Künstliche Intelligenz\n\n\n\n\nusing CSV, DataFrames, AlgebraOfGraphics, CairoMakie\ndat = CSV.read('data.csv', DataFrame)\ndata(dat) * visual(Lines) * mapping(:time, :voltage) |&gt; draw()\n\n\n\n\n\nBash ist eine Mensch-Maschine-Schnittstelle und dient als Grundlage unixbasierter Betriebssysteme (Linux, macOS). Mit Bash-Skripts können repetitive Aufgaben automatisiert werden, was Fehler vermeidet und komplexe Aufgaben vereinfacht.\n\n\n\n\nEinfaches Konzept und Verwendung\nBereits instaliert (nicht auf Windows)\n\n\n\n\n\nSteile Lernkurve\nUmstellung notwendig von GUI\n\n\n\n\n\nAutomatisierung\neinfache bis komplexe Applikationen\nInteraktion mit dem High Performance Computing Cluster der Universität Bern\n\n\n\n\n#!/bin/bash\necho \"Enter Your Name\"\nread name\nprintf \"\\n Welcome $name \\n\\n\"\n\n\n\nDiese Sprachen sind leistungsstarke Werkzeuge für die neurowissenschaftliche Forschung. Die Wahl der Sprache hängt unter anderem von der spezifischen Aufgabe ab. Weitere Faktoren ist Tradition: bestimmte Gruppen bevorzugen eher eine Sprache als andere. So ist Matlab unter Ingenieuren weit verbreiten und R unter Statistikern. Python ist im Bereich Künstliche Intelligenz und Machine Learning die beliebteste Sprache. Eine neuere Sprache ist Julia - diese vereint die Vorteile aller oben genannten Sprachen (ohne viele deren Nachteile), ist aber weniger weit verbreitet.\nUm mehr zu erfahren, erkunden Sie die umfangreichen Online-Ressourcen und Dokumentationen für jede Sprache."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_1.html#programmierumgebungen",
-    "href": "pages/chapters/programmieren_1.html#programmierumgebungen",
-    "title": "Sprachen & Umgebungen",
-    "section": "Programmierumgebungen",
-    "text": "Programmierumgebungen\nEine IDE kombiniert häufig verwendete Entwicklertools in einer grafischen Benutzeroberfläche. Typischerweise handelt es sich dabei um Funktionen wie Softwarebearbeitung, Erstellung und Testen von Code.\nIn diesem Kurs werden wir RStudio verwenden."
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaft.html",
-    "href": "pages/chapters/neurowissenschaft.html",
-    "title": "Neurowissenschaft",
-    "section": "",
-    "text": "In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht.\nLink Uni\n\n\n\n\n\n\n\n\n\nBereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaft.html#hauptbereiche-der-neurowissenschaften",
-    "href": "pages/chapters/neurowissenschaft.html#hauptbereiche-der-neurowissenschaften",
-    "title": "Neurowissenschaft",
-    "section": "",
-    "text": "Bereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
-  },
-  {
-    "objectID": "pages/chapters/computerlab.html",
-    "href": "pages/chapters/computerlab.html",
-    "title": "Computerlab",
-    "section": "",
-    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
-  },
-  {
-    "objectID": "pages/chapters/computerlab.html#neurocomp-lab",
-    "href": "pages/chapters/computerlab.html#neurocomp-lab",
-    "title": "Computerlab",
-    "section": "",
-    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
-  },
-  {
-    "objectID": "pages/admin/termine.html",
-    "href": "pages/admin/termine.html",
-    "title": "Terminübersicht",
-    "section": "",
-    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Neurowissenschaft Computerlab",
-    "section": "",
-    "text": "Frühjahrssemester 2024"
-  },
-  {
-    "objectID": "pages/admin/wichtiges.html",
-    "href": "pages/admin/wichtiges.html",
-    "title": "Wichtiges zum Kurs",
-    "section": "",
-    "text": "In diesem anwendungsorientierten Kurs erwerben Sie Wissen über Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften. Wir behandeln im Rahmen der Veranstaltung folgende Inhalte:\n\nWichtige Programmiersprachen und - umgebungen in den Neurowissenschaften\nProgrammieren von computerbasierten Experimenten (mit PsychoPy)\nProgrammieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices”, Data Cleaning, Reproduzierbarkeit)\nAnalysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)\nInterpretation und kritische Einordnung von Analyseergebnissen"
-  },
-  {
-    "objectID": "pages/admin/wichtiges.html#ilias",
-    "href": "pages/admin/wichtiges.html#ilias",
-    "title": "Wichtiges zum Kurs",
-    "section": "Ilias",
-    "text": "Ilias\nUnter diesen Links finden Sie die Iliasgruppen:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1"
-  },
-  {
-    "objectID": "pages/admin/wichtiges.html#kursvoraussetzungen",
-    "href": "pages/admin/wichtiges.html#kursvoraussetzungen",
-    "title": "Wichtiges zum Kurs",
-    "section": "Kursvoraussetzungen",
-    "text": "Kursvoraussetzungen\nWir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. Sie benötigen in der Veranstaltung deshalb einen eigenen Laptop (Tablets sind nicht geeignet!) mit ca. 20 GB freiem Speicherplatz und mit einer installierten (aktuellen) Version von R und RStudio (Link zum Download von R und RStudio).\nR Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher „Advanced R” und „R for Data Scientists” von Hadley Wickham."
-  },
-  {
-    "objectID": "pages/admin/wichtiges.html#anwesenheit",
-    "href": "pages/admin/wichtiges.html#anwesenheit",
-    "title": "Wichtiges zum Kurs",
-    "section": "Anwesenheit",
-    "text": "Anwesenheit\nDie Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir dies aber einführen.\nDas Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Eigenstudium, wir können jedoch nicht für die Vollständigkeit garantieren. Hilfestellung beim Programmieren und Verstehen der Inhalte bieten wir während der Kurszeiten an, aus zeitlichen Gründen können wir keine Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten. Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage."
-  },
-  {
-    "objectID": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
-    "href": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
-    "title": "Wichtiges zum Kurs",
-    "section": "Form der Leistungsnachweise",
-    "text": "Form der Leistungsnachweise\nLeistungsnachweise werden in Form von vier Übungen, zwei Quizzes und einem Glossareintrag erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag.\nAlle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie hier.\n\nÜbungen\nDie Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.\n\n\nQuizzes\nDas erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.\n\n\nGlossareintrag\nWir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden."
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html",
-    "href": "pages/chapters/datacamp.html",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html#datacamp",
-    "href": "pages/chapters/datacamp.html#datacamp",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "",
-    "text": "In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht. Neurowissenschaften sind ein sehr weites Forschungsbereich in dem unterschiedlichste und zahlreiche Themen bearbeitet werden. Zur Neurowissenschaft zählen u.a. folgende Bereiche:\n\n\n\n\n\n\n\nBereich\nBeschreibung\n\n\n\n\nAffective neuroscience\nZusammenhang Gehirn und emotionale Zustände\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nCognitive neuroscience\nNeuronale Grundlagen von kognitiven Prozessen\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nEvolutionary neuroscience\nEvolution des Nervensystems\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems sowie meuronale Prozesse auf Zellebene\n\n\nNeuroanatomy\nAnatomie des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeurochemistry\nChemische Prozesse im Nervensystem und Neurotransmitter sowie psychopharmakologische Anwendungen\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim Erwerben, Speichern, Verstehen und Ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\nNeuropsychology\nNeuropsychologische Prozesse und Krankheitsbilder\n\n\nSensory neuroscience\nSensorische Systeme und die Interpretation deren Informationen durch das Nervensystem\n\n\nSocial neuroscience\nNeuronale Grundlagen von sozialen Prozessen und Verhalten\n\n\nSystems neuroscience\nFunktion von neuronalen Verbindungen und Systemen\n\n\n\n\nDas Nebenfach Neurowissenschaften an der Universität Bern fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant sind, wie z. B. die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.\n\nQuelle: Wikipedia\nNeurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen), in diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.\nKognitive Neurowissenschaften sind eng verknüpft mit Forschungsbereichen, wie beispielsweise der Psychologie, der Linguistik, künstlicher Intelligenz, Philosophie und Anthropologie:\n\n\n\nGrafik von O. Guest (2024) modifiziert nach dem Paper van Rooji et al. 2023: Reclaiming AI as a theoretical tool for cognitive science\n\n\n\nWer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert, dem ist dieses Paper von Rooji et al. sehr zu empfehlen."
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "Wichtige Elemente von Experimenten",
-    "text": "Wichtige Elemente von Experimenten\n\n\n\n\n\n\nHands-on"
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften",
-    "text": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften\n\nPräzision: Räumlich und zeitlich\nEine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat.\n\n\nKomplexität: Zu untersuchender Prozess und Störprozesse\nOft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?\nEin Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!\nSie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie nicht interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.\n\n\nDatenerhebung: Teuer und anspruchsvoll\nBildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html",
-    "href": "pages/chapters/programmieren_2.html",
-    "title": "Automatisieren",
-    "section": "",
-    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden\n\nFühren Sie die folgenden Code Beispiele auf Ihrem Computer aus. Wenn Sie R und RStudio noch nicht installiert haben, verwenden Sie diese online R Konsole.\nWir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "title": "Automatisieren",
-    "section": "Alternativen zu for-Loops",
-    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply versucht den output zu vereinfachen (Vektor, Matrix).\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
-  },
-  {
-    "objectID": "pages/chapters/quiz_one.html",
-    "href": "pages/chapters/quiz_one.html",
-    "title": "Quiz 1",
-    "section": "",
-    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
-  },
-  {
-    "objectID": "pages/chapters/quiz_one.html#quiz-1",
-    "href": "pages/chapters/quiz_one.html#quiz-1",
-    "title": "Quiz 1",
-    "section": "",
-    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
-  },
-  {
     "objectID": "pages/chapters/setup.html",
     "href": "pages/chapters/setup.html",
     "title": "Setup",
@@ -327,5 +278,61 @@
     "title": "Setup",
     "section": "JASP",
     "text": "JASP\nEinen Teil der Bayesianischen Analysen werden wir mit JASP durchführen. Die aktuelle Version von JASP ist 0.18.3 und kann unter folgender URL heruntergeladen werden:\nJASP 👉 https://jasp-stats.org/download/"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html",
+    "href": "pages/chapters/stroop_experiment.html",
+    "title": "Stroop Paradigma",
+    "section": "",
+    "text": "Erstellen Sie einen Stroop Stimulus. Beachten Sie folgende Aspekte:\n\nTiming (Stimulusdauer): 1500 ms\nFarbe\nGrösse: gut sichtbar\nKohärenz: 0.08\nField size: 75% des Displays\n\n(Die Bewegungsrichtung können Sie noch vernachlässigen.)"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#stimuli",
+    "href": "pages/chapters/stroop_experiment.html#stimuli",
+    "title": "Stroop Paradigma",
+    "section": "",
+    "text": "Erstellen Sie einen Stroop Stimulus. Beachten Sie folgende Aspekte:\n\nTiming (Stimulusdauer): 1500 ms\nFarbe\nGrösse: gut sichtbar\nKohärenz: 0.08\nField size: 75% des Displays\n\n(Die Bewegungsrichtung können Sie noch vernachlässigen.)"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#trialschleife",
+    "href": "pages/chapters/stroop_experiment.html#trialschleife",
+    "title": "Stroop Paradigma",
+    "section": "2. Trialschleife",
+    "text": "2. Trialschleife\nErstellen Sie eine Trial-Schleife.\n\nFixation 1 (100/350/800/1200 ms) (Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)\nCue (1000 ms)\nFixation 2 (3400/4000/4500/5000 ms) (Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)\nDots (1500 ms)\nFeedback\nTiming (ITI: Inter-Trial-Intervall)\nAntwort der Versuchsperson aufnehmen\n\n(Die Variation der Bewegungsrichtung und des Vorwissens können Sie noch vernachlässigen.)"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#bedingungen",
+    "href": "pages/chapters/stroop_experiment.html#bedingungen",
+    "title": "Stroop Paradigma",
+    "section": "3. Bedingungen",
+    "text": "3. Bedingungen\n\nVariieren Sie die Bewegungsrichtung der Random Dots mit dem conditions.csv file: Bewegungsrichtung ist zu 50% rechts, zu 50% links.\nVariieren Sie den Cue fürs Vorwissen in jedem Trial mit dem conditions.csv file: Der Cue kann valide (4x), invalide (2x) oder neutral (4x) sein. Die Bewegungsrichtungen müssen auf alle Bedingungen gleich verteilt sein."
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#instruktion-und-debriefing",
+    "href": "pages/chapters/stroop_experiment.html#instruktion-und-debriefing",
+    "title": "Stroop Paradigma",
+    "section": "4. Instruktion und Debriefing",
+    "text": "4. Instruktion und Debriefing\n\nFügen Sie zu Beginn des Experiments eine Instruktion hinzu.\nFügen Sie am Ende des Experiments ein Debriefing hinzu."
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#test",
+    "href": "pages/chapters/stroop_experiment.html#test",
+    "title": "Stroop Paradigma",
+    "section": "5. Test",
+    "text": "5. Test\nFühren Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die untenstehenden Infos auf jeder Zeile vorhanden?\n\nVersuchspersonennummer\nRichtung des Stimulus\nCue / Vorwissen\nAntwort der Versuchsperson\nAntwortdauer der Versuchsperson"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#übungsexperiment",
+    "href": "pages/chapters/stroop_experiment.html#übungsexperiment",
+    "title": "Stroop Paradigma",
+    "section": "6. Übungsexperiment",
+    "text": "6. Übungsexperiment\n\nLaden Sie hier das Experiment für Übung 1 herunter.\nVergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf?"
+  },
+  {
+    "objectID": "pages/chapters/flowcharts.html",
+    "href": "pages/chapters/flowcharts.html",
+    "title": "flowcharts",
+    "section": "",
+    "text": "flowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{borer,\n  author = {Borer, Rebekka and Fitze, Daniel},\n  title = {Flowcharts},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBorer, Rebekka, and Daniel Fitze. n.d. “Flowcharts.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html."
   }
 ]
