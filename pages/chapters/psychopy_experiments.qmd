@@ -1,0 +1,67 @@
+---
+title: "Verhaltensexperimente mit PsychoPy"
+description: Kurze Einführung in das Erstellen von Experimenten mit PsychoPy.
+author:
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+license: CC BY
+citation: true
+bibliography: ../../bibliography_gw.bib
+format:
+    html:
+        toc: true
+---
+
+In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Hierbei schauen wir uns konkret Experimente aus der Wahrnehmungs- und Entscheidungsforschung (Random Dot Experiment) sowie der Neuropsychologie (Stroop Experiment) an und programmieren diese selber mit PsychoPy.
+
+PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf der Programmiersprache Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so (fast) keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. [(Peirce et al. 2019)](https://link.springer.com/article/10.3758/s13428-018-01193-y)
+
+<aside>Zu Beginn des Papers von [Peirce et al. 2019](https://link.springer.com/article/10.3758/s13428-018-01193-y) finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.</aside>
+
+
+Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:
+
+## Builder (GUI) und Code
+
+Experimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können.
+
+
+## Vorprogrammierte Stimulus Elemente
+
+In PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.
+
+## Datenspeicherung
+
+Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der *Versuchspersonen-ID*, dem *Namen des Experiments*, und dem aktuellen *Datum inkl. Uhrzeit* zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name **data** abgelegt.
+
+<aside>Bei der Wahl vom Datenfile-Namen empfiehlt es sich **immer** Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</aside>
+
+## Online Experimente
+
+Mit [Pavlovia](https://pavlovia.org/) können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf *gitlab* ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.
+
+::: callout-tip
+## Tipp
+
+Schauen Sie sich in PsychoPy die verschiedenen möglichen Bausteine für Experimente an. Versuchen Sie Stück für Stück die Experimente zu erstellen.
+
+Hilfreiche Informationen zum Erstellen von Experimenten in PsychoPy finden Sie hier:
+
+-   [PsychoPy Website](https://www.psychopy.org/)
+
+-   [Walk-through: Builder](https://tu-coding-outreach-group.github.io/cog_summer_workshops_2021/psychopy/index.html)
+
+-   [Diskussionsforum](https://discourse.psychopy.org/)
+:::
+
+<aside>
+[OpenSesame](https://osdoc.cogsci.nl/) ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
+</aside>
