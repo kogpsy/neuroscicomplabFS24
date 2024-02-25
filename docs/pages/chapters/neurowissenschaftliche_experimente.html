@@ -217,12 +217,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/random_dot_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random Dot Paradigma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/stroop_experiment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stroop Paradigma</span></a>
   </div>
@@ -258,12 +252,26 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#forschungsbereiche-der-neurowissenschaften" id="toc-forschungsbereiche-der-neurowissenschaften" class="nav-link active" data-scroll-target="#forschungsbereiche-der-neurowissenschaften">Forschungsbereiche der Neurowissenschaften</a></li>
   <li><a href="#experimente-in-den-kognitiven-neurowissenschaften" id="toc-experimente-in-den-kognitiven-neurowissenschaften" class="nav-link" data-scroll-target="#experimente-in-den-kognitiven-neurowissenschaften">Experimente in den Kognitiven Neurowissenschaften</a>
   <ul class="collapse">
-  <li><a href="#wichtige-elemente-von-experimenten" id="toc-wichtige-elemente-von-experimenten" class="nav-link" data-scroll-target="#wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</a></li>
   <li><a href="#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" id="toc-besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" class="nav-link" data-scroll-target="#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften">Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften</a>
   <ul class="collapse">
-  <li><a href="#präzision-räumlich-und-zeitlich" id="toc-präzision-räumlich-und-zeitlich" class="nav-link" data-scroll-target="#präzision-räumlich-und-zeitlich">Präzision: Räumlich und zeitlich</a></li>
+  <li><a href="#präzision-hohe-räumliche-und-zeitliche-auflösung" id="toc-präzision-hohe-räumliche-und-zeitliche-auflösung" class="nav-link" data-scroll-target="#präzision-hohe-räumliche-und-zeitliche-auflösung">Präzision: Hohe räumliche und zeitliche Auflösung</a></li>
+  <li><a href="#synchronisation-mehrere-datenspuren" id="toc-synchronisation-mehrere-datenspuren" class="nav-link" data-scroll-target="#synchronisation-mehrere-datenspuren">Synchronisation: Mehrere Datenspuren</a></li>
   <li><a href="#komplexität-zu-untersuchender-prozess-und-störprozesse" id="toc-komplexität-zu-untersuchender-prozess-und-störprozesse" class="nav-link" data-scroll-target="#komplexität-zu-untersuchender-prozess-und-störprozesse">Komplexität: Zu untersuchender Prozess und Störprozesse</a></li>
   <li><a href="#datenerhebung-teuer-und-anspruchsvoll" id="toc-datenerhebung-teuer-und-anspruchsvoll" class="nav-link" data-scroll-target="#datenerhebung-teuer-und-anspruchsvoll">Datenerhebung: Teuer und anspruchsvoll</a></li>
+  <li><a href="#passendes-experiment-muss-selber-erstellt-werden" id="toc-passendes-experiment-muss-selber-erstellt-werden" class="nav-link" data-scroll-target="#passendes-experiment-muss-selber-erstellt-werden">Passendes Experiment muss selber erstellt werden</a></li>
+  </ul></li>
+  <li><a href="#wichtige-elemente-von-experimenten" id="toc-wichtige-elemente-von-experimenten" class="nav-link" data-scroll-target="#wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</a>
+  <ul class="collapse">
+  <li><a href="#begrüssung-und-einverständniserklärung" id="toc-begrüssung-und-einverständniserklärung" class="nav-link" data-scroll-target="#begrüssung-und-einverständniserklärung">Begrüssung und Einverständniserklärung</a></li>
+  <li><a href="#instruktion" id="toc-instruktion" class="nav-link" data-scroll-target="#instruktion">Instruktion</a></li>
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">Stimuli</a></li>
+  <li><a href="#trial" id="toc-trial" class="nav-link" data-scroll-target="#trial">Trial</a></li>
+  <li><a href="#run-block" id="toc-run-block" class="nav-link" data-scroll-target="#run-block">Run / Block</a></li>
+  <li><a href="#debriefing-und-verabschiedung" id="toc-debriefing-und-verabschiedung" class="nav-link" data-scroll-target="#debriefing-und-verabschiedung">Debriefing und Verabschiedung</a></li>
+  </ul></li>
+  <li><a href="#vorgehen-experiment-programmieren" id="toc-vorgehen-experiment-programmieren" class="nav-link" data-scroll-target="#vorgehen-experiment-programmieren">Vorgehen Experiment programmieren</a>
+  <ul class="collapse">
+  <li><a href="#flowcharts" id="toc-flowcharts" class="nav-link" data-scroll-target="#flowcharts">Flowcharts</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -424,34 +432,22 @@ Das <a href="https://www.philhum.unibe.ch/studium/studienprogramme/neurowissensc
 </figure>
 </div>
 <aside>
-Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert, dem ist dieses Paper von Rooji et al.&nbsp;sehr zu empfehlen.
+Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von Rooji et al.&nbsp;eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.
 </aside>
 </section>
-<section id="experimente-in-den-kognitiven-neurowissenschaften" class="level1">
+<section id="experimente-in-den-kognitiven-neurowissenschaften" class="level1 page-columns page-full">
 <h1>Experimente in den Kognitiven Neurowissenschaften</h1>
 <p>Neurowissenschaftliche Experimente müssen exakt auf die Fragestellung zugeschnitten werden um aussagekräftige Daten zu liefern. Deshalb programmieren die meisten Forschenden ihre Experimentalparadigmen selbst. So können beispielsweise Instruktionen oder verwendete Stimuli, deren Grösse und Anzeigedauer präzise definiert werden.</p>
 <p>Im Nachfolgenden gehen wir auf einige wichtige Punkte für das Erstellen und Durchführen neurowissenschaftlicher Experimente ein.</p>
-<section id="wichtige-elemente-von-experimenten" class="level2">
-<h2 class="anchored" data-anchor-id="wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</h2>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</section>
 <section id="besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" class="level2">
 <h2 class="anchored" data-anchor-id="besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften">Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften</h2>
-<section id="präzision-räumlich-und-zeitlich" class="level3">
-<h3 class="anchored" data-anchor-id="präzision-räumlich-und-zeitlich">Präzision: Räumlich und zeitlich</h3>
-<p>Eine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat.</p>
+<section id="präzision-hohe-räumliche-und-zeitliche-auflösung" class="level3">
+<h3 class="anchored" data-anchor-id="präzision-hohe-räumliche-und-zeitliche-auflösung">Präzision: Hohe räumliche und zeitliche Auflösung</h3>
+<p>Eine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat. Räumliche Auflösung kann bedeuten, dass sehr präzise visuelle Darbietung möglich sein muss, sowie dass die Versuchsperson sich im Setup nicht bewegen darf, weil dies die Distanzen verschiebt (z.B. im MRT, oder der Abstand zum Bildschirm beim Eyetracking).</p>
+</section>
+<section id="synchronisation-mehrere-datenspuren" class="level3">
+<h3 class="anchored" data-anchor-id="synchronisation-mehrere-datenspuren">Synchronisation: Mehrere Datenspuren</h3>
+<p>Neurowissenschaftliche Experimente beinhalten oft die Datenerhebung auf mehreren Ebenen, z.B. wird gleichzeitig Hirnaktivität und das Drücken von Antwortbuttons aufgenommen. Das bedeutet, dass Bildschirm, MRT/EEG/Eyetracking/etc., sowie die Antwort zeitlich koregistriert/synchronisiert werden müssen, um die Daten im Nachhinein auswerten zu können. Technisch ist das oft mit grossem Aufwand verbunden und benötigt einiges an Pilotierung.</p>
 </section>
 <section id="komplexität-zu-untersuchender-prozess-und-störprozesse" class="level3">
 <h3 class="anchored" data-anchor-id="komplexität-zu-untersuchender-prozess-und-störprozesse">Komplexität: Zu untersuchender Prozess und Störprozesse</h3>
@@ -462,8 +458,92 @@ Hands-on
 <section id="datenerhebung-teuer-und-anspruchsvoll" class="level3">
 <h3 class="anchored" data-anchor-id="datenerhebung-teuer-und-anspruchsvoll">Datenerhebung: Teuer und anspruchsvoll</h3>
 <p>Bildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert.</p>
-<!-- ## Neue Fragestellung -->
-<!-- Oft muss ein neues Paradigma erstellt werden, d.h. der/die Forschende kann kein schon bestehendes Experiment nutzen, sondern untersucht einen Aspekt eines neuronalen Prozesses. Das erfordert sowohl Kenntnisse im Programmieren, der zu verwendenden Technink, wie auch der Gehirnprozesse während des Vorgangs. -->
+</section>
+<section id="passendes-experiment-muss-selber-erstellt-werden" class="level3">
+<h3 class="anchored" data-anchor-id="passendes-experiment-muss-selber-erstellt-werden">Passendes Experiment muss selber erstellt werden</h3>
+<p>Oft muss ein neues Paradigma erstellt werden, d.h. Forschende können kein schon bestehendes Experiment nutzen, sondern untersuchen einen Aspekt eines neuronalen Prozesses mit einer neuen Methode, einer neuen Fragestellung oder einem neuen Ansatz. Dies erfordert breiteKenntnisse im Programmieren, der zu verwendenden Technik, wie auch der Gehirnprozesse.</p>
+</section>
+</section>
+<section id="wichtige-elemente-von-experimenten" class="level2">
+<h2 class="anchored" data-anchor-id="wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</h2>
+<p>Beim Programmieren von Experimenten lohnt es sich, sich zuerst darüber im klaren zu sein, welche Bausteine das geplante Experiment hat. Im Folgenden werden einige typische Elemente eines Verhaltensexperiments beschrieben. Oft kommen hier natürlich noch Stimulations- oder Aufnahmemethoden hinzu.</p>
+<section id="begrüssung-und-einverständniserklärung" class="level3">
+<h3 class="anchored" data-anchor-id="begrüssung-und-einverständniserklärung">Begrüssung und Einverständniserklärung</h3>
+<p>Hier wird die Versuchsperson begrüsst, wird über das Experiment aufgeklärt und gibt (wenn nicht vorher auf Papier schon geschehen) ihre Einverständnis zur Teilnahme am Experiment. Dies wird je nach Ethikkommission und Ethikantrag unterschiedlich gehandhabt. Wichtige Informationen sind hierbei, dass die Versuchsperson weiss worauf sie sich einlässt (Ist zum Beispiel Hirnstimulation/fMRI/etc. geplant? Wie lange dauert das Experiment ungefähr? Was soll sie tun, wenn sie abbrechen möchte?). Die Schwierigkeit ist oft, genügend Information zu geben aber die Hypothese nicht zu verraten.</p>
+</section>
+<section id="instruktion" class="level3">
+<h3 class="anchored" data-anchor-id="instruktion">Instruktion</h3>
+<p>Die Instruktion wird oft schriftlich gegeben, um diese zwischen den Versuchspersonen konstant zu halten. Es ist teilweise herausfordernd, einen Task so genau zu erklären, dass er verständlich ist, aber die Erklärung auch kurz genug zu halten, dass die Instruktion auch gelesen wird. Oft werden Übungstrials verwendet um die Instruktion zu verdeutlichen.</p>
+</section>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">Stimuli</h3>
+<p>Unter Stimuli werden die gezeigten Elemente verstanden, die den Task ausmachen. Es können Töne, Bilder, Wörter, etc. als Stimuli verwendet werden.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Stimuli
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welche Stimuli aus neurowissenschaftlichen Experimenten kennen Sie?</p>
+<p>Tauschen Sie sich mit Ihren Mitstudierenden aus und schreiben/zeichnen Sie ein paar Beispiele vorne an die Tafel.</p>
+<p><em>[~5 Minuten]</em></p>
+</div>
+</div>
+</section>
+<section id="trial" class="level3">
+<h3 class="anchored" data-anchor-id="trial">Trial</h3>
+<p>Ein Trial beschreibt ein sich wiederholender Vorgang in dem der Stimulus gezeigt wird und z.B. von der Versuchsperson eine Antwort erwartet wird. Ein Trial wird oft sehr viele Male wiederholt. Die Stimuli können zwischen den Trials variieren oder gleich bleiben. Das Timing der Trials kann konstant sein (ein Stimulus wird bspw. immer gleich lang gezeigt) oder variiert werden (unterschiedliche Anzeigedauer).</p>
+<p>Zwischen den Trials wird ein Inter-Trial-Interval (ITI) festgelegt. Dies wird z.B. bei fMRI Experimenten dann variiert, damit (je nach Repetition Time/TR) nicht immer in derselben Schicht aufgenommen wird bei Stimuluspräsentation.</p>
+<p>Während einem Trial wird die Antwort / Response der Versuchsperson aufgenommen. Bei der Aufnahme von Reaktiosnzeiten muss festgelegt werden, wann der Trial oder die Stimuluspräsentation beginnt und mit welcher Handlung sie endet. Es kann bestimmt werden, welche Antworten zulässig sind (bspw. nur bestimmte Tasten) und was passiert wenn eine richtige oder falsche Antwort gegeben wird: Gibt es z.B. ein Feedback bei falschen Antworten?</p>
+</section>
+<section id="run-block" class="level3">
+<h3 class="anchored" data-anchor-id="run-block">Run / Block</h3>
+<p>Ein Run/ein Block bezeichnet eine Einheit mit mehreren Trials. Oft werden Bedingungen z.B. zwischen den Runs randomisiert. Zwischen den Runs sind Pausen möglich, damit sich die Versuchsperson erholen kann. Oft wird vor dem Experimentstart ein “Übungsblock” durchgeführt, um sich sicher zu sein, dass die Versuchspersonen die Aufgabe und Instruktion verstanden haben.</p>
+</section>
+<section id="debriefing-und-verabschiedung" class="level3">
+<h3 class="anchored" data-anchor-id="debriefing-und-verabschiedung">Debriefing und Verabschiedung</h3>
+<p>Im Debriefing wird der Versuchsperson erklärt, um was es im Experiment gegangen ist, welche Hypothesen untersucht wurden und eine eventuelle Coverstory aufgedeckt. Oft werden Personen vor dem Debriefing nach der getesteten Hypothese gefragt, um zu schauen, ob sie diese erraten hatten. Das gibt Aufschluss darüber wie sehr das Experiment dadurch verzerrt sein könnte, dass die Versuchspersonen Bescheid wissen. Wichtig ist es auch den Versuchspersonen zum Schluss zu danken.</p>
+</section>
+</section>
+<section id="vorgehen-experiment-programmieren" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vorgehen-experiment-programmieren">Vorgehen Experiment programmieren</h2>
+<p>Wichtige Schritte beim Programmieren von Experimenten sind folgende (nicht unbedingt in dieser Reihenfolge, das kommt auf das Experiment an):</p>
+<ul>
+<li><p>Task auswählen</p></li>
+<li><p>Stimuli auswählen</p></li>
+<li><p>Timing festlegen: Dauer Stimuluspräsentation? ITIs (Inter-Trial-Intervals)?</p></li>
+<li><p>Anzahl Bedingungen und Trials bestimmen (Power bedenken), within oder between Design?</p></li>
+<li><p>Ablauf des Experiments festlegen: Gesamtdauer? Pausen nötig?</p></li>
+<li><p>Coverstory, Stimulus-Masking, etc. nötig?</p></li>
+<li><p>Einbindung von allen technischen Geräten (z.B. EEG Recorder, MRT, Brainstimulation-Devices, Eyetracking) und Synchronisation</p></li>
+</ul>
+<section id="flowcharts" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="flowcharts">Flowcharts</h3>
+<p>Bei der Planung und dem Erstellen eines Experiments ist es sehr hilfreich eine Flowchart zu erstellen. In einer Flowchart sind die oben genannten Elemente des Experimentes in Boxen eingezeichnet und mit Pfeilen verbunden um sie zeitlich einzuordnen. Timing-Informationen können unter oder neben den Boxen festgehalten werden. Die Anzahl Repetitionen wird oft neben den Pfeilen eingefügt.</p>
+<aside>
+Wir werden zu einem späteren Zeitpunkt in diesem Kurs darauf eingehen, wie man ein Experiment möglichst gut planen kann um aussagekräftige Daten zu erhalten. Hier gibt es viele Möglichkeiten wie Pilotierung, Datensimulation und die adäquate Wahl der statistischen Verfahren in Bezug auf die Fragestellung.
+</aside>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Flowcharts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie für das <em>Stroop Experiment</em> und das <em>Random-Dot Experiment</em> eine Flowchart.</p>
+<p>Hierzu können Sie gerne verschiedene Artikel zu solchen Experimenten anschauen.</p>
+<p>Sie können dies auf einem Blatt Papier machen oder wenn Sie mögen in R mit dem <a href="https://data-mermaid.github.io/mermaidr/"><code>mermaidr</code> - Package</a>.</p>
+<p>In PsychoPy GUI werden Sie dann automatisch eine Art Flowchart angezeigt erhalten, wie <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y/figures/2">hier</a> ein Beispiel zeigt.</p>
+</div>
+</div>
+<p>Eine Flowchart eignet sich auch gut, um in einem Artikel darzustellen, wie der Ablauf des Experiments war.</p>
 
 
 </section>

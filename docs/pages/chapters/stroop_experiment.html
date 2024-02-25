@@ -217,12 +217,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/random_dot_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random Dot Paradigma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/stroop_experiment.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Stroop Paradigma</span></a>
   </div>
@@ -255,17 +249,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stimuli" id="toc-stimuli" class="nav-link active" data-scroll-target="#stimuli">1. Stimuli</a></li>
+  <li><a href="#stroop-task" id="toc-stroop-task" class="nav-link active" data-scroll-target="#stroop-task">Stroop Task</a>
+  <ul class="collapse">
+  <li><a href="#stroop-task-in-psychopy" id="toc-stroop-task-in-psychopy" class="nav-link" data-scroll-target="#stroop-task-in-psychopy">Stroop Task in PsychoPy</a></li>
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">1. Stimuli</a></li>
   <li><a href="#trialschleife" id="toc-trialschleife" class="nav-link" data-scroll-target="#trialschleife">2. Trialschleife</a></li>
   <li><a href="#bedingungen" id="toc-bedingungen" class="nav-link" data-scroll-target="#bedingungen">3. Bedingungen</a></li>
   <li><a href="#instruktion-und-debriefing" id="toc-instruktion-und-debriefing" class="nav-link" data-scroll-target="#instruktion-und-debriefing">4. Instruktion und Debriefing</a></li>
-  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">5. Test</a></li>
-  <li><a href="#übungsexperiment" id="toc-übungsexperiment" class="nav-link" data-scroll-target="#übungsexperiment">6. Übungsexperiment</a></li>
+  <li><a href="#test-pilotierung" id="toc-test-pilotierung" class="nav-link" data-scroll-target="#test-pilotierung">5. Test / Pilotierung</a></li>
+  <li><a href="#referenzen" id="toc-referenzen" class="nav-link" data-scroll-target="#referenzen">Referenzen</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/stroop_experiment.html">Stroop Paradigma</a></li></ol></nav>
 <div class="quarto-title">
@@ -304,37 +302,85 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="stroop-task" class="level1 page-columns page-full">
+<h1>Stroop Task</h1>
+<p>Der Stroop Task wurde 1935 zum ersten Mal beschrieben (Stroop, 1935) und ist einer der meist zitierten und verwendeten neuropsychologischen Aufgaben (MacLeod, 1991). In der Neuropsychologie wird der <em>Stroop Color and Word Test (SCWT)</em> verwendet, um die Fähigkeit zur Inhibition kognitiver Interferenz zu messen, welche entsteht wenn zwei Stimuluseigenschaften gleichzeitig verarbeitet werden sich aber widersprechen (Scarpina &amp; Tagini, 2017). Teilweise misst der Task auch andere kognitive Funktionen, wie visuelle Suche oder Arbeitsgedächtnis, weshalb der Vergleich von Bedingungen relevant ist (Periáñez et al., 2021).</p>
+<p>Während dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im <em>kongruenten</em> Durchgang entsprechen die Farben des Textes dem Farbwort (das Wort “rot” wird in rot präsentiert), im <em>inkongruenten</em> Durchgang unterscheiden sich die Farben des Textes vom Farbwort (das Wort “rot” wird in gelber Farbe präsentiert). Die Person muss angeben in welcher Farbe das Wort abgedruckt ist. In der kongruenten Bedingung fällt dies leichter, weil das gelesene Wort auch der Farbe entspricht. In der inkongruenten Bedingung verlangsamt sich die Geschwindigkeit durch die entstehende Interferenz von Wort und Farbe, da das Wort automatisch gelesen wird. Oft wird auch noch eine <em>neutrale</em> Bedingung verwendet, wo nur die Farbe oder das Wort präsentiert werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/stroop_original.JPG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Daten Stroop-Task (Stroop, 1935)</figcaption>
+</figure>
+</div>
+<aside>
+<a href="http://psychclassics.yorku.ca/Stroop/">Hier</a> finden Sie eine Online-Version des Originalpapers. Interessierte finden das Review von MacLeod (1991) auf Ilias.
+</aside>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Stroop Task ausprobieren
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.psytoolkit.org/experiment-library/stroop.html">Hier</a> finden Sie eine englische Online-Version eines Stroop Tasks.</p>
+<p>Testen Sie die Demo und diskutieren Sie dann in 4er Gruppen folgende Fragen:</p>
+<ul>
+<li><p>Welche “Elemente” des Experiments konnten Sie identifizieren?</p></li>
+<li><p>Was sind die Unterschiede zum “klassischen” Strooptask?</p></li>
+<li><p>Was sind die Vor- und/oder Nachteile dieser Version?</p></li>
+<li><p>Was würden Sie anders machen?</p></li>
+<li><p>Was denken Sie, misst der Task was er soll? Wie werden die Verhaltensdaten Ihrer Schätzung nach aussehen?</p></li>
+<li><p>Für welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen?</p></li>
+<li><p>Welche Bedingungen (neutral, inkongruent, kongruent) würden Sie vergleichen?</p></li>
+<li><p>Auf was muss geachtet werden bei der Stimulusauswahl?</p></li>
+</ul>
+<p><em>[~10 Minuten]</em></p>
+</div>
+</div>
+<section id="stroop-task-in-psychopy" class="level2">
+<h2 class="anchored" data-anchor-id="stroop-task-in-psychopy">Stroop Task in PsychoPy</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Stroop Task in PsychoPy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie einen Stroop Task mit dem PsychoPy Builder.</p>
+<p>Nutzen Sie hierfür die untenstehenden Schritte und Hinweise.</p>
+</div>
+</div>
+</section>
 <section id="stimuli" class="level2">
 <h2 class="anchored" data-anchor-id="stimuli">1. Stimuli</h2>
 <p>Erstellen Sie einen <strong>Stroop Stimulus</strong>. Beachten Sie folgende Aspekte:</p>
 <ul>
-<li><p>Timing (Stimulusdauer): 1500 ms</p></li>
+<li><p>Timing (Stimulusdauer, Stimulusende)</p></li>
 <li><p>Farbe</p></li>
-<li><p>Grösse: gut sichtbar</p></li>
-<li><p>Kohärenz: 0.08</p></li>
-<li><p>Field size: 75% des Displays</p></li>
+<li><p>Grösse</p></li>
+<li><p>Bedingung/Kongruenz?</p></li>
 </ul>
-<p><em>(Die Bewegungsrichtung können Sie noch vernachlässigen.)</em></p>
 </section>
 <section id="trialschleife" class="level2">
 <h2 class="anchored" data-anchor-id="trialschleife">2. Trialschleife</h2>
 <p>Erstellen Sie eine <strong>Trial</strong>-Schleife.</p>
 <ul>
-<li><p>Fixation 1 (100/350/800/1200 ms) <em>(Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)</em></p></li>
-<li><p>Cue (1000 ms)</p></li>
-<li><p>Fixation 2 (3400/4000/4500/5000 ms) <em>(Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)</em></p></li>
-<li><p>Dots (1500 ms)</p></li>
-<li><p>Feedback</p></li>
-<li><p>Timing (ITI: Inter-Trial-Intervall)</p></li>
+<li><p>Stimuluspräsentation</p></li>
 <li><p>Antwort der Versuchsperson aufnehmen</p></li>
+<li><p>Timing (ITI: Inter-Trial-Intervall)</p></li>
+<li><p>Wiederholen Sie die Schleife.</p></li>
 </ul>
-<p><em>(Die Variation der Bewegungsrichtung und des Vorwissens können Sie noch vernachlässigen.)</em></p>
 </section>
 <section id="bedingungen" class="level2">
 <h2 class="anchored" data-anchor-id="bedingungen">3. Bedingungen</h2>
 <ul>
-<li><p>Variieren Sie die Bewegungsrichtung der Random Dots mit dem <em>conditions.csv</em> file: Bewegungsrichtung ist zu 50% rechts, zu 50% links.</p></li>
-<li><p>Variieren Sie den Cue fürs Vorwissen in jedem Trial mit dem <em>conditions.csv</em> file: Der Cue kann valide (4x), invalide (2x) oder neutral (4x) sein. Die Bewegungsrichtungen müssen auf alle Bedingungen gleich verteilt sein.</p></li>
+<li>Variieren Sie die <strong>Bedingungen</strong> (Kongruenz der Farben) mit dem <em>conditions.csv</em> File.</li>
 </ul>
 </section>
 <section id="instruktion-und-debriefing" class="level2">
@@ -344,25 +390,32 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Fügen Sie am Ende des Experiments ein Debriefing hinzu.</p></li>
 </ul>
 </section>
-<section id="test" class="level2">
-<h2 class="anchored" data-anchor-id="test">5. Test</h2>
-<p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die untenstehenden Infos auf jeder Zeile vorhanden?</p>
+<section id="test-pilotierung" class="level2">
+<h2 class="anchored" data-anchor-id="test-pilotierung">5. Test / Pilotierung</h2>
+<p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an:</p>
+<p>Sind die untenstehenden Infos auf jeder Zeile vorhanden?</p>
 <ul>
 <li><p>Versuchspersonennummer</p></li>
-<li><p>Richtung des Stimulus</p></li>
-<li><p>Cue / Vorwissen</p></li>
+<li><p>Bedingung</p></li>
+<li><p>Stimuluswort</p></li>
+<li><p>Stimulusfarbe</p></li>
 <li><p>Antwort der Versuchsperson</p></li>
 <li><p>Antwortdauer der Versuchsperson</p></li>
 </ul>
+<p>Können die Daten überschrieben werden?</p>
+<!-- ## 6. Übungsexperiment -->
+<!-- -   Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. -->
+<!-- -   Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf? -->
 </section>
-<section id="übungsexperiment" class="level2">
-<h2 class="anchored" data-anchor-id="übungsexperiment">6. Übungsexperiment</h2>
-<ul>
-<li><p>Laden Sie <a href="https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html">hier</a> das Experiment für <strong>Übung 1</strong> herunter.</p></li>
-<li><p>Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf?</p></li>
-</ul>
+<section id="referenzen" class="level2">
+<h2 class="anchored" data-anchor-id="referenzen">Referenzen</h2>
+<p>MacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. <a href="https://doi.org/10.1037/0033-2909.109.2.163">https://doi.org/10.1037/0033-2909.109.2.163</a></p>
+<p>Periáñez, J. A., Lubrini, G., García-Gutiérrez, A., &amp; Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. <a href="https://doi.org/10.1093/arclin/acaa034">https://doi.org/10.1093/arclin/acaa034</a></p>
+<p>Scarpina, F., &amp; Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. <a href="https://doi.org/10.3389/fpsyg.2017.00557">https://doi.org/10.3389/fpsyg.2017.00557</a></p>
+<p>Stroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662. <a href="https://doi.org/10.1037/">https://doi.org/10.1037/</a></p>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,

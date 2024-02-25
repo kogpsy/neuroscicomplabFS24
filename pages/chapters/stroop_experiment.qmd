@@ -15,78 +15,125 @@ format:
         toc: true
 ---
 
+# Stroop Task
+
+Der Stroop Task wurde 1935 zum ersten Mal beschrieben (Stroop, 1935) und ist einer der meist zitierten und verwendeten neuropsychologischen Aufgaben (MacLeod, 1991). In der Neuropsychologie wird der _Stroop Color and Word Test (SCWT)_ verwendet, um die Fähigkeit zur Inhibition kognitiver Interferenz zu messen, welche entsteht wenn zwei Stimuluseigenschaften gleichzeitig verarbeitet werden sich aber widersprechen (Scarpina & Tagini, 2017). Teilweise misst der Task auch andere kognitive Funktionen, wie visuelle Suche oder Arbeitsgedächtnis, weshalb der Vergleich von Bedingungen relevant ist (Periáñez et al., 2021).
+
+Während dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im *kongruenten* Durchgang entsprechen die Farben des Textes dem Farbwort (das Wort "rot" wird in rot präsentiert), im *inkongruenten* Durchgang unterscheiden sich die Farben des Textes vom Farbwort (das Wort "rot" wird in gelber Farbe präsentiert). Die Person muss angeben in welcher Farbe das Wort abgedruckt ist. In der kongruenten Bedingung fällt dies leichter, weil das gelesene Wort auch der Farbe entspricht. In der inkongruenten Bedingung verlangsamt sich die Geschwindigkeit durch die entstehende Interferenz von Wort und Farbe, da das Wort automatisch gelesen wird. Oft wird auch noch eine *neutrale* Bedingung verwendet, wo nur die Farbe oder das Wort präsentiert werden.
+
+![Daten Stroop-Task (Stroop, 1935)](img/stroop_original.JPG)
+
+<aside>[Hier](http://psychclassics.yorku.ca/Stroop/) finden Sie eine Online-Version des Originalpapers. Interessierte finden das Review von MacLeod (1991) auf Ilias.</aside>
+
+
+::: callout-caution
+## Hands-on: Stroop Task ausprobieren
+
+[Hier](https://www.psytoolkit.org/experiment-library/stroop.html) finden Sie eine englische Online-Version eines Stroop Tasks.
+
+Testen Sie die Demo und diskutieren Sie dann in 4er Gruppen folgende Fragen:
+
+-   Welche "Elemente" des Experiments konnten Sie identifizieren?
+
+-   Was sind die Unterschiede zum "klassischen" Strooptask?
+
+-   Was sind die Vor- und/oder Nachteile dieser Version?
+
+-   Was würden Sie anders machen?
+
+-   Was denken Sie, misst der Task was er soll? Wie werden die Verhaltensdaten Ihrer Schätzung nach aussehen?
+
+-   Für welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen?
+
+-   Welche Bedingungen (neutral, inkongruent, kongruent) würden Sie vergleichen? 
+
+- Auf was muss geachtet werden bei der Stimulusauswahl?
+
+*\[\~10 Minuten\]*
+:::
+
+## Stroop Task in PsychoPy
+
+::: callout-caution
+## Hands-on: Stroop Task in PsychoPy
+
+Erstellen Sie einen Stroop Task mit dem PsychoPy Builder.
+
+Nutzen Sie hierfür die untenstehenden Schritte und Hinweise.
+:::
+
+
 ## 1. Stimuli
 
-Erstellen Sie einen **Stroop Stimulus**. Beachten Sie folgende Aspekte:
+Erstellen Sie einen __Stroop Stimulus__. Beachten Sie folgende Aspekte:
 
-- Timing (Stimulusdauer): 1500 ms
+-   Timing (Stimulusdauer, Stimulusende)
 
-- Farbe
+-   Farbe
 
-- Grösse: gut sichtbar
+-   Grösse
 
-- Kohärenz: 0.08
-
-- Field size: 75% des Displays
-
-*(Die Bewegungsrichtung können Sie noch vernachlässigen.)*
+- Bedingung/Kongruenz?
 
 
 ## 2. Trialschleife
 
-Erstellen Sie eine **Trial**-Schleife. 
+Erstellen Sie eine __Trial__-Schleife.
 
-- Fixation 1 (100/350/800/1200 ms) *(Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)*
-    
-- Cue (1000 ms)
-    
-- Fixation 2 (3400/4000/4500/5000 ms) *(Zur Vereinfachung können Sie hier auch nur einen Wert wählen.)*
-    
-- Dots (1500 ms)
-    
-- Feedback
+- Stimuluspräsentation
 
-- Timing (ITI: Inter-Trial-Intervall)
+-   Antwort der Versuchsperson aufnehmen
 
-- Antwort der Versuchsperson aufnehmen
+-   Timing (ITI: Inter-Trial-Intervall)
 
-
-*(Die Variation der Bewegungsrichtung und des Vorwissens können Sie noch vernachlässigen.)*
+- Wiederholen Sie die Schleife.
 
 
 ## 3. Bedingungen
 
-- Variieren Sie die Bewegungsrichtung der Random Dots mit dem *conditions.csv* file: Bewegungsrichtung ist zu 50% rechts, zu 50% links.
-
-- Variieren Sie den Cue fürs Vorwissen in jedem Trial mit dem *conditions.csv* file: Der Cue kann valide (4x), invalide (2x) oder neutral (4x) sein. Die Bewegungsrichtungen müssen auf alle Bedingungen gleich verteilt sein.
+-   Variieren Sie die __Bedingungen__ (Kongruenz der Farben) mit dem _conditions.csv_ File.
 
 
 ## 4. Instruktion und Debriefing
 
-- Fügen Sie zu Beginn des Experiments eine Instruktion hinzu.
+-   Fügen Sie zu Beginn des Experiments eine Instruktion hinzu.
 
-- Fügen Sie am Ende des Experiments ein Debriefing hinzu.
+-   Fügen Sie am Ende des Experiments ein Debriefing hinzu.
 
+## 5. Test / Pilotierung
 
-## 5. Test
+Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: 
 
-Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die untenstehenden Infos auf jeder Zeile vorhanden?
+Sind die untenstehenden Infos auf jeder Zeile vorhanden?
 
-- Versuchspersonennummer
+-   Versuchspersonennummer
 
-- Richtung des Stimulus
+-   Bedingung
 
-- Cue / Vorwissen
+-   Stimuluswort
 
-- Antwort der Versuchsperson
+- Stimulusfarbe
 
-- Antwortdauer der Versuchsperson
+-   Antwort der Versuchsperson
 
+-   Antwortdauer der Versuchsperson
 
-## 6. Übungsexperiment
+Können die Daten überschrieben werden?
 
-- Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. 
+<!-- ## 6. Übungsexperiment -->
 
-- Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf?
+<!-- -   Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. -->
+
+<!-- -   Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf? -->
+
+## Referenzen
+
+MacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163--203. [https://doi.org/10.1037/0033-2909.109.2.163](https://doi.org/10.1037/0033-2909.109.2.163)
+
+Periáñez, J. A., Lubrini, G., García-Gutiérrez, A., & Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. [https://doi.org/10.1093/arclin/acaa034](https://doi.org/10.1093/arclin/acaa034)
+
+Scarpina, F., & Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. [https://doi.org/10.3389/fpsyg.2017.00557](https://doi.org/10.3389/fpsyg.2017.00557)
+
+Stroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643--662. [https://doi.org/10.1037/](https://doi.org/10.1037/)
 
 

@@ -218,12 +218,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/random_dot_experiment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random Dot Paradigma</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/stroop_experiment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stroop Paradigma</span></a>
   </div>
@@ -313,12 +307,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Hierbei schauen wir uns konkret Experimente aus der Wahrnehmungs- und Entscheidungsforschung (LINK RANDOM DOT) sowie der Neuropsychologie (STROOP) an und programmieren diese selber mithilfe von PsychoPy.</p>
-<p>PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">(Peirce et al.&nbsp;2019)</a></p>
+<p>In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Hierbei schauen wir uns konkret Experimente aus der Wahrnehmungs- und Entscheidungsforschung (Random Dot Experiment) sowie der Neuropsychologie (Stroop Experiment) an und programmieren diese selber mit PsychoPy.</p>
+<p>PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf der Programmiersprache Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so (fast) keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">(Peirce et al.&nbsp;2019)</a></p>
 <aside>
 Zu Beginn des Papers von <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">Peirce et al.&nbsp;2019</a> finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.
 </aside>
-<p>Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy.</p>
+<p>Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:</p>
+<section id="builder-gui-und-code" class="level2">
+<h2 class="anchored" data-anchor-id="builder-gui-und-code">Builder (GUI) und Code</h2>
+<p>Experimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können.</p>
+</section>
+<section id="vorprogrammierte-stimulus-elemente" class="level2">
+<h2 class="anchored" data-anchor-id="vorprogrammierte-stimulus-elemente">Vorprogrammierte Stimulus Elemente</h2>
+<p>In PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
+</section>
+<section id="datenspeicherung" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="datenspeicherung">Datenspeicherung</h2>
+<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
+<aside>
+Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.
+</aside>
+</section>
+<section id="online-experimente" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="online-experimente">Online Experimente</h2>
+<p>Mit <a href="https://pavlovia.org/">Pavlovia</a> können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -338,25 +350,9 @@ Tipp
 </ul>
 </div>
 </div>
-<p>Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:</p>
-<section id="builder-gui-und-code" class="level2">
-<h2 class="anchored" data-anchor-id="builder-gui-und-code">Builder (GUI) und Code</h2>
-<p>Experimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Buildermodus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können.</p>
-</section>
-<section id="vorprogrammierte-stimulus-elemente" class="level2">
-<h2 class="anchored" data-anchor-id="vorprogrammierte-stimulus-elemente">Vorprogrammierte Stimulus Elemente</h2>
-<p>In PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
-</section>
-<section id="datenspeicherung" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="datenspeicherung">Datenspeicherung</h2>
-<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
 <aside>
-Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.
+<a href="https://osdoc.cogsci.nl/">OpenSesame</a> ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
 </aside>
-</section>
-<section id="online-experimente" class="level2">
-<h2 class="anchored" data-anchor-id="online-experimente">Online Experimente</h2>
-<p>Mit <a href="https://pavlovia.org/">Pavlovia</a> können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.</p>
 
 
 </section>
