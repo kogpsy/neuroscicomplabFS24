@@ -43,24 +43,30 @@ Während dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im *kongru
 
 Testen Sie die Demo und diskutieren Sie dann in kleinen Gruppen folgende Fragen:
 
+-   Für welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen? Welche Patientengruppen zeigen auffällige Antworten in diesem Task?
+
 -   Welche "Elemente" des Experiments konnten Sie identifizieren?
 
--   Was sind die Unterschiede zum "klassischen" Strooptask?
+-   Welche Stimuluseigenschaften sind relevant für das Experiment? Was macht die Aufgabe einfach? Was macht sie schwieriger?
 
--   Was sind die Vor- und/oder Nachteile dieser Version?
+- Welche Antwortmöglichkeiten haben die Versuchspersonen?
 
--   Was würden Sie anders machen?
+-   Welche Bedingungen würden Sie vergleichen? 
+
+- Welche Stimuluseigenschaften sind wichtig, damit Sie die Resultate nicht verfälschen oder auf was muss geachtet werden bei der Stimulusauswahl?
 
 -   Was denken Sie, misst der Task was er soll? Wie werden die Verhaltensdaten Ihrer Schätzung nach aussehen?
 
--   Für welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen?
-
--   Welche Bedingungen (neutral, inkongruent, kongruent) würden Sie vergleichen? 
-
-- Auf was muss geachtet werden bei der Stimulusauswahl?
-
 *\[\~10 Minuten\]*
 :::
+
+## Kurzbeschrieb Kursexperiment
+
+In diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einmal geben sie die Farben der Wörter an in einer __kongruenten Bedingung__ (Wortinhalt und Wortfarbe) stimmen überein. Einmal lösen sie die Aufgabe in einer __inkongruenten Bedingung__ (Wortinhalt und Wortfarbe stimmen _nicht_ überein).
+
+Die __kongruente__ und __inkongruente__ Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.
+
+
 
 
 ## Referenzen
