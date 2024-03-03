@@ -224,6 +224,9 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Stroop Paradigma</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+ <span class="menu-text">pages/chapters/flowchart.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -300,10 +303,14 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  A[Hard edge] --&gt; B(Round edge)
-  B --&gt; C{Decision}
-  C --&gt; D[Result one]
-  C --&gt; E[Result two]
+  A(instruction) --&gt; B(practice run) --&gt; C() B(practice run) --&gt; C(test run) --&gt; D(feedback) --&gt; A(instruction)
+  
+
+    (Start --&gt; Condition
+    Condition -- Ja --&gt; Operation
+    Operation --&gt; Condition
+    Condition -- Nein --&gt; Ende
+
 </pre>
 </div>
 </div>

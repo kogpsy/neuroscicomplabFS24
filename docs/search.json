@@ -333,6 +333,6 @@
     "href": "pages/chapters/flowcharts.html",
     "title": "flowcharts",
     "section": "",
-    "text": "flowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{borer,\n  author = {Borer, Rebekka and Fitze, Daniel},\n  title = {Flowcharts},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBorer, Rebekka, and Daniel Fitze. n.d. “Flowcharts.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html."
+    "text": "flowchart LR\n  A(instruction) --&gt; B(practice run) --&gt; C() B(practice run) --&gt; C(test run) --&gt; D(feedback) --&gt; A(instruction)\n  \n\n    (Start --&gt; Condition\n    Condition -- Ja --&gt; Operation\n    Operation --&gt; Condition\n    Condition -- Nein --&gt; Ende\n\n\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{borer,\n  author = {Borer, Rebekka and Fitze, Daniel},\n  title = {Flowcharts},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBorer, Rebekka, and Daniel Fitze. n.d. “Flowcharts.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/flowcharts.html."
   }
 ]
