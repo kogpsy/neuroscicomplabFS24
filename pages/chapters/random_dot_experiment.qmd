@@ -30,7 +30,7 @@ format:
         toc: true
 ---
 
-TEST REBEKKA In diesem Kurs erstellen wir mit PsychoPy ein perzeptuelles Entscheidungsexperiment, ähnlich dem Experiment aus @mulder_bias_2012. Dieses neurowissenschaftliche Experiment untersucht den Einfluss von Vorwissen auf Entscheidungsverhalten von Menschen sowie die dazugehörigen neuronalen Korrelate. Zudem erstellen wir einen Stroop Task, dieser Test aus der Neuropsychologie untersucht die Inhibition, also das Unterdrücken von Impulsen, zugunsten der richtigen Arbeit.
+In diesem Kurs erstellen wir mit PsychoPy ein perzeptuelles Entscheidungsexperiment, ähnlich dem Experiment aus @mulder_bias_2012. Dieses neurowissenschaftliche Experiment untersucht den Einfluss von Vorwissen auf Entscheidungsverhalten von Menschen sowie die dazugehörigen neuronalen Korrelate. Zudem erstellen wir einen Stroop Task, dieser Test aus der Neuropsychologie untersucht die Inhibition, also das Unterdrücken von Impulsen, zugunsten der richtigen Arbeit.
 
 Jeden Tag treffen wir Tausende von kleinen Entscheidungen, meistens unter gewissem Zeitdruck. Viele davon sind trivial (z. B. welches Paar Socken man anzieht) und automatisch (z. B. ob man die Espresso- oder Lungo-Taste auf der Kaffeemaschine drückt).Die meisten Entscheidungen im wirklichen Leben setzen sich eigentlich aus zwei Entscheidungen zusammen: Einerseits der Entscheidung, mit dem Abwägen aufzuhören und aufgrund des aktuellen Wissenstandes zu handeln. Andererseits die Wahl oder Entscheidungshandlung selbst. Dieser sequentielle Charakter der Entscheidungsfindung ist eine grundlegende Eigenschaft des menschlichen Nervensystems und spiegelt seine Unfähigkeit wider, Informationen sofort zu verarbeiten.
 
