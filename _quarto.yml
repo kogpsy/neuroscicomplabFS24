@@ -41,7 +41,7 @@ website:
        - pages/chapters/neurowissenschaftliche_experimente.qmd
        - pages/chapters/psychopy_experiments.qmd
        - pages/chapters/stroop_experiment.qmd
-       #- pages/chapters/random_dot_experiment.qmd
+       - pages/chapters/random_dot_experiment.qmd
 
     - section: Data wrangling
       contents:
