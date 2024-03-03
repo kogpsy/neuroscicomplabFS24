@@ -217,7 +217,6 @@ Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist da
 
 Erstellen Sie einen **Random Dot Stimulus**. Beachten Sie folgende Aspekte:
 
-**Basic:**
 
 - Timing (Stimulusdauer): 1500 ms
 
@@ -226,30 +225,11 @@ Erstellen Sie einen **Random Dot Stimulus**. Beachten Sie folgende Aspekte:
 **frames vs time(s)**: Die präziseste Art zur Steuerung des Timing von Stimuli besteht darin, sie für eine festgelegte Anzahl von Frames zu präsentieren. Bei einer Framerate  von 60 Hz können Sie Ihren Stimulus nicht über einen Zeitraum von z. B. 120 ms präsentieren; die Bildperiode würde Sie auf einen Zeitraum von 116,7 ms (7 Bilder) oder 133,3 ms (8 Bilder) beschränken. Dies ist besonders wichtig für Reaktionszeit-Aufgaben und EEG-Studien, wo ein präzises Millisekunden-Timing erforderlich ist. [Presening Stimuli - Psychopy](https://www.psychopy.org/coder/codeStimuli.html)
 :::
 
-**Layout:**
+- Grösse
 
-- Dot size (Grösse): 3 (gut sichtbar)
+- Farbe
 
-- Field size: 75% des Displays
-
-- Field position: (0.0, 0.0)
-
-**Appearance:**
-
-- Dot color: [1.0,1.0,1.0] (white)
-
-**Dots**
-
-- Number of dots (Anzahl dots): 250
-
-- Direction (Bewegungsrichtung): $dots_direction (vordefinierte Variable im Codeblock)
-*(Die Bewegungsrichtung können Sie noch vernachlässigen.)*
-
-- Speed (Geschwindigkeit der Bewegung): 0.0125
-
-- Coherence (Kohärenz): 0.08
-
-- Dot life-time: 3
+- Kohärenz: 0.08
 
 
 ## 2. Trialschleife
@@ -304,7 +284,183 @@ Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die u
 
 ## 6. Kursexperiment 
 
-- 
+# 6.1 Instruction 
+**Textkomponente:**
+- Text: Hier wird der Text vermerkt zur Instruktion der Versuchsperson.
+
+**Codekomponente:**
+- Hier wird die Hintergrundfarbe defniert.
+
+    win.color = 'black'
+
+**Responsekomponente - Keyboard**
+
+Basic:
+
+- Start (time (s)): 0
+
+- Stop (duration (s): Dieses Feld wird leer gelassen. dadurch wird die Instruktion solange angezeigt, bis die Versuchsperson über die Leertaste das Ende der Routine forciert und zum nächsten Block übergeht.
+
+- Allowed keys: 'space'
+
+# 6.1 Cue
+
+# 6.1.1 Fixation pre cue 
+
+**Codekomponente:** 
+
+- Hier wird die Dauer definiert, wie lange das Fixationskreuz vor dem Stimulus angezeigt werden soll.
+
+    fixation_duration_pre_cue = randchoice([0.1, 0.35, 0.8, 1.2])
+
+**Textkomponente:**
+
+- Das Fixationskreuz vor dem Cue soll für die Dauer der Variable "fixation_duration_pre_cue" angezeigt werden.
+
+# 6.1.2 Cue
+
+**Codekomponente:** 
+
+- Hier legen wir fest, welcher Cue angezeigt wird. 
+
+- Wir überprüfen den Inhalt der Schleifenvariable 'cue' und entscheiden, ob der Cue-Text einen Pfeil nach links, einen Pfeil nach rechts oder einfach nur einen Kreis darstellen soll." 
+
+- Die Variabel "cue_path" definiert, in welchem Ordner die drei Bilder abgespeichert sind.
+
+    if cue == "left":
+        cue_path = "img/arrow_left.png"
+    elif cue == "right":
+        cue_path = "img/arrow_right.png"
+    elif cue == "none":
+        cue_path = "img/neutral.png"
+
+**Imagekomponente:**
+
+- Das entsprechende Bild soll für 60 Frames (1s) angezeigt werden. 
+
+- Zudem wird bei "Image" die Variable "cue_path" angegeben, die wir zuvor definiert haben, damit Psychopy die drei Bilder "arrow_left.png.", arrow_right_png", "neutral.png" im entsprechenden Ordner ("img") findet.
+
+
+# 6.1.3 Fixation post cue
+
+**Codekomponente:**
+
+- Hier wird die Dauer definiert, wie lange das Fixationskreuz nach dem Stimulus angezeigt werden soll.
+    
+    fixation_duration_post_cue = randchoice([3.4, 4, 4.5, 5])
+
+**Textkomponente:**
+
+- Text: Das Fixationskreuz nach dem Cue soll für die Dauer der Variable "fixation_duration_post_cue" angezeigt werden.
+
+
+# 6.2 Stimulus - dots 
+
+**Codekomponente:**
+
+- Hier wird die Richtung der dots definiert:
+
+    if direction == "right":
+        dots_direction = 0
+    elif direction == "left":
+        dots_direction = 180
+
+**Stimuluskomponente - polygon:**
+
+Basic:
+
+- Start (frame N): 0
+
+- Stop (duration (frames)): 90 (expected duration(s): 1.5)
+
+- Shape: circle
+
+Layout: 
+
+- Size[w,h]: (0.75, 0.75)
+
+- Position[x,y]: (0, 0)
+
+- Orientation: 0
+
+Appearance: 
+
+- Fill color: black
+
+- Border Color: black
+
+- Contrast: 1
+
+- Line width: 1
+
+**Stimuluskomponente - dots:**
+
+Basic:
+
+- Timing (Stimulusdauer): 1500 ms
+
+Layout:
+
+- Dot size (Grösse): 3 (gut sichtbar)
+
+- Field size: 75% des Displays
+
+- Field position: (0.0, 0.0)
+
+Appearance:
+
+- Dot color: [1.0,1.0,1.0] (white)
+
+Dots:
+
+- Number of dots (Anzahl dots): 250
+
+- Direction (Bewegungsrichtung): $dots_direction (definierte Variable im Codeblock)
+
+- Speed (Geschwindigkeit der Bewegung): 0.0125
+
+- Coherence (Kohärenz): 0.08
+
+- Dot life-time: 3
+
+**Responsekomponente - Keyboard**
+
+Basic:
+
+- Start (frame N): 0
+
+- Stop (duration (frames)): 90 (expected duration(s): 1.5)
+
+- Allowed keys: 'left', 'right'
+
+# 6.3 Feedback
+
+**Codekomponente**
+
+- Hier wird festgelegt, welches Feedback die Versuchsperson erhalten soll:
+
+    if dots_keyboard_response.keys is None:
+    response_text = "miss"
+
+    elif dots_keyboard_response.rt <= 0.1:
+    response_text = "too fast"
+    
+    else:
+    if (direction == "left" and dots_keyboard_response.keys == "f" or 
+        direction == "right" and dots_keyboard_response.keys == "j"
+    ):
+        response_text = "+5 points"
+    else:
+        response_text = "+0 points"
+        
+**Textkomponente**
+- Bei der Textkomponente wird beim Textfeld die Variable "response_text" eingefügt, damit die Versuchsperson abhängig von ihrer Antwort das entsprechende Feedback erhält, welches zuvor bei der Codekomponente definiert wurde.
+
+# 6.4 Loop - Trials:
+
+- nReps: Hier wird über angegeben  wie viele Wiederholungen der Loop haben soll.
+
+- Conditions: Hier wird der Pfad angegeben zum Condition file.
 
 ## 7. Übungsexperiment
 
