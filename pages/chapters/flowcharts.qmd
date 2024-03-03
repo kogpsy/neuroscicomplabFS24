@@ -26,4 +26,10 @@ execute:
 flowchart LR
   A(instruction) --> B(practice run) --> C() B(practice run) --> C(test run) --> D(feedback) --> A(instruction)
   
+
+    (Start --> Condition
+    Condition -- Ja --> Operation
+    Operation --> Condition
+    Condition -- Nein --> Ende
+
 ```
