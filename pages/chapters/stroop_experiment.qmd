@@ -7,6 +7,16 @@ author:
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Rebekka Borer
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    #orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
 license: CC BY
 citation: true
 bibliography: ../../bibliography_gw.bib
@@ -31,7 +41,7 @@ Während dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im *kongru
 
 [Hier](https://www.psytoolkit.org/experiment-library/stroop.html) finden Sie eine englische Online-Version eines Stroop Tasks.
 
-Testen Sie die Demo und diskutieren Sie dann in 4er Gruppen folgende Fragen:
+Testen Sie die Demo und diskutieren Sie dann in kleinen Gruppen folgende Fragen:
 
 -   Welche "Elemente" des Experiments konnten Sie identifizieren?
 
@@ -52,79 +62,6 @@ Testen Sie die Demo und diskutieren Sie dann in 4er Gruppen folgende Fragen:
 *\[\~10 Minuten\]*
 :::
 
-## Stroop Task in PsychoPy
-
-::: callout-caution
-## Hands-on: Stroop Task in PsychoPy
-
-Erstellen Sie einen Stroop Task mit dem PsychoPy Builder.
-
-Nutzen Sie hierfür die untenstehenden Schritte und Hinweise.
-:::
-
-
-## 1. Stimuli
-
-Erstellen Sie einen __Stroop Stimulus__. Beachten Sie folgende Aspekte:
-
--   Timing (Stimulusdauer, Stimulusende)
-
--   Farbe
-
--   Grösse
-
-- Bedingung/Kongruenz?
-
-
-## 2. Trialschleife
-
-Erstellen Sie eine __Trial__-Schleife.
-
-- Stimuluspräsentation
-
--   Antwort der Versuchsperson aufnehmen
-
--   Timing (ITI: Inter-Trial-Intervall)
-
-- Wiederholen Sie die Schleife.
-
-
-## 3. Bedingungen
-
--   Variieren Sie die __Bedingungen__ (Kongruenz der Farben) mit dem _conditions.csv_ File.
-
-
-## 4. Instruktion und Debriefing
-
--   Fügen Sie zu Beginn des Experiments eine Instruktion hinzu.
-
--   Fügen Sie am Ende des Experiments ein Debriefing hinzu.
-
-## 5. Test / Pilotierung
-
-Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: 
-
-Sind die untenstehenden Infos auf jeder Zeile vorhanden?
-
--   Versuchspersonennummer
-
--   Bedingung
-
--   Stimuluswort
-
-- Stimulusfarbe
-
--   Antwort der Versuchsperson
-
--   Antwortdauer der Versuchsperson
-
-Können die Daten überschrieben werden?
-
-<!-- ## 6. Übungsexperiment -->
-
-<!-- -   Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. -->
-
-<!-- -   Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf? -->
 
 ## Referenzen
 

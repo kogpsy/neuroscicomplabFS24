@@ -7,11 +7,21 @@ author:
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Rebekka Borer
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    #orcid: 0000-0001-7427-3149
   - name: Daniel Fitze
     # url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
-    orcid: 0000-0003-0158-7459  
+    orcid: 0000-0003-0158-7459 
+  - name: Andrew Ellis
+    url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0002-2788-936X
 license: CC BY
 citation: true
 bibliography: ../../bibliography_gw.bib
@@ -26,27 +36,27 @@ PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftl
 
 <aside>Zu Beginn des Papers von [Peirce et al. 2019](https://link.springer.com/article/10.3758/s13428-018-01193-y) finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.</aside>
 
+Die in PsychoPy erstellen Experimente können direkt auf [Pavlovia](https://pavlovia.org/) hochgeladen, und so als Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf *gitlab* ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.
 
-Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:
+<aside>[OpenSesame](https://osdoc.cogsci.nl/) ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.</aside>
 
-## Builder (GUI) und Code
+::: callout-caution
+## Hands-on: Experiment auswählen
 
-Experimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können.
+1.  Wählen Sie eines der beiden Experimente, entweder das [Random Dot Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html) oder das [Stroop Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/stroop_experiment.html) aus.
 
+2.  Lesen Sie die Beschreibung des Experiments durch und beantworten Sie die dort gestellten Fragen.
 
-## Vorprogrammierte Stimulus Elemente
+3.  Erstellen Sie eine [Flowchart](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#flowcharts)zum geplanten Experiment. Diese sollte alle [Elemente eines Experiments](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten) enthalten. Fügen Sie auch ein, wo sich ein Element wiederholt, wie lange ein Element dauert, etc.
 
-In PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.
+4.  Beginnen Sie nun das Experiment in PsychoPy zu erstellen. Untenstehend finden Sie einen Anleitung wie Sie vorgehen können.
 
-## Datenspeicherung
+5.  Wenn Sie genügend Zeit haben können Sie auch noch das andere Experiment programmieren.
 
-Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der *Versuchspersonen-ID*, dem *Namen des Experiments*, und dem aktuellen *Datum inkl. Uhrzeit* zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name **data** abgelegt.
+*\[\~90 Minuten\]*
+:::
 
-<aside>Bei der Wahl vom Datenfile-Namen empfiehlt es sich **immer** Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</aside>
-
-## Online Experimente
-
-Mit [Pavlovia](https://pavlovia.org/) können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf *gitlab* ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.
+# PsychoPy Experiment: Step by Step
 
 ::: callout-tip
 ## Tipp
@@ -62,6 +72,155 @@ Hilfreiche Informationen zum Erstellen von Experimenten in PsychoPy finden Sie h
 -   [Diskussionsforum](https://discourse.psychopy.org/)
 :::
 
-<aside>
-[OpenSesame](https://osdoc.cogsci.nl/) ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
-</aside>
+## 1. Umgebung
+
+### 1.1 Experiment-File erstellen und abspeichern
+
+-   Öffnen Sie PsychoPy und speichern Sie in einem dafür erstellten Ordner (z.B. `psychopy_experiment`) das Experiment-File ab (z.B. unter `experiment_stroop-task`).
+
+### 1.2 Builder (GUI) und Coder?
+
+Experimente können in PsychoPy mit dem Builder (in einem GUI) erstellt werden, der Python Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändert haben, diese Änderungen nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile des Experiments in Python (oder anderen Programmiersprachen) zu programmieren und dennoch im Builder weiterarbeiten zu können.
+
+<aside>Falls Sie planen ein Online-Experiment durchzuführen, eignet sich der Builder besonders, da die Experimente direkt online durchgeführt werden können.</aside>
+
+## 2. Experiment erstellen
+
+### 2.1 Stimuli
+
+In PsychoPy finden Sie schon vorprogrammierte Stimulus Elemente, wie Random Dots oder Rating Scales und können Texte, geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.
+
+-   Erstellen Sie einen **Stimulus**. Beachten Sie folgende Aspekte:
+
+    -   Farbe
+
+    -   Grösse
+
+    -   weitere Eigenschaften, wie Bedingung/Kongruenz?
+
+    -   Timing (Stimulusdauer, Stimulusende)
+
+-   Notieren Sie, welche Eigenschaften des Stimulus sich über die Trials hinweg verändern sollte. Dies können auch mehrere Eigenschaften sein. Diese Liste benötigen Sie später.
+
+## 2.2 Trial
+
+-   Ergänzen Sie alle Elemente, die für einen vollständigen Trial notwendig sind:
+
+    -   Antwort der Versuchsperson / Response
+
+    -   Inter-Trial-Intervall (ITI): kann vor oder nach dem Stimulus eingefügt werden. (Die Zeit des ITI wird oft variiert. Dies müsste also auch auf die Liste oben)
+
+    -   Fixationskreuz?
+
+    -   Mask?
+
+    -   Feedback?
+
+## 2.3 Trialschleife
+
+Sie müssen nicht alle Trials (oder in PsychoPy: `Routines`) des Experiments einzeln programmieren, sondern können diese wiederholen, in dem Sie eine **Trial**-Schleife (`loop`) um den Trial herum erstellen.
+
+-   Erstellen Sie einen `loop`indem Sie im Feld `Flow` auf `Insert loop` klicken.
+
+    -   Mit `loopType` können Sie steuern, die Bedingungen randomisiert/gemischt oder sequentiel/der Reihe nach angezeigt werden sollen.
+
+    -   Mit `nReps` können Sie angeben, wie oft jeder Stimulus wiederholt werden soll. Haben Sie also eine Stimuluseigenschaft mit 3 verschiedenen Stufen und `nReps`= 4, ergibt das 12 Trials.
+
+
+Bedingungen bzw. dass sich der Stimulus bei jedem Trial verändert kann mittels diesen Schleifen verändert werden, z.B. mit einer Bedingungs-Datei.
+
+<aside>Die Endung `.csv` bedeutet, dass die Daten als *comma separated values* abgespeichert werden, also durch ein Komma getrennt. Dieses Dateiformat eignet sich besser als `.xlsx`, weil es mit vielen Programmen kompatibel und gut einlesbar ist.</aside>
+
+-   Um die Bedingungen (in unserem Fall: die sich verändernden Stimuluseigenschaften) zu definieren erstellen wir eine `.csv`oder `.xlsx`-Datei (z.B. in Excel/Notepad/etc.) mit dem Namen `conditions` und speichern dieses im selben Ordner wie das Experiment.
+
+    -   In die erste Zeile schreiben wir die Variablennamen. Dies sind die Eigenschaften, die Sie sich bei Punkt 2.1 notiert haben. Wenn wir z.B. einen Text anzeigen möchten, schreiben wir ins 1. Feld `word`.
+
+    -   In die Spalte unter die Variablennamen schreiben wir die Werte. Als Beispiel könnten die Worte die wir anzeigen lassen wollen `cat`, `dog` und `rabbit` lauten.
+
+    - Fügen Sie für jedes sich verändernde Element einen Variablennamen und die entsprechenden Werte ein.
+    
+    - Fügen Sie in jeder Zeile unter dem Variablennamen `corrAns` die korrekte Antwort ein.
+    
+    - Fügen Sie, falls vorhanden, in jeder Zeile weitere wichtige Information zum Stimulus ein. Im Beispiel möchten Sie z.B. später fleischfressende mit pflanzenfressenden Tieren vergleichen, deshalb eine Spalte `meat`. Dies verändert im Experiment nichts, dient aber am Schluss zur Auswertung.
+    
+    ![](img/psychopy_conditionsfile_example.JPG)
+    
+- Fügen Sie nun im Loop-Fenster die Datei ein.
+
+    ![](img/psychopy_trialloop_example.jpg)
+
+
+:::callout-tip
+## Tipp
+
+Jede Zeile in der `conditions`-Datei unterhalb des Variablennamens entspricht einer Bedingung (condition).
+
+Setzen Sie `nReps` zum Testen auf 1, so sparen Sie Zeit.
+:::
+
+Im PsychoPy können Sie Variablen mit einem vorangestellten `$`einfügen. 
+
+- Öffnen Sie nun wieder das Stimulusfenster und passen Sie dort die Stimuluseigenschaften an. Anstatt von _hard-coded values_ (also einmalig, fix festgelegten Werten) geben wir nun in unserem Beispiel bei `text` eine Laufvariable (verändernde Eigenschaft) ein: `$word`. 
+
+![](img/psychopy_variable.jpg)
+
+
+- Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.
+
+:::callout-tip
+## Tipp
+Mit dieser Methode können Sie auch Instruktionen, ITIs, etc. variieren lassen.
+:::
+
+## 2.4 Weitere Elemente
+
+In PsychoPy GUI wird Ihnen im Fenster `Flow`eine Art Flowchart angezeigt. Hier sehen Sie, welche Elemente Ihr aktuelles Experiment enthält.
+
+-   Fügen Sie nun alle weiteren Elemente, die Sie zu Beginn auf Ihrer Flowchart eingezeichnet hatten, z.B.
+
+    - Begrüssung
+    
+    - Einverständnis
+    
+    - Instruktion
+    
+    - Debriefing, Verabschiedung
+    
+    
+- Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.
+
+:::callout-tip
+## Tipp
+
+Beim Programmieren lohnt es sich oft, die kleinen Schritte zwischenzutesten, weil es dann einfacher ist herauszufinden wo genau der Fehler passiert ist.
+:::
+
+## 3. Datenspeicherung
+
+Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einer trial-by-trial `.csv`-Datei. Das bedeutet, dass jeder Trial 1 Zeile generiert. Die `.csv`-Datei erhält einen Namen, der sich aus der *Versuchspersonen-ID*, dem *Namen des Experiments*, und dem aktuellen *Datum inkl. Uhrzeit* zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die `.csv`-Dateien werden in einem Ordner mit dem Name **data** abgelegt.
+
+In den Fenstern der Elemente kann jeweils angegeben werden, was alles gespeichert werden soll. 
+
+:::callout-tip
+## Tipp
+Bei der Wahl vom Datenfile-Namen empfiehlt es sich **immer** Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.
+:::
+
+## 4. Test / Pilotierung
+
+- Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind alle wichtigen Informationen auf jeder Zeile vorhanden?
+
+    -   Versuchspersonen-ID
+
+    -   Bedingung
+
+    -   Stimuluseigenschaften (z.B. word)
+
+    -   Antwort der Versuchsperson
+
+    -   Antwortdauer der Versuchsperson
+
+- Können die Daten überschrieben werden?
+
+- Lassen Sie jemanden anderes Ihr Experiment durchführen, und geben Sie einander 
+Feedback.

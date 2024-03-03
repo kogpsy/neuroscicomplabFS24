@@ -7,6 +7,16 @@ author:
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Rebekka Borer
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    #orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
   - name: Andrew Ellis
     url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
@@ -22,24 +32,14 @@ format:
 
 In diesem Kurs erstellen wir mit PsychoPy ein perzeptuelles Entscheidungsexperiment, ähnlich dem Experiment aus @mulder_bias_2012. Dieses neurowissenschaftliche Experiment untersucht den Einfluss von Vorwissen auf Entscheidungsverhalten von Menschen sowie die dazugehörigen neuronalen Korrelate. Zudem erstellen wir einen Stroop Task, dieser Test aus der Neuropsychologie untersucht die Inhibition, also das Unterdrücken von Impulsen, zugunsten der richtigen Arbeit.
 
-# Experiment 1: Random Dot Paradigma
-
-Jeden Tag treffen wir Tausende von kleinen Entscheidungen, meistens unter gewissem Zeitdruck. Viele davon sind trivial (z. B. welches Paar Socken man anzieht) und automatisch (z. B. ob man die Espresso- oder Lungo-Taste auf der Kaffeemaschine drückt).
-
-<!-- Die meisten Entscheidungen im wirklichen Leben setzen sich eigentlich aus zwei Entscheidungen zusammen: Einerseits der Entscheidung, mit dem Abwägen aufzuhören und aufgrund des aktuellen Wissenstandes zu handeln. Andererseits die Wahl oder Entscheidungshandlung selbst. Wenn Sie ein Experiment durchführen müssen Sie beispielsweise Daten sammeln, und dann entscheiden, wann die Datenerfassung beendet, mit der Analyse begonnen und eine Schlussfolgerung gezogen wird. Dieser sequentielle Charakter der Entscheidungsfindung ist eine grundlegende Eigenschaft des menschlichen Nervensystems und spiegelt seine Unfähigkeit wider, Informationen sofort zu verarbeiten. -->
+Jeden Tag treffen wir Tausende von kleinen Entscheidungen, meistens unter gewissem Zeitdruck. Viele davon sind trivial (z. B. welches Paar Socken man anzieht) und automatisch (z. B. ob man die Espresso- oder Lungo-Taste auf der Kaffeemaschine drückt).Die meisten Entscheidungen im wirklichen Leben setzen sich eigentlich aus zwei Entscheidungen zusammen: Einerseits der Entscheidung, mit dem Abwägen aufzuhören und aufgrund des aktuellen Wissenstandes zu handeln. Andererseits die Wahl oder Entscheidungshandlung selbst. Dieser sequentielle Charakter der Entscheidungsfindung ist eine grundlegende Eigenschaft des menschlichen Nervensystems und spiegelt seine Unfähigkeit wider, Informationen sofort zu verarbeiten.
 
 *Perzeptuelle Entscheidungen* sind Entscheidungen, welche auf der Wahrnehmung, Einordnung und Integration von Sinnesreizen beruhen. Um beispielsweise eine Strasse sicher überqueren zu können, müssen wir mittels den Sinnesinformationen der Augen und Ohren sowie der Verarbeitung dieser Reize einschätzen mit welcher Geschwindigkeit ein herannahendes Auto unterwegs ist und ob wir lieber abwarten bis es vorbeigefahren ist. Innerhalb der Neurowissenschaften wird *perceptual decision making* untersucht, um die neuronalen Schaltkreise welche Wahrnehmungssignale kodieren, speichern und analysieren zu verstehen und mit beobachtbarem Verhalten in Verbindung zu bringen. Von Interesse ist zum Beispiel wie die Entscheidung ausfällt, wenn die sensorischen Daten undeutlich oder sogar widersprüchlich sind. Besonders spannend ist auch wie Vorwissen (*prior knowledge*) auf das Entscheidungsverhalten einwirkt.
 
 <aside>**Perceptual decision making** is the process by which sensory information is used to guide behavior toward the external world. This involves gathering information through the senses, evaluating and integrating it according to the current goals and internal state of the subject, and using it to produce motor responses. In contrast to choice behavior and decision making in general (...) perceptual decision making emphasizes the role of sensory information in directing behavior (...) within neuroscience, the goal is to reveal the computational mechanisms whereby neural circuits encode, store, and analyze perceptual signals; combine them with other behaviorally relevant information; and use them to resolve conflicts between competing motor plans. @jaeger_perceptual_2014</aside>
 
-::: callout-important
--   In welchen Situationen treffen wir perzeptuelle Entscheidungen?
--   Wo ist der Einfluss von Vorwissen auf perzeptuelle Entscheidungen alltagsrelevant?
-
-*Diskutieren Sie die Fragen in kleinen Gruppen und finden Sie je 3 Beispiele.*
-:::
-
 Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist das Wissen darum, wie das Gehirn diese Entscheidungsaufgaben löst noch sehr begrenzt. Eine einzelne Entscheidung kann schon sehr komplex sein. Um die Dynamik der Entscheidungsfindung zu verstehen, konzentrieren sich die meisten Studien deshalb auf einfache, wiederholbare Wahlprobleme mit nur zwei (binären) Antwortmöglichkeiten. Ein typisches Paradigma in neurowissenschaftlichen Studien ist das *random-dot motion paradigm.* Hierbei muss eine Person entscheiden in welche Richtung sich eine Punktewolke bewegt.
+
 
 <!-- # Experiment -->
 
@@ -65,9 +65,7 @@ Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist da
 <!-- *Was denken Sie? Diskutieren Sie die Fragen in kleinen Gruppen ohne im Paper nachzuschauen.* -->
 <!-- ::: -->
 
-<!-- Das Vorwissen (auch *bias*) der Versuchsperson wird in diesem Experiment durch einen Hinweisreiz (*cue*) in Form eines Pfeils oder eines neutralen Stimulus operationalisiert. Der Pfeil zeigt die wahrscheinlichere Bewegungsrichtung an. Vor und nach dem Cue wird ein Fixationskreuz gezeigt. Alle weiteren Parameter können Sie dem Paper entnehmen [@mulder_bias_2012]. -->
 
-<!-- <aside>Die von @mulder_bias_2012 gefundenen Auswirkungen von Vorwissen auf Reaktionszeiten, Fehler sowie die dazugehörigen neuronalen Korrelate besprechen wir in diesem Kurs nur kurz. Für die Datenanalyse wurde mit einem *diffusion decision model (DDM)* gearbeitet. Dieses sprengt den Rahmen dieses Kurses. Interessierte finden [hier](https://kogpsy.github.io/neuroscicomplab/08-ddm.html) Informationen und Erklärungen zum DDM.</aside> -->
 
 <!-- ::: {layout-ncol="1"} -->
 <!-- ![Trial des *random-dot motion task* von @mulder_bias_2012](../../assets/images/bias-payoff-mulder.png) -->
@@ -82,42 +80,6 @@ Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist da
 
 <!-- -   [Walk-through: Builder](https://tu-coding-outreach-group.github.io/cog_summer_workshops_2021/psychopy/index.html) -->
 
-<!-- -   [Diskussionsforum](https://discourse.psychopy.org/) -->
-
-<!-- Untenstehend finden Sie einige wichtige Informationen über das Experiment. -->
-<!-- ::: -->
-
-<!-- ## Ablauf -->
-
-<!-- Das Experiment besteht aus der Instruktion, mehreren Versuchsblöcken und der Nachbesprechung. Die Anweisungen und die Nachbesprechung sind Textanzeigen, während die Versuche (und die Versuchsblöcke) etwas komplizierter sind. -->
-
-<!-- ## Trial -->
-
-<!-- Zunächst wird ein Fixationskreuz entweder für 100 ms, 350 ms, 800 ms oder 1200 ms angezeigt. Die tatsächliche Dauer wird für jeden Versuch randomisiert. Eine solche Randomisierung kann nicht über die Benutzeroberfläche vorgenommen werden, sondern erfordert ein kleines Stück Python-Code. Sehen Sie sich den Codeblock der Routine *Fixation_pre_cue* an, um zu erfahren, wie dies erreicht werden kann. -->
-
-<!-- <aside>Das Experiment wurde im Scanner und ausserhalb durchgeführt. Die beiden Version unterscheiden sich ganz stark in ihrem Timing. Wir implementieren hier die Scanner Version des Tasks.</aside> -->
-
-<!-- Anschließend wird für 1000 ms ein Hinweis (cue) präsentiert. Dabei kann es sich entweder um einen Pfeil handeln, der nach rechts zeigt, einen Pfeil, der nach links zeigt, oder einen einfachen Kreis (für die Kontrollbedingung). Der Codeblock in der *Cue*-Routine legt den tatsächlichen Hinweis für jeden Versuch auf der Grundlage der Schleifenvariablen **cue** fest. -->
-
-<!-- Nach dem Cue wird ein weiteres Fixationskreuz präsentiert - dieses Mal für entweder 3400 ms, 4000 ms, 4500 ms oder 5000 ms. Wie beim ersten Fixationskreuz wird die tatsächliche Dauer zufällig gewählt. -->
-
-<!-- Nach dem zweiten Fixationskreuz wird für 1500 ms der eigentliche Stimulus angezeigt: ein *random dot kinematogram* (RDK). Die Punkte bewegen sich entweder nach rechts oder nach links mit einem Kohärenzniveau von 8%. Die Bewegungsrichtung eines einzelnen Versuchs wird durch die Schleifenvariable **direction** bestimmt und im Codeblock der Routine *Dots* festgelegt. Die Teilnehmer müssen entscheiden, welche Richtung sie wahrnehmen, und können ihre Antwort durch Drücken der linken oder rechten Pfeiltaste auf der Tastatur eingeben. -->
-
-<!-- Schließlich wird ein Feedback-Bildschirm angezeigt. Wenn der Teilnehmer innerhalb der ersten 100 ms geantwortet hat, wird der Hinweis "zu schnell" angezeigt. Wurde während des gesamten Stimulus keine Antwort erfasst, wird das Wort "miss" angezeigt. War die Antwort richtig, wird "+5 Punkte" angezeigt, war sie falsch, wird "+0 Punkte" angezeigt. -->
-
-<!-- ## Experimentalschleife: main_blocks_loop -->
-
-<!-- Mit *loops* in PsychoPy haben wir die Möglichkeit, eine oder mehrere Routinen zu wiederholen. In diesem Experiment wird dies genutzt, um denselben Versuch (wie oben beschrieben) mehrfach zu zeigen, aber jedes Mal mit anderen Werten für die *loop variables*. Eine Schleife wiederholt also einen Versuch einige Male, wobei die Schleifenvariablen bei jeder Wiederholung geändert werden. Der Versuch selbst wiederum liest diese Schleifenvariablen aus, um z.B. zu wissen, ob sich die Punkte nach rechts oder nach links bewegen sollen. Hier wird nur die *main_blocks_loop* erklärt, aber das Prinzip gilt auch für die *practice_block_loop*. -->
-
-<!-- Um die verschiedenen Werte für die Schleifenvariablen zu definieren, müssen wir eine einfache CSV-Datei erstellen: -->
-
-<!-- ``` csv -->
-<!-- cue,direction -->
-<!-- left,right -->
-<!-- left,left -->
-<!-- none,right -->
-<!-- ... -->
-<!-- ``` -->
 
 <!-- Diese CSV-Datei (die Bedingungsdatei) definiert die beiden loop Variablen *cue* und *direction*. Das Stichwort kann entweder *left*, *right* oder *none*, sein, während die Richtung *left* oder *right* sein kann. -->
 

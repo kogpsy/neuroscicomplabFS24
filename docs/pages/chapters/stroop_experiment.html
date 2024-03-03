@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gerda Wyssen">
+<meta name="author" content="Rebekka Borer">
+<meta name="author" content="Daniel Fitze">
 <meta name="description" content="Programmieren eines klassischen neuropsychologischen Tests mit PsychoPy.">
 
 <title>Neurowissenschaft Computerlab - Stroop Paradigma</title>
@@ -251,12 +253,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#stroop-task" id="toc-stroop-task" class="nav-link active" data-scroll-target="#stroop-task">Stroop Task</a>
   <ul class="collapse">
-  <li><a href="#stroop-task-in-psychopy" id="toc-stroop-task-in-psychopy" class="nav-link" data-scroll-target="#stroop-task-in-psychopy">Stroop Task in PsychoPy</a></li>
-  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">1. Stimuli</a></li>
-  <li><a href="#trialschleife" id="toc-trialschleife" class="nav-link" data-scroll-target="#trialschleife">2. Trialschleife</a></li>
-  <li><a href="#bedingungen" id="toc-bedingungen" class="nav-link" data-scroll-target="#bedingungen">3. Bedingungen</a></li>
-  <li><a href="#instruktion-und-debriefing" id="toc-instruktion-und-debriefing" class="nav-link" data-scroll-target="#instruktion-und-debriefing">4. Instruktion und Debriefing</a></li>
-  <li><a href="#test-pilotierung" id="toc-test-pilotierung" class="nav-link" data-scroll-target="#test-pilotierung">5. Test / Pilotierung</a></li>
   <li><a href="#referenzen" id="toc-referenzen" class="nav-link" data-scroll-target="#referenzen">Referenzen</a></li>
   </ul></li>
   </ul>
@@ -277,11 +273,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 <div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Authors</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Rebekka Borer </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -326,7 +342,7 @@ Hands-on: Stroop Task ausprobieren
 </div>
 <div class="callout-body-container callout-body">
 <p><a href="https://www.psytoolkit.org/experiment-library/stroop.html">Hier</a> finden Sie eine englische Online-Version eines Stroop Tasks.</p>
-<p>Testen Sie die Demo und diskutieren Sie dann in 4er Gruppen folgende Fragen:</p>
+<p>Testen Sie die Demo und diskutieren Sie dann in kleinen Gruppen folgende Fragen:</p>
 <ul>
 <li><p>Welche “Elemente” des Experiments konnten Sie identifizieren?</p></li>
 <li><p>Was sind die Unterschiede zum “klassischen” Strooptask?</p></li>
@@ -340,73 +356,6 @@ Hands-on: Stroop Task ausprobieren
 <p><em>[~10 Minuten]</em></p>
 </div>
 </div>
-<section id="stroop-task-in-psychopy" class="level2">
-<h2 class="anchored" data-anchor-id="stroop-task-in-psychopy">Stroop Task in PsychoPy</h2>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Stroop Task in PsychoPy
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Erstellen Sie einen Stroop Task mit dem PsychoPy Builder.</p>
-<p>Nutzen Sie hierfür die untenstehenden Schritte und Hinweise.</p>
-</div>
-</div>
-</section>
-<section id="stimuli" class="level2">
-<h2 class="anchored" data-anchor-id="stimuli">1. Stimuli</h2>
-<p>Erstellen Sie einen <strong>Stroop Stimulus</strong>. Beachten Sie folgende Aspekte:</p>
-<ul>
-<li><p>Timing (Stimulusdauer, Stimulusende)</p></li>
-<li><p>Farbe</p></li>
-<li><p>Grösse</p></li>
-<li><p>Bedingung/Kongruenz?</p></li>
-</ul>
-</section>
-<section id="trialschleife" class="level2">
-<h2 class="anchored" data-anchor-id="trialschleife">2. Trialschleife</h2>
-<p>Erstellen Sie eine <strong>Trial</strong>-Schleife.</p>
-<ul>
-<li><p>Stimuluspräsentation</p></li>
-<li><p>Antwort der Versuchsperson aufnehmen</p></li>
-<li><p>Timing (ITI: Inter-Trial-Intervall)</p></li>
-<li><p>Wiederholen Sie die Schleife.</p></li>
-</ul>
-</section>
-<section id="bedingungen" class="level2">
-<h2 class="anchored" data-anchor-id="bedingungen">3. Bedingungen</h2>
-<ul>
-<li>Variieren Sie die <strong>Bedingungen</strong> (Kongruenz der Farben) mit dem <em>conditions.csv</em> File.</li>
-</ul>
-</section>
-<section id="instruktion-und-debriefing" class="level2">
-<h2 class="anchored" data-anchor-id="instruktion-und-debriefing">4. Instruktion und Debriefing</h2>
-<ul>
-<li><p>Fügen Sie zu Beginn des Experiments eine Instruktion hinzu.</p></li>
-<li><p>Fügen Sie am Ende des Experiments ein Debriefing hinzu.</p></li>
-</ul>
-</section>
-<section id="test-pilotierung" class="level2">
-<h2 class="anchored" data-anchor-id="test-pilotierung">5. Test / Pilotierung</h2>
-<p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an:</p>
-<p>Sind die untenstehenden Infos auf jeder Zeile vorhanden?</p>
-<ul>
-<li><p>Versuchspersonennummer</p></li>
-<li><p>Bedingung</p></li>
-<li><p>Stimuluswort</p></li>
-<li><p>Stimulusfarbe</p></li>
-<li><p>Antwort der Versuchsperson</p></li>
-<li><p>Antwortdauer der Versuchsperson</p></li>
-</ul>
-<p>Können die Daten überschrieben werden?</p>
-<!-- ## 6. Übungsexperiment -->
-<!-- -   Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. -->
-<!-- -   Vergleichen Sie das Experiment mit Ihrer Version, was fällt Ihnen auf? -->
-</section>
 <section id="referenzen" class="level2">
 <h2 class="anchored" data-anchor-id="referenzen">Referenzen</h2>
 <p>MacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. <a href="https://doi.org/10.1037/0033-2909.109.2.163">https://doi.org/10.1037/0033-2909.109.2.163</a></p>
@@ -419,13 +368,14 @@ Hands-on: Stroop Task in PsychoPy
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
-  author = {Wyssen, Gerda},
+  author = {Wyssen, Gerda and Borer, Rebekka and Fitze, Daniel},
   title = {Stroop {Paradigma}},
   url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/stroop_experiment.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda. n.d. <span>“Stroop Paradigma.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/stroop_experiment.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/stroop_experiment.html</a>.
+Wyssen, Gerda, Rebekka Borer, and Daniel Fitze. n.d. <span>“Stroop
+Paradigma.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/stroop_experiment.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/stroop_experiment.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 

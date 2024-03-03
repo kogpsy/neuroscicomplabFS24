@@ -7,7 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gerda Wyssen">
+<meta name="author" content="Rebekka Borer">
 <meta name="author" content="Daniel Fitze">
+<meta name="author" content="Andrew Ellis">
 <meta name="description" content="Kurze Einführung in das Erstellen von Experimenten mit PsychoPy.">
 
 <title>Neurowissenschaft Computerlab - Verhaltensexperimente mit PsychoPy</title>
@@ -250,10 +252,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#builder-gui-und-code" id="toc-builder-gui-und-code" class="nav-link active" data-scroll-target="#builder-gui-und-code">Builder (GUI) und Code</a></li>
-  <li><a href="#vorprogrammierte-stimulus-elemente" id="toc-vorprogrammierte-stimulus-elemente" class="nav-link" data-scroll-target="#vorprogrammierte-stimulus-elemente">Vorprogrammierte Stimulus Elemente</a></li>
-  <li><a href="#datenspeicherung" id="toc-datenspeicherung" class="nav-link" data-scroll-target="#datenspeicherung">Datenspeicherung</a></li>
-  <li><a href="#online-experimente" id="toc-online-experimente" class="nav-link" data-scroll-target="#online-experimente">Online Experimente</a></li>
+  <li><a href="#psychopy-experiment-step-by-step" id="toc-psychopy-experiment-step-by-step" class="nav-link active" data-scroll-target="#psychopy-experiment-step-by-step">PsychoPy Experiment: Step by Step</a>
+  <ul class="collapse">
+  <li><a href="#umgebung" id="toc-umgebung" class="nav-link" data-scroll-target="#umgebung">1. Umgebung</a>
+  <ul class="collapse">
+  <li><a href="#experiment-file-erstellen-und-abspeichern" id="toc-experiment-file-erstellen-und-abspeichern" class="nav-link" data-scroll-target="#experiment-file-erstellen-und-abspeichern">1.1 Experiment-File erstellen und abspeichern</a></li>
+  <li><a href="#builder-gui-und-coder" id="toc-builder-gui-und-coder" class="nav-link" data-scroll-target="#builder-gui-und-coder">1.2 Builder (GUI) und Coder?</a></li>
+  </ul></li>
+  <li><a href="#experiment-erstellen" id="toc-experiment-erstellen" class="nav-link" data-scroll-target="#experiment-erstellen">2. Experiment erstellen</a>
+  <ul class="collapse">
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">2.1 Stimuli</a></li>
+  </ul></li>
+  <li><a href="#trial" id="toc-trial" class="nav-link" data-scroll-target="#trial">2.2 Trial</a></li>
+  <li><a href="#trialschleife" id="toc-trialschleife" class="nav-link" data-scroll-target="#trialschleife">2.3 Trialschleife</a></li>
+  <li><a href="#weitere-elemente" id="toc-weitere-elemente" class="nav-link" data-scroll-target="#weitere-elemente">2.4 Weitere Elemente</a></li>
+  <li><a href="#datenspeicherung" id="toc-datenspeicherung" class="nav-link" data-scroll-target="#datenspeicherung">3. Datenspeicherung</a></li>
+  <li><a href="#test-pilotierung" id="toc-test-pilotierung" class="nav-link" data-scroll-target="#test-pilotierung">4. Test / Pilotierung</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +301,27 @@ ul.task-list li input[type="checkbox"] {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
+    <p class="author">Rebekka Borer </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
     <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/awellis">Andrew Ellis</a> <a href="https://orcid.org/0000-0002-2788-936X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -312,25 +347,32 @@ ul.task-list li input[type="checkbox"] {
 <aside>
 Zu Beginn des Papers von <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">Peirce et al.&nbsp;2019</a> finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.
 </aside>
-<p>Hier einige wichtige allgemeine Punkte zum Erstellen von Experimenten in PsychoPy:</p>
-<section id="builder-gui-und-code" class="level2">
-<h2 class="anchored" data-anchor-id="builder-gui-und-code">Builder (GUI) und Code</h2>
-<p>Experimente können in PsychoPy mit dem Builder erstellt werden, der Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändern dies nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile zu programmieren und dennoch im Buider weiterarbeiten zu können.</p>
-</section>
-<section id="vorprogrammierte-stimulus-elemente" class="level2">
-<h2 class="anchored" data-anchor-id="vorprogrammierte-stimulus-elemente">Vorprogrammierte Stimulus Elemente</h2>
-<p>In PsychoPy finden Sie schon vorgefertigte Stimuli, Rating Scales, können geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
-</section>
-<section id="datenspeicherung" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="datenspeicherung">Datenspeicherung</h2>
-<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einem trial-by-trial CSV File. Das bedeutet, dass jeder Trial 1 Zeile generiert. Das CSV File erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die CSV Files werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
+<p>Die in PsychoPy erstellen Experimente können direkt auf <a href="https://pavlovia.org/">Pavlovia</a> hochgeladen, und so als Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.</p>
 <aside>
-Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.
+<a href="https://osdoc.cogsci.nl/">OpenSesame</a> ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
 </aside>
-</section>
-<section id="online-experimente" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="online-experimente">Online Experimente</h2>
-<p>Mit <a href="https://pavlovia.org/">Pavlovia</a> können relativ simpel Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Experiment auswählen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Wählen Sie eines der beiden Experimente, entweder das <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html">Random Dot Experiment</a> oder das <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/stroop_experiment.html">Stroop Experiment</a> aus.</p></li>
+<li><p>Lesen Sie die Beschreibung des Experiments durch und beantworten Sie die dort gestellten Fragen.</p></li>
+<li><p>Erstellen Sie eine <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#flowcharts">Flowchart</a>zum geplanten Experiment. Diese sollte alle <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten">Elemente eines Experiments</a> enthalten. Fügen Sie auch ein, wo sich ein Element wiederholt, wie lange ein Element dauert, etc.</p></li>
+<li><p>Beginnen Sie nun das Experiment in PsychoPy zu erstellen. Untenstehend finden Sie einen Anleitung wie Sie vorgehen können.</p></li>
+<li><p>Wenn Sie genügend Zeit haben können Sie auch noch das andere Experiment programmieren.</p></li>
+</ol>
+<p><em>[~90 Minuten]</em></p>
+</div>
+</div>
+<section id="psychopy-experiment-step-by-step" class="level1 page-columns page-full">
+<h1>PsychoPy Experiment: Step by Step</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -350,22 +392,189 @@ Tipp
 </ul>
 </div>
 </div>
+<section id="umgebung" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="umgebung">1. Umgebung</h2>
+<section id="experiment-file-erstellen-und-abspeichern" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-file-erstellen-und-abspeichern">1.1 Experiment-File erstellen und abspeichern</h3>
+<ul>
+<li>Öffnen Sie PsychoPy und speichern Sie in einem dafür erstellten Ordner (z.B. <code>psychopy_experiment</code>) das Experiment-File ab (z.B. unter <code>experiment_stroop-task</code>).</li>
+</ul>
+</section>
+<section id="builder-gui-und-coder" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="builder-gui-und-coder">1.2 Builder (GUI) und Coder?</h3>
+<p>Experimente können in PsychoPy mit dem Builder (in einem GUI) erstellt werden, der Python Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändert haben, diese Änderungen nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile des Experiments in Python (oder anderen Programmiersprachen) zu programmieren und dennoch im Builder weiterarbeiten zu können.</p>
 <aside>
-<a href="https://osdoc.cogsci.nl/">OpenSesame</a> ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
+Falls Sie planen ein Online-Experiment durchzuführen, eignet sich der Builder besonders, da die Experimente direkt online durchgeführt werden können.
 </aside>
+</section>
+</section>
+<section id="experiment-erstellen" class="level2">
+<h2 class="anchored" data-anchor-id="experiment-erstellen">2. Experiment erstellen</h2>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">2.1 Stimuli</h3>
+<p>In PsychoPy finden Sie schon vorprogrammierte Stimulus Elemente, wie Random Dots oder Rating Scales und können Texte, geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
+<ul>
+<li><p>Erstellen Sie einen <strong>Stimulus</strong>. Beachten Sie folgende Aspekte:</p>
+<ul>
+<li><p>Farbe</p></li>
+<li><p>Grösse</p></li>
+<li><p>weitere Eigenschaften, wie Bedingung/Kongruenz?</p></li>
+<li><p>Timing (Stimulusdauer, Stimulusende)</p></li>
+</ul></li>
+<li><p>Notieren Sie, welche Eigenschaften des Stimulus sich über die Trials hinweg verändern sollte. Dies können auch mehrere Eigenschaften sein. Diese Liste benötigen Sie später.</p></li>
+</ul>
+</section>
+</section>
+<section id="trial" class="level2">
+<h2 class="anchored" data-anchor-id="trial">2.2 Trial</h2>
+<ul>
+<li><p>Ergänzen Sie alle Elemente, die für einen vollständigen Trial notwendig sind:</p>
+<ul>
+<li><p>Antwort der Versuchsperson / Response</p></li>
+<li><p>Inter-Trial-Intervall (ITI): kann vor oder nach dem Stimulus eingefügt werden. (Die Zeit des ITI wird oft variiert. Dies müsste also auch auf die Liste oben)</p></li>
+<li><p>Fixationskreuz?</p></li>
+<li><p>Mask?</p></li>
+<li><p>Feedback?</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="trialschleife" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="trialschleife">2.3 Trialschleife</h2>
+<p>Sie müssen nicht alle Trials (oder in PsychoPy: <code>Routines</code>) des Experiments einzeln programmieren, sondern können diese wiederholen, in dem Sie eine <strong>Trial</strong>-Schleife (<code>loop</code>) um den Trial herum erstellen.</p>
+<ul>
+<li><p>Erstellen Sie einen <code>loop</code>indem Sie im Feld <code>Flow</code> auf <code>Insert loop</code> klicken.</p>
+<ul>
+<li><p>Mit <code>loopType</code> können Sie steuern, die Bedingungen randomisiert/gemischt oder sequentiel/der Reihe nach angezeigt werden sollen.</p></li>
+<li><p>Mit <code>nReps</code> können Sie angeben, wie oft jeder Stimulus wiederholt werden soll. Haben Sie also eine Stimuluseigenschaft mit 3 verschiedenen Stufen und <code>nReps</code>= 4, ergibt das 12 Trials.</p></li>
+</ul></li>
+</ul>
+<p>Bedingungen bzw. dass sich der Stimulus bei jedem Trial verändert kann mittels diesen Schleifen verändert werden, z.B. mit einer Bedingungs-Datei.</p>
+<aside>
+Die Endung <code>.csv</code> bedeutet, dass die Daten als <em>comma separated values</em> abgespeichert werden, also durch ein Komma getrennt. Dieses Dateiformat eignet sich besser als <code>.xlsx</code>, weil es mit vielen Programmen kompatibel und gut einlesbar ist.
+</aside>
+<ul>
+<li><p>Um die Bedingungen (in unserem Fall: die sich verändernden Stimuluseigenschaften) zu definieren erstellen wir eine <code>.csv</code>oder <code>.xlsx</code>-Datei (z.B. in Excel/Notepad/etc.) mit dem Namen <code>conditions</code> und speichern dieses im selben Ordner wie das Experiment.</p>
+<ul>
+<li><p>In die erste Zeile schreiben wir die Variablennamen. Dies sind die Eigenschaften, die Sie sich bei Punkt 2.1 notiert haben. Wenn wir z.B. einen Text anzeigen möchten, schreiben wir ins 1. Feld <code>word</code>.</p></li>
+<li><p>In die Spalte unter die Variablennamen schreiben wir die Werte. Als Beispiel könnten die Worte die wir anzeigen lassen wollen <code>cat</code>, <code>dog</code> und <code>rabbit</code> lauten.</p></li>
+<li><p>Fügen Sie für jedes sich verändernde Element einen Variablennamen und die entsprechenden Werte ein.</p></li>
+<li><p>Fügen Sie in jeder Zeile unter dem Variablennamen <code>corrAns</code> die korrekte Antwort ein.</p></li>
+<li><p>Fügen Sie, falls vorhanden, in jeder Zeile weitere wichtige Information zum Stimulus ein. Im Beispiel möchten Sie z.B. später fleischfressende mit pflanzenfressenden Tieren vergleichen, deshalb eine Spalte <code>meat</code>. Dies verändert im Experiment nichts, dient aber am Schluss zur Auswertung.</p></li>
+</ul>
+<p><img src="img/psychopy_conditionsfile_example.JPG" class="img-fluid"></p></li>
+<li><p>Fügen Sie nun im Loop-Fenster die Datei ein.</p>
+<p><img src="img/psychopy_trialloop_example.jpg" class="img-fluid"></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jede Zeile in der <code>conditions</code>-Datei unterhalb des Variablennamens entspricht einer Bedingung (condition).</p>
+<p>Setzen Sie <code>nReps</code> zum Testen auf 1, so sparen Sie Zeit.</p>
+</div>
+</div>
+<p>Im PsychoPy können Sie Variablen mit einem vorangestellten <code>$</code>einfügen.</p>
+<ul>
+<li>Öffnen Sie nun wieder das Stimulusfenster und passen Sie dort die Stimuluseigenschaften an. Anstatt von <em>hard-coded values</em> (also einmalig, fix festgelegten Werten) geben wir nun in unserem Beispiel bei <code>text</code> eine Laufvariable (verändernde Eigenschaft) ein: <code>$word</code>.</li>
+</ul>
+<p><img src="img/psychopy_variable.jpg" class="img-fluid"></p>
+<ul>
+<li>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit dieser Methode können Sie auch Instruktionen, ITIs, etc. variieren lassen.</p>
+</div>
+</div>
+</section>
+<section id="weitere-elemente" class="level2">
+<h2 class="anchored" data-anchor-id="weitere-elemente">2.4 Weitere Elemente</h2>
+<p>In PsychoPy GUI wird Ihnen im Fenster <code>Flow</code>eine Art Flowchart angezeigt. Hier sehen Sie, welche Elemente Ihr aktuelles Experiment enthält.</p>
+<ul>
+<li><p>Fügen Sie nun alle weiteren Elemente, die Sie zu Beginn auf Ihrer Flowchart eingezeichnet hatten, z.B.</p>
+<ul>
+<li><p>Begrüssung</p></li>
+<li><p>Einverständnis</p></li>
+<li><p>Instruktion</p></li>
+<li><p>Debriefing, Verabschiedung</p></li>
+</ul></li>
+<li><p>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Programmieren lohnt es sich oft, die kleinen Schritte zwischenzutesten, weil es dann einfacher ist herauszufinden wo genau der Fehler passiert ist.</p>
+</div>
+</div>
+</section>
+<section id="datenspeicherung" class="level2">
+<h2 class="anchored" data-anchor-id="datenspeicherung">3. Datenspeicherung</h2>
+<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einer trial-by-trial <code>.csv</code>-Datei. Das bedeutet, dass jeder Trial 1 Zeile generiert. Die <code>.csv</code>-Datei erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die <code>.csv</code>-Dateien werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
+<p>In den Fenstern der Elemente kann jeweils angegeben werden, was alles gespeichert werden soll.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</p>
+</div>
+</div>
+</section>
+<section id="test-pilotierung" class="level2">
+<h2 class="anchored" data-anchor-id="test-pilotierung">4. Test / Pilotierung</h2>
+<ul>
+<li><p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind alle wichtigen Informationen auf jeder Zeile vorhanden?</p>
+<ul>
+<li><p>Versuchspersonen-ID</p></li>
+<li><p>Bedingung</p></li>
+<li><p>Stimuluseigenschaften (z.B. word)</p></li>
+<li><p>Antwort der Versuchsperson</p></li>
+<li><p>Antwortdauer der Versuchsperson</p></li>
+</ul></li>
+<li><p>Können die Daten überschrieben werden?</p></li>
+<li><p>Lassen Sie jemanden anderes Ihr Experiment durchführen, und geben Sie einander Feedback.</p></li>
+</ul>
 
 
 </section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
-  author = {Wyssen, Gerda and Fitze, Daniel},
+  author = {Wyssen, Gerda and Borer, Rebekka and Fitze, Daniel and
+    Ellis, Andrew},
   title = {Verhaltensexperimente Mit {PsychoPy}},
   url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Verhaltensexperimente Mit
-PsychoPy.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html</a>.
+Wyssen, Gerda, Rebekka Borer, Daniel Fitze, and Andrew Ellis. n.d.
+<span>“Verhaltensexperimente Mit PsychoPy.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 
