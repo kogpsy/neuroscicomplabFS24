@@ -217,17 +217,39 @@ Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist da
 
 Erstellen Sie einen **Random Dot Stimulus**. Beachten Sie folgende Aspekte:
 
+**Basic:**
+
 - Timing (Stimulusdauer): 1500 ms
 
-- Farbe
+:::callout-tip
+## Tipp
+**frames vs time(s)**: Die präziseste Art zur Steuerung des Timing von Stimuli besteht darin, sie für eine festgelegte Anzahl von Frames zu präsentieren. Bei einer Framerate  von 60 Hz können Sie Ihren Stimulus nicht über einen Zeitraum von z. B. 120 ms präsentieren; die Bildperiode würde Sie auf einen Zeitraum von 116,7 ms (7 Bilder) oder 133,3 ms (8 Bilder) beschränken. Dies ist besonders wichtig für Reaktionszeit-Aufgaben und EEG-Studien, wo ein präzises Millisekunden-Timing erforderlich ist. [Presening Stimuli - Psychopy](https://www.psychopy.org/coder/codeStimuli.html)
+:::
 
-- Grösse: gut sichtbar
+**Layout:**
 
-- Kohärenz: 0.08
+- Dot size (Grösse): 3 (gut sichtbar)
 
 - Field size: 75% des Displays
 
+- Field position: (0.0, 0.0)
+
+**Appearance:**
+
+- Dot color: [1.0,1.0,1.0] (white)
+
+**Dots**
+
+- Number of dots (Anzahl dots): 250
+
+- Direction (Bewegungsrichtung): $dots_direction (vordefinierte Variable im Codeblock)
 *(Die Bewegungsrichtung können Sie noch vernachlässigen.)*
+
+- Speed (Geschwindigkeit der Bewegung): 0.0125
+
+- Coherence (Kohärenz): 0.08
+
+- Dot life-time: 3
 
 
 ## 2. Trialschleife
@@ -280,8 +302,11 @@ Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind die u
 
 - Antwortdauer der Versuchsperson
 
+## 6. Kursexperiment 
 
-## 6. Übungsexperiment
+- 
+
+## 7. Übungsexperiment
 
 - Laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/uebung_1.html) das Experiment für **Übung 1** herunter. 
 

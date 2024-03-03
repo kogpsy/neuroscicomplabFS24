@@ -195,6 +195,12 @@ In PsychoPy GUI wird Ihnen im Fenster `Flow`eine Art Flowchart angezeigt. Hier s
 Beim Programmieren lohnt es sich oft, die kleinen Schritte zwischenzutesten, weil es dann einfacher ist herauszufinden wo genau der Fehler passiert ist.
 :::
 
+:::callout-tip
+## Tipp
+
+In PsychoPy kann ein Staircase in einem Loop verwendet werden, um die Schwierigkeit einer Aufgabe basierend auf der Leistung der Teilnehmer dynamisch anzupassen. Sie ist besonders häufig in Experimenten zur Schwellenmessung, bei denen das Ziel darin besteht, die kleinste wahrnehmbare Reizintensität zu bestimmen.[Using a Staircase - PsychoPy](https://www.psychopy.org//general/staircases.html)
+:::
+
 ## 3. Datenspeicherung
 
 Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einer trial-by-trial `.csv`-Datei. Das bedeutet, dass jeder Trial 1 Zeile generiert. Die `.csv`-Datei erhält einen Namen, der sich aus der *Versuchspersonen-ID*, dem *Namen des Experiments*, und dem aktuellen *Datum inkl. Uhrzeit* zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die `.csv`-Dateien werden in einem Ordner mit dem Name **data** abgelegt.
