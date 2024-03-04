@@ -38,10 +38,11 @@ website:
 
     - section: Experimente programmieren
       contents:
-     # - pages/chapters/psychopy_experiments.qmd
-     # - pages/chapters/experiment_stepbystep.qmd
-     # - pages/chapters/uebung_1_experiment.qmd
-     #
+       - pages/chapters/neurowissenschaftliche_experimente.qmd
+       - pages/chapters/psychopy_experiments.qmd
+       - pages/chapters/stroop_experiment.qmd
+       - pages/chapters/random_dot_experiment.qmd
+
     - section: Data wrangling
       contents:
      # - pages/chapters/reproducibility.qmd

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gerda Wyssen">
 <meta name="author" content="Daniel Fitze">
+<meta name="author" content="Gerda Wyssen">
 
-<title>Neurowissenschaft Computerlab - Terminübersicht</title>
+<title>Neurowissenschaft Computerlab - Neurowissenschaft</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Terminübersicht</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Neurowissenschaft</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -255,14 +255,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#termine-und-leistungsnachweise" id="toc-termine-und-leistungsnachweise" class="nav-link active" data-scroll-target="#termine-und-leistungsnachweise">Termine und Leistungsnachweise</a>
+  <li><a href="#allgemein" id="toc-allgemein" class="nav-link active" data-scroll-target="#allgemein">Allgemein</a>
   <ul class="collapse">
-  <li><a href="#einführung" id="toc-einführung" class="nav-link" data-scroll-target="#einführung">1 Einführung</a></li>
-  <li><a href="#experimente-programmieren" id="toc-experimente-programmieren" class="nav-link" data-scroll-target="#experimente-programmieren">2 Experimente programmieren</a></li>
-  <li><a href="#data-wrangling-daten-visualisieren" id="toc-data-wrangling-daten-visualisieren" class="nav-link" data-scroll-target="#data-wrangling-daten-visualisieren">3 Data Wrangling &amp; Daten visualisieren</a></li>
-  <li><a href="#analysemethoden" id="toc-analysemethoden" class="nav-link" data-scroll-target="#analysemethoden">4 Analysemethoden</a></li>
-  <li><a href="#modelle" id="toc-modelle" class="nav-link" data-scroll-target="#modelle">5 Modelle</a></li>
+  <li><a href="#hauptbereiche-der-neurowissenschaften" id="toc-hauptbereiche-der-neurowissenschaften" class="nav-link" data-scroll-target="#hauptbereiche-der-neurowissenschaften">Hauptbereiche der Neurowissenschaften</a></li>
   </ul></li>
+  <li><a href="#einschränkung" id="toc-einschränkung" class="nav-link" data-scroll-target="#einschränkung">Einschränkung</a></li>
   </ul>
 </nav>
     </div>
@@ -271,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Terminübersicht</h1>
+<h1 class="title">Neurowissenschaft</h1>
 </div>
 
 
@@ -280,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -290,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -311,77 +308,101 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="termine-und-leistungsnachweise" class="level1">
-<h1>Termine und Leistungsnachweise</h1>
-<p>An den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):</p>
-<section id="einführung" class="level3">
-<h3 class="anchored" data-anchor-id="einführung">1 Einführung</h3>
-<p><code>Sitzung 1 (19./21. Februrar 2024)</code></p>
+<section id="allgemein" class="level1">
+<h1>Allgemein</h1>
+<p>In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht.</p>
+<p><a href="https://www.philhum.unibe.ch/studium/studienprogramme/neurowissenschaft/index_ger.html">Link Uni</a></p>
+<section id="hauptbereiche-der-neurowissenschaften" class="level2">
+<h2 class="anchored" data-anchor-id="hauptbereiche-der-neurowissenschaften">Hauptbereiche der Neurowissenschaften</h2>
+<table class="table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bereich</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Behavioral neuroscience</td>
+<td>Einfluss des Gehirns auf Verhalten</td>
+</tr>
+<tr class="even">
+<td>Clinical neuroscience</td>
+<td>Störungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation</td>
+</tr>
+<tr class="odd">
+<td>Computational neuroscience</td>
+<td>Simulation und Modellierung von Hirnfunktionen</td>
+</tr>
+<tr class="even">
+<td>Cultural neuroscience</td>
+<td>Einfluss kultureller Faktoren auf das Gehirn</td>
+</tr>
+<tr class="odd">
+<td>Developmental neuroscience</td>
+<td>Entwicklung des Nervensystems über die ganze Alterspanne</td>
+</tr>
+<tr class="even">
+<td>Molecular and cellular neuroscience</td>
+<td>Rolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems</td>
+</tr>
+<tr class="odd">
+<td>Neuroengineering</td>
+<td>neuronale Systeme verstehen, ersetzen, reparieren oder verbessern</td>
+</tr>
+<tr class="even">
+<td>Neuroimaging</td>
+<td>Teilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn</td>
+</tr>
+<tr class="odd">
+<td>Neuroinformatics</td>
+<td>Entwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten</td>
+</tr>
+<tr class="even">
+<td>Neurolinguistics</td>
+<td>Rolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache</td>
+</tr>
+<tr class="odd">
+<td>Neurophysiology</td>
+<td>Rolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.medicalnewstoday.com/articles/248680#major-branches">Quelle</a></p>
+<p>Aufteilung nach:</p>
 <ul>
-<li>Einführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)</li>
-</ul>
-<!-- - *Hands-on: Sprachen vergleichen, Funktionen und Loops nutzen und schreiben, Verwendung LLMs, ChatGPT und RTutor.ai* -->
-<!---   Verwendung von LLMs (z.B. ChatGPT) -->
+<li>Untersuchter Spezies
 <ul>
-<li><p>Installieren der für den Kurs benötigten Software</p></li>
-<li><p><a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datacamp.html">Datacamp-Kurse anschauen und belegen</a>.</p></li>
-<li><p><strong>Quiz 1 ausfüllen (siehe Ilias)</strong></p></li>
+<li>z.B. Mensch, Affe, Zebrafisch, Fruchtfliege</li>
+</ul></li>
+<li>verwendeter Methode
+<ul>
+<li>z.B. EEG, fMRI, Verhalten</li>
+</ul></li>
 </ul>
 </section>
-<section id="experimente-programmieren" class="level3">
-<h3 class="anchored" data-anchor-id="experimente-programmieren">2 Experimente programmieren</h3>
-<p><code>Sitzung 2 (26./28. Februrar 2024)</code></p>
-<p><code>Sitzung 3 (4./6. März 2024)</code></p>
-<ul>
-<li><p>Übersicht Leistungsnachweise,</p></li>
-<li><p>Experimente in den Neurowissenschaften: Elemente und Herausforderungen</p></li>
-<li><p>Erstellen von zwei computerbasierten Experimenten mit <code>Python</code> und <code>PsychoPy</code></p></li>
-<li><p><strong>Übung 1: Datenerhebung</strong></p></li>
-</ul>
 </section>
-<section id="data-wrangling-daten-visualisieren" class="level3">
-<h3 class="anchored" data-anchor-id="data-wrangling-daten-visualisieren">3 Data Wrangling &amp; Daten visualisieren</h3>
-<p><code>Sitzung 4 (11./13. März 2024)</code></p>
-<p><code>Sitzung 5 (18./20. März 2024)</code></p>
-<p><code>Sitzung 6 (25./27. März 2024)</code></p>
-<p><code>Sitzung 7 (8./.10. April 2024)</code></p>
-<ul>
-<li><p>Arbeiten in <code>R</code> mit Projekten und <code>Rmarkdown</code></p></li>
-<li><p>Daten mit <code>R</code> einlesen, bearbeiten und visualisieren</p></li>
-<li><p>Open Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können</p></li>
-<li><p><strong>Übung 2: Datenverarbeiten und visualisieren</strong></p></li>
-</ul>
-<p><em>Ferien: 1./3. April: Vorlesungsfreie Zeit</em></p>
-</section>
-<section id="analysemethoden" class="level3">
-<h3 class="anchored" data-anchor-id="analysemethoden">4 Analysemethoden</h3>
-<p><code>Sitzung 8 (15./17. April 2024)</code></p>
-<p><code>Sitzung 9 (22./24. April 2024)</code></p>
-<p><code>Sitzung 10 (29. April und 1. Mai 2024)</code></p>
-<ul>
-<li><p>Besonderheiten neurowissenschaftlicher Daten und Analysen</p></li>
-<li><p>frequentistische und bayesianische Analyseverfahren</p></li>
-<li><p><strong>Übung 3: Datensatz analysieren</strong></p></li>
-</ul>
-</section>
-<section id="modelle" class="level3">
-<h3 class="anchored" data-anchor-id="modelle">5 Modelle</h3>
-<p><code>Sitzung 11 (6../8. Mai 2024)</code></p>
-<p><code>Sitzung 12 (13./15. Mai 2024)</code></p>
-<p><em>Termine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)</em></p>
-<p><code>Sitzung 13 (27./29. Mai 2014)</code></p>
-<ul>
-<li><p>Signalentdeckungstheorie (signal detection theory, SDT)</p></li>
-<li><p>Drift Diffusion Models (DDM)</p></li>
-<li><p><strong>Übung 4: Datensatz analysieren</strong></p></li>
-<li><p><strong>Quiz 2: Abschlussquiz</strong></p></li>
-</ul>
+<section id="einschränkung" class="level1">
+<h1>Einschränkung</h1>
+<p>Dieses Nebenfach fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant und interessant sind, wie zum Beispiel die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.</p>
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{fitze,
+  author = {Fitze, Daniel and Wyssen, Gerda},
+  title = {Neurowissenschaft},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaft.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-fitze" class="csl-entry quarto-appendix-citeas" role="listitem">
+Fitze, Daniel, and Gerda Wyssen. n.d. <span>“Neurowissenschaft.”</span>
+<a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaft.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaft.html</a>.
+</div></div></section></div></main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
