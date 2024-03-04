@@ -53,6 +53,20 @@ Wir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu a
 
 Conditionals und Control Flow sind Konzepte, die es uns ermöglichen, den Programmablauf zu steuern. Wir können damit zum Beispiel entscheiden, ob ein bestimmter Codeblock ausgeführt wird oder nicht. Wir können auch den Programmablauf abhängig von bestimmten Bedingungen steuern. Dies ist nützlich, wenn wir zum Beispiel eine bestimmte Aktion nur dann ausführen wollen, wenn eine Bedingung erfüllt ist.
 
+:::{.callout-tip collapse="true"}
+## Logische Operatoren
+Um Bedingungen zu testen werden verschiedene logische Operatoren verwendet.
+
+| Definition     | Operator |
+|:--------------:|:--------:|
+| gleich wie     | ==       |
+| nicht gleich   | !=       |
+| kleiner als    | <        |
+| kleiner gleich | <=       |
+| grösser als    | >        |
+| grösser gleich | >=       |
+:::
+
 Als simples Beispiel wollen wir eine Zahl `x` definieren und prüfen, ob diese grösser als 0 ist. Wenn ja, dann wollen wir die Zahl ausgeben. Wenn nein, dann wollen wir eine Fehlermeldung ausgeben. Um diesen Test `x > 0` auszuführen, können wir `if` verwenden. `if` testet, ob eine Bedingung wahr ist. Falls ja, wird ein Codeblock ausgeführt. Der Codeblock wird in geschweiften Klammern `{}` eingeschlossen. Wenn die Bedingung nicht erfüllt ist, dann wird der Codeblock nicht ausgeführt. Falls die Bedingung nicht wahr ist, können wir eine Alternative mit `else` angeben. Der Codeblock, der ausgeführt wird, wenn die Bedingung nicht wahr ist, wird ebenfalls in geschweiften Klammern `{}` eingeschlossen.
 
 ```{r}
