@@ -148,6 +148,7 @@ Mittels diesen Schleifen können die Bedingungen implementiert werden z.B. dass 
 
 -   Fügen Sie nun im Loop-Fenster die `conditions`-Datei ein.
 
+
     ![](img/psychopy_trialloop_example.jpg)
 
 ::: callout-tip
@@ -180,7 +181,7 @@ In PsychoPy muss definiert werden, wie die Antwort der Versuchsperson aufgenomme
 
 -   Fügen Sie eine **Antwortkomponente** hinzu und benennen Sie diese sinnvoll.
 
-    \_\_In unserem Beispiel möchten wir, dass die Versuchsperson mittels Keyboard antwortet.\`
+    _In unserem Beispiel möchten wir, dass die Versuchsperson mittels Keyboard antwortet._
 
     -   Mit `Force end of Routine` können Sie einstellen, ob eine Antwort den Trial beendet und mit dem nächsten fortfährt.
 
