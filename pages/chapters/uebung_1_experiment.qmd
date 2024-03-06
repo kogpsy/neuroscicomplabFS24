@@ -1,0 +1,76 @@
+---
+title: "Übung 1 - Psychopy Experiment"
+description: Daten erheben mit PsychoPy Experiment.
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Rebekka Borer
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    #orcid: 
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
+license: CC BY
+citation: true
+#bibliography: ../../bibliography_gw.bib
+format:
+    html:
+        toc: true
+---
+
+## Auftrag
+
+Führen Sie selbst und mit 2 weiteren Personen das Stroop und das Random Dot Experiment durch. Laden Sie anschliessend die 6 Datensätze auf Ilias hoch. Die beiden Experimente dauern zusammen ca. 30 Minuten (auch abhängig von den Versuchspersonen).
+
+__Wichtig:__ Die erhobenen Daten werden wir dann in den kommenden Sitzungen verwenden, achten Sie also auf gute Datenqualität.
+
+## Vorgehen
+
+- __Laden Sie die 2 Experimente herunter und testen Sie, ob Sie einwandfrei laufen.__ Die Experimente befinden sich auf Github. Sie können sie unter den untenstehenden Links downloaden. (Wenn Sie auf den grünen Button `Code` klicken, kann man das Experiment als Zip-Datei herunterladen: `Download ZIP`). Sie müssen es dann evtl. entzippen, bevor Sie es starten können. Bei Problemen finden Sie unten einen Abschnitt [Troubleshooting](). Wenn das nichts hilft, können Sie sich bei der nächsten Veranstaltung an uns wenden.
+    
+    - [Stroop Experiment]()
+    
+    - [Random Dot Experiment]()
+    
+- __Führen Sie selber die beiden Experimente durch.__
+    
+    - Stellen Sie sicher, dass hier ein vollständiger Datensatz abgespeichert wird. Testen Sie erst dann zusätzliche Personen.
+
+- __Lassen Sie 2 weitere Personen die beiden Experimente ausführen (jede Person soll beide Experimente ausführen).__
+
+    - Die Personen müssen zwischen 18 und 60 Jahren alt sein. 
+    
+    - Die Personen sollten eine normale oder korrigiert-zu-normale Sehstärke haben.   
+    
+    - Keine Mitstudierenden aus dem Computerlab testen.
+    
+    - Achten Sie darauf, dass die Personen die Aufgaben unabgelenkt lösen können.
+
+    
+
+- __Laden Sie die 6 Datensätze auf ILIAS hoch.__
+    
+    - Zippen Sie bitte die 6 `.csv`-Datensätze vor dem Hochladen zu einem Ordner.
+
+
+
+## Trouble shooting
+
+Bitte Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist.
+
+
+__Das Experiment startet nicht.__
+
+- Unter `Einstellungen` (Radsymbol) den Reiter `Basic` auswählen. Bei `Use PsychoPy version` die neuste PsychoPy Version auswählen.
+
+
+__Das Experiment startet zwar, der Bildschirm ist aber dann einfach für eine kurze Zeit grau und das Fenster schliesst sich wieder.__
+
+- Zugriffsrechte gegeben? (Bei Windows: Als Administrator starten, bei MacOS: Zugriffsrechte erteilen)
+
+- Unter `Einstellungen` (Radsymbol) den Reiter `Input` auswählen. `Keyboard Backend` auf `PsychToolbox` statt `ioHub`.
+

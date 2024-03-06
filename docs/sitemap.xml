@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/index.html</loc>
-    <lastmod>2024-03-04T14:52:53.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html</loc>
-    <lastmod>2024-03-04T14:52:53.822Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/wichtiges.html</loc>
-    <lastmod>2024-03-04T14:52:54.269Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/computerlab.html</loc>
-    <lastmod>2024-03-04T14:52:54.954Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datacamp.html</loc>
-    <lastmod>2024-03-04T14:52:55.551Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaft.html</loc>
-    <lastmod>2024-03-04T14:52:56.175Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html</loc>
-    <lastmod>2024-03-04T14:52:57.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_1.html</loc>
-    <lastmod>2024-03-04T14:52:57.977Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_2.html</loc>
-    <lastmod>2024-03-04T14:53:00.156Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html</loc>
-    <lastmod>2024-03-04T14:53:01.076Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/quiz_one.html</loc>
-    <lastmod>2024-03-04T14:53:01.659Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html</loc>
-    <lastmod>2024-03-04T14:53:02.390Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html</loc>
+    <lastmod>2024-03-06T12:17:36.170Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/setup.html</loc>
-    <lastmod>2024-03-04T14:53:02.978Z</lastmod>
+    <lastmod>2024-03-01T11:55:45.102Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/quiz_one.html</loc>
+    <lastmod>2024-03-01T11:55:45.096Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_2.html</loc>
+    <lastmod>2024-03-06T12:20:17.878Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html</loc>
+    <lastmod>2024-03-03T11:10:38.853Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datacamp.html</loc>
+    <lastmod>2024-03-01T11:55:44.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/wichtiges.html</loc>
+    <lastmod>2024-03-01T11:55:44.973Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/index.html</loc>
+    <lastmod>2024-03-01T11:55:44.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html</loc>
+    <lastmod>2024-03-01T11:55:44.969Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/computerlab.html</loc>
+    <lastmod>2024-03-01T11:55:44.976Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaft.html</loc>
+    <lastmod>2024-03-01T11:55:45.078Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_1.html</loc>
+    <lastmod>2024-03-01T11:55:45.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html</loc>
+    <lastmod>2024-03-04T12:43:45.726Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html</loc>
+    <lastmod>2024-03-04T12:43:45.730Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/stroop_experiment.html</loc>
-    <lastmod>2024-03-04T14:53:03.583Z</lastmod>
+    <lastmod>2024-03-04T12:43:45.735Z</lastmod>
   </url>
 </urlset>
