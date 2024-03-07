@@ -732,7 +732,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="3" valType="num"/>
       <Param name="name" updates="None" val="trials_CTK" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -742,12 +742,12 @@
     <Routine name="begin_practice"/>
     <LoopInitiator loopType="TrialHandler" name="trials_practice">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}, {'wordPractice': 'rot', 'colorPractice': 'blue', 'corrAnsPractice': 'r', 'congruentPractice': 0}, {'wordPractice': 'rot', 'colorPractice': 'yellow', 'corrAnsPractice': 'r', 'congruentPractice': 0}, {'wordPractice': 'blau', 'colorPractice': 'red', 'corrAnsPractice': 'b', 'congruentPractice': 0}, {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}, {'wordPractice': 'blau', 'colorPractice': 'yellow', 'corrAnsPractice': 'b', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'red', 'corrAnsPractice': 'g', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'blue', 'corrAnsPractice': 'g', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}, {'wordPractice': 'rot', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}, {'wordPractice': 'rot', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}, {'wordPractice': 'blau', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}, {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}, {'wordPractice': 'blau', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}, {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="stroop_condition_file_practice.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="5" valType="num"/>
       <Param name="name" updates="None" val="trials_practice" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -758,12 +758,12 @@
     <Routine name="begin_test"/>
     <LoopInitiator loopType="TrialHandler" name="trials_test">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}, {'word': 'rot', 'color': 'blue', 'corrAns': 'r', 'congruent': 0}, {'word': 'rot', 'color': 'yellow', 'corrAns': 'r', 'congruent': 0}, {'word': 'blau', 'color': 'red', 'corrAns': 'b', 'congruent': 0}, {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}, {'word': 'blau', 'color': 'yellow', 'corrAns': 'b', 'congruent': 0}, {'word': 'gelb', 'color': 'red', 'corrAns': 'g', 'congruent': 0}, {'word': 'gelb', 'color': 'blue', 'corrAns': 'g', 'congruent': 0}, {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}, {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}, {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}, {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}, {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}, {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}, {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}, {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}, {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="stroop_condition_file_test.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="5" valType="num"/>
       <Param name="name" updates="None" val="trials_test" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
