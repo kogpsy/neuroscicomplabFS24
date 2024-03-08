@@ -1,0 +1,1697 @@
+1.6013 	ERROR 	Support for the `sounddevice` audio backend is not available this session. Please install `psychopy-sounddevice` and restart the session to enable support.
+10.5845 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C6212EF1C0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C6212EF160>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001C6212DED00>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001C621678CA0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+10.5845 	EXP 	window1: mouseVisible = True
+10.5846 	EXP 	window1: backgroundImage = ''
+10.5846 	EXP 	window1: backgroundFit = 'none'
+10.5858 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+10.5858 	EXP 	window1: recordFrameIntervals = False
+10.7511 	EXP 	window1: recordFrameIntervals = True
+10.9345 	EXP 	Screen (0) actual frame rate measured at 59.94Hz
+10.9345 	EXP 	window1: recordFrameIntervals = False
+10.9346 	EXP 	window1: mouseVisible = False
+12.3339 	EXP 	stroop_test: status = STARTED
+12.3345 	EXP 	window1: mouseVisible = True
+12.3875 	EXP 	Created instr_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.02, italic=False, languageStyle='LTR', name='instr_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+12.3878 	EXP 	window1: mouseVisible = True
+12.4108 	EXP 	Created instr_image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, image='illustration_keyboard.PNG', interpolate=True, mask=None, maskParams=None, name='instr_image', opacity=1.0, ori=0.0, pos=array([ 0.  , -0.18]), size=array([0.2, 0.2]), texRes=128.0, units='height', win=Window(...))
+12.4109 	EXP 	window1: mouseVisible = True
+12.4248 	EXP 	Created instr_ctk = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='instr_ctk', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+12.4252 	EXP 	window1: mouseVisible = True
+12.4286 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+12.4287 	EXP 	window1: mouseVisible = True
+12.4296 	EXP 	Created stimulus_CTK = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='stimulus_CTK', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+12.4296 	EXP 	window1: mouseVisible = True
+12.4391 	EXP 	Created instr_practice_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='instr_practice_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+12.4391 	EXP 	window1: mouseVisible = True
+12.4418 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+12.4419 	EXP 	window1: mouseVisible = True
+12.4429 	EXP 	Created stimulus_practice = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='stimulus_practice', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+12.4429 	EXP 	window1: mouseVisible = True
+12.4438 	EXP 	Created textFeedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textFeedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+12.4438 	EXP 	window1: mouseVisible = True
+12.4493 	EXP 	Created instr_test_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='instr_test_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+12.4493 	EXP 	window1: mouseVisible = True
+12.4510 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+12.4511 	EXP 	window1: mouseVisible = True
+12.4520 	EXP 	Created stimulus_test_run = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='stimulus_test_run', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+12.4521 	EXP 	window1: mouseVisible = True
+12.4588 	EXP 	Created textGoodbye = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='textGoodbye', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0631 	EXP 	instr_text: autoDraw = True
+0.0631 	EXP 	instr_image: autoDraw = True
+18.6259 	EXP 	instr_text: autoDraw = False
+18.6259 	EXP 	instr_image: autoDraw = False
+18.6259 	EXP 	instr_ctk: autoDraw = True
+24.4354 	EXP 	Imported stroop_condition_file_CTK.xlsx as conditions, 3 conditions, 4 params
+24.4357 	EXP 	Created sequence: random, trialTypes=3, nReps=3, seed=None
+24.4359 	EXP 	New trial (rep=0, index=0): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+24.4490 	EXP 	instr_ctk: autoDraw = False
+25.6333 	EXP 	fixcross: autoDraw = True
+26.4323 	EXP 	fixcross: autoDraw = False
+26.4323 	EXP 	fixcross: autoDraw = False
+26.4323 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+26.4323 	EXP 	stimulus_CTK: height = 0.1
+26.4323 	EXP 	stimulus_CTK: height = 0.1
+26.4323 	EXP 	stimulus_CTK: height = 0.1
+26.4323 	EXP 	stimulus_CTK: text = 'test'
+26.4323 	EXP 	stimulus_CTK: autoDraw = True
+27.2692 	EXP 	New trial (rep=0, index=1): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+27.2848 	EXP 	stimulus_CTK: autoDraw = False
+27.6183 	EXP 	fixcross: autoDraw = True
+28.4175 	EXP 	fixcross: autoDraw = False
+28.4175 	EXP 	fixcross: autoDraw = False
+28.4175 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+28.4175 	EXP 	stimulus_CTK: text = 'test'
+28.4175 	EXP 	stimulus_CTK: autoDraw = True
+28.9869 	EXP 	New trial (rep=0, index=2): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+29.0028 	EXP 	stimulus_CTK: autoDraw = False
+29.3364 	EXP 	fixcross: autoDraw = True
+30.1371 	EXP 	fixcross: autoDraw = False
+30.1371 	EXP 	fixcross: autoDraw = False
+30.1371 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+30.1371 	EXP 	stimulus_CTK: text = 'test'
+30.1371 	EXP 	stimulus_CTK: autoDraw = True
+30.6369 	EXP 	New trial (rep=1, index=0): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+30.6525 	EXP 	stimulus_CTK: autoDraw = False
+31.8385 	EXP 	fixcross: autoDraw = True
+32.6391 	EXP 	fixcross: autoDraw = False
+32.6391 	EXP 	fixcross: autoDraw = False
+32.6391 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+32.6391 	EXP 	stimulus_CTK: text = 'test'
+32.6391 	EXP 	stimulus_CTK: autoDraw = True
+33.4739 	EXP 	New trial (rep=1, index=1): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+33.4900 	EXP 	stimulus_CTK: autoDraw = False
+34.2736 	EXP 	fixcross: autoDraw = True
+35.0744 	EXP 	fixcross: autoDraw = False
+35.0744 	EXP 	fixcross: autoDraw = False
+35.0744 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+35.0744 	EXP 	stimulus_CTK: text = 'test'
+35.0744 	EXP 	stimulus_CTK: autoDraw = True
+35.8093 	EXP 	New trial (rep=1, index=2): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+35.8235 	EXP 	stimulus_CTK: autoDraw = False
+36.1587 	EXP 	fixcross: autoDraw = True
+36.9578 	EXP 	fixcross: autoDraw = False
+36.9578 	EXP 	fixcross: autoDraw = False
+36.9578 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+36.9578 	EXP 	stimulus_CTK: text = 'test'
+36.9578 	EXP 	stimulus_CTK: autoDraw = True
+37.5441 	EXP 	New trial (rep=2, index=0): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+37.5599 	EXP 	stimulus_CTK: autoDraw = False
+38.3438 	EXP 	fixcross: autoDraw = True
+39.1445 	EXP 	fixcross: autoDraw = False
+39.1445 	EXP 	fixcross: autoDraw = False
+39.1445 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+39.1445 	EXP 	stimulus_CTK: text = 'test'
+39.1445 	EXP 	stimulus_CTK: autoDraw = True
+39.6457 	EXP 	New trial (rep=2, index=1): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+39.6617 	EXP 	stimulus_CTK: autoDraw = False
+39.9954 	EXP 	fixcross: autoDraw = True
+40.7960 	EXP 	fixcross: autoDraw = False
+40.7960 	EXP 	fixcross: autoDraw = False
+40.7960 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+40.7960 	EXP 	stimulus_CTK: text = 'test'
+40.7960 	EXP 	stimulus_CTK: autoDraw = True
+41.3805 	EXP 	New trial (rep=2, index=2): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+41.3965 	EXP 	stimulus_CTK: autoDraw = False
+41.4797 	EXP 	fixcross: autoDraw = True
+42.2804 	EXP 	fixcross: autoDraw = False
+42.2804 	EXP 	fixcross: autoDraw = False
+42.2804 	EXP 	stimulus_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+42.2804 	EXP 	stimulus_CTK: text = 'test'
+42.2804 	EXP 	stimulus_CTK: autoDraw = True
+42.8294 	EXP 	stimulus_CTK: autoDraw = False
+42.8294 	EXP 	instr_practice_text: autoDraw = True
+47.5396 	EXP 	Imported stroop_condition_file_practice.xlsx as conditions, 12 conditions, 4 params
+47.5399 	EXP 	Created sequence: random, trialTypes=12, nReps=2, seed=None
+47.5401 	EXP 	New trial (rep=0, index=0): {'wordPractice': 'gelb', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}
+47.5498 	EXP 	instr_practice_text: autoDraw = False
+47.9001 	EXP 	fixcross: autoDraw = True
+48.7007 	EXP 	fixcross: autoDraw = False
+48.7007 	EXP 	fixcross: autoDraw = False
+48.7007 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+48.7007 	EXP 	stimulus_practice: height = 0.1
+48.7007 	EXP 	stimulus_practice: height = 0.1
+48.7007 	EXP 	stimulus_practice: height = 0.1
+48.7007 	EXP 	stimulus_practice: text = 'gelb'
+48.7007 	EXP 	stimulus_practice: autoDraw = True
+50.1522 	EXP 	stimulus_practice: autoDraw = False
+50.1522 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+50.1522 	EXP 	textFeedback: height = 0.1
+50.1522 	EXP 	textFeedback: height = 0.1
+50.1522 	EXP 	textFeedback: height = 0.1
+50.1522 	EXP 	textFeedback: text = 'richtig'
+50.1522 	EXP 	textFeedback: autoDraw = True
+51.1382 	EXP 	New trial (rep=0, index=1): {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}
+51.1545 	EXP 	textFeedback: autoDraw = False
+51.1545 	EXP 	textFeedback: autoDraw = False
+51.9368 	EXP 	fixcross: autoDraw = True
+52.7374 	EXP 	fixcross: autoDraw = False
+52.7374 	EXP 	fixcross: autoDraw = False
+52.7374 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+52.7374 	EXP 	stimulus_practice: height = 0.1
+52.7374 	EXP 	stimulus_practice: height = 0.1
+52.7374 	EXP 	stimulus_practice: height = 0.1
+52.7374 	EXP 	stimulus_practice: text = 'blau'
+52.7374 	EXP 	stimulus_practice: autoDraw = True
+53.3546 	EXP 	stimulus_practice: autoDraw = False
+53.3546 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+53.3546 	EXP 	textFeedback: text = 'richtig'
+53.3546 	EXP 	textFeedback: autoDraw = True
+54.3408 	EXP 	New trial (rep=0, index=2): {'wordPractice': 'blau', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}
+54.3555 	EXP 	textFeedback: autoDraw = False
+54.3555 	EXP 	textFeedback: autoDraw = False
+55.1410 	EXP 	fixcross: autoDraw = True
+55.9417 	EXP 	fixcross: autoDraw = False
+55.9417 	EXP 	fixcross: autoDraw = False
+55.9417 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+55.9417 	EXP 	stimulus_practice: text = 'blau'
+55.9417 	EXP 	stimulus_practice: autoDraw = True
+56.8258 	EXP 	stimulus_practice: autoDraw = False
+56.8258 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+56.8258 	EXP 	textFeedback: text = 'richtig'
+56.8258 	EXP 	textFeedback: autoDraw = True
+57.8102 	EXP 	New trial (rep=0, index=3): {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}
+57.8250 	EXP 	textFeedback: autoDraw = False
+57.9251 	EXP 	fixcross: autoDraw = True
+58.7274 	EXP 	fixcross: autoDraw = False
+58.7274 	EXP 	fixcross: autoDraw = False
+58.7274 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+58.7274 	EXP 	stimulus_practice: text = 'blau'
+58.7274 	EXP 	stimulus_practice: autoDraw = True
+59.3280 	EXP 	stimulus_practice: autoDraw = False
+59.3280 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+59.3280 	EXP 	textFeedback: text = 'richtig'
+59.3280 	EXP 	textFeedback: autoDraw = True
+60.3123 	EXP 	New trial (rep=0, index=4): {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}
+60.3272 	EXP 	textFeedback: autoDraw = False
+60.6606 	EXP 	fixcross: autoDraw = True
+61.4613 	EXP 	fixcross: autoDraw = False
+61.4613 	EXP 	fixcross: autoDraw = False
+61.4613 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+61.4613 	EXP 	stimulus_practice: height = 0.1
+61.4613 	EXP 	stimulus_practice: height = 0.1
+61.4613 	EXP 	stimulus_practice: height = 0.1
+61.4613 	EXP 	stimulus_practice: text = 'gelb'
+61.4613 	EXP 	stimulus_practice: autoDraw = True
+62.2136 	EXP 	stimulus_practice: autoDraw = False
+62.2136 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+62.2136 	EXP 	textFeedback: text = 'richtig'
+62.2136 	EXP 	textFeedback: autoDraw = True
+63.1967 	EXP 	New trial (rep=0, index=5): {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}
+63.2145 	EXP 	textFeedback: autoDraw = False
+63.2145 	EXP 	textFeedback: autoDraw = False
+63.2962 	EXP 	fixcross: autoDraw = True
+64.0969 	EXP 	fixcross: autoDraw = False
+64.0969 	EXP 	fixcross: autoDraw = False
+64.0969 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+64.0969 	EXP 	stimulus_practice: text = 'gelb'
+64.0969 	EXP 	stimulus_practice: autoDraw = True
+64.6155 	EXP 	stimulus_practice: autoDraw = False
+64.6155 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+64.6155 	EXP 	textFeedback: text = 'richtig'
+64.6155 	EXP 	textFeedback: autoDraw = True
+65.5999 	EXP 	New trial (rep=0, index=6): {'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}
+65.6164 	EXP 	textFeedback: autoDraw = False
+65.9500 	EXP 	fixcross: autoDraw = True
+66.7489 	EXP 	fixcross: autoDraw = False
+66.7489 	EXP 	fixcross: autoDraw = False
+66.7489 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+66.7489 	EXP 	stimulus_practice: height = 0.1
+66.7489 	EXP 	stimulus_practice: height = 0.1
+66.7489 	EXP 	stimulus_practice: height = 0.1
+66.7489 	EXP 	stimulus_practice: text = 'rot'
+66.7489 	EXP 	stimulus_practice: autoDraw = True
+67.1677 	EXP 	stimulus_practice: autoDraw = False
+67.1677 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+67.1677 	EXP 	textFeedback: text = 'richtig'
+67.1677 	EXP 	textFeedback: autoDraw = True
+68.1507 	EXP 	New trial (rep=0, index=7): {'wordPractice': 'rot', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}
+68.1685 	EXP 	textFeedback: autoDraw = False
+68.1685 	EXP 	textFeedback: autoDraw = False
+68.2502 	EXP 	fixcross: autoDraw = True
+69.0509 	EXP 	fixcross: autoDraw = False
+69.0509 	EXP 	fixcross: autoDraw = False
+69.0509 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+69.0509 	EXP 	stimulus_practice: text = 'rot'
+69.0509 	EXP 	stimulus_practice: autoDraw = True
+69.9183 	EXP 	stimulus_practice: autoDraw = False
+69.9183 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+69.9183 	EXP 	textFeedback: text = 'richtig'
+69.9183 	EXP 	textFeedback: autoDraw = True
+70.9043 	EXP 	New trial (rep=0, index=8): {'wordPractice': 'gelb', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}
+70.9192 	EXP 	textFeedback: autoDraw = False
+71.2529 	EXP 	fixcross: autoDraw = True
+72.0535 	EXP 	fixcross: autoDraw = False
+72.0535 	EXP 	fixcross: autoDraw = False
+72.0535 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+72.0535 	EXP 	stimulus_practice: height = 0.1
+72.0535 	EXP 	stimulus_practice: height = 0.1
+72.0535 	EXP 	stimulus_practice: height = 0.1
+72.0535 	EXP 	stimulus_practice: text = 'gelb'
+72.0535 	EXP 	stimulus_practice: autoDraw = True
+72.8724 	EXP 	stimulus_practice: autoDraw = False
+72.8724 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+72.8724 	EXP 	textFeedback: text = 'richtig'
+72.8724 	EXP 	textFeedback: autoDraw = True
+73.8552 	EXP 	New trial (rep=0, index=9): {'wordPractice': 'blau', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}
+73.8732 	EXP 	textFeedback: autoDraw = False
+74.6572 	EXP 	fixcross: autoDraw = True
+75.4562 	EXP 	fixcross: autoDraw = False
+75.4562 	EXP 	fixcross: autoDraw = False
+75.4562 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+75.4562 	EXP 	stimulus_practice: height = 0.1
+75.4562 	EXP 	stimulus_practice: height = 0.1
+75.4562 	EXP 	stimulus_practice: height = 0.1
+75.4562 	EXP 	stimulus_practice: text = 'blau'
+75.4562 	EXP 	stimulus_practice: autoDraw = True
+76.3419 	EXP 	stimulus_practice: autoDraw = False
+76.3419 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+76.3419 	EXP 	textFeedback: text = 'richtig'
+76.3419 	EXP 	textFeedback: autoDraw = True
+77.3249 	EXP 	New trial (rep=0, index=10): {'wordPractice': 'rot', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}
+77.3428 	EXP 	textFeedback: autoDraw = False
+77.3428 	EXP 	textFeedback: autoDraw = False
+77.6916 	EXP 	fixcross: autoDraw = True
+78.4920 	EXP 	fixcross: autoDraw = False
+78.4920 	EXP 	fixcross: autoDraw = False
+78.4920 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+78.4920 	EXP 	stimulus_practice: height = 0.1
+78.4920 	EXP 	stimulus_practice: height = 0.1
+78.4920 	EXP 	stimulus_practice: height = 0.1
+78.4920 	EXP 	stimulus_practice: text = 'rot'
+78.4920 	EXP 	stimulus_practice: autoDraw = True
+79.4278 	EXP 	stimulus_practice: autoDraw = False
+79.4278 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+79.4278 	EXP 	textFeedback: text = 'richtig'
+79.4278 	EXP 	textFeedback: autoDraw = True
+80.4106 	EXP 	New trial (rep=0, index=11): {'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}
+80.4270 	EXP 	textFeedback: autoDraw = False
+80.7606 	EXP 	fixcross: autoDraw = True
+81.5613 	EXP 	fixcross: autoDraw = False
+81.5613 	EXP 	fixcross: autoDraw = False
+81.5613 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+81.5613 	EXP 	stimulus_practice: text = 'rot'
+81.5613 	EXP 	stimulus_practice: autoDraw = True
+82.1801 	EXP 	stimulus_practice: autoDraw = False
+82.1801 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+82.1801 	EXP 	textFeedback: text = 'richtig'
+82.1801 	EXP 	textFeedback: autoDraw = True
+83.1629 	EXP 	New trial (rep=1, index=0): {'wordPractice': 'gelb', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}
+83.1809 	EXP 	textFeedback: autoDraw = False
+83.2628 	EXP 	fixcross: autoDraw = True
+84.0633 	EXP 	fixcross: autoDraw = False
+84.0633 	EXP 	fixcross: autoDraw = False
+84.0633 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+84.0633 	EXP 	stimulus_practice: height = 0.1
+84.0633 	EXP 	stimulus_practice: height = 0.1
+84.0633 	EXP 	stimulus_practice: height = 0.1
+84.0633 	EXP 	stimulus_practice: text = 'gelb'
+84.0633 	EXP 	stimulus_practice: autoDraw = True
+84.6822 	EXP 	stimulus_practice: autoDraw = False
+84.6822 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+84.6822 	EXP 	textFeedback: text = 'richtig'
+84.6822 	EXP 	textFeedback: autoDraw = True
+85.6665 	EXP 	New trial (rep=1, index=1): {'wordPractice': 'blau', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}
+85.6831 	EXP 	textFeedback: autoDraw = False
+86.8673 	EXP 	fixcross: autoDraw = True
+87.6663 	EXP 	fixcross: autoDraw = False
+87.6663 	EXP 	fixcross: autoDraw = False
+87.6663 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+87.6663 	EXP 	stimulus_practice: height = 0.1
+87.6663 	EXP 	stimulus_practice: height = 0.1
+87.6663 	EXP 	stimulus_practice: height = 0.1
+87.6663 	EXP 	stimulus_practice: text = 'blau'
+87.6663 	EXP 	stimulus_practice: autoDraw = True
+89.0357 	EXP 	stimulus_practice: autoDraw = False
+89.0357 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+89.0357 	EXP 	textFeedback: text = 'richtig'
+89.0357 	EXP 	textFeedback: autoDraw = True
+90.0189 	EXP 	New trial (rep=1, index=2): {'wordPractice': 'blau', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}
+90.0366 	EXP 	textFeedback: autoDraw = False
+90.0366 	EXP 	textFeedback: autoDraw = False
+90.1200 	EXP 	fixcross: autoDraw = True
+90.9206 	EXP 	fixcross: autoDraw = False
+90.9206 	EXP 	fixcross: autoDraw = False
+90.9206 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+90.9206 	EXP 	stimulus_practice: text = 'blau'
+90.9206 	EXP 	stimulus_practice: autoDraw = True
+91.7696 	EXP 	stimulus_practice: autoDraw = False
+91.7696 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+91.7696 	EXP 	textFeedback: text = 'richtig'
+91.7696 	EXP 	textFeedback: autoDraw = True
+92.7542 	EXP 	New trial (rep=1, index=3): {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}
+92.7722 	EXP 	textFeedback: autoDraw = False
+93.9566 	EXP 	fixcross: autoDraw = True
+94.7572 	EXP 	fixcross: autoDraw = False
+94.7572 	EXP 	fixcross: autoDraw = False
+94.7572 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+94.7572 	EXP 	stimulus_practice: text = 'blau'
+94.7572 	EXP 	stimulus_practice: autoDraw = True
+95.3228 	EXP 	stimulus_practice: autoDraw = False
+95.3228 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+95.3228 	EXP 	textFeedback: text = 'richtig'
+95.3228 	EXP 	textFeedback: autoDraw = True
+96.3087 	EXP 	New trial (rep=1, index=4): {'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}
+96.3237 	EXP 	textFeedback: autoDraw = False
+97.1092 	EXP 	fixcross: autoDraw = True
+97.9081 	EXP 	fixcross: autoDraw = False
+97.9081 	EXP 	fixcross: autoDraw = False
+97.9081 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+97.9081 	EXP 	stimulus_practice: height = 0.1
+97.9081 	EXP 	stimulus_practice: height = 0.1
+97.9081 	EXP 	stimulus_practice: height = 0.1
+97.9081 	EXP 	stimulus_practice: text = 'rot'
+97.9081 	EXP 	stimulus_practice: autoDraw = True
+98.4585 	EXP 	stimulus_practice: autoDraw = False
+98.4585 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+98.4585 	EXP 	textFeedback: text = 'richtig'
+98.4585 	EXP 	textFeedback: autoDraw = True
+99.4449 	EXP 	New trial (rep=1, index=5): {'wordPractice': 'rot', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}
+99.4596 	EXP 	textFeedback: autoDraw = False
+99.4596 	EXP 	textFeedback: autoDraw = False
+99.5594 	EXP 	fixcross: autoDraw = True
+100.3619 	EXP 	fixcross: autoDraw = False
+100.3619 	EXP 	fixcross: autoDraw = False
+100.3619 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+100.3619 	EXP 	stimulus_practice: text = 'rot'
+100.3619 	EXP 	stimulus_practice: autoDraw = True
+100.8289 	EXP 	stimulus_practice: autoDraw = False
+100.8289 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+100.8289 	EXP 	textFeedback: text = 'richtig'
+100.8289 	EXP 	textFeedback: autoDraw = True
+101.8133 	EXP 	New trial (rep=1, index=6): {'wordPractice': 'blau', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 1}
+101.8283 	EXP 	textFeedback: autoDraw = False
+102.1616 	EXP 	fixcross: autoDraw = True
+102.9623 	EXP 	fixcross: autoDraw = False
+102.9623 	EXP 	fixcross: autoDraw = False
+102.9623 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+102.9623 	EXP 	stimulus_practice: height = 0.1
+102.9623 	EXP 	stimulus_practice: height = 0.1
+102.9623 	EXP 	stimulus_practice: height = 0.1
+102.9623 	EXP 	stimulus_practice: text = 'blau'
+102.9623 	EXP 	stimulus_practice: autoDraw = True
+103.5795 	EXP 	stimulus_practice: autoDraw = False
+103.5795 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+103.5795 	EXP 	textFeedback: text = 'richtig'
+103.5795 	EXP 	textFeedback: autoDraw = True
+104.5659 	EXP 	New trial (rep=1, index=7): {'wordPractice': 'gelb', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 0}
+104.5820 	EXP 	textFeedback: autoDraw = False
+104.9155 	EXP 	fixcross: autoDraw = True
+105.7144 	EXP 	fixcross: autoDraw = False
+105.7144 	EXP 	fixcross: autoDraw = False
+105.7144 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+105.7144 	EXP 	stimulus_practice: height = 0.1
+105.7144 	EXP 	stimulus_practice: height = 0.1
+105.7144 	EXP 	stimulus_practice: height = 0.1
+105.7144 	EXP 	stimulus_practice: text = 'gelb'
+105.7144 	EXP 	stimulus_practice: autoDraw = True
+106.4987 	EXP 	stimulus_practice: autoDraw = False
+106.4987 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+106.4987 	EXP 	textFeedback: text = 'richtig'
+106.4987 	EXP 	textFeedback: autoDraw = True
+107.4833 	EXP 	New trial (rep=1, index=8): {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}
+107.5011 	EXP 	textFeedback: autoDraw = False
+107.5011 	EXP 	textFeedback: autoDraw = False
+107.5828 	EXP 	fixcross: autoDraw = True
+108.3835 	EXP 	fixcross: autoDraw = False
+108.3835 	EXP 	fixcross: autoDraw = False
+108.3835 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+108.3835 	EXP 	stimulus_practice: text = 'gelb'
+108.3835 	EXP 	stimulus_practice: autoDraw = True
+109.1024 	EXP 	stimulus_practice: autoDraw = False
+109.1024 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+109.1024 	EXP 	textFeedback: text = 'richtig'
+109.1024 	EXP 	textFeedback: autoDraw = True
+110.0853 	EXP 	New trial (rep=1, index=9): {'wordPractice': 'gelb', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 1}
+110.1033 	EXP 	textFeedback: autoDraw = False
+110.1850 	EXP 	fixcross: autoDraw = True
+110.9856 	EXP 	fixcross: autoDraw = False
+110.9856 	EXP 	fixcross: autoDraw = False
+110.9856 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+110.9856 	EXP 	stimulus_practice: text = 'gelb'
+110.9856 	EXP 	stimulus_practice: autoDraw = True
+111.8046 	EXP 	stimulus_practice: autoDraw = False
+111.8046 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+111.8046 	EXP 	textFeedback: text = 'richtig'
+111.8046 	EXP 	textFeedback: autoDraw = True
+112.7876 	EXP 	New trial (rep=1, index=10): {'wordPractice': 'rot', 'colorPractice': 'red', 'corrAnsPractice': 'r', 'congruentPractice': 1}
+112.8054 	EXP 	textFeedback: autoDraw = False
+112.8054 	EXP 	textFeedback: autoDraw = False
+112.8872 	EXP 	fixcross: autoDraw = True
+113.6878 	EXP 	fixcross: autoDraw = False
+113.6878 	EXP 	fixcross: autoDraw = False
+113.6878 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+113.6878 	EXP 	stimulus_practice: height = 0.1
+113.6878 	EXP 	stimulus_practice: height = 0.1
+113.6878 	EXP 	stimulus_practice: height = 0.1
+113.6878 	EXP 	stimulus_practice: text = 'rot'
+113.6878 	EXP 	stimulus_practice: autoDraw = True
+114.2383 	EXP 	stimulus_practice: autoDraw = False
+114.2383 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+114.2383 	EXP 	textFeedback: text = 'richtig'
+114.2383 	EXP 	textFeedback: autoDraw = True
+115.2229 	EXP 	New trial (rep=1, index=11): {'wordPractice': 'rot', 'colorPractice': 'yellow', 'corrAnsPractice': 'g', 'congruentPractice': 0}
+115.2408 	EXP 	textFeedback: autoDraw = False
+115.2408 	EXP 	textFeedback: autoDraw = False
+115.5744 	EXP 	fixcross: autoDraw = True
+116.3750 	EXP 	fixcross: autoDraw = False
+116.3750 	EXP 	fixcross: autoDraw = False
+116.3750 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+116.3750 	EXP 	stimulus_practice: text = 'rot'
+116.3750 	EXP 	stimulus_practice: autoDraw = True
+117.1090 	EXP 	stimulus_practice: autoDraw = False
+117.1090 	EXP 	textFeedback: foreColor = <psychopy.colors.Color: white, alpha=1.0>
+117.1090 	EXP 	textFeedback: text = 'richtig'
+117.1090 	EXP 	textFeedback: autoDraw = True
+118.1099 	EXP 	textFeedback: autoDraw = False
+118.1099 	EXP 	instr_test_text: autoDraw = True
+121.9342 	EXP 	Imported stroop_condition_file_test.xlsx as conditions, 12 conditions, 4 params
+121.9346 	EXP 	Created sequence: random, trialTypes=12, nReps=10, seed=None
+121.9347 	EXP 	New trial (rep=0, index=0): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+121.9464 	EXP 	instr_test_text: autoDraw = False
+122.7303 	EXP 	fixcross: autoDraw = True
+123.5293 	EXP 	fixcross: autoDraw = False
+123.5293 	EXP 	fixcross: autoDraw = False
+123.5293 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+123.5293 	EXP 	stimulus_test_run: height = 0.1
+123.5293 	EXP 	stimulus_test_run: height = 0.1
+123.5293 	EXP 	stimulus_test_run: height = 0.1
+123.5293 	EXP 	stimulus_test_run: text = 'blau'
+123.5293 	EXP 	stimulus_test_run: autoDraw = True
+124.2328 	EXP 	New trial (rep=0, index=1): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+124.2483 	EXP 	stimulus_test_run: autoDraw = False
+124.3300 	EXP 	fixcross: autoDraw = True
+125.1306 	EXP 	fixcross: autoDraw = False
+125.1306 	EXP 	fixcross: autoDraw = False
+125.1306 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+125.1306 	EXP 	stimulus_test_run: height = 0.1
+125.1306 	EXP 	stimulus_test_run: height = 0.1
+125.1306 	EXP 	stimulus_test_run: height = 0.1
+125.1306 	EXP 	stimulus_test_run: text = 'gelb'
+125.1306 	EXP 	stimulus_test_run: autoDraw = True
+125.8004 	EXP 	New trial (rep=0, index=2): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+125.8163 	EXP 	stimulus_test_run: autoDraw = False
+126.6002 	EXP 	fixcross: autoDraw = True
+127.4008 	EXP 	fixcross: autoDraw = False
+127.4008 	EXP 	fixcross: autoDraw = False
+127.4008 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+127.4008 	EXP 	stimulus_test_run: text = 'gelb'
+127.4008 	EXP 	stimulus_test_run: autoDraw = True
+128.2358 	EXP 	New trial (rep=0, index=3): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+128.2499 	EXP 	stimulus_test_run: autoDraw = False
+128.5835 	EXP 	fixcross: autoDraw = True
+129.3842 	EXP 	fixcross: autoDraw = False
+129.3842 	EXP 	fixcross: autoDraw = False
+129.3842 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+129.3842 	EXP 	stimulus_test_run: text = 'gelb'
+129.3842 	EXP 	stimulus_test_run: autoDraw = True
+130.1375 	EXP 	New trial (rep=0, index=4): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+130.1515 	EXP 	stimulus_test_run: autoDraw = False
+131.3526 	EXP 	fixcross: autoDraw = True
+132.1532 	EXP 	fixcross: autoDraw = False
+132.1532 	EXP 	fixcross: autoDraw = False
+132.1532 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+132.1532 	EXP 	stimulus_test_run: height = 0.1
+132.1532 	EXP 	stimulus_test_run: height = 0.1
+132.1532 	EXP 	stimulus_test_run: height = 0.1
+132.1532 	EXP 	stimulus_test_run: text = 'rot'
+132.1532 	EXP 	stimulus_test_run: autoDraw = True
+132.7396 	EXP 	New trial (rep=0, index=5): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+132.7553 	EXP 	stimulus_test_run: autoDraw = False
+132.8387 	EXP 	fixcross: autoDraw = True
+133.6376 	EXP 	fixcross: autoDraw = False
+133.6376 	EXP 	fixcross: autoDraw = False
+133.6376 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+133.6376 	EXP 	stimulus_test_run: height = 0.1
+133.6376 	EXP 	stimulus_test_run: height = 0.1
+133.6376 	EXP 	stimulus_test_run: height = 0.1
+133.6376 	EXP 	stimulus_test_run: text = 'gelb'
+133.6376 	EXP 	stimulus_test_run: autoDraw = True
+134.2891 	EXP 	New trial (rep=0, index=6): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+134.3065 	EXP 	stimulus_test_run: autoDraw = False
+134.6384 	EXP 	fixcross: autoDraw = True
+135.4391 	EXP 	fixcross: autoDraw = False
+135.4391 	EXP 	fixcross: autoDraw = False
+135.4391 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+135.4391 	EXP 	stimulus_test_run: height = 0.1
+135.4391 	EXP 	stimulus_test_run: height = 0.1
+135.4391 	EXP 	stimulus_test_run: height = 0.1
+135.4391 	EXP 	stimulus_test_run: text = 'rot'
+135.4391 	EXP 	stimulus_test_run: autoDraw = True
+135.9241 	EXP 	New trial (rep=0, index=7): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+135.9413 	EXP 	stimulus_test_run: autoDraw = False
+137.1257 	EXP 	fixcross: autoDraw = True
+137.9245 	EXP 	fixcross: autoDraw = False
+137.9245 	EXP 	fixcross: autoDraw = False
+137.9245 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+137.9245 	EXP 	stimulus_test_run: height = 0.1
+137.9245 	EXP 	stimulus_test_run: height = 0.1
+137.9245 	EXP 	stimulus_test_run: height = 0.1
+137.9245 	EXP 	stimulus_test_run: text = 'blau'
+137.9245 	EXP 	stimulus_test_run: autoDraw = True
+138.9430 	EXP 	New trial (rep=0, index=8): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+138.9604 	EXP 	stimulus_test_run: autoDraw = False
+139.7443 	EXP 	fixcross: autoDraw = True
+140.5433 	EXP 	fixcross: autoDraw = False
+140.5433 	EXP 	fixcross: autoDraw = False
+140.5433 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+140.5433 	EXP 	stimulus_test_run: text = 'blau'
+140.5433 	EXP 	stimulus_test_run: autoDraw = True
+141.5618 	EXP 	New trial (rep=0, index=9): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+141.5793 	EXP 	stimulus_test_run: autoDraw = False
+141.9128 	EXP 	fixcross: autoDraw = True
+142.7135 	EXP 	fixcross: autoDraw = False
+142.7135 	EXP 	fixcross: autoDraw = False
+142.7135 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+142.7135 	EXP 	stimulus_test_run: text = 'blau'
+142.7135 	EXP 	stimulus_test_run: autoDraw = True
+143.2465 	EXP 	New trial (rep=0, index=10): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+143.2641 	EXP 	stimulus_test_run: autoDraw = False
+144.0479 	EXP 	fixcross: autoDraw = True
+144.8469 	EXP 	fixcross: autoDraw = False
+144.8469 	EXP 	fixcross: autoDraw = False
+144.8469 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+144.8469 	EXP 	stimulus_test_run: height = 0.1
+144.8469 	EXP 	stimulus_test_run: height = 0.1
+144.8469 	EXP 	stimulus_test_run: height = 0.1
+144.8469 	EXP 	stimulus_test_run: text = 'rot'
+144.8469 	EXP 	stimulus_test_run: autoDraw = True
+145.7836 	EXP 	New trial (rep=0, index=11): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+145.7978 	EXP 	stimulus_test_run: autoDraw = False
+146.9823 	EXP 	fixcross: autoDraw = True
+147.7827 	EXP 	fixcross: autoDraw = False
+147.7827 	EXP 	fixcross: autoDraw = False
+147.7827 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+147.7827 	EXP 	stimulus_test_run: text = 'rot'
+147.7827 	EXP 	stimulus_test_run: autoDraw = True
+148.3690 	EXP 	New trial (rep=1, index=0): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+148.3849 	EXP 	stimulus_test_run: autoDraw = False
+148.7335 	EXP 	fixcross: autoDraw = True
+149.5340 	EXP 	fixcross: autoDraw = False
+149.5340 	EXP 	fixcross: autoDraw = False
+149.5340 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+149.5340 	EXP 	stimulus_test_run: text = 'rot'
+149.5340 	EXP 	stimulus_test_run: autoDraw = True
+150.4376 	EXP 	New trial (rep=1, index=1): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+150.4533 	EXP 	stimulus_test_run: autoDraw = False
+151.2372 	EXP 	fixcross: autoDraw = True
+152.0362 	EXP 	fixcross: autoDraw = False
+152.0362 	EXP 	fixcross: autoDraw = False
+152.0362 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+152.0362 	EXP 	stimulus_test_run: height = 0.1
+152.0362 	EXP 	stimulus_test_run: height = 0.1
+152.0362 	EXP 	stimulus_test_run: height = 0.1
+152.0362 	EXP 	stimulus_test_run: text = 'blau'
+152.0362 	EXP 	stimulus_test_run: autoDraw = True
+152.6059 	EXP 	New trial (rep=1, index=2): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+152.6202 	EXP 	stimulus_test_run: autoDraw = False
+153.8228 	EXP 	fixcross: autoDraw = True
+154.6217 	EXP 	fixcross: autoDraw = False
+154.6217 	EXP 	fixcross: autoDraw = False
+154.6217 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+154.6217 	EXP 	stimulus_test_run: height = 0.1
+154.6217 	EXP 	stimulus_test_run: height = 0.1
+154.6217 	EXP 	stimulus_test_run: height = 0.1
+154.6217 	EXP 	stimulus_test_run: text = 'rot'
+154.6217 	EXP 	stimulus_test_run: autoDraw = True
+155.3568 	EXP 	New trial (rep=1, index=3): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+155.3740 	EXP 	stimulus_test_run: autoDraw = False
+156.1580 	EXP 	fixcross: autoDraw = True
+156.9588 	EXP 	fixcross: autoDraw = False
+156.9588 	EXP 	fixcross: autoDraw = False
+156.9588 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+156.9588 	EXP 	stimulus_test_run: text = 'rot'
+156.9588 	EXP 	stimulus_test_run: autoDraw = True
+157.6419 	EXP 	New trial (rep=1, index=4): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+157.6593 	EXP 	stimulus_test_run: autoDraw = False
+157.7426 	EXP 	fixcross: autoDraw = True
+158.5415 	EXP 	fixcross: autoDraw = False
+158.5415 	EXP 	fixcross: autoDraw = False
+158.5415 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+158.5415 	EXP 	stimulus_test_run: height = 0.1
+158.5415 	EXP 	stimulus_test_run: height = 0.1
+158.5415 	EXP 	stimulus_test_run: height = 0.1
+158.5415 	EXP 	stimulus_test_run: text = 'gelb'
+158.5415 	EXP 	stimulus_test_run: autoDraw = True
+159.4949 	EXP 	New trial (rep=1, index=5): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+159.5107 	EXP 	stimulus_test_run: autoDraw = False
+159.5941 	EXP 	fixcross: autoDraw = True
+160.3932 	EXP 	fixcross: autoDraw = False
+160.3932 	EXP 	fixcross: autoDraw = False
+160.3932 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+160.3932 	EXP 	stimulus_test_run: text = 'gelb'
+160.3932 	EXP 	stimulus_test_run: autoDraw = True
+161.2467 	EXP 	New trial (rep=1, index=6): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+161.2606 	EXP 	stimulus_test_run: autoDraw = False
+161.3456 	EXP 	fixcross: autoDraw = True
+162.1446 	EXP 	fixcross: autoDraw = False
+162.1446 	EXP 	fixcross: autoDraw = False
+162.1446 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+162.1446 	EXP 	stimulus_test_run: height = 0.1
+162.1446 	EXP 	stimulus_test_run: height = 0.1
+162.1446 	EXP 	stimulus_test_run: height = 0.1
+162.1446 	EXP 	stimulus_test_run: text = 'rot'
+162.1446 	EXP 	stimulus_test_run: autoDraw = True
+163.2315 	EXP 	New trial (rep=1, index=7): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+163.2471 	EXP 	stimulus_test_run: autoDraw = False
+163.5791 	EXP 	fixcross: autoDraw = True
+164.3797 	EXP 	fixcross: autoDraw = False
+164.3797 	EXP 	fixcross: autoDraw = False
+164.3797 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+164.3797 	EXP 	stimulus_test_run: height = 0.1
+164.3797 	EXP 	stimulus_test_run: height = 0.1
+164.3797 	EXP 	stimulus_test_run: height = 0.1
+164.3797 	EXP 	stimulus_test_run: text = 'blau'
+164.3797 	EXP 	stimulus_test_run: autoDraw = True
+165.1813 	EXP 	New trial (rep=1, index=8): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+165.1988 	EXP 	stimulus_test_run: autoDraw = False
+165.2805 	EXP 	fixcross: autoDraw = True
+166.0829 	EXP 	fixcross: autoDraw = False
+166.0829 	EXP 	fixcross: autoDraw = False
+166.0829 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+166.0829 	EXP 	stimulus_test_run: text = 'blau'
+166.0829 	EXP 	stimulus_test_run: autoDraw = True
+167.1496 	EXP 	New trial (rep=1, index=9): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+167.1671 	EXP 	stimulus_test_run: autoDraw = False
+167.2504 	EXP 	fixcross: autoDraw = True
+168.0495 	EXP 	fixcross: autoDraw = False
+168.0495 	EXP 	fixcross: autoDraw = False
+168.0495 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+168.0495 	EXP 	stimulus_test_run: height = 0.1
+168.0495 	EXP 	stimulus_test_run: height = 0.1
+168.0495 	EXP 	stimulus_test_run: height = 0.1
+168.0495 	EXP 	stimulus_test_run: text = 'gelb'
+168.0495 	EXP 	stimulus_test_run: autoDraw = True
+168.7509 	EXP 	New trial (rep=1, index=10): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+168.7685 	EXP 	stimulus_test_run: autoDraw = False
+169.9512 	EXP 	fixcross: autoDraw = True
+170.7517 	EXP 	fixcross: autoDraw = False
+170.7517 	EXP 	fixcross: autoDraw = False
+170.7517 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+170.7517 	EXP 	stimulus_test_run: height = 0.1
+170.7517 	EXP 	stimulus_test_run: height = 0.1
+170.7517 	EXP 	stimulus_test_run: height = 0.1
+170.7517 	EXP 	stimulus_test_run: text = 'blau'
+170.7517 	EXP 	stimulus_test_run: autoDraw = True
+171.4216 	EXP 	New trial (rep=1, index=11): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+171.4372 	EXP 	stimulus_test_run: autoDraw = False
+172.6216 	EXP 	fixcross: autoDraw = True
+173.4205 	EXP 	fixcross: autoDraw = False
+173.4205 	EXP 	fixcross: autoDraw = False
+173.4205 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+173.4205 	EXP 	stimulus_test_run: height = 0.1
+173.4205 	EXP 	stimulus_test_run: height = 0.1
+173.4205 	EXP 	stimulus_test_run: height = 0.1
+173.4205 	EXP 	stimulus_test_run: text = 'gelb'
+173.4205 	EXP 	stimulus_test_run: autoDraw = True
+174.2071 	EXP 	New trial (rep=2, index=0): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+174.2230 	EXP 	stimulus_test_run: autoDraw = False
+174.5567 	EXP 	fixcross: autoDraw = True
+175.3555 	EXP 	fixcross: autoDraw = False
+175.3555 	EXP 	fixcross: autoDraw = False
+175.3555 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+175.3555 	EXP 	stimulus_test_run: text = 'gelb'
+175.3555 	EXP 	stimulus_test_run: autoDraw = True
+175.9918 	EXP 	New trial (rep=2, index=1): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+176.0077 	EXP 	stimulus_test_run: autoDraw = False
+176.7918 	EXP 	fixcross: autoDraw = True
+177.5906 	EXP 	fixcross: autoDraw = False
+177.5906 	EXP 	fixcross: autoDraw = False
+177.5906 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+177.5906 	EXP 	stimulus_test_run: height = 0.1
+177.5906 	EXP 	stimulus_test_run: height = 0.1
+177.5906 	EXP 	stimulus_test_run: height = 0.1
+177.5906 	EXP 	stimulus_test_run: text = 'blau'
+177.5906 	EXP 	stimulus_test_run: autoDraw = True
+178.1920 	EXP 	New trial (rep=2, index=2): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+178.2095 	EXP 	stimulus_test_run: autoDraw = False
+178.2931 	EXP 	fixcross: autoDraw = True
+179.0918 	EXP 	fixcross: autoDraw = False
+179.0918 	EXP 	fixcross: autoDraw = False
+179.0918 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+179.0918 	EXP 	stimulus_test_run: height = 0.1
+179.0918 	EXP 	stimulus_test_run: height = 0.1
+179.0918 	EXP 	stimulus_test_run: height = 0.1
+179.0918 	EXP 	stimulus_test_run: text = 'rot'
+179.0918 	EXP 	stimulus_test_run: autoDraw = True
+179.9935 	EXP 	New trial (rep=2, index=3): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+180.0110 	EXP 	stimulus_test_run: autoDraw = False
+180.3446 	EXP 	fixcross: autoDraw = True
+181.1435 	EXP 	fixcross: autoDraw = False
+181.1435 	EXP 	fixcross: autoDraw = False
+181.1435 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+181.1435 	EXP 	stimulus_test_run: height = 0.1
+181.1435 	EXP 	stimulus_test_run: height = 0.1
+181.1435 	EXP 	stimulus_test_run: height = 0.1
+181.1435 	EXP 	stimulus_test_run: text = 'blau'
+181.1435 	EXP 	stimulus_test_run: autoDraw = True
+181.9970 	EXP 	New trial (rep=2, index=4): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+182.0127 	EXP 	stimulus_test_run: autoDraw = False
+182.3613 	EXP 	fixcross: autoDraw = True
+183.1620 	EXP 	fixcross: autoDraw = False
+183.1620 	EXP 	fixcross: autoDraw = False
+183.1620 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+183.1620 	EXP 	stimulus_test_run: height = 0.1
+183.1620 	EXP 	stimulus_test_run: height = 0.1
+183.1620 	EXP 	stimulus_test_run: height = 0.1
+183.1620 	EXP 	stimulus_test_run: text = 'gelb'
+183.1620 	EXP 	stimulus_test_run: autoDraw = True
+183.9302 	EXP 	New trial (rep=2, index=5): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+183.9475 	EXP 	stimulus_test_run: autoDraw = False
+184.7316 	EXP 	fixcross: autoDraw = True
+185.5305 	EXP 	fixcross: autoDraw = False
+185.5305 	EXP 	fixcross: autoDraw = False
+185.5305 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+185.5305 	EXP 	stimulus_test_run: height = 0.1
+185.5305 	EXP 	stimulus_test_run: height = 0.1
+185.5305 	EXP 	stimulus_test_run: height = 0.1
+185.5305 	EXP 	stimulus_test_run: text = 'blau'
+185.5305 	EXP 	stimulus_test_run: autoDraw = True
+186.3989 	EXP 	New trial (rep=2, index=6): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+186.4163 	EXP 	stimulus_test_run: autoDraw = False
+187.2002 	EXP 	fixcross: autoDraw = True
+188.0009 	EXP 	fixcross: autoDraw = False
+188.0009 	EXP 	fixcross: autoDraw = False
+188.0009 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+188.0009 	EXP 	stimulus_test_run: text = 'blau'
+188.0009 	EXP 	stimulus_test_run: autoDraw = True
+188.5843 	EXP 	New trial (rep=2, index=7): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+188.6014 	EXP 	stimulus_test_run: autoDraw = False
+189.3854 	EXP 	fixcross: autoDraw = True
+190.1844 	EXP 	fixcross: autoDraw = False
+190.1844 	EXP 	fixcross: autoDraw = False
+190.1844 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+190.1844 	EXP 	stimulus_test_run: height = 0.1
+190.1844 	EXP 	stimulus_test_run: height = 0.1
+190.1844 	EXP 	stimulus_test_run: height = 0.1
+190.1844 	EXP 	stimulus_test_run: text = 'rot'
+190.1844 	EXP 	stimulus_test_run: autoDraw = True
+190.8359 	EXP 	New trial (rep=2, index=8): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+190.8535 	EXP 	stimulus_test_run: autoDraw = False
+190.9366 	EXP 	fixcross: autoDraw = True
+191.7373 	EXP 	fixcross: autoDraw = False
+191.7373 	EXP 	fixcross: autoDraw = False
+191.7373 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+191.7373 	EXP 	stimulus_test_run: height = 0.1
+191.7373 	EXP 	stimulus_test_run: height = 0.1
+191.7373 	EXP 	stimulus_test_run: height = 0.1
+191.7373 	EXP 	stimulus_test_run: text = 'gelb'
+191.7373 	EXP 	stimulus_test_run: autoDraw = True
+192.4722 	EXP 	New trial (rep=2, index=9): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+192.4863 	EXP 	stimulus_test_run: autoDraw = False
+193.6723 	EXP 	fixcross: autoDraw = True
+194.4729 	EXP 	fixcross: autoDraw = False
+194.4729 	EXP 	fixcross: autoDraw = False
+194.4729 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+194.4729 	EXP 	stimulus_test_run: text = 'gelb'
+194.4729 	EXP 	stimulus_test_run: autoDraw = True
+195.2078 	EXP 	New trial (rep=2, index=10): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+195.2236 	EXP 	stimulus_test_run: autoDraw = False
+196.0076 	EXP 	fixcross: autoDraw = True
+196.8233 	EXP 	fixcross: autoDraw = False
+196.8233 	EXP 	fixcross: autoDraw = False
+196.8233 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+196.8233 	EXP 	stimulus_test_run: height = 0.1
+196.8233 	EXP 	stimulus_test_run: height = 0.1
+196.8233 	EXP 	stimulus_test_run: height = 0.1
+196.8233 	EXP 	stimulus_test_run: text = 'rot'
+196.8233 	EXP 	stimulus_test_run: autoDraw = True
+197.6433 	EXP 	New trial (rep=2, index=11): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+197.6590 	EXP 	stimulus_test_run: autoDraw = False
+197.9925 	EXP 	fixcross: autoDraw = True
+198.7933 	EXP 	fixcross: autoDraw = False
+198.7933 	EXP 	fixcross: autoDraw = False
+198.7933 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+198.7933 	EXP 	stimulus_test_run: text = 'rot'
+198.7933 	EXP 	stimulus_test_run: autoDraw = True
+199.6931 	EXP 	New trial (rep=3, index=0): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+199.7106 	EXP 	stimulus_test_run: autoDraw = False
+199.7924 	EXP 	fixcross: autoDraw = True
+200.5930 	EXP 	fixcross: autoDraw = False
+200.5930 	EXP 	fixcross: autoDraw = False
+200.5930 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+200.5930 	EXP 	stimulus_test_run: text = 'rot'
+200.5930 	EXP 	stimulus_test_run: autoDraw = True
+201.2779 	EXP 	New trial (rep=3, index=1): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+201.2954 	EXP 	stimulus_test_run: autoDraw = False
+201.3786 	EXP 	fixcross: autoDraw = True
+202.1777 	EXP 	fixcross: autoDraw = False
+202.1777 	EXP 	fixcross: autoDraw = False
+202.1777 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+202.1777 	EXP 	stimulus_test_run: height = 0.1
+202.1777 	EXP 	stimulus_test_run: height = 0.1
+202.1777 	EXP 	stimulus_test_run: height = 0.1
+202.1777 	EXP 	stimulus_test_run: text = 'gelb'
+202.1777 	EXP 	stimulus_test_run: autoDraw = True
+203.0643 	EXP 	New trial (rep=3, index=2): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+203.0801 	EXP 	stimulus_test_run: autoDraw = False
+203.8641 	EXP 	fixcross: autoDraw = True
+204.6648 	EXP 	fixcross: autoDraw = False
+204.6648 	EXP 	fixcross: autoDraw = False
+204.6648 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+204.6648 	EXP 	stimulus_test_run: text = 'gelb'
+204.6648 	EXP 	stimulus_test_run: autoDraw = True
+205.3663 	EXP 	New trial (rep=3, index=3): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+205.3820 	EXP 	stimulus_test_run: autoDraw = False
+205.7156 	EXP 	fixcross: autoDraw = True
+206.5146 	EXP 	fixcross: autoDraw = False
+206.5146 	EXP 	fixcross: autoDraw = False
+206.5146 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+206.5146 	EXP 	stimulus_test_run: height = 0.1
+206.5146 	EXP 	stimulus_test_run: height = 0.1
+206.5146 	EXP 	stimulus_test_run: height = 0.1
+206.5146 	EXP 	stimulus_test_run: text = 'blau'
+206.5146 	EXP 	stimulus_test_run: autoDraw = True
+207.4162 	EXP 	New trial (rep=3, index=4): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+207.4336 	EXP 	stimulus_test_run: autoDraw = False
+208.2160 	EXP 	fixcross: autoDraw = True
+209.0168 	EXP 	fixcross: autoDraw = False
+209.0168 	EXP 	fixcross: autoDraw = False
+209.0168 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+209.0168 	EXP 	stimulus_test_run: height = 0.1
+209.0168 	EXP 	stimulus_test_run: height = 0.1
+209.0168 	EXP 	stimulus_test_run: height = 0.1
+209.0168 	EXP 	stimulus_test_run: text = 'gelb'
+209.0168 	EXP 	stimulus_test_run: autoDraw = True
+209.8033 	EXP 	New trial (rep=3, index=5): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+209.8191 	EXP 	stimulus_test_run: autoDraw = False
+211.0033 	EXP 	fixcross: autoDraw = True
+211.8023 	EXP 	fixcross: autoDraw = False
+211.8023 	EXP 	fixcross: autoDraw = False
+211.8023 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+211.8023 	EXP 	stimulus_test_run: text = 'gelb'
+211.8023 	EXP 	stimulus_test_run: autoDraw = True
+212.3386 	EXP 	New trial (rep=3, index=6): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+212.3528 	EXP 	stimulus_test_run: autoDraw = False
+213.1384 	EXP 	fixcross: autoDraw = True
+213.9374 	EXP 	fixcross: autoDraw = False
+213.9374 	EXP 	fixcross: autoDraw = False
+213.9374 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+213.9374 	EXP 	stimulus_test_run: height = 0.1
+213.9374 	EXP 	stimulus_test_run: height = 0.1
+213.9374 	EXP 	stimulus_test_run: height = 0.1
+213.9374 	EXP 	stimulus_test_run: text = 'blau'
+213.9374 	EXP 	stimulus_test_run: autoDraw = True
+214.5889 	EXP 	New trial (rep=3, index=7): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+214.6062 	EXP 	stimulus_test_run: autoDraw = False
+214.6897 	EXP 	fixcross: autoDraw = True
+215.4887 	EXP 	fixcross: autoDraw = False
+215.4887 	EXP 	fixcross: autoDraw = False
+215.4887 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+215.4887 	EXP 	stimulus_test_run: height = 0.1
+215.4887 	EXP 	stimulus_test_run: height = 0.1
+215.4887 	EXP 	stimulus_test_run: height = 0.1
+215.4887 	EXP 	stimulus_test_run: text = 'rot'
+215.4887 	EXP 	stimulus_test_run: autoDraw = True
+216.4758 	EXP 	New trial (rep=3, index=8): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+216.4896 	EXP 	stimulus_test_run: autoDraw = False
+217.2752 	EXP 	fixcross: autoDraw = True
+218.0741 	EXP 	fixcross: autoDraw = False
+218.0741 	EXP 	fixcross: autoDraw = False
+218.0741 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+218.0741 	EXP 	stimulus_test_run: height = 0.1
+218.0741 	EXP 	stimulus_test_run: height = 0.1
+218.0741 	EXP 	stimulus_test_run: height = 0.1
+218.0741 	EXP 	stimulus_test_run: text = 'blau'
+218.0741 	EXP 	stimulus_test_run: autoDraw = True
+218.5604 	EXP 	New trial (rep=3, index=9): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+218.5762 	EXP 	stimulus_test_run: autoDraw = False
+219.3586 	EXP 	fixcross: autoDraw = True
+220.1592 	EXP 	fixcross: autoDraw = False
+220.1592 	EXP 	fixcross: autoDraw = False
+220.1592 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+220.1592 	EXP 	stimulus_test_run: height = 0.1
+220.1592 	EXP 	stimulus_test_run: height = 0.1
+220.1592 	EXP 	stimulus_test_run: height = 0.1
+220.1592 	EXP 	stimulus_test_run: text = 'rot'
+220.1592 	EXP 	stimulus_test_run: autoDraw = True
+220.6956 	EXP 	New trial (rep=3, index=10): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+220.7114 	EXP 	stimulus_test_run: autoDraw = False
+221.0449 	EXP 	fixcross: autoDraw = True
+221.8439 	EXP 	fixcross: autoDraw = False
+221.8439 	EXP 	fixcross: autoDraw = False
+221.8439 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+221.8439 	EXP 	stimulus_test_run: height = 0.1
+221.8439 	EXP 	stimulus_test_run: height = 0.1
+221.8439 	EXP 	stimulus_test_run: height = 0.1
+221.8439 	EXP 	stimulus_test_run: text = 'blau'
+221.8439 	EXP 	stimulus_test_run: autoDraw = True
+222.9308 	EXP 	New trial (rep=3, index=11): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+222.9465 	EXP 	stimulus_test_run: autoDraw = False
+224.1308 	EXP 	fixcross: autoDraw = True
+224.9298 	EXP 	fixcross: autoDraw = False
+224.9298 	EXP 	fixcross: autoDraw = False
+224.9298 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+224.9298 	EXP 	stimulus_test_run: height = 0.1
+224.9298 	EXP 	stimulus_test_run: height = 0.1
+224.9298 	EXP 	stimulus_test_run: height = 0.1
+224.9298 	EXP 	stimulus_test_run: text = 'rot'
+224.9298 	EXP 	stimulus_test_run: autoDraw = True
+225.9165 	EXP 	New trial (rep=4, index=0): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+225.9323 	EXP 	stimulus_test_run: autoDraw = False
+226.2660 	EXP 	fixcross: autoDraw = True
+227.0648 	EXP 	fixcross: autoDraw = False
+227.0648 	EXP 	fixcross: autoDraw = False
+227.0648 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+227.0648 	EXP 	stimulus_test_run: height = 0.1
+227.0648 	EXP 	stimulus_test_run: height = 0.1
+227.0648 	EXP 	stimulus_test_run: height = 0.1
+227.0648 	EXP 	stimulus_test_run: text = 'gelb'
+227.0648 	EXP 	stimulus_test_run: autoDraw = True
+228.0350 	EXP 	New trial (rep=4, index=1): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+228.0491 	EXP 	stimulus_test_run: autoDraw = False
+228.8514 	EXP 	fixcross: autoDraw = True
+229.6505 	EXP 	fixcross: autoDraw = False
+229.6505 	EXP 	fixcross: autoDraw = False
+229.6505 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+229.6505 	EXP 	stimulus_test_run: height = 0.1
+229.6505 	EXP 	stimulus_test_run: height = 0.1
+229.6505 	EXP 	stimulus_test_run: height = 0.1
+229.6505 	EXP 	stimulus_test_run: text = 'blau'
+229.6505 	EXP 	stimulus_test_run: autoDraw = True
+230.2683 	EXP 	New trial (rep=4, index=2): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+230.2860 	EXP 	stimulus_test_run: autoDraw = False
+231.4701 	EXP 	fixcross: autoDraw = True
+232.2692 	EXP 	fixcross: autoDraw = False
+232.2692 	EXP 	fixcross: autoDraw = False
+232.2692 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+232.2692 	EXP 	stimulus_test_run: height = 0.1
+232.2692 	EXP 	stimulus_test_run: height = 0.1
+232.2692 	EXP 	stimulus_test_run: height = 0.1
+232.2692 	EXP 	stimulus_test_run: text = 'rot'
+232.2692 	EXP 	stimulus_test_run: autoDraw = True
+232.7373 	EXP 	New trial (rep=4, index=3): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+232.7546 	EXP 	stimulus_test_run: autoDraw = False
+233.0883 	EXP 	fixcross: autoDraw = True
+233.8873 	EXP 	fixcross: autoDraw = False
+233.8873 	EXP 	fixcross: autoDraw = False
+233.8873 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+233.8873 	EXP 	stimulus_test_run: height = 0.1
+233.8873 	EXP 	stimulus_test_run: height = 0.1
+233.8873 	EXP 	stimulus_test_run: height = 0.1
+233.8873 	EXP 	stimulus_test_run: text = 'gelb'
+233.8873 	EXP 	stimulus_test_run: autoDraw = True
+234.4219 	EXP 	New trial (rep=4, index=4): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+234.4395 	EXP 	stimulus_test_run: autoDraw = False
+234.5227 	EXP 	fixcross: autoDraw = True
+235.3217 	EXP 	fixcross: autoDraw = False
+235.3217 	EXP 	fixcross: autoDraw = False
+235.3217 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+235.3217 	EXP 	stimulus_test_run: text = 'gelb'
+235.3217 	EXP 	stimulus_test_run: autoDraw = True
+235.9581 	EXP 	New trial (rep=4, index=5): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+235.9739 	EXP 	stimulus_test_run: autoDraw = False
+237.1583 	EXP 	fixcross: autoDraw = True
+237.9755 	EXP 	fixcross: autoDraw = False
+237.9755 	EXP 	fixcross: autoDraw = False
+237.9755 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+237.9755 	EXP 	stimulus_test_run: text = 'gelb'
+237.9755 	EXP 	stimulus_test_run: autoDraw = True
+238.8440 	EXP 	New trial (rep=4, index=6): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+238.8596 	EXP 	stimulus_test_run: autoDraw = False
+239.6437 	EXP 	fixcross: autoDraw = True
+240.4426 	EXP 	fixcross: autoDraw = False
+240.4426 	EXP 	fixcross: autoDraw = False
+240.4426 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+240.4426 	EXP 	stimulus_test_run: height = 0.1
+240.4426 	EXP 	stimulus_test_run: height = 0.1
+240.4426 	EXP 	stimulus_test_run: height = 0.1
+240.4426 	EXP 	stimulus_test_run: text = 'rot'
+240.4426 	EXP 	stimulus_test_run: autoDraw = True
+241.3109 	EXP 	New trial (rep=4, index=7): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+241.3284 	EXP 	stimulus_test_run: autoDraw = False
+242.1124 	EXP 	fixcross: autoDraw = True
+242.9130 	EXP 	fixcross: autoDraw = False
+242.9130 	EXP 	fixcross: autoDraw = False
+242.9130 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+242.9130 	EXP 	stimulus_test_run: text = 'rot'
+242.9130 	EXP 	stimulus_test_run: autoDraw = True
+243.7813 	EXP 	New trial (rep=4, index=8): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+243.7972 	EXP 	stimulus_test_run: autoDraw = False
+244.5811 	EXP 	fixcross: autoDraw = True
+245.3817 	EXP 	fixcross: autoDraw = False
+245.3817 	EXP 	fixcross: autoDraw = False
+245.3817 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+245.3817 	EXP 	stimulus_test_run: text = 'rot'
+245.3817 	EXP 	stimulus_test_run: autoDraw = True
+246.0999 	EXP 	New trial (rep=4, index=9): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+246.1157 	EXP 	stimulus_test_run: autoDraw = False
+246.1976 	EXP 	fixcross: autoDraw = True
+246.9980 	EXP 	fixcross: autoDraw = False
+246.9980 	EXP 	fixcross: autoDraw = False
+246.9980 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+246.9980 	EXP 	stimulus_test_run: height = 0.1
+246.9980 	EXP 	stimulus_test_run: height = 0.1
+246.9980 	EXP 	stimulus_test_run: height = 0.1
+246.9980 	EXP 	stimulus_test_run: text = 'blau'
+246.9980 	EXP 	stimulus_test_run: autoDraw = True
+247.5329 	EXP 	New trial (rep=4, index=10): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+247.5486 	EXP 	stimulus_test_run: autoDraw = False
+248.7328 	EXP 	fixcross: autoDraw = True
+249.5351 	EXP 	fixcross: autoDraw = False
+249.5351 	EXP 	fixcross: autoDraw = False
+249.5351 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+249.5351 	EXP 	stimulus_test_run: text = 'blau'
+249.5351 	EXP 	stimulus_test_run: autoDraw = True
+250.4037 	EXP 	New trial (rep=4, index=11): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+250.4192 	EXP 	stimulus_test_run: autoDraw = False
+250.7512 	EXP 	fixcross: autoDraw = True
+251.5535 	EXP 	fixcross: autoDraw = False
+251.5535 	EXP 	fixcross: autoDraw = False
+251.5535 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+251.5535 	EXP 	stimulus_test_run: text = 'blau'
+251.5535 	EXP 	stimulus_test_run: autoDraw = True
+252.2199 	EXP 	New trial (rep=5, index=0): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+252.2374 	EXP 	stimulus_test_run: autoDraw = False
+252.5711 	EXP 	fixcross: autoDraw = True
+253.3700 	EXP 	fixcross: autoDraw = False
+253.3700 	EXP 	fixcross: autoDraw = False
+253.3700 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+253.3700 	EXP 	stimulus_test_run: height = 0.1
+253.3700 	EXP 	stimulus_test_run: height = 0.1
+253.3700 	EXP 	stimulus_test_run: height = 0.1
+253.3700 	EXP 	stimulus_test_run: text = 'rot'
+253.3700 	EXP 	stimulus_test_run: autoDraw = True
+254.2051 	EXP 	New trial (rep=5, index=1): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+254.2226 	EXP 	stimulus_test_run: autoDraw = False
+254.5560 	EXP 	fixcross: autoDraw = True
+255.3550 	EXP 	fixcross: autoDraw = False
+255.3550 	EXP 	fixcross: autoDraw = False
+255.3550 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+255.3550 	EXP 	stimulus_test_run: height = 0.1
+255.3550 	EXP 	stimulus_test_run: height = 0.1
+255.3550 	EXP 	stimulus_test_run: height = 0.1
+255.3550 	EXP 	stimulus_test_run: text = 'gelb'
+255.3550 	EXP 	stimulus_test_run: autoDraw = True
+255.8912 	EXP 	New trial (rep=5, index=2): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+255.9071 	EXP 	stimulus_test_run: autoDraw = False
+256.2407 	EXP 	fixcross: autoDraw = True
+257.0413 	EXP 	fixcross: autoDraw = False
+257.0413 	EXP 	fixcross: autoDraw = False
+257.0413 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+257.0413 	EXP 	stimulus_test_run: text = 'gelb'
+257.0413 	EXP 	stimulus_test_run: autoDraw = True
+257.6095 	EXP 	New trial (rep=5, index=3): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+257.6253 	EXP 	stimulus_test_run: autoDraw = False
+257.9589 	EXP 	fixcross: autoDraw = True
+258.7595 	EXP 	fixcross: autoDraw = False
+258.7595 	EXP 	fixcross: autoDraw = False
+258.7595 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+258.7595 	EXP 	stimulus_test_run: text = 'gelb'
+258.7595 	EXP 	stimulus_test_run: autoDraw = True
+259.7263 	EXP 	New trial (rep=5, index=4): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+259.7436 	EXP 	stimulus_test_run: autoDraw = False
+260.9280 	EXP 	fixcross: autoDraw = True
+261.7271 	EXP 	fixcross: autoDraw = False
+261.7271 	EXP 	fixcross: autoDraw = False
+261.7271 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+261.7271 	EXP 	stimulus_test_run: height = 0.1
+261.7271 	EXP 	stimulus_test_run: height = 0.1
+261.7271 	EXP 	stimulus_test_run: height = 0.1
+261.7271 	EXP 	stimulus_test_run: text = 'blau'
+261.7271 	EXP 	stimulus_test_run: autoDraw = True
+262.4286 	EXP 	New trial (rep=5, index=5): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+262.4459 	EXP 	stimulus_test_run: autoDraw = False
+263.2300 	EXP 	fixcross: autoDraw = True
+264.0288 	EXP 	fixcross: autoDraw = False
+264.0288 	EXP 	fixcross: autoDraw = False
+264.0288 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+264.0288 	EXP 	stimulus_test_run: height = 0.1
+264.0288 	EXP 	stimulus_test_run: height = 0.1
+264.0288 	EXP 	stimulus_test_run: height = 0.1
+264.0288 	EXP 	stimulus_test_run: text = 'rot'
+264.0288 	EXP 	stimulus_test_run: autoDraw = True
+264.6819 	EXP 	New trial (rep=5, index=6): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+264.6977 	EXP 	stimulus_test_run: autoDraw = False
+264.7812 	EXP 	fixcross: autoDraw = True
+265.5817 	EXP 	fixcross: autoDraw = False
+265.5817 	EXP 	fixcross: autoDraw = False
+265.5817 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+265.5817 	EXP 	stimulus_test_run: text = 'rot'
+265.5817 	EXP 	stimulus_test_run: autoDraw = True
+266.0166 	EXP 	New trial (rep=5, index=7): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+266.0322 	EXP 	stimulus_test_run: autoDraw = False
+267.2165 	EXP 	fixcross: autoDraw = True
+268.0155 	EXP 	fixcross: autoDraw = False
+268.0155 	EXP 	fixcross: autoDraw = False
+268.0155 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+268.0155 	EXP 	stimulus_test_run: height = 0.1
+268.0155 	EXP 	stimulus_test_run: height = 0.1
+268.0155 	EXP 	stimulus_test_run: height = 0.1
+268.0155 	EXP 	stimulus_test_run: text = 'blau'
+268.0155 	EXP 	stimulus_test_run: autoDraw = True
+268.5836 	EXP 	New trial (rep=5, index=8): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+268.6009 	EXP 	stimulus_test_run: autoDraw = False
+268.6828 	EXP 	fixcross: autoDraw = True
+269.4834 	EXP 	fixcross: autoDraw = False
+269.4834 	EXP 	fixcross: autoDraw = False
+269.4834 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+269.4834 	EXP 	stimulus_test_run: text = 'blau'
+269.4834 	EXP 	stimulus_test_run: autoDraw = True
+270.5019 	EXP 	New trial (rep=5, index=9): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+270.5177 	EXP 	stimulus_test_run: autoDraw = False
+270.6025 	EXP 	fixcross: autoDraw = True
+271.4016 	EXP 	fixcross: autoDraw = False
+271.4016 	EXP 	fixcross: autoDraw = False
+271.4016 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+271.4016 	EXP 	stimulus_test_run: height = 0.1
+271.4016 	EXP 	stimulus_test_run: height = 0.1
+271.4016 	EXP 	stimulus_test_run: height = 0.1
+271.4016 	EXP 	stimulus_test_run: text = 'rot'
+271.4016 	EXP 	stimulus_test_run: autoDraw = True
+271.9713 	EXP 	New trial (rep=5, index=10): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+271.9871 	EXP 	stimulus_test_run: autoDraw = False
+272.3208 	EXP 	fixcross: autoDraw = True
+273.1199 	EXP 	fixcross: autoDraw = False
+273.1199 	EXP 	fixcross: autoDraw = False
+273.1199 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+273.1199 	EXP 	stimulus_test_run: height = 0.1
+273.1199 	EXP 	stimulus_test_run: height = 0.1
+273.1199 	EXP 	stimulus_test_run: height = 0.1
+273.1199 	EXP 	stimulus_test_run: text = 'blau'
+273.1199 	EXP 	stimulus_test_run: autoDraw = True
+274.0214 	EXP 	New trial (rep=5, index=11): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+274.0387 	EXP 	stimulus_test_run: autoDraw = False
+275.2214 	EXP 	fixcross: autoDraw = True
+276.0221 	EXP 	fixcross: autoDraw = False
+276.0221 	EXP 	fixcross: autoDraw = False
+276.0221 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+276.0221 	EXP 	stimulus_test_run: height = 0.1
+276.0221 	EXP 	stimulus_test_run: height = 0.1
+276.0221 	EXP 	stimulus_test_run: height = 0.1
+276.0221 	EXP 	stimulus_test_run: text = 'gelb'
+276.0221 	EXP 	stimulus_test_run: autoDraw = True
+276.7421 	EXP 	New trial (rep=6, index=0): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+276.7561 	EXP 	stimulus_test_run: autoDraw = False
+277.5417 	EXP 	fixcross: autoDraw = True
+278.3406 	EXP 	fixcross: autoDraw = False
+278.3406 	EXP 	fixcross: autoDraw = False
+278.3406 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+278.3406 	EXP 	stimulus_test_run: height = 0.1
+278.3406 	EXP 	stimulus_test_run: height = 0.1
+278.3406 	EXP 	stimulus_test_run: height = 0.1
+278.3406 	EXP 	stimulus_test_run: text = 'blau'
+278.3406 	EXP 	stimulus_test_run: autoDraw = True
+278.9938 	EXP 	New trial (rep=6, index=1): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+279.0095 	EXP 	stimulus_test_run: autoDraw = False
+280.1939 	EXP 	fixcross: autoDraw = True
+280.9929 	EXP 	fixcross: autoDraw = False
+280.9929 	EXP 	fixcross: autoDraw = False
+280.9929 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+280.9929 	EXP 	stimulus_test_run: height = 0.1
+280.9929 	EXP 	stimulus_test_run: height = 0.1
+280.9929 	EXP 	stimulus_test_run: height = 0.1
+280.9929 	EXP 	stimulus_test_run: text = 'rot'
+280.9929 	EXP 	stimulus_test_run: autoDraw = True
+281.7611 	EXP 	New trial (rep=6, index=2): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+281.7789 	EXP 	stimulus_test_run: autoDraw = False
+281.8619 	EXP 	fixcross: autoDraw = True
+282.6627 	EXP 	fixcross: autoDraw = False
+282.6627 	EXP 	fixcross: autoDraw = False
+282.6627 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+282.6627 	EXP 	stimulus_test_run: text = 'rot'
+282.6627 	EXP 	stimulus_test_run: autoDraw = True
+283.6310 	EXP 	New trial (rep=6, index=3): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+283.6467 	EXP 	stimulus_test_run: autoDraw = False
+284.4308 	EXP 	fixcross: autoDraw = True
+285.2297 	EXP 	fixcross: autoDraw = False
+285.2297 	EXP 	fixcross: autoDraw = False
+285.2297 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+285.2297 	EXP 	stimulus_test_run: height = 0.1
+285.2297 	EXP 	stimulus_test_run: height = 0.1
+285.2297 	EXP 	stimulus_test_run: height = 0.1
+285.2297 	EXP 	stimulus_test_run: text = 'blau'
+285.2297 	EXP 	stimulus_test_run: autoDraw = True
+285.8161 	EXP 	New trial (rep=6, index=4): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+285.8319 	EXP 	stimulus_test_run: autoDraw = False
+286.1655 	EXP 	fixcross: autoDraw = True
+286.9645 	EXP 	fixcross: autoDraw = False
+286.9645 	EXP 	fixcross: autoDraw = False
+286.9645 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+286.9645 	EXP 	stimulus_test_run: height = 0.1
+286.9645 	EXP 	stimulus_test_run: height = 0.1
+286.9645 	EXP 	stimulus_test_run: height = 0.1
+286.9645 	EXP 	stimulus_test_run: text = 'rot'
+286.9645 	EXP 	stimulus_test_run: autoDraw = True
+287.8350 	EXP 	New trial (rep=6, index=5): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+287.8501 	EXP 	stimulus_test_run: autoDraw = False
+288.2005 	EXP 	fixcross: autoDraw = True
+288.9995 	EXP 	fixcross: autoDraw = False
+288.9995 	EXP 	fixcross: autoDraw = False
+288.9995 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+288.9995 	EXP 	stimulus_test_run: height = 0.1
+288.9995 	EXP 	stimulus_test_run: height = 0.1
+288.9995 	EXP 	stimulus_test_run: height = 0.1
+288.9995 	EXP 	stimulus_test_run: text = 'blau'
+288.9995 	EXP 	stimulus_test_run: autoDraw = True
+289.8846 	EXP 	New trial (rep=6, index=6): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+289.9019 	EXP 	stimulus_test_run: autoDraw = False
+290.6860 	EXP 	fixcross: autoDraw = True
+291.4848 	EXP 	fixcross: autoDraw = False
+291.4848 	EXP 	fixcross: autoDraw = False
+291.4848 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+291.4848 	EXP 	stimulus_test_run: text = 'blau'
+291.4848 	EXP 	stimulus_test_run: autoDraw = True
+292.1532 	EXP 	New trial (rep=6, index=7): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+292.1704 	EXP 	stimulus_test_run: autoDraw = False
+292.2522 	EXP 	fixcross: autoDraw = True
+293.0528 	EXP 	fixcross: autoDraw = False
+293.0528 	EXP 	fixcross: autoDraw = False
+293.0528 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+293.0528 	EXP 	stimulus_test_run: height = 0.1
+293.0528 	EXP 	stimulus_test_run: height = 0.1
+293.0528 	EXP 	stimulus_test_run: height = 0.1
+293.0528 	EXP 	stimulus_test_run: text = 'gelb'
+293.0528 	EXP 	stimulus_test_run: autoDraw = True
+294.1397 	EXP 	New trial (rep=6, index=8): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+294.1554 	EXP 	stimulus_test_run: autoDraw = False
+294.2388 	EXP 	fixcross: autoDraw = True
+295.0395 	EXP 	fixcross: autoDraw = False
+295.0395 	EXP 	fixcross: autoDraw = False
+295.0395 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+295.0395 	EXP 	stimulus_test_run: text = 'gelb'
+295.0395 	EXP 	stimulus_test_run: autoDraw = True
+295.6227 	EXP 	New trial (rep=6, index=9): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+295.6400 	EXP 	stimulus_test_run: autoDraw = False
+295.7235 	EXP 	fixcross: autoDraw = True
+296.5240 	EXP 	fixcross: autoDraw = False
+296.5240 	EXP 	fixcross: autoDraw = False
+296.5240 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+296.5240 	EXP 	stimulus_test_run: text = 'gelb'
+296.5240 	EXP 	stimulus_test_run: autoDraw = True
+297.3424 	EXP 	New trial (rep=6, index=10): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+297.3564 	EXP 	stimulus_test_run: autoDraw = False
+298.1420 	EXP 	fixcross: autoDraw = True
+298.9410 	EXP 	fixcross: autoDraw = False
+298.9410 	EXP 	fixcross: autoDraw = False
+298.9410 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+298.9410 	EXP 	stimulus_test_run: height = 0.1
+298.9410 	EXP 	stimulus_test_run: height = 0.1
+298.9410 	EXP 	stimulus_test_run: height = 0.1
+298.9410 	EXP 	stimulus_test_run: text = 'rot'
+298.9410 	EXP 	stimulus_test_run: autoDraw = True
+299.6927 	EXP 	New trial (rep=6, index=11): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+299.7100 	EXP 	stimulus_test_run: autoDraw = False
+300.8944 	EXP 	fixcross: autoDraw = True
+301.6932 	EXP 	fixcross: autoDraw = False
+301.6932 	EXP 	fixcross: autoDraw = False
+301.6932 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+301.6932 	EXP 	stimulus_test_run: height = 0.1
+301.6932 	EXP 	stimulus_test_run: height = 0.1
+301.6932 	EXP 	stimulus_test_run: height = 0.1
+301.6932 	EXP 	stimulus_test_run: text = 'gelb'
+301.6932 	EXP 	stimulus_test_run: autoDraw = True
+302.3282 	EXP 	New trial (rep=7, index=0): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+302.3455 	EXP 	stimulus_test_run: autoDraw = False
+303.1297 	EXP 	fixcross: autoDraw = True
+303.9285 	EXP 	fixcross: autoDraw = False
+303.9285 	EXP 	fixcross: autoDraw = False
+303.9285 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+303.9285 	EXP 	stimulus_test_run: height = 0.1
+303.9285 	EXP 	stimulus_test_run: height = 0.1
+303.9285 	EXP 	stimulus_test_run: height = 0.1
+303.9285 	EXP 	stimulus_test_run: text = 'blau'
+303.9285 	EXP 	stimulus_test_run: autoDraw = True
+304.4966 	EXP 	New trial (rep=7, index=1): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+304.5140 	EXP 	stimulus_test_run: autoDraw = False
+305.2980 	EXP 	fixcross: autoDraw = True
+306.0969 	EXP 	fixcross: autoDraw = False
+306.0969 	EXP 	fixcross: autoDraw = False
+306.0969 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+306.0969 	EXP 	stimulus_test_run: height = 0.1
+306.0969 	EXP 	stimulus_test_run: height = 0.1
+306.0969 	EXP 	stimulus_test_run: height = 0.1
+306.0969 	EXP 	stimulus_test_run: text = 'gelb'
+306.0969 	EXP 	stimulus_test_run: autoDraw = True
+306.9820 	EXP 	New trial (rep=7, index=2): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+306.9994 	EXP 	stimulus_test_run: autoDraw = False
+308.1837 	EXP 	fixcross: autoDraw = True
+308.9827 	EXP 	fixcross: autoDraw = False
+308.9827 	EXP 	fixcross: autoDraw = False
+308.9827 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+308.9827 	EXP 	stimulus_test_run: height = 0.1
+308.9827 	EXP 	stimulus_test_run: height = 0.1
+308.9827 	EXP 	stimulus_test_run: height = 0.1
+308.9827 	EXP 	stimulus_test_run: text = 'blau'
+308.9827 	EXP 	stimulus_test_run: autoDraw = True
+309.7008 	EXP 	New trial (rep=7, index=3): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+309.7183 	EXP 	stimulus_test_run: autoDraw = False
+310.5005 	EXP 	fixcross: autoDraw = True
+311.3011 	EXP 	fixcross: autoDraw = False
+311.3011 	EXP 	fixcross: autoDraw = False
+311.3011 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+311.3011 	EXP 	stimulus_test_run: height = 0.1
+311.3011 	EXP 	stimulus_test_run: height = 0.1
+311.3011 	EXP 	stimulus_test_run: height = 0.1
+311.3011 	EXP 	stimulus_test_run: text = 'rot'
+311.3011 	EXP 	stimulus_test_run: autoDraw = True
+311.7692 	EXP 	New trial (rep=7, index=4): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+311.7851 	EXP 	stimulus_test_run: autoDraw = False
+312.5706 	EXP 	fixcross: autoDraw = True
+313.3712 	EXP 	fixcross: autoDraw = False
+313.3712 	EXP 	fixcross: autoDraw = False
+313.3712 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+313.3712 	EXP 	stimulus_test_run: height = 0.1
+313.3712 	EXP 	stimulus_test_run: height = 0.1
+313.3712 	EXP 	stimulus_test_run: height = 0.1
+313.3712 	EXP 	stimulus_test_run: text = 'gelb'
+313.3712 	EXP 	stimulus_test_run: autoDraw = True
+314.6232 	EXP 	New trial (rep=7, index=5): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+314.6390 	EXP 	stimulus_test_run: autoDraw = False
+314.9726 	EXP 	fixcross: autoDraw = True
+315.7715 	EXP 	fixcross: autoDraw = False
+315.7715 	EXP 	fixcross: autoDraw = False
+315.7715 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+315.7715 	EXP 	stimulus_test_run: height = 0.1
+315.7715 	EXP 	stimulus_test_run: height = 0.1
+315.7715 	EXP 	stimulus_test_run: height = 0.1
+315.7715 	EXP 	stimulus_test_run: text = 'blau'
+315.7715 	EXP 	stimulus_test_run: autoDraw = True
+316.5731 	EXP 	New trial (rep=7, index=6): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+316.5907 	EXP 	stimulus_test_run: autoDraw = False
+317.3745 	EXP 	fixcross: autoDraw = True
+318.1735 	EXP 	fixcross: autoDraw = False
+318.1735 	EXP 	fixcross: autoDraw = False
+318.1735 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+318.1735 	EXP 	stimulus_test_run: height = 0.1
+318.1735 	EXP 	stimulus_test_run: height = 0.1
+318.1735 	EXP 	stimulus_test_run: height = 0.1
+318.1735 	EXP 	stimulus_test_run: text = 'rot'
+318.1735 	EXP 	stimulus_test_run: autoDraw = True
+318.8935 	EXP 	New trial (rep=7, index=7): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+318.9092 	EXP 	stimulus_test_run: autoDraw = False
+320.0920 	EXP 	fixcross: autoDraw = True
+320.8925 	EXP 	fixcross: autoDraw = False
+320.8925 	EXP 	fixcross: autoDraw = False
+320.8925 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+320.8925 	EXP 	stimulus_test_run: height = 0.1
+320.8925 	EXP 	stimulus_test_run: height = 0.1
+320.8925 	EXP 	stimulus_test_run: height = 0.1
+320.8925 	EXP 	stimulus_test_run: text = 'gelb'
+320.8925 	EXP 	stimulus_test_run: autoDraw = True
+321.4605 	EXP 	New trial (rep=7, index=8): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+321.4780 	EXP 	stimulus_test_run: autoDraw = False
+322.2620 	EXP 	fixcross: autoDraw = True
+323.0610 	EXP 	fixcross: autoDraw = False
+323.0610 	EXP 	fixcross: autoDraw = False
+323.0610 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+323.0610 	EXP 	stimulus_test_run: height = 0.1
+323.0610 	EXP 	stimulus_test_run: height = 0.1
+323.0610 	EXP 	stimulus_test_run: height = 0.1
+323.0610 	EXP 	stimulus_test_run: text = 'blau'
+323.0610 	EXP 	stimulus_test_run: autoDraw = True
+323.6141 	EXP 	New trial (rep=7, index=9): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+323.6281 	EXP 	stimulus_test_run: autoDraw = False
+324.4137 	EXP 	fixcross: autoDraw = True
+325.2127 	EXP 	fixcross: autoDraw = False
+325.2127 	EXP 	fixcross: autoDraw = False
+325.2127 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+325.2127 	EXP 	stimulus_test_run: height = 0.1
+325.2127 	EXP 	stimulus_test_run: height = 0.1
+325.2127 	EXP 	stimulus_test_run: height = 0.1
+325.2127 	EXP 	stimulus_test_run: text = 'rot'
+325.2127 	EXP 	stimulus_test_run: autoDraw = True
+325.9160 	EXP 	New trial (rep=7, index=10): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+325.9318 	EXP 	stimulus_test_run: autoDraw = False
+327.1311 	EXP 	fixcross: autoDraw = True
+327.9333 	EXP 	fixcross: autoDraw = False
+327.9333 	EXP 	fixcross: autoDraw = False
+327.9333 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+327.9333 	EXP 	stimulus_test_run: height = 0.1
+327.9333 	EXP 	stimulus_test_run: height = 0.1
+327.9333 	EXP 	stimulus_test_run: height = 0.1
+327.9333 	EXP 	stimulus_test_run: text = 'gelb'
+327.9333 	EXP 	stimulus_test_run: autoDraw = True
+328.6668 	EXP 	New trial (rep=7, index=11): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+328.6841 	EXP 	stimulus_test_run: autoDraw = False
+328.7673 	EXP 	fixcross: autoDraw = True
+329.5663 	EXP 	fixcross: autoDraw = False
+329.5663 	EXP 	fixcross: autoDraw = False
+329.5663 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+329.5663 	EXP 	stimulus_test_run: height = 0.1
+329.5663 	EXP 	stimulus_test_run: height = 0.1
+329.5663 	EXP 	stimulus_test_run: height = 0.1
+329.5663 	EXP 	stimulus_test_run: text = 'rot'
+329.5663 	EXP 	stimulus_test_run: autoDraw = True
+330.3032 	EXP 	New trial (rep=8, index=0): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+330.3187 	EXP 	stimulus_test_run: autoDraw = False
+330.4188 	EXP 	fixcross: autoDraw = True
+331.2360 	EXP 	fixcross: autoDraw = False
+331.2360 	EXP 	fixcross: autoDraw = False
+331.2360 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+331.2360 	EXP 	stimulus_test_run: height = 0.1
+331.2360 	EXP 	stimulus_test_run: height = 0.1
+331.2360 	EXP 	stimulus_test_run: height = 0.1
+331.2360 	EXP 	stimulus_test_run: text = 'gelb'
+331.2360 	EXP 	stimulus_test_run: autoDraw = True
+331.8859 	EXP 	New trial (rep=8, index=1): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+331.9033 	EXP 	stimulus_test_run: autoDraw = False
+333.0876 	EXP 	fixcross: autoDraw = True
+333.8866 	EXP 	fixcross: autoDraw = False
+333.8866 	EXP 	fixcross: autoDraw = False
+333.8866 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+333.8866 	EXP 	stimulus_test_run: height = 0.1
+333.8866 	EXP 	stimulus_test_run: height = 0.1
+333.8866 	EXP 	stimulus_test_run: height = 0.1
+333.8866 	EXP 	stimulus_test_run: text = 'blau'
+333.8866 	EXP 	stimulus_test_run: autoDraw = True
+334.4712 	EXP 	New trial (rep=8, index=2): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+334.4889 	EXP 	stimulus_test_run: autoDraw = False
+334.8225 	EXP 	fixcross: autoDraw = True
+335.6216 	EXP 	fixcross: autoDraw = False
+335.6216 	EXP 	fixcross: autoDraw = False
+335.6216 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+335.6216 	EXP 	stimulus_test_run: height = 0.1
+335.6216 	EXP 	stimulus_test_run: height = 0.1
+335.6216 	EXP 	stimulus_test_run: height = 0.1
+335.6216 	EXP 	stimulus_test_run: text = 'gelb'
+335.6216 	EXP 	stimulus_test_run: autoDraw = True
+336.5080 	EXP 	New trial (rep=8, index=3): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+336.5221 	EXP 	stimulus_test_run: autoDraw = False
+337.7231 	EXP 	fixcross: autoDraw = True
+338.5237 	EXP 	fixcross: autoDraw = False
+338.5237 	EXP 	fixcross: autoDraw = False
+338.5237 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+338.5237 	EXP 	stimulus_test_run: height = 0.1
+338.5237 	EXP 	stimulus_test_run: height = 0.1
+338.5237 	EXP 	stimulus_test_run: height = 0.1
+338.5237 	EXP 	stimulus_test_run: text = 'blau'
+338.5237 	EXP 	stimulus_test_run: autoDraw = True
+338.9933 	EXP 	New trial (rep=8, index=4): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+339.0077 	EXP 	stimulus_test_run: autoDraw = False
+339.3427 	EXP 	fixcross: autoDraw = True
+340.1417 	EXP 	fixcross: autoDraw = False
+340.1417 	EXP 	fixcross: autoDraw = False
+340.1417 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+340.1417 	EXP 	stimulus_test_run: height = 0.1
+340.1417 	EXP 	stimulus_test_run: height = 0.1
+340.1417 	EXP 	stimulus_test_run: height = 0.1
+340.1417 	EXP 	stimulus_test_run: text = 'rot'
+340.1417 	EXP 	stimulus_test_run: autoDraw = True
+340.6933 	EXP 	New trial (rep=8, index=5): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+340.7106 	EXP 	stimulus_test_run: autoDraw = False
+341.0441 	EXP 	fixcross: autoDraw = True
+341.8432 	EXP 	fixcross: autoDraw = False
+341.8432 	EXP 	fixcross: autoDraw = False
+341.8432 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+341.8432 	EXP 	stimulus_test_run: height = 0.1
+341.8432 	EXP 	stimulus_test_run: height = 0.1
+341.8432 	EXP 	stimulus_test_run: height = 0.1
+341.8432 	EXP 	stimulus_test_run: text = 'gelb'
+341.8432 	EXP 	stimulus_test_run: autoDraw = True
+342.7782 	EXP 	New trial (rep=8, index=6): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+342.7940 	EXP 	stimulus_test_run: autoDraw = False
+343.9800 	EXP 	fixcross: autoDraw = True
+344.7790 	EXP 	fixcross: autoDraw = False
+344.7790 	EXP 	fixcross: autoDraw = False
+344.7790 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+344.7790 	EXP 	stimulus_test_run: height = 0.1
+344.7790 	EXP 	stimulus_test_run: height = 0.1
+344.7790 	EXP 	stimulus_test_run: height = 0.1
+344.7790 	EXP 	stimulus_test_run: text = 'rot'
+344.7790 	EXP 	stimulus_test_run: autoDraw = True
+346.3495 	EXP 	New trial (rep=8, index=7): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+346.3636 	EXP 	stimulus_test_run: autoDraw = False
+346.6973 	EXP 	fixcross: autoDraw = True
+347.4978 	EXP 	fixcross: autoDraw = False
+347.4978 	EXP 	fixcross: autoDraw = False
+347.4978 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+347.4978 	EXP 	stimulus_test_run: height = 0.1
+347.4978 	EXP 	stimulus_test_run: height = 0.1
+347.4978 	EXP 	stimulus_test_run: height = 0.1
+347.4978 	EXP 	stimulus_test_run: text = 'blau'
+347.4978 	EXP 	stimulus_test_run: autoDraw = True
+348.1827 	EXP 	New trial (rep=8, index=8): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+348.2001 	EXP 	stimulus_test_run: autoDraw = False
+348.5337 	EXP 	fixcross: autoDraw = True
+349.3326 	EXP 	fixcross: autoDraw = False
+349.3326 	EXP 	fixcross: autoDraw = False
+349.3326 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+349.3326 	EXP 	stimulus_test_run: height = 0.1
+349.3326 	EXP 	stimulus_test_run: height = 0.1
+349.3326 	EXP 	stimulus_test_run: height = 0.1
+349.3326 	EXP 	stimulus_test_run: text = 'rot'
+349.3326 	EXP 	stimulus_test_run: autoDraw = True
+349.7689 	EXP 	New trial (rep=8, index=9): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+349.7848 	EXP 	stimulus_test_run: autoDraw = False
+350.9674 	EXP 	fixcross: autoDraw = True
+351.7680 	EXP 	fixcross: autoDraw = False
+351.7680 	EXP 	fixcross: autoDraw = False
+351.7680 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+351.7680 	EXP 	stimulus_test_run: height = 0.1
+351.7680 	EXP 	stimulus_test_run: height = 0.1
+351.7680 	EXP 	stimulus_test_run: height = 0.1
+351.7680 	EXP 	stimulus_test_run: text = 'blau'
+351.7680 	EXP 	stimulus_test_run: autoDraw = True
+352.5379 	EXP 	New trial (rep=8, index=10): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+352.5538 	EXP 	stimulus_test_run: autoDraw = False
+353.7379 	EXP 	fixcross: autoDraw = True
+354.5370 	EXP 	fixcross: autoDraw = False
+354.5370 	EXP 	fixcross: autoDraw = False
+354.5370 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+354.5370 	EXP 	stimulus_test_run: height = 0.1
+354.5370 	EXP 	stimulus_test_run: height = 0.1
+354.5370 	EXP 	stimulus_test_run: height = 0.1
+354.5370 	EXP 	stimulus_test_run: text = 'rot'
+354.5370 	EXP 	stimulus_test_run: autoDraw = True
+355.6555 	EXP 	New trial (rep=8, index=11): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+355.6729 	EXP 	stimulus_test_run: autoDraw = False
+356.8557 	EXP 	fixcross: autoDraw = True
+357.6562 	EXP 	fixcross: autoDraw = False
+357.6562 	EXP 	fixcross: autoDraw = False
+357.6562 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+357.6562 	EXP 	stimulus_test_run: height = 0.1
+357.6562 	EXP 	stimulus_test_run: height = 0.1
+357.6562 	EXP 	stimulus_test_run: height = 0.1
+357.6562 	EXP 	stimulus_test_run: text = 'gelb'
+357.6562 	EXP 	stimulus_test_run: autoDraw = True
+358.5762 	EXP 	New trial (rep=9, index=0): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+358.5906 	EXP 	stimulus_test_run: autoDraw = False
+358.6738 	EXP 	fixcross: autoDraw = True
+359.4761 	EXP 	fixcross: autoDraw = False
+359.4761 	EXP 	fixcross: autoDraw = False
+359.4761 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+359.4761 	EXP 	stimulus_test_run: text = 'gelb'
+359.4761 	EXP 	stimulus_test_run: autoDraw = True
+359.8940 	EXP 	New trial (rep=9, index=1): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+359.9098 	EXP 	stimulus_test_run: autoDraw = False
+359.9933 	EXP 	fixcross: autoDraw = True
+360.7922 	EXP 	fixcross: autoDraw = False
+360.7922 	EXP 	fixcross: autoDraw = False
+360.7922 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+360.7922 	EXP 	stimulus_test_run: height = 0.1
+360.7922 	EXP 	stimulus_test_run: height = 0.1
+360.7922 	EXP 	stimulus_test_run: height = 0.1
+360.7922 	EXP 	stimulus_test_run: text = 'blau'
+360.7922 	EXP 	stimulus_test_run: autoDraw = True
+361.3268 	EXP 	New trial (rep=9, index=2): {'word': 'gelb', 'color': 'yellow', 'corrAns': 'g', 'congruent': 1}
+361.3444 	EXP 	stimulus_test_run: autoDraw = False
+361.4260 	EXP 	fixcross: autoDraw = True
+362.2266 	EXP 	fixcross: autoDraw = False
+362.2266 	EXP 	fixcross: autoDraw = False
+362.2266 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+362.2266 	EXP 	stimulus_test_run: height = 0.1
+362.2266 	EXP 	stimulus_test_run: height = 0.1
+362.2266 	EXP 	stimulus_test_run: height = 0.1
+362.2266 	EXP 	stimulus_test_run: text = 'gelb'
+362.2266 	EXP 	stimulus_test_run: autoDraw = True
+362.8449 	EXP 	New trial (rep=9, index=3): {'word': 'blau', 'color': 'blue', 'corrAns': 'b', 'congruent': 1}
+362.8623 	EXP 	stimulus_test_run: autoDraw = False
+363.6463 	EXP 	fixcross: autoDraw = True
+364.4453 	EXP 	fixcross: autoDraw = False
+364.4453 	EXP 	fixcross: autoDraw = False
+364.4453 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+364.4453 	EXP 	stimulus_test_run: height = 0.1
+364.4453 	EXP 	stimulus_test_run: height = 0.1
+364.4453 	EXP 	stimulus_test_run: height = 0.1
+364.4453 	EXP 	stimulus_test_run: text = 'blau'
+364.4453 	EXP 	stimulus_test_run: autoDraw = True
+364.9315 	EXP 	New trial (rep=9, index=4): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+364.9473 	EXP 	stimulus_test_run: autoDraw = False
+366.1315 	EXP 	fixcross: autoDraw = True
+366.9307 	EXP 	fixcross: autoDraw = False
+366.9307 	EXP 	fixcross: autoDraw = False
+366.9307 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+366.9307 	EXP 	stimulus_test_run: height = 0.1
+366.9307 	EXP 	stimulus_test_run: height = 0.1
+366.9307 	EXP 	stimulus_test_run: height = 0.1
+366.9307 	EXP 	stimulus_test_run: text = 'rot'
+366.9307 	EXP 	stimulus_test_run: autoDraw = True
+367.5488 	EXP 	New trial (rep=9, index=5): {'word': 'blau', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+367.5661 	EXP 	stimulus_test_run: autoDraw = False
+368.7505 	EXP 	fixcross: autoDraw = True
+369.5495 	EXP 	fixcross: autoDraw = False
+369.5495 	EXP 	fixcross: autoDraw = False
+369.5495 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+369.5495 	EXP 	stimulus_test_run: height = 0.1
+369.5495 	EXP 	stimulus_test_run: height = 0.1
+369.5495 	EXP 	stimulus_test_run: height = 0.1
+369.5495 	EXP 	stimulus_test_run: text = 'blau'
+369.5495 	EXP 	stimulus_test_run: autoDraw = True
+370.8031 	EXP 	New trial (rep=9, index=6): {'word': 'rot', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+370.8189 	EXP 	stimulus_test_run: autoDraw = False
+371.6028 	EXP 	fixcross: autoDraw = True
+372.4018 	EXP 	fixcross: autoDraw = False
+372.4018 	EXP 	fixcross: autoDraw = False
+372.4018 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+372.4018 	EXP 	stimulus_test_run: height = 0.1
+372.4018 	EXP 	stimulus_test_run: height = 0.1
+372.4018 	EXP 	stimulus_test_run: height = 0.1
+372.4018 	EXP 	stimulus_test_run: text = 'rot'
+372.4018 	EXP 	stimulus_test_run: autoDraw = True
+373.0549 	EXP 	New trial (rep=9, index=7): {'word': 'gelb', 'color': 'blue', 'corrAns': 'b', 'congruent': 0}
+373.0707 	EXP 	stimulus_test_run: autoDraw = False
+374.2550 	EXP 	fixcross: autoDraw = True
+375.0539 	EXP 	fixcross: autoDraw = False
+375.0539 	EXP 	fixcross: autoDraw = False
+375.0539 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+375.0539 	EXP 	stimulus_test_run: height = 0.1
+375.0539 	EXP 	stimulus_test_run: height = 0.1
+375.0539 	EXP 	stimulus_test_run: height = 0.1
+375.0539 	EXP 	stimulus_test_run: text = 'gelb'
+375.0539 	EXP 	stimulus_test_run: autoDraw = True
+375.5386 	EXP 	New trial (rep=9, index=8): {'word': 'blau', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+375.5561 	EXP 	stimulus_test_run: autoDraw = False
+376.7403 	EXP 	fixcross: autoDraw = True
+377.5393 	EXP 	fixcross: autoDraw = False
+377.5393 	EXP 	fixcross: autoDraw = False
+377.5393 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+377.5393 	EXP 	stimulus_test_run: height = 0.1
+377.5393 	EXP 	stimulus_test_run: height = 0.1
+377.5393 	EXP 	stimulus_test_run: height = 0.1
+377.5393 	EXP 	stimulus_test_run: text = 'blau'
+377.5393 	EXP 	stimulus_test_run: autoDraw = True
+378.1575 	EXP 	New trial (rep=9, index=9): {'word': 'gelb', 'color': 'red', 'corrAns': 'r', 'congruent': 0}
+378.1750 	EXP 	stimulus_test_run: autoDraw = False
+378.5085 	EXP 	fixcross: autoDraw = True
+379.3075 	EXP 	fixcross: autoDraw = False
+379.3075 	EXP 	fixcross: autoDraw = False
+379.3075 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+379.3075 	EXP 	stimulus_test_run: height = 0.1
+379.3075 	EXP 	stimulus_test_run: height = 0.1
+379.3075 	EXP 	stimulus_test_run: height = 0.1
+379.3075 	EXP 	stimulus_test_run: text = 'gelb'
+379.3075 	EXP 	stimulus_test_run: autoDraw = True
+379.7772 	EXP 	New trial (rep=9, index=10): {'word': 'rot', 'color': 'yellow', 'corrAns': 'g', 'congruent': 0}
+379.7928 	EXP 	stimulus_test_run: autoDraw = False
+380.1265 	EXP 	fixcross: autoDraw = True
+380.9255 	EXP 	fixcross: autoDraw = False
+380.9255 	EXP 	fixcross: autoDraw = False
+380.9255 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+380.9255 	EXP 	stimulus_test_run: height = 0.1
+380.9255 	EXP 	stimulus_test_run: height = 0.1
+380.9255 	EXP 	stimulus_test_run: height = 0.1
+380.9255 	EXP 	stimulus_test_run: text = 'rot'
+380.9255 	EXP 	stimulus_test_run: autoDraw = True
+381.5602 	EXP 	New trial (rep=9, index=11): {'word': 'rot', 'color': 'red', 'corrAns': 'r', 'congruent': 1}
+381.5777 	EXP 	stimulus_test_run: autoDraw = False
+382.7620 	EXP 	fixcross: autoDraw = True
+383.5627 	EXP 	fixcross: autoDraw = False
+383.5627 	EXP 	fixcross: autoDraw = False
+383.5627 	EXP 	stimulus_test_run: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+383.5627 	EXP 	stimulus_test_run: text = 'rot'
+383.5627 	EXP 	stimulus_test_run: autoDraw = True
+384.1966 	EXP 	stimulus_test_run: autoDraw = False
+384.1966 	EXP 	textGoodbye: autoDraw = True
+389.2006 	EXP 	textGoodbye: autoDraw = False
+389.2007 	EXP 	stroop_test: status = STOPPED
+389.2445 	EXP 	window1: mouseVisible = True

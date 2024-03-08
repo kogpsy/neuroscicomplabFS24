@@ -1,0 +1,156 @@
+2.0157 	ERROR 	Support for the `sounddevice` audio backend is not available this session. Please install `psychopy-sounddevice` and restart the session to enable support.
+6.1418 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000014ECD25ABB0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000014ECD25AB50>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000014ECD25A970>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000014ECD5EE670>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.1418 	EXP 	window1: mouseVisible = True
+6.1418 	EXP 	window1: backgroundImage = ''
+6.1419 	EXP 	window1: backgroundFit = 'none'
+6.1431 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+6.1431 	EXP 	window1: recordFrameIntervals = False
+6.3083 	EXP 	window1: recordFrameIntervals = True
+6.4919 	EXP 	Screen (0) actual frame rate measured at 59.92Hz
+6.4919 	EXP 	window1: recordFrameIntervals = False
+6.4920 	EXP 	window1: mouseVisible = False
+7.8923 	EXP 	random_dot: status = STARTED
+7.8929 	EXP 	window1: mouseVisible = True
+7.9452 	EXP 	Created textInstr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='textInstr', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.9456 	EXP 	window1: mouseVisible = True
+7.9493 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.9494 	EXP 	window1: mouseVisible = True
+7.9524 	EXP 	Created backgroundDots = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='backgroundDots', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.75]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+7.9539 	EXP 	Created stimulusDots = DotStim(__class__=<class 'psychopy.visual.dot.DotStim'>, autoLog=True, coherence=0.08, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, dir=1.0, dotLife=3.0, dotSize=10.0, element=None, fieldAnchor=UNKNOWN, fieldPos=array([0., 0.]), fieldShape='circle', fieldSize=array([0.75, 0.75]), nDots=250, name='stimulusDots', noiseDots='walk', opacity=1.0, rgb=UNKNOWN, signalDots='same', speed=0.0125, units='height', win=Window(...))
+7.9541 	EXP 	window1: mouseVisible = True
+7.9554 	EXP 	Created textFeedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.07, italic=False, languageStyle='LTR', name='textFeedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.9554 	EXP 	window1: mouseVisible = True
+7.9563 	EXP 	Created textInst1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='textInst1', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.9564 	EXP 	window1: mouseVisible = True
+7.9589 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.9590 	EXP 	window1: mouseVisible = True
+7.9618 	EXP 	Created backgroundDots = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='backgroundDots', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.75]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+7.9627 	EXP 	Created stimulusDots = DotStim(__class__=<class 'psychopy.visual.dot.DotStim'>, autoLog=True, coherence=0.08, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, dir=1.0, dotLife=3.0, dotSize=10.0, element=None, fieldAnchor=UNKNOWN, fieldPos=array([0., 0.]), fieldShape='circle', fieldSize=array([0.75, 0.75]), nDots=250, name='stimulusDots', noiseDots='walk', opacity=1.0, rgb=UNKNOWN, signalDots='same', speed=0.0125, units='height', win=Window(...))
+7.9628 	EXP 	window1: mouseVisible = True
+7.9646 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.9647 	EXP 	window1: mouseVisible = True
+7.9674 	EXP 	Created backgroundDots = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='backgroundDots', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([0.75, 0.75]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+7.9683 	EXP 	Created stimulusDots = DotStim(__class__=<class 'psychopy.visual.dot.DotStim'>, autoLog=True, coherence=0.08, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, dir=1.0, dotLife=3.0, dotSize=10.0, element=None, fieldAnchor=UNKNOWN, fieldPos=array([0., 0.]), fieldShape='circle', fieldSize=array([0.75, 0.75]), nDots=250, name='stimulusDots', noiseDots='walk', opacity=1.0, rgb=UNKNOWN, signalDots='same', speed=0.0125, units='height', win=Window(...))
+7.9684 	EXP 	window1: mouseVisible = True
+7.9812 	EXP 	Created goodbye_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='goodbye_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0557 	EXP 	textInstr: autoDraw = True
+1.2178 	EXP 	Imported random_dot_conditions.csv as conditions, 2 conditions, 2 params
+1.2180 	EXP 	Created sequence: random, trialTypes=2, nReps=2, seed=None
+1.2181 	EXP 	New trial (rep=0, index=0): OrderedDict([('direction', 'right'), ('corrAns', 'right')])
+1.2300 	EXP 	textInstr: autoDraw = False
+2.0142 	EXP 	fixcross: autoDraw = True
+2.8147 	EXP 	fixcross: autoDraw = False
+2.8147 	EXP 	fixcross: autoDraw = False
+2.8147 	EXP 	stimulusDots: dir = 0.0
+2.8147 	EXP 	backgroundDots: autoDraw = True
+2.8147 	EXP 	stimulusDots: autoDraw = True
+3.0340 	EXP 	backgroundDots: autoDraw = False
+3.0340 	EXP 	stimulusDots: autoDraw = False
+3.0340 	EXP 	textFeedback: height = 0.07
+3.0340 	EXP 	textFeedback: height = 0.07
+3.0340 	EXP 	textFeedback: height = 0.07
+3.0340 	EXP 	textFeedback: text = 'richtig'
+3.0340 	EXP 	textFeedback: autoDraw = True
+3.5322 	EXP 	New trial (rep=0, index=1): OrderedDict([('direction', 'left'), ('corrAns', 'left')])
+3.5486 	EXP 	textFeedback: autoDraw = False
+3.8656 	EXP 	fixcross: autoDraw = True
+4.6662 	EXP 	fixcross: autoDraw = False
+4.6662 	EXP 	fixcross: autoDraw = False
+4.6662 	EXP 	stimulusDots: dir = 180.0
+4.6662 	EXP 	backgroundDots: autoDraw = True
+4.6662 	EXP 	stimulusDots: autoDraw = True
+4.9357 	EXP 	backgroundDots: autoDraw = False
+4.9357 	EXP 	stimulusDots: autoDraw = False
+4.9357 	EXP 	textFeedback: height = 0.07
+4.9357 	EXP 	textFeedback: height = 0.07
+4.9357 	EXP 	textFeedback: height = 0.07
+4.9357 	EXP 	textFeedback: text = 'falsch'
+4.9357 	EXP 	textFeedback: autoDraw = True
+5.4189 	EXP 	New trial (rep=1, index=0): OrderedDict([('direction', 'left'), ('corrAns', 'left')])
+5.4353 	EXP 	textFeedback: autoDraw = False
+6.6180 	EXP 	fixcross: autoDraw = True
+7.4185 	EXP 	fixcross: autoDraw = False
+7.4185 	EXP 	fixcross: autoDraw = False
+7.4185 	EXP 	stimulusDots: dir = 180.0
+7.4185 	EXP 	backgroundDots: autoDraw = True
+7.4185 	EXP 	stimulusDots: autoDraw = True
+7.5204 	EXP 	backgroundDots: autoDraw = False
+7.5204 	EXP 	stimulusDots: autoDraw = False
+7.5204 	EXP 	textFeedback: height = 0.07
+7.5204 	EXP 	textFeedback: height = 0.07
+7.5204 	EXP 	textFeedback: height = 0.07
+7.5204 	EXP 	textFeedback: text = 'zu schnell'
+7.5204 	EXP 	textFeedback: autoDraw = True
+8.0194 	EXP 	New trial (rep=1, index=1): OrderedDict([('direction', 'right'), ('corrAns', 'right')])
+8.0358 	EXP 	textFeedback: autoDraw = False
+9.2200 	EXP 	fixcross: autoDraw = True
+10.0225 	EXP 	fixcross: autoDraw = False
+10.0225 	EXP 	fixcross: autoDraw = False
+10.0225 	EXP 	stimulusDots: dir = 0.0
+10.0225 	EXP 	backgroundDots: autoDraw = True
+10.0225 	EXP 	stimulusDots: autoDraw = True
+10.3234 	EXP 	backgroundDots: autoDraw = False
+10.3234 	EXP 	stimulusDots: autoDraw = False
+10.3234 	EXP 	textFeedback: height = 0.07
+10.3234 	EXP 	textFeedback: height = 0.07
+10.3234 	EXP 	textFeedback: height = 0.07
+10.3234 	EXP 	textFeedback: text = 'richtig'
+10.3234 	EXP 	textFeedback: autoDraw = True
+10.8109 	EXP 	Imported random_dot_instruction.xlsx as conditions, 14 conditions, 1 params
+10.8112 	EXP 	Created sequence: random, trialTypes=14, nReps=1, seed=None
+10.8113 	EXP 	New trial (rep=0, index=0): {'randomInstr': 'accuracy'}
+10.8262 	EXP 	textFeedback: autoDraw = False
+10.8262 	EXP 	textInst1: height = 0.03
+10.8262 	EXP 	textInst1: height = 0.03
+10.8262 	EXP 	textInst1: height = 0.03
+10.8262 	EXP 	textInst1: text = 'Wir sind nun mit dem ersten Hauptexperiment fertig und werden zum zweiten Hauptexperiment übergehen. Bitte versuchen Sie dieses Mal SO SCHNELL WIE MÖGLICH zu antworten. Drücken Sie [Leertaste], um das Hauptexperiment zu starten.'
+10.8262 	EXP 	textInst1: autoDraw = True
+15.4463 	EXP 	Imported random_dot_conditions.csv as conditions, 2 conditions, 2 params
+15.4465 	EXP 	Created sequence: random, trialTypes=2, nReps=2, seed=None
+15.4467 	EXP 	New trial (rep=0, index=0): OrderedDict([('direction', 'right'), ('corrAns', 'right')])
+15.4585 	EXP 	textInst1: autoDraw = False
+16.2443 	EXP 	fixcross: autoDraw = True
+17.0599 	EXP 	fixcross: autoDraw = False
+17.0599 	EXP 	fixcross: autoDraw = False
+17.0599 	EXP 	stimulusDots: dir = 0.0
+17.0599 	EXP 	backgroundDots: autoDraw = True
+17.0599 	EXP 	stimulusDots: autoDraw = True
+17.4140 	EXP 	New trial (rep=0, index=1): OrderedDict([('direction', 'left'), ('corrAns', 'left')])
+17.4286 	EXP 	backgroundDots: autoDraw = False
+17.4286 	EXP 	stimulusDots: autoDraw = False
+17.7788 	EXP 	fixcross: autoDraw = True
+18.5962 	EXP 	fixcross: autoDraw = False
+18.5962 	EXP 	fixcross: autoDraw = False
+18.5962 	EXP 	stimulusDots: dir = 180.0
+18.5962 	EXP 	backgroundDots: autoDraw = True
+18.5962 	EXP 	stimulusDots: autoDraw = True
+18.9818 	EXP 	New trial (rep=1, index=0): OrderedDict([('direction', 'right'), ('corrAns', 'right')])
+18.9966 	EXP 	backgroundDots: autoDraw = False
+18.9966 	EXP 	stimulusDots: autoDraw = False
+19.7972 	EXP 	fixcross: autoDraw = True
+20.5978 	EXP 	fixcross: autoDraw = False
+20.5978 	EXP 	fixcross: autoDraw = False
+20.5978 	EXP 	stimulusDots: dir = 0.0
+20.5978 	EXP 	backgroundDots: autoDraw = True
+20.5978 	EXP 	stimulusDots: autoDraw = True
+21.0001 	EXP 	New trial (rep=1, index=1): OrderedDict([('direction', 'left'), ('corrAns', 'left')])
+21.0150 	EXP 	backgroundDots: autoDraw = False
+21.0150 	EXP 	stimulusDots: autoDraw = False
+21.1150 	EXP 	fixcross: autoDraw = True
+21.9157 	EXP 	fixcross: autoDraw = False
+21.9157 	EXP 	fixcross: autoDraw = False
+21.9157 	EXP 	stimulusDots: dir = 180.0
+21.9157 	EXP 	backgroundDots: autoDraw = True
+21.9157 	EXP 	stimulusDots: autoDraw = True
+22.5658 	EXP 	New trial (rep=0, index=1): {'randomInstr': None}
+22.5835 	EXP 	backgroundDots: autoDraw = False
+22.5835 	EXP 	stimulusDots: autoDraw = False
+22.5835 	EXP 	textInst1: height = 0.03
+22.5835 	EXP 	textInst1: height = 0.03
+22.5835 	EXP 	textInst1: height = 0.03
+22.5835 	EXP 	textInst1: text = ''
+22.5835 	EXP 	textInst1: autoDraw = True
+33.9579 	EXP 	random_dot: status = STOPPED
+33.9741 	EXP 	textInst1: autoDraw = False
+33.9742 	EXP 	random_dot: status = STOPPED
+34.0060 	EXP 	window1: mouseVisible = True

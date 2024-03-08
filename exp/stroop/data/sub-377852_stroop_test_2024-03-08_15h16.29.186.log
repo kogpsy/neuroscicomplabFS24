@@ -1,0 +1,137 @@
+1.5871 	ERROR 	Support for the `sounddevice` audio backend is not available this session. Please install `psychopy-sounddevice` and restart the session to enable support.
+5.5849 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000025DB92C3C40>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000025DB92C3BE0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000025DB92C3A00>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000025DB9648700>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+5.5849 	EXP 	window1: mouseVisible = True
+5.5850 	EXP 	window1: backgroundImage = ''
+5.5850 	EXP 	window1: backgroundFit = 'none'
+5.5862 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+5.5862 	EXP 	window1: recordFrameIntervals = False
+5.7515 	EXP 	window1: recordFrameIntervals = True
+5.9352 	EXP 	Screen (0) actual frame rate measured at 59.91Hz
+5.9352 	EXP 	window1: recordFrameIntervals = False
+5.9353 	EXP 	window1: mouseVisible = False
+7.3354 	EXP 	stroop_test: status = STARTED
+7.3360 	EXP 	window1: mouseVisible = True
+7.5285 	EXP 	Created instr_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.02, italic=False, languageStyle='LTR', name='instr_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.5289 	EXP 	window1: mouseVisible = True
+7.5515 	EXP 	Created instr_image = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, image='illustration_keyborad.PNG', interpolate=True, mask=None, maskParams=None, name='instr_image', opacity=1.0, ori=0.0, pos=array([ 0.  , -0.18]), size=array([0.2, 0.2]), texRes=128.0, units='height', win=Window(...))
+7.5516 	EXP 	window1: mouseVisible = True
+7.5638 	EXP 	Created instr_ctk = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='instr_ctk', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.5641 	EXP 	window1: mouseVisible = True
+7.5676 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.5677 	EXP 	window1: mouseVisible = True
+7.5685 	EXP 	Created text_CTK = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_CTK', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.5686 	EXP 	window1: mouseVisible = True
+7.5783 	EXP 	Created practice_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='practice_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.5784 	EXP 	window1: mouseVisible = True
+7.5803 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.5804 	EXP 	window1: mouseVisible = True
+7.5812 	EXP 	Created stimulus_practice = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='stimulus_practice', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.5813 	EXP 	window1: mouseVisible = True
+7.5822 	EXP 	Created textFeedback = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textFeedback', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.5823 	EXP 	window1: mouseVisible = True
+7.5888 	EXP 	Created begin_test_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='begin_test_text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+7.5889 	EXP 	window1: mouseVisible = True
+7.5907 	EXP 	Created fixcross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixcross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+7.5908 	EXP 	window1: mouseVisible = True
+7.5916 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+7.5917 	EXP 	window1: mouseVisible = True
+7.5979 	EXP 	Created textGoodbye = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='textGoodbye', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0581 	EXP 	instr_text: autoDraw = True
+0.0581 	EXP 	instr_image: autoDraw = True
+1.8737 	EXP 	instr_text: autoDraw = False
+1.8737 	EXP 	instr_image: autoDraw = False
+1.8737 	EXP 	instr_ctk: autoDraw = True
+8.9692 	EXP 	Imported stroop_condition_file_CTK.xlsx as conditions, 3 conditions, 4 params
+8.9695 	EXP 	Created sequence: random, trialTypes=3, nReps=3, seed=None
+8.9696 	EXP 	New trial (rep=0, index=0): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+8.9813 	EXP 	instr_ctk: autoDraw = False
+9.7635 	EXP 	fixcross: autoDraw = True
+10.5642 	EXP 	fixcross: autoDraw = False
+10.5642 	EXP 	fixcross: autoDraw = False
+10.5642 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+10.5642 	EXP 	text_CTK: height = 0.1
+10.5642 	EXP 	text_CTK: height = 0.1
+10.5642 	EXP 	text_CTK: height = 0.1
+10.5642 	EXP 	text_CTK: text = 'test'
+11.0497 	EXP 	text_CTK: autoDraw = True
+13.0189 	EXP 	New trial (rep=0, index=1): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+13.0347 	EXP 	text_CTK: autoDraw = False
+13.8186 	EXP 	fixcross: autoDraw = True
+14.6193 	EXP 	fixcross: autoDraw = False
+14.6193 	EXP 	fixcross: autoDraw = False
+14.6193 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+14.6193 	EXP 	text_CTK: text = 'test'
+15.1030 	EXP 	text_CTK: autoDraw = True
+15.3857 	EXP 	New trial (rep=0, index=2): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+15.4032 	EXP 	text_CTK: autoDraw = False
+16.5876 	EXP 	fixcross: autoDraw = True
+17.4033 	EXP 	fixcross: autoDraw = False
+17.4033 	EXP 	fixcross: autoDraw = False
+17.4033 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+17.4033 	EXP 	text_CTK: text = 'test'
+17.8887 	EXP 	text_CTK: autoDraw = True
+18.1230 	EXP 	New trial (rep=1, index=0): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+18.1389 	EXP 	text_CTK: autoDraw = False
+19.3232 	EXP 	fixcross: autoDraw = True
+20.1238 	EXP 	fixcross: autoDraw = False
+20.1238 	EXP 	fixcross: autoDraw = False
+20.1238 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+20.1238 	EXP 	text_CTK: text = 'test'
+20.6075 	EXP 	text_CTK: autoDraw = True
+20.8086 	EXP 	New trial (rep=1, index=1): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+20.8244 	EXP 	text_CTK: autoDraw = False
+21.6083 	EXP 	fixcross: autoDraw = True
+22.4090 	EXP 	fixcross: autoDraw = False
+22.4090 	EXP 	fixcross: autoDraw = False
+22.4090 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+22.4090 	EXP 	text_CTK: text = 'test'
+22.8102 	EXP 	New trial (rep=1, index=2): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+22.8261 	EXP 	text_CTK: autoDraw = False
+23.1746 	EXP 	fixcross: autoDraw = True
+23.9770 	EXP 	fixcross: autoDraw = False
+23.9770 	EXP 	fixcross: autoDraw = False
+23.9770 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+23.9770 	EXP 	text_CTK: text = 'test'
+24.4607 	EXP 	text_CTK: autoDraw = True
+24.9953 	EXP 	New trial (rep=2, index=0): {'wordCTK': 'test', 'colorCTK': 'yellow', 'corrAnsCTK': 'g', 'congruentCTK': 1}
+25.0111 	EXP 	text_CTK: autoDraw = False
+26.1941 	EXP 	fixcross: autoDraw = True
+26.9965 	EXP 	fixcross: autoDraw = False
+26.9965 	EXP 	fixcross: autoDraw = False
+26.9965 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: yellow, alpha=1.0>
+26.9965 	EXP 	text_CTK: text = 'test'
+27.1306 	EXP 	New trial (rep=2, index=1): {'wordCTK': 'test', 'colorCTK': 'red', 'corrAnsCTK': 'r', 'congruentCTK': 1}
+27.1464 	EXP 	text_CTK: autoDraw = False
+27.2298 	EXP 	fixcross: autoDraw = True
+28.0304 	EXP 	fixcross: autoDraw = False
+28.0304 	EXP 	fixcross: autoDraw = False
+28.0304 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: red, alpha=1.0>
+28.0304 	EXP 	text_CTK: text = 'test'
+28.5140 	EXP 	text_CTK: autoDraw = True
+28.7801 	EXP 	New trial (rep=2, index=2): {'wordCTK': 'test', 'colorCTK': 'blue', 'corrAnsCTK': 'b', 'congruentCTK': 1}
+28.7960 	EXP 	text_CTK: autoDraw = False
+28.8810 	EXP 	fixcross: autoDraw = True
+29.6817 	EXP 	fixcross: autoDraw = False
+29.6817 	EXP 	fixcross: autoDraw = False
+29.6817 	EXP 	text_CTK: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+29.6817 	EXP 	text_CTK: text = 'test'
+30.1654 	EXP 	text_CTK: autoDraw = True
+30.4492 	EXP 	text_CTK: autoDraw = False
+30.4492 	EXP 	practice_text: autoDraw = True
+34.9450 	EXP 	Imported stroop_condition_file_practice.xlsx as conditions, 9 conditions, 4 params
+34.9453 	EXP 	Created sequence: random, trialTypes=9, nReps=5, seed=None
+34.9454 	EXP 	New trial (rep=0, index=0): {'wordPractice': 'rot', 'colorPractice': 'blue', 'corrAnsPractice': 'b', 'congruentPractice': 0}
+34.9526 	EXP 	practice_text: autoDraw = False
+35.0345 	EXP 	fixcross: autoDraw = True
+35.8351 	EXP 	fixcross: autoDraw = False
+35.8351 	EXP 	fixcross: autoDraw = False
+35.8351 	EXP 	stimulus_practice: foreColor = <psychopy.colors.Color: blue, alpha=1.0>
+35.8351 	EXP 	stimulus_practice: height = 0.1
+35.8351 	EXP 	stimulus_practice: height = 0.1
+35.8351 	EXP 	stimulus_practice: height = 0.1
+35.8351 	EXP 	stimulus_practice: text = 'rot'
+35.9203 	EXP 	stimulus_practice: autoDraw = True
+37.2217 	EXP 	stroop_test: status = STOPPED
+37.2380 	EXP 	stimulus_practice: autoDraw = False
+37.2381 	EXP 	stroop_test: status = STOPPED
+37.2612 	EXP 	window1: mouseVisible = True
