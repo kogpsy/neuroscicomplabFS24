@@ -426,7 +426,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="if ((randomInstr === &quot;accuracy&quot;)) {&amp;#10;    instruction_text = &quot;Wir sind nun mit dem ersten Hauptexperiment fertig und werden zum zweiten Hauptexperiment \u00fcbergehen. Bitte versuchen Sie dieses Mal SO SCHNELL WIE M\u00d6GLICH zu antworten. Dr\u00fccken Sie [Leertaste], um das Hauptexperiment zu starten.&quot;;&amp;#10;} else {&amp;#10;    if ((randomInstr === &quot;speed&quot;)) {&amp;#10;        instruction_text = &quot;Wir sind nun mit dem ersten Hauptexperiment fertig und werden zum zweiten Hauptexperiment \u00fcbergehen. Bitte versuchen Sie dieses Mal SO GENAU WIE M\u00d6GLICH zu antworten. Dr\u00fccken Sie [Leertaste], um das zweite Hauptexperiment zu starten.&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="instruction_text = &quot;&quot;&amp;#10;&amp;#10;if randomInstr == &quot;accuracy&quot;:&amp;#10;    instruction_text = &quot;Bitte versuchen Sie jetzt SO SCHNELL WIE MÖGLICH zu antworten. Drücken Sie [Leertaste], um das Experiment zu starten.&quot;&amp;#10;elif randomInstr == &quot;speed&quot;:&amp;#10;    instruction_text = &quot;Bitte versuchen Sie jetzt SO GENAU WIE MÖGLICH zu antworten. Drücken Sie [Leertaste], um das Experiment zu starten.&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="instruction_text = &quot;&quot;&amp;#10;&amp;#10;if randomInstr == &quot;speed&quot;:&amp;#10;    instruction_text = &quot;Bitte versuchen Sie jetzt SO SCHNELL WIE MÖGLICH zu antworten. Drücken Sie [Leertaste], um das Experiment zu starten.&quot;&amp;#10;elif randomInstr == &quot;accuracy&quot;:&amp;#10;    instruction_text = &quot;Bitte versuchen Sie jetzt SO GENAU WIE MÖGLICH zu antworten. Drücken Sie [Leertaste], um das Experiment zu starten.&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -626,7 +626,7 @@
     <Routine name="general_instruction"/>
     <LoopInitiator loopType="TrialHandler" name="practice_trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('direction', 'left'), ('corrAns', 'left'), ('randomInstr', 'accuracy')]), OrderedDict([('direction', 'right'), ('corrAns', 'right'), ('randomInstr', 'speed')])]" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('direction', 'left'), ('corrAns', 'left')]), OrderedDict([('direction', 'right'), ('corrAns', 'right')])]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="random_dot_conditions.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
@@ -643,8 +643,8 @@
     <Routine name="test_instruction"/>
     <LoopInitiator loopType="TrialHandler" name="instr_trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('direction', 'left'), ('corrAns', 'left'), ('randomInstr', 'accuracy')]), OrderedDict([('direction', 'right'), ('corrAns', 'right'), ('randomInstr', 'speed')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="random_dot_conditions.csv" valType="file"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('randomInstr', 'accuracy')]), OrderedDict([('randomInstr', 'speed')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="random_dot_instr.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -655,7 +655,7 @@
     <Routine name="random_instruction"/>
     <LoopInitiator loopType="TrialHandler" name="test_trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('direction', 'left'), ('corrAns', 'left'), ('randomInstr', 'accuracy')]), OrderedDict([('direction', 'right'), ('corrAns', 'right'), ('randomInstr', 'speed')])]" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('direction', 'left'), ('corrAns', 'left')]), OrderedDict([('direction', 'right'), ('corrAns', 'right')])]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="random_dot_conditions.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
