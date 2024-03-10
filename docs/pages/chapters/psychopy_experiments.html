@@ -230,6 +230,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Random Dot Paradigma</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_1_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 1 - Psychopy Experiment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -583,6 +589,9 @@ Tipp
 <p>Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</p>
 </div>
 </div>
+<p><em>Das oben verwendete Beispielsexperiment ergibt folgenden Datensatz:</em></p>
+<p><img src="img/psychopy_data_example.jpg" class="img-fluid"></p>
+<p>Sie sehen die Infos aus der <code>conditions</code>-Datei (gelb), die Zählerinformationen der Loops (hellgrau), die Timinginformationen (dunkelgrau), die Antwortinformationen (blau) und die Experimentinformationen (grün).</p>
 </section>
 <section id="test-pilotierung" class="level1">
 <h1>4. Test / Pilotierung</h1>
@@ -600,9 +609,36 @@ Tipp
 <li><p>Lassen Sie jemanden anderes Ihr Experiment durchführen, und geben Sie einander Feedback.</p></li>
 </ul>
 </section>
-<section id="verwenden-von-codekomponenten-im-builder" class="level1">
+<section id="verwenden-von-codekomponenten-im-builder" class="level1 page-columns page-full">
 <h1>5. Verwenden von Codekomponenten im Builder</h1>
 <p>Auch wenn man das Experiment im Builder erstellt erfordern einige Experimentelemente das Verwenden von <strong>Codekomponenten</strong>. In diesem Abschnitt werden zwei häufige Anwendungsbeispiele besprochen: Die variable Blockdauer (z.B. für Fixationskreuze oder ITIs) und das Geben von Feedback (z.B. in einem Übungsdurchgang).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If-else Statements in Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Python können Sie für verschiedene Fälle (<code>cases</code>) andere Aktionen ausfüllen, indem Sie If-else Statements nutzen.</p>
+<p>Ein If-else Statement enthält ein <code>if</code> (<em>wenn</em>), einer <code>condition</code> (<em>das zutrifft</em>), einem <code>body</code> (<em>dann mach das</em>).</p>
+<p>Ergänzt kann dies werden mit <code>ifelse</code> (<em>oder wenn</em>)+ <code>condition</code> (<em>das zutrifft</em>) + <code>body</code> (<em>dann mach das</em>) und einem <code>else</code> (<em>wenn nichts davon zutrifft</em>) + <code>body</code> (<em>dann mach das</em>).</p>
+<p><strong>Wichtig:</strong> - Python ist <em>indetation-sensibel</em>, das bedeutet: Die Einrückung (1 Tab) muss stimmen, sonst funktioniert der Code nicht. Auch der <em>Doppelpunkt</em> <code>:</code> ist wichtig und muss an der richtigen Stelle stehen. Wenn Sie mehrere <code>conditions</code> verwenden möchten, müssen Sie diese in <em>Klammern</em> <code>()</code> setzen. Hier sehen Sie die Syntax eines If-else Statements:</p>
+<pre><code>if (condition):
+    body
+    
+ifelse (condition):
+    body
+    
+else:
+    body</code></pre>
+</div>
+</div>
+<aside>
+Einführung in Python auf Datacamp: 👉🏼 <a href="https://app.datacamp.com/learn/courses/intro-to-python-for-data-science">Introduction to Python</a>
+</aside>
 <section id="variable-dauer-von-elementen" class="level2">
 <h2 class="anchored" data-anchor-id="variable-dauer-von-elementen">5.1 Variable Dauer von Elementen</h2>
 <section id="fixationskreuz-und-iti-mit-randomisierter-dauer" class="level3">
@@ -636,7 +672,7 @@ Hands-on: Variable ITI einbauen
 <p>Es gibt Experimente, welche Feedback erfordern. Oft wird vor der Datenerhebung ein Übungsblock eingebaut, welcher Feedback enthält, so dass die Versuchspersonen wissen, ob sie den Task richtig verstanden haben.</p>
 <ul>
 <li><p>Erstellen Sie zuerst eine <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#trialschleife">Trialschleife</a> mit einem Stimulus und einer Response.</p></li>
-<li><p>Fügen Sie nach dem Trial (aber innerhalb der Trialschleife!) eine Routine <code>feedback</code> ein.</p></li>
+<li><p>Fügen Sie nach dem Stimulus und der Antwort (aber innerhalb der Trialschleife!) eine Routine <code>feedback</code> ein.</p></li>
 <li><p>Fügen Sie innerhalb der Routine <code>feedback</code> eine <strong>Codekomponente</strong> hinzu. In dieser Komponente können Sie nun</p>
 <p><img src="img/psychopy_feedback1.jpg" class="img-fluid"></p></li>
 <li><p>Fügen Sie nun eine <strong>Textkomponente</strong> hinzu und fügen Sie beim Textfeld die Variable <code>$response_msg</code> ein, damit die Versuchsperson abhängig von ihrer Antwort das entsprechende Feedback erhält, welches zuvor in der Codekomponente definiert wurde.</p>

@@ -30,11 +30,11 @@ __Wichtig:__ Die erhobenen Daten werden wir dann in den kommenden Sitzungen verw
 
 ## Vorgehen
 
-- __Laden Sie die 2 Experimente herunter und testen Sie, ob Sie einwandfrei laufen.__ Die Experimente befinden sich auf Github. Sie können sie unter den untenstehenden Links downloaden. (Wenn Sie auf den grünen Button `Code` klicken, kann man das Experiment als Zip-Datei herunterladen: `Download ZIP`). Sie müssen es dann evtl. entzippen, bevor Sie es starten können. Bei Problemen finden Sie unten einen Abschnitt [Troubleshooting](). Wenn das nichts hilft, können Sie sich bei der nächsten Veranstaltung an uns wenden.
+- __Laden Sie die 2 Experimente herunter und testen Sie, ob Sie einwandfrei laufen.__ Die Experimente befinden sich auf Github. Sie können sie unter den untenstehenden Links downloaden. Klicken Sie dafür auf den ZIP-Ordner, und dann auf `View Raw` oder auf das Icon mit `...` und dort auf `Download`. Sie müssen das File dann evtl. entzippen, bevor Sie das Experiment starten können. Bei Problemen finden Sie unten einen Abschnitt [Troubleshooting](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html#trouble-shooting). Wenn das nichts hilft, können Sie sich bei der nächsten Veranstaltung an uns wenden.
     
-    - [Stroop Experiment]()
+    - [Stroop Experiment](https://github.com/kogpsy/stroop-experiment)
     
-    - [Random Dot Experiment]()
+    - [Random Dot Experiment](https://github.com/kogpsy/random-dot-experiment)
     
 - __Führen Sie selber die beiden Experimente durch.__
     
@@ -44,18 +44,23 @@ __Wichtig:__ Die erhobenen Daten werden wir dann in den kommenden Sitzungen verw
 
     - Die Personen müssen zwischen 18 und 60 Jahren alt sein. 
     
-    - Die Personen sollten eine normale oder korrigiert-zu-normale Sehstärke haben.   
+    - Die Personen sollten eine normale oder korrigiert-zu-normale (Brille/Kontaktlinsen) Sehstärke haben.   
     
     - Keine Mitstudierenden aus dem Computerlab testen.
     
     - Achten Sie darauf, dass die Personen die Aufgaben unabgelenkt lösen können.
-
-    
-
+ 
 - __Laden Sie die 6 Datensätze auf ILIAS hoch.__
     
-    - Zippen Sie bitte die 6 `.csv`-Datensätze vor dem Hochladen zu einem Ordner.
+    - Zippen Sie bitte die 6 `.csv`-Datensätze vor dem Hochladen zu einem (!) Ordner.
+    
+    - Laden Sie den ZIP-Ordner auf Ilias unter `Übung 1` hoch.
 
+## Abgabetermine
+
+__Gruppe Montag:__ 21. März 2024 23:55
+
+__Gruppe Mittwoch:__ 23. März 2024 23:55
 
 
 ## Trouble shooting

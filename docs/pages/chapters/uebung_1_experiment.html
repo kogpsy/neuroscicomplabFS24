@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 1 - Psychopy Experiment</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_1_experiment.html">Übung 1 - Psychopy Experiment</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -229,6 +229,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Random Dot Paradigma</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_1_experiment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Übung 1 - Psychopy Experiment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -259,6 +265,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#auftrag" id="toc-auftrag" class="nav-link active" data-scroll-target="#auftrag">Auftrag</a></li>
   <li><a href="#vorgehen" id="toc-vorgehen" class="nav-link" data-scroll-target="#vorgehen">Vorgehen</a></li>
+  <li><a href="#abgabetermine" id="toc-abgabetermine" class="nav-link" data-scroll-target="#abgabetermine">Abgabetermine</a></li>
   <li><a href="#trouble-shooting" id="toc-trouble-shooting" class="nav-link" data-scroll-target="#trouble-shooting">Trouble shooting</a></li>
   </ul>
 </nav>
@@ -266,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_1_experiment.html">Übung 1 - Psychopy Experiment</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Übung 1 - Psychopy Experiment</h1>
 </div>
@@ -331,10 +338,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="vorgehen" class="level2">
 <h2 class="anchored" data-anchor-id="vorgehen">Vorgehen</h2>
 <ul>
-<li><p><strong>Laden Sie die 2 Experimente herunter und testen Sie, ob Sie einwandfrei laufen.</strong> Die Experimente befinden sich auf Github. Sie können sie unter den untenstehenden Links downloaden. (Wenn Sie auf den grünen Button <code>Code</code> klicken, kann man das Experiment als Zip-Datei herunterladen: <code>Download ZIP</code>). Sie müssen es dann evtl. entzippen, bevor Sie es starten können. Bei Problemen finden Sie unten einen Abschnitt <a href="">Troubleshooting</a>. Wenn das nichts hilft, können Sie sich bei der nächsten Veranstaltung an uns wenden.</p>
+<li><p><strong>Laden Sie die 2 Experimente herunter und testen Sie, ob Sie einwandfrei laufen.</strong> Die Experimente befinden sich auf Github. Sie können sie unter den untenstehenden Links downloaden. Klicken Sie dafür auf den ZIP-Ordner, und dann auf <code>View Raw</code> oder auf das Icon mit <code>...</code> und dort auf <code>Download</code>. Sie müssen das File dann evtl. entzippen, bevor Sie das Experiment starten können. Bei Problemen finden Sie unten einen Abschnitt <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html#trouble-shooting">Troubleshooting</a>. Wenn das nichts hilft, können Sie sich bei der nächsten Veranstaltung an uns wenden.</p>
 <ul>
-<li><p><a href="">Stroop Experiment</a></p></li>
-<li><p><a href="">Random Dot Experiment</a></p></li>
+<li><p><a href="https://github.com/kogpsy/stroop-experiment">Stroop Experiment</a></p></li>
+<li><p><a href="https://github.com/kogpsy/random-dot-experiment">Random Dot Experiment</a></p></li>
 </ul></li>
 <li><p><strong>Führen Sie selber die beiden Experimente durch.</strong></p>
 <ul>
@@ -343,15 +350,21 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Lassen Sie 2 weitere Personen die beiden Experimente ausführen (jede Person soll beide Experimente ausführen).</strong></p>
 <ul>
 <li><p>Die Personen müssen zwischen 18 und 60 Jahren alt sein.</p></li>
-<li><p>Die Personen sollten eine normale oder korrigiert-zu-normale Sehstärke haben.</p></li>
+<li><p>Die Personen sollten eine normale oder korrigiert-zu-normale (Brille/Kontaktlinsen) Sehstärke haben.</p></li>
 <li><p>Keine Mitstudierenden aus dem Computerlab testen.</p></li>
 <li><p>Achten Sie darauf, dass die Personen die Aufgaben unabgelenkt lösen können.</p></li>
 </ul></li>
 <li><p><strong>Laden Sie die 6 Datensätze auf ILIAS hoch.</strong></p>
 <ul>
-<li>Zippen Sie bitte die 6 <code>.csv</code>-Datensätze vor dem Hochladen zu einem Ordner.</li>
+<li><p>Zippen Sie bitte die 6 <code>.csv</code>-Datensätze vor dem Hochladen zu einem (!) Ordner.</p></li>
+<li><p>Laden Sie den ZIP-Ordner auf Ilias unter <code>Übung 1</code> hoch.</p></li>
 </ul></li>
 </ul>
+</section>
+<section id="abgabetermine" class="level2">
+<h2 class="anchored" data-anchor-id="abgabetermine">Abgabetermine</h2>
+<p><strong>Gruppe Montag:</strong> 21. März 2024 23:55</p>
+<p><strong>Gruppe Mittwoch:</strong> 23. März 2024 23:55</p>
 </section>
 <section id="trouble-shooting" class="level2">
 <h2 class="anchored" data-anchor-id="trouble-shooting">Trouble shooting</h2>

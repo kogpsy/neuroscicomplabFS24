@@ -233,6 +233,13 @@ In den Fenstern der Elemente kann jeweils angegeben werden, was alles gespeicher
 Bei der Wahl vom Datenfile-Namen empfiehlt es sich **immer** Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.
 :::
 
+_Das oben verwendete Beispielsexperiment ergibt folgenden Datensatz:_
+
+![](img/psychopy_data_example.jpg)
+
+Sie sehen die Infos aus der `conditions`-Datei (gelb), die Zählerinformationen der Loops (hellgrau), die Timinginformationen (dunkelgrau), die Antwortinformationen (blau) und die Experimentinformationen (grün).
+
+
 # 4. Test / Pilotierung
 
 -   Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind alle wichtigen Informationen auf jeder Zeile vorhanden?
@@ -257,6 +264,34 @@ Bei der Wahl vom Datenfile-Namen empfiehlt es sich **immer** Datum und Uhrzeit a
 
 Auch wenn man das Experiment im Builder erstellt erfordern einige Experimentelemente das Verwenden von **Codekomponenten**. In diesem Abschnitt werden zwei häufige Anwendungsbeispiele besprochen: Die variable Blockdauer (z.B. für Fixationskreuze oder ITIs) und das Geben von Feedback (z.B. in einem Übungsdurchgang).
 
+:::callout-tip
+
+## If-else Statements in Python
+
+In Python können Sie für verschiedene Fälle (`cases`) andere Aktionen ausfüllen, indem Sie If-else Statements nutzen.
+
+Ein If-else Statement enthält ein `if` (_wenn_), einer `condition` (_das zutrifft_), einem `body` (_dann mach das_).
+
+Ergänzt kann dies werden mit `ifelse` (_oder wenn_)+ `condition` (_das zutrifft_) + `body` (_dann mach das_) und einem `else` (_wenn nichts davon zutrifft_) + `body` (_dann mach das_).
+
+__Wichtig:__ 
+- Python ist _indetation-sensibel_, das bedeutet: Die Einrückung (1 Tab) muss stimmen, sonst funktioniert der Code nicht. Auch der _Doppelpunkt_ `:` ist wichtig und muss an der richtigen Stelle stehen. Wenn Sie mehrere `conditions` verwenden möchten, müssen Sie diese in _Klammern_ `()` setzen. Hier sehen Sie die Syntax eines If-else Statements:
+
+```
+if (condition):
+    body
+    
+ifelse (condition):
+    body
+    
+else:
+    body
+```
+:::
+
+<aside>Einführung in Python auf Datacamp: 👉🏼 [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science)</aside>
+
+
 ## 5.1 Variable Dauer von Elementen
 
 ### Fixationskreuz und ITI mit randomisierter Dauer
@@ -267,7 +302,7 @@ Um das Experiment für die Versuchsperson unvorhersehbarer zu machen, implementi
 
     ![](img/psychopy_codecomponent_1.png)
 
--   Fügen Sie einen Textblock `fixationcross` ein mit dem Text `+` und Schriftgrösse `10`. Geben Sie unter `duration` Ihre vorher definierte Variable ein (vergessen Sie dabei das `$`nicht): `$fixationcross_duration`.
+-   Fügen Sie einen Textblock `fixationcross` ein mit dem Text `+` und Schriftgrösse `10`. Geben Sie unter `duration` Ihre vorher definierte Variable ein (vergessen Sie dabei das `$` nicht): `$fixationcross_duration`.
 
     ![](img/psychopy_codecomponent_2.png)
 
@@ -287,7 +322,7 @@ Es gibt Experimente, welche Feedback erfordern. Oft wird vor der Datenerhebung e
 
 -   Erstellen Sie zuerst eine [Trialschleife](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#trialschleife) mit einem Stimulus und einer Response.
 
--   Fügen Sie nach dem Trial (aber innerhalb der Trialschleife!) eine Routine `feedback` ein.
+-   Fügen Sie nach dem Stimulus und der Antwort (aber innerhalb der Trialschleife!) eine Routine `feedback` ein.
 
 -   Fügen Sie innerhalb der Routine `feedback` eine **Codekomponente** hinzu. In dieser Komponente können Sie nun
 

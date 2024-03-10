@@ -66,6 +66,34 @@ In diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einma
 
 Die __kongruente__ und __inkongruente__ Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.
 
+Das [Stroop Kursexperiment](https://github.com/kogpsy/stroop-experiment) ist folgendermassen aufgebaut:
+
+![](img/exp_stroop_flowchart.JPG)
+
+::: callout-caution
+
+## Hands-on: Stroop Kursexperiment
+
+Laden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft.
+[Hier](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html) finden Sie die Anweisungen dazu.
+
+1. Testen Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile [alles Relevante](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#test-pilotierung) enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.
+
+
+2. Beantworten Sie folgende Fragen zum Experiment:
+
+- Was wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?
+
+- Welche Bedingungen gibt es?
+
+- Wieviele Trials werden pro Bedingung durchgeführt?
+
+- Wie lange wird der Wort-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?
+
+- Wie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?
+
+:::
+
 
 
 

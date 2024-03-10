@@ -249,6 +249,12 @@ div.csl-indent {
  <span class="menu-text">Random Dot Paradigma</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_1_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 1 - Psychopy Experiment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -356,12 +362,12 @@ div.csl-indent {
 
 <section id="random-dot-experiment" class="level1 page-columns page-full">
 <h1>Random Dot Experiment</h1>
-<p>Jeden Tag treffen wir Tausende von kleinen Entscheidungen, meistens unter gewissem Zeitdruck. Viele davon sind trivial (z. B. welches Paar Socken man anzieht) und automatisch (z. B. ob man die Espresso- oder Lungo-Taste auf der Kaffeemaschine drückt). Die meisten Entscheidungen im wirklichen Leben setzen sich eigentlich aus zwei Entscheidungen zusammen: Einerseits der Entscheidung, mit dem Abwägen aufzuhören und aufgrund des aktuellen Wissenstandes zu handeln. Andererseits die Wahl oder Entscheidungshandlung selbst. Dieser sequentielle Charakter der Entscheidungsfindung ist eine grundlegende Eigenschaft des menschlichen Nervensystems und spiegelt seine Unfähigkeit wider, Informationen sofort zu verarbeiten.</p>
+<p>Jeden Tag treffen wir Tausende von kleinen Entscheidungen, meistens unter gewissem Zeitdruck. Viele davon sind trivial (z. B. welches Paar Socken man anzieht) und automatisch (z. B. ob man die Espresso- oder Lungo-Taste auf der Kaffeemaschine drückt). Die meisten Entscheidungen im wirklichen Leben setzen sich eigentlich aus zwei Entscheidungen zusammen: Einerseits der Entscheidung, mit dem Abwägen aufzuhören und aufgrund des aktuellen Wissenstandes zu handeln. Andererseits die Wahl oder Entscheidungshandlung selbst. Dieser sequentielle Charakter der Entscheidungsfindung ist eine grundlegende Eigenschaft des menschlichen Nervensystems und spiegelt seine Unfähigkeit wieder, Informationen sofort zu verarbeiten.</p>
 <p><em>Perzeptuelle Entscheidungen</em> sind Entscheidungen, welche auf der Wahrnehmung, Einordnung und Integration von Sinnesreizen beruhen. Um beispielsweise eine Strasse sicher überqueren zu können, müssen wir mittels den Sinnesinformationen der Augen und Ohren sowie der Verarbeitung dieser Reize einschätzen mit welcher Geschwindigkeit ein herannahendes Auto unterwegs ist und ob wir lieber abwarten bis es vorbeigefahren ist. Innerhalb der Neurowissenschaften wird <em>perceptual decision making</em> untersucht, um die neuronalen Schaltkreise welche Wahrnehmungssignale kodieren, speichern und analysieren zu verstehen und mit beobachtbarem Verhalten in Verbindung zu bringen. Von Interesse ist zum Beispiel wie die Entscheidung ausfällt, wenn die sensorischen Daten undeutlich oder sogar widersprüchlich sind. Besonders spannend ist auch wie Vorwissen (<em>prior knowledge</em>) auf das Entscheidungsverhalten einwirkt.</p>
 <aside>
-<strong>Perceptual decision making</strong> is the process by which sensory information is used to guide behavior toward the external world. This involves gathering information through the senses, evaluating and integrating it according to the current goals and internal state of the subject, and using it to produce motor responses. In contrast to choice behavior and decision making in general (…) perceptual decision making emphasizes the role of sensory information in directing behavior (…) within neuroscience, the goal is to reveal the computational mechanisms whereby neural circuits encode, store, and analyze perceptual signals; combine them with other behaviorally relevant information; and use them to resolve conflicts between competing motor plans. <span class="citation" data-cites="jaeger_perceptual_2014">Hauser and Salinas (<a href="#ref-jaeger_perceptual_2014" role="doc-biblioref">2014</a>)</span>
+<strong>Perceptual decision making</strong> is the process by which sensory information is used to guide behavior toward the external world. This involves gathering information through the senses, evaluating and integrating it according to the current goals and internal state of the subject, and using it to produce motor responses. In contrast to choice behavior and decision making in general (…) perceptual decision making emphasizes the role of sensory information in directing behavior (…) within neuroscience, the goal is to reveal the computational mechanisms whereby neural circuits encode, store, and analyze perceptual signals; combine them with other behaviorally relevant information; and use them to resolve conflicts between competing motor plans. (<span class="citation" data-cites="jaeger_perceptual_2014">Hauser and Salinas (<a href="#ref-jaeger_perceptual_2014" role="doc-biblioref">2014</a>)</span>)
 </aside>
-<p>Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist das Wissen darum, wie das Gehirn diese Entscheidungsaufgaben löst noch sehr begrenzt. Eine einzelne Entscheidung kann schon sehr komplex sein. Um die Dynamik der Entscheidungsfindung zu verstehen, konzentrieren sich die meisten Studien deshalb auf einfache, wiederholbare Wahlprobleme mit nur zwei (binären) Antwortmöglichkeiten. Ein typisches Paradigma in neurowissenschaftlichen Studien ist das <em>random-dot motion paradigm.</em> Hierbei muss eine Person entscheiden in welche Richtung sich eine Punktewolke bewegt.</p>
+<p>Obwohl das Treffen von Entscheidungen für uns etwas sehr Vertrautes ist, ist das Wissen darum, wie das Gehirn diese Entscheidungsaufgaben löst noch sehr begrenzt. Eine einzelne Entscheidung kann schon sehr komplex sein. Um die Dynamik der Entscheidungsfindung zu verstehen, konzentrieren sich die meisten Studien deshalb auf einfache, wiederholbare Wahlprobleme mit nur zwei (binären) Antwortmöglichkeiten. Ein typisches Paradigma in neurowissenschaftlichen Studien ist das <em>random-dot motion paradigm</em>. Hierbei muss eine Person entscheiden in welche Richtung sich eine Punktewolke bewegt.</p>
 <aside>
 Das Experiment <em>Bias in the brain</em> von <span class="citation" data-cites="mulder_bias_2012">Mulder et al. (<a href="#ref-mulder_bias_2012" role="doc-biblioref">2012</a>)</span> ist eine Reaktionszeit (RT) Version eines <em>random-dot motion direction discrimination task</em>. Sie können <a href="https://www.jneurosci.org/content/32/7/2335">hier</a> nachlesen, wie der Task verwendet wurde um den Einfluss von Vorwissen auf neuronale Aktivität im Gehirn mittels fMRI zu untersuchen.
 </aside>
@@ -393,81 +399,32 @@ Hands-on: Random Dot Experiment
 <section id="kurzbeschrieb-kursexperiment" class="level2">
 <h2 class="anchored" data-anchor-id="kurzbeschrieb-kursexperiment">Kurzbeschrieb Kursexperiment</h2>
 <p>In unserem Experiment lösen die Versuchspersonen einen Random Dot Task zweimal (in zwei Blöcken). In jedem Block erhalten sie eine andere Instruktion, die Aufgabe bleibt jedoch dieselbe: Sie müssen herausfinden in welche Richtung sich die Punktewolke bewegt. In einem Block werden sie instruiert die Aufgabe <strong>möglichst schnell</strong> zu lösen. Im anderen Block werden sie instruiert die Aufgabe <strong>möglichst richtig</strong> zu lösen. Wir werden dann analysieren, wie sich das Entscheidungsverhalten von Menschen verändert, je nachdem wie sie instruiert wurden.</p>
-<p>Da Versuchspersonen sehr unterschiedlich gut in dieser Aufgabe sind, soll vor dem Experiment eine Schwellenmesung durchgeführt werden.</p>
-<!-- ## 6. Kursexperiment  -->
-<!-- # 6.1 Instruction  -->
-<!-- **Textkomponente:** -->
-<!-- - Text: Hier wird der Text vermerkt zur Instruktion der Versuchsperson. -->
-<!-- **Codekomponente:** -->
-<!-- - Hier wird die Hintergrundfarbe defniert. -->
-<!--     win.color = 'black' -->
-<!-- **Responsekomponente - Keyboard** -->
-<!-- Basic: -->
-<!-- - Start (time (s)): 0 -->
-<!-- - Stop (duration (s): Dieses Feld wird leer gelassen. dadurch wird die Instruktion solange angezeigt, bis die Versuchsperson über die Leertaste das Ende der Routine forciert und zum nächsten Block übergeht. -->
-<!-- - Allowed keys: 'space' -->
-<!-- # 6.1 Cue -->
-<!-- # 6.1.1 Fixation pre cue  -->
-<!-- **Codekomponente:**  -->
-<!-- - Hier wird die Dauer definiert, wie lange das Fixationskreuz vor dem Stimulus angezeigt werden soll. -->
-<!--     fixation_duration_pre_cue = randchoice([0.1, 0.35, 0.8, 1.2]) -->
-<!-- **Textkomponente:** -->
-<!-- - Das Fixationskreuz vor dem Cue soll für die Dauer der Variable "fixation_duration_pre_cue" angezeigt werden. -->
-<!-- # 6.1.2 Cue -->
-<!-- **Codekomponente:**  -->
-<!-- - Hier legen wir fest, welcher Cue angezeigt wird.  -->
-<!-- - Wir überprüfen den Inhalt der Schleifenvariable 'cue' und entscheiden, ob der Cue-Text einen Pfeil nach links, einen Pfeil nach rechts oder einfach nur einen Kreis darstellen soll."  -->
-<!-- - Die Variabel "cue_path" definiert, in welchem Ordner die drei Bilder abgespeichert sind. -->
-<!--     if cue == "left": -->
-<!--         cue_path = "img/arrow_left.png" -->
-<!--     elif cue == "right": -->
-<!--         cue_path = "img/arrow_right.png" -->
-<!--     elif cue == "none": -->
-<!--         cue_path = "img/neutral.png" -->
-<!-- **Imagekomponente:** -->
-<!-- - Das entsprechende Bild soll für 60 Frames (1s) angezeigt werden.  -->
-<!-- - Zudem wird bei "Image" die Variable "cue_path" angegeben, die wir zuvor definiert haben, damit Psychopy die drei Bilder "arrow_left.png.", arrow_right_png", "neutral.png" im entsprechenden Ordner ("img") findet. -->
-<!-- # 6.2 Stimulus - dots  -->
-<!-- **Codekomponente:** -->
-<!-- - Hier wird die Richtung der dots definiert: -->
-<!--     if direction == "right": -->
-<!--         dots_direction = 0 -->
-<!--     elif direction == "left": -->
-<!--         dots_direction = 180 -->
-<!-- **Stimuluskomponente - polygon:** -->
-<!-- Basic: -->
-<!-- - Start (frame N): 0 -->
-<!-- - Stop (duration (frames)): 90 (expected duration(s): 1.5) -->
-<!-- - Shape: circle -->
-<!-- Layout:  -->
-<!-- - Size[w,h]: (0.75, 0.75) -->
-<!-- - Position[x,y]: (0, 0) -->
-<!-- - Orientation: 0 -->
-<!-- Appearance:  -->
-<!-- - Fill color: black -->
-<!-- - Border Color: black -->
-<!-- - Contrast: 1 -->
-<!-- - Line width: 1 -->
-<!-- **Stimuluskomponente - dots:** -->
-<!-- Basic: -->
-<!-- - Timing (Stimulusdauer): 1500 ms -->
-<!-- Layout: -->
-<!-- - Dot size (Grösse): 3 (gut sichtbar) -->
-<!-- - Field size: 75% des Displays -->
-<!-- - Field position: (0.0, 0.0) -->
-<!-- Appearance: -->
-<!-- - Dot color: [1.0,1.0,1.0] (white) -->
-<!-- Dots: -->
-<!-- - Number of dots (Anzahl dots): 250 -->
-<!-- - Direction (Bewegungsrichtung): $dots_direction (definierte Variable im Codeblock) -->
-<!-- - Speed (Geschwindigkeit der Bewegung): 0.0125 -->
-<!-- - Coherence (Kohärenz): 0.08 -->
-<!-- - Dot life-time: 3 -->
-<!-- **Responsekomponente - Keyboard** -->
-<!-- Basic: -->
-<!-- - Start (frame N): 0 -->
-<!-- - Stop (duration (frames)): 90 (expected duration(s): 1.5) -->
-<!-- - Allowed keys: 'left', 'right' -->
+<p>Das <a href="https://github.com/kogpsy/random-dot-experiment">Random Dot Kursexperiment</a> ist folgendermassen aufgebaut:</p>
+<p><img src="img/exp_rd_flowchart.JPG" class="img-fluid"></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Random Dot Kursexperiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Laden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html">Hier</a> finden Sie die Anweisungen dazu.</p>
+<ol type="1">
+<li><p>Testen Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#test-pilotierung">alles Relevante</a> enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.</p></li>
+<li><p>Beantworten Sie folgende Fragen zum Experiment:</p></li>
+</ol>
+<ul>
+<li><p>Was wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?</p></li>
+<li><p>Welche Bedingungen gibt es?</p></li>
+<li><p>Wieviele Trials werden pro Bedingung durchgeführt?</p></li>
+<li><p>Wie lange wird der Dot-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?</p></li>
+<li><p>Wie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?</p></li>
+</ul>
+</div>
+</div>
 
 
 
