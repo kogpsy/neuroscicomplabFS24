@@ -1,0 +1,314 @@
+---
+title: "Daten importieren und vorverarbeiten"
+description: ""
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY
+citation: true
+bibliography: ../../bibliography_nsci24.bib
+format:
+    html:
+        toc: true
+        code-link: true
+---
+
+In diesem Teil arbeiten wir durchgehen in einem _R-Markdown_ Dokument (`.rmd`) innerhalb eines _R-Projects_.
+
+:::callout-caution
+## Hands-on: Vorbereitung
+
+1. Öffnen Sie R.
+
+2. Erstellen Sie ein neues R-Project 
+
+    - Klicken Sie dafür auf `File` > `New Project` 
+    
+    - Benennen Sie das Project `neurosci_complab_datawrangling` und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.
+    
+3. Erstellen Sie im Project-Ordner einen Ordner namens `data`.
+
+4. Kopieren Sie in diesen Ordner Ihre erhobenen Daten. Falls Sie noch keine Daten erhoben haben, dann laden Sie [hier]() Datensätze herunter.
+
+5. Erstellen Sie ein neues `.rmd`-File und speichern Sie dieses unter `data-import`.
+
+:::
+
+:::callout-tip
+## Tipp: Namensgebung beim Speichern von Files
+
+Wenn Sie Filenamen auswählen, achten Sie darauf dass diese _machine-readible_ sind:
+
+- keine Lücken (nehmen Sie stattdessen `-` oder `_`)
+
+- keine `ä`, `ö`, `ü` oder andere Sonderzeichen
+:::
+
+## `tidyverse`Package
+
+Für das Bearbeiten der Daten verwenden wir Funktionen aus dem _Package_ `tidyverse`, eine Sammlung von verschiedenen für _data science_ sehr geeigneten _R Packages_. Funktionen aus dem `tidyverse` ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das `tidyverse` können Sie direkt in _R_ herunterladen:
+
+<aside>Mehr Informationen zum `tidyverse`finden Sie [hier](https://r4ds.had.co.nz/).</aside>
+
+```{r}
+#| warnings: FALSE
+#| errors: FALSE
+#| output: FALSE
+
+# download tidyverse package (only do this once)
+# install.packages("tidyverse") 
+
+# load library (run this at the beginning of your script)
+library("tidyverse") 
+```
+
+
+:::caution-tip
+## Tipp: Packages herunterladen oder nur laden
+
+Ein _Package_ muss nur einmal heruntergeladen werden (`install.packages()`), dann ist es lokal auf dem Computer gespeichert.
+
+Jedes Mal wenn _R_ geöffnet wird, muss es jedoch wieder neu geladen werden (`library()`).
+:::
+
+
+# Daten importieren in R
+
+Einen Datensatz können wir importieren mit der `read.csv`- Funktion. 
+
+```{r}
+# <- read.csv("data/DatasaurusDozen.csv")
+glimpse(d)
+```
+
+:::caution-tip
+## Tipp: Daten anderer Formate einlesen
+
+Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit read.. tun.
+
+Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in _RStudio_ ausprobieren indem Sie beim Reiter `Environment` auf `Import Dataset` klicken und dort Ihren Datensatz auswählen. Sie können dort diverse Einstellungen tätigen. In der _R Console_ können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in den Code kopieren.
+:::
+
+## Verwenden der Pipe: `|>` oder `%>%`
+
+In _R_ können Sie die _Pipe_ verwenden um mehrere Datenverarbeitungsschritte aneinander zu hängen. Damit sparen Sie sich aufwändige Zwischenschritte und Vermeiden das Erstellen von immer neuen Datensätzen. Statt zwei einzelne Datenverarbeitungsschritte zu machen wie hier ...
+
+```{r}
+d <- read.csv("data/DatasaurusDozen.csv")
+
+d1 <- filter(d, condition %in% c("away", "bullseye", "circle", "dino", "dots, star"))
+
+```
+
+.. können mehrere Schritte (hier Daten einlesen und Daten filtern) zusammengefasst werden, in dem nach Zeilenende eine _Pipe_ eingefügt wird:
+
+```{r}
+d <- read.csv("data/DatasaurusDozen.csv") |>
+    filter(condition %in% c("away", "bullseye", "circle", "dino", "dots, star"))
+```
+
+<aside>Die _Base R Pipe (`|>`) und die _Magritter Pipe (`%>%`)_ unterscheiden sich in Details, in unseren Beispielen spielt es jedoch keine Rolle, welche der Pipes Sie verwenden. Wann _Pipes_ ungeeignet sind wird [hier](https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe) beschrieben.</aside>
+
+
+
+
+## Change the data format from *long* to *wide* and vice versa
+
+Data can be formatted differently. It is always important to know:
+
+-   What data format does your data set have?
+
+-   What data format does your analysis pipeline require?
+
+***Long format***
+
+-   every assessed/measured variable has one column (e.g. subject id, age, IQ score, response time, response button, ...)
+
+-   each measure has one row
+
+-   if one variable has several measures (e.g. `rt` or `accuracy`) but the other variable has only few/one (e.g. the `sub-id`), the values of the second are repeated
+
+Data visualization and analysis is often easier in this format. If your data is in *wide* format it is necessary to create a new data frame in *long* format for the further data wrangling in this course.
+
+***Wide format***
+
+-   each measurement has one column
+
+-   each entity (e.g. person) has one row
+
+This data format makes it easy to spot missing values or outliers and count how many observations you have.
+
+------------------------------------------------------------------------
+
+![](imgs/widelongformat.JPG){fig-align="center"}
+
+------------------------------------------------------------------------
+
+::: {.callout-tip appearance="simple"}
+## Questions
+
+In our example data set we have 4 columns (`id`, `condition`, `x`, `y`) and 1846 rows. What format is this?
+
+What data format does your own data set have?
+:::
+
+```{r}
+glimpse(d)
+```
+
+### `pivot_wider()`
+
+With `pivot_wider(data, id_cols = , names_from = , values_from = , ...)` you can transform your data from *long* to *wide* format.
+
+***Example***
+
+```{r}
+d_wide <- d |> pivot_wider(id_cols = id, names_from = condition, names_glue = "{condition}_{.value}", values_from = c(x, y))
+glimpse(d_wide)
+```
+
+### `pivot_longer()`
+
+With `pivot_longer(data, cols = , names_to = , ...)` you can transform your data from *wide* to *long* format.
+
+With `cols` you specify the columns of the wide dataframe you want to bring into long format. With `names_to` you specify how the new variables (colums) are named (enter them with `"`). With `names_sep`you can specify, if two variables should be extracted from the existing column.
+
+***Example***
+
+```{r}
+d_long <- d_wide |> pivot_longer(cols = away_x:dino_y, names_to = c("condition", "measure"), names_sep = "_")
+glimpse(d_long)
+```
+
+::: {.callout-tip appearance="simple"}
+## Rule of thumb
+
+-   Variables/factors should have a column (e.g. the variables you want to enter in your model formula).
+
+-   Factor levels (e.g. condition levels such as `away`) should be coded within rows.
+:::
+
+\
+
+## Choose variables in data sets
+
+If you want to use only some variables or observations you can use `select()` and `filter()`:
+
+### `select()`
+
+With `select(.data, variablename, ...)` you can choose variables you want to keep. This is helpful if you have large data files and not all variables are used for the analysis. You can also delete variables from the dataset (e.g. for anonymization) with `!` in front of the variable name.
+
+***Example***
+
+If we for example only need variables `condition` and `x` we can create a new more simple data set:
+
+```{r}
+# only keep variables condition and x without using a pipe
+d_simpler <- select(d, condition, x)
+
+# only keep variables condition and x using a pipe
+d_simpler <- d |> select(condition, x)
+
+# keep all variable except x
+d_simpler <- d |> select(!x)
+
+```
+
+### `filter()`
+
+With `filter(.data, filter, ...)` you can choose observations you want to keep or delete from the data set. For this you have to specify your filter.
+
+***Example***
+
+```{r}
+# only keep observations where dataset is "star"
+d_filtered <- filter(d, condition == "star")
+
+# or with the pipe
+d_filtered <- d |> filter(condition == "star")
+
+# only keep observations where dataset is NOT "star"
+d_filtered <- d |> filter(condition != "star")
+
+# only keep observations where x is more than 50 (e.g. for filtering response times)
+d_filtered <- d |> filter(x > 50)
+
+# only keep observations where x is more than 50 (e.g. for filtering response times)
+d_filtered <- d |> filter(x > 50 & x < 60)
+
+# use several filters
+d_filtered <- d |> 
+    filter(condition == "star") |>
+    filter(x < 50)
+
+```
+
+## Create and manipulate variables
+
+Here we look at functions with which we can generate new variables and/or alter existing ones.
+
+### `mutate()`
+
+The `mutate(.data, …)` function is used to generate or alter variables in a data frame using the pipe.
+
+***Example***
+
+```{r}
+# generate new variables
+d_altered <- d |>
+    mutate(num_variable = 1.434,
+           chr_variable = "1.434",
+           sumofxy_variable = x + y,
+           copy_variable = condition)
+
+# alter exisiting variables
+d_altered <- d_altered |>
+    mutate(num_variable = num_variable * 1000) # e.g. to change seconds to milliseconds
+```
+
+### `case_when()`
+
+If we want to generate variables conditioned on existing data we can use `case_when()`.
+
+```{r}
+d_condvariables <- d |>
+    mutate(cond_variable = case_when(x > 50 ~ "higher",
+                                     x <= 50 ~ "lower",
+                                     .default = NA))
+```
+
+### `as.factor()`, `as.numeric()`, ...
+
+For changing the variable class we can use these functions. It makes sense to adjust variable classes at the beginning of the data pipeline, as it will make a difference for plots as well as models if a variable is entered categorical or numerical. Subject IDs for example are often numerical values but are actually categorical.
+
+```{r}
+# change to factor (categorical/nominal)
+d <- d |> 
+    mutate(id = as.factor(id))
+```
+
+<!-- #### `relevel()` -->
+
+## Group and summarise data
+
+### `group_by()` and `summarise()`
+
+With these functions you can group a data frame by factor levels and calculate mean scores or else.
+
+```{r}
+# look at each individual
+d |> group_by(id) |>
+    summarise(mean_x = mean(x),
+              mean_y = mean(y))
+
+# look at each individual in each condition
+d_summary <- d |> group_by(id, condition) |>
+    summarise(mean_x = mean(x),
+              sd_x = sd(x),
+              mean_y = mean(y),
+              sd_y = sd(x))
+
+glimpse(d_summary)
+```

@@ -46,8 +46,10 @@ website:
 
     - section: Data wrangling
       contents:
-     # - pages/chapters/reproducibility.qmd
-     # - pages/chapters/importing_data.qmd
+      - pages/chapters/goodpractices_data.qmd
+      - pages/chapters/rmarkdown.qmd
+      - pages/chapters/datawrangling.qmd
+      # - pages/chapters/importing_data.qmd
      # - pages/chapters/functions-loops.qmd
      # - pages/chapters/importing_data-2.qmd
      # - pages/chapters/summarizing-data.qmd

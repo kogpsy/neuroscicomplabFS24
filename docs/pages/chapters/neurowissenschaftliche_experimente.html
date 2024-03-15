@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -236,8 +255,27 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Data wrangling</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data wrangling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/goodpractices_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurowissenschaftliche Daten &amp; Good Practices im data wrangling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Markdown</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -334,6 +372,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<blockquote class="blockquote">
+<p>Nothing in neuroscience makes sense except in the light of behavior.</p>
+<p><span class="citation" data-cites="shepherd_neurobiology_1988">Shepherd (<a href="#ref-shepherd_neurobiology_1988" role="doc-biblioref">1988</a>)</span></p>
+</blockquote>
 <section id="forschungsbereiche-der-neurowissenschaften" class="level1 page-columns page-full">
 <h1>Forschungsbereiche der Neurowissenschaften</h1>
 <p>In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht. Neurowissenschaften sind ein sehr weites Forschungsbereich in dem unterschiedlichste und zahlreiche Themen bearbeitet werden. Zur Neurowissenschaft zählen u.a. folgende Bereiche:</p>
@@ -435,16 +477,16 @@ ul.task-list li input[type="checkbox"] {
 Das <a href="https://www.philhum.unibe.ch/studium/studienprogramme/neurowissenschaft/index_ger.html">Nebenfach <em>Neurowissenschaften</em></a> an der Universität Bern fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant sind, wie z. B. die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.
 </aside>
 <p>Quelle: <a href="https://en.wikipedia.org/wiki/Neuroscience">Wikipedia</a></p>
-<p>Neurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen), in diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.</p>
+<p>Neurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen). In diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.</p>
 <p>Kognitive Neurowissenschaften sind eng verknüpft mit Forschungsbereichen, wie beispielsweise der Psychologie, der Linguistik, künstlicher Intelligenz, Philosophie und Anthropologie:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/hexagon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Grafik von <a href="https://github.com/oliviaguest/cogsci-hexagon">O. Guest (2024)</a> modifiziert nach dem Paper <a href="https://osf.io/preprints/psyarxiv/4cbuv">van Rooji et al.&nbsp;2023: Reclaiming AI as a theoretical tool for cognitive science</a></figcaption>
+<figcaption class="figure-caption">Grafik von <a href="https://github.com/oliviaguest/cogsci-hexagon">O. Guest (2024)</a> modifiziert nach dem Paper von <span class="citation" data-cites="van_rooij_reclaiming_2023">Van Rooij et al. (<a href="#ref-van_rooij_reclaiming_2023" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
 <aside>
-Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von Rooji et al.&nbsp;eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.
+Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von <span class="citation" data-cites="van_rooij_reclaiming_2023">Van Rooij et al. (<a href="#ref-van_rooij_reclaiming_2023" role="doc-biblioref">2023</a>)</span> eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.
 </aside>
 </section>
 <section id="experimente-in-den-kognitiven-neurowissenschaften" class="level1 page-columns page-full">
@@ -549,11 +591,19 @@ Wir werden zu einem späteren Zeitpunkt in diesem Kurs darauf eingehen, wie man 
 <!-- ::: -->
 
 
+
 </section>
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-shepherd_neurobiology_1988" class="csl-entry" role="listitem">
+Shepherd, Gordon M. 1988. <em>Neurobiology, 2nd Ed.</em> Neurobiology, 2nd Ed. New York, NY, US: Oxford University Press.
+</div>
+<div id="ref-van_rooij_reclaiming_2023" class="csl-entry" role="listitem">
+Van Rooij, Iris, Olivia Guest, Federico G Adolfi, Ronald De Haan, Antonina Kolokolova, and Patricia Rich. 2023. <span>“Reclaiming <span>AI</span> as a Theoretical Tool for Cognitive Science.”</span> Preprint. PsyArXiv. <a href="https://doi.org/10.31234/osf.io/4cbuv">https://doi.org/10.31234/osf.io/4cbuv</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
   author = {Wyssen, Gerda and Fitze, Daniel},
   title = {Neurowissenschaftliche {Experimente}},
   url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaftliche_experimente.html},

@@ -7,22 +7,20 @@ author:
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
   - name: Daniel Fitze
-    # url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0003-0158-7459  
-  # - name: Andrew Ellis
-  #   url: https://github.com/awellis
-  #   affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
-  #   affiliation-url: https://www.kog.psy.unibe.ch
-  #   orcid: 0000-0002-2788-936X
 license: CC BY
 citation: true
-bibliography: ../../bibliography_gw.bib
+bibliography: ../../bibliography_nsci24.bib
 format:
     html:
         toc: true
 ---
+
+> Nothing in neuroscience makes sense except in the light of behavior.
+> 
+> @shepherd_neurobiology_1988
 
 # Forschungsbereiche der Neurowissenschaften
 
@@ -55,13 +53,13 @@ In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau
 
 Quelle: [Wikipedia](https://en.wikipedia.org/wiki/Neuroscience)
 
-Neurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen), in diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.
+Neurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen). In diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.
 
 Kognitive Neurowissenschaften sind eng verknüpft mit Forschungsbereichen, wie beispielsweise der Psychologie, der Linguistik, künstlicher Intelligenz, Philosophie und Anthropologie:
 
-![Grafik von [O. Guest (2024)](https://github.com/oliviaguest/cogsci-hexagon) modifiziert nach dem Paper [van Rooji et al. 2023: Reclaiming AI as a theoretical tool for cognitive science](https://osf.io/preprints/psyarxiv/4cbuv)](img/hexagon.png){fig-align="center"}
+![Grafik von [O. Guest (2024)](https://github.com/oliviaguest/cogsci-hexagon) modifiziert nach dem Paper von @van_rooij_reclaiming_2023](img/hexagon.png){fig-align="center"}
 
-<aside>Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von Rooji et al. eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.</aside>
+<aside>Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von @van_rooij_reclaiming_2023 eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.</aside>
 
 # Experimente in den Kognitiven Neurowissenschaften
 
