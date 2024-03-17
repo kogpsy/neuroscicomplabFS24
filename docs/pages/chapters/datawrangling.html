@@ -5,6 +5,7 @@
 <meta name="generator" content="quarto-1.4.221">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Gerda Wyssen">
+<meta name="author" content="Daniel Fitze">
 <title>Neurowissenschaft Computerlab - Daten importieren und vorverarbeiten</title>
 <style>
 code{white-space: pre-wrap;}
@@ -146,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Daten importieren und vorverarbeiten</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/datawrangling.html">Daten importieren und vorverarbeiten</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -265,6 +266,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">RStudio Projects und RMarkdown</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/datawrangling.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Daten importieren und vorverarbeiten</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -279,6 +286,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Modellierung von Daten</span></span>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Glossar</span></span>
+  </li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
@@ -288,52 +299,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#datenformate" id="toc-datenformate" class="nav-link active" data-scroll-target="#datenformate">Datenformate</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
   <li><a href="#packages-installieren-und-laden" id="toc-packages-installieren-und-laden" class="nav-link" data-scroll-target="#packages-installieren-und-laden">Packages installieren und laden</a></li>
-  <li>
-<a href="#daten-importieren-in-r-read.csv" id="toc-daten-importieren-in-r-read.csv" class="nav-link" data-scroll-target="#daten-importieren-in-r-read.csv">Daten importieren in R: <code>read.csv()</code></a>
-  <ul class="collapse">
-<li>
-<a href="#verwenden-der-pipe-oder" id="toc-verwenden-der-pipe-oder" class="nav-link" data-scroll-target="#verwenden-der-pipe-oder">Verwenden der Pipe: <code>|&gt;</code> oder <code>%&gt;%</code></a>
-  <ul class="collapse">
-<li><a href="#daten-filtern-filter" id="toc-daten-filtern-filter" class="nav-link" data-scroll-target="#daten-filtern-filter">Daten filtern: <code>filter()</code></a></li>
-  </ul>
-</li>
+  <li><a href="#daten-importieren-in-r-read.csv" id="toc-daten-importieren-in-r-read.csv" class="nav-link" data-scroll-target="#daten-importieren-in-r-read.csv">Daten importieren in R: <code>read.csv()</code></a></li>
+  <li><a href="#verwenden-der-pipe-oder" id="toc-verwenden-der-pipe-oder" class="nav-link" data-scroll-target="#verwenden-der-pipe-oder">Verwenden der Pipe: <code>|&gt;</code> oder <code>%&gt;%</code></a></li>
+  <li><a href="#daten-filtern-filter" id="toc-daten-filtern-filter" class="nav-link" data-scroll-target="#daten-filtern-filter">Daten filtern: <code>filter()</code></a></li>
   <li><a href="#variablen-ausw%C3%A4hlen-select" id="toc-variablen-auswählen-select" class="nav-link" data-scroll-target="#variablen-ausw%C3%A4hlen-select">Variablen auswählen: <code>select()</code></a></li>
-  <li>
-<a href="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when" id="toc-neue-variablen-generieren-und-verändern-mutate-und-case_when" class="nav-link" data-scroll-target="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when">Neue Variablen generieren und verändern: <code>mutate()</code> und <code>case_when()</code></a>
-  <ul class="collapse">
-<li><a href="#as.factor-as.numeric" id="toc-as.factor-as.numeric" class="nav-link" data-scroll-target="#as.factor-as.numeric"><code>as.factor()</code>, <code>as.numeric()</code>, …</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#group-and-summarise-data" id="toc-group-and-summarise-data" class="nav-link" data-scroll-target="#group-and-summarise-data">Group and summarise data</a>
-  <ul class="collapse">
-<li><a href="#group_by-and-summarise" id="toc-group_by-and-summarise" class="nav-link" data-scroll-target="#group_by-and-summarise"><code>group_by()</code> and <code>summarise()</code></a></li>
-  </ul>
-</li>
-  <li>
-<a href="#change-the-data-format-from-long-to-wide-and-vice-versa" id="toc-change-the-data-format-from-long-to-wide-and-vice-versa" class="nav-link" data-scroll-target="#change-the-data-format-from-long-to-wide-and-vice-versa">Change the data format from <em>long</em> to <em>wide</em> and vice versa</a>
-  <ul class="collapse">
-<li><a href="#pivot_wider" id="toc-pivot_wider" class="nav-link" data-scroll-target="#pivot_wider"><code>pivot_wider()</code></a></li>
-  <li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer"><code>pivot_longer()</code></a></li>
-  </ul>
-</li>
-  </ul>
-</li>
+  <li><a href="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when" id="toc-neue-variablen-generieren-und-verändern-mutate-und-case_when" class="nav-link" data-scroll-target="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when">Neue Variablen generieren und verändern: <code>mutate()</code> und <code>case_when()</code></a></li>
+  <li><a href="#variablenklasse-ver%C3%A4ndern-as.factor-as.numeric" id="toc-variablenklasse-verändern-as.factor-as.numeric" class="nav-link" data-scroll-target="#variablenklasse-ver%C3%A4ndern-as.factor-as.numeric">Variablenklasse verändern: <code>as.factor()</code>, <code>as.numeric()</code>, …</a></li>
+  <li><a href="#daten-gruppieren-und-zusammenfassen-group_by-und-summarise" id="toc-daten-gruppieren-und-zusammenfassen-group_by-und-summarise" class="nav-link" data-scroll-target="#daten-gruppieren-und-zusammenfassen-group_by-und-summarise">Daten gruppieren und zusammenfassen: <code>group_by()</code> und <code>summarise()</code></a></li>
+  <li><a href="#data-wrangling-workflow-implementieren" id="toc-data-wrangling-workflow-implementieren" class="nav-link" data-scroll-target="#data-wrangling-workflow-implementieren">Data wrangling workflow implementieren</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/datawrangling.html">Daten importieren und vorverarbeiten</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Daten importieren und vorverarbeiten</h1>
 </div>
 
 
 <div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Authors</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -352,13 +351,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-</header><p>In R gibt es sehr viele hilfreiche Funktionen und <em>Packages</em>, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Es empfiehlt sich durchgehend in einem <em>R-Markdown</em> Dokument (<code>.Rmd</code>) innerhalb eines <em>RStudio-Projects</em> zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Rohdaten müssen so <strong>nicht</strong> verändert werden.</p>
+</header><p>In R gibt es sehr viele hilfreiche <em>Funktionen</em> und <em>Packages</em>, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Beim Arbeiten in <em>R</em> empfiehlt es sich durchgehend in einem <em>R-Markdown</em> Dokument (<code>.Rmd</code>) innerhalb eines <em>RStudio-Projects</em> zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Ein weiterer Vorteil ist zudem, dass Rohdaten <strong>nicht</strong> verändert werden müssen.</p>
 <p><img src="img/allison_horst_rasafriend.png" class="img-fluid"><a href="https://allisonhorst.com/everything-else">Illustration by Allison Horst</a></p>
 <aside><p>Hilfreiche Datacamp Kurse:</p>
 <ul>
 <li><p>Starthilfe zu RStudio brauchen: <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">RStudio Tutorial</a>.</p></li>
 <li><p><code>R</code> und den <code>tidyverse</code> Packages (1. Kapitel): <a href="https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse">Introduction to the Tidyverse</a>.</p></li>
-</ul></aside><div class="callout callout-style-default callout-caution callout-titled">
+</ul></aside><section id="datenformate" class="level2"><h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
+<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und Folgendes zu identifizieren:</p>
+<ul>
+<li><p>In welchem Dateiformat ist der Datensatz gespeichert? (z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?)</p></li>
+<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
+<li><p>Gibt es ein <code>data dictionary</code> mit Erklärungen zu den Variablen?</p></li>
+</ul></section><section id="set-up" class="level2"><h2 class="anchored" data-anchor-id="set-up">Set up</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -374,11 +380,11 @@ Hands-on: Vorbereitung
 <p>Erstellen Sie ein neues RStudio-Project</p>
 <ul>
 <li><p>Klicken Sie dafür auf <code>File</code> &gt; <code>New Project</code></p></li>
-<li><p>Benennen Sie das Project <code>neurosci_complab_datawrangling_stroop</code> und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.</p></li>
+<li><p>Benennen Sie das Project <code>complab_datawrangling_stroop</code> und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer. Wàhlen Sie, dass ein neuer Ordner erstellt werden soll.</p></li>
 </ul>
 </li>
 <li><p>Erstellen Sie in diesem Projekt-Ordner einen Ordner namens <code>data</code>.</p></li>
-<li><p>Kopieren Sie in den <code>data</code>-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie <a href="https://kogpsy.github.io/neuroscicomplabFS24/downloadable_files/import-data.zip">hier</a> Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in Ihren <code>data</code>-Ordner kopieren.</p></li>
+<li><p>Kopieren Sie in den <code>data</code>-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie <a href="downloadable_files/import-data.zip">hier</a> Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in den <code>data</code>-Ordner Ihres Projekts kopieren.</p></li>
 <li><p>Erstellen Sie ein neues <code>.Rmd</code>-File (<code>File</code> &gt; <code>New File</code> &gt; <code>R Markdown</code>) und speichern Sie dieses unter <code>data-import</code> im Projekt-Ordner.</p></li>
 </ol>
 </div>
@@ -389,248 +395,38 @@ Hands-on: Vorbereitung
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp: Namensgebung beim Speichern von Files
+Tipp: Namensgebung für Files und Variablen
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wenn Sie Filenamen auswählen, achten Sie darauf dass diese <em>machine-readible</em> sind:</p>
+<p>Wenn Sie Filenamen auswählen, achten Sie darauf dass diese <a href="https://opendatahandbook.org/glossary/en/terms/machine-readable"><em>machine-readable</em></a> sind:</p>
 <ul>
-<li><p>keine Lücken (nehmen Sie stattdessen <code>-</code> oder <code>_</code>)</p></li>
-<li><p>keine <code>ä</code>, <code>ö</code>, <code>ü</code> oder andere Sonderzeichen</p></li>
+<li><p>keine Lücken (verwenden Sie stattdessen den <code>camelCase</code>, den <code>snake_case</code> oder <code>-</code>)</p></li>
+<li><p>keine <code>ä</code>, <code>ö</code>, <code>ü</code> oder andere Sonderzeichen verwenden</p></li>
 </ul>
 </div>
 </div>
-<section id="datenformate" class="level2"><h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
-<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:</p>
-<ul>
-<li><p>In welchem Dateiformat ist der Datensatz gespeichert? z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?`</p></li>
-<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
-<li><p>Gibt es ein <code>data dictionnary</code> mit Erklärungen zu den Variablen?</p></li>
-</ul></section><section id="packages-installieren-und-laden" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="packages-installieren-und-laden">Packages installieren und laden</h2>
-<p>Für das Bearbeiten der Daten verwenden wir Funktionen aus dem <em>Package</em> <code>tidyverse</code>, eine Sammlung von verschiedenen für <em>data science</em> sehr geeigneten <em>R Packages</em>. Funktionen aus dem <code>tidyverse</code> ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das <code>tidyverse</code> können Sie direkt in <em>R</em> herunterladen:</p>
+</section><section id="packages-installieren-und-laden" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="packages-installieren-und-laden">Packages installieren und laden</h2>
+<p>Für das Bearbeiten der Daten verwenden eignen sich Funktionen aus dem <em>Package</em> <code>tidyverse</code>, eine Sammlung von verschiedenen, für <em>data science</em> sehr geeigneten <em>R Packages</em>. Funktionen aus dem <code>tidyverse</code> ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das <code>tidyverse</code> können Sie direkt in <em>R</em> herunterladen:</p>
 <aside>
 Mehr Informationen zum <code>tidyverse</code>finden Sie <a href="https://r4ds.had.co.nz/">hier</a>.
-</aside><div class="cell" data-warnings="false" data-errors="false" data-hash="datawrangling_cache/html/unnamed-chunk-2_8f4e9cecf25a3861f65eae9ef91e0c7e">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># download tidyverse package (only do this once)</span></span>
-<span><span class="co"># install.packages("tidyverse") </span></span>
-<span></span>
-<span><span class="co"># load library (run this at the beginning of your script)</span></span>
+</aside><div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-2_8e298d0d588d96fe1f5f4785dc35bd02">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Download und Installieren des Packages (nur einmal ausführen)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ein <em>Package</em> muss nur einmal heruntergeladen und <strong>installiert</strong> werden, danach ist es lokal auf dem Computer gespeichert. Aber: Jedes Mal wenn <em>R</em> geöffnet wird, müssen <em>Packages</em> wieder neu <strong>geladen</strong> werden.</p>
+<div class="cell" data-warnings="false" data-errors="false" data-hash="datawrangling_cache/html/unnamed-chunk-3_1e10055acb244522e755e2ee7b5066bf">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ein <em>Package</em> muss nur einmal heruntergeladen werden (<code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>), dann ist es lokal auf dem Computer gespeichert. Jedes Mal wenn <em>R</em> geöffnet wird, muss es jedoch wieder neu geladen werden (<code><a href="https://rdrr.io/r/base/library.html">library()</a></code>).</p>
-<p>Sobald ein <em>Package</em> installiert ist, können die Funktionen auch verwendet werden ohne, dass das ganze <em>Package</em> mit <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> geladen wird mit <code>packagename::packagefunction</code>. Dies macht Sinn, wenn verschiedene <em>Packages</em> dieselben Namen für verschiedene Funktionen nutzen und es so zu Konflikten kommt.</p>
-</section><section id="daten-importieren-in-r-read.csv" class="level1 page-columns page-full"><h1>Daten importieren in R: <code>read.csv()</code>
-</h1>
-<p>Einen Datensatz in <code>.csv</code>-Format kann mit der Funktion <code>read.csv</code> importiert werden. Teilweise muss innerhalb der Klammer zusätzlich der <em>Separator</em> mit <code>sep = ","</code> angegeben werden, also mit welchem Zeichen die Spalten getrennt sind. Normalerweise ist dies <code>,</code> in <code>.csv</code> (<em>comma separated values</em>), es kann aber auch <code>;</code>, <code>.</code> oder eine Lücke <code></code> sein.</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-3_fe4a6493ba634a0a02fa964de8e71d7f">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Daten laden und anschauen</span></span>
-<span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"../../data/stroop_example1.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">d_stroop</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  wordCTK colorCTK corrAnsCTK congruentCTK wordPractice colorPractice
-1                                       NA                           
-2                                       NA                           
-3    test     blue          b            1                           
-4    test      red          r            1                           
-5    test   yellow          g            1                           
-6    test   yellow          g            1                           
-  corrAnsPractice congruentPractice word color corrAns congruent
-1                                NA                           NA
-2                                NA                           NA
-3                                NA                           NA
-4                                NA                           NA
-5                                NA                           NA
-6                                NA                           NA
-  trials_CTK.thisRepN trials_CTK.thisTrialN trials_CTK.thisN
-1                  NA                    NA               NA
-2                  NA                    NA               NA
-3                   0                     0                0
-4                   0                     1                1
-5                   0                     2                2
-6                   1                     0                3
-  trials_CTK.thisIndex trials_practice.thisRepN trials_practice.thisTrialN
-1                   NA                       NA                         NA
-2                   NA                       NA                         NA
-3                    2                       NA                         NA
-4                    0                       NA                         NA
-5                    1                       NA                         NA
-6                    1                       NA                         NA
-  trials_practice.thisN trials_practice.thisIndex trials_test.thisRepN
-1                    NA                        NA                   NA
-2                    NA                        NA                   NA
-3                    NA                        NA                   NA
-4                    NA                        NA                   NA
-5                    NA                        NA                   NA
-6                    NA                        NA                   NA
-  trials_test.thisTrialN trials_test.thisN trials_test.thisIndex thisRow.t
-1                     NA                NA                    NA        NA
-2                     NA                NA                    NA        NA
-3                     NA                NA                    NA  193.5270
-4                     NA                NA                    NA  197.0311
-5                     NA                NA                    NA  200.3689
-6                     NA                NA                    NA  202.1793
-  notes instruction.started instr_text.started instr_image.started
-1    NA           0.0125093          0.0699617           0.0699617
-2    NA                  NA                 NA                  NA
-3    NA                  NA                 NA                  NA
-4    NA                  NA                 NA                  NA
-5    NA                  NA                 NA                  NA
-6    NA                  NA                 NA                  NA
-  instr_resp.started instruction.stopped instr_resp.keys instr_resp.rt
-1          0.0699617            187.1745           space      187.1005
-2                 NA                  NA                            NA
-3                 NA                  NA                            NA
-4                 NA                  NA                            NA
-5                 NA                  NA                            NA
-6                 NA                  NA                            NA
-  instr_resp.duration instr_color_to_key.started instr_ctk.started
-1                None                         NA                NA
-2                                       187.1746          187.1947
-3                                             NA                NA
-4                                             NA                NA
-5                                             NA                NA
-6                                             NA                NA
-  resp_ctk.started instr_color_to_key.stopped resp_ctk.keys resp_ctk.rt
-1               NA                         NA                        NA
-2         187.1947                   193.4541         space    6.252503
-3               NA                         NA                        NA
-4               NA                         NA                        NA
-5               NA                         NA                        NA
-6               NA                         NA                        NA
-  resp_ctk.duration ITI.started fixcross.started fixcross.stopped ITI.stopped
-1                            NA               NA               NA          NA
-2              None          NA               NA               NA          NA
-3                      193.5119         194.2690         195.1040    195.0576
-4                      197.0175         198.2207         199.0374    199.0175
-5                      200.3529         200.4636         201.2810    201.2586
-6                      202.1606         203.3668         204.1751    204.1514
-  color_to_key_run.started stimulus_CTK.started keyResp_CTK.started
-1                       NA                   NA                  NA
-2                       NA                   NA                  NA
-3                 195.0577             195.1040            195.1040
-4                 199.0176             199.0374            199.0374
-5                 201.2587             201.2810            201.2810
-6                 204.1514             204.1751            204.1751
-  color_to_key_run.stopped keyResp_CTK.keys keyResp_CTK.corr keyResp_CTK.rt
-1                       NA                                NA             NA
-2                       NA                                NA             NA
-3                 196.9878                b                1      1.8719126
-4                 200.3518                r                1      1.3079718
-5                 202.1582                g                1      0.8613760
-6                 204.9855                g                1      0.8027307
-  keyResp_CTK.duration instr_practice.started instr_practice_text.started
-1                                          NA                          NA
-2                                          NA                          NA
-3                 None                     NA                          NA
-4                 None                     NA                          NA
-5                 None                     NA                          NA
-6                 None                     NA                          NA
-  instr_practice_resp.started instr_practice.stopped instr_practice_resp.keys
-1                          NA                     NA                         
-2                          NA                     NA                         
-3                          NA                     NA                         
-4                          NA                     NA                         
-5                          NA                     NA                         
-6                          NA                     NA                         
-  instr_practice_resp.rt instr_practice_resp.duration practice_run.started
-1                     NA                                                NA
-2                     NA                                                NA
-3                     NA                                                NA
-4                     NA                                                NA
-5                     NA                                                NA
-6                     NA                                                NA
-  stimulus_practice.started respPractice.started practice_run.stopped
-1                        NA                   NA                   NA
-2                        NA                   NA                   NA
-3                        NA                   NA                   NA
-4                        NA                   NA                   NA
-5                        NA                   NA                   NA
-6                        NA                   NA                   NA
-  respPractice.keys respPractice.corr respPractice.rt respPractice.duration
-1                                  NA              NA                      
-2                                  NA              NA                      
-3                                  NA              NA                      
-4                                  NA              NA                      
-5                                  NA              NA                      
-6                                  NA              NA                      
-  feedback.started textFeedback.started feedback.stopped instr_test.started
-1               NA                   NA               NA                 NA
-2               NA                   NA               NA                 NA
-3               NA                   NA               NA                 NA
-4               NA                   NA               NA                 NA
-5               NA                   NA               NA                 NA
-6               NA                   NA               NA                 NA
-  instr_test_text.started instr_test_resp.started instr_test.stopped
-1                      NA                      NA                 NA
-2                      NA                      NA                 NA
-3                      NA                      NA                 NA
-4                      NA                      NA                 NA
-5                      NA                      NA                 NA
-6                      NA                      NA                 NA
-  instr_test_resp.keys instr_test_resp.rt instr_test_resp.duration
-1                                      NA                         
-2                                      NA                         
-3                                      NA                         
-4                                      NA                         
-5                                      NA                         
-6                                      NA                         
-  test_run.started stimulus_test_run.started keyResp_test_run.started
-1               NA                        NA                       NA
-2               NA                        NA                       NA
-3               NA                        NA                       NA
-4               NA                        NA                       NA
-5               NA                        NA                       NA
-6               NA                        NA                       NA
-  test_run.stopped keyResp_test_run.keys keyResp_test_run.corr
-1               NA                                          NA
-2               NA                                          NA
-3               NA                                          NA
-4               NA                                          NA
-5               NA                                          NA
-6               NA                                          NA
-  keyResp_test_run.rt keyResp_test_run.duration goodbye.started
-1                  NA                                        NA
-2                  NA                                        NA
-3                  NA                                        NA
-4                  NA                                        NA
-5                  NA                                        NA
-6                  NA                                        NA
-  textGoodbye.started goodbye.stopped participant session
-1                  NA              NA  sub-154989       1
-2                  NA              NA  sub-154989       1
-3                  NA              NA  sub-154989       1
-4                  NA              NA  sub-154989       1
-5                  NA              NA  sub-154989       1
-6                  NA              NA  sub-154989       1
-                     date     expName psychopyVersion frameRate
-1 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-2 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-3 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-4 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-5 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-6 2024-03-13_18h51.58.866 stroop_test        2023.2.3      None
-                          expStart  X
-1 2024-03-13 18h52.18.263622 +0100 NA
-2 2024-03-13 18h52.18.263622 +0100 NA
-3 2024-03-13 18h52.18.263622 +0100 NA
-4 2024-03-13 18h52.18.263622 +0100 NA
-5 2024-03-13 18h52.18.263622 +0100 NA
-6 2024-03-13 18h52.18.263622 +0100 NA</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tipp: Daten anderer Formate einlesen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit der <code>read_excel()</code>-Funktion aus dem Package <code>readxl()</code> tun, also mit <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">readxl::read_excel()</a></code>.</p>
-<p>Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in <em>RStudio</em> ausprobieren indem Sie beim Reiter <code>Environment</code> auf <code>Import Dataset</code> klicken und dort Ihren Datensatz auswählen. Sie können dort diverse Einstellungen tätigen. In der <em>R Console</em> können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in den Code kopieren.</p>
-</div>
+<p>Sobald ein <em>Package</em> installiert ist, können die Funktionen auch verwendet werden ohne, dass das ganze <em>Package</em> mit <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> geladen wird, indem die Funktion mit dem <em>Package</em>-Namen zusammen aufgerufen wird: <code>packagename::packagefunction()</code>. Dies macht Sinn, wenn verschiedene <em>Packages</em> dieselben Namen für verschiedene Funktionen nutzen und es so zu Konflikten kommt oder wenn nur eine Funktion aus einem <em>Package</em> verwendet werden soll und alle anderen sowieso nicht gebraucht werden.</p>
+</section><section id="daten-importieren-in-r-read.csv" class="level2"><h2 class="anchored" data-anchor-id="daten-importieren-in-r-read.csv">Daten importieren in R: <code>read.csv()</code>
+</h2>
+<p>Einen Datensatz in <code>.csv</code>-Format kann mit der Funktion <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> importiert werden. Teilweise muss innerhalb der Klammer zusätzlich der <em>Separator</em> mit <code>sep = ","</code> angegeben werden, also mit welchem Zeichen die Spalten getrennt sind. Normalerweise ist dies <code>,</code> in <code>.csv</code> (<em>comma separated values</em>), es kann aber auch <code>;</code>, <code>.</code> oder eine Lücke <code></code> sein.</p>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-4_1adfe545f2e0c143d89d484d90aa18eb">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Daten laden und anschauen</span></span>
+<span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/stroop_example.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">d_stroop</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -643,118 +439,37 @@ Hands-on: Daten einlesen
 </div>
 <div class="callout-body-container callout-body">
 <p>Lesen Sie den Stroop Datensatz in Ihrem <code>data</code>-Ordner ein und schauen Sie ihn dann mit den Funktionen <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> und <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code> an.</p>
+<ul>
+<li><p>Welche Variablen sind wichtig für die weitere Auswertung?</p></li>
+<li><p>Welche braucht es wahrscheinlich nicht mehr?</p></li>
+<li><p>Finden Sie Versuchspersonenidentifikation? / Reaktionszeit? / Antwort der Versuchsperson?</p></li>
+</ul>
 </div>
 </div>
-<section id="verwenden-der-pipe-oder" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="verwenden-der-pipe-oder">Verwenden der Pipe: <code>|&gt;</code> oder <code>%&gt;%</code>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp: Daten anderer Formate einlesen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit der <code>read_excel()</code>-Funktion aus dem Package <code>readxl()</code> tun: <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">readxl::read_excel()</a></code>.</p>
+<p>Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in <em>RStudio</em> ausprobieren indem Sie beim Reiter <code>Environment</code> auf <code>Import Dataset</code> klicken und dort Ihren Datensatz auswählen oder über <code>File</code> &gt; <code>Import Dataset</code>. Sie können dort diverse Einstellungen tätigen. In der <em>R Console</em> können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in Ihren Code kopieren.</p>
+</div>
+</div>
+</section><section id="verwenden-der-pipe-oder" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="verwenden-der-pipe-oder">Verwenden der Pipe: <code>|&gt;</code> oder <code>%&gt;%</code>
 </h2>
 <p>In <em>R</em> können Sie die <em>Pipe</em> verwenden um mehrere Datenverarbeitungsschritte aneinander zu hängen. Damit sparen Sie sich aufwändige Zwischenschritte und vermeiden das Erstellen von immer neuen Datensätzen. Statt zwei einzelne Datenverarbeitungsschritte zu machen wie oben, können mehrere Schritte (hier Daten einlesen und anzeigen) zusammengefasst werden, in dem nach Zeilenende eine <em>Pipe</em> eingefügt wird:</p>
 <aside>
-Die _Base R Pipe (<code>|&gt;</code>) und die <em>Magritter Pipe (<code>%&gt;%</code>)</em> unterscheiden sich in Details, in unseren Beispielen spielt es jedoch keine Rolle, welche Pipe Sie verwenden. Wann <em>Pipes</em> ungeeignet sind wird <a href="https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe">hier</a> beschrieben.
-</aside><div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-4_93739b3d7199ec2f4e19bbee6b5bf179">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"../../data/stroop_example1.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+Wann <em>Pipes</em> ungeeignet sind wird <a href="https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe">hier</a> beschrieben.
+</aside><div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-5_da4a10ce7490ccaaaa973132307932ce">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/stroop_example.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 161
-Columns: 97
-$ wordCTK                      &lt;chr&gt; "", "", "test", "test", "test", "test", "…
-$ colorCTK                     &lt;chr&gt; "", "", "blue", "red", "yellow", "yellow"…
-$ corrAnsCTK                   &lt;chr&gt; "", "", "b", "r", "g", "g", "b", "r", "g"…
-$ congruentCTK                 &lt;int&gt; NA, NA, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
-$ wordPractice                 &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ colorPractice                &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ corrAnsPractice              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ congruentPractice            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ word                         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ color                        &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ corrAns                      &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ congruent                    &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_CTK.thisRepN          &lt;int&gt; NA, NA, 0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, …
-$ trials_CTK.thisTrialN        &lt;int&gt; NA, NA, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, …
-$ trials_CTK.thisN             &lt;int&gt; NA, NA, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,…
-$ trials_CTK.thisIndex         &lt;int&gt; NA, NA, 2, 0, 1, 1, 2, 0, 1, 0, 2, 0, 1, …
-$ trials_practice.thisRepN     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisTrialN   &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisN        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisIndex    &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_test.thisRepN         &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_test.thisTrialN       &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_test.thisN            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_test.thisIndex        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ thisRow.t                    &lt;dbl&gt; NA, NA, 193.5270, 197.0311, 200.3689, 202…
-$ notes                        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instruction.started          &lt;dbl&gt; 0.0125093, NA, NA, NA, NA, NA, NA, NA, NA…
-$ instr_text.started           &lt;dbl&gt; 0.0699617, NA, NA, NA, NA, NA, NA, NA, NA…
-$ instr_image.started          &lt;dbl&gt; 0.0699617, NA, NA, NA, NA, NA, NA, NA, NA…
-$ instr_resp.started           &lt;dbl&gt; 0.0699617, NA, NA, NA, NA, NA, NA, NA, NA…
-$ instruction.stopped          &lt;dbl&gt; 187.1745, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ instr_resp.keys              &lt;chr&gt; "space", "", "", "", "", "", "", "", "", …
-$ instr_resp.rt                &lt;dbl&gt; 187.1005, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ instr_resp.duration          &lt;chr&gt; "None", "", "", "", "", "", "", "", "", "…
-$ instr_color_to_key.started   &lt;dbl&gt; NA, 187.1746, NA, NA, NA, NA, NA, NA, NA,…
-$ instr_ctk.started            &lt;dbl&gt; NA, 187.1947, NA, NA, NA, NA, NA, NA, NA,…
-$ resp_ctk.started             &lt;dbl&gt; NA, 187.1947, NA, NA, NA, NA, NA, NA, NA,…
-$ instr_color_to_key.stopped   &lt;dbl&gt; NA, 193.4541, NA, NA, NA, NA, NA, NA, NA,…
-$ resp_ctk.keys                &lt;chr&gt; "", "space", "", "", "", "", "", "", "", …
-$ resp_ctk.rt                  &lt;dbl&gt; NA, 6.252503, NA, NA, NA, NA, NA, NA, NA,…
-$ resp_ctk.duration            &lt;chr&gt; "", "None", "", "", "", "", "", "", "", "…
-$ ITI.started                  &lt;dbl&gt; NA, NA, 193.5119, 197.0175, 200.3529, 202…
-$ fixcross.started             &lt;dbl&gt; NA, NA, 194.2690, 198.2207, 200.4636, 203…
-$ fixcross.stopped             &lt;dbl&gt; NA, NA, 195.1040, 199.0374, 201.2810, 204…
-$ ITI.stopped                  &lt;dbl&gt; NA, NA, 195.0576, 199.0175, 201.2586, 204…
-$ color_to_key_run.started     &lt;dbl&gt; NA, NA, 195.0577, 199.0176, 201.2587, 204…
-$ stimulus_CTK.started         &lt;dbl&gt; NA, NA, 195.1040, 199.0374, 201.2810, 204…
-$ keyResp_CTK.started          &lt;dbl&gt; NA, NA, 195.1040, 199.0374, 201.2810, 204…
-$ color_to_key_run.stopped     &lt;dbl&gt; NA, NA, 196.9878, 200.3518, 202.1582, 204…
-$ keyResp_CTK.keys             &lt;chr&gt; "", "", "b", "r", "g", "g", "b", "r", "g"…
-$ keyResp_CTK.corr             &lt;int&gt; NA, NA, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
-$ keyResp_CTK.rt               &lt;dbl&gt; NA, NA, 1.8719126, 1.3079718, 0.8613760, …
-$ keyResp_CTK.duration         &lt;chr&gt; "", "", "None", "None", "None", "None", "…
-$ instr_practice.started       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_text.started  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.started  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice.stopped       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.keys     &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_practice_resp.rt       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.duration &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ practice_run.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ stimulus_practice.started    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ practice_run.stopped         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.keys            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ respPractice.corr            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.rt              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.duration        &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ feedback.started             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ textFeedback.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ feedback.stopped             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test.started           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_text.started      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.started      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test.stopped           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.keys         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_test_resp.rt           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.duration     &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ test_run.started             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ stimulus_test_run.started    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_test_run.started     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ test_run.stopped             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_test_run.keys        &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ keyResp_test_run.corr        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_test_run.rt          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_test_run.duration    &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ goodbye.started              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ textGoodbye.started          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ goodbye.stopped              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ participant                  &lt;chr&gt; "sub-154989", "sub-154989", "sub-154989",…
-$ session                      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
-$ date                         &lt;chr&gt; "2024-03-13_18h51.58.866", "2024-03-13_18…
-$ expName                      &lt;chr&gt; "stroop_test", "stroop_test", "stroop_tes…
-$ psychopyVersion              &lt;chr&gt; "2023.2.3", "2023.2.3", "2023.2.3", "2023…
-$ frameRate                    &lt;chr&gt; "None", "None", "None", "None", "None", "…
-$ expStart                     &lt;chr&gt; "2024-03-13 18h52.18.263622 +0100", "2024…
-$ X                            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</code></pre>
 </div>
-</div>
+<p>Die <em>Base R Pipe <code>|&gt;</code> und die </em><code>magritter</code> Pipe <code>%&gt;%</code>_ unterscheiden sich in Details, in unseren weiteren Schritten spielt es jedoch keine Rolle, welche Pipe Sie verwenden.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -765,151 +480,49 @@ Tipp
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Achtung, alles was nach der Pipe kommt wird ebenfalls im Datensatz verändert, wenn wir zu Beginn ein <code>&lt;-</code> oder <code>=</code> schreiben. Wird z.B. der Code</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-5_cfa995ba60715490662f31d6ea7c8470">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"../../data/stroop_example1.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<p>Achtung: Wenn wir zu Beginn ein <code>&lt;-</code> oder <code>=</code> verwenden, wird alles was nach der Pipe kommt wird ebenfalls im Datensatz verändert. Wird z.B. der Code …</p>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-6_a49080623bbb43cacc1aab45cfcedd01">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/stroop_example1.csv"</span>, sep <span class="op">=</span> <span class="st">","</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>eingegeben, besteht der Datensatz <code>d_stroop</code> dann nur noch aus 6 Zeilen.</p>
+<p>…eingegeben, besteht der Datensatz <code>d_stroop</code> dann nur noch aus 6 Zeilen.</p>
 <p>Wird die Pipe ohne <code>&lt;-</code> oder <code>=</code> verwendet, bleibt der Datensatz unverändert:</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-6_200930503db21034baee73df7a05f3a5">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">|&gt;</span></span>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-7_a999b9ff7a33fc9a3a83c9c97333bfc9">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<section id="daten-filtern-filter" class="level3"><h3 class="anchored" data-anchor-id="daten-filtern-filter">Daten filtern: <code>filter()</code>
-</h3>
+</section><section id="daten-filtern-filter" class="level2"><h2 class="anchored" data-anchor-id="daten-filtern-filter">Daten filtern: <code>filter()</code>
+</h2>
 <p>Mit <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion <code>filter(.data, filter, ...)</code> der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.</p>
 <p><em>Beispiele:</em></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-7_04ec5ed630f26b81d54a845134cd4dd7">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># only keep observations where condition is "star"</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">d</span>, <span class="va">condition</span> <span class="op">==</span> <span class="st">"star"</span><span class="op">)</span></span>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-8_4abad3491cfc6ee4cd8e6f520956331a">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># nur die Trials mit den rot angezeigten Wörtern behalten</span></span>
+<span><span class="va">d_stroop_filtered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">d_stroop</span>, <span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># or with the pipe</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">==</span> <span class="st">"star"</span><span class="op">)</span></span>
+<span><span class="co"># dasselbe mit der Pipe</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># only keep observations where condition is NOT "star"</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">!=</span> <span class="st">"star"</span><span class="op">)</span></span>
+<span><span class="co"># nur Trials die ohne blau angezeigten Wörter behalten</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">!=</span> <span class="st">"blue"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># only keep observations where x is more than 50 (e.g. for filtering response times)</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">)</span></span>
+<span><span class="co"># nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">respPractice.rt</span> <span class="op">&lt;=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># only keep observations where x is more than 50 (e.g. for filtering response times)</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">50</span> <span class="op">&amp;</span> <span class="va">x</span> <span class="op">&lt;</span> <span class="fl">60</span><span class="op">)</span></span>
+<span><span class="co"># nur Übungstrials mit Antwortzeiten zwischen 1 und 2 Sekunden behalten</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">respPractice.rt</span> <span class="op">&gt;</span> <span class="fl">1</span> <span class="op">&amp;</span> <span class="va">respPractice.rt</span> <span class="op">&lt;</span> <span class="fl">2</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># use several filters</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">==</span> <span class="st">"star"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">x</span> <span class="op">&lt;</span> <span class="fl">50</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># mehrere Filter verwenden</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">respPractice.rt</span> <span class="op">&lt;=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die <em>Color-To-Key</em> (<code>ctk</code>) Bedingung sowie die <em>Practice Trials</em> möchten wir ausschliessen.</p>
 <p>Die Variable <code>trials_test.thisTrialN</code> enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable <code>trials_test.thisTrialN</code> <strong>nicht</strong> leer ist:</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-8_20d76b1232fd9737597ca342036e65e8">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">trials_test.thisTrialN</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 120
-Columns: 97
-$ wordCTK                      &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ colorCTK                     &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ corrAnsCTK                   &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ congruentCTK                 &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ wordPractice                 &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ colorPractice                &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ corrAnsPractice              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ congruentPractice            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ word                         &lt;chr&gt; "rot", "rot", "blau", "gelb", "rot", "bla…
-$ color                        &lt;chr&gt; "red", "red", "blue", "yellow", "yellow",…
-$ corrAns                      &lt;chr&gt; "r", "r", "b", "g", "g", "g", "r", "r", "…
-$ congruent                    &lt;int&gt; 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1,…
-$ trials_CTK.thisRepN          &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_CTK.thisTrialN        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_CTK.thisN             &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_CTK.thisIndex         &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisRepN     &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisTrialN   &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisN        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_practice.thisIndex    &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ trials_test.thisRepN         &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,…
-$ trials_test.thisTrialN       &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, …
-$ trials_test.thisN            &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
-$ trials_test.thisIndex        &lt;int&gt; 1, 0, 5, 10, 3, 7, 4, 8, 9, 11, 6, 2, 10,…
-$ thisRow.t                    &lt;dbl&gt; 345.2750, 347.9420, 349.8809, 352.7261, 3…
-$ notes                        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instruction.started          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_text.started           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_image.started          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_resp.started           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instruction.stopped          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_resp.keys              &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_resp.rt                &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_resp.duration          &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_color_to_key.started   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_ctk.started            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ resp_ctk.started             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_color_to_key.stopped   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ resp_ctk.keys                &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ resp_ctk.rt                  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ resp_ctk.duration            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ ITI.started                  &lt;dbl&gt; 345.2600, 347.9253, 349.8663, 352.7083, 3…
-$ fixcross.started             &lt;dbl&gt; 346.0424, 348.2887, 350.6779, 352.8112, 3…
-$ fixcross.stopped             &lt;dbl&gt; 346.8565, 349.1113, 351.4975, 353.6451, 3…
-$ ITI.stopped                  &lt;dbl&gt; 346.8277, 349.0914, 351.4755, 353.6130, 3…
-$ color_to_key_run.started     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ stimulus_CTK.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_CTK.started          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ color_to_key_run.stopped     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_CTK.keys             &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ keyResp_CTK.corr             &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_CTK.rt               &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ keyResp_CTK.duration         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_practice.started       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_text.started  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.started  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice.stopped       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.keys     &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_practice_resp.rt       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_practice_resp.duration &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ practice_run.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ stimulus_practice.started    &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ practice_run.stopped         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.keys            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ respPractice.corr            &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.rt              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ respPractice.duration        &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ feedback.started             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ textFeedback.started         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ feedback.stopped             &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test.started           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_text.started      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.started      &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test.stopped           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.keys         &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ instr_test_resp.rt           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ instr_test_resp.duration     &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "…
-$ test_run.started             &lt;dbl&gt; 346.8278, 349.0915, 351.4755, 353.6131, 3…
-$ stimulus_test_run.started    &lt;dbl&gt; 346.8565, 349.1113, 351.4975, 353.6451, 3…
-$ keyResp_test_run.started     &lt;dbl&gt; 346.8565, 349.1113, 351.4975, 353.6451, 3…
-$ test_run.stopped             &lt;dbl&gt; 347.9235, 349.8640, 352.7062, 354.8708, 3…
-$ keyResp_test_run.keys        &lt;chr&gt; "r", "r", "b", "g", "g", "g", "r", "r", "…
-$ keyResp_test_run.corr        &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
-$ keyResp_test_run.rt          &lt;dbl&gt; 1.0639791, 0.7370255, 1.1883303, 1.200789…
-$ keyResp_test_run.duration    &lt;chr&gt; "None", "None", "None", "None", "None", "…
-$ goodbye.started              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ textGoodbye.started          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ goodbye.stopped              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-$ participant                  &lt;chr&gt; "sub-154989", "sub-154989", "sub-154989",…
-$ session                      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
-$ date                         &lt;chr&gt; "2024-03-13_18h51.58.866", "2024-03-13_18…
-$ expName                      &lt;chr&gt; "stroop_test", "stroop_test", "stroop_tes…
-$ psychopyVersion              &lt;chr&gt; "2023.2.3", "2023.2.3", "2023.2.3", "2023…
-$ frameRate                    &lt;chr&gt; "None", "None", "None", "None", "None", "…
-$ expStart                     &lt;chr&gt; "2024-03-13 18h52.18.263622 +0100", "2024…
-$ X                            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</code></pre>
-</div>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-9_5d998d023460518686db8521117c6395">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_stroop</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">trials_test.thisTrialN</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -925,25 +538,25 @@ Hands-on: Daten filtern
 <p>Achtung: Arbeiten Sie in den weiteren Schritten <strong>nicht</strong> mit diesem Datensatz weiter, da wir die falschen Antworten in einem nächsten Schritt noch im Datensatz brauchen.</p>
 </div>
 </div>
-</section></section><section id="variablen-auswählen-select" class="level2"><h2 class="anchored" data-anchor-id="variablen-auswählen-select">Variablen auswählen: <code>select()</code>
+</section><section id="variablen-auswählen-select" class="level2"><h2 class="anchored" data-anchor-id="variablen-auswählen-select">Variablen auswählen: <code>select()</code>
 </h2>
 <p>Ein komplexer Datensatz mit sehr vielen Variablen wird oft für die Analyse aus Gründen der Einfachheit oder Anonymisierung reduziert. Das bedeutet, dass man sich die nötigen Variablen herausliest, und nur mit diesem reduzierten Datensatz weiterarbeitet. Hierzu eignet sich die Funktion <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> sehr gut: Mit <code>select(.data, variablenname, ...)</code> können die zu behaltenden Variablen ausgewählt werden. Wird ein <code>!</code> vor einen Variablennamen gesetzt, wird die Variable <strong>nicht</strong> behalten.</p>
 <p>Mit <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> können wir auch die Variablen sortieren und umbenennen, damit unser Datensatz so strukturiert ist, wie wir ihn gebrauchen können.</p>
 <p><em>Beispiele:</em></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-9_4a1ff15cdad15f533ce3443342b6a28b">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># keep variables condition and x without using a pipe</span></span>
-<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">d</span>, <span class="va">condition</span>, <span class="va">x</span><span class="op">)</span></span>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-10_3bc99f97b21d9f2cf551a9713d0b97f2">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Variable word und color behalten ohne Pipe</span></span>
+<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">d_stroop</span>, <span class="va">word</span>, <span class="va">color</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># keep variables condition and x using a pipe</span></span>
-<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">condition</span>, <span class="va">x</span><span class="op">)</span></span>
+<span><span class="co"># Variable word und color behalten mit Pipe</span></span>
+<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">word</span>, <span class="va">color</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># keep all variable except x</span></span>
-<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">!</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="co"># alle Variablen ausser word behalten</span></span>
+<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">!</span><span class="va">word</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># change name of variable</span></span>
-<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>newvariablename <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Variablennamen verändern</span></span>
+<span><span class="va">d_simpler</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>newvariablename <span class="op">=</span> <span class="va">word</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Sollen mehrere Variablen am Stück ausgewählt werden, kann man die erste Variable in der Reihe (z.B. <code>var_x</code>) und die letzte in der Reihe (z.B. <code>var_z</code>) als <code>var_x:var_z</code> eingeben, dann werden auch alle dazwischen liegenden Variablen ausgewählt.</p>
+<p>Sollen mehrere Variablen am Stück ausgewählt werden, kann man die erste Variable in der Reihe (z.B. <code>word</code>) und die letzte in der Reihe (z.B. <code>congruent</code>) als <code>word:congruent</code> eingeben, dann werden auch alle dazwischen liegenden Variablen ausgewählt.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -955,17 +568,17 @@ Hands-on: Variablen auswählen
 </div>
 <div class="callout-body-container callout-body">
 <p>Schauen Sie sich Ihren Datensatz an, welche Variablen benötigen Sie für die weitere Analysen?</p>
-<p>Erstellen Sie einen neuen Datensatz <code>d_stroop_clean</code> in welchem Sie die entsprechenden Variablen auswählen.</p>
-<p>Benennen Sie Variablen um, wenn Sie Ihnen zu lange/kompliziert erscheinen.</p>
+<p>Erstellen Sie einen neuen Datensatz <code>d_stroop_clean</code> in welchem Sie die entsprechenden Variablen auswählen und umbennen, wenn Sie Ihnen zu lange/kompliziert erscheinen.</p>
 <p>Untenstehend finden Sie ein Beispiel, wie der Datensatz danach aussehen könnte.</p>
 </div>
 </div>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-10_30bd287063e2f06660eedc370c1432c3">
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-11_5e6ba04fe32a7f5c1486d1796b1adcf8">
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 120
-Columns: 9
+Columns: 10
 $ id         &lt;chr&gt; "sub-154989", "sub-154989", "sub-154989", "sub-154989", "su…
 $ experiment &lt;chr&gt; "stroop_test", "stroop_test", "stroop_test", "stroop_test",…
+$ trial      &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…
 $ word       &lt;chr&gt; "rot", "rot", "blau", "gelb", "rot", "blau", "blau", "gelb"…
 $ color      &lt;chr&gt; "red", "red", "blue", "yellow", "yellow", "yellow", "red", …
 $ corrAns    &lt;chr&gt; "r", "r", "b", "g", "g", "g", "r", "r", "b", "g", "b", "b",…
@@ -979,24 +592,24 @@ $ accuracy   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </h2>
 <p>Mit der <code>mutate(.data, …)</code> Funktion können im Datensatz neue Variablen generiert oder bestehende verändert werden.</p>
 <p><em>Beispiel:</em></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-11_ab1eb501e1a0e799bc1ae44b86a99f7f">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># generate new variables</span></span>
-<span><span class="va">d_altered</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span></span>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-12_75085b8833cde307dee0d8a360c50f64">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Neue Variablen erstellen</span></span>
+<span><span class="va">d_new</span> <span class="op">&lt;-</span> <span class="va">d_stroop_clean</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>num_variable <span class="op">=</span> <span class="fl">1.434</span>,</span>
 <span>           chr_variable <span class="op">=</span> <span class="st">"1.434"</span>,</span>
-<span>           sumofxy_variable <span class="op">=</span> <span class="va">x</span> <span class="op">+</span> <span class="va">y</span>,</span>
-<span>           copy_variable <span class="op">=</span> <span class="va">condition</span><span class="op">)</span></span>
+<span>           sumofxy_variable <span class="op">=</span> <span class="va">rt</span> <span class="op">+</span> <span class="fl">1</span>,</span>
+<span>           copy_variable <span class="op">=</span> <span class="va">word</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># alter exisiting variables</span></span>
-<span><span class="va">d_altered</span> <span class="op">&lt;-</span> <span class="va">d_altered</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>num_variable <span class="op">=</span> <span class="va">num_variable</span> <span class="op">*</span> <span class="fl">1000</span><span class="op">)</span> <span class="co"># e.g. to change seconds to milliseconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># Bestehende Variablen verändern</span></span>
+<span><span class="va">d_new</span> <span class="op">&lt;-</span> <span class="va">d_new</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>num_variable <span class="op">=</span> <span class="va">num_variable</span> <span class="op">*</span> <span class="fl">1000</span><span class="op">)</span> <span class="co"># z.B. um Sekunden zu Millisekunden zu machen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Mit <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> kann eine neue Variable erstellt werden in Abhängigkeit von Werten anderer Variablen. Damit kann z.B. eine Variable <code>accuracy</code> erstellt werden, die den Wert <code>correct</code> hat, wenn die Aufgabe richtig gelöst wurde (z.B. Bedingung <code>rot</code> und Tastendruck <code>r</code>) und sonst den Wert <code>error</code> hat.</p>
 <p><em>Beispiel:</em></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-12_20b63179385a8491e04ac69cfe259313">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_condvariables</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cond_variable <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">50</span> <span class="op">~</span> <span class="st">"higher"</span>,</span>
-<span>                                     <span class="va">x</span> <span class="op">&lt;=</span> <span class="fl">50</span> <span class="op">~</span> <span class="st">"lower"</span>,</span>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-13_86e742454b12bd9c8ebb2215b0c8ed67">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_condvariable</span> <span class="op">&lt;-</span> <span class="va">d_stroop_clean</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cond_variable <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">rt</span> <span class="op">&gt;</span> <span class="fl">0.8</span> <span class="op">~</span> <span class="st">"higher"</span>,</span>
+<span>                                     <span class="va">rt</span> <span class="op">&lt;=</span> <span class="fl">0.8</span> <span class="op">~</span> <span class="st">"lower"</span>,</span>
 <span>                                     .default <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -1009,110 +622,49 @@ Hands-on: Variablen generieren und verändern
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Erstellen Sie im Datensatz <code>d_stroop_clean</code> eine neue Variable mit dem Namen <code>researcher</code>, den Ihren Namen enthält.</p>
-<p>Erstellen Sie zudem eine Variable <code>accuracy_check</code>, mit <code>correct</code> für korrekte und <code>error</code> für inkorrekte Trials. Kontrollieren Sie mit der Variable <code>keyResp_test_run.corr</code> (oder Ihrem neuen Variablennamen, wenn Sie diese umbenannt haben) im Datensatz, ob Sie die Aufgabe richtig gelöst haben</p>
+<ul>
+<li><p>Erstellen Sie im Datensatz <code>d_stroop_clean</code> eine neue Variable mit dem Namen <code>researcher</code>, den Ihren Namen enthält.</p></li>
+<li><p>Erstellen Sie zudem eine Variable <code>accuracy_check</code>, mit <code>correct</code> für korrekte und <code>error</code> für inkorrekte Trials. Kontrollieren Sie mit der Variable <code>keyResp_test_run.corr</code> (oder Ihrem neuen Variablennamen, wenn Sie diese umbenannt haben) im Datensatz, ob Sie die Aufgabe richtig gelöst haben.</p></li>
+<li><p>Ändern Sie die Trialnummer, so dass sie nicht mehr mit 0 beginnt, sondern mit 1.</p></li>
+</ul>
 </div>
 </div>
-<section id="as.factor-as.numeric" class="level3"><h3 class="anchored" data-anchor-id="as.factor-as.numeric">
-<code>as.factor()</code>, <code>as.numeric()</code>, …</h3>
-<p>For changing the variable class we can use these functions. It makes sense to adjust variable classes at the beginning of the data pipeline, as it will make a difference for plots as well as models if a variable is entered categorical or numerical. Subject IDs for example are often numerical values but are actually categorical.</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-13_c69f2ecafa63ee9e91ead34d63685430">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># change to factor (categorical/nominal)</span></span>
-<span><span class="va">d</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="variablenklasse-verändern-as.factor-as.numeric" class="level2"><h2 class="anchored" data-anchor-id="variablenklasse-verändern-as.factor-as.numeric">Variablenklasse verändern: <code>as.factor()</code>, <code>as.numeric()</code>, …</h2>
+<p>Variablen können verschiedene Klassen haben, sie können z.B. kategoriale (<code>factor</code>, <code>character</code>) oder numerische (<code>integer</code>, <code>numeric</code>, <code>double</code>) Informationen enthalten. Beim Einlesen “rät” <em>R</em>, welche Klasse eine Variable hat. Teilweise möchten wir dies ändern. Wenn wir eine Variable zu einem Faktor machen möchten, verwenden wir <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>. Dies macht z.B. Sinn, wenn die Versuchspersonennummer als Zahl eingelesen wurde. Um von einem Faktor zu einer numerischen Variable zu kommen, verwenden wir <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>.</p>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-14_2f5b93089c925311e11ed73114804549">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Die Variable "congruent" zu einem Faktor machen</span></span>
+<span><span class="va">d_stroop_clean</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>congruent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">congruent</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Variablenklassen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schauen Sie sich den Datensatz mit <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> oder mit <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> an. Welche Klassen enthält Ihr Datensatz und was bedeuten Sie?</p>
+</div>
 </div>
 <!-- #### `relevel()` -->
-</section></section><section id="group-and-summarise-data" class="level2"><h2 class="anchored" data-anchor-id="group-and-summarise-data">Group and summarise data</h2>
-<section id="group_by-and-summarise" class="level3"><h3 class="anchored" data-anchor-id="group_by-and-summarise">
-<code>group_by()</code> and <code>summarise()</code>
-</h3>
-<p>With these functions you can group a data frame by factor levels and calculate mean scores or else.</p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-14_fcbd55b444d3c2ff75c0ab07e7471e79">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># look at each individual</span></span>
-<span><span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
-<span>              mean_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># look at each individual in each condition</span></span>
-<span><span class="va">d_summary</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">condition</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
-<span>              sd_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
-<span>              mean_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>,</span>
-<span>              sd_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">d_summary</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section><section id="change-the-data-format-from-long-to-wide-and-vice-versa" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="change-the-data-format-from-long-to-wide-and-vice-versa">Change the data format from <em>long</em> to <em>wide</em> and vice versa</h2>
-<p>Data can be formatted differently. It is always important to know:</p>
-<ul>
-<li><p>What data format does your data set have?</p></li>
-<li><p>What data format does your analysis pipeline require?</p></li>
-</ul>
-<p><strong><em>Long format</em></strong></p>
-<ul>
-<li><p>every assessed/measured variable has one column (e.g.&nbsp;subject id, age, IQ score, response time, response button, …)</p></li>
-<li><p>each measure has one row</p></li>
-<li><p>if one variable has several measures (e.g.&nbsp;<code>rt</code> or <code>accuracy</code>) but the other variable has only few/one (e.g.&nbsp;the <code>sub-id</code>), the values of the second are repeated</p></li>
-</ul>
-<p>Data visualization and analysis is often easier in this format. If your data is in <em>wide</em> format it is necessary to create a new data frame in <em>long</em> format for the further data wrangling in this course.</p>
-<p><strong><em>Wide format</em></strong></p>
-<ul>
-<li><p>each measurement has one column</p></li>
-<li><p>each entity (e.g.&nbsp;person) has one row</p></li>
-</ul>
-<p>This data format makes it easy to spot missing values or outliers and count how many observations you have.</p>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="imgs/widelongformat.JPG" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<hr>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Questions
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In our example data set we have 4 columns (<code>id</code>, <code>condition</code>, <code>x</code>, <code>y</code>) and 1846 rows. What format is this?</p>
-<p>What data format does your own data set have?</p>
-</div>
-</div>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-15_2f9d15db06fffb5c93b7b5facc9cfd12">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="pivot_wider" class="level3"><h3 class="anchored" data-anchor-id="pivot_wider"><code>pivot_wider()</code></h3>
-<p>With <code>pivot_wider(data, id_cols = , names_from = , values_from = , ...)</code> you can transform your data from <em>long</em> to <em>wide</em> format.</p>
-<p><strong><em>Example</em></strong></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-16_178c811e582c0d72613167c0a3abc704">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_wide</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">id</span>, names_from <span class="op">=</span> <span class="va">condition</span>, names_glue <span class="op">=</span> <span class="st">"{condition}_{.value}"</span>, values_from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">d_wide</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="pivot_longer" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="pivot_longer"><code>pivot_longer()</code></h3>
-<p>With <code>pivot_longer(data, cols = , names_to = , ...)</code> you can transform your data from <em>wide</em> to <em>long</em> format.</p>
-<p>With <code>cols</code> you specify the columns of the wide dataframe you want to bring into long format. With <code>names_to</code> you specify how the new variables (colums) are named (enter them with <code>"</code>). With <code>names_sep</code>you can specify, if two variables should be extracted from the existing column.</p>
-<p><strong><em>Example</em></strong></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-17_e41a25da293e63944c12efb6e0737960">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_long</span> <span class="op">&lt;-</span> <span class="va">d_wide</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">away_x</span><span class="op">:</span><span class="va">dino_y</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"condition"</span>, <span class="st">"measure"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">d_long</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Rule of thumb
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Variables/factors should have a column (e.g.&nbsp;the variables you want to enter in your model formula).</p></li>
-<li><p>Factor levels (e.g.&nbsp;condition levels such as <code>away</code>) should be coded within rows.</p></li>
-</ul>
+</section><section id="daten-gruppieren-und-zusammenfassen-group_by-und-summarise" class="level2"><h2 class="anchored" data-anchor-id="daten-gruppieren-und-zusammenfassen-group_by-und-summarise">Daten gruppieren und zusammenfassen: <code>group_by()</code> und <code>summarise()</code>
+</h2>
+<p>Mit diesen beiden Funktionen können wir mit wenig Code den Datensatz gruppieren und zusammenfassen.</p>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-15_ab2043db5e06fbfca4a132e03a315d5d">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Nach Wörter gruppieren</span></span>
+<span><span class="va">d_stroop_clean</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">word</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_rt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">rt</span><span class="op">)</span>,</span>
+<span>              sd_rt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">rt</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  word  mean_rt sd_rt
+  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1 blau     1.23 0.490
+2 gelb     1.26 0.447
+3 rot      1.16 0.552</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -1121,26 +673,91 @@ Rule of thumb
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hands-on: Data wrangling
+Hands-on: Daten zusammenfassen
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Erstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die Data Wrangling Schritte selbstständig durch um Ihr Wissen zu festigen.</p>
+<p>Erstellen Sie einen neuen Datensatz <code>d_stroop_summary</code></p>
+<ul>
+<li><p>Gruppieren Sie den Datensatz für Wortfarbe und Kongruenz.</p></li>
+<li><p>Fassen Sie für diese Gruppen die durchschnittliche Antwortzeit und Accuracy sowie die Standardabweichungen zusammen.</p></li>
+</ul>
+</div>
+</div>
+<!-- ## Change the data format from *long* to *wide* and vice versa -->
+<!-- Data can be formatted differently. It is always important to know: -->
+<!-- -   What data format does your data set have? -->
+<!-- -   What data format does your analysis pipeline require? -->
+<!-- ***Long format*** -->
+<!-- -   every assessed/measured variable has one column (e.g. subject id, age, IQ score, response time, response button, ...) -->
+<!-- -   each measure has one row -->
+<!-- -   if one variable has several measures (e.g. `rt` or `accuracy`) but the other variable has only few/one (e.g. the `sub-id`), the values of the second are repeated -->
+<!-- Data visualization and analysis is often easier in this format. If your data is in *wide* format it is necessary to create a new data frame in *long* format for the further data wrangling in this course. -->
+<!-- ***Wide format*** -->
+<!-- -   each measurement has one column -->
+<!-- -   each entity (e.g. person) has one row -->
+<!-- This data format makes it easy to spot missing values or outliers and count how many observations you have. -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ![](imgs/widelongformat.JPG){fig-align="center"} -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ::: {.callout-tip appearance="simple"} -->
+<!-- ## Questions -->
+<!-- In our example data set we have 4 columns (`id`, `condition`, `x`, `y`) and 1846 rows. What format is this? -->
+<!-- What data format does your own data set have? -->
+<!-- ::: -->
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- glimpse(d) -->
+<!-- ``` -->
+<!-- ### `pivot_wider()` -->
+<!-- With `pivot_wider(data, id_cols = , names_from = , values_from = , ...)` you can transform your data from *long* to *wide* format. -->
+<!-- ***Example*** -->
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- d_wide <- d |> pivot_wider(id_cols = id, names_from = condition, names_glue = "{condition}_{.value}", values_from = c(x, y)) -->
+<!-- glimpse(d_wide) -->
+<!-- ``` -->
+<!-- ### `pivot_longer()` -->
+<!-- With `pivot_longer(data, cols = , names_to = , ...)` you can transform your data from *wide* to *long* format. -->
+<!-- With `cols` you specify the columns of the wide dataframe you want to bring into long format. With `names_to` you specify how the new variables (colums) are named (enter them with `"`). With `names_sep`you can specify, if two variables should be extracted from the existing column. -->
+<!-- ***Example*** -->
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- d_long <- d_wide |> pivot_longer(cols = away_x:dino_y, names_to = c("condition", "measure"), names_sep = "_") -->
+<!-- glimpse(d_long) -->
+<!-- ``` -->
+<!-- ::: {.callout-tip appearance="simple"} -->
+<!-- ## Rule of thumb -->
+<!-- -   Variables/factors should have a column (e.g. the variables you want to enter in your model formula). -->
+<!-- -   Factor levels (e.g. condition levels such as `away`) should be coded within rows. -->
+<!-- ::: -->
+</section><section id="data-wrangling-workflow-implementieren" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="data-wrangling-workflow-implementieren">Data wrangling workflow implementieren</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Data wrangling workflow
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die gelernten <em>data wrangling</em> Schritte selbstständig durch.</p>
 </div>
 </div>
 <aside>
 Zu den gelernten Funktionen finden Sie hier <a href="https://allisonhorst.com/r-packages-functions">Grafiken</a> die evtl. helfen, sich die Funktions-Namen zu merken.
 </aside>
 
-</section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
-  author = {Wyssen, Gerda},
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+  author = {Wyssen, Gerda and Fitze, Daniel},
   title = {Daten Importieren Und Vorverarbeiten},
   url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda. n.d. <span>“Daten Importieren Und Vorverarbeiten.”</span>
-<a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling.html</a>.
+Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Daten Importieren Und
+Vorverarbeiten.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling.html</a>.
 </div></div></section></div></main><!-- /main --><script>
 
 /* update total correct if #webex-total_correct exists */

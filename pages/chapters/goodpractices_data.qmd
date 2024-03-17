@@ -3,10 +3,13 @@ title: "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung"
 description: "Herausforderungen, Datenformate und Reproduzierbarkeit."
 author:
   - name: Gerda Wyssen
-    # url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
 license: CC BY
 citation: true
 bibliography: ../../bibliography_nsci24.bib
@@ -28,6 +31,8 @@ format:
 # Herausforderungen im Umgang mit neurowissenschaftlichen Daten
 
 In der neurowissenschaftlichen Forschung werden zunehmend sehr grosse und komplexe Datensätze generiert und Daten aus unterschiedlichen Datenerhebungsverfahren sollen miteinander verknüpft werden um neue Erkenntnisse zu gewinnen. Eine sehr häufige Kombination sind beispielsweise Verhaltens- und Bildgebungsdaten, wie es in vielen fMRI-Studien der Fall ist. Das erfordert Kenntnisse der unterschiedlichen Formate und Eigenschaften der Daten und Programmierkenntnisse um diese Daten möglichst automatisiert vorzuverarbeiten, zu verknüpfen, zu visualisieren und analysieren.
+
+<aside>[Definition Datenmanagement](https://opendatahandbook.org/glossary/en/terms/data-management/)</aside>
 
 :::callout-caution
 ## Hands-on: Herausforderungen von neurowissenschaftlichen Daten

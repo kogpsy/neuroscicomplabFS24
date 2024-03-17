@@ -6,6 +6,10 @@ author:
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
 license: CC BY
 citation: true
 bibliography: ../../bibliography_nsci24.bib
@@ -17,12 +21,11 @@ format:
 
 ```{r}
 #| include: false
-
 # Set working directory of R
 knitr::opts_knit$set(root.dir = '../..')
 ```
 
-In R gibt es sehr viele hilfreiche Funktionen und _Packages_, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Es empfiehlt sich durchgehend in einem _R-Markdown_ Dokument (`.Rmd`) innerhalb eines _RStudio-Projects_ zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Rohdaten müssen so __nicht__ verändert werden. 
+In R gibt es sehr viele hilfreiche _Funktionen_ und _Packages_, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Beim Arbeiten in _R_ empfiehlt es sich durchgehend in einem _R-Markdown_ Dokument (`.Rmd`) innerhalb eines _RStudio-Projects_ zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Ein weiterer Vorteil ist zudem, dass Rohdaten __nicht__ verändert werden müssen. 
 
 ![](img/allison_horst_rasafriend.png)
 [Illustration by Allison Horst](https://allisonhorst.com/everything-else)
@@ -34,6 +37,19 @@ In R gibt es sehr viele hilfreiche Funktionen und _Packages_, die für die Vorve
 - `R` und den `tidyverse` Packages (1. Kapitel): [Introduction to the Tidyverse](https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse).
 </aside>
 
+## Datenformate
+
+Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und Folgendes zu identifizieren:
+
+- In welchem Dateiformat ist der Datensatz gespeichert? (z.B. in `.csv`, `.xlsx` oder anderen?)
+
+- In welchem Datenformat ist der Datensatz geordnet? (`long` oder `wide` oder `mixed`?)
+
+- Gibt es ein `data dictionary` mit Erklärungen zu den Variablen?
+
+
+## Set up
+
 :::callout-caution
 ## Hands-on: Vorbereitung
 
@@ -43,106 +59,106 @@ In R gibt es sehr viele hilfreiche Funktionen und _Packages_, die für die Vorve
 
     - Klicken Sie dafür auf `File` > `New Project` 
     
-    - Benennen Sie das Project `neurosci_complab_datawrangling_stroop` und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.
+    - Benennen Sie das Project `complab_datawrangling_stroop` und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer. Wàhlen Sie, dass ein neuer Ordner erstellt werden soll.
     
 3. Erstellen Sie in diesem Projekt-Ordner einen Ordner namens `data`.
 
-4. Kopieren Sie in den `data`-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS24/downloadable_files/import-data.zip)  Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in den `data`-Ordner Ihres Projekts kopieren.
+4. Kopieren Sie in den `data`-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie [hier](downloadable_files/import-data.zip)  Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in den `data`-Ordner Ihres Projekts kopieren.
 
 5. Erstellen Sie ein neues `.Rmd`-File (`File` > `New File` > `R Markdown`) und speichern Sie dieses unter `data-import` im Projekt-Ordner.
-
 :::
 
 :::callout-tip
-## Tipp: Namensgebung beim Speichern von Files
+## Tipp: Namensgebung für Files und Variablen
 
-Wenn Sie Filenamen auswählen, achten Sie darauf dass diese _machine-readible_ sind:
+Wenn Sie Filenamen auswählen, achten Sie darauf dass diese [_machine-readable_](https://opendatahandbook.org/glossary/en/terms/machine-readable) sind:
 
-- keine Lücken (nehmen Sie stattdessen `-` oder `_`)
+- keine Lücken (verwenden Sie stattdessen den `camelCase`, den `snake_case` oder `-`)
 
-- keine `ä`, `ö`, `ü` oder andere Sonderzeichen
+- keine `ä`, `ö`, `ü` oder andere Sonderzeichen verwenden
 :::
-
-## Datenformate
-
-Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:
-
-- In welchem Dateiformat ist der Datensatz gespeichert? z.B. in `.csv`, `.xlsx` oder anderen?`
-
-- In welchem Datenformat ist der Datensatz geordnet? (`long` oder `wide` oder `mixed`?)
-
-- Gibt es ein `data dictionnary` mit Erklärungen zu den Variablen?
-
 
 ## Packages installieren und laden
 
-Für das Bearbeiten der Daten verwenden wir Funktionen aus dem _Package_ `tidyverse`, eine Sammlung von verschiedenen für _data science_ sehr geeigneten _R Packages_. Funktionen aus dem `tidyverse` ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das `tidyverse` können Sie direkt in _R_ herunterladen:
+Für das Bearbeiten der Daten verwenden eignen sich Funktionen aus dem _Package_ `tidyverse`, eine Sammlung von verschiedenen, für _data science_ sehr geeigneten _R Packages_. Funktionen aus dem `tidyverse` ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das `tidyverse` können Sie direkt in _R_ herunterladen:
 
 <aside>Mehr Informationen zum `tidyverse`finden Sie [hier](https://r4ds.had.co.nz/).</aside>
+
+```{r}
+#| eval: FALSE
+# Download und Installieren des Packages (nur einmal ausführen)
+install.packages("tidyverse")
+```
+
+Ein _Package_ muss nur einmal heruntergeladen und __installiert__ werden, danach ist es lokal auf dem Computer gespeichert. Aber: Jedes Mal wenn _R_ geöffnet wird, müssen _Packages_ wieder neu __geladen__ werden.
 
 ```{r}
 #| warnings: FALSE
 #| errors: FALSE
 #| output: FALSE
-
-# download tidyverse package (only do this once)
-# install.packages("tidyverse") 
-
-# load library (run this at the beginning of your script)
+# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)
 library("tidyverse") 
 ```
 
-Ein _Package_ muss nur einmal heruntergeladen werden (`install.packages()`), dann ist es lokal auf dem Computer gespeichert. Jedes Mal wenn _R_ geöffnet wird, muss es jedoch wieder neu geladen werden (`library()`).
+Sobald ein _Package_ installiert ist, können die Funktionen auch verwendet werden ohne, dass das ganze _Package_ mit `library()` geladen wird, indem die Funktion mit dem _Package_-Namen zusammen aufgerufen wird: `packagename::packagefunction()`. Dies macht Sinn, wenn verschiedene _Packages_ dieselben Namen für verschiedene Funktionen nutzen und es so zu Konflikten kommt oder wenn nur eine Funktion aus einem _Package_ verwendet werden soll und alle anderen sowieso nicht gebraucht werden.
 
-Sobald ein _Package_ installiert ist, können die Funktionen auch verwendet werden ohne, dass das ganze _Package_ mit `library()` geladen wird mit `packagename::packagefunction`. Dies macht Sinn, wenn verschiedene _Packages_ dieselben Namen für verschiedene Funktionen nutzen und es so zu Konflikten kommt.
+## Daten importieren in R: `read.csv()`
 
-# Daten importieren in R: `read.csv()`
-
-Einen Datensatz in `.csv`-Format kann mit der Funktion `read.csv` importiert werden. Teilweise muss innerhalb der Klammer zusätzlich der _Separator_ mit `sep = ","` angegeben werden, also mit welchem Zeichen die Spalten getrennt sind. Normalerweise ist dies `,` in `.csv` (_comma separated values_), es kann aber auch `;`, `.` oder eine Lücke ` ` sein. 
+Einen Datensatz in `.csv`-Format kann mit der Funktion `read.csv()` importiert werden. Teilweise muss innerhalb der Klammer zusätzlich der _Separator_ mit `sep = ","` angegeben werden, also mit welchem Zeichen die Spalten getrennt sind. Normalerweise ist dies `,` in `.csv` (_comma separated values_), es kann aber auch `;`, `.` oder eine Lücke ` ` sein. 
 
 ```{r}
+#| output: false
 # Daten laden und anschauen
-d_stroop <- read.csv("../../data/stroop_example1.csv", sep = ",")
-head(d_stroop)
+d_stroop <- read.csv("data/stroop_example.csv", sep = ",")
+glimpse(d_stroop)
 ```
-
-:::callout-tip
-## Tipp: Daten anderer Formate einlesen
-
-Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit der `read_excel()`-Funktion aus dem Package `readxl()` tun, also mit `readxl::read_excel()`.
-
-Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in _RStudio_ ausprobieren indem Sie beim Reiter `Environment` auf `Import Dataset` klicken und dort Ihren Datensatz auswählen. Sie können dort diverse Einstellungen tätigen. In der _R Console_ können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in den Code kopieren.
-:::
 
 :::callout-caution
 ## Hands-on: Daten einlesen
 
 Lesen Sie den Stroop Datensatz in Ihrem `data`-Ordner ein und schauen Sie ihn dann mit den Funktionen `glimpse()` und `head()` an.
+
+- Welche Variablen sind wichtig für die weitere Auswertung?
+
+- Welche braucht es wahrscheinlich nicht mehr?
+
+- Finden Sie Versuchspersonenidentifikation? / Reaktionszeit? / Antwort der Versuchsperson?
+
+:::
+
+:::callout-tip
+## Tipp: Daten anderer Formate einlesen
+
+Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit der `read_excel()`-Funktion aus dem Package `readxl()` tun: `readxl::read_excel()`.
+
+Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in _RStudio_ ausprobieren indem Sie beim Reiter `Environment` auf `Import Dataset` klicken und dort Ihren Datensatz auswählen oder über `File` > `Import Dataset`. Sie können dort diverse Einstellungen tätigen. In der _R Console_ können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in Ihren Code kopieren.
 :::
 
 ## Verwenden der Pipe: `|>` oder `%>%`
 
 In _R_ können Sie die _Pipe_ verwenden um mehrere Datenverarbeitungsschritte aneinander zu hängen. Damit sparen Sie sich aufwändige Zwischenschritte und vermeiden das Erstellen von immer neuen Datensätzen. Statt zwei einzelne Datenverarbeitungsschritte zu machen wie oben, können mehrere Schritte (hier Daten einlesen und anzeigen) zusammengefasst werden, in dem nach Zeilenende eine _Pipe_ eingefügt wird:
 
-<aside>Die _Base R Pipe (`|>`) und die _Magritter Pipe (`%>%`)_ unterscheiden sich in Details, in unseren Beispielen spielt es jedoch keine Rolle, welche Pipe Sie verwenden. Wann _Pipes_ ungeeignet sind wird [hier](https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe) beschrieben.</aside>
+<aside>Wann _Pipes_ ungeeignet sind wird [hier](https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe) beschrieben.</aside>
 
 ```{r}
-d_stroop <- read.csv("../../data/stroop_example1.csv", sep = ",") |>
+#| eval: FALSE
+d_stroop <- read.csv("data/stroop_example.csv", sep = ",") |>
     glimpse()
 ```
+Die _Base R Pipe `|>` und die _`magritter` Pipe `%>%`_ unterscheiden sich in Details, in unseren weiteren Schritten spielt es jedoch keine Rolle, welche Pipe Sie verwenden.
 
 :::callout-tip
 ## Tipp
 
-Achtung, alles was nach der Pipe kommt wird ebenfalls im Datensatz verändert, wenn wir zu Beginn ein `<-` oder `=` schreiben. Wird z.B. der Code
+Achtung: Wenn wir zu Beginn ein `<-` oder `=` verwenden, wird alles was nach der Pipe kommt wird ebenfalls im Datensatz verändert. Wird z.B. der Code ...
 
 ```{r}
 #| eval: FALSE
-d_stroop <- read.csv("../../data/stroop_example1.csv", sep = ",") |>
+d_stroop <- read.csv("data/stroop_example1.csv", sep = ",") |>
     head()
 ```
 
-eingegeben, besteht der Datensatz `d_stroop` dann nur noch aus 6 Zeilen. 
+...eingegeben, besteht der Datensatz `d_stroop` dann nur noch aus 6 Zeilen. 
 
 Wird die Pipe ohne `<-` oder `=` verwendet, bleibt der Datensatz unverändert:
 
@@ -153,7 +169,7 @@ d_stroop |>
 ```
 ::: 
 
-### Daten filtern: `filter()`
+## Daten filtern: `filter()`
 
 Mit `filter()` können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion `filter(.data, filter, ...)` der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.
 
@@ -161,25 +177,25 @@ _Beispiele:_
 
 ```{r}
 #| eval: FALSE
-# only keep observations where condition is "star"
-d_filtered <- filter(d, condition == "star")
+# nur die Trials mit den rot angezeigten Wörtern behalten
+d_stroop_filtered <- filter(d_stroop, color == "red")
 
-# or with the pipe
-d_filtered <- d |> filter(condition == "star")
+# dasselbe mit der Pipe
+d_filtered <- d_stroop |> filter(color == "red")
 
-# only keep observations where condition is NOT "star"
-d_filtered <- d |> filter(condition != "star")
+# nur Trials die ohne blau angezeigten Wörter behalten
+d_filtered <- d_stroop |> filter(condition != "blue")
 
-# only keep observations where x is more than 50 (e.g. for filtering response times)
-d_filtered <- d |> filter(x > 50)
+# nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten
+d_filtered <- d_stroop |> filter(respPractice.rt <= 1)
 
-# only keep observations where x is more than 50 (e.g. for filtering response times)
-d_filtered <- d |> filter(x > 50 & x < 60)
+# nur Übungstrials mit Antwortzeiten zwischen 1 und 2 Sekunden behalten
+d_filtered <- d_stroop |> filter(respPractice.rt > 1 & respPractice.rt < 2)
 
-# use several filters
-d_filtered <- d |> 
-    filter(condition == "star") |>
-    filter(x < 50)
+# mehrere Filter verwenden
+d_filtered <- d_stroop |> 
+    filter(color == "red") |>
+    filter(respPractice.rt <= 1)
 ```
 
 In unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die _Color-To-Key_ (`ctk`) Bedingung sowie die _Practice Trials_ möchten wir ausschliessen. 
@@ -187,9 +203,9 @@ In unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, di
 Die Variable `trials_test.thisTrialN` enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable `trials_test.thisTrialN` __nicht__ leer ist:
 
 ```{r}
+#| output: false
 d_stroop <- d_stroop |> 
-    filter(!is.na(trials_test.thisTrialN)) |>
-    glimpse()
+    filter(!is.na(trials_test.thisTrialN)) 
 ```
 
 
@@ -211,29 +227,27 @@ _Beispiele:_
 
 ```{r}
 #| eval: FALSE
-# keep variables condition and x without using a pipe
-d_simpler <- select(d, condition, x)
+# Variable word und color behalten ohne Pipe
+d_simpler <- select(d_stroop, word, color)
 
-# keep variables condition and x using a pipe
-d_simpler <- d |> select(condition, x)
+# Variable word und color behalten mit Pipe
+d_simpler <- d_stroop |> select(word, color)
 
-# keep all variable except x
-d_simpler <- d |> select(!x)
+# alle Variablen ausser word behalten
+d_simpler <- d_stroop |> select(!word)
 
-# change name of variable
-d_simpler <- d |> select(newvariablename = x)
+# Variablennamen verändern
+d_simpler <- d_stroop |> select(newvariablename = word)
 ```
 
-Sollen mehrere Variablen am Stück ausgewählt werden, kann man die erste Variable in der Reihe (z.B. `var_x`) und die letzte in der Reihe (z.B. `var_z`) als `var_x:var_z` eingeben, dann werden auch alle dazwischen liegenden Variablen ausgewählt.
+Sollen mehrere Variablen am Stück ausgewählt werden, kann man die erste Variable in der Reihe (z.B. `word`) und die letzte in der Reihe (z.B. `congruent`) als `word:congruent` eingeben, dann werden auch alle dazwischen liegenden Variablen ausgewählt.
 
 ::: callout-caution
 ## Hands-on: Variablen auswählen
 
 Schauen Sie sich Ihren Datensatz an, welche Variablen benötigen Sie für die weitere Analysen?
 
-Erstellen Sie einen neuen Datensatz `d_stroop_clean` in welchem Sie die entsprechenden Variablen auswählen. 
-
-Benennen Sie Variablen um, wenn Sie Ihnen zu lange/kompliziert erscheinen.
+Erstellen Sie einen neuen Datensatz `d_stroop_clean` in welchem Sie die entsprechenden Variablen auswählen und umbennen, wenn Sie Ihnen zu lange/kompliziert erscheinen.
 
 Untenstehend finden Sie ein Beispiel, wie der Datensatz danach aussehen könnte.
 :::
@@ -244,6 +258,7 @@ Untenstehend finden Sie ein Beispiel, wie der Datensatz danach aussehen könnte.
 d_stroop_clean <- d_stroop |>
     select(id = participant, 
            experiment = expName,
+           trial = trials_test.thisN,
            word, 
            color, 
            corrAns,
@@ -265,16 +280,16 @@ _Beispiel:_
 
 ```{r}
 #| eval: FALSE
-# generate new variables
-d_altered <- d |>
+# Neue Variablen erstellen
+d_new <- d_stroop_clean |>
     mutate(num_variable = 1.434,
            chr_variable = "1.434",
-           sumofxy_variable = x + y,
-           copy_variable = condition)
+           sumofxy_variable = rt + 1,
+           copy_variable = word)
 
-# alter exisiting variables
-d_altered <- d_altered |>
-    mutate(num_variable = num_variable * 1000) # e.g. to change seconds to milliseconds
+# Bestehende Variablen verändern
+d_new <- d_new |>
+    mutate(num_variable = num_variable * 1000) # z.B. um Sekunden zu Millisekunden zu machen
 ```
 
 Mit `case_when()` kann eine neue Variable erstellt werden in Abhängigkeit von Werten anderer Variablen. Damit kann z.B. eine Variable `accuracy` erstellt werden, die den Wert `correct` hat, wenn die Aufgabe richtig gelöst wurde (z.B. Bedingung `rot` und Tastendruck `r`) und sonst den Wert `error` hat.
@@ -283,148 +298,154 @@ _Beispiel:_
 
 ```{r}
 #| eval: FALSE
-d_condvariables <- d |>
-    mutate(cond_variable = case_when(x > 50 ~ "higher",
-                                     x <= 50 ~ "lower",
+d_condvariable <- d_stroop_clean |>
+    mutate(cond_variable = case_when(rt > 0.8 ~ "higher",
+                                     rt <= 0.8 ~ "lower",
                                      .default = NA))
 ```
-
 
 ::: callout-caution
 ## Hands-on: Variablen generieren und verändern
 
-Erstellen Sie im Datensatz `d_stroop_clean` eine neue Variable mit dem Namen `researcher`, den Ihren Namen enthält.
+- Erstellen Sie im Datensatz `d_stroop_clean` eine neue Variable mit dem Namen `researcher`, den Ihren Namen enthält.
 
-Erstellen Sie zudem eine Variable `accuracy_check`, mit `correct` für korrekte und `error` für inkorrekte Trials. Kontrollieren Sie mit der Variable `keyResp_test_run.corr` (oder Ihrem neuen Variablennamen, wenn Sie diese umbenannt haben) im Datensatz, ob Sie die Aufgabe richtig gelöst haben
+- Erstellen Sie zudem eine Variable `accuracy_check`, mit `correct` für korrekte und `error` für inkorrekte Trials. Kontrollieren Sie mit der Variable `keyResp_test_run.corr` (oder Ihrem neuen Variablennamen, wenn Sie diese umbenannt haben) im Datensatz, ob Sie die Aufgabe richtig gelöst haben.
 
+- Ändern Sie die Trialnummer, so dass sie nicht mehr mit 0 beginnt, sondern mit 1.
 :::
 
+## Variablenklasse verändern: `as.factor()`, `as.numeric()`, ...
 
-
-### `as.factor()`, `as.numeric()`, ...
-
-For changing the variable class we can use these functions. It makes sense to adjust variable classes at the beginning of the data pipeline, as it will make a difference for plots as well as models if a variable is entered categorical or numerical. Subject IDs for example are often numerical values but are actually categorical.
+Variablen können verschiedene Klassen haben, sie können z.B. kategoriale (`factor`, `character`) oder numerische (`integer`, `numeric`, `double`) Informationen enthalten. Beim Einlesen "rät" _R_, welche Klasse eine Variable hat. Teilweise möchten wir dies ändern. Wenn wir eine Variable zu einem Faktor machen möchten, verwenden wir `as.factor()`. Dies macht z.B. Sinn, wenn die Versuchspersonennummer als Zahl eingelesen wurde. Um von einem Faktor zu einer numerischen Variable zu kommen, verwenden wir `as.numeric()`.
 
 ```{r}
-#| eval: FALSE
-# change to factor (categorical/nominal)
-d <- d |> 
-    mutate(id = as.factor(id))
+#| eval: false
+# Die Variable "congruent" zu einem Faktor machen
+d_stroop_clean |> 
+    mutate(congruent = as.factor(congruent))
 ```
+
+:::callout-caution
+## Hands-on: Variablenklassen
+
+Schauen Sie sich den Datensatz mit `glimpse()` oder mit `View()` an. Welche Klassen enthält Ihr Datensatz und was bedeuten Sie?
+
+:::
 
 <!-- #### `relevel()` -->
 
-## Group and summarise data
+## Daten gruppieren und zusammenfassen: `group_by()` und `summarise()`
 
-### `group_by()` and `summarise()`
-
-With these functions you can group a data frame by factor levels and calculate mean scores or else.
+Mit diesen beiden Funktionen können wir mit wenig Code den Datensatz gruppieren und zusammenfassen.
 
 ```{r}
-#| eval: FALSE
-# look at each individual
-d |> group_by(id) |>
-    summarise(mean_x = mean(x),
-              mean_y = mean(y))
+# Nach Wörter gruppieren
+d_stroop_clean |> group_by(word) |>
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
 
-# look at each individual in each condition
-d_summary <- d |> group_by(id, condition) |>
-    summarise(mean_x = mean(x),
-              sd_x = sd(x),
-              mean_y = mean(y),
-              sd_y = sd(x))
-
-glimpse(d_summary)
 ```
-
-
-
-## Change the data format from *long* to *wide* and vice versa
-
-Data can be formatted differently. It is always important to know:
-
--   What data format does your data set have?
-
--   What data format does your analysis pipeline require?
-
-***Long format***
-
--   every assessed/measured variable has one column (e.g. subject id, age, IQ score, response time, response button, ...)
-
--   each measure has one row
-
--   if one variable has several measures (e.g. `rt` or `accuracy`) but the other variable has only few/one (e.g. the `sub-id`), the values of the second are repeated
-
-Data visualization and analysis is often easier in this format. If your data is in *wide* format it is necessary to create a new data frame in *long* format for the further data wrangling in this course.
-
-***Wide format***
-
--   each measurement has one column
-
--   each entity (e.g. person) has one row
-
-This data format makes it easy to spot missing values or outliers and count how many observations you have.
-
-------------------------------------------------------------------------
-
-![](imgs/widelongformat.JPG){fig-align="center"}
-
-------------------------------------------------------------------------
-
-::: {.callout-tip appearance="simple"}
-## Questions
-
-In our example data set we have 4 columns (`id`, `condition`, `x`, `y`) and 1846 rows. What format is this?
-
-What data format does your own data set have?
-:::
-
-```{r}
-#| eval: FALSE
-glimpse(d)
-```
-
-### `pivot_wider()`
-
-With `pivot_wider(data, id_cols = , names_from = , values_from = , ...)` you can transform your data from *long* to *wide* format.
-
-***Example***
-
-```{r}
-#| eval: FALSE
-d_wide <- d |> pivot_wider(id_cols = id, names_from = condition, names_glue = "{condition}_{.value}", values_from = c(x, y))
-glimpse(d_wide)
-```
-
-### `pivot_longer()`
-
-With `pivot_longer(data, cols = , names_to = , ...)` you can transform your data from *wide* to *long* format.
-
-With `cols` you specify the columns of the wide dataframe you want to bring into long format. With `names_to` you specify how the new variables (colums) are named (enter them with `"`). With `names_sep`you can specify, if two variables should be extracted from the existing column.
-
-***Example***
-
-```{r}
-#| eval: FALSE
-d_long <- d_wide |> pivot_longer(cols = away_x:dino_y, names_to = c("condition", "measure"), names_sep = "_")
-glimpse(d_long)
-```
-
-::: {.callout-tip appearance="simple"}
-## Rule of thumb
-
--   Variables/factors should have a column (e.g. the variables you want to enter in your model formula).
-
--   Factor levels (e.g. condition levels such as `away`) should be coded within rows.
-:::
-
-
-
 
 :::callout-caution
-## Hands-on: Data wrangling
+## Hands-on: Daten zusammenfassen
 
-Erstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die Data Wrangling Schritte selbstständig durch um Ihr Wissen zu festigen.
+Erstellen Sie einen neuen Datensatz `d_stroop_summary`
+
+- Gruppieren Sie den Datensatz für Wortfarbe und Kongruenz.
+
+- Fassen Sie für diese Gruppen die durchschnittliche Antwortzeit und Accuracy sowie die Standardabweichungen zusammen.
+
 :::
+
+
+<!-- ## Change the data format from *long* to *wide* and vice versa -->
+
+<!-- Data can be formatted differently. It is always important to know: -->
+
+<!-- -   What data format does your data set have? -->
+
+<!-- -   What data format does your analysis pipeline require? -->
+
+<!-- ***Long format*** -->
+
+<!-- -   every assessed/measured variable has one column (e.g. subject id, age, IQ score, response time, response button, ...) -->
+
+<!-- -   each measure has one row -->
+
+<!-- -   if one variable has several measures (e.g. `rt` or `accuracy`) but the other variable has only few/one (e.g. the `sub-id`), the values of the second are repeated -->
+
+<!-- Data visualization and analysis is often easier in this format. If your data is in *wide* format it is necessary to create a new data frame in *long* format for the further data wrangling in this course. -->
+
+<!-- ***Wide format*** -->
+
+<!-- -   each measurement has one column -->
+
+<!-- -   each entity (e.g. person) has one row -->
+
+<!-- This data format makes it easy to spot missing values or outliers and count how many observations you have. -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ![](imgs/widelongformat.JPG){fig-align="center"} -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ::: {.callout-tip appearance="simple"} -->
+<!-- ## Questions -->
+
+<!-- In our example data set we have 4 columns (`id`, `condition`, `x`, `y`) and 1846 rows. What format is this? -->
+
+<!-- What data format does your own data set have? -->
+<!-- ::: -->
+
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- glimpse(d) -->
+<!-- ``` -->
+
+<!-- ### `pivot_wider()` -->
+
+<!-- With `pivot_wider(data, id_cols = , names_from = , values_from = , ...)` you can transform your data from *long* to *wide* format. -->
+
+<!-- ***Example*** -->
+
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- d_wide <- d |> pivot_wider(id_cols = id, names_from = condition, names_glue = "{condition}_{.value}", values_from = c(x, y)) -->
+<!-- glimpse(d_wide) -->
+<!-- ``` -->
+
+<!-- ### `pivot_longer()` -->
+
+<!-- With `pivot_longer(data, cols = , names_to = , ...)` you can transform your data from *wide* to *long* format. -->
+
+<!-- With `cols` you specify the columns of the wide dataframe you want to bring into long format. With `names_to` you specify how the new variables (colums) are named (enter them with `"`). With `names_sep`you can specify, if two variables should be extracted from the existing column. -->
+
+<!-- ***Example*** -->
+
+<!-- ```{r} -->
+<!-- #| eval: FALSE -->
+<!-- d_long <- d_wide |> pivot_longer(cols = away_x:dino_y, names_to = c("condition", "measure"), names_sep = "_") -->
+<!-- glimpse(d_long) -->
+<!-- ``` -->
+
+<!-- ::: {.callout-tip appearance="simple"} -->
+<!-- ## Rule of thumb -->
+
+<!-- -   Variables/factors should have a column (e.g. the variables you want to enter in your model formula). -->
+
+<!-- -   Factor levels (e.g. condition levels such as `away`) should be coded within rows. -->
+<!-- ::: -->
+
+
+## Data wrangling workflow implementieren
+
+:::callout-caution
+## Hands-on: Data wrangling workflow
+
+Erstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die gelernten _data wrangling_ Schritte selbstständig durch.
+
+:::
+
 
 <aside>Zu den gelernten Funktionen finden Sie hier [Grafiken](https://allisonhorst.com/r-packages-functions) die evtl. helfen, sich die Funktions-Namen zu merken.</aside>

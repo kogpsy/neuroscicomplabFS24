@@ -1,5 +1,5 @@
 ---
-title: "Quiz 1"
+title: "Neuroscience Complab Glossary"
 author:
   - name: Gerda Wyssen
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
@@ -17,14 +17,27 @@ format:
         toc: true
 ---
 
-## Quiz 1
+# Glossary
 
-Sie finden das erste Quiz in Ihrer Iliasgruppe:
+Def.
 
-ILIAS (Montag) 👉 [468703-FS2024-0](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2926130.html)
+## How to set up
 
-ILIAS (Mittwoch) 👉 [468703-FS2024-1](https://ilias.unibe.ch/goto_ilias3_unibe_crs_2880593.html)
+- terms / definitions / code..
 
-Sie haben in der Veranstaltung Zeit das Quiz auszufüllen.
-Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen.
+## Terms
+
+- data dictionnary
+
+- reproducibility
+
+- replicability
+
+- reliability
+
+- robustness
+
+- generalizability
+
+- long and wide format
 

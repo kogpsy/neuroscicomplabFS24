@@ -6,6 +6,10 @@ author:
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
     orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459
 license: CC BY
 citation: true
 bibliography: ../../bibliography_nsci24.bib
@@ -17,7 +21,7 @@ format:
 
 # RStudio Projects
 
-RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein kontinuierliches `working directory`.
+RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles `working directory` für ein Projekt. 
 
 :::callout-caution
 ## Hands-on: Erstellen eines RStudio Projects
@@ -35,15 +39,6 @@ Es empfiehlt sich bei RProjekten eine Einstellungsänderung (`Tools`> `Project O
 
 ![](img/rprojects_saveworkspace.jpg)
 
-:::callout-tip
-## Tipp: Namensgebung beim Speichern von Files
-
-Wenn Sie Filenamen vergeben, achten Sie darauf dass diese _machine-readable_ sind:
-
-- keine Lücken (nehmen Sie stattdessen `-` oder `_`)
-
-- keine `ä`, `ö`, `ü` oder andere Sonderzeichen
-:::
 
 # R Markdown 
 
@@ -51,7 +46,11 @@ R Markdown ist eine simple Markup-Sprache, die es ermöglicht reproduzierbare Da
 
 Das Skript der R Markdown Files wird *geknittet* und so - je nach Wahl - zu einem HTML, PDF oder Word-Dokument zusammengefügt. R Markdown kann also beispielsweise eine Text-Beschreibung, Code zum Erstellen einer Grafik und auch die erstellte Grafik in einem Dokument kombinieren. 
 
-<aside>Mit R Markdown können auch Präsentationen, Webseiten, Bücher, Lebensläufe, Artikel oder Arbeiten erstellt werden. [Hier](https://rmarkdown.rstudio.com/gallery.html) finden Sie eine Galerie. Die Kurswebsite wurde ebenfalls in R erstellt. </aside>
+<aside>Mit R Markdown können auch Präsentationen, Webseiten, Bücher, Lebensläufe, Artikel oder Arbeiten erstellt werden. [Hier](https://rmarkdown.rstudio.com/gallery.html) finden Sie eine Galerie. Die Kurswebsite wurde ebenfalls in R erstellt.</aside>
+
+Das `working memory` innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit _relative_ Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Ordner mit unveränderten Pfaden verwenden können. 
+
+<aside>[Weitere Infos](https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html) zu Pfaden in R Markdown.</aside>
 
 ## R Markdown File erstellen und ausführen 
 
@@ -151,7 +150,7 @@ $$
 
 - Fügen Sie einen Link ein, knitten Sie das File und schauen Sie ob der Link funktioniert. Können Sie einen Link nur mit einem unterstrichenen Text anzeigen, so dass die Linkadresse nicht sichtbar ist?
 
-- Fügen Sie ein Bild ein. Sie können beispielsweise das Bild `logo_landing.png` aus dem Projektordner nutzen oder ein eigenes verwenden.
+- Fügen Sie ein Bild ein. Speichern Sie dieses Bild zuerst in einem Ordner namens `img` im Projektordner.
 
 :::
 
@@ -165,7 +164,9 @@ $$
 
 ## Code erstellen in R Markdown
 
-Code muss jeweils in einem _Code-Chunk_ eingefügt werden. Ein _Code-Chunk_ kann unter `Code` > `Insert Chunk` eingefügt werden oder mit dem Kürzel `Ctrl`+`Alt`+ `I`. _Code-Chunks_ werden mit ` ``` ` begonnen und beendet. In den geschweiften Klammern steht `r`, das bedeutet dass der Code in `R` geschrieben ist. In dieser Klammer kann dem _Code-Chunk_ einen Namen gegeben und bestimmt werden, ob der Code ausgeführt und z.B. nur angezeigt werden soll, sowie ob der Output des Codes angezeigt werden soll. 
+Code muss jeweils in einem _Code-Chunk_ eingefügt werden. Ein _Code-Chunk_ kann unter `Code` > `Insert Chunk` eingefügt werden oder mit dem Kürzel `Ctrl`+`Alt`+ `I`. 
+
+_Code-Chunks_ werden mit ` ``` ` begonnen und beendet. In den geschweiften Klammern steht `r`, das bedeutet dass der Code in `R` geschrieben ist. In dieser Klammer kann dem _Code-Chunk_ einen Namen gegeben und bestimmt werden, ob der Code ausgeführt und z.B. nur angezeigt werden soll, sowie ob der Output des Codes angezeigt werden soll. 
 
 Mit dem grünen Pfeil kann der _Code-Chunk_ einzeln ausgeführt werden. Aber auch einzelne Zeilen können ausgeführt werden, genau so wie in einem `.R`- Skript.
 
@@ -179,6 +180,8 @@ Mit dem grünen Pfeil kann der _Code-Chunk_ einzeln ausgeführt werden. Aber auc
 - Erstellen Sie einen Plot mit `plot(numbers)`.
 
 - Knitten Sie das File, um zu überprüfen, ob alles funktioniert 
+
+- Testen Sie, ob Sie Ihr File auch zu einem PDF knitten können.
 
 👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.
 :::

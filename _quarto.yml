@@ -48,13 +48,12 @@ website:
       contents:
       #- pages/chapters/goodpractices_data.qmd
       - pages/chapters/rmarkdown.qmd
-     # - pages/chapters/datawrangling.qmd
-      # - pages/chapters/importing_data.qmd
+      - pages/chapters/datawrangling.qmd
+     # - pages/chapters/importing_data.qmd
      # - pages/chapters/functions-loops.qmd
      # - pages/chapters/importing_data-2.qmd
      # - pages/chapters/summarizing-data.qmd
      # - pages/chapters/uebung_2_data_wrangling.qmd
-     # - pages/chapters/rmarkdown.qmd
 
     - section: Daten visualisieren
       contents:
@@ -70,11 +69,12 @@ website:
 
     - section: Modellierung von Daten
       contents:
-    # - section: Signal Detection Theory
-      # contents:
      # - pages/chapters/signal-detection-1.qmd
      # - pages/chapters/signal-detection-2.qmd
 
+    - section: Glossar
+      contents:
+     # - pages/chapters/glossary.qmd
   page-footer:
     right:
     - icon: github
