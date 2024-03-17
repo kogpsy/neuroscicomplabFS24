@@ -32,7 +32,7 @@ In der neurowissenschaftlichen Forschung werden zunehmend sehr grosse und komple
 :::callout-caution
 ## Hands-on: Herausforderungen von neurowissenschaftlichen Daten
 
-Lesen Sie den untenstehenden Abschnitt aus @pierre_perspective_2024. Besprechen Sie in Gruppen, welche spezifischen Herausforderungen Datenmanagment, -vorverarbeitung und -analyse in den Neurowissenschaften bestehen.
+Lesen Sie den untenstehenden Abschnitt aus @pierre_perspective_2024. Besprechen Sie in Gruppen, welche spezifischen Herausforderungen Datenmanagement, -vorverarbeitung und -analyse in den Neurowissenschaften bestehen.
 :::
 
 >__Increasing complexity of neuroscience data__
@@ -53,24 +53,19 @@ Lesen Sie den untenstehenden Abschnitt aus @pierre_perspective_2024. Besprechen 
 
 # Neurowissenschaftliche Daten
 
-:::callout-caution
-## Hands-on: Daten in den Neurowissenschaften
+## Datenquellen
 
-Welche Datenformen kennen Sie?
+Neurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen.
 
+## Datenformate
 
-Füllen Sie in Gruppen die untenstehende Tabelle zusammen aus. Es gibt folgende Gruppen:
-- EEG
-- MRI
-- Eye-tracking
-- Verhaltensdaten
+Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:
 
+- In welchem Dateiformat ist der Datensatz gespeichert? z.B. in `.csv`, `.xlsx` oder anderen?`
 
+- In welchem Datenformat ist der Datensatz geordnet? (`long` oder `wide` oder `mixed`?)
 
-
-Schliessen Sie sich am besten einer Gruppe an, in der Sie das Methodenseminar absolviert haben.
-:::
-
+- Gibt es ein `data dictionnary` mit Erklärungen zu den Variablen?
 
 
 # Good Practices in der Datenverarbeitung

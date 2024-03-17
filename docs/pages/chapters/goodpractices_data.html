@@ -146,7 +146,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Neurowissenschaftliche Daten &amp; Good Practices im data wrangling</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -265,14 +265,8 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/goodpractices_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Neurowissenschaftliche Daten &amp; Good Practices im data wrangling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Markdown</span></a>
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
   </div>
 </li>
       </ul>
@@ -300,7 +294,11 @@ div.csl-indent {
    
   <ul>
   <li><a href="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" id="toc-herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" class="nav-link active" data-scroll-target="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten">Herausforderungen im Umgang mit neurowissenschaftlichen Daten</a></li>
-  <li><a href="#neurowissenschaftliche-daten" id="toc-neurowissenschaftliche-daten" class="nav-link" data-scroll-target="#neurowissenschaftliche-daten">Neurowissenschaftliche Daten</a></li>
+  <li><a href="#neurowissenschaftliche-daten" id="toc-neurowissenschaftliche-daten" class="nav-link" data-scroll-target="#neurowissenschaftliche-daten">Neurowissenschaftliche Daten</a>
+  <ul class="collapse">
+  <li><a href="#datenquellen" id="toc-datenquellen" class="nav-link" data-scroll-target="#datenquellen">Datenquellen</a></li>
+  <li><a href="#datenformate" id="toc-datenformate" class="nav-link" data-scroll-target="#datenformate">Datenformate</a></li>
+  </ul></li>
   <li><a href="#good-practices-in-der-datenverarbeitung" id="toc-good-practices-in-der-datenverarbeitung" class="nav-link" data-scroll-target="#good-practices-in-der-datenverarbeitung">Good Practices in der Datenverarbeitung</a>
   <ul class="collapse">
   <li><a href="#replizierbarkeit" id="toc-replizierbarkeit" class="nav-link" data-scroll-target="#replizierbarkeit">Replizierbarkeit</a></li>
@@ -318,7 +316,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Neurowissenschaftliche Daten &amp; Good Practices im data wrangling</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</h1>
 </div>
@@ -374,7 +372,7 @@ Hands-on: Herausforderungen von neurowissenschaftlichen Daten
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Lesen Sie den untenstehenden Abschnitt aus <span class="citation" data-cites="pierre_perspective_2024">Pierré et al. (<a href="#ref-pierre_perspective_2024" role="doc-biblioref">2024</a>)</span>. Besprechen Sie in Gruppen, welche spezifischen Herausforderungen Datenmanagment, -vorverarbeitung und -analyse in den Neurowissenschaften bestehen.</p>
+<p>Lesen Sie den untenstehenden Abschnitt aus <span class="citation" data-cites="pierre_perspective_2024">Pierré et al. (<a href="#ref-pierre_perspective_2024" role="doc-biblioref">2024</a>)</span>. Besprechen Sie in Gruppen, welche spezifischen Herausforderungen Datenmanagement, -vorverarbeitung und -analyse in den Neurowissenschaften bestehen.</p>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -389,21 +387,19 @@ Hands-on: Herausforderungen von neurowissenschaftlichen Daten
 </section>
 <section id="neurowissenschaftliche-daten" class="level1">
 <h1>Neurowissenschaftliche Daten</h1>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Daten in den Neurowissenschaften
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Welche Datenformen kennen Sie?</p>
-<p>Füllen Sie in Gruppen die untenstehende Tabelle zusammen aus. Es gibt folgende Gruppen: - EEG - MRI - Eye-tracking - Verhaltensdaten</p>
-<p>Schliessen Sie sich am besten einer Gruppe an, in der Sie das Methodenseminar absolviert haben.</p>
-</div>
-</div>
+<section id="datenquellen" class="level2">
+<h2 class="anchored" data-anchor-id="datenquellen">Datenquellen</h2>
+<p>Neurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen.</p>
+</section>
+<section id="datenformate" class="level2">
+<h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
+<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:</p>
+<ul>
+<li><p>In welchem Dateiformat ist der Datensatz gespeichert? z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?`</p></li>
+<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
+<li><p>Gibt es ein <code>data dictionnary</code> mit Erklärungen zu den Variablen?</p></li>
+</ul>
+</section>
 </section>
 <section id="good-practices-in-der-datenverarbeitung" class="level1">
 <h1>Good Practices in der Datenverarbeitung</h1>
