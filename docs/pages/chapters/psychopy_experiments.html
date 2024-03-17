@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.221">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gerda Wyssen">
+<meta name="author" content="Rebekka Borer">
+<meta name="author" content="Daniel Fitze">
+<meta name="author" content="Andrew Ellis">
+<meta name="description" content="Kurze Einführung in das Erstellen von Experimenten mit PsychoPy.">
+
+<title>Neurowissenschaft Computerlab - Verhaltensexperimente mit PsychoPy</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//assets/logo_landing.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles/global.css">
+<link rel="stylesheet" href="../../include/webex.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Neurowissenschaft Computerlab</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">🗄️ Admin</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">    
+        <li>
+    <a class="dropdown-item" href="../../pages/admin/wichtiges.html" rel="" target="">
+ <span class="dropdown-text">📚 Wichtiges zum Kurs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../pages/admin/termine.html" rel="" target="">
+ <span class="dropdown-text">📝 Terminübersicht</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/psychopy_experiments.html">Verhaltensexperimente mit PsychoPy</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Einführung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computerlab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sprachen &amp; Umgebungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/datacamp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataCamp</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Experimente programmieren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/neurowissenschaftliche_experimente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Verhaltensexperimente mit PsychoPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/stroop_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stroop Paradigma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/random_dot_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Random Dot Paradigma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_1_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 1 - Psychopy Experiment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data wrangling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Daten importieren und vorverarbeiten</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Daten visualisieren</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Analysemethoden</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Modellierung von Daten</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Glossar</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#psychopy-experiment-step-by-step" id="toc-psychopy-experiment-step-by-step" class="nav-link active" data-scroll-target="#psychopy-experiment-step-by-step">PsychoPy Experiment: Step by Step</a></li>
+  <li><a href="#umgebung" id="toc-umgebung" class="nav-link" data-scroll-target="#umgebung">1. Umgebung</a>
+  <ul class="collapse">
+  <li><a href="#experiment-file-erstellen-und-abspeichern" id="toc-experiment-file-erstellen-und-abspeichern" class="nav-link" data-scroll-target="#experiment-file-erstellen-und-abspeichern">1.1 Experiment-File erstellen und abspeichern</a></li>
+  <li><a href="#builder-gui-und-coder" id="toc-builder-gui-und-coder" class="nav-link" data-scroll-target="#builder-gui-und-coder">1.2 Builder (GUI) und Coder?</a></li>
+  </ul></li>
+  <li><a href="#experiment-erstellen" id="toc-experiment-erstellen" class="nav-link" data-scroll-target="#experiment-erstellen">2. Experiment erstellen</a>
+  <ul class="collapse">
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">2.1 Stimuli</a></li>
+  <li><a href="#trial" id="toc-trial" class="nav-link" data-scroll-target="#trial">2.2 Trial</a></li>
+  <li><a href="#trialschleife" id="toc-trialschleife" class="nav-link" data-scroll-target="#trialschleife">2.3 Trialschleife</a></li>
+  <li><a href="#antworten-aufnehmen" id="toc-antworten-aufnehmen" class="nav-link" data-scroll-target="#antworten-aufnehmen">2.4 Antworten aufnehmen</a></li>
+  <li><a href="#weitere-elemente" id="toc-weitere-elemente" class="nav-link" data-scroll-target="#weitere-elemente">2.5 Weitere Elemente</a></li>
+  </ul></li>
+  <li><a href="#datenspeicherung" id="toc-datenspeicherung" class="nav-link" data-scroll-target="#datenspeicherung">3. Datenspeicherung</a></li>
+  <li><a href="#test-pilotierung" id="toc-test-pilotierung" class="nav-link" data-scroll-target="#test-pilotierung">4. Test / Pilotierung</a></li>
+  <li><a href="#verwenden-von-codekomponenten-im-builder" id="toc-verwenden-von-codekomponenten-im-builder" class="nav-link" data-scroll-target="#verwenden-von-codekomponenten-im-builder">5. Verwenden von Codekomponenten im Builder</a>
+  <ul class="collapse">
+  <li><a href="#variable-dauer-von-elementen" id="toc-variable-dauer-von-elementen" class="nav-link" data-scroll-target="#variable-dauer-von-elementen">5.1 Variable Dauer von Elementen</a>
+  <ul class="collapse">
+  <li><a href="#fixationskreuz-und-iti-mit-randomisierter-dauer" id="toc-fixationskreuz-und-iti-mit-randomisierter-dauer" class="nav-link" data-scroll-target="#fixationskreuz-und-iti-mit-randomisierter-dauer">Fixationskreuz und ITI mit randomisierter Dauer</a></li>
+  </ul></li>
+  <li><a href="#feedback" id="toc-feedback" class="nav-link" data-scroll-target="#feedback">5.2 Feedback</a></li>
+  </ul></li>
+  <li><a href="#weitere-wichtige-punkte" id="toc-weitere-wichtige-punkte" class="nav-link" data-scroll-target="#weitere-wichtige-punkte">6. Weitere wichtige Punkte</a>
+  <ul class="collapse">
+  <li><a href="#degrees-of-visual-angle" id="toc-degrees-of-visual-angle" class="nav-link" data-scroll-target="#degrees-of-visual-angle">6.1 Degrees of Visual Angle</a></li>
+  <li><a href="#timing" id="toc-timing" class="nav-link" data-scroll-target="#timing">6.2 Timing</a></li>
+  <li><a href="#individualisierte-aufgabenschwierigkeit-schwellenmessung" id="toc-individualisierte-aufgabenschwierigkeit-schwellenmessung" class="nav-link" data-scroll-target="#individualisierte-aufgabenschwierigkeit-schwellenmessung">6.3 Individualisierte Aufgabenschwierigkeit / Schwellenmessung</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/psychopy_experiments.html">Verhaltensexperimente mit PsychoPy</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Verhaltensexperimente mit PsychoPy</h1>
+</div>
+
+<div>
+  <div class="description">
+    Kurze Einführung in das Erstellen von Experimenten mit PsychoPy.
+  </div>
+</div>
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Rebekka Borer </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/awellis">Andrew Ellis</a> <a href="https://orcid.org/0000-0002-2788-936X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In diesem Kurs fokussieren wir auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Wir erstellen in PsychoPy selber zwei Experimente aus der Wahrnehmungs- und Entscheidungsforschung sowie der Neuropsychologie an. Das Random Dot Experiment ist ein perzeptuelles Entscheidungsexperiment mit welchem wir den Einfluss von Anweisungen/Instruktionen auf Entscheidungen untersuchen. Das Stroop Experiment beinhaltet eine typische Aufgabe aus der (klinischen) Neuropsychologie zur Untersuchung von exekutiven Funktionen.</p>
+<p>PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf der Programmiersprache Python, man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (guided user interface) erstellen und braucht so (fast) keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">(Peirce et al.&nbsp;2019)</a></p>
+<aside>
+Zu Beginn des Papers von <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">Peirce et al.&nbsp;2019</a> finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.
+</aside>
+<p>In PsychoPy erstellen Experimente können direkt auf <a href="https://pavlovia.org/">Pavlovia</a> hochgeladen, und so als Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle sowie das Teilen des Experimentalcodes.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Experiment auswählen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Wählen Sie eines der beiden Experimente, entweder das <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html">Random Dot Experiment</a> oder das <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/stroop_experiment.html">Stroop Experiment</a> aus.</p></li>
+<li><p>Lesen Sie die Beschreibung des Experiments durch und beantworten Sie die dort gestellten Fragen.</p></li>
+<li><p>Erstellen Sie eine <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#flowcharts">Flowchart</a> zum geplanten Experiment. Diese sollte alle <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten">Elemente eines Experiments</a> enthalten. Fügen Sie auch ein, wo sich ein Element wiederholt, wie lange ein Element dauert, etc.</p></li>
+<li><p>Beginnen Sie nun das Experiment in PsychoPy zu erstellen. Untenstehend finden Sie einen Anleitung wie Sie vorgehen können.</p></li>
+<li><p>Wenn Sie genügend Zeit haben können Sie auch noch das andere Experiment programmieren.</p></li>
+</ol>
+<p><em>[~90 Minuten]</em></p>
+</div>
+</div>
+<section id="psychopy-experiment-step-by-step" class="level1">
+<h1>PsychoPy Experiment: Step by Step</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hilfreiche Informationen zum Erstellen von Experimenten in PsychoPy finden Sie hier:</p>
+<ul>
+<li><p><a href="https://www.psychopy.org/">PsychoPy Website</a></p></li>
+<li><p><a href="https://tu-coding-outreach-group.github.io/cog_summer_workshops_2021/psychopy/index.html">Walk-through: Builder</a></p></li>
+<li><p><a href="https://discourse.psychopy.org/">Diskussionsforum</a></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="umgebung" class="level1 page-columns page-full">
+<h1>1. Umgebung</h1>
+<section id="experiment-file-erstellen-und-abspeichern" class="level2">
+<h2 class="anchored" data-anchor-id="experiment-file-erstellen-und-abspeichern">1.1 Experiment-File erstellen und abspeichern</h2>
+<ul>
+<li>Öffnen Sie PsychoPy und speichern Sie in einem dafür erstellten Ordner (z.B. <code>psychopy_experiment</code>) das Experiment-File ab (z.B. unter <code>experiment_stroop-task</code>).</li>
+</ul>
+</section>
+<section id="builder-gui-und-coder" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="builder-gui-und-coder">1.2 Builder (GUI) und Coder?</h2>
+<p>Experimente können in PsychoPy mit dem Builder (in einem GUI) erstellt werden, der Python Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändert haben, diese Änderungen nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile des Experiments in Python (oder anderen Programmiersprachen) zu programmieren und dennoch im Builder weiterarbeiten zu können.</p>
+<aside>
+Falls Sie planen ein Online-Experiment durchzuführen, eignet sich der Builder besonders, da die Experimente direkt online durchgeführt werden können.
+</aside>
+</section>
+</section>
+<section id="experiment-erstellen" class="level1 page-columns page-full">
+<h1>2. Experiment erstellen</h1>
+<section id="stimuli" class="level2">
+<h2 class="anchored" data-anchor-id="stimuli">2.1 Stimuli</h2>
+<p>In PsychoPy finden Sie schon vorprogrammierte Stimulus Elemente, wie Gratings oder Rating Scales und können Texte, geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
+<ul>
+<li><p>Erstellen Sie einen <strong>Stimulus</strong>. Beachten Sie folgende Aspekte:</p>
+<ul>
+<li><p>Farbe</p></li>
+<li><p>Grösse</p></li>
+<li><p>weitere Eigenschaften, wie Bedingung/Kongruenz?</p></li>
+<li><p>Timing (Stimulusdauer, Stimulusende)</p></li>
+</ul></li>
+<li><p>Notieren Sie, welche Eigenschaften des Stimulus sich über die Trials hinweg verändern sollte. Dies können auch mehrere Eigenschaften sein. Diese Liste benötigen Sie später.</p></li>
+</ul>
+</section>
+<section id="trial" class="level2">
+<h2 class="anchored" data-anchor-id="trial">2.2 Trial</h2>
+<ul>
+<li><p>Ergänzen Sie alle Elemente, die für einen vollständigen Trial notwendig sind:</p>
+<ul>
+<li><p>Antwort der Versuchsperson / Response (siehe auch 2.4)</p></li>
+<li><p>Inter-Trial-Intervall (ITI): kann vor oder nach dem Stimulus eingefügt werden. (Die Zeit des ITI wird oft variiert. Dies müsste also auch auf die Liste oben)</p></li>
+<li><p>Fixationskreuz?</p></li>
+<li><p>Mask?</p></li>
+<li><p>Feedback?</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="trialschleife" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="trialschleife">2.3 Trialschleife</h2>
+<p>Sie müssen nicht alle Trials (oder in PsychoPy: <code>Routines</code>) des Experiments einzeln programmieren, sondern können diese wiederholen, in dem Sie eine <strong>Trial</strong>-Schleife (<code>loop</code>) um den Trial herum erstellen.</p>
+<ul>
+<li><p>Erstellen Sie einen <code>loop</code>indem Sie im Feld <code>Flow</code> auf <code>Insert loop</code> klicken.</p>
+<ul>
+<li><p>Mit <code>loopType</code> können Sie steuern, die Bedingungen randomisiert/gemischt oder sequentiell/der Reihe nach angezeigt werden sollen.</p></li>
+<li><p>Mit <code>nReps</code> können Sie angeben, wie oft jeder Stimulus wiederholt werden soll. Haben Sie also einen Stimulus mit zwei zu varierenden Eigenschaften (die je 3 Stufen haben) (also 9 Zeilen im <code>conditions</code>-File und <code>nReps</code>= 2, ergibt das 18 Trials.</p></li>
+</ul></li>
+</ul>
+<p>Mittels diesen Schleifen können die Bedingungen implementiert werden z.B. dass sich der Stimulus bei jedem Trial verändert. Dies kann mit einer <code>conditions</code>-Datei spezifiziert werden, idealerweise im <code>.csv</code> oder <code>.xlsx</code>-Format.</p>
+<aside>
+Die Endung <code>.csv</code> bedeutet, dass die Daten als <em>comma separated values</em> abgespeichert werden, also durch ein Komma getrennt. Dieses Dateiformat eignet sich besser als <code>.xlsx</code>, weil es mit vielen Programmen kompatibel und gut einlesbar ist.
+</aside>
+<p><em>Beispielsweise wollen wir drei verschiedene Worte anzeigen (<code>dog</code>, <code>cat</code> und <code>rabbit</code>) und dieses Wort unterschiedlich lange anzeigen (Dauer: <code>1</code>, <code>10</code> und <code>100</code> Frames). Die Versuchspersonen sollen dann den Anfangsbuchstaben des Wortes drücken, also <code>d</code> für <code>dog</code>, <code>c</code> für <code>cat</code> und <code>r</code> für <code>rabbit</code>.</em></p>
+<ul>
+<li><p>Um die Bedingungen (in unserem Fall: die sich verändernden Stimuluseigenschaften) zu definieren, erstellen wir eine <code>.csv</code>oder <code>.xlsx</code>-Datei (z.B. in Excel/Notepad/etc.) mit dem Namen <code>conditions</code> und speichern dieses im selben Ordner wie das Experiment.</p>
+<ul>
+<li><p>Fügen Sie für jedes sich verändernde Element einen Variablennamen und die entsprechenden Werte ein (dies sind die Eigenschaften, die Sie sich bei Punkt 2.1 notiert haben). Die <strong>Variablennamen</strong> schreiben wir immer in die oberste Zeile der Datei.</p>
+<p><em>Wenn wir z.B. einen Text anzeigen möchten, schreiben wir in die erste Zeile <code>word</code> und <code>duration</code>.</em></p></li>
+<li><p>In die Spalte unter die Variablennamen schreiben wir die Werte.</p>
+<p><em>Als Beispiel könnten die Worte die wir anzeigen lassen wollen <code>cat</code>, <code>dog</code> und <code>rabbit</code> lauten. Dann stehen in der Spalte <code>word</code>, diese 3 Wörter unter dem Variablennamen. Unter dem Variablennamen <code>duration</code> geben wir die Anzahl Frames ein, also <code>1</code>, <code>10</code> und <code>100</code>. Wir wollen jedes Wort mit jeder Dauer kombinieren. Das ergibt 9 Zeilen.</em></p></li>
+<li><p>Fügen Sie in jeder Zeile unter dem Variablennamen <code>corrAns</code> die jeweils korrekte Antwort ein.</p></li>
+<li><p>Fügen Sie, falls vorhanden, in jeder Zeile weitere wichtige Information zum Stimulus ein.</p>
+<p><em>Im Beispiel möchten Sie z.B. später fleischfressende mit pflanzenfressenden Tieren vergleichen, deshalb eine Spalte <code>meat</code>. Dies verändert im Experiment nichts, dient aber am Schluss zur Auswertung, weil diese Variable auch immer in den Datensatz geschrieben wird.</em></p></li>
+</ul>
+<p><img src="img/psychopy_conditionsfile_example.JPG" class="img-fluid"></p></li>
+<li><p>Fügen Sie nun im Loop-Fenster die <code>conditions</code>-Datei ein.</p>
+<p><img src="img/psychopy_trialloop_example.jpg" class="img-fluid"></p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jede Zeile in der <code>conditions</code>-Datei unterhalb des Variablennamens entspricht einer Bedingung (condition).</p>
+<p>Setzen Sie <code>nReps</code> auf 1 während Sie das Experiment erstellen, so sparen Sie Zeit.</p>
+</div>
+</div>
+<p>Im PsychoPy können Sie Variablen mit einem vorangestellten <code>$</code>einfügen.</p>
+<ul>
+<li><p>Öffnen Sie nun wieder das Stimulusfenster und passen Sie dort die Stimuluseigenschaften an. Anstatt von <em>hard-coded values</em> (also einmalig, fix festgelegten Werten) geben wir nun einen Variablennamen ein. Der Stimulus darf nicht auf <code>constant</code> gesetzt sein, sonst kann er sich nicht Trial für Trial verändern, setzen Sie ihn deshalb unbedingt auf <code>set every repeat</code>.</p>
+<p><em>In unserem Beispiel fügen wir bei <code>text</code> die Laufvariable (verändernde Eigenschaft) ein: <code>$word</code>. Die Anzeigedauer des Textes soll <code>$duration</code> in Frames sein.</em></p></li>
+</ul>
+<p><img src="img/psychopy_variable.jpg" class="img-fluid"></p>
+<ul>
+<li>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit dieser Methode können Sie auch Instruktionen, ITIs, etc. variieren lassen.</p>
+</div>
+</div>
+</section>
+<section id="antworten-aufnehmen" class="level2">
+<h2 class="anchored" data-anchor-id="antworten-aufnehmen">2.4 Antworten aufnehmen</h2>
+<p>In PsychoPy muss definiert werden, wie die Antwort der Versuchsperson aufgenommen wird. Dies kann mit der Maus, der Tastatur oder anderen Devices umgesetzt werden. Die Möglichkeiten sehen Sie unter <code>Responses</code>.</p>
+<ul>
+<li><p>Fügen Sie eine <strong>Antwortkomponente</strong> hinzu und benennen Sie diese sinnvoll.</p>
+<p><em>In unserem Beispiel möchten wir, dass die Versuchsperson mittels Keyboard antwortet.</em></p>
+<ul>
+<li><p>Mit <code>Force end of Routine</code> können Sie einstellen, ob eine Antwort den Trial beendet und mit dem nächsten fortfährt.</p></li>
+<li><p>Der Namen der Antwortkomponente wird später im Datensatz als Variable zu finden sein.</p>
+<p><em>Werden in einer Antwortkomponente namens <code>key_resp</code> mittels Tastendruck <em>Antwort</em> und <em>Response Time</em> aufgenommen, heissen die Variablen dann <code>key_resp.keys</code>(gedrückte Taste) und <code>key_resp.rt</code> (Antwortdauer).</em></p></li>
+<li><p>Entscheiden Sie, ob PsychoPy überprüfen soll, ob die richtige Antwort gegeben wurde.</p>
+<p><em>Wenn Sie dies möchten, gleicht PsychoPy in unserem Beispiel die gegebene Antwort (<code>key_resp.keys</code>) mit der dafür eingegebenen Variable (hier <code>corrAns</code>) ab. Stimmen diese überein, fügt es in die Variable <code>key_resp.corr</code> 1 ein, wenn nicht 0).</em></p></li>
+<li><p>Mit <code>first key</code> definieren Sie, dass der erste Tastendruck zählt.</p></li>
+</ul>
+<p><img src="img/psychopy_resp_1.jpg" class="img-fluid"></p>
+<p><img src="img/psychopy_resp_2.jpg" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="weitere-elemente" class="level2">
+<h2 class="anchored" data-anchor-id="weitere-elemente">2.5 Weitere Elemente</h2>
+<p>In PsychoPy GUI wird Ihnen im Fenster <code>Flow</code>eine Art Flowchart angezeigt. Hier sehen Sie, welche Elemente Ihr aktuelles Experiment enthält.</p>
+<ul>
+<li><p>Fügen Sie nun alle weiteren Elemente, die Sie zu Beginn auf Ihrer Flowchart eingezeichnet hatten, z.B.</p>
+<ul>
+<li><p>Begrüssung</p></li>
+<li><p>Einverständnis</p></li>
+<li><p>Instruktion</p></li>
+<li><p>Debriefing, Verabschiedung</p></li>
+</ul></li>
+<li><p>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Programmieren lohnt es sich oft, die kleinen Schritte zwischenzutesten, weil es dann einfacher ist herauszufinden, wo genau der Fehler passiert ist.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="datenspeicherung" class="level1">
+<h1>3. Datenspeicherung</h1>
+<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einer trial-by-trial <code>.csv</code>-Datei. Das bedeutet, dass jeder Trial 1 Zeile generiert. Die <code>.csv</code>-Datei erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die <code>.csv</code>-Dateien werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
+<p>In den Fenstern der Elemente kann jeweils angegeben werden, was alles gespeichert werden soll.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</p>
+</div>
+</div>
+<p><em>Das oben verwendete Beispielsexperiment ergibt folgenden Datensatz:</em></p>
+<p><img src="img/psychopy_data_example.jpg" class="img-fluid"></p>
+<p>Sie sehen die Infos aus der <code>conditions</code>-Datei (gelb), die Zählerinformationen der Loops (hellgrau), die Timinginformationen (dunkelgrau), die Antwortinformationen (blau) und die Experimentinformationen (grün).</p>
+</section>
+<section id="test-pilotierung" class="level1">
+<h1>4. Test / Pilotierung</h1>
+<ul>
+<li><p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind alle wichtigen Informationen auf jeder Zeile vorhanden?</p>
+<ul>
+<li><p>Versuchspersonen-ID</p></li>
+<li><p>Bedingung</p></li>
+<li><p>Stimuluseigenschaften (z.B. word)</p></li>
+<li><p>Antwort der Versuchsperson</p></li>
+<li><p>Antwortdauer der Versuchsperson</p></li>
+<li><p>Antwort korrekt?</p></li>
+</ul></li>
+<li><p>Können die Daten überschrieben werden?</p></li>
+<li><p>Lassen Sie jemanden anderes Ihr Experiment durchführen, und geben Sie einander Feedback.</p></li>
+</ul>
+</section>
+<section id="verwenden-von-codekomponenten-im-builder" class="level1 page-columns page-full">
+<h1>5. Verwenden von Codekomponenten im Builder</h1>
+<p>Auch wenn man das Experiment im Builder erstellt erfordern einige Experimentelemente das Verwenden von <strong>Codekomponenten</strong>. In diesem Abschnitt werden zwei häufige Anwendungsbeispiele besprochen: Die variable Blockdauer (z.B. für Fixationskreuze oder ITIs) und das Geben von Feedback (z.B. in einem Übungsdurchgang).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If-else Statements in Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Python können Sie für verschiedene Fälle (<code>cases</code>) andere Aktionen ausfüllen, indem Sie If-else Statements nutzen.</p>
+<p>Ein If-else Statement enthält ein <code>if</code> (<em>wenn</em>), einer <code>condition</code> (<em>das zutrifft</em>), einem <code>body</code> (<em>dann mach das</em>).</p>
+<p>Ergänzt kann dies werden mit <code>ifelse</code> (<em>oder wenn</em>)+ <code>condition</code> (<em>das zutrifft</em>) + <code>body</code> (<em>dann mach das</em>) und einem <code>else</code> (<em>wenn nichts davon zutrifft</em>) + <code>body</code> (<em>dann mach das</em>).</p>
+<p><strong>Wichtig:</strong> - Python ist <em>indetation-sensibel</em>, das bedeutet: Die Einrückung (1 Tab) muss stimmen, sonst funktioniert der Code nicht. Auch der <em>Doppelpunkt</em> <code>:</code> ist wichtig und muss an der richtigen Stelle stehen. Wenn Sie mehrere <code>conditions</code> verwenden möchten, müssen Sie diese in <em>Klammern</em> <code>()</code> setzen. Hier sehen Sie die Syntax eines If-else Statements:</p>
+<pre><code>if (condition):
+    body
+    
+ifelse (condition):
+    body
+    
+else:
+    body</code></pre>
+</div>
+</div>
+<aside>
+Einführung in Python auf Datacamp: 👉🏼 <a href="https://app.datacamp.com/learn/courses/intro-to-python-for-data-science">Introduction to Python</a>
+</aside>
+<section id="variable-dauer-von-elementen" class="level2">
+<h2 class="anchored" data-anchor-id="variable-dauer-von-elementen">5.1 Variable Dauer von Elementen</h2>
+<section id="fixationskreuz-und-iti-mit-randomisierter-dauer" class="level3">
+<h3 class="anchored" data-anchor-id="fixationskreuz-und-iti-mit-randomisierter-dauer">Fixationskreuz und ITI mit randomisierter Dauer</h3>
+<p>Um das Experiment für die Versuchsperson unvorhersehbarer zu machen, implementieren wir vor dem eigentlichen Stimulus ein Fixationskreuz mit variabler Länge. Diese Länge soll 0.2, 0.4, 0.6, oder 0.8 Sekunden betragen.</p>
+<ul>
+<li><p>Fügen Sie einen Codeblock <code>code_fixationcross</code> ein und definieren Sie unter <code>Begin Routine</code> die Variable <code>fixationcross_duration</code>.</p>
+<p><img src="img/psychopy_codecomponent_1.png" class="img-fluid"></p></li>
+<li><p>Fügen Sie einen Textblock <code>fixationcross</code> ein mit dem Text <code>+</code> und Schriftgrösse <code>10</code>. Geben Sie unter <code>duration</code> Ihre vorher definierte Variable ein (vergessen Sie dabei das <code>$</code> nicht): <code>$fixationcross_duration</code>.</p>
+<p><img src="img/psychopy_codecomponent_2.png" class="img-fluid"></p></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Variable ITI einbauen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fügen Sie nach dem Stimulus eine ITI mit variabler Dauer hinzu.</p>
+<p><strong>Einfachere Variante:</strong> Die ITI soll 10, 20, 30, 40 oder 50 Frames betragen.</p>
+<p><strong>Schwierigere Variante:</strong> Die ITI soll eine Zufallszahl zwischen 0.2 und 0.8 Sekunden betragen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="feedback" class="level2">
+<h2 class="anchored" data-anchor-id="feedback">5.2 Feedback</h2>
+<p>Es gibt Experimente, welche Feedback erfordern. Oft wird vor der Datenerhebung ein Übungsblock eingebaut, welcher Feedback enthält, so dass die Versuchspersonen wissen, ob sie den Task richtig verstanden haben.</p>
+<ul>
+<li><p>Erstellen Sie zuerst eine <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#trialschleife">Trialschleife</a> mit einem Stimulus und einer Response.</p></li>
+<li><p>Fügen Sie nach dem Stimulus und der Antwort (aber innerhalb der Trialschleife!) eine Routine <code>feedback</code> ein.</p></li>
+<li><p>Fügen Sie innerhalb der Routine <code>feedback</code> eine <strong>Codekomponente</strong> hinzu. In dieser Komponente können Sie nun</p>
+<p><img src="img/psychopy_feedback1.jpg" class="img-fluid"></p></li>
+<li><p>Fügen Sie nun eine <strong>Textkomponente</strong> hinzu und fügen Sie beim Textfeld die Variable <code>$response_msg</code> ein, damit die Versuchsperson abhängig von ihrer Antwort das entsprechende Feedback erhält, welches zuvor in der Codekomponente definiert wurde.</p>
+<p><img src="img/psychopy_feedback2.jpg" class="img-fluid"></p></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Feedback geben
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sie können mittels einer <strong>Codekomponente</strong> auch reagieren, wenn die Versuchsperson zu schnell, zu langsam oder gar nicht antwortet.</p>
+<ul>
+<li>Erstellen Sie einen Übungsdurchgang. Fügen Sie eine Code-Komponente hinzu und legen Sie fest, welches Feedback die Versuchsperson erhalten soll.</li>
+</ul>
+<p><strong>Einfache Variante:</strong> Geben Sie der Person Feedback, ob ihre Antwort richtig oder falsch war.</p>
+<p><strong>Mittelschwere Variante:</strong> Geben Sie der Person Feedback, wenn Sie zu schnell oder zu langsam antwortet.</p>
+<p><strong>Schwere Variante:</strong> Erstellen Sie einen Counter, welcher der Versuchsperson anzeigt, wie gut sie ist, indem für jede richtige Antwort 5 Punkte erhält, für jede falsche Antwort 5 Punkte abgezogen werden.</p>
+<p>Falls Sie zur Geschwindigkeit Rückmeldung geben wollen oder einen Counter bauen, können Sie etwas in dieser Art machen.</p>
+<pre><code>if dots_keyboard_response.keys is None:
+    response_text = "miss"
+
+elif dots_keyboard_response.rt &lt;= 0.1:
+    response_text = "too fast"
+
+else:
+    if (direction == "left" and dots_keyboard_response.keys == "f" or 
+        direction == "right" and dots_keyboard_response.keys == "j"):
+        response_text = "+5 points"
+    else:
+        response_text = "+0 points"
+    </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="weitere-wichtige-punkte" class="level1 page-columns page-full">
+<h1>6. Weitere wichtige Punkte</h1>
+<section id="degrees-of-visual-angle" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="degrees-of-visual-angle">6.1 Degrees of Visual Angle</h2>
+<p>Oftmals werden Grössenangaben von Stimuli noch in Pixel oder Zentimeter, sondern in <em>degrees of visual angle</em> gemacht. Dies hat den Vorteil, dass die Angaben nicht vom Monitor selber oder der Entferung vom Monitor abhängig sind. <em>Degrees of visual angle</em> gibt die wahrgenommene Grösse des Stimulus an, und berücksichtigt die Grösse des Monitors und des Stimulus, und die Entfernung der Versuchsperson vom Monitor. Weitere Informationen dazu finden Sie auf der Website von <a href="https://osdoc.cogsci.nl/3.3/visualangle/">OpenSesame</a>. Üblicherweise entspricht ein <em>degrees of visual angle</em> etwa einem cm bei einer Entfernung von 57 cm vom Monitor.</p>
+<aside>
+<a href="https://osdoc.cogsci.nl/">OpenSesame</a> ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
+</aside>
+<p>Zur Umrechnung zwischen cm und <em>degrees of visual angle</em> finden Sie unter diesem <a href="https://www.sr-research.com/eye-tracking-blog/background/visual-angle/">Link</a> mehr Information.</p>
+</section>
+<section id="timing" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="timing">6.2 Timing</h2>
+<p><strong>Frames vs.&nbsp;time (sec or ms)</strong>: Die präziseste Art zur Steuerung des Timings von Stimuli besteht darin, sie für eine festgelegte Anzahl von Frames zu präsentieren. Bei einer Framerate von 60 Hz können Sie Ihren Stimulus nicht z. B. 120 ms lange präsentieren; die Bildperiode würde Sie auf einen Zeitraum von 116,7 ms (7 Bilder) oder 133,3 ms (8 Bilder) beschränken. Dies ist besonders wichtig für Reaktionszeit-Aufgaben und EEG-Studien, wo ein präzises Millisekunden-Timing erforderlich ist. Hier finden Sie weitere Informationen zu diesem Thema: <a href="https://www.psychopy.org/coder/codeStimuli.html">Presening Stimuli - Psychopy</a>.</p>
+<aside>
+Hertz ist eine Einheit die angibt, wie häufig etwas pro Sekunde passiert. Hertz kann wie <em>Mal pro Sekunde</em> ausgesprochen werden. 60 Hertz bedeutet also, 60 Mal pro Sekunde.
+</aside>
+</section>
+<section id="individualisierte-aufgabenschwierigkeit-schwellenmessung" class="level2">
+<h2 class="anchored" data-anchor-id="individualisierte-aufgabenschwierigkeit-schwellenmessung">6.3 Individualisierte Aufgabenschwierigkeit / Schwellenmessung</h2>
+<p>Im Random Dot Experiment macht es z.B. für gewisse Fragestellungen Sinn die Aufgabenschwierigkeit für jede Person anzupassen, da sonst ceiling/floor-Effekte auftreten können.</p>
+<p>In PsychoPy kann ein Staircase in einem Loop verwendet werden, um die Schwierigkeit einer Aufgabe basierend auf der Leistung der Teilnehmer dynamisch anzupassen. Sie ist besonders häufig in Experimenten zur Schwellenmessung, bei denen das Ziel darin besteht, die kleinste wahrnehmbare Reizintensität zu bestimmen. Hier finden Sie weitere Informationen zu diesem Thema: <a href="https://www.psychopy.org//general/staircases.html">Using a Staircase - PsychoPy</a>.</p>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+  author = {Wyssen, Gerda and Borer, Rebekka and Fitze, Daniel and
+    Ellis, Andrew},
+  title = {Verhaltensexperimente Mit {PsychoPy}},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
+Wyssen, Gerda, Rebekka Borer, Daniel Fitze, and Andrew Ellis. n.d.
+<span>“Verhaltensexperimente Mit PsychoPy.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/psychopy_experiments.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
+        }
+      } else {
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/kogpsy\.github\.io\/neuroscicomplabFS24\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kogpsy/neuroscicomplabFS24">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

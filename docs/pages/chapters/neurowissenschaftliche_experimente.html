@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.221">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gerda Wyssen">
+<meta name="author" content="Daniel Fitze">
+
+<title>Neurowissenschaft Computerlab - Neurowissenschaftliche Experimente</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//assets/logo_landing.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles/global.css">
+<link rel="stylesheet" href="../../include/webex.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Neurowissenschaft Computerlab</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">🗄️ Admin</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">    
+        <li>
+    <a class="dropdown-item" href="../../pages/admin/wichtiges.html" rel="" target="">
+ <span class="dropdown-text">📚 Wichtiges zum Kurs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../pages/admin/termine.html" rel="" target="">
+ <span class="dropdown-text">📝 Terminübersicht</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Neurowissenschaftliche Experimente</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Einführung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computerlab</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sprachen &amp; Umgebungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/datacamp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DataCamp</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/programmieren_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Experimente programmieren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/neurowissenschaftliche_experimente.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaltensexperimente mit PsychoPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/stroop_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stroop Paradigma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/random_dot_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Random Dot Paradigma</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_1_experiment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 1 - Psychopy Experiment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data wrangling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Daten importieren und vorverarbeiten</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Daten visualisieren</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Analysemethoden</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Modellierung von Daten</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Glossar</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#forschungsbereiche-der-neurowissenschaften" id="toc-forschungsbereiche-der-neurowissenschaften" class="nav-link active" data-scroll-target="#forschungsbereiche-der-neurowissenschaften">Forschungsbereiche der Neurowissenschaften</a></li>
+  <li><a href="#experimente-in-den-kognitiven-neurowissenschaften" id="toc-experimente-in-den-kognitiven-neurowissenschaften" class="nav-link" data-scroll-target="#experimente-in-den-kognitiven-neurowissenschaften">Experimente in den Kognitiven Neurowissenschaften</a>
+  <ul class="collapse">
+  <li><a href="#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" id="toc-besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" class="nav-link" data-scroll-target="#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften">Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften</a>
+  <ul class="collapse">
+  <li><a href="#präzision-hohe-räumliche-und-zeitliche-auflösung" id="toc-präzision-hohe-räumliche-und-zeitliche-auflösung" class="nav-link" data-scroll-target="#präzision-hohe-räumliche-und-zeitliche-auflösung">Präzision: Hohe räumliche und zeitliche Auflösung</a></li>
+  <li><a href="#synchronisation-mehrere-datenspuren" id="toc-synchronisation-mehrere-datenspuren" class="nav-link" data-scroll-target="#synchronisation-mehrere-datenspuren">Synchronisation: Mehrere Datenspuren</a></li>
+  <li><a href="#komplexität-zu-untersuchender-prozess-und-störprozesse" id="toc-komplexität-zu-untersuchender-prozess-und-störprozesse" class="nav-link" data-scroll-target="#komplexität-zu-untersuchender-prozess-und-störprozesse">Komplexität: Zu untersuchender Prozess und Störprozesse</a></li>
+  <li><a href="#datenerhebung-teuer-und-anspruchsvoll" id="toc-datenerhebung-teuer-und-anspruchsvoll" class="nav-link" data-scroll-target="#datenerhebung-teuer-und-anspruchsvoll">Datenerhebung: Teuer und anspruchsvoll</a></li>
+  <li><a href="#passendes-experiment-muss-selber-erstellt-werden" id="toc-passendes-experiment-muss-selber-erstellt-werden" class="nav-link" data-scroll-target="#passendes-experiment-muss-selber-erstellt-werden">Passendes Experiment muss selber erstellt werden</a></li>
+  </ul></li>
+  <li><a href="#wichtige-elemente-von-experimenten" id="toc-wichtige-elemente-von-experimenten" class="nav-link" data-scroll-target="#wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</a>
+  <ul class="collapse">
+  <li><a href="#begrüssung-und-einverständniserklärung" id="toc-begrüssung-und-einverständniserklärung" class="nav-link" data-scroll-target="#begrüssung-und-einverständniserklärung">Begrüssung und Einverständniserklärung</a></li>
+  <li><a href="#instruktion" id="toc-instruktion" class="nav-link" data-scroll-target="#instruktion">Instruktion</a></li>
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">Stimuli</a></li>
+  <li><a href="#trial" id="toc-trial" class="nav-link" data-scroll-target="#trial">Trial</a></li>
+  <li><a href="#run-block" id="toc-run-block" class="nav-link" data-scroll-target="#run-block">Run / Block</a></li>
+  <li><a href="#debriefing-und-verabschiedung" id="toc-debriefing-und-verabschiedung" class="nav-link" data-scroll-target="#debriefing-und-verabschiedung">Debriefing und Verabschiedung</a></li>
+  </ul></li>
+  <li><a href="#vorgehen-experiment-programmieren" id="toc-vorgehen-experiment-programmieren" class="nav-link" data-scroll-target="#vorgehen-experiment-programmieren">Vorgehen Experiment programmieren</a>
+  <ul class="collapse">
+  <li><a href="#flowcharts" id="toc-flowcharts" class="nav-link" data-scroll-target="#flowcharts">Flowcharts</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Experimente programmieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/neurowissenschaftliche_experimente.html">Neurowissenschaftliche Experimente</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Neurowissenschaftliche Experimente</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="https://www.kog.psy.unibe.ch">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+            </a>
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+</header>
+
+<blockquote class="blockquote">
+<p>Nothing in neuroscience makes sense except in the light of behavior.</p>
+<p><span class="citation" data-cites="shepherd_neurobiology_1988">Shepherd (<a href="#ref-shepherd_neurobiology_1988" role="doc-biblioref">1988</a>)</span></p>
+</blockquote>
+<section id="forschungsbereiche-der-neurowissenschaften" class="level1 page-columns page-full">
+<h1>Forschungsbereiche der Neurowissenschaften</h1>
+<p>In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht. Neurowissenschaften sind ein sehr weites Forschungsbereich in dem unterschiedlichste und zahlreiche Themen bearbeitet werden. Zur Neurowissenschaft zählen u.a. folgende Bereiche:</p>
+<table class="table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bereich</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Affective neuroscience</td>
+<td>Zusammenhang Gehirn und emotionale Zustände</td>
+</tr>
+<tr class="even">
+<td>Behavioral neuroscience</td>
+<td>Einfluss des Gehirns auf Verhalten</td>
+</tr>
+<tr class="odd">
+<td>Clinical neuroscience</td>
+<td>Störungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation</td>
+</tr>
+<tr class="even">
+<td>Cognitive neuroscience</td>
+<td>Neuronale Grundlagen von kognitiven Prozessen</td>
+</tr>
+<tr class="odd">
+<td>Computational neuroscience</td>
+<td>Simulation und Modellierung von Hirnfunktionen</td>
+</tr>
+<tr class="even">
+<td>Cultural neuroscience</td>
+<td>Einfluss kultureller Faktoren auf das Gehirn</td>
+</tr>
+<tr class="odd">
+<td>Developmental neuroscience</td>
+<td>Entwicklung des Nervensystems über die ganze Alterspanne</td>
+</tr>
+<tr class="even">
+<td>Evolutionary neuroscience</td>
+<td>Evolution des Nervensystems</td>
+</tr>
+<tr class="odd">
+<td>Molecular and cellular neuroscience</td>
+<td>Rolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems sowie meuronale Prozesse auf Zellebene</td>
+</tr>
+<tr class="even">
+<td>Neuroanatomy</td>
+<td>Anatomie des Nervensystems</td>
+</tr>
+<tr class="odd">
+<td>Neuroengineering</td>
+<td>neuronale Systeme verstehen, ersetzen, reparieren oder verbessern</td>
+</tr>
+<tr class="even">
+<td>Neurochemistry</td>
+<td>Chemische Prozesse im Nervensystem und Neurotransmitter sowie psychopharmakologische Anwendungen</td>
+</tr>
+<tr class="odd">
+<td>Neuroimaging</td>
+<td>Teilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn</td>
+</tr>
+<tr class="even">
+<td>Neuroinformatics</td>
+<td>Entwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten</td>
+</tr>
+<tr class="odd">
+<td>Neurolinguistics</td>
+<td>Rolle des Gehirns beim Erwerben, Speichern, Verstehen und Ausdrücken von Sprache</td>
+</tr>
+<tr class="even">
+<td>Neurophysiology</td>
+<td>Rolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen</td>
+</tr>
+<tr class="odd">
+<td>Neuropsychology</td>
+<td>Neuropsychologische Prozesse und Krankheitsbilder</td>
+</tr>
+<tr class="even">
+<td>Sensory neuroscience</td>
+<td>Sensorische Systeme und die Interpretation deren Informationen durch das Nervensystem</td>
+</tr>
+<tr class="odd">
+<td>Social neuroscience</td>
+<td>Neuronale Grundlagen von sozialen Prozessen und Verhalten</td>
+</tr>
+<tr class="even">
+<td>Systems neuroscience</td>
+<td>Funktion von neuronalen Verbindungen und Systemen</td>
+</tr>
+</tbody>
+</table>
+<aside>
+Das <a href="https://www.philhum.unibe.ch/studium/studienprogramme/neurowissenschaft/index_ger.html">Nebenfach <em>Neurowissenschaften</em></a> an der Universität Bern fokussiert auf Aspekte der Neurowissenschaft, die für das Gebiet der Psychologie relevant sind, wie z. B. die neuronalen Grundlagen von Kognition, Emotion oder Sozialverhalten.
+</aside>
+<p>Quelle: <a href="https://en.wikipedia.org/wiki/Neuroscience">Wikipedia</a></p>
+<p>Neurowissenschaftliche Forschung wird oft an Organismen und Tieren durchgeführt (z.B. Einzelzellableitungen in Affen). In diesem Kurs fokussieren wir uns auf neurowissenschaftliche Forschung am Menschen im Bereich der kognitiven Neurowissenschaft und Neuropsychologie. Das bedeutet wir besprechen die Datenerhebung und -verarbeitung in verhaltenswissenschaftlichen Experimenten (teilweise auch im Zusammenhang mit bildgebenden Verfahren), welche Gehirnprozesse von Menschen untersuchen.</p>
+<p>Kognitive Neurowissenschaften sind eng verknüpft mit Forschungsbereichen, wie beispielsweise der Psychologie, der Linguistik, künstlicher Intelligenz, Philosophie und Anthropologie:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/hexagon.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Grafik von <a href="https://github.com/oliviaguest/cogsci-hexagon">O. Guest (2024)</a> modifiziert nach dem Paper von <span class="citation" data-cites="van_rooij_reclaiming_2023">Van Rooij et al. (<a href="#ref-van_rooij_reclaiming_2023" role="doc-biblioref">2023</a>)</span></figcaption>
+</figure>
+</div>
+<aside>
+Wer sich für die Bedeutung von AI im Zusammenhang mit den Neurowissenschaften interessiert findet im Paper von <span class="citation" data-cites="van_rooij_reclaiming_2023">Van Rooij et al. (<a href="#ref-van_rooij_reclaiming_2023" role="doc-biblioref">2023</a>)</span> eine kritische Auseinandersetzung mit Chancen und Herausforderungen dieser Verknüpfung.
+</aside>
+</section>
+<section id="experimente-in-den-kognitiven-neurowissenschaften" class="level1 page-columns page-full">
+<h1>Experimente in den Kognitiven Neurowissenschaften</h1>
+<p>Neurowissenschaftliche Experimente müssen exakt auf die Fragestellung zugeschnitten werden um aussagekräftige Daten zu liefern. Deshalb programmieren die meisten Forschenden ihre Experimentalparadigmen selbst. So können beispielsweise Instruktionen oder verwendete Stimuli, deren Grösse und Anzeigedauer präzise definiert werden.</p>
+<p>Im Nachfolgenden gehen wir auf einige wichtige Punkte für das Erstellen und Durchführen neurowissenschaftlicher Experimente ein.</p>
+<section id="besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften" class="level2">
+<h2 class="anchored" data-anchor-id="besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften">Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften</h2>
+<section id="präzision-hohe-räumliche-und-zeitliche-auflösung" class="level3">
+<h3 class="anchored" data-anchor-id="präzision-hohe-räumliche-und-zeitliche-auflösung">Präzision: Hohe räumliche und zeitliche Auflösung</h3>
+<p>Eine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat. Räumliche Auflösung kann bedeuten, dass sehr präzise visuelle Darbietung möglich sein muss, sowie dass die Versuchsperson sich im Setup nicht bewegen darf, weil dies die Distanzen verschiebt (z.B. im MRT, oder der Abstand zum Bildschirm beim Eyetracking).</p>
+</section>
+<section id="synchronisation-mehrere-datenspuren" class="level3">
+<h3 class="anchored" data-anchor-id="synchronisation-mehrere-datenspuren">Synchronisation: Mehrere Datenspuren</h3>
+<p>Neurowissenschaftliche Experimente beinhalten oft die Datenerhebung auf mehreren Ebenen, z.B. wird gleichzeitig Hirnaktivität und das Drücken von Antwortbuttons aufgenommen. Das bedeutet, dass Bildschirm, MRT/EEG/Eyetracking/etc., sowie die Antwort zeitlich koregistriert/synchronisiert werden müssen, um die Daten im Nachhinein auswerten zu können. Technisch ist das oft mit grossem Aufwand verbunden und benötigt einiges an Pilotierung.</p>
+</section>
+<section id="komplexität-zu-untersuchender-prozess-und-störprozesse" class="level3">
+<h3 class="anchored" data-anchor-id="komplexität-zu-untersuchender-prozess-und-störprozesse">Komplexität: Zu untersuchender Prozess und Störprozesse</h3>
+<p>Oft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?</p>
+<p>Ein Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!</p>
+<p>Sie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie <em>nicht</em> interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.</p>
+</section>
+<section id="datenerhebung-teuer-und-anspruchsvoll" class="level3">
+<h3 class="anchored" data-anchor-id="datenerhebung-teuer-und-anspruchsvoll">Datenerhebung: Teuer und anspruchsvoll</h3>
+<p>Bildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert.</p>
+</section>
+<section id="passendes-experiment-muss-selber-erstellt-werden" class="level3">
+<h3 class="anchored" data-anchor-id="passendes-experiment-muss-selber-erstellt-werden">Passendes Experiment muss selber erstellt werden</h3>
+<p>Oft muss ein neues Paradigma erstellt werden, d.h. Forschende können kein schon bestehendes Experiment nutzen, sondern untersuchen einen Aspekt eines neuronalen Prozesses mit einer neuen Methode, einer neuen Fragestellung oder einem neuen Ansatz. Dies erfordert breiteKenntnisse im Programmieren, der zu verwendenden Technik, wie auch der Gehirnprozesse.</p>
+</section>
+</section>
+<section id="wichtige-elemente-von-experimenten" class="level2">
+<h2 class="anchored" data-anchor-id="wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</h2>
+<p>Beim Programmieren von Experimenten lohnt es sich, sich zuerst darüber im klaren zu sein, welche Bausteine das geplante Experiment hat. Im Folgenden werden einige typische Elemente eines Verhaltensexperiments beschrieben. Oft kommen hier natürlich noch Stimulations- oder Aufnahmemethoden hinzu.</p>
+<section id="begrüssung-und-einverständniserklärung" class="level3">
+<h3 class="anchored" data-anchor-id="begrüssung-und-einverständniserklärung">Begrüssung und Einverständniserklärung</h3>
+<p>Hier wird die Versuchsperson begrüsst, wird über das Experiment aufgeklärt und gibt (wenn nicht vorher auf Papier schon geschehen) ihre Einverständnis zur Teilnahme am Experiment. Dies wird je nach Ethikkommission und Ethikantrag unterschiedlich gehandhabt. Wichtige Informationen sind hierbei, dass die Versuchsperson weiss worauf sie sich einlässt (Ist zum Beispiel Hirnstimulation/fMRI/etc. geplant? Wie lange dauert das Experiment ungefähr? Was soll sie tun, wenn sie abbrechen möchte?). Die Schwierigkeit ist oft, genügend Information zu geben aber die Hypothese nicht zu verraten.</p>
+</section>
+<section id="instruktion" class="level3">
+<h3 class="anchored" data-anchor-id="instruktion">Instruktion</h3>
+<p>Die Instruktion wird oft schriftlich gegeben, um diese zwischen den Versuchspersonen konstant zu halten. Es ist teilweise herausfordernd, einen Task so genau zu erklären, dass er verständlich ist, aber die Erklärung auch kurz genug zu halten, dass die Instruktion auch gelesen wird. Oft werden Übungstrials verwendet um die Instruktion zu verdeutlichen.</p>
+</section>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">Stimuli</h3>
+<p>Unter Stimuli werden die gezeigten Elemente verstanden, die den Task ausmachen. Es können Töne, Bilder, Wörter, etc. als Stimuli verwendet werden.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Stimuli
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welche Stimuli aus neurowissenschaftlichen Experimenten kennen Sie?</p>
+<p>Tauschen Sie sich mit Ihren Mitstudierenden aus und schreiben/zeichnen Sie ein paar Beispiele vorne an die Tafel.</p>
+<p><em>[~5 Minuten]</em></p>
+</div>
+</div>
+</section>
+<section id="trial" class="level3">
+<h3 class="anchored" data-anchor-id="trial">Trial</h3>
+<p>Ein Trial beschreibt ein sich wiederholender Vorgang in dem der Stimulus gezeigt wird und z.B. von der Versuchsperson eine Antwort erwartet wird. Ein Trial wird oft sehr viele Male wiederholt. Die Stimuli können zwischen den Trials variieren oder gleich bleiben. Das Timing der Trials kann konstant sein (ein Stimulus wird bspw. immer gleich lang gezeigt) oder variiert werden (unterschiedliche Anzeigedauer).</p>
+<p>Zwischen den Trials wird ein Inter-Trial-Interval (ITI) festgelegt. Dies wird z.B. bei fMRI Experimenten dann variiert, damit (je nach Repetition Time/TR) nicht immer in derselben Schicht aufgenommen wird bei Stimuluspräsentation.</p>
+<p>Während einem Trial wird die Antwort / Response der Versuchsperson aufgenommen. Bei der Aufnahme von Reaktiosnzeiten muss festgelegt werden, wann der Trial oder die Stimuluspräsentation beginnt und mit welcher Handlung sie endet. Es kann bestimmt werden, welche Antworten zulässig sind (bspw. nur bestimmte Tasten) und was passiert wenn eine richtige oder falsche Antwort gegeben wird: Gibt es z.B. ein Feedback bei falschen Antworten?</p>
+</section>
+<section id="run-block" class="level3">
+<h3 class="anchored" data-anchor-id="run-block">Run / Block</h3>
+<p>Ein Run/ein Block bezeichnet eine Einheit mit mehreren Trials. Oft werden Bedingungen z.B. zwischen den Runs randomisiert. Zwischen den Runs sind Pausen möglich, damit sich die Versuchsperson erholen kann. Oft wird vor dem Experimentstart ein “Übungsblock” durchgeführt, um sich sicher zu sein, dass die Versuchspersonen die Aufgabe und Instruktion verstanden haben.</p>
+</section>
+<section id="debriefing-und-verabschiedung" class="level3">
+<h3 class="anchored" data-anchor-id="debriefing-und-verabschiedung">Debriefing und Verabschiedung</h3>
+<p>Im Debriefing wird der Versuchsperson erklärt, um was es im Experiment gegangen ist, welche Hypothesen untersucht wurden und eine eventuelle Coverstory aufgedeckt. Oft werden Personen vor dem Debriefing nach der getesteten Hypothese gefragt, um zu schauen, ob sie diese erraten hatten. Das gibt Aufschluss darüber wie sehr das Experiment dadurch verzerrt sein könnte, dass die Versuchspersonen Bescheid wissen. Wichtig ist es auch den Versuchspersonen zum Schluss zu danken.</p>
+</section>
+</section>
+<section id="vorgehen-experiment-programmieren" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vorgehen-experiment-programmieren">Vorgehen Experiment programmieren</h2>
+<p>Wichtige Schritte beim Programmieren von Experimenten sind folgende (nicht unbedingt in dieser Reihenfolge, das kommt auf das Experiment an):</p>
+<ul>
+<li><p>Task auswählen</p></li>
+<li><p>Stimuli auswählen</p></li>
+<li><p>Timing festlegen: Dauer Stimuluspräsentation? ITIs (Inter-Trial-Intervals)?</p></li>
+<li><p>Anzahl Bedingungen und Trials bestimmen (Power bedenken), within oder between Design?</p></li>
+<li><p>Ablauf des Experiments festlegen: Gesamtdauer? Pausen nötig?</p></li>
+<li><p>Coverstory, Stimulus-Masking, etc. nötig?</p></li>
+<li><p>Einbindung von allen technischen Geräten (z.B. EEG Recorder, MRT, Brainstimulation-Devices, Eyetracking) und Synchronisation</p></li>
+</ul>
+<section id="flowcharts" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="flowcharts">Flowcharts</h3>
+<p>Bei der Planung und dem Erstellen eines Experiments ist es sehr hilfreich eine Flowchart zu erstellen. In einer Flowchart sind die oben genannten Elemente des Experimentes in Boxen eingezeichnet und mit Pfeilen verbunden um sie zeitlich einzuordnen. Timing-Informationen können unter oder neben den Boxen festgehalten werden. Die Anzahl Repetitionen wird oft neben den Pfeilen eingefügt.</p>
+<aside>
+Wir werden zu einem späteren Zeitpunkt in diesem Kurs darauf eingehen, wie man ein Experiment möglichst gut planen kann um aussagekräftige Daten zu erhalten. Hier gibt es viele Möglichkeiten wie Pilotierung, Datensimulation und die adäquate Wahl der statistischen Verfahren in Bezug auf die Fragestellung.
+</aside>
+<p>Eine Flowchart eignet sich ebenfalls sehr gut, um in einem Artikel darzustellen, wie der Ablauf des Experiments war.</p>
+<!-- ::: callout-caution -->
+<!-- ## Hands-on: Flowcharts -->
+<!-- Erstellen Sie für das _Stroop Experiment_ und das _Random-Dot Experiment_ eine Flowchart. -->
+<!-- Hierzu können Sie gerne verschiedene Artikel zu solchen Experimenten anschauen. -->
+<!-- Sie können dies auf einem Blatt Papier machen oder wenn Sie mögen in R mit dem [`mermaidr` - Package](https://data-mermaid.github.io/mermaidr/). -->
+<!-- In PsychoPy GUI werden Sie dann automatisch eine Art Flowchart angezeigt erhalten, wie [hier](https://link.springer.com/article/10.3758/s13428-018-01193-y/figures/2) ein Beispiel zeigt. -->
+<!-- ::: -->
+
+
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-shepherd_neurobiology_1988" class="csl-entry" role="listitem">
+Shepherd, Gordon M. 1988. <em>Neurobiology, 2nd Ed.</em> Neurobiology, 2nd Ed. New York, NY, US: Oxford University Press.
+</div>
+<div id="ref-van_rooij_reclaiming_2023" class="csl-entry" role="listitem">
+Van Rooij, Iris, Olivia Guest, Federico G Adolfi, Ronald De Haan, Antonina Kolokolova, and Patricia Rich. 2023. <span>“Reclaiming <span>AI</span> as a Theoretical Tool for Cognitive Science.”</span> Preprint. PsyArXiv. <a href="https://doi.org/10.31234/osf.io/4cbuv">https://doi.org/10.31234/osf.io/4cbuv</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+  author = {Wyssen, Gerda and Fitze, Daniel},
+  title = {Neurowissenschaftliche {Experimente}},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaftliche_experimente.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
+Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Neurowissenschaftliche
+Experimente.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaftliche_experimente.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/neurowissenschaftliche_experimente.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
+        }
+      } else {
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/kogpsy\.github\.io\/neuroscicomplabFS24\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kogpsy/neuroscicomplabFS24">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
