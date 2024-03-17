@@ -63,7 +63,7 @@ Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzus
     
 3. Erstellen Sie in diesem Projekt-Ordner einen Ordner namens `data`.
 
-4. Kopieren Sie in den `data`-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS24/downloadable_files/import-data.zip)  Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in den `data`-Ordner Ihres Projekts kopieren.
+4. Kopieren Sie in den `data`-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie [hier](../../downloadable_files/import-data.zip)  Beispiels-Datensätze herunter. Sie müssen den Ordner entzippen und den Stroop-Datensatz in den `data`-Ordner Ihres Projekts kopieren.
 
 5. Erstellen Sie ein neues `.Rmd`-File (`File` > `New File` > `R Markdown`) und speichern Sie dieses unter `data-import` im Projekt-Ordner.
 :::
