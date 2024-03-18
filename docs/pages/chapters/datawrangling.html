@@ -308,6 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when" id="toc-neue-variablen-generieren-und-verändern-mutate-und-case_when" class="nav-link" data-scroll-target="#neue-variablen-generieren-und-ver%C3%A4ndern-mutate-und-case_when">Neue Variablen generieren und verändern: <code>mutate()</code> und <code>case_when()</code></a></li>
   <li><a href="#variablenklasse-ver%C3%A4ndern-as.factor-as.numeric" id="toc-variablenklasse-verändern-as.factor-as.numeric" class="nav-link" data-scroll-target="#variablenklasse-ver%C3%A4ndern-as.factor-as.numeric">Variablenklasse verändern: <code>as.factor()</code>, <code>as.numeric()</code>, …</a></li>
   <li><a href="#daten-gruppieren-und-zusammenfassen-group_by-und-summarise" id="toc-daten-gruppieren-und-zusammenfassen-group_by-und-summarise" class="nav-link" data-scroll-target="#daten-gruppieren-und-zusammenfassen-group_by-und-summarise">Daten gruppieren und zusammenfassen: <code>group_by()</code> und <code>summarise()</code></a></li>
+  <li><a href="#datens%C3%A4tze-speichern-write.csv" id="toc-datensätze-speichern-write.csv" class="nav-link" data-scroll-target="#datens%C3%A4tze-speichern-write.csv">Datensätze speichern: <code>write.csv()</code></a></li>
   <li><a href="#data-wrangling-workflow-implementieren" id="toc-data-wrangling-workflow-implementieren" class="nav-link" data-scroll-target="#data-wrangling-workflow-implementieren">Data wrangling workflow implementieren</a></li>
   </ul></nav>
     </div>
@@ -355,8 +356,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="img/allison_horst_rasafriend.png" class="img-fluid"><a href="https://allisonhorst.com/everything-else">Illustration by Allison Horst</a></p>
 <aside><p>Hilfreiche Datacamp Kurse:</p>
 <ul>
-<li><p>Starthilfe zu RStudio brauchen: <a href="https://www.datacamp.com/tutorial/r-studio-tutorial">RStudio Tutorial</a>.</p></li>
-<li><p><code>R</code> und den <code>tidyverse</code> Packages (1. Kapitel): <a href="https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse">Introduction to the Tidyverse</a>.</p></li>
+<li><p><a href="https://www.datacamp.com/tutorial/r-studio-tutorial">RStudio Tutorial</a>.</p></li>
+<li><p><a href="https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse">Introduction to the Tidyverse</a>.</p></li>
 </ul></aside><section id="datenformate" class="level2"><h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
 <p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und Folgendes zu identifizieren:</p>
 <ul>
@@ -682,6 +683,24 @@ Hands-on: Daten zusammenfassen
 <li><p>Gruppieren Sie den Datensatz für Wortfarbe und Kongruenz.</p></li>
 <li><p>Fassen Sie für diese Gruppen die durchschnittliche Antwortzeit und Accuracy sowie die Standardabweichungen zusammen.</p></li>
 </ul>
+</div>
+</div>
+</section><section id="datensätze-speichern-write.csv" class="level2"><h2 class="anchored" data-anchor-id="datensätze-speichern-write.csv">Datensätze speichern: <code>write.csv()</code>
+</h2>
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-16_fc1071c097a61cb680b21233e4243fa5">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">d_stroop_clean</span>, file <span class="op">=</span> <span class="st">"data/dataset_stroop_clean.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Datensätze speichern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Speichern Sie einen neuen Datensatz mit den vorverarbeiteten Daten.</p>
 </div>
 </div>
 <!-- ## Change the data format from *long* to *wide* and vice versa -->

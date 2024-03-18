@@ -21,7 +21,7 @@ format:
 
 # RStudio Projects
 
-RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles `working directory` für ein Projekt. 
+RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles `working directory` für ein Datenanalyse-Projekt. 
 
 :::callout-caution
 ## Hands-on: Erstellen eines RStudio Projects
@@ -48,7 +48,7 @@ Das Skript der R Markdown Files wird *geknittet* und so - je nach Wahl - zu eine
 
 <aside>Mit R Markdown können auch Präsentationen, Webseiten, Bücher, Lebensläufe, Artikel oder Arbeiten erstellt werden. [Hier](https://rmarkdown.rstudio.com/gallery.html) finden Sie eine Galerie. Die Kurswebsite wurde ebenfalls in R erstellt.</aside>
 
-Das `working memory` innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit _relative_ Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Ordner mit unveränderten Pfaden verwenden können. 
+Das `working memory` innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit _relative_ Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Projekt-Ordner auf Ihrem Computer mit unveränderten Pfaden verwenden können. 
 
 <aside>[Weitere Infos](https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html) zu Pfaden in R Markdown.</aside>
 
@@ -181,8 +181,22 @@ Mit dem grünen Pfeil kann der _Code-Chunk_ einzeln ausgeführt werden. Aber auc
 
 - Knitten Sie das File, um zu überprüfen, ob alles funktioniert 
 
+👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.
+
+__Für Fortgeschrittene:__
+
 - Testen Sie, ob Sie Ihr File auch zu einem PDF knitten können.
 
-👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.
+- Erstellen Sie eine Tabelle
+
+- Erstellen Sie einen [Glossar](https://debruine.github.io/glossary/)
+
+- Erstellen Sie ein Dokument mit Reitern oben (z.B. Data, Preprocessing, Analysis, Conclusions)
+
+- Fügen Sie [interaktive Elemente](https://shiny.posit.co/r/articles/build/interactive-docs/) ein.
+
 :::
+
+
+
 

@@ -32,9 +32,9 @@ In R gibt es sehr viele hilfreiche _Funktionen_ und _Packages_, die für die Vor
 
 <aside>Hilfreiche Datacamp Kurse:
 
-- Starthilfe zu RStudio brauchen: [RStudio Tutorial](https://www.datacamp.com/tutorial/r-studio-tutorial).
+- [RStudio Tutorial](https://www.datacamp.com/tutorial/r-studio-tutorial).
 
-- `R` und den `tidyverse` Packages (1. Kapitel): [Introduction to the Tidyverse](https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse).
+- [Introduction to the Tidyverse](https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse).
 </aside>
 
 ## Datenformate
@@ -356,6 +356,25 @@ Erstellen Sie einen neuen Datensatz `d_stroop_summary`
 - Fassen Sie für diese Gruppen die durchschnittliche Antwortzeit und Accuracy sowie die Standardabweichungen zusammen.
 
 :::
+
+## Datensätze speichern: `write.csv()`
+
+```{r}
+#| eval: false
+
+write.csv(d_stroop_clean, file = "data/dataset_stroop_clean.csv", row.names = FALSE)
+
+```
+
+
+:::callout-caution
+## Hands-on: Datensätze speichern
+
+Speichern Sie einen neuen Datensatz mit den vorverarbeiteten Daten.
+
+:::
+
+
 
 
 <!-- ## Change the data format from *long* to *wide* and vice versa -->
