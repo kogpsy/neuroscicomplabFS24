@@ -351,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="rstudio-projects" class="level1">
 <h1>RStudio Projects</h1>
-<p>RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles <code>working directory</code> für ein Projekt.</p>
+<p>RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles <code>working directory</code> für ein Datenanalyse-Projekt.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -382,7 +382,7 @@ Hands-on: Erstellen eines RStudio Projects
 <aside>
 Mit R Markdown können auch Präsentationen, Webseiten, Bücher, Lebensläufe, Artikel oder Arbeiten erstellt werden. <a href="https://rmarkdown.rstudio.com/gallery.html">Hier</a> finden Sie eine Galerie. Die Kurswebsite wurde ebenfalls in R erstellt.
 </aside>
-<p>Das <code>working memory</code> innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit <em>relative</em> Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Ordner mit unveränderten Pfaden verwenden können.</p>
+<p>Das <code>working memory</code> innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit <em>relative</em> Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Projekt-Ordner auf Ihrem Computer mit unveränderten Pfaden verwenden können.</p>
 <aside>
 <a href="https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html">Weitere Infos</a> zu Pfaden in R Markdown.
 </aside>
@@ -529,9 +529,16 @@ Hands-on: Code in R Markdown einfügen
 <li><p>Erstellen Sie ein Code-Chunk, der ausgeführt wird und dessen Output angezeigt wird. Berechnen Sie in diesem Chunk den Mittelwert und die Standardabweichung von <code>numbers</code>.</p></li>
 <li><p>Erstellen Sie einen Plot mit <code>plot(numbers)</code>.</p></li>
 <li><p>Knitten Sie das File, um zu überprüfen, ob alles funktioniert</p></li>
-<li><p>Testen Sie, ob Sie Ihr File auch zu einem PDF knitten können.</p></li>
 </ul>
 <p>👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.</p>
+<p><strong>Für Fortgeschrittene:</strong></p>
+<ul>
+<li><p>Testen Sie, ob Sie Ihr File auch zu einem PDF knitten können.</p></li>
+<li><p>Erstellen Sie eine Tabelle</p></li>
+<li><p>Erstellen Sie einen <a href="https://debruine.github.io/glossary/">Glossar</a></p></li>
+<li><p>Erstellen Sie ein Dokument mit Reitern oben (z.B. Data, Preprocessing, Analysis, Conclusions)</p></li>
+<li><p>Fügen Sie <a href="https://shiny.posit.co/r/articles/build/interactive-docs/">interaktive Elemente</a> ein.</p></li>
+</ul>
 </div>
 </div>
 
