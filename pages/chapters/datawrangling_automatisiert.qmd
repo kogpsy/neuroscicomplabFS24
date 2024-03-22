@@ -1,0 +1,163 @@
+---
+title: "Automatisiertes importieren und vorverarbeiten"
+description: ""
+execute:
+  output: false
+author:
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY
+citation: true
+bibliography: ../../bibliography_nsci24.bib
+format:
+    html:
+        toc: true
+        code-link: true
+---
+
+```{r}
+#| include: false
+# Set working directory of R
+knitr::opts_knit$set(root.dir = '../..')
+```
+
+
+## Setup
+
+```{r}
+#| warnings: FALSE
+#| errors: FALSE
+#| output: FALSE
+# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)
+library("tidyverse") 
+```
+
+## **Stroop-Experiment** data wrangling
+
+```{r}
+#| output: false
+# Daten vorverarbeiten
+d_stroop = read_csv("data/stroop_example_1.csv") |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(trial = trials_test.thisN + 1) |>
+    select(id = participant, 
+           trial,
+           word, 
+           color, 
+           congruent, 
+           resp = keyResp_test_run.keys, 
+           corr = keyResp_test_run.corr, 
+           rt = keyResp_test_run.rt)
+    
+           
+```
+
+
+## Daten mit eigener [Funktion](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_2.html#funktionen) einlesen
+
+```{r}
+read_stroop = function(path){
+    # Code kopiert von oben
+    d_stroop = read_csv(path) |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(trial = trials_test.thisN + 1) |>
+    select(id = participant, 
+           trial,
+           word, 
+           color, 
+           congruent, 
+           resp = keyResp_test_run.keys, 
+           corr = keyResp_test_run.corr, 
+           rt = keyResp_test_run.rt)
+    # ---------------------
+    d_stroop
+}
+
+read_stroop(path = "data/stroop_example_1.csv")
+```
+
+## Einlesen Automatisieren
+
+Wir benötigen eine Liste aller Daten files. Die Funktion `list.files()` gibt einer liste aller Dokumente in einem Ordner zurück.
+```{r}
+list.files(path = 'data/')
+
+list.files(path = 'data/', pattern = 'stroop')
+```
+Um die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.
+```{r}
+files = list.files(path = 'data/', pattern = 'stroop') %>% 
+    paste('data/', ., sep = '')
+```
+
+### Alle Files von Hand einlesen
+Jedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.
+```{r}
+file1 = files[1]
+file2 = files[2]
+file3 = files[3]
+
+d1 = read_stroop(file1)
+d2 = read_stroop(file2)
+d3 = read_stroop(file3)
+
+d_hand = bind_rows(d1, d2, d3)
+```
+
+### Alle Files mit `for`-Loop einlesen
+Das Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame `d_loop` erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame `d_loop` angehängt.
+```{r}
+d_loop = tibble()
+
+for (file in files){
+    d_tmp = read_stroop(file)
+    d_loop = bind_rows(d_loop, d_tmp)
+}
+
+```
+
+### Alle Files mit der Funktion `map()` einlesen
+`map()` wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor `files` enthält die Pfade zu den Daten Files. Mit `map()` können wir also unsere selbst erstellte Funktion `read_stroop()` auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden. 
+```{r}
+d_map1 = files |>
+    map(read_stroop) %>%
+    bind_rows()
+```
+
+Die Funktion `map_dfr()` macht das gleiche wie `map()` fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.
+```{r}
+d_map2 = files |>
+    map_dfr(read_stroop)
+```
+
+## Kompletter Stroop Code an einem Ort
+
+```{r}
+read_stroop = function(path){
+    d_stroop = read_csv(path) |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(trial = trials_test.thisN + 1) |>
+    select(id = participant, 
+           trial,
+           word, 
+           color, 
+           congruent, 
+           resp = keyResp_test_run.keys, 
+           corr = keyResp_test_run.corr, 
+           rt = keyResp_test_run.rt)
+    d_stroop
+}
+
+d = list.files(path = 'data/', pattern = 'stroop') %>% 
+    paste('data/', ., sep = '') |>
+    map_dfr(read_stroop)
+
+# d |> write_csv('data/stroop_data.csv')
+```
+
