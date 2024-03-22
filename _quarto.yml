@@ -49,6 +49,7 @@ website:
       #- pages/chapters/goodpractices_data.qmd
       - pages/chapters/rmarkdown.qmd
       - pages/chapters/datawrangling.qmd
+      - pages/chapters/datawrangling_automatisiert.qmd
      # - pages/chapters/importing_data.qmd
      # - pages/chapters/functions-loops.qmd
      # - pages/chapters/importing_data-2.qmd
