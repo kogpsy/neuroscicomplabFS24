@@ -24,7 +24,7 @@ format:
 ```{r}
 #| include: false
 # Set working directory of R
-#knitr::opts_knit$set(root.dir = '../..')
+#knitr::opts_knit$set(root.dir = '../../data/data_import_automated')
 ```
 
 Für diesen Teil benötigen Sie das _R-Project_ `complab_datawrangling_stroop` mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments.
