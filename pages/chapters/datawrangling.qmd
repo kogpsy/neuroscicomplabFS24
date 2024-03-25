@@ -200,12 +200,12 @@ d_filtered <- d_stroop |>
 
 In unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die _Color-To-Key_ (`ctk`) Bedingung sowie die _Practice Trials_ möchten wir ausschliessen. 
 
-Die Variable `trials_test.thisTrialN` enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable `trials_test.thisTrialN` __nicht__ leer ist:
+Die Variable `trials_test.thisN` enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable `trials_test.thisN` __nicht__ leer ist:
 
 ```{r}
 #| output: false
 d_stroop <- d_stroop |> 
-    filter(!is.na(trials_test.thisTrialN)) 
+    filter(!is.na(trials_test.thisN)) 
 ```
 
 

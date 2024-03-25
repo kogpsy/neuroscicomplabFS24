@@ -1,0 +1,78 @@
+---
+title: "Übung 2 - Data Wrangling"
+description: Datensätze einlesen und vorverarbeiten.
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
+license: CC BY
+citation: true
+#bibliography: ../../bibliography_gw.bib
+format:
+    html:
+        toc: true
+---
+
+## Auftrag
+
+Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des Random Dot Experiments einlesen und vorverarbeiten. Erstellen Sie einen neuen Datensatz und einen Data Report.
+
+## Vorgehen
+
+- __Setup__
+
+    - Erstellen Sie ein _R-Project_ inkl. Ordner namens  `complab_datawrangling_randomdot`. 
+
+    - Erstellen Sie in diesem Projekt-Ordner einen Ordner namens `data`.
+
+    - Laden Sie den Ordner mit den Datensätzen [FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL](../../downloadable_files/random_dot_data.csv) herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem `data`-Ordner.
+
+    - Erstellen Sie ein neues `.Rmd`-File und speichern Sie dieses unter `preprocessing_randomdot_data` im Projekt-Ordner.
+
+- __Automatierter Datenimport inkl. Vorverarbeiten__ (mit folgenden Schritten):
+
+    - Einlesen Datensatz
+    
+    - Filtern der Daten, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (`filter()`)
+    
+    - Erstellen einer neue Variable `trial`, die die Trialnummer startend mit 1 angibt (`mutate()`)
+    
+    - Der Datensatz soll in dieser Reihenfolge folgende Informationen enthalten (`select()`): Versuchspersonenidentifikation (`id`), Instruktionsbedingung (`condition`), die Bewegungsrichtung der Punkte (`direction`), Antwort der Versuchsperson (`resp`), Antwortzeit der Versuchsperson (`rt`), war die Antwort korrekt? (`corr`) . 
+    
+    <!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): -->
+
+    <!-- ![img/example_uebung2.jpg] -->
+    
+- __Speichern neuer Datensatzes__
+
+    - Speichern Sie den vorverarbeiteten Datensatz als `.csv`-File namens `randomdot_data_clean.csv`.
+    
+- __Erstellen Data Report__ in Form eines `.html`-Files (mit der __Knit__-Funktion).
+
+- __Hochladen Ordner auf Ilias unter `Übung 2` mit:__ 
+
+    - `preprocessing_randomdot_data.Rmd`-File
+    
+    - `preprocessing_randomdot_data.html`-File
+    
+    - `randomdot_data_clean.csv`-File
+
+
+## Abgabetermine
+
+__Gruppe Montag:__ 9. April 2024 23:55
+
+__Gruppe Mittwoch:__ 9. April 2024 23:55
+
+
+<!-- ## Trouble shooting -->
+
+<!-- Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach. -->
+
+<!-- Bitte Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist. -->
+
