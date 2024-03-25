@@ -1,17 +1,248 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Neurowissenschaft Computerlab",
+    "objectID": "pages/chapters/uebung_2_datawrangling.html",
+    "href": "pages/chapters/uebung_2_datawrangling.html",
+    "title": "Übung 2 - Data Wrangling",
     "section": "",
-    "text": "Frühjahrssemester 2024"
+    "text": "Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des Random Dot Experiments einlesen und vorverarbeiten. Erstellen Sie einen neuen Datensatz und einen Data Report."
   },
   {
-    "objectID": "pages/admin/termine.html",
-    "href": "pages/admin/termine.html",
-    "title": "Terminübersicht",
+    "objectID": "pages/chapters/uebung_2_datawrangling.html#auftrag",
+    "href": "pages/chapters/uebung_2_datawrangling.html#auftrag",
+    "title": "Übung 2 - Data Wrangling",
     "section": "",
-    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
+    "text": "Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des Random Dot Experiments einlesen und vorverarbeiten. Erstellen Sie einen neuen Datensatz und einen Data Report."
+  },
+  {
+    "objectID": "pages/chapters/uebung_2_datawrangling.html#vorgehen",
+    "href": "pages/chapters/uebung_2_datawrangling.html#vorgehen",
+    "title": "Übung 2 - Data Wrangling",
+    "section": "Vorgehen",
+    "text": "Vorgehen\n\nSetup\n\nErstellen Sie ein R-Project inkl. Ordner namens complab_datawrangling_randomdot.\nErstellen Sie in diesem Projekt-Ordner einen Ordner namens data.\nLaden Sie den Ordner mit den Datensätzen FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem data-Ordner.\nErstellen Sie ein neues .Rmd-File und speichern Sie dieses unter preprocessing_randomdot_data im Projekt-Ordner.\n\nAutomatierter Datenimport inkl. Vorverarbeiten (mit folgenden Schritten):\n\nEinlesen Datensatz\nFiltern der Daten, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (filter())\nErstellen einer neue Variable trial, die die Trialnummer startend mit 1 angibt (mutate())\nDer Datensatz soll in dieser Reihenfolge folgende Informationen enthalten (select()): Versuchspersonenidentifikation (id), Instruktionsbedingung (condition), die Bewegungsrichtung der Punkte (direction), Antwort der Versuchsperson (resp), Antwortzeit der Versuchsperson (rt), war die Antwort korrekt? (corr) .\n\n\n\nSpeichern neuer Datensatzes\n\nSpeichern Sie den vorverarbeiteten Datensatz als .csv-File namens randomdot_data_clean.csv.\n\nErstellen Data Report in Form eines .html-Files (mit der Knit-Funktion).\nHochladen Ordner auf Ilias unter Übung 2 mit:\n\npreprocessing_randomdot_data.Rmd-File\npreprocessing_randomdot_data.html-File\nrandomdot_data_clean.csv-File"
+  },
+  {
+    "objectID": "pages/chapters/uebung_2_datawrangling.html#abgabetermine",
+    "href": "pages/chapters/uebung_2_datawrangling.html#abgabetermine",
+    "title": "Übung 2 - Data Wrangling",
+    "section": "Abgabetermine",
+    "text": "Abgabetermine\nGruppe Montag: 9. April 2024 23:55\nGruppe Mittwoch: 9. April 2024 23:55"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html",
+    "href": "pages/chapters/stroop_experiment.html",
+    "title": "Stroop Paradigma",
+    "section": "",
+    "text": "Der Stroop Task wurde 1935 zum ersten Mal beschrieben (Stroop, 1935) und ist einer der meist zitierten und verwendeten neuropsychologischen Aufgaben (MacLeod, 1991). In der Neuropsychologie wird der Stroop Color and Word Test (SCWT) verwendet, um die Fähigkeit zur Inhibition kognitiver Interferenz zu messen, welche entsteht wenn zwei Stimuluseigenschaften gleichzeitig verarbeitet werden sich aber widersprechen (Scarpina & Tagini, 2017). Teilweise misst der Task auch andere kognitive Funktionen, wie visuelle Suche oder Arbeitsgedächtnis, weshalb der Vergleich von Bedingungen relevant ist (Periáñez et al., 2021).\nWährend dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im kongruenten Durchgang entsprechen die Farben des Textes dem Farbwort (das Wort “rot” wird in rot präsentiert), im inkongruenten Durchgang unterscheiden sich die Farben des Textes vom Farbwort (das Wort “rot” wird in gelber Farbe präsentiert). Die Person muss angeben in welcher Farbe das Wort abgedruckt ist. In der kongruenten Bedingung fällt dies leichter, weil das gelesene Wort auch der Farbe entspricht. In der inkongruenten Bedingung verlangsamt sich die Geschwindigkeit durch die entstehende Interferenz von Wort und Farbe, da das Wort automatisch gelesen wird. Oft wird auch noch eine neutrale Bedingung verwendet, wo nur die Farbe oder das Wort präsentiert werden.\n\n\n\nDaten Stroop-Task (Stroop, 1935)\n\n\n\nHier finden Sie eine Online-Version des Originalpapers. Interessierte finden das Review von MacLeod (1991) auf Ilias.\n\n\n\n\n\n\n\nHands-on: Stroop Task ausprobieren\n\n\n\nHier finden Sie eine englische Online-Version eines Stroop Tasks.\nTesten Sie die Demo und diskutieren Sie dann in kleinen Gruppen folgende Fragen:\n\nFür welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen? Welche Patientengruppen zeigen auffällige Antworten in diesem Task?\nWelche “Elemente” des Experiments konnten Sie identifizieren?\nWelche Stimuluseigenschaften sind relevant für das Experiment? Was macht die Aufgabe einfach? Was macht sie schwieriger?\nWelche Antwortmöglichkeiten haben die Versuchspersonen?\nWelche Bedingungen würden Sie vergleichen?\nWelche Stimuluseigenschaften sind wichtig, damit Sie die Resultate nicht verfälschen oder auf was muss geachtet werden bei der Stimulusauswahl?\nWas denken Sie, misst der Task was er soll? Wie werden die Verhaltensdaten Ihrer Schätzung nach aussehen?\n\n[~10 Minuten]\n\n\n\n\nIn diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einmal geben sie die Farben der Wörter an in einer kongruenten Bedingung (Wortinhalt und Wortfarbe) stimmen überein. Einmal lösen sie die Aufgabe in einer inkongruenten Bedingung (Wortinhalt und Wortfarbe stimmen nicht überein).\nDie kongruente und inkongruente Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.\nDas Stroop Kursexperiment ist folgendermassen aufgebaut:\n\n\n\n\n\n\n\nHands-on: Stroop Kursexperiment\n\n\n\nLaden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. Hier finden Sie die Anweisungen dazu.\n\nTesten Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile alles Relevante enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.\nBeantworten Sie folgende Fragen zum Experiment:\n\n\nWas wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?\nWelche Bedingungen gibt es?\nWieviele Trials werden pro Bedingung durchgeführt?\nWie lange wird der Wort-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?\nWie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?\n\n\n\n\n\n\nMacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. https://doi.org/10.1037/0033-2909.109.2.163\nPeriáñez, J. A., Lubrini, G., García-Gutiérrez, A., & Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. https://doi.org/10.1093/arclin/acaa034\nScarpina, F., & Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. https://doi.org/10.3389/fpsyg.2017.00557\nStroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662. https://doi.org/10.1037/"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#kurzbeschrieb-kursexperiment",
+    "href": "pages/chapters/stroop_experiment.html#kurzbeschrieb-kursexperiment",
+    "title": "Stroop Paradigma",
+    "section": "",
+    "text": "In diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einmal geben sie die Farben der Wörter an in einer kongruenten Bedingung (Wortinhalt und Wortfarbe) stimmen überein. Einmal lösen sie die Aufgabe in einer inkongruenten Bedingung (Wortinhalt und Wortfarbe stimmen nicht überein).\nDie kongruente und inkongruente Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.\nDas Stroop Kursexperiment ist folgendermassen aufgebaut:\n\n\n\n\n\n\n\nHands-on: Stroop Kursexperiment\n\n\n\nLaden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. Hier finden Sie die Anweisungen dazu.\n\nTesten Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile alles Relevante enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.\nBeantworten Sie folgende Fragen zum Experiment:\n\n\nWas wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?\nWelche Bedingungen gibt es?\nWieviele Trials werden pro Bedingung durchgeführt?\nWie lange wird der Wort-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?\nWie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?"
+  },
+  {
+    "objectID": "pages/chapters/stroop_experiment.html#referenzen",
+    "href": "pages/chapters/stroop_experiment.html#referenzen",
+    "title": "Stroop Paradigma",
+    "section": "",
+    "text": "MacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. https://doi.org/10.1037/0033-2909.109.2.163\nPeriáñez, J. A., Lubrini, G., García-Gutiérrez, A., & Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. https://doi.org/10.1093/arclin/acaa034\nScarpina, F., & Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. https://doi.org/10.3389/fpsyg.2017.00557\nStroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662. https://doi.org/10.1037/"
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html",
+    "href": "pages/chapters/rmarkdown.html",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "",
+    "text": "RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles working directory für ein Datenanalyse-Projekt.\n\n\n\n\n\n\nHands-on: Erstellen eines RStudio Projects\n\n\n\n\nÖffnen Sie RStudio.\nErstellen Sie ein neues RStudio-Project\n\nKlicken Sie dafür auf File &gt; New Project\nBenennen Sie das Project neurosci_complab_rmarkdown und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.\n\n\n\n\nEs empfiehlt sich bei RProjekten eine Einstellungsänderung (Tools&gt; Project Options...) vorzunehmen, so dass die aktuell gespeicherten Variablen bei jedem Schliessen vom Projekt gelöscht werden. Dies verhindert, dass der aktuelle Code nur aufgrund früherer Speicherung läuft."
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html#r-markdown-file-erstellen-und-ausführen",
+    "href": "pages/chapters/rmarkdown.html#r-markdown-file-erstellen-und-ausführen",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "R Markdown File erstellen und ausführen",
+    "text": "R Markdown File erstellen und ausführen\n\n\n\n\n\n\nHands-on: R Markdown File in einem Projekt erstellen\n\n\n\n\nErstellen Sie ein neues .Rmd-File (File &gt; New File &gt; R Markdown).\nGeben Sie einen Titel und Ihren Namen ein und wählen Sie HTML als Output-Format.\nSpeichern Sie dieses Dokument unter dem Namen rmarkdown_exampleab.\n\nWelches Format (Endung) hat das abgespeicherte R Markdown Skript nun in Ihrem Ordner?\n\n\n\nWeiterführende Informationen:\n👉 Einführung in die Verwendung von R/RStudio/Notebooks im Rahmen des Psychologie Studiums von Andrew Ellis und Boris Mayer Einführung in R\n👉 Sehr kompakte, praxisnahe Einführung in R Markdown von Danielle Navarro (Slidedeck in englisch) Einführung in R Markdown"
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html#knitten",
+    "href": "pages/chapters/rmarkdown.html#knitten",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "Knitten",
+    "text": "Knitten\nMit Knit wird das R Markdown Skript ausgeführt und eine zusätzliche Datei wird erstellt, z.B. ein html-File.\n\n\n\n\n\n\nHands-on: Knitten\n\n\n\nFühren Sie das File mit Knit aus und vergleichen Sie das R Markdown Skript mit dem Output den Sie erhalten haben. Was fällt Ihnen auf?\n\nWas ist nicht mehr zu sehen?\nWas ist zusätzlich zu sehen?\nWas hat sich im Projekt-Ordner verändert?"
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html#yaml-header",
+    "href": "pages/chapters/rmarkdown.html#yaml-header",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "YAML header",
+    "text": "YAML header\nAm Anfang des R Markdown Skripts befindet sich der YAML header. Hier werden Informationen zu Titel, Autor:Innen, Datum, Outputformat, Literaturverzeichnis und Layout festgelegt.\n\nYAML: Yet Another Markdown Language\n\nDas Layout kann unter themegeändert werden. Das kann beispielsweise wie folgt aussehen:\noutput:\n  html_document:\n    theme: cosmo\nAchtung: Die Einrückungen müssen genau stimmen! Hier wurde das theme namens cosmo ausgewählt. Mögliche andere themessind z.B. default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti.\n\n\n\n\n\n\nHands-on: Namen und Einstellungen anpassen\n\n\n\n\nGeben Sie dem Dokument einen neuen Titel z.B. R Markdown Einführung\nÄndern Sie das Layout so, dass es Ihnen gefällt."
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html#text-erstellen-in-r-markdown",
+    "href": "pages/chapters/rmarkdown.html#text-erstellen-in-r-markdown",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "Text erstellen in R Markdown",
+    "text": "Text erstellen in R Markdown\nText kann in R Markdown Files nicht nur geschrieben, sondern auch relativ simpel formatiert werden.\n👉 Hier können Sie das Cheatsheet herunterladen. Auf der rechten Seite finden Sie die Informationen für die Textformatierung.\nEs empfiehlt sich das Skript anfangs häufig zu knitten, so findet man den Fehler schneller, weil man noch weiss, was man als letztes verändert hat. Code kann aber auch einfach innerhalb der Code-Chunks überprüft werden.\n\n\n\n\n\n\nHands-on: Texte, Formeln und Bilder in R Markdown einfügen\n\n\n\n\nLöschen Sie alles bis auf den YAML-Header\nSchreiben Sie im Textbereich eine Überschrift für ein Kapitel, ein Unterkapitel und normalen Text.\nSchreiben Sie im Text etwas kursiv und etwas fett.\nErstellen Sie im Textbereich eine Liste mit 3 Punkten.\nSchreiben Sie alpha innerhalb von $, was passiert?\nFügen Sie die untenstehende Formel in den Text ein. Verwenden Sie dafür zwei Dollarzeichen am Anfang und am Ende. Was passiert?\n\n\\[\na^2 + b^2 = c^2\n\\]\n\nFügen Sie einen Link ein, knitten Sie das File und schauen Sie ob der Link funktioniert. Können Sie einen Link nur mit einem unterstrichenen Text anzeigen, so dass die Linkadresse nicht sichtbar ist?\nFügen Sie ein Bild ein. Speichern Sie dieses Bild zuerst in einem Ordner namens img im Projektordner.\n\n\n\n\nHier finden Sie weiterführende Hilfe zum Einfügen von Mathnotationen.\n\nMathematics in RMarkdown\nRMarkdown: The definitive Guide"
+  },
+  {
+    "objectID": "pages/chapters/rmarkdown.html#code-erstellen-in-r-markdown",
+    "href": "pages/chapters/rmarkdown.html#code-erstellen-in-r-markdown",
+    "title": "RStudio Projects und RMarkdown",
+    "section": "Code erstellen in R Markdown",
+    "text": "Code erstellen in R Markdown\nCode muss jeweils in einem Code-Chunk eingefügt werden. Ein Code-Chunk kann unter Code &gt; Insert Chunk eingefügt werden oder mit dem Kürzel Ctrl+Alt+ I.\nCode-Chunks werden mit ``` begonnen und beendet. In den geschweiften Klammern steht r, das bedeutet dass der Code in R geschrieben ist. In dieser Klammer kann dem Code-Chunk einen Namen gegeben und bestimmt werden, ob der Code ausgeführt und z.B. nur angezeigt werden soll, sowie ob der Output des Codes angezeigt werden soll.\nMit dem grünen Pfeil kann der Code-Chunk einzeln ausgeführt werden. Aber auch einzelne Zeilen können ausgeführt werden, genau so wie in einem .R- Skript.\n\n\n\n\n\n\nHands-on: Code in R Markdown einfügen\n\n\n\n\nErstellen Sie einen Code-Chunk, der ausgeführt, aber nicht angezeigt wird. Erstellen Sie eine Variable mit dem Namen numbers, die 10 Zahlen enthält.\nErstellen Sie ein Code-Chunk, der ausgeführt wird und dessen Output angezeigt wird. Berechnen Sie in diesem Chunk den Mittelwert und die Standardabweichung von numbers.\nErstellen Sie einen Plot mit plot(numbers).\nKnitten Sie das File, um zu überprüfen, ob alles funktioniert\n\n👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.\nFür Fortgeschrittene:\n\nTesten Sie, ob Sie Ihr File auch zu einem PDF knitten können.\nErstellen Sie eine Tabelle\nErstellen Sie einen Glossar\nErstellen Sie ein Dokument mit Reitern oben (z.B. Data, Preprocessing, Analysis, Conclusions)\nFügen Sie interaktive Elemente ein."
+  },
+  {
+    "objectID": "pages/chapters/quiz_one.html",
+    "href": "pages/chapters/quiz_one.html",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
+  },
+  {
+    "objectID": "pages/chapters/quiz_one.html#quiz-1",
+    "href": "pages/chapters/quiz_one.html#quiz-1",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html",
+    "href": "pages/chapters/programmieren_2.html",
+    "title": "Automatisieren",
+    "section": "",
+    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden\n\nFühren Sie die folgenden Code Beispiele auf Ihrem Computer aus. Wenn Sie R und RStudio noch nicht installiert haben, verwenden Sie diese online R Konsole.\nWir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp."
+  },
+  {
+    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
+    "title": "Automatisieren",
+    "section": "Alternativen zu for-Loops",
+    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply versucht den output zu vereinfachen (Vektor, Matrix).\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\nWarning: Paket 'ggplot2' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'tibble' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'dplyr' wurde unter R Version 4.2.3 erstellt\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "",
+    "text": "Nothing in neuroscience makes sense except in the light of behavior.\nShepherd (1988)"
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften",
+    "text": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften\n\nPräzision: Hohe räumliche und zeitliche Auflösung\nEine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat. Räumliche Auflösung kann bedeuten, dass sehr präzise visuelle Darbietung möglich sein muss, sowie dass die Versuchsperson sich im Setup nicht bewegen darf, weil dies die Distanzen verschiebt (z.B. im MRT, oder der Abstand zum Bildschirm beim Eyetracking).\n\n\nSynchronisation: Mehrere Datenspuren\nNeurowissenschaftliche Experimente beinhalten oft die Datenerhebung auf mehreren Ebenen, z.B. wird gleichzeitig Hirnaktivität und das Drücken von Antwortbuttons aufgenommen. Das bedeutet, dass Bildschirm, MRT/EEG/Eyetracking/etc., sowie die Antwort zeitlich koregistriert/synchronisiert werden müssen, um die Daten im Nachhinein auswerten zu können. Technisch ist das oft mit grossem Aufwand verbunden und benötigt einiges an Pilotierung.\n\n\nKomplexität: Zu untersuchender Prozess und Störprozesse\nOft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?\nEin Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!\nSie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie nicht interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.\n\n\nDatenerhebung: Teuer und anspruchsvoll\nBildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert.\n\n\nPassendes Experiment muss selber erstellt werden\nOft muss ein neues Paradigma erstellt werden, d.h. Forschende können kein schon bestehendes Experiment nutzen, sondern untersuchen einen Aspekt eines neuronalen Prozesses mit einer neuen Methode, einer neuen Fragestellung oder einem neuen Ansatz. Dies erfordert breiteKenntnisse im Programmieren, der zu verwendenden Technik, wie auch der Gehirnprozesse."
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "Wichtige Elemente von Experimenten",
+    "text": "Wichtige Elemente von Experimenten\nBeim Programmieren von Experimenten lohnt es sich, sich zuerst darüber im klaren zu sein, welche Bausteine das geplante Experiment hat. Im Folgenden werden einige typische Elemente eines Verhaltensexperiments beschrieben. Oft kommen hier natürlich noch Stimulations- oder Aufnahmemethoden hinzu.\n\nBegrüssung und Einverständniserklärung\nHier wird die Versuchsperson begrüsst, wird über das Experiment aufgeklärt und gibt (wenn nicht vorher auf Papier schon geschehen) ihre Einverständnis zur Teilnahme am Experiment. Dies wird je nach Ethikkommission und Ethikantrag unterschiedlich gehandhabt. Wichtige Informationen sind hierbei, dass die Versuchsperson weiss worauf sie sich einlässt (Ist zum Beispiel Hirnstimulation/fMRI/etc. geplant? Wie lange dauert das Experiment ungefähr? Was soll sie tun, wenn sie abbrechen möchte?). Die Schwierigkeit ist oft, genügend Information zu geben aber die Hypothese nicht zu verraten.\n\n\nInstruktion\nDie Instruktion wird oft schriftlich gegeben, um diese zwischen den Versuchspersonen konstant zu halten. Es ist teilweise herausfordernd, einen Task so genau zu erklären, dass er verständlich ist, aber die Erklärung auch kurz genug zu halten, dass die Instruktion auch gelesen wird. Oft werden Übungstrials verwendet um die Instruktion zu verdeutlichen.\n\n\nStimuli\nUnter Stimuli werden die gezeigten Elemente verstanden, die den Task ausmachen. Es können Töne, Bilder, Wörter, etc. als Stimuli verwendet werden.\n\n\n\n\n\n\nHands-on: Stimuli\n\n\n\nWelche Stimuli aus neurowissenschaftlichen Experimenten kennen Sie?\nTauschen Sie sich mit Ihren Mitstudierenden aus und schreiben/zeichnen Sie ein paar Beispiele vorne an die Tafel.\n[~5 Minuten]\n\n\n\n\nTrial\nEin Trial beschreibt ein sich wiederholender Vorgang in dem der Stimulus gezeigt wird und z.B. von der Versuchsperson eine Antwort erwartet wird. Ein Trial wird oft sehr viele Male wiederholt. Die Stimuli können zwischen den Trials variieren oder gleich bleiben. Das Timing der Trials kann konstant sein (ein Stimulus wird bspw. immer gleich lang gezeigt) oder variiert werden (unterschiedliche Anzeigedauer).\nZwischen den Trials wird ein Inter-Trial-Interval (ITI) festgelegt. Dies wird z.B. bei fMRI Experimenten dann variiert, damit (je nach Repetition Time/TR) nicht immer in derselben Schicht aufgenommen wird bei Stimuluspräsentation.\nWährend einem Trial wird die Antwort / Response der Versuchsperson aufgenommen. Bei der Aufnahme von Reaktiosnzeiten muss festgelegt werden, wann der Trial oder die Stimuluspräsentation beginnt und mit welcher Handlung sie endet. Es kann bestimmt werden, welche Antworten zulässig sind (bspw. nur bestimmte Tasten) und was passiert wenn eine richtige oder falsche Antwort gegeben wird: Gibt es z.B. ein Feedback bei falschen Antworten?\n\n\nRun / Block\nEin Run/ein Block bezeichnet eine Einheit mit mehreren Trials. Oft werden Bedingungen z.B. zwischen den Runs randomisiert. Zwischen den Runs sind Pausen möglich, damit sich die Versuchsperson erholen kann. Oft wird vor dem Experimentstart ein “Übungsblock” durchgeführt, um sich sicher zu sein, dass die Versuchspersonen die Aufgabe und Instruktion verstanden haben.\n\n\nDebriefing und Verabschiedung\nIm Debriefing wird der Versuchsperson erklärt, um was es im Experiment gegangen ist, welche Hypothesen untersucht wurden und eine eventuelle Coverstory aufgedeckt. Oft werden Personen vor dem Debriefing nach der getesteten Hypothese gefragt, um zu schauen, ob sie diese erraten hatten. Das gibt Aufschluss darüber wie sehr das Experiment dadurch verzerrt sein könnte, dass die Versuchspersonen Bescheid wissen. Wichtig ist es auch den Versuchspersonen zum Schluss zu danken."
+  },
+  {
+    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#vorgehen-experiment-programmieren",
+    "href": "pages/chapters/neurowissenschaftliche_experimente.html#vorgehen-experiment-programmieren",
+    "title": "Neurowissenschaftliche Experimente",
+    "section": "Vorgehen Experiment programmieren",
+    "text": "Vorgehen Experiment programmieren\nWichtige Schritte beim Programmieren von Experimenten sind folgende (nicht unbedingt in dieser Reihenfolge, das kommt auf das Experiment an):\n\nTask auswählen\nStimuli auswählen\nTiming festlegen: Dauer Stimuluspräsentation? ITIs (Inter-Trial-Intervals)?\nAnzahl Bedingungen und Trials bestimmen (Power bedenken), within oder between Design?\nAblauf des Experiments festlegen: Gesamtdauer? Pausen nötig?\nCoverstory, Stimulus-Masking, etc. nötig?\nEinbindung von allen technischen Geräten (z.B. EEG Recorder, MRT, Brainstimulation-Devices, Eyetracking) und Synchronisation\n\n\nFlowcharts\nBei der Planung und dem Erstellen eines Experiments ist es sehr hilfreich eine Flowchart zu erstellen. In einer Flowchart sind die oben genannten Elemente des Experimentes in Boxen eingezeichnet und mit Pfeilen verbunden um sie zeitlich einzuordnen. Timing-Informationen können unter oder neben den Boxen festgehalten werden. Die Anzahl Repetitionen wird oft neben den Pfeilen eingefügt.\n\nWir werden zu einem späteren Zeitpunkt in diesem Kurs darauf eingehen, wie man ein Experiment möglichst gut planen kann um aussagekräftige Daten zu erhalten. Hier gibt es viele Möglichkeiten wie Pilotierung, Datensimulation und die adäquate Wahl der statistischen Verfahren in Bezug auf die Fragestellung.\n\nEine Flowchart eignet sich ebenfalls sehr gut, um in einem Artikel darzustellen, wie der Ablauf des Experiments war."
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html",
+    "href": "pages/chapters/goodpractices_data.html",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "",
+    "text": "Neuroimaging experiments result in complicated data that can be arranged in many different ways. So far there is no consensus how to organize and share data obtained in neuroimaging experiments. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure. BIDS Website (2024)"
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html#datenquellen",
+    "href": "pages/chapters/goodpractices_data.html#datenquellen",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "Datenquellen",
+    "text": "Datenquellen\nNeurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen."
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html#datenformate",
+    "href": "pages/chapters/goodpractices_data.html#datenformate",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "Datenformate",
+    "text": "Datenformate\nBevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:\n\nIn welchem Dateiformat ist der Datensatz gespeichert? z.B. in .csv, .xlsx oder anderen?`\nIn welchem Datenformat ist der Datensatz geordnet? (long oder wide oder mixed?)\nGibt es ein data dictionnary mit Erklärungen zu den Variablen?"
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html#replizierbarkeit",
+    "href": "pages/chapters/goodpractices_data.html#replizierbarkeit",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "Replizierbarkeit",
+    "text": "Replizierbarkeit\nReplizierbarkeit (replicability) bedeutet, dass ein Experiment von einer anderen Forschungsgruppe mit einer neuen Stichprobe durchgeführt werden kann, und ähnliche oder dieselben Resultate hervorbringt, wie die Originalstudie. Wird eine Studie mehrmals repliziert, steigt die Wahrscheinlichkeit, dass kein Zufallsbefund vorliegt.\n\nReplicability refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected. Cacioppo et al. (2015)"
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html#reproduzierbarkeit",
+    "href": "pages/chapters/goodpractices_data.html#reproduzierbarkeit",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "Reproduzierbarkeit",
+    "text": "Reproduzierbarkeit\nReproduzierbarkeit (reproducibility) hängt eng mit der Replizierbarkeit zusammen. Der Begriff wird teilweise sehr allgemein verwendet, und bedeutet so dass Forschungsergebnisse wiederholt gefunden werden. Reproduzierbarkeit im engeren Sinn hingegen bezieht sich darauf, ob die durchgeführte Analyse wiederholt werden kann. Die Reproduzierbarkeit ist somit hoch, wenn Forschende die Daten und Datenanalyseskripts bereitstellen und andere Forschende damit dieselben Analysen durchführen können und zu gleichen Resultaten kommen.\n\nReproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. That is, a second researcher might use the same raw data to build the same analysis files and implement the same statistical analysis in an attempt to yield the same results…. Reproducibility is a minimum necessary condition for a finding to be believable and informative. Cacioppo et al. (2015)\n\nUm die Begriffe zusammenzufassen schlugen Goodman, Fanelli, and Ioannidis (2016) vor von Reproduzierbarkeit der Methoden (Daten und Prozesse können exakt wiederholt werden), Reproduzierbarkeit der Resultate (andere Studien kommen auf dieselben Resultate) und Reproduzierbarkeit der wissenschaftlichen Schlussfolgerung (bei Repetition der Analyse oder der Experimente werden dieselben Schlüsse gezogen) zu sprechen.\nGrundsätzlich besteht das Ziel, dass in der Forschung möglichst viel Evidenz für eine Schlussfolgerung gesammelt werden kann. Dies gelingt, wenn die Prozesse transparent, fehlerfrei und wiederholbar sind."
+  },
+  {
+    "objectID": "pages/chapters/goodpractices_data.html#hindernisse-bei-der-reproduzierbarkeit",
+    "href": "pages/chapters/goodpractices_data.html#hindernisse-bei-der-reproduzierbarkeit",
+    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
+    "section": "Hindernisse bei der Reproduzierbarkeit",
+    "text": "Hindernisse bei der Reproduzierbarkeit\nReproduzierbarkeit kann laut Nosek et al. (2022) vor allem aus zwei Gründen nicht gegeben sein: Weil die Daten/Skripte nicht zur Verfügung stehen, oder weil diese Fehler enthalten:\n\nIn principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, the same result should occur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of the unavailability of data, code, information needed to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than the one reported originally. This can occur because of an error in either the original or the reproduction study. Nosek et al. (2022)\n\nFührt die Reproduktion nicht zum selben Resultat, löst das Zweifel am Forschungsergebnis aus. Wenn die Reproduzierbarkeit am Prozess scheitert, etwa weil die Daten nicht vorhanden sind, kann kein Schluss gezogen werden, ob die Resultate stimmen.\n\nAchieving reproducibility is a basic foundation of credibility, and yet many efforts to test reproducibility reveal success rates below 100%. … Whereas an outcome reproducibility failure suggests that the original result may be wrong, a process reproducibility failure merely indicates that the original result cannot be verified. Either reason challenges credibility and increases uncertainty about the value of investing additional resources to replicate or extend the findings (Nuijten et al. 2018). Sharing data and code reduces process reproducibility failures (Kidwell et al. 2016), which can reveal more outcome reproducibility failures (Hardwicke et al. 2018, 2021; Wicherts et al. 2011). Nosek et al. (2022)\n\nDas Teilen von Daten und Datenverarbeitungsskripten erhöht die Wahrscheinlichkeit, dass mögliche Fehler im Prozess gefunden werden, da auch andere Forschende die Daten/Skripts verwenden können. Das ist vorerst unangenehm, gehört aber zum Prozess der Wissenschaft dazu. Reproduzierbarkeit erhöht also indirekt auch die Replizierbarkeit."
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html",
+    "href": "pages/chapters/datawrangling_automatisiert.html",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "",
+    "text": "Für diesen Teil benötigen Sie das R-Project complab_datawrangling_stroop mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments."
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#setup",
+    "href": "pages/chapters/datawrangling_automatisiert.html#setup",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Setup",
+    "text": "Setup\n\n# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)\nlibrary(\"tidyverse\")"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
+    "href": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "\nStroop-Experiment data wrangling",
+    "text": "Stroop-Experiment data wrangling\n\n# Daten vorverarbeiten\nd_stroop = read_csv(\"data/stroop_example_1.csv\") |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
+    "href": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Daten mit eigener Funktion einlesen",
+    "text": "Daten mit eigener Funktion einlesen\n\nread_stroop = function(path){\n    # Code kopiert von oben\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    # ---------------------\n    d_stroop\n}\n\nread_stroop(path = \"data/stroop_example_1.csv\")"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
+    "href": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Einlesen Automatisieren",
+    "text": "Einlesen Automatisieren\nWir benötigen eine Liste aller Daten files. Die Funktion list.files() gibt einer liste aller Dokumente in einem Ordner zurück.\n\nlist.files(path = 'data/')\n\nlist.files(path = 'data/', pattern = 'stroop')\n\nUm die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.\n\nfiles = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '')\n\nAlle Files von Hand einlesen\nJedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.\n\nfile1 = files[1]\nfile2 = files[2]\nfile3 = files[3]\n\nd1 = read_stroop(file1)\nd2 = read_stroop(file2)\nd3 = read_stroop(file3)\n\nd_hand = bind_rows(d1, d2, d3)\n\nAlle Files mit for-Loop einlesen\nDas Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame d_loop erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame d_loop angehängt.\n\nd_loop = tibble()\n\nfor (file in files){\n    d_tmp = read_stroop(file)\n    d_loop = bind_rows(d_loop, d_tmp)\n}\n\nAlle Files mit der Funktion map() einlesen\nmap() wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor files enthält die Pfade zu den Daten Files. Mit map() können wir also unsere selbst erstellte Funktion read_stroop() auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.\n\nd_map1 = files |&gt;\n    map(read_stroop) %&gt;%\n    bind_rows()\n\nDie Funktion map_dfr() macht das gleiche wie map() fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.\n\nd_map2 = files |&gt;\n    map_dfr(read_stroop)"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
+    "href": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Kompletter Stroop Code an einem Ort",
+    "text": "Kompletter Stroop Code an einem Ort\n\nread_stroop = function(path){\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    d_stroop\n}\n\nd = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '') |&gt;\n    map_dfr(read_stroop)\n\nd |&gt; write.csv(file = \"data/dataset_stroop_clean.csv\", row.names = FALSE)"
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html",
+    "href": "pages/chapters/datacamp.html",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html#datacamp",
+    "href": "pages/chapters/datacamp.html#datacamp",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
   },
   {
     "objectID": "pages/admin/wichtiges.html",
@@ -49,6 +280,20 @@
     "text": "Form der Leistungsnachweise\nLeistungsnachweise werden in Form von vier Übungen, zwei Quizzes und einem Glossareintrag erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag.\nAlle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie hier.\n\nÜbungen\nDie Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.\n\n\nQuizzes\nDas erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.\n\n\nGlossareintrag\nWir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Neurowissenschaft Computerlab",
+    "section": "",
+    "text": "Frühjahrssemester 2024"
+  },
+  {
+    "objectID": "pages/admin/termine.html",
+    "href": "pages/admin/termine.html",
+    "title": "Terminübersicht",
+    "section": "",
+    "text": "Termine und Leistungsnachweise\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nSitzung 7 (8./.10. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2: Datenverarbeiten und visualisieren\n\nFerien: 1./3. April: Vorlesungsfreie Zeit\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 3: Datensatz analysieren\n\n\n\n5 Modelle\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag)\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nÜbung 4: Datensatz analysieren\nQuiz 2: Abschlussquiz\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
+  },
+  {
     "objectID": "pages/chapters/computerlab.html",
     "href": "pages/chapters/computerlab.html",
     "title": "Computerlab",
@@ -61,20 +306,6 @@
     "title": "Computerlab",
     "section": "",
     "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html",
-    "href": "pages/chapters/datacamp.html",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html#datacamp",
-    "href": "pages/chapters/datacamp.html#datacamp",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
   },
   {
     "objectID": "pages/chapters/datawrangling.html",
@@ -123,7 +354,7 @@
     "href": "pages/chapters/datawrangling.html#daten-filtern-filter",
     "title": "Daten importieren und vorverarbeiten",
     "section": "Daten filtern: filter()\n",
-    "text": "Daten filtern: filter()\n\nMit filter() können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion filter(.data, filter, ...) der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.\nBeispiele:\n\n# nur die Trials mit den rot angezeigten Wörtern behalten\nd_stroop_filtered &lt;- filter(d_stroop, color == \"red\")\n\n# dasselbe mit der Pipe\nd_filtered &lt;- d_stroop |&gt; filter(color == \"red\")\n\n# nur Trials die ohne blau angezeigten Wörter behalten\nd_filtered &lt;- d_stroop |&gt; filter(condition != \"blue\")\n\n# nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten\nd_filtered &lt;- d_stroop |&gt; filter(respPractice.rt &lt;= 1)\n\n# nur Übungstrials mit Antwortzeiten zwischen 1 und 2 Sekunden behalten\nd_filtered &lt;- d_stroop |&gt; filter(respPractice.rt &gt; 1 & respPractice.rt &lt; 2)\n\n# mehrere Filter verwenden\nd_filtered &lt;- d_stroop |&gt; \n    filter(color == \"red\") |&gt;\n    filter(respPractice.rt &lt;= 1)\n\nIn unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die Color-To-Key (ctk) Bedingung sowie die Practice Trials möchten wir ausschliessen.\nDie Variable trials_test.thisTrialN enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable trials_test.thisTrialN nicht leer ist:\n\nd_stroop &lt;- d_stroop |&gt; \n    filter(!is.na(trials_test.thisTrialN)) \n\n\n\n\n\n\n\nHands-on: Daten filtern\n\n\n\nErstellen Sie einen neuen Datensatz namens d_stroop_correct und filtern Sie diesen so dass er nur Trials mit richtigen Antworten enthält. Schauen Sie in der Variable keyResp_test_run.corr, ob tatsächlich nur noch richtige Antworten übrig geblieben sind.\nAchtung: Arbeiten Sie in den weiteren Schritten nicht mit diesem Datensatz weiter, da wir die falschen Antworten in einem nächsten Schritt noch im Datensatz brauchen."
+    "text": "Daten filtern: filter()\n\nMit filter() können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion filter(.data, filter, ...) der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.\nBeispiele:\n\n# nur die Trials mit den rot angezeigten Wörtern behalten\nd_stroop_filtered &lt;- filter(d_stroop, color == \"red\")\n\n# dasselbe mit der Pipe\nd_filtered &lt;- d_stroop |&gt; filter(color == \"red\")\n\n# nur Trials die ohne blau angezeigten Wörter behalten\nd_filtered &lt;- d_stroop |&gt; filter(condition != \"blue\")\n\n# nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten\nd_filtered &lt;- d_stroop |&gt; filter(respPractice.rt &lt;= 1)\n\n# nur Übungstrials mit Antwortzeiten zwischen 1 und 2 Sekunden behalten\nd_filtered &lt;- d_stroop |&gt; filter(respPractice.rt &gt; 1 & respPractice.rt &lt; 2)\n\n# mehrere Filter verwenden\nd_filtered &lt;- d_stroop |&gt; \n    filter(color == \"red\") |&gt;\n    filter(respPractice.rt &lt;= 1)\n\nIn unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die Color-To-Key (ctk) Bedingung sowie die Practice Trials möchten wir ausschliessen.\nDie Variable trials_test.thisN enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable trials_test.thisN nicht leer ist:\n\nd_stroop &lt;- d_stroop |&gt; \n    filter(!is.na(trials_test.thisN)) \n\n\n\n\n\n\n\nHands-on: Daten filtern\n\n\n\nErstellen Sie einen neuen Datensatz namens d_stroop_correct und filtern Sie diesen so dass er nur Trials mit richtigen Antworten enthält. Schauen Sie in der Variable keyResp_test_run.corr, ob tatsächlich nur noch richtige Antworten übrig geblieben sind.\nAchtung: Arbeiten Sie in den weiteren Schritten nicht mit diesem Datensatz weiter, da wir die falschen Antworten in einem nächsten Schritt noch im Datensatz brauchen."
   },
   {
     "objectID": "pages/chapters/datawrangling.html#variablen-auswählen-select",
@@ -168,48 +399,6 @@
     "text": "Data wrangling workflow implementieren\n\n\n\n\n\n\nHands-on: Data wrangling workflow\n\n\n\nErstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die gelernten data wrangling Schritte selbstständig durch.\n\n\n\nZu den gelernten Funktionen finden Sie hier Grafiken die evtl. helfen, sich die Funktions-Namen zu merken."
   },
   {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html",
-    "href": "pages/chapters/datawrangling_automatisiert.html",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "",
-    "text": "# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)\nlibrary(\"tidyverse\")"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#setup",
-    "href": "pages/chapters/datawrangling_automatisiert.html#setup",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "",
-    "text": "# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)\nlibrary(\"tidyverse\")"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
-    "href": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "\nStroop-Experiment data wrangling",
-    "text": "Stroop-Experiment data wrangling\n\n# Daten vorverarbeiten\nd_stroop = read_csv(\"data/stroop_example_1.csv\") |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
-    "href": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "Daten mit eigener Funktion einlesen",
-    "text": "Daten mit eigener Funktion einlesen\n\nread_stroop = function(path){\n    # Code kopiert von oben\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    # ---------------------\n    d_stroop\n}\n\nread_stroop(path = \"data/stroop_example_1.csv\")"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
-    "href": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "Einlesen Automatisieren",
-    "text": "Einlesen Automatisieren\nWir benötigen eine Liste aller Daten files. Die Funktion list.files() gibt einer liste aller Dokumente in einem Ordner zurück.\n\nlist.files(path = 'data/')\n\nlist.files(path = 'data/', pattern = 'stroop')\n\nUm die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.\n\nfiles = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '')\n\nAlle Files von Hand einlesen\nJedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.\n\nfile1 = files[1]\nfile2 = files[2]\nfile3 = files[3]\n\nd1 = read_stroop(file1)\nd2 = read_stroop(file2)\nd3 = read_stroop(file3)\n\nd_hand = bind_rows(d1, d2, d3)\n\nAlle Files mit for-Loop einlesen\nDas Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame d_loop erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame d_loop angehängt.\n\nd_loop = tibble()\n\nfor (file in files){\n    d_tmp = read_stroop(file)\n    d_loop = bind_rows(d_loop, d_tmp)\n}\n\nAlle Files mit der Funktion map() einlesen\nmap() wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor files enthält die Pfade zu den Daten Files. Mit map() können wir also unsere selbst erstellte Funktion read_stroop() auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.\n\nd_map1 = files |&gt;\n    map(read_stroop) %&gt;%\n    bind_rows()\n\nDie Funktion map_dfr() macht das gleiche wie map() fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.\n\nd_map2 = files |&gt;\n    map_dfr(read_stroop)"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
-    "href": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
-    "title": "Daten importieren und vorverarbeiten",
-    "section": "Kompletter Stroop Code an einem Ort",
-    "text": "Kompletter Stroop Code an einem Ort\n\nread_stroop = function(path){\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    d_stroop\n}\n\nd = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '') |&gt;\n    map_dfr(read_stroop)\n\n# d |&gt; write_csv('data/stroop_data.csv')"
-  },
-  {
     "objectID": "pages/chapters/glossary.html",
     "href": "pages/chapters/glossary.html",
     "title": "Neuroscience Complab Glossary",
@@ -231,48 +420,6 @@
     "text": "data dictionnary\nreproducibility\nreplicability\nreliability\nrobustness\ngeneralizability\nlong and wide format"
   },
   {
-    "objectID": "pages/chapters/goodpractices_data.html",
-    "href": "pages/chapters/goodpractices_data.html",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "",
-    "text": "Neuroimaging experiments result in complicated data that can be arranged in many different ways. So far there is no consensus how to organize and share data obtained in neuroimaging experiments. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure. BIDS Website (2024)"
-  },
-  {
-    "objectID": "pages/chapters/goodpractices_data.html#datenquellen",
-    "href": "pages/chapters/goodpractices_data.html#datenquellen",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "Datenquellen",
-    "text": "Datenquellen\nNeurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen."
-  },
-  {
-    "objectID": "pages/chapters/goodpractices_data.html#datenformate",
-    "href": "pages/chapters/goodpractices_data.html#datenformate",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "Datenformate",
-    "text": "Datenformate\nBevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:\n\nIn welchem Dateiformat ist der Datensatz gespeichert? z.B. in .csv, .xlsx oder anderen?`\nIn welchem Datenformat ist der Datensatz geordnet? (long oder wide oder mixed?)\nGibt es ein data dictionnary mit Erklärungen zu den Variablen?"
-  },
-  {
-    "objectID": "pages/chapters/goodpractices_data.html#replizierbarkeit",
-    "href": "pages/chapters/goodpractices_data.html#replizierbarkeit",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "Replizierbarkeit",
-    "text": "Replizierbarkeit\nReplizierbarkeit (replicability) bedeutet, dass ein Experiment von einer anderen Forschungsgruppe mit einer neuen Stichprobe durchgeführt werden kann, und ähnliche oder dieselben Resultate hervorbringt, wie die Originalstudie. Wird eine Studie mehrmals repliziert, steigt die Wahrscheinlichkeit, dass kein Zufallsbefund vorliegt.\n\nReplicability refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected. Cacioppo et al. (2015)"
-  },
-  {
-    "objectID": "pages/chapters/goodpractices_data.html#reproduzierbarkeit",
-    "href": "pages/chapters/goodpractices_data.html#reproduzierbarkeit",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "Reproduzierbarkeit",
-    "text": "Reproduzierbarkeit\nReproduzierbarkeit (reproducibility) hängt eng mit der Replizierbarkeit zusammen. Der Begriff wird teilweise sehr allgemein verwendet, und bedeutet so dass Forschungsergebnisse wiederholt gefunden werden. Reproduzierbarkeit im engeren Sinn hingegen bezieht sich darauf, ob die durchgeführte Analyse wiederholt werden kann. Die Reproduzierbarkeit ist somit hoch, wenn Forschende die Daten und Datenanalyseskripts bereitstellen und andere Forschende damit dieselben Analysen durchführen können und zu gleichen Resultaten kommen.\n\nReproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. That is, a second researcher might use the same raw data to build the same analysis files and implement the same statistical analysis in an attempt to yield the same results…. Reproducibility is a minimum necessary condition for a finding to be believable and informative. Cacioppo et al. (2015)\n\nUm die Begriffe zusammenzufassen schlugen Goodman, Fanelli, and Ioannidis (2016) vor von Reproduzierbarkeit der Methoden (Daten und Prozesse können exakt wiederholt werden), Reproduzierbarkeit der Resultate (andere Studien kommen auf dieselben Resultate) und Reproduzierbarkeit der wissenschaftlichen Schlussfolgerung (bei Repetition der Analyse oder der Experimente werden dieselben Schlüsse gezogen) zu sprechen.\nGrundsätzlich besteht das Ziel, dass in der Forschung möglichst viel Evidenz für eine Schlussfolgerung gesammelt werden kann. Dies gelingt, wenn die Prozesse transparent, fehlerfrei und wiederholbar sind."
-  },
-  {
-    "objectID": "pages/chapters/goodpractices_data.html#hindernisse-bei-der-reproduzierbarkeit",
-    "href": "pages/chapters/goodpractices_data.html#hindernisse-bei-der-reproduzierbarkeit",
-    "title": "Neurowissenschaftliche Daten & Good Practices in der Datenverarbeitung",
-    "section": "Hindernisse bei der Reproduzierbarkeit",
-    "text": "Hindernisse bei der Reproduzierbarkeit\nReproduzierbarkeit kann laut Nosek et al. (2022) vor allem aus zwei Gründen nicht gegeben sein: Weil die Daten/Skripte nicht zur Verfügung stehen, oder weil diese Fehler enthalten:\n\nIn principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, the same result should occur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of the unavailability of data, code, information needed to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than the one reported originally. This can occur because of an error in either the original or the reproduction study. Nosek et al. (2022)\n\nFührt die Reproduktion nicht zum selben Resultat, löst das Zweifel am Forschungsergebnis aus. Wenn die Reproduzierbarkeit am Prozess scheitert, etwa weil die Daten nicht vorhanden sind, kann kein Schluss gezogen werden, ob die Resultate stimmen.\n\nAchieving reproducibility is a basic foundation of credibility, and yet many efforts to test reproducibility reveal success rates below 100%. … Whereas an outcome reproducibility failure suggests that the original result may be wrong, a process reproducibility failure merely indicates that the original result cannot be verified. Either reason challenges credibility and increases uncertainty about the value of investing additional resources to replicate or extend the findings (Nuijten et al. 2018). Sharing data and code reduces process reproducibility failures (Kidwell et al. 2016), which can reveal more outcome reproducibility failures (Hardwicke et al. 2018, 2021; Wicherts et al. 2011). Nosek et al. (2022)\n\nDas Teilen von Daten und Datenverarbeitungsskripten erhöht die Wahrscheinlichkeit, dass mögliche Fehler im Prozess gefunden werden, da auch andere Forschende die Daten/Skripts verwenden können. Das ist vorerst unangenehm, gehört aber zum Prozess der Wissenschaft dazu. Reproduzierbarkeit erhöht also indirekt auch die Replizierbarkeit."
-  },
-  {
     "objectID": "pages/chapters/neurowissenschaft.html",
     "href": "pages/chapters/neurowissenschaft.html",
     "title": "Neurowissenschaft",
@@ -285,34 +432,6 @@
     "title": "Neurowissenschaft",
     "section": "",
     "text": "Bereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "",
-    "text": "Nothing in neuroscience makes sense except in the light of behavior.\nShepherd (1988)"
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html#besondere-herausforderungen-von-experimenten-in-den-verhaltens-neurowissenschaften",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften",
-    "text": "Besondere Herausforderungen von Experimenten in den Verhaltens-/Neurowissenschaften\n\nPräzision: Hohe räumliche und zeitliche Auflösung\nEine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat. Räumliche Auflösung kann bedeuten, dass sehr präzise visuelle Darbietung möglich sein muss, sowie dass die Versuchsperson sich im Setup nicht bewegen darf, weil dies die Distanzen verschiebt (z.B. im MRT, oder der Abstand zum Bildschirm beim Eyetracking).\n\n\nSynchronisation: Mehrere Datenspuren\nNeurowissenschaftliche Experimente beinhalten oft die Datenerhebung auf mehreren Ebenen, z.B. wird gleichzeitig Hirnaktivität und das Drücken von Antwortbuttons aufgenommen. Das bedeutet, dass Bildschirm, MRT/EEG/Eyetracking/etc., sowie die Antwort zeitlich koregistriert/synchronisiert werden müssen, um die Daten im Nachhinein auswerten zu können. Technisch ist das oft mit grossem Aufwand verbunden und benötigt einiges an Pilotierung.\n\n\nKomplexität: Zu untersuchender Prozess und Störprozesse\nOft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?\nEin Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!\nSie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie nicht interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.\n\n\nDatenerhebung: Teuer und anspruchsvoll\nBildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert.\n\n\nPassendes Experiment muss selber erstellt werden\nOft muss ein neues Paradigma erstellt werden, d.h. Forschende können kein schon bestehendes Experiment nutzen, sondern untersuchen einen Aspekt eines neuronalen Prozesses mit einer neuen Methode, einer neuen Fragestellung oder einem neuen Ansatz. Dies erfordert breiteKenntnisse im Programmieren, der zu verwendenden Technik, wie auch der Gehirnprozesse."
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html#wichtige-elemente-von-experimenten",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "Wichtige Elemente von Experimenten",
-    "text": "Wichtige Elemente von Experimenten\nBeim Programmieren von Experimenten lohnt es sich, sich zuerst darüber im klaren zu sein, welche Bausteine das geplante Experiment hat. Im Folgenden werden einige typische Elemente eines Verhaltensexperiments beschrieben. Oft kommen hier natürlich noch Stimulations- oder Aufnahmemethoden hinzu.\n\nBegrüssung und Einverständniserklärung\nHier wird die Versuchsperson begrüsst, wird über das Experiment aufgeklärt und gibt (wenn nicht vorher auf Papier schon geschehen) ihre Einverständnis zur Teilnahme am Experiment. Dies wird je nach Ethikkommission und Ethikantrag unterschiedlich gehandhabt. Wichtige Informationen sind hierbei, dass die Versuchsperson weiss worauf sie sich einlässt (Ist zum Beispiel Hirnstimulation/fMRI/etc. geplant? Wie lange dauert das Experiment ungefähr? Was soll sie tun, wenn sie abbrechen möchte?). Die Schwierigkeit ist oft, genügend Information zu geben aber die Hypothese nicht zu verraten.\n\n\nInstruktion\nDie Instruktion wird oft schriftlich gegeben, um diese zwischen den Versuchspersonen konstant zu halten. Es ist teilweise herausfordernd, einen Task so genau zu erklären, dass er verständlich ist, aber die Erklärung auch kurz genug zu halten, dass die Instruktion auch gelesen wird. Oft werden Übungstrials verwendet um die Instruktion zu verdeutlichen.\n\n\nStimuli\nUnter Stimuli werden die gezeigten Elemente verstanden, die den Task ausmachen. Es können Töne, Bilder, Wörter, etc. als Stimuli verwendet werden.\n\n\n\n\n\n\nHands-on: Stimuli\n\n\n\nWelche Stimuli aus neurowissenschaftlichen Experimenten kennen Sie?\nTauschen Sie sich mit Ihren Mitstudierenden aus und schreiben/zeichnen Sie ein paar Beispiele vorne an die Tafel.\n[~5 Minuten]\n\n\n\n\nTrial\nEin Trial beschreibt ein sich wiederholender Vorgang in dem der Stimulus gezeigt wird und z.B. von der Versuchsperson eine Antwort erwartet wird. Ein Trial wird oft sehr viele Male wiederholt. Die Stimuli können zwischen den Trials variieren oder gleich bleiben. Das Timing der Trials kann konstant sein (ein Stimulus wird bspw. immer gleich lang gezeigt) oder variiert werden (unterschiedliche Anzeigedauer).\nZwischen den Trials wird ein Inter-Trial-Interval (ITI) festgelegt. Dies wird z.B. bei fMRI Experimenten dann variiert, damit (je nach Repetition Time/TR) nicht immer in derselben Schicht aufgenommen wird bei Stimuluspräsentation.\nWährend einem Trial wird die Antwort / Response der Versuchsperson aufgenommen. Bei der Aufnahme von Reaktiosnzeiten muss festgelegt werden, wann der Trial oder die Stimuluspräsentation beginnt und mit welcher Handlung sie endet. Es kann bestimmt werden, welche Antworten zulässig sind (bspw. nur bestimmte Tasten) und was passiert wenn eine richtige oder falsche Antwort gegeben wird: Gibt es z.B. ein Feedback bei falschen Antworten?\n\n\nRun / Block\nEin Run/ein Block bezeichnet eine Einheit mit mehreren Trials. Oft werden Bedingungen z.B. zwischen den Runs randomisiert. Zwischen den Runs sind Pausen möglich, damit sich die Versuchsperson erholen kann. Oft wird vor dem Experimentstart ein “Übungsblock” durchgeführt, um sich sicher zu sein, dass die Versuchspersonen die Aufgabe und Instruktion verstanden haben.\n\n\nDebriefing und Verabschiedung\nIm Debriefing wird der Versuchsperson erklärt, um was es im Experiment gegangen ist, welche Hypothesen untersucht wurden und eine eventuelle Coverstory aufgedeckt. Oft werden Personen vor dem Debriefing nach der getesteten Hypothese gefragt, um zu schauen, ob sie diese erraten hatten. Das gibt Aufschluss darüber wie sehr das Experiment dadurch verzerrt sein könnte, dass die Versuchspersonen Bescheid wissen. Wichtig ist es auch den Versuchspersonen zum Schluss zu danken."
-  },
-  {
-    "objectID": "pages/chapters/neurowissenschaftliche_experimente.html#vorgehen-experiment-programmieren",
-    "href": "pages/chapters/neurowissenschaftliche_experimente.html#vorgehen-experiment-programmieren",
-    "title": "Neurowissenschaftliche Experimente",
-    "section": "Vorgehen Experiment programmieren",
-    "text": "Vorgehen Experiment programmieren\nWichtige Schritte beim Programmieren von Experimenten sind folgende (nicht unbedingt in dieser Reihenfolge, das kommt auf das Experiment an):\n\nTask auswählen\nStimuli auswählen\nTiming festlegen: Dauer Stimuluspräsentation? ITIs (Inter-Trial-Intervals)?\nAnzahl Bedingungen und Trials bestimmen (Power bedenken), within oder between Design?\nAblauf des Experiments festlegen: Gesamtdauer? Pausen nötig?\nCoverstory, Stimulus-Masking, etc. nötig?\nEinbindung von allen technischen Geräten (z.B. EEG Recorder, MRT, Brainstimulation-Devices, Eyetracking) und Synchronisation\n\n\nFlowcharts\nBei der Planung und dem Erstellen eines Experiments ist es sehr hilfreich eine Flowchart zu erstellen. In einer Flowchart sind die oben genannten Elemente des Experimentes in Boxen eingezeichnet und mit Pfeilen verbunden um sie zeitlich einzuordnen. Timing-Informationen können unter oder neben den Boxen festgehalten werden. Die Anzahl Repetitionen wird oft neben den Pfeilen eingefügt.\n\nWir werden zu einem späteren Zeitpunkt in diesem Kurs darauf eingehen, wie man ein Experiment möglichst gut planen kann um aussagekräftige Daten zu erhalten. Hier gibt es viele Möglichkeiten wie Pilotierung, Datensimulation und die adäquate Wahl der statistischen Verfahren in Bezug auf die Fragestellung.\n\nEine Flowchart eignet sich ebenfalls sehr gut, um in einem Artikel darzustellen, wie der Ablauf des Experiments war."
   },
   {
     "objectID": "pages/chapters/programmieren_1.html",
@@ -334,20 +453,6 @@
     "title": "Sprachen & Umgebungen",
     "section": "Programmierumgebungen",
     "text": "Programmierumgebungen\nEine IDE kombiniert häufig verwendete Entwicklertools in einer grafischen Benutzeroberfläche. Typischerweise handelt es sich dabei um Funktionen wie Softwarebearbeitung, Erstellung und Testen von Code.\nIn diesem Kurs werden wir RStudio verwenden."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html",
-    "href": "pages/chapters/programmieren_2.html",
-    "title": "Automatisieren",
-    "section": "",
-    "text": "Lernziele\n\n\n\n\n\nIn der heutigen Sitzung lernen wir:\n\nConditionals und Control Flow\nFunktionen erstellen\nLoops anwenden\n\nFühren Sie die folgenden Code Beispiele auf Ihrem Computer aus. Wenn Sie R und RStudio noch nicht installiert haben, verwenden Sie diese online R Konsole.\nWir lernen nun zwei Programmierkonzepte kennen, die uns dabei helfen, Tasks zu automatisieren. Wir werden hier nicht in die Tiefe gehen; es geht uns vielmehr darum, Ihnen einen Überblick zu geben, was Sie mit diesen Konzepten machen können. Falls Sie tiefer in die Materie einsteigen möchten, gibt es entsprechende Kurse auf Datacamp."
-  },
-  {
-    "objectID": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "href": "pages/chapters/programmieren_2.html#alternativen-zu-for-loops",
-    "title": "Automatisieren",
-    "section": "Alternativen zu for-Loops",
-    "text": "Alternativen zu for-Loops\nEs gibt in R mehrere Möglichkeiten, um über Vektoren oder Listen zu iterieren, ohne dabei explizite for-Loops zu schreiben. Dies hat den Vorteil, dass der Code kürzer und übersichtlicher wird.\n\nlapply und sapply\n\nlapply und sapply sind zwei Funktionen, welche über Listen iterieren. lapply und sapply sind sehr ähnlich. lapply gibt eine Liste zurück, während sapply versucht den output zu vereinfachen (Vektor, Matrix).\nAls Beispiel wollen wir jedes Element eines Vektors verdoppeln (dies kann in R auch einfacher gemacht werden, aber dies ist nur ein Übungsbeispiel).\n\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\nMit for können wir dies wie folgt tun.\n\nfor (number in numbers) {\n    print(number * 2)\n}\n\n[1] 2\n[1] 4\n[1] 6\n[1] 8\n[1] 10\n\n\nMit lapply und sapply haben wir zwei Möglichkeiten. Wir können entweder eine anonyme Funktion definieren, oder wir können eine Funktion zuerst definieren, und dann verwenden.\n\\(x) x * 2 definiert eine sogenannte anonyme Funktion. Diese Funktion nimmt ein Argument x und multipliziert es mit 2, erhält aber keinen eigenen Namen. Folglich können wir diese Funktion nicht wiederverwenden.\n\nlapply(numbers, \\(x) x * 2)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nMit einer Funktion, die wir zuerst definieren, sieht unser Beispiel so aus.\n\ndouble &lt;- function(x) {\n    x * 2\n}\n\n\nlapply(numbers, double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\n\nsapply(numbers, double)\n\n[1]  2  4  6  8 10\n\n\nmap\nEine weitere Möglichkeit, über Listen zu iterieren, ist die Funktion map. map ist eine Funktion aus dem Paket purrr (wird automatisch geladen, wenn tidyverse geladen wird). map gibt immer eine Liste zurück.\n\nlibrary(tidyverse)\n\nWarning: Paket 'ggplot2' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'tibble' wurde unter R Version 4.2.3 erstellt\n\n\nWarning: Paket 'dplyr' wurde unter R Version 4.2.3 erstellt\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.1     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nnumbers |&gt; map(double)\n\n[[1]]\n[1] 2\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 6\n\n[[4]]\n[1] 8\n\n[[5]]\n[1] 10\n\n\nWenn wir als Output einen Vektor haben wollen, müssen wir die Funktion unlist() verwenden.\n\nnumbers |&gt; map(double) |&gt; unlist()\n\n[1]  2  4  6  8 10"
   },
   {
     "objectID": "pages/chapters/psychopy_experiments.html",
@@ -441,20 +546,6 @@
     "text": "6.3 Individualisierte Aufgabenschwierigkeit / Schwellenmessung\nIm Random Dot Experiment macht es z.B. für gewisse Fragestellungen Sinn die Aufgabenschwierigkeit für jede Person anzupassen, da sonst ceiling/floor-Effekte auftreten können.\nIn PsychoPy kann ein Staircase in einem Loop verwendet werden, um die Schwierigkeit einer Aufgabe basierend auf der Leistung der Teilnehmer dynamisch anzupassen. Sie ist besonders häufig in Experimenten zur Schwellenmessung, bei denen das Ziel darin besteht, die kleinste wahrnehmbare Reizintensität zu bestimmen. Hier finden Sie weitere Informationen zu diesem Thema: Using a Staircase - PsychoPy."
   },
   {
-    "objectID": "pages/chapters/quiz_one.html",
-    "href": "pages/chapters/quiz_one.html",
-    "title": "Quiz 1",
-    "section": "",
-    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
-  },
-  {
-    "objectID": "pages/chapters/quiz_one.html#quiz-1",
-    "href": "pages/chapters/quiz_one.html#quiz-1",
-    "title": "Quiz 1",
-    "section": "",
-    "text": "Sie finden das erste Quiz in Ihrer Iliasgruppe:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1\nSie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen."
-  },
-  {
     "objectID": "pages/chapters/random_dot_experiment.html",
     "href": "pages/chapters/random_dot_experiment.html",
     "title": "Random Dot Paradigma",
@@ -467,48 +558,6 @@
     "title": "Random Dot Paradigma",
     "section": "",
     "text": "In unserem Experiment lösen die Versuchspersonen einen Random Dot Task zweimal (in zwei Blöcken). In jedem Block erhalten sie eine andere Instruktion, die Aufgabe bleibt jedoch dieselbe: Sie müssen herausfinden in welche Richtung sich die Punktewolke bewegt. In einem Block werden sie instruiert die Aufgabe möglichst schnell zu lösen. Im anderen Block werden sie instruiert die Aufgabe möglichst richtig zu lösen. Wir werden dann analysieren, wie sich das Entscheidungsverhalten von Menschen verändert, je nachdem wie sie instruiert wurden.\nDas Random Dot Kursexperiment ist folgendermassen aufgebaut:\n\n\n\n\n\n\n\nHands-on: Random Dot Kursexperiment\n\n\n\nLaden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. Hier finden Sie die Anweisungen dazu.\n\nTesten Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile alles Relevante enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.\nBeantworten Sie folgende Fragen zum Experiment:\n\n\nWas wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?\nWelche Bedingungen gibt es?\nWieviele Trials werden pro Bedingung durchgeführt?\nWie lange wird der Dot-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?\nWie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?"
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html",
-    "href": "pages/chapters/rmarkdown.html",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "",
-    "text": "RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles working directory für ein Datenanalyse-Projekt.\n\n\n\n\n\n\nHands-on: Erstellen eines RStudio Projects\n\n\n\n\nÖffnen Sie RStudio.\nErstellen Sie ein neues RStudio-Project\n\nKlicken Sie dafür auf File &gt; New Project\nBenennen Sie das Project neurosci_complab_rmarkdown und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.\n\n\n\n\nEs empfiehlt sich bei RProjekten eine Einstellungsänderung (Tools&gt; Project Options...) vorzunehmen, so dass die aktuell gespeicherten Variablen bei jedem Schliessen vom Projekt gelöscht werden. Dies verhindert, dass der aktuelle Code nur aufgrund früherer Speicherung läuft."
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html#r-markdown-file-erstellen-und-ausführen",
-    "href": "pages/chapters/rmarkdown.html#r-markdown-file-erstellen-und-ausführen",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "R Markdown File erstellen und ausführen",
-    "text": "R Markdown File erstellen und ausführen\n\n\n\n\n\n\nHands-on: R Markdown File in einem Projekt erstellen\n\n\n\n\nErstellen Sie ein neues .Rmd-File (File &gt; New File &gt; R Markdown).\nGeben Sie einen Titel und Ihren Namen ein und wählen Sie HTML als Output-Format.\nSpeichern Sie dieses Dokument unter dem Namen rmarkdown_exampleab.\n\nWelches Format (Endung) hat das abgespeicherte R Markdown Skript nun in Ihrem Ordner?\n\n\n\nWeiterführende Informationen:\n👉 Einführung in die Verwendung von R/RStudio/Notebooks im Rahmen des Psychologie Studiums von Andrew Ellis und Boris Mayer Einführung in R\n👉 Sehr kompakte, praxisnahe Einführung in R Markdown von Danielle Navarro (Slidedeck in englisch) Einführung in R Markdown"
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html#knitten",
-    "href": "pages/chapters/rmarkdown.html#knitten",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "Knitten",
-    "text": "Knitten\nMit Knit wird das R Markdown Skript ausgeführt und eine zusätzliche Datei wird erstellt, z.B. ein html-File.\n\n\n\n\n\n\nHands-on: Knitten\n\n\n\nFühren Sie das File mit Knit aus und vergleichen Sie das R Markdown Skript mit dem Output den Sie erhalten haben. Was fällt Ihnen auf?\n\nWas ist nicht mehr zu sehen?\nWas ist zusätzlich zu sehen?\nWas hat sich im Projekt-Ordner verändert?"
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html#yaml-header",
-    "href": "pages/chapters/rmarkdown.html#yaml-header",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "YAML header",
-    "text": "YAML header\nAm Anfang des R Markdown Skripts befindet sich der YAML header. Hier werden Informationen zu Titel, Autor:Innen, Datum, Outputformat, Literaturverzeichnis und Layout festgelegt.\n\nYAML: Yet Another Markdown Language\n\nDas Layout kann unter themegeändert werden. Das kann beispielsweise wie folgt aussehen:\noutput:\n  html_document:\n    theme: cosmo\nAchtung: Die Einrückungen müssen genau stimmen! Hier wurde das theme namens cosmo ausgewählt. Mögliche andere themessind z.B. default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, yeti.\n\n\n\n\n\n\nHands-on: Namen und Einstellungen anpassen\n\n\n\n\nGeben Sie dem Dokument einen neuen Titel z.B. R Markdown Einführung\nÄndern Sie das Layout so, dass es Ihnen gefällt."
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html#text-erstellen-in-r-markdown",
-    "href": "pages/chapters/rmarkdown.html#text-erstellen-in-r-markdown",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "Text erstellen in R Markdown",
-    "text": "Text erstellen in R Markdown\nText kann in R Markdown Files nicht nur geschrieben, sondern auch relativ simpel formatiert werden.\n👉 Hier können Sie das Cheatsheet herunterladen. Auf der rechten Seite finden Sie die Informationen für die Textformatierung.\nEs empfiehlt sich das Skript anfangs häufig zu knitten, so findet man den Fehler schneller, weil man noch weiss, was man als letztes verändert hat. Code kann aber auch einfach innerhalb der Code-Chunks überprüft werden.\n\n\n\n\n\n\nHands-on: Texte, Formeln und Bilder in R Markdown einfügen\n\n\n\n\nLöschen Sie alles bis auf den YAML-Header\nSchreiben Sie im Textbereich eine Überschrift für ein Kapitel, ein Unterkapitel und normalen Text.\nSchreiben Sie im Text etwas kursiv und etwas fett.\nErstellen Sie im Textbereich eine Liste mit 3 Punkten.\nSchreiben Sie alpha innerhalb von $, was passiert?\nFügen Sie die untenstehende Formel in den Text ein. Verwenden Sie dafür zwei Dollarzeichen am Anfang und am Ende. Was passiert?\n\n\\[\na^2 + b^2 = c^2\n\\]\n\nFügen Sie einen Link ein, knitten Sie das File und schauen Sie ob der Link funktioniert. Können Sie einen Link nur mit einem unterstrichenen Text anzeigen, so dass die Linkadresse nicht sichtbar ist?\nFügen Sie ein Bild ein. Speichern Sie dieses Bild zuerst in einem Ordner namens img im Projektordner.\n\n\n\n\nHier finden Sie weiterführende Hilfe zum Einfügen von Mathnotationen.\n\nMathematics in RMarkdown\nRMarkdown: The definitive Guide"
-  },
-  {
-    "objectID": "pages/chapters/rmarkdown.html#code-erstellen-in-r-markdown",
-    "href": "pages/chapters/rmarkdown.html#code-erstellen-in-r-markdown",
-    "title": "RStudio Projects und RMarkdown",
-    "section": "Code erstellen in R Markdown",
-    "text": "Code erstellen in R Markdown\nCode muss jeweils in einem Code-Chunk eingefügt werden. Ein Code-Chunk kann unter Code &gt; Insert Chunk eingefügt werden oder mit dem Kürzel Ctrl+Alt+ I.\nCode-Chunks werden mit ``` begonnen und beendet. In den geschweiften Klammern steht r, das bedeutet dass der Code in R geschrieben ist. In dieser Klammer kann dem Code-Chunk einen Namen gegeben und bestimmt werden, ob der Code ausgeführt und z.B. nur angezeigt werden soll, sowie ob der Output des Codes angezeigt werden soll.\nMit dem grünen Pfeil kann der Code-Chunk einzeln ausgeführt werden. Aber auch einzelne Zeilen können ausgeführt werden, genau so wie in einem .R- Skript.\n\n\n\n\n\n\nHands-on: Code in R Markdown einfügen\n\n\n\n\nErstellen Sie einen Code-Chunk, der ausgeführt, aber nicht angezeigt wird. Erstellen Sie eine Variable mit dem Namen numbers, die 10 Zahlen enthält.\nErstellen Sie ein Code-Chunk, der ausgeführt wird und dessen Output angezeigt wird. Berechnen Sie in diesem Chunk den Mittelwert und die Standardabweichung von numbers.\nErstellen Sie einen Plot mit plot(numbers).\nKnitten Sie das File, um zu überprüfen, ob alles funktioniert\n\n👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.\nFür Fortgeschrittene:\n\nTesten Sie, ob Sie Ihr File auch zu einem PDF knitten können.\nErstellen Sie eine Tabelle\nErstellen Sie einen Glossar\nErstellen Sie ein Dokument mit Reitern oben (z.B. Data, Preprocessing, Analysis, Conclusions)\nFügen Sie interaktive Elemente ein."
   },
   {
     "objectID": "pages/chapters/setup.html",
@@ -544,27 +593,6 @@
     "title": "Setup",
     "section": "JASP",
     "text": "JASP\nEinen Teil der Bayesianischen Analysen werden wir mit JASP durchführen. Die aktuelle Version von JASP ist 0.18.3 und kann unter folgender URL heruntergeladen werden:\nJASP 👉 https://jasp-stats.org/download/"
-  },
-  {
-    "objectID": "pages/chapters/stroop_experiment.html",
-    "href": "pages/chapters/stroop_experiment.html",
-    "title": "Stroop Paradigma",
-    "section": "",
-    "text": "Der Stroop Task wurde 1935 zum ersten Mal beschrieben (Stroop, 1935) und ist einer der meist zitierten und verwendeten neuropsychologischen Aufgaben (MacLeod, 1991). In der Neuropsychologie wird der Stroop Color and Word Test (SCWT) verwendet, um die Fähigkeit zur Inhibition kognitiver Interferenz zu messen, welche entsteht wenn zwei Stimuluseigenschaften gleichzeitig verarbeitet werden sich aber widersprechen (Scarpina & Tagini, 2017). Teilweise misst der Task auch andere kognitive Funktionen, wie visuelle Suche oder Arbeitsgedächtnis, weshalb der Vergleich von Bedingungen relevant ist (Periáñez et al., 2021).\nWährend dem Stroop Task wird ein Text mit Farbwörtern präsentiert. Im kongruenten Durchgang entsprechen die Farben des Textes dem Farbwort (das Wort “rot” wird in rot präsentiert), im inkongruenten Durchgang unterscheiden sich die Farben des Textes vom Farbwort (das Wort “rot” wird in gelber Farbe präsentiert). Die Person muss angeben in welcher Farbe das Wort abgedruckt ist. In der kongruenten Bedingung fällt dies leichter, weil das gelesene Wort auch der Farbe entspricht. In der inkongruenten Bedingung verlangsamt sich die Geschwindigkeit durch die entstehende Interferenz von Wort und Farbe, da das Wort automatisch gelesen wird. Oft wird auch noch eine neutrale Bedingung verwendet, wo nur die Farbe oder das Wort präsentiert werden.\n\n\n\nDaten Stroop-Task (Stroop, 1935)\n\n\n\nHier finden Sie eine Online-Version des Originalpapers. Interessierte finden das Review von MacLeod (1991) auf Ilias.\n\n\n\n\n\n\n\nHands-on: Stroop Task ausprobieren\n\n\n\nHier finden Sie eine englische Online-Version eines Stroop Tasks.\nTesten Sie die Demo und diskutieren Sie dann in kleinen Gruppen folgende Fragen:\n\nFür welche neurowissenschaftlichen Forschungsfragen eignet sich dieser Task? Mit welchen weiteren Methoden (fMRI, EEG, Hirnstimulation, etc.) liesse er sich kombinieren und was könnte man dabei lernen? Welche Patientengruppen zeigen auffällige Antworten in diesem Task?\nWelche “Elemente” des Experiments konnten Sie identifizieren?\nWelche Stimuluseigenschaften sind relevant für das Experiment? Was macht die Aufgabe einfach? Was macht sie schwieriger?\nWelche Antwortmöglichkeiten haben die Versuchspersonen?\nWelche Bedingungen würden Sie vergleichen?\nWelche Stimuluseigenschaften sind wichtig, damit Sie die Resultate nicht verfälschen oder auf was muss geachtet werden bei der Stimulusauswahl?\nWas denken Sie, misst der Task was er soll? Wie werden die Verhaltensdaten Ihrer Schätzung nach aussehen?\n\n[~10 Minuten]\n\n\n\n\nIn diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einmal geben sie die Farben der Wörter an in einer kongruenten Bedingung (Wortinhalt und Wortfarbe) stimmen überein. Einmal lösen sie die Aufgabe in einer inkongruenten Bedingung (Wortinhalt und Wortfarbe stimmen nicht überein).\nDie kongruente und inkongruente Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.\nDas Stroop Kursexperiment ist folgendermassen aufgebaut:\n\n\n\n\n\n\n\nHands-on: Stroop Kursexperiment\n\n\n\nLaden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. Hier finden Sie die Anweisungen dazu.\n\nTesten Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile alles Relevante enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.\nBeantworten Sie folgende Fragen zum Experiment:\n\n\nWas wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?\nWelche Bedingungen gibt es?\nWieviele Trials werden pro Bedingung durchgeführt?\nWie lange wird der Wort-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?\nWie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?\n\n\n\n\n\n\nMacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. https://doi.org/10.1037/0033-2909.109.2.163\nPeriáñez, J. A., Lubrini, G., García-Gutiérrez, A., & Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. https://doi.org/10.1093/arclin/acaa034\nScarpina, F., & Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. https://doi.org/10.3389/fpsyg.2017.00557\nStroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662. https://doi.org/10.1037/"
-  },
-  {
-    "objectID": "pages/chapters/stroop_experiment.html#kurzbeschrieb-kursexperiment",
-    "href": "pages/chapters/stroop_experiment.html#kurzbeschrieb-kursexperiment",
-    "title": "Stroop Paradigma",
-    "section": "",
-    "text": "In diesem Experiment lösen die Personen zwei Bedingungen des Stroop Task, einmal geben sie die Farben der Wörter an in einer kongruenten Bedingung (Wortinhalt und Wortfarbe) stimmen überein. Einmal lösen sie die Aufgabe in einer inkongruenten Bedingung (Wortinhalt und Wortfarbe stimmen nicht überein).\nDie kongruente und inkongruente Bedingung kommen im selben Block vor. Die Instruktion lautet für beide Bedingungen gleich, da immer die Wortfarbe angegeben werden muss. Drei Farben werden verwendet: rot, blau und gelb.\nDas Stroop Kursexperiment ist folgendermassen aufgebaut:\n\n\n\n\n\n\n\nHands-on: Stroop Kursexperiment\n\n\n\nLaden Sie das Experiment herunter und testen Sie, ob es auf Ihrem Laptop läuft. Hier finden Sie die Anweisungen dazu.\n\nTesten Sie, ob das Experiment startet und ob die Übungstrials funktionieren. Kontrollieren Sie, ob es ein Datenfile abgespeichert hat und schauen Sie, ob dieses Datenfile alles Relevante enthält. Wenn alles ok ist, ist das Experiment bereit für Übung 1. Führen Sie die Testungen ausserhalb des Computerlabs durch.\nBeantworten Sie folgende Fragen zum Experiment:\n\n\nWas wurde im Experiment variiert? Wie viele unterschiedliche Trials gibt es?\nWelche Bedingungen gibt es?\nWieviele Trials werden pro Bedingung durchgeführt?\nWie lange wird der Wort-Stimulus angezeigt? Wann ist er fertig (zeit oder tasten-definiert?)?\nWie denken Sie, wird sich das Verhalten (Reaktionszeit, Richtigkeit) zwischen den Bedingungen unterscheiden?"
-  },
-  {
-    "objectID": "pages/chapters/stroop_experiment.html#referenzen",
-    "href": "pages/chapters/stroop_experiment.html#referenzen",
-    "title": "Stroop Paradigma",
-    "section": "",
-    "text": "MacLeod C. M. (1991). Half a century of research on the Stroop effect: an integrative review. Psychological Bulletin. 109(2), 163–203. https://doi.org/10.1037/0033-2909.109.2.163\nPeriáñez, J. A., Lubrini, G., García-Gutiérrez, A., & Ríos-Lago, M. (2021). Construct validity of the stroop color-word test: influence of speed of visual search, verbal fluency, working memory, cognitive flexibility, and conflict monitoring. Archives of Clinical Neuropsychology, 36(1), 99-111. https://doi.org/10.1093/arclin/acaa034\nScarpina, F., & Tagini, S. (2017). The stroop color and word test. Frontiers in psychology, 8, 557. https://doi.org/10.3389/fpsyg.2017.00557\nStroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662. https://doi.org/10.1037/"
   },
   {
     "objectID": "pages/chapters/uebung_1_experiment.html",

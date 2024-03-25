@@ -8,8 +8,9 @@
 
 <meta name="author" content="Gerda Wyssen">
 <meta name="author" content="Daniel Fitze">
+<meta name="description" content="Datensätze einlesen und vorverarbeiten.">
 
-<title>Neurowissenschaft Computerlab - Quiz 1</title>
+<title>Neurowissenschaft Computerlab - Übung 2 - Data Wrangling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/computerlab.html">Einführung</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/quiz_one.html">Quiz 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_2_datawrangling.html">Übung 2 - Data Wrangling</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -182,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/chapters/quiz_one.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz 1</span></a>
   </div>
 </li>
@@ -264,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/uebung_2_datawrangling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/chapters/uebung_2_datawrangling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 2 - Data Wrangling</span></a>
   </div>
 </li>
@@ -296,18 +297,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#quiz-1" id="toc-quiz-1" class="nav-link active" data-scroll-target="#quiz-1">Quiz 1</a></li>
+  <li><a href="#auftrag" id="toc-auftrag" class="nav-link active" data-scroll-target="#auftrag">Auftrag</a></li>
+  <li><a href="#vorgehen" id="toc-vorgehen" class="nav-link" data-scroll-target="#vorgehen">Vorgehen</a></li>
+  <li><a href="#abgabetermine" id="toc-abgabetermine" class="nav-link" data-scroll-target="#abgabetermine">Abgabetermine</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/computerlab.html">Einführung</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/quiz_one.html">Quiz 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_2_datawrangling.html">Übung 2 - Data Wrangling</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Quiz 1</h1>
+<h1 class="title">Übung 2 - Data Wrangling</h1>
 </div>
 
+<div>
+  <div class="description">
+    Datensätze einlesen und vorverarbeiten.
+  </div>
+</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
@@ -345,24 +353,62 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="quiz-1" class="level2">
-<h2 class="anchored" data-anchor-id="quiz-1">Quiz 1</h2>
-<p>Sie finden das erste Quiz in Ihrer Iliasgruppe:</p>
-<p>ILIAS (Montag) 👉 <a href="https://ilias.unibe.ch/goto_ilias3_unibe_crs_2926130.html">468703-FS2024-0</a></p>
-<p>ILIAS (Mittwoch) 👉 <a href="https://ilias.unibe.ch/goto_ilias3_unibe_crs_2880593.html">468703-FS2024-1</a></p>
-<p>Sie haben in der Veranstaltung Zeit das Quiz auszufüllen. Falls Sie nicht an der Veranstaltung teilnehmen, können Sie das Quiz bis zum 28. Februar 2024 um 23:55 ausfüllen.</p>
+<section id="auftrag" class="level2">
+<h2 class="anchored" data-anchor-id="auftrag">Auftrag</h2>
+<p>Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des Random Dot Experiments einlesen und vorverarbeiten. Erstellen Sie einen neuen Datensatz und einen Data Report.</p>
+</section>
+<section id="vorgehen" class="level2">
+<h2 class="anchored" data-anchor-id="vorgehen">Vorgehen</h2>
+<ul>
+<li><p><strong>Setup</strong></p>
+<ul>
+<li><p>Erstellen Sie ein <em>R-Project</em> inkl. Ordner namens <code>complab_datawrangling_randomdot</code>.</p></li>
+<li><p>Erstellen Sie in diesem Projekt-Ordner einen Ordner namens <code>data</code>.</p></li>
+<li><p>Laden Sie den Ordner mit den Datensätzen <a href="../../downloadable_files/random_dot_data.csv">FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL</a> herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem <code>data</code>-Ordner.</p></li>
+<li><p>Erstellen Sie ein neues <code>.Rmd</code>-File und speichern Sie dieses unter <code>preprocessing_randomdot_data</code> im Projekt-Ordner.</p></li>
+</ul></li>
+<li><p><strong>Automatierter Datenimport inkl. Vorverarbeiten</strong> (mit folgenden Schritten):</p>
+<ul>
+<li><p>Einlesen Datensatz</p></li>
+<li><p>Filtern der Daten, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (<code>filter()</code>)</p></li>
+<li><p>Erstellen einer neue Variable <code>trial</code>, die die Trialnummer startend mit 1 angibt (<code>mutate()</code>)</p></li>
+<li><p>Der Datensatz soll in dieser Reihenfolge folgende Informationen enthalten (<code>select()</code>): Versuchspersonenidentifikation (<code>id</code>), Instruktionsbedingung (<code>condition</code>), die Bewegungsrichtung der Punkte (<code>direction</code>), Antwort der Versuchsperson (<code>resp</code>), Antwortzeit der Versuchsperson (<code>rt</code>), war die Antwort korrekt? (<code>corr</code>) .</p></li>
+</ul>
+<p><!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): --></p>
+<p><!-- ![img/example_uebung2.jpg] --></p></li>
+<li><p><strong>Speichern neuer Datensatzes</strong></p>
+<ul>
+<li>Speichern Sie den vorverarbeiteten Datensatz als <code>.csv</code>-File namens <code>randomdot_data_clean.csv</code>.</li>
+</ul></li>
+<li><p><strong>Erstellen Data Report</strong> in Form eines <code>.html</code>-Files (mit der <strong>Knit</strong>-Funktion).</p></li>
+<li><p><strong>Hochladen Ordner auf Ilias unter <code>Übung 2</code> mit:</strong></p>
+<ul>
+<li><p><code>preprocessing_randomdot_data.Rmd</code>-File</p></li>
+<li><p><code>preprocessing_randomdot_data.html</code>-File</p></li>
+<li><p><code>randomdot_data_clean.csv</code>-File</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="abgabetermine" class="level2">
+<h2 class="anchored" data-anchor-id="abgabetermine">Abgabetermine</h2>
+<p><strong>Gruppe Montag:</strong> 9. April 2024 23:55</p>
+<p><strong>Gruppe Mittwoch:</strong> 9. April 2024 23:55</p>
+<!-- ## Trouble shooting -->
+<!-- Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach. -->
+<!-- Bitte Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist. -->
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
   author = {Wyssen, Gerda and Fitze, Daniel},
-  title = {Quiz 1},
-  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/quiz_one.html},
+  title = {Übung 2 - {Data} {Wrangling}},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/uebung_2_datawrangling.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Quiz 1.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/quiz_one.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/quiz_one.html</a>.
+Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Übung 2 - Data
+Wrangling.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/uebung_2_datawrangling.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/uebung_2_datawrangling.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 
