@@ -30,27 +30,35 @@ Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des
 
     - Erstellen Sie in diesem Projekt-Ordner einen Ordner namens `data`.
 
-    - Laden Sie den Ordner mit den Datensätzen [FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL](../../downloadable_files/random_dot_data.csv) herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem `data`-Ordner.
+    - Laden Sie den Ordner mit den Datensätzen [FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL](../../downloadable_files/data-import_random-dot.zip) herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem `data`-Ordner. 
+    
+    import-data.zip
 
     - Erstellen Sie ein neues `.Rmd`-File und speichern Sie dieses unter `preprocessing_randomdot_data` im Projekt-Ordner.
 
 - __Automatierter Datenimport inkl. Vorverarbeiten__ (mit folgenden Schritten):
 
-    - Einlesen Datensatz
+    - __Einlesen__ Datensatz (`read.csv()` oder `read_csv()`)
     
-    - Filtern der Daten, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (`filter()`)
+    - __Filtern der Daten__, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (`filter()`)
     
-    - Erstellen einer neue Variable `trial`, die die Trialnummer startend mit 1 angibt (`mutate()`)
+    - __Erstellen einer neue Variable__ `trial`, die die Trialnummer startend mit 1 angibt (`mutate()`)
     
-    - Der Datensatz soll in dieser Reihenfolge folgende Informationen enthalten (`select()`): Versuchspersonenidentifikation (`id`), Instruktionsbedingung (`condition`), die Bewegungsrichtung der Punkte (`direction`), Antwort der Versuchsperson (`resp`), Antwortzeit der Versuchsperson (`rt`), war die Antwort korrekt? (`corr`) . 
+    - __Datensatz vereinfachen__: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (`select()`): Versuchspersonenidentifikation (`id`), Instruktionsbedingung (`condition`), die Bewegungsrichtung der Punkte (`direction`), Antwort der Versuchsperson (`resp`), Antwortzeit der Versuchsperson (`rt`), war die Antwort korrekt? (`corr`) . 
     
     <!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): -->
 
     <!-- ![img/example_uebung2.jpg] -->
     
-- __Speichern neuer Datensatzes__
+:::callout-tip
+## Tipp
 
-    - Speichern Sie den vorverarbeiteten Datensatz als `.csv`-File namens `randomdot_data_clean.csv`.
+Am besten erstellen Sie zuerst für einen Datensatz einen funktionierenden Vorverarbeitungsablauf. In einem zweiten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner. Sie können sich an dem [Automatisierungsbeispiel](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html) mit dem Stroop Datensatz orientieren.
+:::
+
+- __Speichern neuer Datensatz__
+
+    - Speichern Sie den nun vorverarbeiteten Datensatz (der jetzt __alle__ Datensätze enthält) als `.csv`-File namens `randomdot_data_clean.csv`.
     
 - __Erstellen Data Report__ in Form eines `.html`-Files (mit der __Knit__-Funktion).
 
@@ -65,14 +73,40 @@ Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des
 
 ## Abgabetermine
 
-__Gruppe Montag:__ 9. April 2024 23:55
+__Gruppe Montag:__ 17. April 2024 23:55
 
-__Gruppe Mittwoch:__ 9. April 2024 23:55
+__Gruppe Mittwoch:__ 17. April 2024 23:55
 
 
-<!-- ## Trouble shooting -->
+## Trouble shooting
 
-<!-- Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach. -->
 
-<!-- Bitte Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist. -->
+__Das Einlesen funktioniert nicht.__
 
+Kontrollieren Sie bei der `read.csv()`-Funktion das `sep = ` Zeichen. Passt dieses zum Datensatz?
+
+Stimmt die Ordnerstruktur? Arbeiten Sie in einem _R-Project_, ist das `.Rmd`-File im _selben_ Ordner wie das `.Rproj`-File und haben Sie die Daten im `data`-Ordner gespeichert (ungezippt, also nur die Datenfiles)?
+
+__Die Datensätze können nicht alle eingelesen werden, obwohl ein einzelner Datensatz eingelesen werden kann.__
+
+Bitte öffnen Sie die Dateien nur in R, nicht in Excel oder in einem anderen Programm, das kann die Formatierung ändern und Probleme beim Einlesen verursachen. Falls Sie die Daten schon geöffnet haben, laden Sie den Datensatz nochmals neu von der Website herunter und speichern Sie ihn im Datenordner.
+
+
+
+__Weitere Fehlermeldungen__
+
+Lesen Sie die Fehlermeldung genau durch: Finden Sie Informationen zur Lösung des Fehlers?
+
+_Häufigste Fehlerquellen:_
+
+- Tippfehler?
+
+- Ist der Code-Chunk ist richtig formattiert: Er muss mit ` ```{r}` beginnen und mit ` ``` ` enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.
+
+- Reihenfolgenfehler? Löschen Sie alle Variablen mit dem "Besen"-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen.
+
+
+
+
+
+__Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach.__

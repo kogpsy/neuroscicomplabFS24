@@ -22,7 +22,7 @@ format:
 ```{r}
 #| include: false
 # Set working directory of R
-knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_knit$set(root.dir = '../../data/data_import_single')
 ```
 
 In R gibt es sehr viele hilfreiche _Funktionen_ und _Packages_, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Beim Arbeiten in _R_ empfiehlt es sich durchgehend in einem _R-Markdown_ Dokument (`.Rmd`) innerhalb eines _RStudio-Projects_ zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Ein weiterer Vorteil ist zudem, dass Rohdaten __nicht__ verändert werden müssen. 
@@ -184,7 +184,7 @@ d_stroop_filtered <- filter(d_stroop, color == "red")
 d_filtered <- d_stroop |> filter(color == "red")
 
 # nur Trials die ohne blau angezeigten Wörter behalten
-d_filtered <- d_stroop |> filter(condition != "blue")
+d_filtered <- d_stroop |> filter(color != "blue")
 
 # nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten
 d_filtered <- d_stroop |> filter(respPractice.rt <= 1)

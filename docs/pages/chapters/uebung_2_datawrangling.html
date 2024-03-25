@@ -300,6 +300,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#auftrag" id="toc-auftrag" class="nav-link active" data-scroll-target="#auftrag">Auftrag</a></li>
   <li><a href="#vorgehen" id="toc-vorgehen" class="nav-link" data-scroll-target="#vorgehen">Vorgehen</a></li>
   <li><a href="#abgabetermine" id="toc-abgabetermine" class="nav-link" data-scroll-target="#abgabetermine">Abgabetermine</a></li>
+  <li><a href="#trouble-shooting" id="toc-trouble-shooting" class="nav-link" data-scroll-target="#trouble-shooting">Trouble shooting</a></li>
   </ul>
 </nav>
     </div>
@@ -364,21 +365,39 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Erstellen Sie ein <em>R-Project</em> inkl. Ordner namens <code>complab_datawrangling_randomdot</code>.</p></li>
 <li><p>Erstellen Sie in diesem Projekt-Ordner einen Ordner namens <code>data</code>.</p></li>
-<li><p>Laden Sie den Ordner mit den Datensätzen <a href="../../downloadable_files/random_dot_data.csv">FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL</a> herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem <code>data</code>-Ordner.</p></li>
-<li><p>Erstellen Sie ein neues <code>.Rmd</code>-File und speichern Sie dieses unter <code>preprocessing_randomdot_data</code> im Projekt-Ordner.</p></li>
+<li><p>Laden Sie den Ordner mit den Datensätzen <a href="../../downloadable_files/data-import_random-dot.zip">FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL</a> herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem <code>data</code>-Ordner.</p></li>
+</ul>
+<p>import-data.zip</p>
+<ul>
+<li>Erstellen Sie ein neues <code>.Rmd</code>-File und speichern Sie dieses unter <code>preprocessing_randomdot_data</code> im Projekt-Ordner.</li>
 </ul></li>
 <li><p><strong>Automatierter Datenimport inkl. Vorverarbeiten</strong> (mit folgenden Schritten):</p>
 <ul>
-<li><p>Einlesen Datensatz</p></li>
-<li><p>Filtern der Daten, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (<code>filter()</code>)</p></li>
-<li><p>Erstellen einer neue Variable <code>trial</code>, die die Trialnummer startend mit 1 angibt (<code>mutate()</code>)</p></li>
-<li><p>Der Datensatz soll in dieser Reihenfolge folgende Informationen enthalten (<code>select()</code>): Versuchspersonenidentifikation (<code>id</code>), Instruktionsbedingung (<code>condition</code>), die Bewegungsrichtung der Punkte (<code>direction</code>), Antwort der Versuchsperson (<code>resp</code>), Antwortzeit der Versuchsperson (<code>rt</code>), war die Antwort korrekt? (<code>corr</code>) .</p></li>
+<li><p><strong>Einlesen</strong> Datensatz (<code>read.csv()</code> oder <code>read_csv()</code>)</p></li>
+<li><p><strong>Filtern der Daten</strong>, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (<code>filter()</code>)</p></li>
+<li><p><strong>Erstellen einer neue Variable</strong> <code>trial</code>, die die Trialnummer startend mit 1 angibt (<code>mutate()</code>)</p></li>
+<li><p><strong>Datensatz vereinfachen</strong>: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (<code>select()</code>): Versuchspersonenidentifikation (<code>id</code>), Instruktionsbedingung (<code>condition</code>), die Bewegungsrichtung der Punkte (<code>direction</code>), Antwort der Versuchsperson (<code>resp</code>), Antwortzeit der Versuchsperson (<code>rt</code>), war die Antwort korrekt? (<code>corr</code>) .</p></li>
 </ul>
 <p><!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): --></p>
 <p><!-- ![img/example_uebung2.jpg] --></p></li>
-<li><p><strong>Speichern neuer Datensatzes</strong></p>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Am besten erstellen Sie zuerst für einen Datensatz einen funktionierenden Vorverarbeitungsablauf. In einem zweiten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner. Sie können sich an dem <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html">Automatisierungsbeispiel</a> mit dem Stroop Datensatz orientieren.</p>
+</div>
+</div>
 <ul>
-<li>Speichern Sie den vorverarbeiteten Datensatz als <code>.csv</code>-File namens <code>randomdot_data_clean.csv</code>.</li>
+<li><p><strong>Speichern neuer Datensatz</strong></p>
+<ul>
+<li>Speichern Sie den nun vorverarbeiteten Datensatz (der jetzt <strong>alle</strong> Datensätze enthält) als <code>.csv</code>-File namens <code>randomdot_data_clean.csv</code>.</li>
 </ul></li>
 <li><p><strong>Erstellen Data Report</strong> in Form eines <code>.html</code>-Files (mit der <strong>Knit</strong>-Funktion).</p></li>
 <li><p><strong>Hochladen Ordner auf Ilias unter <code>Übung 2</code> mit:</strong></p>
@@ -391,11 +410,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="abgabetermine" class="level2">
 <h2 class="anchored" data-anchor-id="abgabetermine">Abgabetermine</h2>
-<p><strong>Gruppe Montag:</strong> 9. April 2024 23:55</p>
-<p><strong>Gruppe Mittwoch:</strong> 9. April 2024 23:55</p>
-<!-- ## Trouble shooting -->
-<!-- Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach. -->
-<!-- Bitte Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist. -->
+<p><strong>Gruppe Montag:</strong> 17. April 2024 23:55</p>
+<p><strong>Gruppe Mittwoch:</strong> 17. April 2024 23:55</p>
+</section>
+<section id="trouble-shooting" class="level2">
+<h2 class="anchored" data-anchor-id="trouble-shooting">Trouble shooting</h2>
+<p><strong>Das Einlesen funktioniert nicht.</strong></p>
+<p>Kontrollieren Sie bei der <code>read.csv()</code>-Funktion das <code>sep =</code> Zeichen. Passt dieses zum Datensatz?</p>
+<p>Stimmt die Ordnerstruktur? Arbeiten Sie in einem <em>R-Project</em>, ist das <code>.Rmd</code>-File im <em>selben</em> Ordner wie das <code>.Rproj</code>-File und haben Sie die Daten im <code>data</code>-Ordner gespeichert (ungezippt, also nur die Datenfiles)?</p>
+<p><strong>Die Datensätze können nicht alle eingelesen werden, obwohl ein einzelner Datensatz eingelesen werden kann.</strong></p>
+<p>Bitte öffnen Sie die Dateien nur in R, nicht in Excel oder in einem anderen Programm, das kann die Formatierung ändern und Probleme beim Einlesen verursachen. Falls Sie die Daten schon geöffnet haben, laden Sie den Datensatz nochmals neu von der Website herunter und speichern Sie ihn im Datenordner.</p>
+<p><strong>Weitere Fehlermeldungen</strong></p>
+<p>Lesen Sie die Fehlermeldung genau durch: Finden Sie Informationen zur Lösung des Fehlers?</p>
+<p><em>Häufigste Fehlerquellen:</em></p>
+<ul>
+<li><p>Tippfehler?</p></li>
+<li><p>Ist der Code-Chunk ist richtig formattiert: Er muss mit <code>```{r}</code> beginnen und mit <code>```</code> enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.</p></li>
+<li><p>Reihenfolgenfehler? Löschen Sie alle Variablen mit dem “Besen”-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen.</p></li>
+</ul>
+<p><strong>Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach.</strong></p>
 
 
 </section>
