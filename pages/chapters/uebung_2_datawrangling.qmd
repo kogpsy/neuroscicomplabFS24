@@ -30,45 +30,71 @@ Erstellen Sie eine automatisierte Datenverarbeitungs-Pipeline, die die Daten des
 
     - Erstellen Sie in diesem Projekt-Ordner einen Ordner namens `data`.
 
-    - Laden Sie den Ordner mit den Datensätzen [FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL](../../downloadable_files/data-import_random-dot.zip) herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem `data`-Ordner. 
+    - Laden Sie den Ordner mit den Datensätzen [hier](../../downloadable_files/data-rdk.zip) herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze direkt in Ihrem `data`-Ordner. 
     
-    import-data.zip
-
     - Erstellen Sie ein neues `.Rmd`-File und speichern Sie dieses unter `preprocessing_randomdot_data` im Projekt-Ordner.
 
 - __Automatierter Datenimport inkl. Vorverarbeiten__ (mit folgenden Schritten):
 
-    - __Einlesen__ Datensatz (`read.csv()` oder `read_csv()`)
+    - __Einlesen__ Datensatz (`read.csv()`)
     
     - __Filtern der Daten__, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (`filter()`)
     
     - __Erstellen einer neue Variable__ `trial`, die die Trialnummer startend mit 1 angibt (`mutate()`)
     
-    - __Datensatz vereinfachen__: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (`select()`): Versuchspersonenidentifikation (`id`), Instruktionsbedingung (`condition`), die Bewegungsrichtung der Punkte (`direction`), Antwort der Versuchsperson (`resp`), Antwortzeit der Versuchsperson (`rt`), war die Antwort korrekt? (`corr`) . 
-    
-    <!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): -->
+    - __Datensatz vereinfachen__: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (`select()`): 
 
-    <!-- ![img/example_uebung2.jpg] -->
-    
+        - Versuchspersonenidentifikation (`id`)
+        - Trialnummer (`trial`)
+        - Bewegungsrichtung der Punkte (`direction`)
+        - Instruktionsbedingung (`condition`)
+        - Korrekte Antwort für diesen Trial (`corrAns`)
+        - Antwort der Versuchsperson (`resp`), 
+        - war die Antwort der Versuchsperson korrekt? (`corr`)
+        - Antwortzeit der Versuchsperson (`rt`)
+
+  
 :::callout-tip
 ## Tipp
 
-Am besten erstellen Sie zuerst für einen Datensatz einen funktionierenden Vorverarbeitungsablauf. In einem zweiten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner. Sie können sich an dem [Automatisierungsbeispiel](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html) mit dem Stroop Datensatz orientieren.
+Am besten erstellen Sie zuerst für __einen__ Datensatz einen funktionierenden Vorverarbeitungsablauf. Dann erstellen Sie eine Funktion für diesen Ablauf. In einem letzten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner indem Sie eine Liste mit allen Filenamen erstellen. Sie können sich an dem [Automatisierungsbeispiel](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html) mit dem Stroop Datensatz orientieren.
+
+Das Einlesen kann eine Weile dauern, es sind sehr viele Datensätze.
 :::
 
-- __Speichern neuer Datensatz__
+- __Datensatz kontrollieren__:
 
-    - Speichern Sie den nun vorverarbeiteten Datensatz (der jetzt __alle__ Datensätze enthält) als `.csv`-File namens `randomdot_data_clean.csv`.
+    - Löschen Sie nun alle Variablen in der RStudio Umgebung (`Environment`) mit dem Besen-Icon oben rechts und führen Sie den Code nochmals aus. Wenn alles funktioniert, fahren Sie weiter.
+    
+    - Ihr Datensatz sollte nun wie untenstehend aussehen.  __Benutzen Sie dazu in Ihrem Code den Sie abgeben zwingend die Funktion `glimpse()`__.
+    
+```{r include=FALSE}
+library(tidyverse)
+```
+
+```{r echo=FALSE}
+d <- read.csv("../../data/data_rdk_clean/data/dataset_rdk_clean.csv")
+glimpse(d)
+```
+    
+
+- __Datensatz speichern__
+
+    - Speichern Sie den neuen Datensatz (der jetzt __alle__ Datensätze vorverarbeitet und zusammengefügt enthält) als `.csv`-File namens `dataset_rdk_clean.csv`.
     
 - __Erstellen Data Report__ in Form eines `.html`-Files (mit der __Knit__-Funktion).
 
+    - Drücken Sie auf das `Knit`-Zeichen (Wollknäuel) um das `.Rmd`-File zu einem `.html`-File zu _knitten_.
+    
+    - Öffnen Sie das `.html`-File zur Kontrolle.
+    
 - __Hochladen Ordner auf Ilias unter `Übung 2` mit:__ 
 
     - `preprocessing_randomdot_data.Rmd`-File
     
     - `preprocessing_randomdot_data.html`-File
     
-    - `randomdot_data_clean.csv`-File
+    - `dataset_rdk_clean.csv`-File
 
 
 ## Abgabetermine
@@ -91,7 +117,7 @@ __Die Datensätze können nicht alle eingelesen werden, obwohl ein einzelner Dat
 
 Bitte öffnen Sie die Dateien nur in R, nicht in Excel oder in einem anderen Programm, das kann die Formatierung ändern und Probleme beim Einlesen verursachen. Falls Sie die Daten schon geöffnet haben, laden Sie den Datensatz nochmals neu von der Website herunter und speichern Sie ihn im Datenordner.
 
-
+Haben Sie die Pfade richtig gesetzt? Haben Sie die Funktion `paste()` korrekt genutzt?
 
 __Weitere Fehlermeldungen__
 
@@ -99,14 +125,11 @@ Lesen Sie die Fehlermeldung genau durch: Finden Sie Informationen zur Lösung de
 
 _Häufigste Fehlerquellen:_
 
-- Tippfehler?
+- Tippfehler
 
-- Ist der Code-Chunk ist richtig formattiert: Er muss mit ` ```{r}` beginnen und mit ` ``` ` enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.
+- Formattierung Code-Chunk: Er muss mit ` ```{r}` beginnen und mit ` ``` ` enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.
 
-- Reihenfolgenfehler? Löschen Sie alle Variablen mit dem "Besen"-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen.
-
-
+- Reihenfolgenfehler: Löschen Sie alle Variablen mit dem "Besen"-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen. Wo stockt der Code?
 
 
-
-__Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach.__
+__Bei Problemen, fragen Sie bitte in der nächsten Veranstaltung nach.__

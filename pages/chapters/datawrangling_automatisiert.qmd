@@ -24,7 +24,7 @@ format:
 ```{r}
 #| include: false
 # Set working directory of R
-#knitr::opts_knit$set(root.dir = '../../data/data_import_automated')
+knitr::opts_knit$set(root.dir = '../../data/data_import_automated')
 ```
 
 Für diesen Teil benötigen Sie das _R-Project_ `complab_datawrangling_stroop` mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments.
@@ -55,8 +55,6 @@ d_stroop = read_csv("data/stroop_example_1.csv") |>
            resp = keyResp_test_run.keys, 
            corr = keyResp_test_run.corr, 
            rt = keyResp_test_run.rt)
-    
-           
 ```
 
 
@@ -96,6 +94,8 @@ Um die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benö
 files = list.files(path = 'data/', pattern = 'stroop') %>% 
     paste('data/', ., sep = '')
 ```
+
+<aside>Hier wird die _Pipe_ des `magritter`-_Packages_ verwendet (`%>%`) statt die _Base-R Pipe_ (`|>`). Mit `%>%` haben wir die Möglichkeit mit dem `.` zu bestimmen wo die weitergeleiteten Inhalte der Pipe eingefügt werden (nach `data/`). Informationen zu den Unterschieden der _Pipes_ finden Sie [hier](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).</aside>
 
 ### Alle Files von Hand einlesen
 Jedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.
@@ -159,6 +159,6 @@ d = list.files(path = 'data/', pattern = 'stroop') %>%
     paste('data/', ., sep = '') |>
     map_dfr(read_stroop)
 
-d |> write.csv(file = "data/dataset_stroop_clean.csv", row.names = FALSE)
+d |> write.csv(file = "data/clean/dataset_stroop_clean.csv", row.names = FALSE) # neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden
 ```
 

@@ -272,8 +272,21 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Daten visualisieren</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Daten visualisieren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/data_visualization_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grafiken erstellen mit <code>ggplot</code></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -282,10 +295,6 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Modellierung von Daten</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Glossar</span></span>
   </li>
     </ul>
     </div>
@@ -365,21 +374,26 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Erstellen Sie ein <em>R-Project</em> inkl. Ordner namens <code>complab_datawrangling_randomdot</code>.</p></li>
 <li><p>Erstellen Sie in diesem Projekt-Ordner einen Ordner namens <code>data</code>.</p></li>
-<li><p>Laden Sie den Ordner mit den Datensätzen <a href="../../downloadable_files/data-import_random-dot.zip">FUNKTIONIERENDER LINK FOLGT SOBALD DATEN AKTUELL</a> herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze in Ihrem <code>data</code>-Ordner.</p></li>
-</ul>
-<p>import-data.zip</p>
-<ul>
-<li>Erstellen Sie ein neues <code>.Rmd</code>-File und speichern Sie dieses unter <code>preprocessing_randomdot_data</code> im Projekt-Ordner.</li>
+<li><p>Laden Sie den Ordner mit den Datensätzen <a href="../../downloadable_files/data-rdk.zip">hier</a> herunter. Entzippen Sie den Ordner und speichern Sie die Datensätze direkt in Ihrem <code>data</code>-Ordner.</p></li>
+<li><p>Erstellen Sie ein neues <code>.Rmd</code>-File und speichern Sie dieses unter <code>preprocessing_randomdot_data</code> im Projekt-Ordner.</p></li>
 </ul></li>
 <li><p><strong>Automatierter Datenimport inkl. Vorverarbeiten</strong> (mit folgenden Schritten):</p>
 <ul>
-<li><p><strong>Einlesen</strong> Datensatz (<code>read.csv()</code> oder <code>read_csv()</code>)</p></li>
+<li><p><strong>Einlesen</strong> Datensatz (<code>read.csv()</code>)</p></li>
 <li><p><strong>Filtern der Daten</strong>, so dass nur Experimenttrials im Datensatz sind, keine Übungsaufgaben. (<code>filter()</code>)</p></li>
 <li><p><strong>Erstellen einer neue Variable</strong> <code>trial</code>, die die Trialnummer startend mit 1 angibt (<code>mutate()</code>)</p></li>
-<li><p><strong>Datensatz vereinfachen</strong>: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (<code>select()</code>): Versuchspersonenidentifikation (<code>id</code>), Instruktionsbedingung (<code>condition</code>), die Bewegungsrichtung der Punkte (<code>direction</code>), Antwort der Versuchsperson (<code>resp</code>), Antwortzeit der Versuchsperson (<code>rt</code>), war die Antwort korrekt? (<code>corr</code>) .</p></li>
-</ul>
-<p><!-- Wie der Datensatz nun aussehen sollte (`glimpse()`): --></p>
-<p><!-- ![img/example_uebung2.jpg] --></p></li>
+<li><p><strong>Datensatz vereinfachen</strong>: Der Datensatz soll in dieser Reihenfolge folgende Informationen/Variablennamen enthalten (<code>select()</code>):</p>
+<ul>
+<li>Versuchspersonenidentifikation (<code>id</code>)</li>
+<li>Trialnummer (<code>trial</code>)</li>
+<li>Bewegungsrichtung der Punkte (<code>direction</code>)</li>
+<li>Instruktionsbedingung (<code>condition</code>)</li>
+<li>Korrekte Antwort für diesen Trial (<code>corrAns</code>)</li>
+<li>Antwort der Versuchsperson (<code>resp</code>),</li>
+<li>war die Antwort der Versuchsperson korrekt? (<code>corr</code>)</li>
+<li>Antwortzeit der Versuchsperson (<code>rt</code>)</li>
+</ul></li>
+</ul></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -391,20 +405,46 @@ Tipp
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Am besten erstellen Sie zuerst für einen Datensatz einen funktionierenden Vorverarbeitungsablauf. In einem zweiten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner. Sie können sich an dem <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html">Automatisierungsbeispiel</a> mit dem Stroop Datensatz orientieren.</p>
+<p>Am besten erstellen Sie zuerst für <strong>einen</strong> Datensatz einen funktionierenden Vorverarbeitungsablauf. Dann erstellen Sie eine Funktion für diesen Ablauf. In einem letzten Schritt automatisieren Sie dann diesen Ablauf für alle Datensätze im Datenordner indem Sie eine Liste mit allen Filenamen erstellen. Sie können sich an dem <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html">Automatisierungsbeispiel</a> mit dem Stroop Datensatz orientieren.</p>
+<p>Das Einlesen kann eine Weile dauern, es sind sehr viele Datensätze.</p>
 </div>
 </div>
 <ul>
-<li><p><strong>Speichern neuer Datensatz</strong></p>
+<li><p><strong>Datensatz kontrollieren</strong>:</p>
 <ul>
-<li>Speichern Sie den nun vorverarbeiteten Datensatz (der jetzt <strong>alle</strong> Datensätze enthält) als <code>.csv</code>-File namens <code>randomdot_data_clean.csv</code>.</li>
+<li><p>Löschen Sie nun alle Variablen in der RStudio Umgebung (<code>Environment</code>) mit dem Besen-Icon oben rechts und führen Sie den Code nochmals aus. Wenn alles funktioniert, fahren Sie weiter.</p></li>
+<li><p>Ihr Datensatz sollte nun wie untenstehend aussehen. <strong>Benutzen Sie dazu in Ihrem Code den Sie abgeben zwingend die Funktion <code>glimpse()</code></strong>.</p></li>
 </ul></li>
-<li><p><strong>Erstellen Data Report</strong> in Form eines <code>.html</code>-Files (mit der <strong>Knit</strong>-Funktion).</p></li>
+</ul>
+<div class="cell" data-hash="uebung_2_datawrangling_cache/html/unnamed-chunk-2_94a8c9fea7c3c9567e89c979cc6d316c">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 32,520
+Columns: 8
+$ id        &lt;chr&gt; "sub-10209782", "sub-10209782", "sub-10209782", "sub-1020978…
+$ trial     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1…
+$ direction &lt;chr&gt; "left", "right", "left", "right", "right", "left", "right", …
+$ condition &lt;chr&gt; "speed", "speed", "speed", "speed", "speed", "speed", "speed…
+$ corrAns   &lt;chr&gt; "left", "right", "left", "right", "right", "left", "right", …
+$ resp      &lt;chr&gt; "right", "right", "left", "right", "right", "left", "right",…
+$ corr      &lt;int&gt; 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ rt        &lt;dbl&gt; 5.8753379, 0.8221688, 0.9351370, 0.7454416, 1.5085055, 0.939…</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>Datensatz speichern</strong></p>
+<ul>
+<li>Speichern Sie den neuen Datensatz (der jetzt <strong>alle</strong> Datensätze vorverarbeitet und zusammengefügt enthält) als <code>.csv</code>-File namens <code>dataset_rdk_clean.csv</code>.</li>
+</ul></li>
+<li><p><strong>Erstellen Data Report</strong> in Form eines <code>.html</code>-Files (mit der <strong>Knit</strong>-Funktion).</p>
+<ul>
+<li><p>Drücken Sie auf das <code>Knit</code>-Zeichen (Wollknäuel) um das <code>.Rmd</code>-File zu einem <code>.html</code>-File zu <em>knitten</em>.</p></li>
+<li><p>Öffnen Sie das <code>.html</code>-File zur Kontrolle.</p></li>
+</ul></li>
 <li><p><strong>Hochladen Ordner auf Ilias unter <code>Übung 2</code> mit:</strong></p>
 <ul>
 <li><p><code>preprocessing_randomdot_data.Rmd</code>-File</p></li>
 <li><p><code>preprocessing_randomdot_data.html</code>-File</p></li>
-<li><p><code>randomdot_data_clean.csv</code>-File</p></li>
+<li><p><code>dataset_rdk_clean.csv</code>-File</p></li>
 </ul></li>
 </ul>
 </section>
@@ -420,15 +460,16 @@ Tipp
 <p>Stimmt die Ordnerstruktur? Arbeiten Sie in einem <em>R-Project</em>, ist das <code>.Rmd</code>-File im <em>selben</em> Ordner wie das <code>.Rproj</code>-File und haben Sie die Daten im <code>data</code>-Ordner gespeichert (ungezippt, also nur die Datenfiles)?</p>
 <p><strong>Die Datensätze können nicht alle eingelesen werden, obwohl ein einzelner Datensatz eingelesen werden kann.</strong></p>
 <p>Bitte öffnen Sie die Dateien nur in R, nicht in Excel oder in einem anderen Programm, das kann die Formatierung ändern und Probleme beim Einlesen verursachen. Falls Sie die Daten schon geöffnet haben, laden Sie den Datensatz nochmals neu von der Website herunter und speichern Sie ihn im Datenordner.</p>
+<p>Haben Sie die Pfade richtig gesetzt? Haben Sie die Funktion <code>paste()</code> korrekt genutzt?</p>
 <p><strong>Weitere Fehlermeldungen</strong></p>
 <p>Lesen Sie die Fehlermeldung genau durch: Finden Sie Informationen zur Lösung des Fehlers?</p>
 <p><em>Häufigste Fehlerquellen:</em></p>
 <ul>
-<li><p>Tippfehler?</p></li>
-<li><p>Ist der Code-Chunk ist richtig formattiert: Er muss mit <code>```{r}</code> beginnen und mit <code>```</code> enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.</p></li>
-<li><p>Reihenfolgenfehler? Löschen Sie alle Variablen mit dem “Besen”-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen.</p></li>
+<li><p>Tippfehler</p></li>
+<li><p>Formattierung Code-Chunk: Er muss mit <code>```{r}</code> beginnen und mit <code>```</code> enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.</p></li>
+<li><p>Reihenfolgenfehler: Löschen Sie alle Variablen mit dem “Besen”-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen. Wo stockt der Code?</p></li>
 </ul>
-<p><strong>Bei Problemen, fragen Sie bitte an der nächsten Veranstaltung nach.</strong></p>
+<p><strong>Bei Problemen, fragen Sie bitte in der nächsten Veranstaltung nach.</strong></p>
 
 
 </section>

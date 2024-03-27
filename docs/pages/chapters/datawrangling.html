@@ -287,9 +287,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Daten visualisieren</span></span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Daten visualisieren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/data_visualization_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grafiken erstellen mit <code>ggplot</code></span></a>
+  </div>
+</li>
+      </ul>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Analysemethoden</span></span>
@@ -297,10 +310,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Modellierung von Daten</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Glossar</span></span>
   </li>
     </ul>
 </div>
@@ -510,7 +519,7 @@ Tipp
 </h2>
 <p>Mit <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion <code>filter(.data, filter, ...)</code> der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.</p>
 <p><em>Beispiele:</em></p>
-<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-8_4abad3491cfc6ee4cd8e6f520956331a">
+<div class="cell" data-hash="datawrangling_cache/html/unnamed-chunk-8_b876c64b4b1cb2d336b6fa2aaac349fa">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># nur die Trials mit den rot angezeigten Wörtern behalten</span></span>
 <span><span class="va">d_stroop_filtered</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">d_stroop</span>, <span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">)</span></span>
 <span></span>
@@ -518,7 +527,7 @@ Tipp
 <span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">color</span> <span class="op">==</span> <span class="st">"red"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># nur Trials die ohne blau angezeigten Wörter behalten</span></span>
-<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">!=</span> <span class="st">"blue"</span><span class="op">)</span></span>
+<span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">color</span> <span class="op">!=</span> <span class="st">"blue"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten</span></span>
 <span><span class="va">d_filtered</span> <span class="op">&lt;-</span> <span class="va">d_stroop</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">respPractice.rt</span> <span class="op">&lt;=</span> <span class="fl">1</span><span class="op">)</span></span>

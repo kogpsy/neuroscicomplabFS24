@@ -54,7 +54,7 @@ website:
 
     - section: Daten visualisieren
       contents:
-     # - pages/chapters/data_visualization_1.qmd
+      - pages/chapters/data_visualization_1.qmd
      # - pages/chapters/data_visualization_2.qmd
 
     - section: Analysemethoden
@@ -69,9 +69,6 @@ website:
      # - pages/chapters/signal-detection-1.qmd
      # - pages/chapters/signal-detection-2.qmd
 
-    - section: Glossar
-      contents:
-     # - pages/chapters/glossary.qmd
   page-footer:
     right:
     - icon: github
@@ -92,7 +89,7 @@ format:
     include-after-body: include/webex.js
 execute:
   cache: true
-  freeze: true
+  freeze: auto # re-render only when source changes
   execute-dir: project
 callout-icon: true
 callout-tip-caption: Lösung

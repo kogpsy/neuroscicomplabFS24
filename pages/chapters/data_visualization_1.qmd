@@ -1,0 +1,284 @@
+---
+title: "Grafiken erstellen mit `ggplot`"
+description: Einführung in das `ggplot2`-Package.
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
+license: CC BY
+citation: true
+format:
+    html:
+        toc: true
+        code-link: true
+execute: 
+  cache: false
+---
+
+```{r}
+#| include: false
+# Set working directory of R
+knitr::opts_knit$set(root.dir = '../../data/data_visualization')
+# getwd()
+```
+
+
+::: callout-caution
+## Hands-on: Vorbereitung
+
+
+
+-   Laden Sie [hier](../../downloadable_files/DatasaurusDozen.csv) den Beispielsdatensatz herunter, speichern Sie diesen in einem `data`-Folder in einem _R-Project_.
+
+- Öffnen Sie ein neues RScript (`.R`) oder RMarkdown-File (`.Rmd`). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt.
+
+:::
+
+
+# Grafiken erstellen mit `ggplot` 
+
+Das `gg` im _Package_ `ggplot2` steht für *Grammar of Graphics*. Diese besagt, dass alle Grafiken aus den unten beschriebenen Komponenten zusammengesetzt werden können und sich damit vollständig beschreiben lassen. Das Kennen dieser Komponenten macht den anfangs oft etwas unintuitiven Aufbau von `ggplot` verständlicher.
+
+<aside>Mit `ggplot`könnte man sogar Kunstwerke erstellen, wie bspw. [hier](https://www.data-imaginist.com/art) gezeigt wird.</aside>
+
+Eine Grafik enthält mindestens folgende 3 Komponenten: 
+
+-   **Daten**
+
+-   **Geome**, also sichtbare Formen (*aesthetics*), z.B. Punkte, Linien oder Boxen.
+
+-   **Koordinatensystem/Mapping**: wie sind Daten und Geome verbunden?
+
+Weitere optionale Komponenten sind:
+
+-   Statistische Parameter
+
+-   Position
+
+-   Koordinatenfunktionen
+
+-   **Facets**
+
+-   Scales
+
+-   **Themes**
+
+In dieser Einführung wird auf die ersten drei Komponenten, sowie auf _Facets_ und _Themes_ eingegangen.
+
+Beim Laden des _Packages_ `tidyverse` wird automatisch das _Package `ggplot2` ebenfalls geladen.
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+
+## Daten
+ 
+Die wichtigste Komponente einer Grafik sind die Daten. Bevor eine Grafik erstellt wird, müssen die Eigenschaften des Datensatzes bekannt sein.
+
+<aside>Der verwendete Datensatz stammt von @matejka_same_2017. </aside>
+
+```{r}
+# Einlesen des Übungsdatensatzes
+data <- read.csv("data/DatasaurusDozen.csv") %>%
+    mutate(condition = as.factor(condition)) # Variable condition soll ein Faktor sein
+
+# Datensatz anschauen
+glimpse(data)
+```
+
+### Datenformat
+
+Am einfachsten ist das plotten mit `ggplot()`, wenn die Daten im *long*-Format vorliegen. Das bedeutet:
+
+- Jede Variable die gemessen/erhoben wird hat eine Spalte (z.B. Versuchspersonennummer, Reaktionszeit, Taste). 
+
+- Jede Messung hat eine Zeile. In unserem PsychoPy-Experiment entspricht dies einer Zeile pro Trial. 
+
+Die hier eingelesenen Daten sind schon im *long*-Format. 
+
+<aside> Falls die Daten im *wide*-Format abgespeichert sind, lohnt es sich diese umzuformatieren z.B. mit `pivot_longer()`. </aside>
+
+
+### Variablen
+
+Für die Grafik ist es relevant, welches Skalenniveau die zu visualisierenden Variablen haben. Je nach Anzahl Variablen und den entsprechenden Skalenniveaus eignen sich andere Grafik-Formen. 
+
+![CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=724035](img/skalenniveau.png)
+
+::: callout-caution
+## Hands-on: Datensatz anschauen
+
+Schauen Sie sich den Datensatz an. 
+
+- Wie viele unterschiedliche Variablen gibt es? 
+- Wie heissen die Variablen? 
+- Welches Skalenniveau haben sie?
+
+:::
+
+### Subsetting
+
+Wenn nur ein gewisser Teil der Daten visualisiert werden soll, muss der Datensatz gefiltert werden. Der aktuelle Datensatz enthält beispielsweise verschiedene Bedingungen, jeweils mit Werten für Variable `value1` und `value2`. Folgende 13 Bedingungen sind enthalten:
+
+```{r}
+unique(data$condition)
+```
+
+Fürs erste entscheiden wir uns für die Bedingung `away`.
+
+```{r}
+data_away <- data %>%
+    filter(condition == "away")
+```
+
+
+Wir können für diese Bedingung zusätzlich *summary statistics* berechnen, hier Mittelwert und Standardabweichung.
+
+```{r}
+data_away_summary <- data %>%
+    summarise(mean_v1 = mean(value1),
+              sd_v1 = sd(value1),
+              mean_v2 = mean(value2),
+              sd_v2 = sd(value2))
+
+glimpse(data_away_summary)
+```
+
+Diese Werte geben einen Anhaltspunkt, in welchem Bereich sich die Werte bewegen werden. 
+
+
+### Plot
+
+In den folgenden Beispielen werden die Daten der Bedingung `away` verwendet. Als erstes Argument wird der Funktion `ggplot()` der Datensatz übergeben (`data = data_away`).
+
+```{r}
+ggplot(data = data_away)
+```
+
+Da noch keine Formen und kein Mapping eingegeben wurden ist die Grafik leer. 
+
+
+## Geom / Formen
+
+Als zweite Komponente werden in `ggplot()` wird die Form mit `geom_` hinzugefügt. Beispielsweise werden mit `geom_point()` Punkte erstellt, mit `geom_line()` Linien, mit `geom_boxplot` Boxplots, usw. Bei der Wahl der passenden Form kommt es einerseits auf die Daten an. Sind die Daten z.B. Faktoren oder numerische Werte (siehe auch Skalenniveau oben)?  Wie viele Variablen werden gleichzeitig in die Grafik eingebunden? Andererseits ist es wichtig, was mit der Grafik gezeigt werden soll: Unterschiede? Gemeinsamkeiten? Veränderungen über Zeit? 
+
+Oft verwendete Formen sind:
+
+- Punkte / Scatterplots - `geom_point()`
+- Linien - `geom_line()`
+
+Oder wenn zusammenfassende Werte geplottet werden sollen:
+
+- Histogramme - `geom_histogram()`
+- Mittelwerte und Standardabweichungen - `geom_pointrange()`
+- Dichte - `geom_density()`
+- Boxplots - `geom_boxplot()`
+- Violinplots - `geom_violin()`
+
+<aside>Es gibt auch weitere, informative Arten der Darstellung wie *heat maps* oder *shift functions*, auf die wir in dieser Veranstaltung nicht eingehen.</aside>
+
+::: callout-caution
+## Hands-on
+
+Welche `geoms` eignen sich für welches Skalenniveau und welche Variablenanzahl?
+
+👉 [Hier](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf) finden Sie das `ggplot`-Cheatsheet.
+
+Schauen Sie sich die verschiedenen Formen von Plots [hier](https://www.data-to-viz.com) an. 
+
+:::
+ 
+ 
+Beim Ausführen dieses Codes
+
+```
+ggplot(data = data_away) +
+    geom_point()
+```
+enthält man eine Fehlermeldung, weil nicht angegeben wurde __wie__ die Daten mit der Form `geom` verbunden werden soll: Das `mapping` fehlt.
+
+## Mapping
+
+Jede `geom`-Funktion in `ggplot` benötigt Angaben zum `mapping`: die dritte Komponente. Damit wird definiert, wie die Variablen auf die Formen (*aesthetics*) gemappt werden sollen. Am einfachsten wir dies zu Beginn in festgelegt (das `mapping` kann aber auch in der Funktion `geom_` selbst definiert werden). 
+
+Das `mapping` beschreibt, welche Variable auf der x- und y-Achse abgetragen werden sollen. Weitere Variablen könnten als `group = ...` oder `color = ...` eingefügt werden.
+
+```{r}
+ggplot(data = data_away,
+       mapping = aes(x = value1,
+                     y = value2)) +
+    geom_point()
+```
+
+## Beschriftungen und Themes
+
+Schönere und informativere Plots lassen sich gestalten, wenn wir einen Titel hinzufügen, die Achsenbeschriftung anpassen und das `theme` verändern:
+
+```{r}
+
+ggplot(data = data_away,
+       mapping = aes(x = value1,
+                     y = value2)) +
+    geom_point() +
+    ggtitle ("Ein etwas schönerer Plot") +
+    xlab("Wert 1 [a.u.]") +
+    ylab("Wert 2 [a.u.]") +
+    theme_minimal()
+
+```
+
+<aside> Auch `theme_classic()` oder `theme_bw()` ergeben schlichte aber schöne Plots. </aside>
+
+# Daten plotten: Hands on
+
+Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RSkript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.
+
+::: callout-note
+## Tipp: GUI
+Um das GUI zu verwenden, gehen Sie wie folgt vor: 
+
+- Installieren Sie das package `esquisse` mit `install.packages("esquisse")` in Ihrer Konsole oder über `Tools` > `Install packages...`
+
+- Geben Sie in Ihrer Konsole `esquisse::esquisser()` ein und wählen Sie dann unter `Import Data` den schon eingelesenen Datensatz `DatasaurusDozen.csv` aus.
+:::
+
+<aside>Ein weiteres `R`-basiertes Visualisierungstool in welchem der Code per GUI erstellt wird, ist [trelliscopejs](https://hafen.github.io/trelliscopejs/)</aside>
+
+
+::: callout-caution
+## Hands-on: Informative Grafik erstellen
+
+- Welche `geom_`s/Formen eignen sich gut für diesen Datensatz? 
+
+- Welche Abbildungen können alle 3 Variablen des Datensatzes berücksichtigen?
+
+- Wie kann man Bedingungen miteinander vergleichen?
+
+- Wie können Grösse und Farbe der `geom_`s bestimmt werden?
+
+- Wie passt man Schriftgrössen an?
+
+- Können Sie eine Grafik speichern?
+
+- Lassen Sie sich den Code direkt ins RScript/RMarkdown-File einfügen und verändern Sie den Code dort weiter.
+
+:::
+
+## Weitere hilfreiche Informationen
+
+- [Dokumentation](https://ggplot2.tidyverse.org/) von `ggplot2`
+
+- Kurzweilige, sehr informative Informationen und Videos über das Erstellen von Grafiken in `ggplot` finden Sie hier: [Website PsyTeachR: Data Skills for reproducible research](https://psyteachr.github.io/reprores-v3)
+
+- [Hier](https://youtu.be/90IdULVGmYY) ist der Start der PsyTeachR Videoliste von Lisa deBruine, dort finden sich auch hilfreiche Kurzvideos zu Themen von Daten einlesen bis zu statistischen Analysen. Beispielsweise zu [Basic Plots](https://youtu.be/tOFQFPRgZ3M), [Common Plots](https://youtu.be/kKlQupjD__g) und [Plot Themes and Customization](https://youtu.be/6pHuCbOh86s)
+
+- [Einführung in R](https://methodenlehre.github.io/einfuehrung-in-R/chapters/05-plotting.html) von Andrew Ellis und Boris Mayer
+
