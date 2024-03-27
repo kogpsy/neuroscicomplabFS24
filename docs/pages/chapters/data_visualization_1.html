@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.221">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Gerda Wyssen">
 <meta name="author" content="Daniel Fitze">
-<meta name="description" content="Herausforderungen, Datenformate und Reproduzierbarkeit.">
-
-<title>Neurowissenschaft Computerlab - Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</title>
+<meta name="description" content="Einführung in das ggplot2-Package.">
+<title>Neurowissenschaft Computerlab - Grafiken erstellen mit ggplot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
-
+</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
@@ -63,8 +74,7 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -88,23 +98,16 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../../styles/global.css">
+}</script><link rel="stylesheet" href="../../styles/global.css">
 <link rel="stylesheet" href="../../include/webex.css">
 </head>
-
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/logo.png" alt="" class="navbar-logo">
-    </a>
+    <img src="../../assets/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Neurowissenschaft Computerlab</span>
     </a>
@@ -115,12 +118,12 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item dropdown ">
+<li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">🗄️ Admin</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">
+<li>
     <a class="dropdown-item" href="../../pages/admin/wichtiges.html" rel="" target="">
  <span class="dropdown-text">📚 Wichtiges zum Kurs</span></a>
   </li>  
@@ -129,9 +132,9 @@ div.csl-indent {
  <span class="dropdown-text">📝 Terminübersicht</span></a>
   </li>  
     </ul>
-  </li>
+</li>
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -141,33 +144,27 @@ div.csl-indent {
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Daten visualisieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Grafiken erstellen mit <code>ggplot</code></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Einführung</span></a>
@@ -175,8 +172,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computerlab</span></a>
@@ -213,7 +210,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -222,8 +219,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/neurowissenschaftliche_experimente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
@@ -254,7 +251,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -263,8 +260,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RStudio Projects und RMarkdown</span></a>
@@ -289,7 +286,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -298,15 +295,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/data_visualization_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/chapters/data_visualization_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Grafiken erstellen mit <code>ggplot</code></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Analysemethoden</span></span>
@@ -316,46 +313,47 @@ div.csl-indent {
  <span class="menu-text">Modellierung von Daten</span></span>
   </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" id="toc-herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" class="nav-link active" data-scroll-target="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten">Herausforderungen im Umgang mit neurowissenschaftlichen Daten</a></li>
-  <li><a href="#neurowissenschaftliche-daten" id="toc-neurowissenschaftliche-daten" class="nav-link" data-scroll-target="#neurowissenschaftliche-daten">Neurowissenschaftliche Daten</a>
+<li>
+<a href="#grafiken-erstellen-mit-ggplot" id="toc-grafiken-erstellen-mit-ggplot" class="nav-link active" data-scroll-target="#grafiken-erstellen-mit-ggplot">Grafiken erstellen mit <code>ggplot</code></a>
   <ul class="collapse">
-  <li><a href="#datenquellen" id="toc-datenquellen" class="nav-link" data-scroll-target="#datenquellen">Datenquellen</a></li>
-  <li><a href="#datenformate" id="toc-datenformate" class="nav-link" data-scroll-target="#datenformate">Datenformate</a></li>
-  </ul></li>
-  <li><a href="#good-practices-in-der-datenverarbeitung" id="toc-good-practices-in-der-datenverarbeitung" class="nav-link" data-scroll-target="#good-practices-in-der-datenverarbeitung">Good Practices in der Datenverarbeitung</a>
+<li>
+<a href="#daten" id="toc-daten" class="nav-link" data-scroll-target="#daten">Daten</a>
   <ul class="collapse">
-  <li><a href="#replizierbarkeit" id="toc-replizierbarkeit" class="nav-link" data-scroll-target="#replizierbarkeit">Replizierbarkeit</a></li>
-  <li><a href="#reproduzierbarkeit" id="toc-reproduzierbarkeit" class="nav-link" data-scroll-target="#reproduzierbarkeit">Reproduzierbarkeit</a></li>
-  </ul></li>
-  <li><a href="#reproduzierbarkeit-1" id="toc-reproduzierbarkeit-1" class="nav-link" data-scroll-target="#reproduzierbarkeit-1">Reproduzierbarkeit</a>
-  <ul class="collapse">
-  <li><a href="#hindernisse-bei-der-reproduzierbarkeit" id="toc-hindernisse-bei-der-reproduzierbarkeit" class="nav-link" data-scroll-target="#hindernisse-bei-der-reproduzierbarkeit">Hindernisse bei der Reproduzierbarkeit</a></li>
-  </ul></li>
-  <li><a href="#tools-für-reproduzierbarkeit" id="toc-tools-für-reproduzierbarkeit" class="nav-link" data-scroll-target="#tools-für-reproduzierbarkeit">Tools für Reproduzierbarkeit</a></li>
-  <li><a href="#code-kommentieren" id="toc-code-kommentieren" class="nav-link" data-scroll-target="#code-kommentieren">Code kommentieren</a></li>
+<li><a href="#datenformat" id="toc-datenformat" class="nav-link" data-scroll-target="#datenformat">Datenformat</a></li>
+  <li><a href="#variablen" id="toc-variablen" class="nav-link" data-scroll-target="#variablen">Variablen</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">Subsetting</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">Plot</a></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#geom-formen" id="toc-geom-formen" class="nav-link" data-scroll-target="#geom-formen">Geom / Formen</a></li>
+  <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping">Mapping</a></li>
+  <li><a href="#beschriftungen-und-themes" id="toc-beschriftungen-und-themes" class="nav-link" data-scroll-target="#beschriftungen-und-themes">Beschriftungen und Themes</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#daten-plotten-hands-on" id="toc-daten-plotten-hands-on" class="nav-link" data-scroll-target="#daten-plotten-hands-on">Daten plotten: Hands on</a>
+  <ul class="collapse">
+<li><a href="#weitere-hilfreiche-informationen" id="toc-weitere-hilfreiche-informationen" class="nav-link" data-scroll-target="#weitere-hilfreiche-informationen">Weitere hilfreiche Informationen</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</h1>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Daten visualisieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Grafiken erstellen mit <code>ggplot</code></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Grafiken erstellen mit <code>ggplot</code>
+</h1>
 </div>
 
 <div>
   <div class="description">
-    Herausforderungen, Datenformate und Reproduzierbarkeit.
+    Einführung in das <code>ggplot2</code>-Package.
   </div>
 </div>
 
@@ -393,196 +391,276 @@ div.csl-indent {
   </div>
   
 
-</header>
-
-<!-- - Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices“, Data Cleaning, Reproduzierbarkeit)  -->
-<!--  kennen wichtige neurowissenschaftlichen Datenformen und ihre Eigenschaften -->
-<!-- - können Daten aus neurowissenschaftlichen Experimenten selber vorverarbeiten und informativ visualisieren -->
-<blockquote class="blockquote">
-<p>Neuroimaging experiments result in complicated data that can be arranged in many different ways. So far there is no consensus how to organize and share data obtained in neuroimaging experiments. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure. <a href="https://bids-specification.readthedocs.io/en/stable/introduction.html">BIDS Website (2024)</a></p>
-</blockquote>
-<section id="herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" class="level1 page-columns page-full">
-<h1>Herausforderungen im Umgang mit neurowissenschaftlichen Daten</h1>
-<p>In der neurowissenschaftlichen Forschung werden zunehmend sehr grosse und komplexe Datensätze generiert und Daten aus unterschiedlichen Datenerhebungsverfahren sollen miteinander verknüpft werden um neue Erkenntnisse zu gewinnen. Eine sehr häufige Kombination sind beispielsweise Verhaltens- und Bildgebungsdaten, wie es in vielen fMRI-Studien der Fall ist. Das erfordert Kenntnisse der unterschiedlichen Formate und Eigenschaften der Daten und Programmierkenntnisse um diese Daten möglichst automatisiert vorzuverarbeiten, zu verknüpfen, zu visualisieren und analysieren.</p>
+</header><div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Vorbereitung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Laden Sie <a href="../../downloadable_files/DatasaurusDozen.csv">hier</a> den Beispielsdatensatz herunter, speichern Sie diesen in einem <code>data</code>-Folder in einem <em>R-Project</em>.</p></li>
+<li><p>Öffnen Sie ein neues RScript (<code>.R</code>) oder RMarkdown-File (<code>.Rmd</code>). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt.</p></li>
+</ul>
+</div>
+</div>
+<section id="grafiken-erstellen-mit-ggplot" class="level1 page-columns page-full"><h1>Grafiken erstellen mit <code>ggplot</code>
+</h1>
+<p>Das <code>gg</code> im <em>Package</em> <code>ggplot2</code> steht für <em>Grammar of Graphics</em>. Diese besagt, dass alle Grafiken aus den unten beschriebenen Komponenten zusammengesetzt werden können und sich damit vollständig beschreiben lassen. Das Kennen dieser Komponenten macht den anfangs oft etwas unintuitiven Aufbau von <code>ggplot</code> verständlicher.</p>
 <aside>
-<a href="https://opendatahandbook.org/glossary/en/terms/data-management/">Definition Datenmanagement</a>
-</aside>
+Mit <code>ggplot</code>könnte man sogar Kunstwerke erstellen, wie bspw. <a href="https://www.data-imaginist.com/art">hier</a> gezeigt wird.
+</aside><p>Eine Grafik enthält mindestens folgende 3 Komponenten:</p>
+<ul>
+<li><p><strong>Daten</strong></p></li>
+<li><p><strong>Geome</strong>, also sichtbare Formen (<em>aesthetics</em>), z.B. Punkte, Linien oder Boxen.</p></li>
+<li><p><strong>Koordinatensystem/Mapping</strong>: wie sind Daten und Geome verbunden?</p></li>
+</ul>
+<p>Weitere optionale Komponenten sind:</p>
+<ul>
+<li><p>Statistische Parameter</p></li>
+<li><p>Position</p></li>
+<li><p>Koordinatenfunktionen</p></li>
+<li><p><strong>Facets</strong></p></li>
+<li><p>Scales</p></li>
+<li><p><strong>Themes</strong></p></li>
+</ul>
+<p>In dieser Einführung wird auf die ersten drei Komponenten, sowie auf <em>Facets</em> und <em>Themes</em> eingegangen.</p>
+<p>Beim Laden des <em>Packages</em> <code>tidyverse</code> wird automatisch das _Package <code>ggplot2</code> ebenfalls geladen.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="daten" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="daten">Daten</h2>
+<p>Die wichtigste Komponente einer Grafik sind die Daten. Bevor eine Grafik erstellt wird, müssen die Eigenschaften des Datensatzes bekannt sein.</p>
+<aside>
+Der verwendete Datensatz stammt von <span class="citation" data-cites="matejka_same_2017">@matejka_same_2017</span>.
+</aside><div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Einlesen des Übungsdatensatzes</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/DatasaurusDozen.csv"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">condition</span><span class="op">)</span><span class="op">)</span> <span class="co"># Variable condition soll ein Faktor sein</span></span>
+<span></span>
+<span><span class="co"># Datensatz anschauen</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,846
+Columns: 3
+$ condition &lt;fct&gt; away, away, away, away, away, away, away, away, away, away, …
+$ value1    &lt;dbl&gt; 32.33111, 53.42146, 63.92020, 70.28951, 34.11883, 67.67072, …
+$ value2    &lt;dbl&gt; 61.411101, 26.186880, 30.832194, 82.533649, 45.734551, 37.11…</code></pre>
+</div>
+</div>
+<section id="datenformat" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="datenformat">Datenformat</h3>
+<p>Am einfachsten ist das plotten mit <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>, wenn die Daten im <em>long</em>-Format vorliegen. Das bedeutet:</p>
+<ul>
+<li><p>Jede Variable die gemessen/erhoben wird hat eine Spalte (z.B. Versuchspersonennummer, Reaktionszeit, Taste).</p></li>
+<li><p>Jede Messung hat eine Zeile. In unserem PsychoPy-Experiment entspricht dies einer Zeile pro Trial.</p></li>
+</ul>
+<p>Die hier eingelesenen Daten sind schon im <em>long</em>-Format.</p>
+<aside>
+Falls die Daten im <em>wide</em>-Format abgespeichert sind, lohnt es sich diese umzuformatieren z.B. mit <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.
+</aside></section><section id="variablen" class="level3"><h3 class="anchored" data-anchor-id="variablen">Variablen</h3>
+<p>Für die Grafik ist es relevant, welches Skalenniveau die zu visualisierenden Variablen haben. Je nach Anzahl Variablen und den entsprechenden Skalenniveaus eignen sich andere Grafik-Formen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/skalenniveau.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=724035</figcaption></figure>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hands-on: Herausforderungen von neurowissenschaftlichen Daten
+Hands-on: Datensatz anschauen
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Lesen Sie den untenstehenden Abschnitt aus <span class="citation" data-cites="pierre_perspective_2024">Pierré et al. (<a href="#ref-pierre_perspective_2024" role="doc-biblioref">2024</a>)</span>. Besprechen Sie in Gruppen, welche spezifischen Herausforderungen Datenmanagement, -vorverarbeitung und -analyse in den Neurowissenschaften bestehen.</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>Increasing complexity of neuroscience data</strong></p>
-<p>Over the past 20 years, neuroscience research has been radically changed by two major trends in data production and analysis.</p>
-<p>First, neuroscience research now routinely generates large datasets of high complexity. Examples include recordings of activity across large populations of neurons, often with high resolution behavioral tracking (Steinmetz et al., 2019; Stringer et al., 2019; Mathis et al., 2018; Siegle et al., 2021; Koch et al., 2022), analyses of neural connectivity at high spatial resolution and across large brain areas (Scheffer et al., 2020; Loomba et al., 2022), and detailed molecular profiling of neural cells (Yao et al., 2023; Langlieb et al., 2023; Braun et al., 2022; Callaway et al., 2021). Such large, multi-modal data sets are essential for solving major questions about brain function (Brose, 2016; Jorgenson et al., 2015; Koch and Jones, 2016).</p>
-<p>Second, the collection and analysis of such datasets requires interdisciplinary teams, incorporating expertise in systems neuroscience, engineering, molecular biology, data science, and theory. These two trends are reflected in the increasing numbers of authors on scientific publications (Wareham, 2016), and the creation of mechanisms to support team science by the NIH and similar research funding bodies (Cooke and Hilton, 2015; Volkow, 2022; Brose, 2016).</p>
-<p>There is also an increasing scope of research questions that can be addressed by aggregating “open data” from multiple studies across independent labs. Funding agencies and publishers have begun to aggressively promote data sharing and open data, with the goals of improving reproducibility and increasing data reuse (Dallmeier-Tiessen et al., 2014; Tenopir et al., 2015; Pasquetto et al., 2017). However, open data may be unusable if scattered in a wide variety of naming conventions and file formats lacking machine-readable metadata.</p>
-<p>Big data and team science necessitate new strategies for how to best organize data, with a key technical challenge being the development of standardized file formats for storing, sharing, and querying datasets. Prominent examples include the Brain Imaging Data Structure (BIDS) for neuroimaging, and Neurodata Without Borders (NWB) for neurophysiology data (Teeters et al., 2015; Gorgolewski et al., 2016; Rübel et al., 2022; Holdgraf et al., 2019). The Open Neurophysiology Environment (ONE), best known from adoption by The International Brain Laboratory (The International Brain Laboratory et al., 2020, 2023), has a similar application domain to NWB, but a highly different technical design.</p>
-<p>These initiatives provide technical tools for storing and accessing data in known formats, but more importantly provide conceptual frameworks with which to standardize data organization and description in an (ideally) universal, interoperable, and machine-readable way. <span class="citation" data-cites="pierre_perspective_2024">Pierré et al. (<a href="#ref-pierre_perspective_2024" role="doc-biblioref">2024</a>)</span> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10593085/">(Preprint)</a></p>
-</blockquote>
-</section>
-<section id="neurowissenschaftliche-daten" class="level1">
-<h1>Neurowissenschaftliche Daten</h1>
-<section id="datenquellen" class="level2">
-<h2 class="anchored" data-anchor-id="datenquellen">Datenquellen</h2>
-<p>Neurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen.</p>
-</section>
-<section id="datenformate" class="level2">
-<h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
-<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:</p>
+<p>Schauen Sie sich den Datensatz an.</p>
 <ul>
-<li><p>In welchem Dateiformat ist der Datensatz gespeichert? z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?`</p></li>
-<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
-<li><p>Gibt es ein <code>data dictionnary</code> mit Erklärungen zu den Variablen?</p></li>
+<li>Wie viele unterschiedliche Variablen gibt es?</li>
+<li>Wie heissen die Variablen?</li>
+<li>Welches Skalenniveau haben sie?</li>
 </ul>
-</section>
-</section>
-<section id="good-practices-in-der-datenverarbeitung" class="level1">
-<h1>Good Practices in der Datenverarbeitung</h1>
-<p>Die Replikationskrise hat in der Psychologie, aber auch in den kognitiven Neurowissenschaften ein Umdenken ausgelöst. Mit dem Ziel nachhaltigere Forschungsergebnisse zu erreichen sind verschiedene Begriffe wie Reproduzierbarkeit und Replizierbarkeit zu wichtigen Schlagworten geworden. Die Begrifflichkeiten werden verwirrenderweise aber oft unterschiedlich definiert und verwendet (<span class="citation" data-cites="plesser_reproducibility_2018">Plesser (<a href="#ref-plesser_reproducibility_2018" role="doc-biblioref">2018</a>)</span>).</p>
-<div class="callout callout-style-default callout-caution callout-titled">
+</div>
+</div>
+</section><section id="subsetting" class="level3"><h3 class="anchored" data-anchor-id="subsetting">Subsetting</h3>
+<p>Wenn nur ein gewisser Teil der Daten visualisiert werden soll, muss der Datensatz gefiltert werden. Der aktuelle Datensatz enthält beispielsweise verschiedene Bedingungen, jeweils mit Werten für Variable <code>value1</code> und <code>value2</code>. Folgende 13 Bedingungen sind enthalten:</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">condition</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] away       bullseye   circle     dino       dots       h_lines   
+ [7] high_lines slant_down slant_up   star       v_lines    wide_lines
+[13] x_shape   
+13 Levels: away bullseye circle dino dots h_lines high_lines ... x_shape</code></pre>
+</div>
+</div>
+<p>Fürs erste entscheiden wir uns für die Bedingung <code>away</code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_away</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">condition</span> <span class="op">==</span> <span class="st">"away"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Wir können für diese Bedingung zusätzlich <em>summary statistics</em> berechnen, hier Mittelwert und Standardabweichung.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_away_summary</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_v1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value1</span><span class="op">)</span>,</span>
+<span>              sd_v1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">value1</span><span class="op">)</span>,</span>
+<span>              mean_v2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">value2</span><span class="op">)</span>,</span>
+<span>              sd_v2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">value2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">data_away_summary</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1
+Columns: 4
+$ mean_v1 &lt;dbl&gt; 54.2657
+$ sd_v1   &lt;dbl&gt; 16.713
+$ mean_v2 &lt;dbl&gt; 47.8351
+$ sd_v2   &lt;dbl&gt; 26.84777</code></pre>
+</div>
+</div>
+<p>Diese Werte geben einen Anhaltspunkt, in welchem Bereich sich die Werte bewegen werden.</p>
+</section><section id="plot" class="level3"><h3 class="anchored" data-anchor-id="plot">Plot</h3>
+<p>In den folgenden Beispielen werden die Daten der Bedingung <code>away</code> verwendet. Als erstes Argument wird der Funktion <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> der Datensatz übergeben (<code>data = data_away</code>).</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">data_away</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_visualization_1_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Da noch keine Formen und kein Mapping eingegeben wurden ist die Grafik leer.</p>
+</section></section><section id="geom-formen" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="geom-formen">Geom / Formen</h2>
+<p>Als zweite Komponente werden in <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> wird die Form mit <code>geom_</code> hinzugefügt. Beispielsweise werden mit <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> Punkte erstellt, mit <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code> Linien, mit <code>geom_boxplot</code> Boxplots, usw. Bei der Wahl der passenden Form kommt es einerseits auf die Daten an. Sind die Daten z.B. Faktoren oder numerische Werte (siehe auch Skalenniveau oben)? Wie viele Variablen werden gleichzeitig in die Grafik eingebunden? Andererseits ist es wichtig, was mit der Grafik gezeigt werden soll: Unterschiede? Gemeinsamkeiten? Veränderungen über Zeit?</p>
+<p>Oft verwendete Formen sind:</p>
+<ul>
+<li>Punkte / Scatterplots - <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>
+</li>
+<li>Linien - <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>
+</li>
+</ul>
+<p>Oder wenn zusammenfassende Werte geplottet werden sollen:</p>
+<ul>
+<li>Histogramme - <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>
+</li>
+<li>Mittelwerte und Standardabweichungen - <code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code>
+</li>
+<li>Dichte - <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code>
+</li>
+<li>Boxplots - <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code>
+</li>
+<li>Violinplots - <code><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin()</a></code>
+</li>
+</ul>
+<aside>
+Es gibt auch weitere, informative Arten der Darstellung wie <em>heat maps</em> oder <em>shift functions</em>, auf die wir in dieser Veranstaltung nicht eingehen.
+</aside><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hands-on: Wichtige Begriffe
+Hands-on
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wichtige Begriffe hinsichtlich qualitativ guter Forschung sind</p>
-<ul>
-<li><p>reproducibility</p></li>
-<li><p>replicability</p></li>
-<li><p>reliability</p></li>
-<li><p>robustness</p></li>
-<li><p>generalizability</p></li>
-</ul>
-<p>Besprechen Sie in kleinen Gruppen diese Begrifflichkeiten und schreiben Sie für jeden 1 Satz als Definition auf.</p>
+<p>Welche <code>geoms</code> eignen sich für welches Skalenniveau und welche Variablenanzahl?</p>
+<p>👉 <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf">Hier</a> finden Sie das <code>ggplot</code>-Cheatsheet.</p>
+<p>Schauen Sie sich die verschiedenen Formen von Plots <a href="https://www.data-to-viz.com">hier</a> an.</p>
 </div>
 </div>
-<section id="replizierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="replizierbarkeit">Replizierbarkeit</h2>
-<p><em>Replizierbarkeit (replicability)</em> bedeutet, dass ein Experiment von einer anderen Forschungsgruppe mit einer neuen Stichprobe durchgeführt werden kann, und ähnliche oder dieselben Resultate hervorbringt, wie die Originalstudie. Wird eine Studie mehrmals repliziert, steigt die Wahrscheinlichkeit, dass kein Zufallsbefund vorliegt.</p>
-<blockquote class="blockquote">
-<p>Replicability refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected. <span class="citation" data-cites="cacioppo_social_2015">Cacioppo et al. (<a href="#ref-cacioppo_social_2015" role="doc-biblioref">2015</a>)</span></p>
-</blockquote>
-</section>
-<section id="reproduzierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="reproduzierbarkeit">Reproduzierbarkeit</h2>
-<p><em>Reproduzierbarkeit (reproducibility)</em> hängt eng mit der Replizierbarkeit zusammen. Der Begriff wird teilweise sehr allgemein verwendet, und bedeutet so dass Forschungsergebnisse wiederholt gefunden werden. Reproduzierbarkeit im engeren Sinn hingegen bezieht sich darauf, ob die durchgeführte Analyse wiederholt werden kann. Die Reproduzierbarkeit ist somit hoch, wenn Forschende die Daten und Datenanalyseskripts bereitstellen und andere Forschende damit dieselben Analysen durchführen können und zu gleichen Resultaten kommen.</p>
-<blockquote class="blockquote">
-<p>Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. That is, a second researcher might use the same raw data to build the same analysis files and implement the same statistical analysis in an attempt to yield the same results…. Reproducibility is a minimum necessary condition for a finding to be believable and informative. <span class="citation" data-cites="cacioppo_social_2015">Cacioppo et al. (<a href="#ref-cacioppo_social_2015" role="doc-biblioref">2015</a>)</span></p>
-</blockquote>
-<p>Um die Begriffe zusammenzufassen schlugen <span class="citation" data-cites="goodman_what_2016">Goodman, Fanelli, and Ioannidis (<a href="#ref-goodman_what_2016" role="doc-biblioref">2016</a>)</span> vor von <em>Reproduzierbarkeit der Methoden</em> (Daten und Prozesse können exakt wiederholt werden), <em>Reproduzierbarkeit der Resultate</em> (andere Studien kommen auf dieselben Resultate) und <em>Reproduzierbarkeit der wissenschaftlichen Schlussfolgerung</em> (bei Repetition der Analyse oder der Experimente werden dieselben Schlüsse gezogen) zu sprechen.</p>
-<p>Grundsätzlich besteht das Ziel, dass in der Forschung möglichst viel Evidenz für eine Schlussfolgerung gesammelt werden kann. Dies gelingt, wenn die Prozesse transparent, fehlerfrei und wiederholbar sind.</p>
-</section>
-</section>
-<section id="reproduzierbarkeit-1" class="level1">
-<h1>Reproduzierbarkeit</h1>
-<p>Im Rahmen dieses Kurses beschäftigen wir uns vor allem, wie Reproduzierbarkeit erhöht werden kann.</p>
-<section id="hindernisse-bei-der-reproduzierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="hindernisse-bei-der-reproduzierbarkeit">Hindernisse bei der Reproduzierbarkeit</h2>
-<p>Reproduzierbarkeit kann laut <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span> vor allem aus zwei Gründen nicht gegeben sein: Weil die Daten/Skripte nicht zur Verfügung stehen, oder weil diese Fehler enthalten:</p>
-<blockquote class="blockquote">
-<p>In principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, the same result should occur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of the unavailability of data, code, information needed to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than the one reported originally. This can occur because of an error in either the original or the reproduction study. <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span></p>
-</blockquote>
-<p>Führt die Reproduktion nicht zum selben Resultat, löst das Zweifel am Forschungsergebnis aus. Wenn die Reproduzierbarkeit am Prozess scheitert, etwa weil die Daten nicht vorhanden sind, kann kein Schluss gezogen werden, ob die Resultate stimmen.</p>
-<blockquote class="blockquote">
-<p>Achieving reproducibility is a basic foundation of credibility, and yet many efforts to test reproducibility reveal success rates below 100%. … Whereas an outcome reproducibility failure suggests that the original result may be wrong, a process reproducibility failure merely indicates that the original result cannot be verified. Either reason challenges credibility and increases uncertainty about the value of investing additional resources to replicate or extend the findings (Nuijten et al.&nbsp;2018). Sharing data and code reduces process reproducibility failures (Kidwell et al.&nbsp;2016), which can reveal more outcome reproducibility failures (Hardwicke et al.&nbsp;2018, 2021; Wicherts et al.&nbsp;2011). <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span></p>
-</blockquote>
-<p>Das Teilen von Daten und Datenverarbeitungsskripten erhöht die Wahrscheinlichkeit, dass mögliche Fehler im Prozess gefunden werden, da auch andere Forschende die Daten/Skripts verwenden können. Das ist vorerst unangenehm, gehört aber zum Prozess der Wissenschaft dazu. Reproduzierbarkeit erhöht also indirekt auch die Replizierbarkeit.</p>
-</section>
-</section>
-<section id="tools-für-reproduzierbarkeit" class="level1 page-columns page-full">
-<h1>Tools für Reproduzierbarkeit</h1>
-<p>Für reproduzierbare Forschung gibt es inzwischen viele gute Tools:</p>
-<ul>
-<li>Website der <a href="https://osf.io/">Open Science Foundation</a>: Eine kostenfreie und unkomplizierte Möglichkeit Daten und Skripts zu teilen, und diese in Projekten abzulegen. Es lässt sich dafür sogar ein <em>doi</em> erstellen. Auch Preregistrationsformulare sind hier implementiert.</li>
-</ul>
-<p>Beim Veröffentlichen von wissenschaftlichen Artikeln ist es empfohlen, die Daten (falls anonymisiert möglich) sowie die Analyseskripts mitzuveröffentlichen.</p>
-<ul>
-<li>Für Datensätze gelten die <em>FAIR Guiding Principles</em> (<span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span>):
-<ul>
-<li><strong>F</strong> indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind</li>
-<li><strong>A</strong> ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären</li>
-<li><strong>I</strong> nteroperability: Verwendbare Datenformate/strukturen</li>
-<li><strong>R</strong> eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen</li>
-</ul></li>
-</ul>
+<p>Beim Ausführen dieses Codes</p>
+<pre><code>ggplot(data = data_away) +
+    geom_point()</code></pre>
+<p>enthält man eine Fehlermeldung, weil nicht angegeben wurde <strong>wie</strong> die Daten mit der Form <code>geom</code> verbunden werden soll: Das <code>mapping</code> fehlt.</p>
+</section><section id="mapping" class="level2"><h2 class="anchored" data-anchor-id="mapping">Mapping</h2>
+<p>Jede <code>geom</code>-Funktion in <code>ggplot</code> benötigt Angaben zum <code>mapping</code>: die dritte Komponente. Damit wird definiert, wie die Variablen auf die Formen (<em>aesthetics</em>) gemappt werden sollen. Am einfachsten wir dies zu Beginn in festgelegt (das <code>mapping</code> kann aber auch in der Funktion <code>geom_</code> selbst definiert werden).</p>
+<p>Das <code>mapping</code> beschreibt, welche Variable auf der x- und y-Achse abgetragen werden sollen. Weitere Variablen könnten als <code>group = ...</code> oder <code>color = ...</code> eingefügt werden.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">data_away</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">value1</span>,</span>
+<span>                     y <span class="op">=</span> <span class="va">value2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_visualization_1_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="beschriftungen-und-themes" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="beschriftungen-und-themes">Beschriftungen und Themes</h2>
+<p>Schönere und informativere Plots lassen sich gestalten, wenn wir einen Titel hinzufügen, die Achsenbeschriftung anpassen und das <code>theme</code> verändern:</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">data_away</span>,</span>
+<span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">value1</span>,</span>
+<span>                     y <span class="op">=</span> <span class="va">value2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span> <span class="op">(</span><span class="st">"Ein etwas schönerer Plot"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Wert 1 [a.u.]"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Wert 2 [a.u.]"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="data_visualization_1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <aside>
-<a href="https://www.go-fair.org/fair-principles">Hier</a> finden Sie weitere Informationen zu <em>FAIR</em>.
-</aside>
+Auch <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic()</a></code> oder <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> ergeben schlichte aber schöne Plots.
+</aside></section></section><section id="daten-plotten-hands-on" class="level1 page-columns page-full"><h1>Daten plotten: Hands on</h1>
+<p>Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RSkript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp: GUI
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Um das GUI zu verwenden, gehen Sie wie folgt vor:</p>
 <ul>
-<li>Für Neuroimaging-Daten gibt es beispielsweise vorgegebene Konventionen, wie ein Datensatz und die Verarbeitungsskripts abgespeichert werden. Ein Beispiel dafür ist <a href="https://bids.neuroimaging.io">Brain Imaging Data Structure (BIDS)</a>. So können Datensätze mit einer für alle verständlichen Struktur veröffentlicht und geteilt werden. <span class="citation" data-cites="gorgolewski_brain_2016">Gorgolewski et al. (<a href="#ref-gorgolewski_brain_2016" role="doc-biblioref">2016</a>)</span></li>
+<li><p>Installieren Sie das package <code>esquisse</code> mit <code>install.packages("esquisse")</code> in Ihrer Konsole oder über <code>Tools</code> &gt; <code>Install packages...</code></p></li>
+<li><p>Geben Sie in Ihrer Konsole <code><a href="https://dreamrs.github.io/esquisse/reference/esquisser.html">esquisse::esquisser()</a></code> ein und wählen Sie dann unter <code>Import Data</code> den schon eingelesenen Datensatz <code>DatasaurusDozen.csv</code> aus.</p></li>
 </ul>
+</div>
+</div>
 <aside>
-<a href="https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/BIDS_Overview.html">Hier</a> finden Sie weitere Informationen zu <em>BIDS</em>.
-</aside>
+Ein weiteres <code>R</code>-basiertes Visualisierungstool in welchem der Code per GUI erstellt wird, ist <a href="https://hafen.github.io/trelliscopejs/">trelliscopejs</a>
+</aside><div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Informative Grafik erstellen
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Für das Veröffentlichen von Analyseskripts eignen sich Formate wie <em>RMarkdown</em> in <em>R</em>, oder <em>LiveScripts</em> in <em>MATLAB</em> sehr gut. Aber auch <code>.r</code>-Skripte, wie Sie sie in dieser Veranstaltung verwenden können veröffentlicht werden.</li>
+<li><p>Welche <code>geom_</code>s/Formen eignen sich gut für diesen Datensatz?</p></li>
+<li><p>Welche Abbildungen können alle 3 Variablen des Datensatzes berücksichtigen?</p></li>
+<li><p>Wie kann man Bedingungen miteinander vergleichen?</p></li>
+<li><p>Wie können Grösse und Farbe der <code>geom_</code>s bestimmt werden?</p></li>
+<li><p>Wie passt man Schriftgrössen an?</p></li>
+<li><p>Können Sie eine Grafik speichern?</p></li>
+<li><p>Lassen Sie sich den Code direkt ins RScript/RMarkdown-File einfügen und verändern Sie den Code dort weiter.</p></li>
 </ul>
-<aside>
-<a href="https://djnavarro.net/slides-starting-rmarkdown/#1">Hier</a> finden Sie eine sehr gut erklärte Einführung zu <em>RMarkdown</em>.
-</aside>
-</section>
-<section id="code-kommentieren" class="level1">
-<h1>Code kommentieren</h1>
-<p>Das Teilen von Skripts macht am meisten Sinn, wenn sie verständlich strukturiert und kommentiert sind. Beim Kommentieren von Code sollte folgendes beachtet werden:</p>
+</div>
+</div>
+<section id="weitere-hilfreiche-informationen" class="level2"><h2 class="anchored" data-anchor-id="weitere-hilfreiche-informationen">Weitere hilfreiche Informationen</h2>
 <ul>
-<li><p>Kommentare sollten geschrieben werden, wenn der Code erstellt wird und laufend überarbeitet werden. Oft wird es sonst nicht nachgeholt.</p></li>
-<li><p>Wenn man nicht genau kommentieren kann, was man im Code macht, dann ist evtl. der Code unklar, oder man versteht ihn noch nicht. Vielleicht kann man Variablennamen vereinfachen/präzisieren und es braucht weniger Kommentare?</p></li>
-<li><p>Wenn Code kopiert wird, sollte die Quelle angegeben werden.</p></li>
-<li><p>Vor dem Veröffentlichen, lohnt es sich jemanden den Code ausführen lassen. So zeigt sich wo noch unklare Stellen sind, die Kommentare benötigen.</p></li>
+<li><p><a href="https://ggplot2.tidyverse.org/">Dokumentation</a> von <code>ggplot2</code></p></li>
+<li><p>Kurzweilige, sehr informative Informationen und Videos über das Erstellen von Grafiken in <code>ggplot</code> finden Sie hier: <a href="https://psyteachr.github.io/reprores-v3">Website PsyTeachR: Data Skills for reproducible research</a></p></li>
+<li><p><a href="https://youtu.be/90IdULVGmYY">Hier</a> ist der Start der PsyTeachR Videoliste von Lisa deBruine, dort finden sich auch hilfreiche Kurzvideos zu Themen von Daten einlesen bis zu statistischen Analysen. Beispielsweise zu <a href="https://youtu.be/tOFQFPRgZ3M">Basic Plots</a>, <a href="https://youtu.be/kKlQupjD__g">Common Plots</a> und <a href="https://youtu.be/6pHuCbOh86s">Plot Themes and Customization</a></p></li>
+<li><p><a href="https://methodenlehre.github.io/einfuehrung-in-R/chapters/05-plotting.html">Einführung in R</a> von Andrew Ellis und Boris Mayer</p></li>
 </ul>
 
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-cacioppo_social_2015" class="csl-entry" role="listitem">
-Cacioppo, J. T., R. M. Kaplan, J. A. Krosnick, J. L. Olds, and H. Dean. 2015. <span>“Social, <span>Behavioral</span>, and <span>Economic</span> <span>Sciences</span> <span>Perspectives</span> on <span>Robust</span> and <span>Reliable</span> <span>Science</span>.”</span> <em>Report of the Subcommittee on Replicability in Science Advisory Committee to the National Science Foundation Directorate for Social, Behavioral, and Economic Sciences</em>.
-</div>
-<div id="ref-goodman_what_2016" class="csl-entry" role="listitem">
-Goodman, Steven N., Daniele Fanelli, and John P. A. Ioannidis. 2016. <span>“What Does Research Reproducibility Mean?”</span> <em>Science Translational Medicine</em> 8 (341). <a href="https://doi.org/10.1126/scitranslmed.aaf5027">https://doi.org/10.1126/scitranslmed.aaf5027</a>.
-</div>
-<div id="ref-gorgolewski_brain_2016" class="csl-entry" role="listitem">
-Gorgolewski, Krzysztof J., Tibor Auer, Vince D. Calhoun, R. Cameron Craddock, Samir Das, Eugene P. Duff, Guillaume Flandin, et al. 2016. <span>“The Brain Imaging Data Structure, a Format for Organizing and Describing Outputs of Neuroimaging Experiments.”</span> <em>Scientific Data</em> 3 (1): 160044. <a href="https://doi.org/10.1038/sdata.2016.44">https://doi.org/10.1038/sdata.2016.44</a>.
-</div>
-<div id="ref-nosek_replicability_2022" class="csl-entry" role="listitem">
-Nosek, Brian A, Tom E Hardwicke, Hannah Moshontz, Aurélien Allard, Katherine S Corker, Anna Dreber, Fiona Fidler, et al. 2022. <span>“Replicability, <span>Robustness</span>, and <span>Reproducibility</span> in <span>Psychological</span> <span>Science</span>.”</span> <em>Annual Review of Psychology</em> 73: 719–48. <a href="https://doi.org/10.1146/annurev-psych-020821-114157">https://doi.org/10.1146/annurev-psych-020821-114157</a>.
-</div>
-<div id="ref-pierre_perspective_2024" class="csl-entry" role="listitem">
-Pierré, Andrea, Tuan Pham, Jonah Pearl, Sandeep Robert Datta, Jason T. Ritt, and Alexander Fleischmann. 2024. <span>“A Perspective on Neuroscience Data Standardization with <span>Neurodata</span> <span>Without</span> <span>Borders</span>.”</span> arXiv. <a href="http://arxiv.org/abs/2310.04317">http://arxiv.org/abs/2310.04317</a>.
-</div>
-<div id="ref-plesser_reproducibility_2018" class="csl-entry" role="listitem">
-Plesser, Hans E. 2018. <span>“Reproducibility Vs. <span>Replicability</span>: <span>A</span> <span>Brief</span> <span>History</span> of a <span>Confused</span> <span>Terminology</span>.”</span> <em>Frontiers in Neuroinformatics</em> 11 (January): 76. <a href="https://doi.org/10.3389/fninf.2017.00076">https://doi.org/10.3389/fninf.2017.00076</a>.
-</div>
-<div id="ref-wilkinson_fair_2016" class="csl-entry" role="listitem">
-Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al. 2016. <span>“The <span>FAIR</span> <span>Guiding</span> <span>Principles</span> for Scientific Data Management and Stewardship.”</span> <em>Scientific Data</em> 3 (1): 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>.
-</div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
   author = {Wyssen, Gerda and Fitze, Daniel},
-  title = {Neurowissenschaftliche {Daten} \&amp; {Good} {Practices} in Der
-    {Datenverarbeitung}},
-  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html},
+  title = {Grafiken Erstellen Mit `Ggplot`},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_visualization_1.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Neurowissenschaftliche
-Daten &amp; Good Practices in Der Datenverarbeitung.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html</a>.
-</div></div></section></div></main> <!-- /main -->
-<script>
+Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Grafiken Erstellen Mit
+`Ggplot`.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_visualization_1.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_visualization_1.html</a>.
+</div></div></section></div></main><!-- /main --><script>
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
@@ -787,8 +865,7 @@ window.onload = function() {
   update_total_correct();
 }
 
-</script>
-<script id="quarto-html-after-body" type="application/javascript">
+</script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1243,8 +1320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1253,18 +1329,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/kogpsy/neuroscicomplabFS24">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>
