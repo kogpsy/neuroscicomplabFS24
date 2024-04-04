@@ -1,5 +1,5 @@
 ---
-title: "Plot Galery"
+title: "Plot Gallery"
 author:
   - name: Daniel Fitze
     # url: https://github.com/awellis
@@ -24,7 +24,6 @@ format:
 #| output: false
 library(tidyverse)
 library(ggdist)
-d = read_csv('data/dataset_stroop_clean.csv')
 ```
 
 {{< include _plots.qmd >}}

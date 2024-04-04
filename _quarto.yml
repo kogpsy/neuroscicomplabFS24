@@ -57,7 +57,7 @@ website:
       - pages/chapters/data_visualization_1.qmd
      # - pages/chapters/data_visualization_2.qmd
       - pages/chapters/uebung_3_plot.qmd
-      - pages/chapters/galery.qmd
+      - pages/chapters/gallery.qmd
 
     - section: Analysemethoden
       contents:
@@ -90,7 +90,7 @@ format:
     link-external-newwindow: true
     include-after-body: include/webex.js
 execute:
-  cache: true
+  cache: false
   freeze: auto # re-render only when source changes
   execute-dir: project
 callout-icon: true

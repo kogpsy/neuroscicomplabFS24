@@ -21,7 +21,7 @@ code-line-numbers: true
 
 ## Auftrag
 
-Erstellen Sie einen Plot der Stroop Daten. Verwenden Sie dazu `ggplot()`. Alle Plots und der entsprechende Code werden in der [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/galery.html) auf der Kurshomepage anonym veröffentlicht.
+Erstellen Sie einen Plot der Stroop Daten. Verwenden Sie dazu `ggplot()`. Alle Plots und der entsprechende Code werden in der [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery.html) auf der Kurshomepage anonym veröffentlicht.
 
 ## Vorgehen
 
@@ -80,7 +80,7 @@ __Gruppe Mittwoch:__ 30. April 2024 23:55
 
 :::{.callout-caution}
 ## Wichtig
-Ihr Plot und der dazugehörige Code wird in der [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/galery.html) anonym veröffentlich. Deshalb ist es wichtig, dass die oben aufgelisteten Voraussetzungen erfüllt sind. 
+Ihr Plot und der dazugehörige Code wird in der [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery.html) anonym veröffentlich. Deshalb ist es wichtig, dass die oben aufgelisteten Voraussetzungen erfüllt sind. 
 :::
 
 <!-- ## Trouble shooting -->
