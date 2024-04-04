@@ -42,7 +42,6 @@ Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf d
 
 Die Teilnehmenden in diesem Kurs haben sehr unterschiedliches Vorwissen. Dies ist eine Stärke dieses Kurses und der Austausch untereinander in den Hands-on Sessions macht deshalb d sehr erfahrungsgemäss viel Sinn. Studierende mit Hintergrund in der Informatik können so zum Beispiel  wertvolle Hinweise zur Optimierung von Code geben, während Psychologiestudierende viel Vorwissen über neuropsychologische Prozesse besitzen, welche beim Planen und Umsetzen von Experimenten sowie beim Verstehen von Verhaltensdatensätzen hilfreich sind.
 
-
 # Organisatorisches
 
 ## Ilias
@@ -57,25 +56,24 @@ ILIAS (Mittwoch) 👉 [468703-FS2024-1](https://ilias.unibe.ch/goto_ilias3_unibe
 ## Kursvoraussetzungen
 Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. Sie benötigen in der Veranstaltung deshalb einen eigenen Laptop (Tablets sind nicht geeignet!) mit ca. 20 GB freiem Speicherplatz und mit einer installierten (aktuellen) Version von R und RStudio ([Link zum Download von R und RStudio](https://posit.co/download/rstudio-desktop/)).
 
-R Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (<https://methodenlehre.github.io/einfuehrung-in-R/>) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham.
-
+R Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham.
 
 # Leistungsnachweise
 
-Der Kurs gibt 5 ETCS, die Leistung setzt sich aus dem Besuch des Kurses und dem Erbringen von Leistungsnachweisen zusammen.
+Der Kurs entspricht 5 ETCS, die Leistung setzt sich aus der Anwesenheit im Kurs und dem Erbringen von Leistungsnachweisen zusammen. 
 
 ## Anwesenheit
 
-Die Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir dies aber einführen.
+Die Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir diese aber einführen.
 
 Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Eigenstudium, wir können jedoch nicht für die Vollständigkeit garantieren. Hilfestellung beim Programmieren und Verstehen der Inhalte bieten wir während der Kurszeiten an, aus zeitlichen Gründen können wir keine Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten. Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage.
 
 
 ## Form der Leistungsnachweise
 
-Leistungsnachweise werden in Form von __vier Übungen__,  __zwei Quizzes__ und __einem Glossareintrag__ erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag. 
+Leistungsnachweise werden in Form von __5 Übungen__ und __2 Quizzes__ erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag. 
 
-Alle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die schon bekannten Termine (oder die ungefähre Planung) für die Leistungsnachweise finden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html).
+Alle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die Termine für die Leistungsnachweise finden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html).
 
 ### Übungen
 Die Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.
@@ -83,12 +81,7 @@ Die Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen m
 ### Quizzes
 Das erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen.
 
-### Glossareintrag
-Wir erstellen als Kurs gemeinsam einen Glossar zu den wichtigen Begriffen im Themenbereich. Dieser wird auf der Kurswebsite publiziert, und kann als Nachschlagewerk verwendet werden.
 
-
-
- 
 <!-- ## Peer Feedback Weiteres
 
 Diese Veranstaltung gibt es zum 4. Mal, jedes Jahr wurde eine Guidelines -->
