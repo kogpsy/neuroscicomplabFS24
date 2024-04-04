@@ -1,0 +1,27 @@
+::: panel-tabset
+## Plot
+
+```{r}
+#| echo: false
+
+mtcars |>
+    ggplot(aes(x = mpg, y = qsec)) +
+    geom_point() +
+    labs(title = 'Minimal Example (mtcar data)')
+
+```
+
+## Code
+
+```{r}
+#| echo: true
+#| eval: false
+
+mtcars |>
+    ggplot(aes(x = mpg, y = qsec)) +
+    geom_point()
+
+```
+:::
+
+

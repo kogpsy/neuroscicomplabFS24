@@ -1,0 +1,30 @@
+---
+title: "Plot Galery"
+author:
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+library(ggdist)
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+{{< include _plots.qmd >}}
