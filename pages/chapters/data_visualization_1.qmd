@@ -27,11 +27,8 @@ knitr::opts_knit$set(root.dir = '../../data/data_visualization')
 # getwd()
 ```
 
-
 ::: callout-caution
 ## Hands-on: Vorbereitung
-
-
 
 -   Laden Sie [hier](../../downloadable_files/DatasaurusDozen.csv) den Beispielsdatensatz herunter, speichern Sie diesen in einem `data`-Folder in einem _R-Project_.
 
