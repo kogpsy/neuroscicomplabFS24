@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "pages/chapters/gallery.html",
-    "href": "pages/chapters/gallery.html",
-    "title": "Plot Gallery",
-    "section": "",
-    "text": "PlotCode\n\n\n\n\n\n\n\n\n\n\nmtcars |&gt;\n    ggplot(aes(x = mpg, y = qsec)) +\n    geom_point()\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{fitze,\n  author = {Fitze, Daniel and Wyssen, Gerda},\n  title = {Plot {Gallery}},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFitze, Daniel, and Gerda Wyssen. n.d. “Plot Gallery.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery.html."
-  },
-  {
     "objectID": "pages/chapters/uebung_3_plot.html",
     "href": "pages/chapters/uebung_3_plot.html",
     "title": "Übung 3 - Plot",
@@ -245,60 +238,11 @@
     "text": "Bereich\nBeschreibung\n\n\n\n\nBehavioral neuroscience\nEinfluss des Gehirns auf Verhalten\n\n\nClinical neuroscience\nStörungen des Nervensystems, Vorbeugung, Behandlung und Rehabilitation\n\n\nComputational neuroscience\nSimulation und Modellierung von Hirnfunktionen\n\n\nCultural neuroscience\nEinfluss kultureller Faktoren auf das Gehirn\n\n\nDevelopmental neuroscience\nEntwicklung des Nervensystems über die ganze Alterspanne\n\n\nMolecular and cellular neuroscience\nRolle einzelner Moleküle, Gene und Proteine bei der Funktion des Nervensystems\n\n\nNeuroengineering\nneuronale Systeme verstehen, ersetzen, reparieren oder verbessern\n\n\nNeuroimaging\nTeilbereich medizinischer Bildgebung mit Fokus auf dem Gehirn\n\n\nNeuroinformatics\nEntwicklung von Methoden zur Sammlung, Analyse, Nutzung und Veröffentlichung von Daten\n\n\nNeurolinguistics\nRolle des Gehirns beim erwerben, speichern, verstehen und ausdrücken von Sprache\n\n\nNeurophysiology\nRolle des Nervensystems von der subzellulären Ebene bis hin zu ganzen Organen\n\n\n\nQuelle\nAufteilung nach:\n\nUntersuchter Spezies\n\nz.B. Mensch, Affe, Zebrafisch, Fruchtfliege\n\nverwendeter Methode\n\nz.B. EEG, fMRI, Verhalten"
   },
   {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html",
-    "href": "pages/chapters/datawrangling_automatisiert.html",
-    "title": "Automatisiertes importieren und vorverarbeiten",
+    "objectID": "pages/chapters/gallery.html",
+    "href": "pages/chapters/gallery.html",
+    "title": "Plot Gallery",
     "section": "",
-    "text": "Für diesen Teil benötigen Sie das R-Project complab_datawrangling_stroop mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments."
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#setup",
-    "href": "pages/chapters/datawrangling_automatisiert.html#setup",
-    "title": "Automatisiertes importieren und vorverarbeiten",
-    "section": "Setup",
-    "text": "Setup\n\n# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)\nlibrary(\"tidyverse\")"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
-    "href": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
-    "title": "Automatisiertes importieren und vorverarbeiten",
-    "section": "\nStroop-Experiment data wrangling",
-    "text": "Stroop-Experiment data wrangling\n\n# Daten vorverarbeiten\nd_stroop = read_csv(\"data/stroop_example_1.csv\") |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
-    "href": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
-    "title": "Automatisiertes importieren und vorverarbeiten",
-    "section": "Daten mit eigener Funktion einlesen",
-    "text": "Daten mit eigener Funktion einlesen\n\nread_stroop = function(path){\n    # Code kopiert von oben\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    # ---------------------\n    d_stroop\n}\n\nread_stroop(path = \"data/stroop_example_1.csv\")"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
-    "href": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
-    "title": "Automatisiertes importieren und vorverarbeiten",
-    "section": "Einlesen Automatisieren",
-    "text": "Einlesen Automatisieren\nWir benötigen eine Liste aller Daten files. Die Funktion list.files() gibt einer liste aller Dokumente in einem Ordner zurück.\n\nlist.files(path = 'data/')\n\nlist.files(path = 'data/', pattern = 'stroop')\n\nUm die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.\n\nfiles = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '')\n\n\nHier wird die Pipe des magritter-Packages verwendet (%&gt;%) statt die Base-R Pipe (|&gt;). Mit %&gt;% haben wir die Möglichkeit mit dem . zu bestimmen wo die weitergeleiteten Inhalte der Pipe eingefügt werden (nach data/). Informationen zu den Unterschieden der Pipes finden Sie hier.\nAlle Files von Hand einlesen\nJedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.\n\nfile1 = files[1]\nfile2 = files[2]\nfile3 = files[3]\n\nd1 = read_stroop(file1)\nd2 = read_stroop(file2)\nd3 = read_stroop(file3)\n\nd_hand = bind_rows(d1, d2, d3)\n\nAlle Files mit for-Loop einlesen\nDas Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame d_loop erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame d_loop angehängt.\n\nd_loop = tibble()\n\nfor (file in files){\n    d_tmp = read_stroop(file)\n    d_loop = bind_rows(d_loop, d_tmp)\n}\n\nAlle Files mit der Funktion map() einlesen\nmap() wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor files enthält die Pfade zu den Daten Files. Mit map() können wir also unsere selbst erstellte Funktion read_stroop() auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.\n\nd_map1 = files |&gt;\n    map(read_stroop) %&gt;%\n    bind_rows()\n\nDie Funktion map_dfr() macht das gleiche wie map() fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.\n\nd_map2 = files |&gt;\n    map_dfr(read_stroop)"
-  },
-  {
-    "objectID": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
-    "href": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
-    "title": "Automatisiertes importieren und vorverarbeiten",
-    "section": "Kompletter Stroop Code an einem Ort",
-    "text": "Kompletter Stroop Code an einem Ort\n\nread_stroop = function(path){\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    d_stroop\n}\n\nd = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '') |&gt;\n    map_dfr(read_stroop)\n\nd |&gt; write.csv(file = \"data/clean/dataset_stroop_clean.csv\", row.names = FALSE) # neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden"
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html",
-    "href": "pages/chapters/datacamp.html",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
-  },
-  {
-    "objectID": "pages/chapters/datacamp.html#datacamp",
-    "href": "pages/chapters/datacamp.html#datacamp",
-    "title": "DataCamp",
-    "section": "",
-    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+    "text": "PlotCode\n\n\n\n\n\n\n\n\n\n\nmtcars |&gt;\n    ggplot(aes(x = mpg, y = qsec)) +\n    geom_point()\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by-sa/4.0/CitationBibTeX citation:@online{fitze,\n  author = {Fitze, Daniel and Wyssen, Gerda},\n  title = {Plot {Gallery}},\n  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nFitze, Daniel, and Gerda Wyssen. n.d. “Plot Gallery.” https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery.html."
   },
   {
     "objectID": "pages/chapters/datawrangling.html",
@@ -390,6 +334,174 @@
     "title": "Daten importieren und vorverarbeiten",
     "section": "Data wrangling workflow implementieren",
     "text": "Data wrangling workflow implementieren\n\n\n\n\n\n\nHands-on: Data wrangling workflow\n\n\n\nErstellen Sie nun ein Projekt für das Random-Dot Experiment und führen Sie die gelernten data wrangling Schritte selbstständig durch.\n\n\n\nZu den gelernten Funktionen finden Sie hier Grafiken die evtl. helfen, sich die Funktions-Namen zu merken."
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html",
+    "href": "pages/chapters/data_visualization_1.html",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "",
+    "text": "Hands-on: Vorbereitung\n\n\n\n\nLaden Sie hier den Beispielsdatensatz herunter, speichern Sie diesen in einem data-Folder in einem R-Project.\nÖffnen Sie ein neues RScript (.R) oder RMarkdown-File (.Rmd). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt."
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#daten",
+    "href": "pages/chapters/data_visualization_1.html#daten",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Daten",
+    "text": "Daten\nDie wichtigste Komponente einer Grafik sind die Daten. Bevor eine Grafik erstellt wird, müssen die Eigenschaften des Datensatzes bekannt sein.\n\nDer verwendete Datensatz stammt von @matejka_same_2017.\n\n# Einlesen des Übungsdatensatzes\nd &lt;- read.csv(\"data/DatasaurusDozen.csv\") %&gt;%\n    mutate(condition = as.factor(condition)) # Variable condition soll ein Faktor sein\n\n# Datensatz anschauen\nglimpse(d)\n\nRows: 1,846\nColumns: 3\n$ condition &lt;fct&gt; away, away, away, away, away, away, away, away, away, away, …\n$ value1    &lt;dbl&gt; 32.33111, 53.42146, 63.92020, 70.28951, 34.11883, 67.67072, …\n$ value2    &lt;dbl&gt; 61.411101, 26.186880, 30.832194, 82.533649, 45.734551, 37.11…\n\n\nDatenformat\nAm einfachsten ist das plotten mit ggplot(), wenn die Daten im long-Format vorliegen. Das bedeutet:\n\nJede Variable die gemessen/erhoben wird hat eine Spalte (z.B. Versuchspersonennummer, Reaktionszeit, Taste).\nJede Messung hat eine Zeile. In unserem PsychoPy-Experiment entspricht dies einer Zeile pro Trial.\n\nDie hier eingelesenen Daten sind schon im long-Format.\n\nFalls die Daten im wide-Format abgespeichert sind, lohnt es sich diese umzuformatieren z.B. mit pivot_longer().\nVariablen\nFür die Grafik ist es relevant, welches Skalenniveau die zu visualisierenden Variablen haben. Je nach Anzahl Variablen und den entsprechenden Skalenniveaus eignen sich andere Grafik-Formen.\n\n\nCC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=724035\n\n\n\n\n\n\n\nHands-on: Datensatz anschauen\n\n\n\nSchauen Sie sich den Datensatz an.\n\nWie viele unterschiedliche Variablen gibt es?\nWie heissen die Variablen?\nWelches Skalenniveau haben sie?\n\n\n\nSubsetting\nWenn nur ein gewisser Teil der Daten visualisiert werden soll, muss der Datensatz gefiltert werden. Der aktuelle Datensatz enthält beispielsweise verschiedene Bedingungen, jeweils mit Werten für Variable value1 und value2. Folgende 13 Bedingungen sind enthalten:\n\nunique(d$condition)\n\n [1] away       bullseye   circle     dino       dots       h_lines   \n [7] high_lines slant_down slant_up   star       v_lines    wide_lines\n[13] x_shape   \n13 Levels: away bullseye circle dino dots h_lines high_lines ... x_shape\n\n\nFürs erste entscheiden wir uns für die Bedingung away.\n\nd_away &lt;- d %&gt;%\n    filter(condition == \"away\")\n\nWir können für diese Bedingung zusätzlich summary statistics berechnen, hier Mittelwert und Standardabweichung.\n\nd_away_summary &lt;- d_away %&gt;%\n    summarise(mean_v1 = mean(value1),\n              sd_v1 = sd(value1),\n              mean_v2 = mean(value2),\n              sd_v2 = sd(value2))\n\nglimpse(d_away_summary)\n\nRows: 1\nColumns: 4\n$ mean_v1 &lt;dbl&gt; 54.2661\n$ sd_v1   &lt;dbl&gt; 16.76982\n$ mean_v2 &lt;dbl&gt; 47.83472\n$ sd_v2   &lt;dbl&gt; 26.93974\n\n\nDiese Werte geben einen Anhaltspunkt, in welchem Bereich sich die Werte bewegen werden.\nPlot\nIn den folgenden Beispielen werden die Daten der Bedingung away verwendet. Als erstes Argument wird der Funktion ggplot() der Datensatz übergeben (data = data_away).\n\nggplot(data = d_away)"
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#mapping",
+    "href": "pages/chapters/data_visualization_1.html#mapping",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Mapping",
+    "text": "Mapping\nDas mapping beschreibt, welche Variable auf der x- und y-Achse abgetragen werden sollen. Es wird also definiert, wie die Variablen auf die Formen (aesthetics) gemappt werden sollen. Am einfachsten wir dies zu Beginn in festgelegt (das mapping kann aber auch in der Funktion geom_ selbst definiert werden). Weitere Variablen könnten als group = ... oder color = ... eingefügt werden.\n\nggplot(data = d_away,\n       mapping = aes(x = value1,\n                     y = value2)) \n\n\n\n\nDie Grafik verfügt nun über Achsen, diese werden automatisch mit den Variablennamen beschriftet. Da noch keine Formen (geoms) hinzugefügt wurde ist die Grafik aber leer."
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#geom-formen",
+    "href": "pages/chapters/data_visualization_1.html#geom-formen",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Geom / Formen",
+    "text": "Geom / Formen\nAls dritte Komponente werden in ggplot() wird die Form mit geom_ hinzugefügt. Jede Form, die eingefügt wird benötigt Angaben zum mapping, falls kein mapping angegeben wird, wird dieses aus der ggplot()-Funktion in der ersten Zeile übernommen.\nEs gibt viele verschiedene Formen zur Auswahl. Beispielsweise werden mit geom_point() Punkte erstellt, mit geom_line() Linien, mit geom_boxplot Boxplots, usw. Bei der Wahl der passenden Form kommt es einerseits auf die Daten an. Sind die Daten z.B. Faktoren oder numerische Werte (siehe auch Skalenniveau oben)? Wie viele Variablen werden gleichzeitig in die Grafik eingebunden? Andererseits ist es wichtig, was mit der Grafik gezeigt werden soll: Unterschiede? Gemeinsamkeiten? Veränderungen über Zeit?\nGeome zur Visualisierung von Datenpunkten und Verläufen:\n\nPunkte / Scatterplots - geom_point()\n\nLinien - geom_line()\n\n\nGeome zur Visualisierung von zusammenfassenden Werten:\n\nHistogramme - geom_histogram()\n\nMittelwerte und Standardabweichungen - geom_pointrange()\n\nDichteplots - geom_density()\n\nBoxplots - geom_boxplot()\n\nViolinplots - geom_violin()\n\n\n\nEs gibt auch weitere, sehr informative Arten der Visualisierung, wie heat maps oder shift functions, auf die wir in dieser Veranstaltung nicht eingehen.\n\n\n\n\n\n\nHands-on: Geoms\n\n\n\nWelche geoms eignen sich für welches Skalenniveau und welche Variablenanzahl?\n👉 Hier finden Sie das ggplot-Cheatsheet.\nSchauen Sie sich die verschiedenen Formen von Plots hier an."
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#kombinieren-von-mehreren-geoms-in-einer-grafik",
+    "href": "pages/chapters/data_visualization_1.html#kombinieren-von-mehreren-geoms-in-einer-grafik",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Kombinieren von mehreren geoms in einer Grafik",
+    "text": "Kombinieren von mehreren geoms in einer Grafik\nTeilweise werden in Visualisierungen mehrere geoms kombiniert. In vielen Fällen macht es beispielsweise Sinn, nicht nur die tatsächlichen Werte, sondern in derselben Grafik auch zusammenfassende Masse zu visualisieren.\n\nWeiterführende Info zum Kombinieren von Plots finden Sie hier.\nVerwenden verschiedener geoms in einem Plot:\n\nggplot(data = d_away, \n       mapping = aes(x = condition,\n                     y = value2)) +\n    geom_boxplot(width = 0.3) +\n    geom_jitter(width = 0.1) \n\n\n\n\nKombiniert werden können aber nicht nur verschiedene Formen, sondern auch mehrere Datensätze. Dies kann in ggplot() einfach umgesetzt werden indem mehrere Geoms übereinandergelegt werden und nicht das mapping aus der ggplot()-Funktion genutzt wird, sondern indem für jedes geom ein separater Datensatz und ein separates mapping spezifiziert werden.\n\nggplot(data = d_away, \n       mapping = aes(x = condition,\n                     y = value2)) +\n    geom_jitter(width = 0.1) + # verwendet Datensatz \"d_away\"\n    geom_point(data = d_away_summary, # verwendet Datensatz \"d_away_summary\"\n               aes(x = \"away\", y = mean_v1), # condition ist nicht im Datensatz enthalten, deshalb hier hardcoded\n               color = \"red\", # Punkt rot einfärben\n               size = 3) # Punkt vergrössern"
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#beschriftungen-und-themes",
+    "href": "pages/chapters/data_visualization_1.html#beschriftungen-und-themes",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Beschriftungen und Themes",
+    "text": "Beschriftungen und Themes\nSchönere und informativere Plots lassen sich gestalten, wenn wir einen Titel hinzufügen, die Achsenbeschriftung anpassen und das theme verändern:\n\nggplot(data = d_away,\n       mapping = aes(x = value1,\n                     y = value2)) +\n    geom_point() +\n    labs(title = \"Ein etwas schönerer Plot\", \n         subtitle = \"Verteilung der Rohwerte\",\n        x = \"Wert 1  [a.u.]\",\n        y = \"Wert 2 [a.u.]\") +\n    theme_minimal()\n\n\n\n\n\nAuch theme_classic() oder theme_bw() ergeben schlichte aber schöne Plots."
+  },
+  {
+    "objectID": "pages/chapters/data_visualization_1.html#weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot",
+    "href": "pages/chapters/data_visualization_1.html#weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot",
+    "title": "Grafiken erstellen mit ggplot\n",
+    "section": "Weiterführende Ressourcen zur Datenvisualisierung mit ggplot()\n",
+    "text": "Weiterführende Ressourcen zur Datenvisualisierung mit ggplot()\n\n\nDokumentation von ggplot2\nKurzweilige, kompakte und sehr informative Informationen und Videos über das Erstellen von Grafiken in ggplot finden Sie hier: Website PsyTeachR: Data Skills for reproducible research\nHier ist der Start der PsyTeachR Videoliste von Lisa deBruine, dort finden sich auch hilfreiche Kurzvideos zu Themen von Daten einlesen bis zu statistischen Analysen. Beispielsweise zu Basic Plots, Common Plots und Plot Themes and Customization\nEinführung in R von Andrew Ellis und Boris Mayer"
+  },
+  {
+    "objectID": "pages/admin/wichtiges.html",
+    "href": "pages/admin/wichtiges.html",
+    "title": "Wichtiges zum Kurs",
+    "section": "",
+    "text": "In diesem anwendungsorientierten Kurs erwerben Sie Wissen über Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften. Wir behandeln im Rahmen der Veranstaltung folgende Inhalte:\n\nWichtige Programmiersprachen und - umgebungen in den Neurowissenschaften\nProgrammieren von computerbasierten Experimenten (mit PsychoPy)\nProgrammieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices”, Data Cleaning, Reproduzierbarkeit)\nAnalysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)\nInterpretation und kritische Einordnung von Analyseergebnissen"
+  },
+  {
+    "objectID": "pages/admin/wichtiges.html#ilias",
+    "href": "pages/admin/wichtiges.html#ilias",
+    "title": "Wichtiges zum Kurs",
+    "section": "Ilias",
+    "text": "Ilias\nUnter diesen Links finden Sie die Iliasgruppen:\nILIAS (Montag) 👉 468703-FS2024-0\nILIAS (Mittwoch) 👉 468703-FS2024-1"
+  },
+  {
+    "objectID": "pages/admin/wichtiges.html#kursvoraussetzungen",
+    "href": "pages/admin/wichtiges.html#kursvoraussetzungen",
+    "title": "Wichtiges zum Kurs",
+    "section": "Kursvoraussetzungen",
+    "text": "Kursvoraussetzungen\nWir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. Sie benötigen in der Veranstaltung deshalb einen eigenen Laptop (Tablets sind nicht geeignet!) mit ca. 20 GB freiem Speicherplatz und mit einer installierten (aktuellen) Version von R und RStudio (Link zum Download von R und RStudio).\nR Kenntnisse (gemäss Statistik I-IV in Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher „Advanced R” und „R for Data Scientists” von Hadley Wickham."
+  },
+  {
+    "objectID": "pages/admin/wichtiges.html#anwesenheit",
+    "href": "pages/admin/wichtiges.html#anwesenheit",
+    "title": "Wichtiges zum Kurs",
+    "section": "Anwesenheit",
+    "text": "Anwesenheit\nDie Anwesenheit im Kurs wird vorausgesetzt (2 Abwesenheiten sind ok). Wir würden den Kurs gerne ohne Anwesenheitskontrollen durchführen - falls nötig werden wir diese aber einführen.\nDas Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Eigenstudium, wir können jedoch nicht für die Vollständigkeit garantieren. Hilfestellung beim Programmieren und Verstehen der Inhalte bieten wir während der Kurszeiten an, aus zeitlichen Gründen können wir keine Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten. Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage."
+  },
+  {
+    "objectID": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
+    "href": "pages/admin/wichtiges.html#form-der-leistungsnachweise",
+    "title": "Wichtiges zum Kurs",
+    "section": "Form der Leistungsnachweise",
+    "text": "Form der Leistungsnachweise\nLeistungsnachweise werden in Form von 5 Übungen und 2 Quizzes erbracht. Hiervon müssen alle abgegeben und als bestanden bewertet werden. Bei Nicht-Bestehen erhalten Sie eine 2. Frist für die Abgabe oder einen Zusatzauftrag.\nAlle Leistungsnachweise werden in den Veranstaltungen angekündigt. Die Termine für die Leistungsnachweise finden Sie hier.\n\nÜbungen\nDie Übungen werden auf der Website aufgeschaltet. Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.\n\n\nQuizzes\nDas erste Quiz wird während der ersten Veranstaltung durchgeführt und dient vor allem dazu zu erheben, welche Kenntnisse schon vorhanden sind. Das zweite Quiz wird gegen Ende des Semesters stattfinden und das Gelernte prüfen."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Neurowissenschaft Computerlab",
+    "section": "",
+    "text": "Frühjahrssemester 2024"
+  },
+  {
+    "objectID": "pages/admin/termine.html",
+    "href": "pages/admin/termine.html",
+    "title": "Terminübersicht",
+    "section": "",
+    "text": "Termine der Leistungsnachweise\n\nGruppe Montag\n\n\n\nLeistungsnachweis\nForm\nBeginn\nAbgabetermin\nLink\nInhalt\n\n\n\n\nQ1: Vorkenntnisse\nQuiz auf Ilias\n19.02.2024\n28.02.2024 23:55\nQ1\nErheben der Vorkenntnisse\n\n\nÜ1: PsychoPy Experiment\nÜbung\n11.03.2024\n21.03.2024 23:55\nÜ1\nDatenerheben mit einem PsychoPy Experiment\n\n\nÜ2: Data wrangling\nÜbung\n25.03.2024\n17.04.2024 23:55\nÜ2\nDatensätze automatisiert einlesen und vorverarbeiten\n\n\nÜ3: Data visualization\nÜbung\n08.04.2024\n28.04.2024 23:55\nÜ3\nDaten visualisieren: Galerie\n\n\nÜ4: Data analysis I\nÜbung\n22.04.2024\n10.05.2024 23:55\n\n\n\n\nÜ5: Data analysis II\nÜbung\n13.05.2024\n31.05.2024 23:55\n\n\n\n\nQ2: Kursinhalte\nQuiz auf Ilias\n20.05.2024\n27.05.2024 23:55\n\n\n\n\n\n\n\nGruppe Mittwoch\n\n\n\nLeistungsnachweis\nForm\nBeginn\nAbgabetermin\nLink\nInhalt\n\n\n\n\nQ1: Vorkenntnisse\nQuiz auf Ilias\n21.02.2024\n28.02.2024 23:55\nQ1\nErheben der Vorkenntnisse\n\n\nÜ1: PsychoPy Experiment\nÜbung\n13.03.2024\n23.03.2024 23:55\nÜ1\nDatenerheben mit einem PsychoPy Experiment\n\n\nÜ2: Data wrangling\nÜbung\n27.03.2024\n17.04.2024 23:55\nÜ2\nDatensätze automatisiert einlesen und vorverarbeiten\n\n\nÜ3: Data visualization\nÜbung\n10.04.2024\n30.04.2024 23:55\nÜ3\nDaten visualisieren: Galerie\n\n\nÜ4: Data analysis I\nÜbung\n24.04.2024\n12.05.2024 23:55\n\n\n\n\nÜ5: Data analysis II\nÜbung\n15.05.2024\n02.06.2024 23:55\n\n\n\n\nQ2: Kursinhalte\nQuiz auf Ilias\n20.05.2024\n27.05.2024 23:55\n\n\n\n\n\n\n\n\nInhalte\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nFerien: 1./3. April: Vorlesungsfreie Zeit\nSitzung 7 (8./.10. April 2024)\nSitzung 8 (15./17. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nDatenverarbeitung automatisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2 und 3: Datenverarbeiten und visualisieren\n\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 4: Datensatz analysieren\n\n\n\n5 Modellieren von neurowissenschaftlichen Daten\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag) stattdessen wird Quiz 2 ausgefüllt.\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nQuiz 2: Abschlussquiz\nÜbung 5: Datensatz analysieren\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "objectID": "pages/chapters/computerlab.html",
+    "href": "pages/chapters/computerlab.html",
+    "title": "Computerlab",
+    "section": "",
+    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
+  },
+  {
+    "objectID": "pages/chapters/computerlab.html#neurocomp-lab",
+    "href": "pages/chapters/computerlab.html#neurocomp-lab",
+    "title": "Computerlab",
+    "section": "",
+    "text": "In diesem anwendungsbasierten Kurs lernen Sie mit Daten zu arbeiten. Der Computer ist dabei ein absolut notwendiges Werkzeug. Unser Fokus liegt auf der Vermittlung von Anwendungskenntnisse. Die Termine setzen sich deshalb aus Inputs und Hands-on Sessions zusammen.\nAls Einstieg schauen wir uns an, wo der Computer in einem Forschungsprojekt gebraucht wird, wo er die Arbeit erleichtert."
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html",
+    "href": "pages/chapters/datacamp.html",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+  },
+  {
+    "objectID": "pages/chapters/datacamp.html#datacamp",
+    "href": "pages/chapters/datacamp.html#datacamp",
+    "title": "DataCamp",
+    "section": "",
+    "text": "DataCamp ist eine Online-Lernplattform, welche sich auf Data Science und Datenanalyse konzentriert. Es bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen wie Python, R und SQL auf unterschiedlichen Niveaus an; sowohl für Anfänger als auch für Fortgeschrittene gibt es ein breites Angebot.\nIm Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren:\n👉🏼 Einladungslink DataCamp Registration\nWir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link jedoch Zugriff auf alle Kurse bis Ende FS24.\n👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: Introduction to R\n👉🏼 Als Einführung in Python eignet sich folgender Kurs: Introduction to Python"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html",
+    "href": "pages/chapters/datawrangling_automatisiert.html",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "",
+    "text": "Für diesen Teil benötigen Sie das R-Project complab_datawrangling_stroop mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments."
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#setup",
+    "href": "pages/chapters/datawrangling_automatisiert.html#setup",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Setup",
+    "text": "Setup\n\n# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)\nlibrary(\"tidyverse\")"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
+    "href": "pages/chapters/datawrangling_automatisiert.html#stroop-experiment-data-wrangling",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "\nStroop-Experiment data wrangling",
+    "text": "Stroop-Experiment data wrangling\n\n# Daten vorverarbeiten\nd_stroop = read_csv(\"data/stroop_example_1.csv\") |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
+    "href": "pages/chapters/datawrangling_automatisiert.html#daten-mit-eigener-funktion-einlesen",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Daten mit eigener Funktion einlesen",
+    "text": "Daten mit eigener Funktion einlesen\n\nread_stroop = function(path){\n    # Code kopiert von oben\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    # ---------------------\n    d_stroop\n}\n\nread_stroop(path = \"data/stroop_example_1.csv\")"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
+    "href": "pages/chapters/datawrangling_automatisiert.html#einlesen-automatisieren",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Einlesen Automatisieren",
+    "text": "Einlesen Automatisieren\nWir benötigen eine Liste aller Daten files. Die Funktion list.files() gibt einer liste aller Dokumente in einem Ordner zurück.\n\nlist.files(path = 'data/')\n\nlist.files(path = 'data/', pattern = 'stroop')\n\nUm die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.\n\nfiles = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '')\n\n\nHier wird die Pipe des magritter-Packages verwendet (%&gt;%) statt die Base-R Pipe (|&gt;). Mit %&gt;% haben wir die Möglichkeit mit dem . zu bestimmen wo die weitergeleiteten Inhalte der Pipe eingefügt werden (nach data/). Informationen zu den Unterschieden der Pipes finden Sie hier.\nAlle Files von Hand einlesen\nJedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.\n\nfile1 = files[1]\nfile2 = files[2]\nfile3 = files[3]\n\nd1 = read_stroop(file1)\nd2 = read_stroop(file2)\nd3 = read_stroop(file3)\n\nd_hand = bind_rows(d1, d2, d3)\n\nAlle Files mit for-Loop einlesen\nDas Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame d_loop erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame d_loop angehängt.\n\nd_loop = tibble()\n\nfor (file in files){\n    d_tmp = read_stroop(file)\n    d_loop = bind_rows(d_loop, d_tmp)\n}\n\nAlle Files mit der Funktion map() einlesen\nmap() wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor files enthält die Pfade zu den Daten Files. Mit map() können wir also unsere selbst erstellte Funktion read_stroop() auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.\n\nd_map1 = files |&gt;\n    map(read_stroop) %&gt;%\n    bind_rows()\n\nDie Funktion map_dfr() macht das gleiche wie map() fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.\n\nd_map2 = files |&gt;\n    map_dfr(read_stroop)"
+  },
+  {
+    "objectID": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
+    "href": "pages/chapters/datawrangling_automatisiert.html#kompletter-stroop-code-an-einem-ort",
+    "title": "Automatisiertes importieren und vorverarbeiten",
+    "section": "Kompletter Stroop Code an einem Ort",
+    "text": "Kompletter Stroop Code an einem Ort\n\nread_stroop = function(path){\n    d_stroop = read_csv(path) |&gt;\n    filter(!is.na(trials_test.thisN)) |&gt;\n    mutate(trial = trials_test.thisN + 1) |&gt;\n    select(id = participant, \n           trial,\n           word, \n           color, \n           congruent, \n           resp = keyResp_test_run.keys, \n           corr = keyResp_test_run.corr, \n           rt = keyResp_test_run.rt)\n    d_stroop\n}\n\nd = list.files(path = 'data/', pattern = 'stroop') %&gt;% \n    paste('data/', ., sep = '') |&gt;\n    map_dfr(read_stroop)\n\nd |&gt; write.csv(file = \"data/clean/dataset_stroop_clean.csv\", row.names = FALSE) # neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden"
   },
   {
     "objectID": "pages/chapters/goodpractices_data.html",
@@ -586,61 +698,5 @@
     "title": "Übung 2 - Data Wrangling",
     "section": "Trouble shooting",
     "text": "Trouble shooting\nDas Einlesen funktioniert nicht.\nKontrollieren Sie bei der read.csv()-Funktion das sep = Zeichen. Passt dieses zum Datensatz?\nStimmt die Ordnerstruktur? Arbeiten Sie in einem R-Project, ist das .Rmd-File im selben Ordner wie das .Rproj-File und haben Sie die Daten im data-Ordner gespeichert (ungezippt, also nur die Datenfiles)?\nDie Datensätze können nicht alle eingelesen werden, obwohl ein einzelner Datensatz eingelesen werden kann.\nBitte öffnen Sie die Dateien nur in R, nicht in Excel oder in einem anderen Programm, das kann die Formatierung ändern und Probleme beim Einlesen verursachen. Falls Sie die Daten schon geöffnet haben, laden Sie den Datensatz nochmals neu von der Website herunter und speichern Sie ihn im Datenordner.\nHaben Sie die Pfade richtig gesetzt? Haben Sie die Funktion paste() korrekt genutzt?\nWeitere Fehlermeldungen\nLesen Sie die Fehlermeldung genau durch: Finden Sie Informationen zur Lösung des Fehlers?\nHäufigste Fehlerquellen:\n\nTippfehler\nFormattierung Code-Chunk: Er muss mit ```{r} beginnen und mit ``` enden. Stellen Sie sicher, dass eine Lücke zum nächsten Code-Chunk besteht.\nReihenfolgenfehler: Löschen Sie alle Variablen mit dem “Besen”-Symbol oben rechts und lassen Sie Ihren Code nochmals von Beginn an durch laufen. Wo stockt der Code?\n\nBei Problemen, fragen Sie bitte in der nächsten Veranstaltung nach."
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html",
-    "href": "pages/chapters/data_visualization_1.html",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "",
-    "text": "Hands-on: Vorbereitung\n\n\n\n\nLaden Sie hier den Beispielsdatensatz herunter, speichern Sie diesen in einem data-Folder in einem R-Project.\nÖffnen Sie ein neues RScript (.R) oder RMarkdown-File (.Rmd). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt."
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#daten",
-    "href": "pages/chapters/data_visualization_1.html#daten",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Daten",
-    "text": "Daten\nDie wichtigste Komponente einer Grafik sind die Daten. Bevor eine Grafik erstellt wird, müssen die Eigenschaften des Datensatzes bekannt sein.\n\nDer verwendete Datensatz stammt von @matejka_same_2017.\n\n# Einlesen des Übungsdatensatzes\nd &lt;- read.csv(\"data/DatasaurusDozen.csv\") %&gt;%\n    mutate(condition = as.factor(condition)) # Variable condition soll ein Faktor sein\n\n# Datensatz anschauen\nglimpse(d)\n\nRows: 1,846\nColumns: 3\n$ condition &lt;fct&gt; away, away, away, away, away, away, away, away, away, away, …\n$ value1    &lt;dbl&gt; 32.33111, 53.42146, 63.92020, 70.28951, 34.11883, 67.67072, …\n$ value2    &lt;dbl&gt; 61.411101, 26.186880, 30.832194, 82.533649, 45.734551, 37.11…\n\n\nDatenformat\nAm einfachsten ist das plotten mit ggplot(), wenn die Daten im long-Format vorliegen. Das bedeutet:\n\nJede Variable die gemessen/erhoben wird hat eine Spalte (z.B. Versuchspersonennummer, Reaktionszeit, Taste).\nJede Messung hat eine Zeile. In unserem PsychoPy-Experiment entspricht dies einer Zeile pro Trial.\n\nDie hier eingelesenen Daten sind schon im long-Format.\n\nFalls die Daten im wide-Format abgespeichert sind, lohnt es sich diese umzuformatieren z.B. mit pivot_longer().\nVariablen\nFür die Grafik ist es relevant, welches Skalenniveau die zu visualisierenden Variablen haben. Je nach Anzahl Variablen und den entsprechenden Skalenniveaus eignen sich andere Grafik-Formen.\n\n\nCC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=724035\n\n\n\n\n\n\n\nHands-on: Datensatz anschauen\n\n\n\nSchauen Sie sich den Datensatz an.\n\nWie viele unterschiedliche Variablen gibt es?\nWie heissen die Variablen?\nWelches Skalenniveau haben sie?\n\n\n\nSubsetting\nWenn nur ein gewisser Teil der Daten visualisiert werden soll, muss der Datensatz gefiltert werden. Der aktuelle Datensatz enthält beispielsweise verschiedene Bedingungen, jeweils mit Werten für Variable value1 und value2. Folgende 13 Bedingungen sind enthalten:\n\nunique(d$condition)\n\n [1] away       bullseye   circle     dino       dots       h_lines   \n [7] high_lines slant_down slant_up   star       v_lines    wide_lines\n[13] x_shape   \n13 Levels: away bullseye circle dino dots h_lines high_lines ... x_shape\n\n\nFürs erste entscheiden wir uns für die Bedingung away.\n\nd_away &lt;- d %&gt;%\n    filter(condition == \"away\")\n\nWir können für diese Bedingung zusätzlich summary statistics berechnen, hier Mittelwert und Standardabweichung.\n\nd_away_summary &lt;- d_away %&gt;%\n    summarise(mean_v1 = mean(value1),\n              sd_v1 = sd(value1),\n              mean_v2 = mean(value2),\n              sd_v2 = sd(value2))\n\nglimpse(d_away_summary)\n\nRows: 1\nColumns: 4\n$ mean_v1 &lt;dbl&gt; 54.2661\n$ sd_v1   &lt;dbl&gt; 16.76982\n$ mean_v2 &lt;dbl&gt; 47.83472\n$ sd_v2   &lt;dbl&gt; 26.93974\n\n\nDiese Werte geben einen Anhaltspunkt, in welchem Bereich sich die Werte bewegen werden.\nPlot\nIn den folgenden Beispielen werden die Daten der Bedingung away verwendet. Als erstes Argument wird der Funktion ggplot() der Datensatz übergeben (data = data_away).\n\nggplot(data = d_away)"
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#mapping",
-    "href": "pages/chapters/data_visualization_1.html#mapping",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Mapping",
-    "text": "Mapping\nDas mapping beschreibt, welche Variable auf der x- und y-Achse abgetragen werden sollen. Es wird also definiert, wie die Variablen auf die Formen (aesthetics) gemappt werden sollen. Am einfachsten wir dies zu Beginn in festgelegt (das mapping kann aber auch in der Funktion geom_ selbst definiert werden). Weitere Variablen könnten als group = ... oder color = ... eingefügt werden.\n\nggplot(data = d_away,\n       mapping = aes(x = value1,\n                     y = value2)) \n\n\n\n\nDie Grafik verfügt nun über Achsen, diese werden automatisch mit den Variablennamen beschriftet. Da noch keine Formen (geoms) hinzugefügt wurde ist die Grafik aber leer."
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#geom-formen",
-    "href": "pages/chapters/data_visualization_1.html#geom-formen",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Geom / Formen",
-    "text": "Geom / Formen\nAls dritte Komponente werden in ggplot() wird die Form mit geom_ hinzugefügt. Jede Form, die eingefügt wird benötigt Angaben zum mapping, falls kein mapping angegeben wird, wird dieses aus der ggplot()-Funktion in der ersten Zeile übernommen.\nEs gibt viele verschiedene Formen zur Auswahl. Beispielsweise werden mit geom_point() Punkte erstellt, mit geom_line() Linien, mit geom_boxplot Boxplots, usw. Bei der Wahl der passenden Form kommt es einerseits auf die Daten an. Sind die Daten z.B. Faktoren oder numerische Werte (siehe auch Skalenniveau oben)? Wie viele Variablen werden gleichzeitig in die Grafik eingebunden? Andererseits ist es wichtig, was mit der Grafik gezeigt werden soll: Unterschiede? Gemeinsamkeiten? Veränderungen über Zeit?\nGeome zur Visualisierung von Datenpunkten und Verläufen:\n\nPunkte / Scatterplots - geom_point()\n\nLinien - geom_line()\n\n\nGeome zur Visualisierung von zusammenfassenden Werten:\n\nHistogramme - geom_histogram()\n\nMittelwerte und Standardabweichungen - geom_pointrange()\n\nDichteplots - geom_density()\n\nBoxplots - geom_boxplot()\n\nViolinplots - geom_violin()\n\n\n\nEs gibt auch weitere, sehr informative Arten der Visualisierung, wie heat maps oder shift functions, auf die wir in dieser Veranstaltung nicht eingehen.\n\n\n\n\n\n\nHands-on: Geoms\n\n\n\nWelche geoms eignen sich für welches Skalenniveau und welche Variablenanzahl?\n👉 Hier finden Sie das ggplot-Cheatsheet.\nSchauen Sie sich die verschiedenen Formen von Plots hier an."
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#kombinieren-von-mehreren-geoms-in-einer-grafik",
-    "href": "pages/chapters/data_visualization_1.html#kombinieren-von-mehreren-geoms-in-einer-grafik",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Kombinieren von mehreren geoms in einer Grafik",
-    "text": "Kombinieren von mehreren geoms in einer Grafik\nTeilweise werden in Visualisierungen mehrere geoms kombiniert. In vielen Fällen macht es beispielsweise Sinn, nicht nur die tatsächlichen Werte, sondern in derselben Grafik auch zusammenfassende Masse zu visualisieren.\n\nWeiterführende Info zum Kombinieren von Plots finden Sie hier.\nVerwenden verschiedener geoms in einem Plot:\n\nggplot(data = d_away, \n       mapping = aes(x = condition,\n                     y = value2)) +\n    geom_boxplot(width = 0.3) +\n    geom_jitter(width = 0.1) \n\n\n\n\nKombiniert werden können aber nicht nur verschiedene Formen, sondern auch mehrere Datensätze. Dies kann in ggplot() einfach umgesetzt werden indem mehrere Geoms übereinandergelegt werden und nicht das mapping aus der ggplot()-Funktion genutzt wird, sondern indem für jedes geom ein separater Datensatz und ein separates mapping spezifiziert werden.\n\nggplot(data = d_away, \n       mapping = aes(x = condition,\n                     y = value2)) +\n    geom_jitter(width = 0.1) + # verwendet Datensatz \"d_away\"\n    geom_point(data = d_away_summary, # verwendet Datensatz \"d_away_summary\"\n               aes(x = \"away\", y = mean_v1), # condition ist nicht im Datensatz enthalten, deshalb hier hardcoded\n               color = \"red\", # Punkt rot einfärben\n               size = 3) # Punkt vergrössern"
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#beschriftungen-und-themes",
-    "href": "pages/chapters/data_visualization_1.html#beschriftungen-und-themes",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Beschriftungen und Themes",
-    "text": "Beschriftungen und Themes\nSchönere und informativere Plots lassen sich gestalten, wenn wir einen Titel hinzufügen, die Achsenbeschriftung anpassen und das theme verändern:\n\nggplot(data = d_away,\n       mapping = aes(x = value1,\n                     y = value2)) +\n    geom_point() +\n    labs(title = \"Ein etwas schönerer Plot\", \n         subtitle = \"Verteilung der Rohwerte\",\n        x = \"Wert 1  [a.u.]\",\n        y = \"Wert 2 [a.u.]\") +\n    theme_minimal()\n\n\n\n\n\nAuch theme_classic() oder theme_bw() ergeben schlichte aber schöne Plots."
-  },
-  {
-    "objectID": "pages/chapters/data_visualization_1.html#weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot",
-    "href": "pages/chapters/data_visualization_1.html#weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot",
-    "title": "Grafiken erstellen mit ggplot\n",
-    "section": "Weiterführende Ressourcen zur Datenvisualisierung mit ggplot()\n",
-    "text": "Weiterführende Ressourcen zur Datenvisualisierung mit ggplot()\n\n\nDokumentation von ggplot2\nKurzweilige, kompakte und sehr informative Informationen und Videos über das Erstellen von Grafiken in ggplot finden Sie hier: Website PsyTeachR: Data Skills for reproducible research\nHier ist der Start der PsyTeachR Videoliste von Lisa deBruine, dort finden sich auch hilfreiche Kurzvideos zu Themen von Daten einlesen bis zu statistischen Analysen. Beispielsweise zu Basic Plots, Common Plots und Plot Themes and Customization\nEinführung in R von Andrew Ellis und Boris Mayer"
-  },
-  {
-    "objectID": "pages/admin/termine.html",
-    "href": "pages/admin/termine.html",
-    "title": "Terminübersicht",
-    "section": "",
-    "text": "Termine der Leistungsnachweise\n\nGruppe Montag\n\n\n\nLeistungsnachweis\nForm\nBeginn\nAbgabetermin\nLink\nInhalt\n\n\n\n\nQ1: Vorkenntnisse\nQuiz auf Ilias\n19.02.2024\n28.02.2024 23:55\nQ1\nErheben der Vorkenntnisse\n\n\nÜ1: PsychoPy Experiment\nÜbung\n11.03.2024\n21.03.2024 23:55\nÜ1\nDatenerheben mit einem PsychoPy Experiment\n\n\nÜ2: Data wrangling\nÜbung\n25.03.2024\n17.04.2024 23:55\nÜ2\nDatensätze automatisiert einlesen und vorverarbeiten\n\n\nÜ3: Data visualization\nÜbung\n08.04.2024\n28.04.2024 23:55\nÜ3\nDaten visualisieren: Galerie\n\n\nÜ4: Data analysis I\nÜbung\n22.04.2024\n10.05.2024 23:55\n\n\n\n\nÜ5: Data analysis II\nÜbung\n13.05.2024\n31.05.2024 23:55\n\n\n\n\nQ2: Kursinhalte\nQuiz auf Ilias\n20.05.2024\n27.05.2024 23:55\n\n\n\n\n\n\n\nGruppe Mittwoch\n\n\n\nLeistungsnachweis\nForm\nBeginn\nAbgabetermin\nLink\nInhalt\n\n\n\n\nQ1: Vorkenntnisse\nQuiz auf Ilias\n21.02.2024\n28.02.2024 23:55\nQ1\nErheben der Vorkenntnisse\n\n\nÜ1: PsychoPy Experiment\nÜbung\n13.03.2024\n23.03.2024 23:55\nÜ1\nDatenerheben mit einem PsychoPy Experiment\n\n\nÜ2: Data wrangling\nÜbung\n27.03.2024\n17.04.2024 23:55\nÜ2\nDatensätze automatisiert einlesen und vorverarbeiten\n\n\nÜ3: Data visualization\nÜbung\n10.04.2024\n30.04.2024 23:55\nÜ3\nDaten visualisieren: Galerie\n\n\nÜ4: Data analysis I\nÜbung\n24.04.2024\n12.05.2024 23:55\n\n\n\n\nÜ5: Data analysis II\nÜbung\n15.05.2024\n02.06.2024 23:55\n\n\n\n\nQ2: Kursinhalte\nQuiz auf Ilias\n20.05.2024\n27.05.2024 23:55\n\n\n\n\n\n\n\n\nInhalte\nAn den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):\n\n1 Einführung\nSitzung 1 (19./21. Februrar 2024)\n\nEinführung in Programmiersprachen und -umgebungen im neurowissenschaftlichen Kontext (Python, R, Matlab, Julia, Bash) und ihre Programmierumgebungen (z.B. RStudio, PsychoPy, usw.)\n\n\n\n\nInstallieren der für den Kurs benötigten Software\nDatacamp-Kurse anschauen und belegen.\nQuiz 1 ausfüllen (siehe Ilias)\n\n\n\n2 Experimente programmieren\nSitzung 2 (26./28. Februrar 2024)\nSitzung 3 (4./6. März 2024)\n\nÜbersicht Leistungsnachweise,\nExperimente in den Neurowissenschaften: Elemente und Herausforderungen\nErstellen von zwei computerbasierten Experimenten mit Python und PsychoPy\nÜbung 1: Datenerhebung\n\n\n\n3 Data Wrangling & Daten visualisieren\nSitzung 4 (11./13. März 2024)\nSitzung 5 (18./20. März 2024)\nSitzung 6 (25./27. März 2024)\nFerien: 1./3. April: Vorlesungsfreie Zeit\nSitzung 7 (8./.10. April 2024)\nSitzung 8 (15./17. April 2024)\n\nArbeiten in R mit Projekten und Rmarkdown\nDaten mit R einlesen, bearbeiten und visualisieren\nDatenverarbeitung automatisieren\nOpen Science, Reproduzierbarkeit und Datenmanagement: wie neurowissenschaftliche Daten und Datenverarbeitungspipelines sinnvoll gestaltet und geteilt werden können\nÜbung 2 und 3: Datenverarbeiten und visualisieren\n\n\n\n4 Analysemethoden\nSitzung 8 (15./17. April 2024)\nSitzung 9 (22./24. April 2024)\nSitzung 10 (29. April und 1. Mai 2024)\n\nBesonderheiten neurowissenschaftlicher Daten und Analysen\nfrequentistische und bayesianische Analyseverfahren\nÜbung 4: Datensatz analysieren\n\n\n\n5 Modellieren von neurowissenschaftlichen Daten\nSitzung 11 (6../8. Mai 2024)\nSitzung 12 (13./15. Mai 2024)\nTermine von Mo 20. Mai 2024 und Mi 22. Mai 2024 fallen aus (Pfingstmontag) stattdessen wird Quiz 2 ausgefüllt.\nSitzung 13 (27./29. Mai 2014)\n\nSignalentdeckungstheorie (signal detection theory, SDT)\nDrift Diffusion Models (DDM)\nQuiz 2: Abschlussquiz\nÜbung 5: Datensatz analysieren\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
   }
 ]
