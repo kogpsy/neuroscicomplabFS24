@@ -18,7 +18,22 @@ format:
         toc: true
 ---
 
-# Termine und Leistungsnachweise
+# Termine der Leistungsnachweise
+
+
+## Gruppe Montag
+
+| Leistungsnachweis | Form |Beginn | Abgabetermin | Link |
+|---------|:------:|:------:|:------:|:-------|
+| Q1: Vorkenntnisse | Quiz | 19.02. | 28.02. 23:55 | [Q1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/quiz_one.html) |
+| Ü1: PsychoPy Experiment | Übung |   |  21.03. 23:55 |[Ü1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html) |
+| Ü2: Data wrangling | Übung | 25.03. | 17.04. 23:55 | [Ü2](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_2_datawrangling.html) |
+
+
+## Gruppe Mittwoch
+
+
+# Inhalte
 
 An den 13 Sitzungen werden wir folgende Themen behandeln (kleine Änderungen vorbehalten):
 
