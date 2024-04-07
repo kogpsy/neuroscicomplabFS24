@@ -304,6 +304,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/data_visualization_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Daten Visualisierung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/uebung_3_plot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Übung 3 - Plot</span></a>
   </div>
@@ -350,10 +356,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#beschriftungen-und-themes" id="toc-beschriftungen-und-themes" class="nav-link" data-scroll-target="#beschriftungen-und-themes">Beschriftungen und Themes</a></li>
   </ul>
 </li>
+  <li><a href="#daten-plotten-hands-on" id="toc-daten-plotten-hands-on" class="nav-link" data-scroll-target="#daten-plotten-hands-on">Daten plotten: Hands on</a></li>
   <li>
-<a href="#daten-plotten-hands-on" id="toc-daten-plotten-hands-on" class="nav-link" data-scroll-target="#daten-plotten-hands-on">Daten plotten: Hands on</a>
+<a href="#tipps-und-tricks" id="toc-tipps-und-tricks" class="nav-link" data-scroll-target="#tipps-und-tricks">Tipps und Tricks</a>
   <ul class="collapse">
-<li><a href="#weiterf%C3%BChrende-ressourcen-zur-datenvisualisierung-mit-ggplot" id="toc-weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot" class="nav-link" data-scroll-target="#weiterf%C3%BChrende-ressourcen-zur-datenvisualisierung-mit-ggplot">Weiterführende Ressourcen zur Datenvisualisierung mit <code>ggplot()</code></a></li>
+<li><a href="#mehrere-plots-in-einer-grafik-darstellen" id="toc-mehrere-plots-in-einer-grafik-darstellen" class="nav-link" data-scroll-target="#mehrere-plots-in-einer-grafik-darstellen">Mehrere Plots in einer Grafik darstellen</a></li>
+  <li><a href="#grafik-abspeichern" id="toc-grafik-abspeichern" class="nav-link" data-scroll-target="#grafik-abspeichern">Grafik abspeichern</a></li>
+  <li><a href="#inspiration" id="toc-inspiration" class="nav-link" data-scroll-target="#inspiration">Inspiration</a></li>
+  <li><a href="#weiterf%C3%BChrende-ressourcen-zur-datenvisualisierung-mit-ggplot" id="toc-weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot" class="nav-link" data-scroll-target="#weiterf%C3%BChrende-ressourcen-zur-datenvisualisierung-mit-ggplot">Weiterführende Ressourcen zur Datenvisualisierung mit <code>ggplot()</code></a></li>
   </ul>
 </li>
   </ul></nav>
@@ -638,8 +648,21 @@ Weiterführende Info zum Kombinieren von Plots finden Sie <a href="https://psyte
 </div>
 <aside>
 Auch <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic()</a></code> oder <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> ergeben schlichte aber schöne Plots.
-</aside></section></section><section id="daten-plotten-hands-on" class="level1 page-columns page-full"><h1>Daten plotten: Hands on</h1>
-<p>Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RSkript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.</p>
+</aside><div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie eine Grafik. Fügen Sie mit <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> passende Beschriftungen hinzu. Gibt es noch weitere, oben nicht verwendete Optionen?</p>
+</div>
+</div>
+</section></section><section id="daten-plotten-hands-on" class="level1 page-columns page-full"><h1>Daten plotten: Hands on</h1>
+<p>Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RScript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -680,7 +703,17 @@ Hands-on: Informative Grafik erstellen
 </ul>
 </div>
 </div>
-<section id="weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot" class="level2"><h2 class="anchored" data-anchor-id="weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot">Weiterführende Ressourcen zur Datenvisualisierung mit <code>ggplot()</code>
+</section><section id="tipps-und-tricks" class="level1"><h1>Tipps und Tricks</h1>
+<section id="mehrere-plots-in-einer-grafik-darstellen" class="level2"><h2 class="anchored" data-anchor-id="mehrere-plots-in-einer-grafik-darstellen">Mehrere Plots in einer Grafik darstellen</h2>
+<p>Dies können Sie mit dem Package <code>patchwork</code> sehr einfach machen. Sie finden oben oder <a href="https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/summarizing-data.html#%C3%BCber-versuchsperson-aggregiert">hier</a> ein Beispiel.</p>
+</section><section id="grafik-abspeichern" class="level2"><h2 class="anchored" data-anchor-id="grafik-abspeichern">Grafik abspeichern</h2>
+<p>Eine Grafik lässt sich abspeichern unter dem Reiter <code>Plots</code> &gt; <code>Export</code> oder mit der Funktion <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code>.</p>
+</section><section id="inspiration" class="level2"><h2 class="anchored" data-anchor-id="inspiration">Inspiration</h2>
+<ul>
+<li><p>Grafiken für verschiedene Datenarten: <a href="https://www.data-to-viz.com">From Data to Viz</a></p></li>
+<li><p>Simple bis crazy Chartideen: <a href="https://r-charts.com/ggplot2">R Charts: Ggplot</a></p></li>
+<li><p>Farben für Grafiken: <a href="https://r-charts.com/colors">R Charts: Colors</a>, <a href="https://www.datanovia.com/en/blog/ggplot-colors-best-tricks-you-will-love">noch mehr Farben</a></p></li>
+</ul></section><section id="weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot" class="level2"><h2 class="anchored" data-anchor-id="weiterführende-ressourcen-zur-datenvisualisierung-mit-ggplot">Weiterführende Ressourcen zur Datenvisualisierung mit <code>ggplot()</code>
 </h2>
 <ul>
 <li><p><a href="https://ggplot2.tidyverse.org/">Dokumentation</a> von <code>ggplot2</code></p></li>

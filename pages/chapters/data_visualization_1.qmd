@@ -29,8 +29,6 @@ knitr::opts_knit$set(root.dir = '../../data/data_visualization')
 ::: callout-caution
 ## Hands-on: Vorbereitung
 
-
-
 -   Laden Sie [hier](../../downloadable_files/DatasaurusDozen.csv) den Beispielsdatensatz herunter, speichern Sie diesen in einem `data`-Folder in einem _R-Project_.
 
 - Öffnen Sie ein neues RScript (`.R`) oder RMarkdown-File (`.Rmd`). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt.
@@ -258,9 +256,16 @@ ggplot(data = d_away,
 
 <aside> Auch `theme_classic()` oder `theme_bw()` ergeben schlichte aber schöne Plots. </aside>
 
+:::{.callout-caution}
+## Hands-on
+
+Erstellen Sie eine Grafik. Fügen Sie mit `labs()` passende Beschriftungen hinzu. Gibt es noch weitere, oben nicht verwendete Optionen? 
+
+:::
+
 # Daten plotten: Hands on
 
-Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RSkript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.
+Im Folgenden können Sie den Datensatz mit Grafiken erkunden. Sie können entweder in Ihrem RScript/RMarkdown-File weiterarbeiten oder Sie können ein GUI (graphical user interface) verwenden, dass für Sie den Code schreibt.
 
 ::: callout-note
 ## Tipp: GUI
@@ -293,6 +298,25 @@ Um das GUI zu verwenden, gehen Sie wie folgt vor:
 - Lassen Sie sich den Code direkt ins RScript/RMarkdown-File einfügen und verändern Sie den Code dort weiter.
 :::
 
+
+# Tipps und Tricks
+
+## Mehrere Plots in einer Grafik darstellen
+
+Dies können Sie mit dem Package `patchwork` sehr einfach machen. Sie finden oben oder [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/summarizing-data.html#%C3%BCber-versuchsperson-aggregiert) ein Beispiel.
+
+## Grafik abspeichern
+
+Eine Grafik lässt sich abspeichern unter dem Reiter `Plots` > `Export` oder mit der Funktion `ggsave()`.
+
+
+## Inspiration
+
+- Grafiken für verschiedene Datenarten: [From Data to Viz](https://www.data-to-viz.com) 
+
+- Simple bis crazy Chartideen: [R Charts: Ggplot](https://r-charts.com/ggplot2)
+
+- Farben für Grafiken: [R Charts: Colors](https://r-charts.com/colors), [noch mehr Farben](https://www.datanovia.com/en/blog/ggplot-colors-best-tricks-you-will-love)
 
 
 ## Weiterführende Ressourcen zur Datenvisualisierung mit `ggplot()`
