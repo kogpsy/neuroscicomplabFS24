@@ -46,7 +46,7 @@ Je nachdem welchem Zweck eine Grafik dienen soll, müssen andere Grafikeigenscha
 :::{.callout-caution}
 ## Hands-on: Visualisierungen Random Dot Daten
 
-Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie [hier](../../downloadable_files/data_visualization.zip) herunterladen. Die Daten stammen von unserem [Random Dot Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html). Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können _inline_ angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.
+Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie [hier](../../downloadable_files/data-visualization.zip) herunterladen. Die Daten stammen von unserem [Random Dot Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html). Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können _inline_ angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.
 
 Der Ordner muss entzippt werden, um darin zu arbeiten.
 
