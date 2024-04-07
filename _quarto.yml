@@ -55,7 +55,7 @@ website:
     - section: Daten visualisieren
       contents:
       - pages/chapters/data_visualization_1.qmd
-     # - pages/chapters/data_visualization_2.qmd
+      - pages/chapters/data_visualization_2.qmd
       - pages/chapters/uebung_3_plot.qmd
       - pages/chapters/gallery.qmd
 
