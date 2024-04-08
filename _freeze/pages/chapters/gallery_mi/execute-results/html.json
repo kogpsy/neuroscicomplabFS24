@@ -1,0 +1,16 @@
+{
+  "hash": "c0bbdba8178b9e0216897485b12a5152",
+  "result": {
+    "markdown": "---\ntitle: \"Plot Gallery- Mi\"\nauthor:\n  - name: Daniel Fitze\n    # url: https://github.com/awellis\n    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern \n    affiliation-url: https://www.kog.psy.unibe.ch\n    orcid: 0000-0003-0158-7459  \n  - name: Gerda Wyssen\n    # url: https://github.com/awellis\n    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern \n    affiliation-url: https://www.kog.psy.unibe.ch\n    orcid: 0000-0001-7427-3149\nlicense: CC BY-SA 4.0\ncitation: true\nbibliography: ../../bibliography.bib\nformat:\n    html:\n        toc: true\n---\n\n::: {.cell}\n\n:::\n::: panel-tabset\n## Plot\n\n::: {.cell}\n::: {.cell-output-display}\n![](gallery_mi_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n## Code\n\n::: {.cell}\n\n```{.r .cell-code}\nmtcars |>\n    ggplot(aes(x = mpg, y = qsec)) +\n    geom_point()\n```\n:::\n:::\n\n\n\n",
+    "supporting": [
+      "gallery_mi_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

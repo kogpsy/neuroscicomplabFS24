@@ -46,7 +46,7 @@ Je nachdem welchem Zweck eine Grafik dienen soll, müssen andere Grafikeigenscha
 :::{.callout-caution}
 ## Hands-on: Visualisierungen Random Dot Daten
 
-Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie [hier](../../downloadable_files/data-visualization.zip) herunterladen. Die Daten stammen von unserem [Random Dot Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html). Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können _inline_ angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.
+Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie [hier](../../downloadable_files/data_visualization.zip) herunterladen. Die Daten stammen von unserem [Random Dot Experiment](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html). Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können _inline_ angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.
 
 Der Ordner muss entzippt werden, um darin zu arbeiten.
 
@@ -288,7 +288,7 @@ d |>
     ggplot(aes(x = trial, y = rt, color = condition)) +
     geom_smooth(method = "lm", se = FALSE) +
     geom_point(alpha = 0.5) +
-    scale_color_manual(values = c(accuracy = "tomato2",
+    scale_color_manual(values = c(accuracy = "tomato3",
                                  speed = "skyblue3")) +
     facet_wrap(~ id) +
     theme_minimal()
@@ -408,7 +408,7 @@ Dies wird ersichtlich, wenn wir die Mittelwerte und Standardabweichungen für je
 ```{r}
 #| message: false
 #| warning: false
-# load DatasaurusDozen dataset (bitte den Pfad "data_example/DatasaurusDozen.csv" verwenden)
+# load DatasaurusDozen dataset
 dino_data <- read.csv("data/DatasaurusDozen.csv") %>%
     mutate(condition = as.factor(condition))
 
@@ -489,6 +489,8 @@ Das _Package_ `ggridges` bietet die Möglichkeit die Verteilungen zu plotten. Me
 
 
 ```{r}
+#| message: false
+#| warning: false
 library(ggridges)
 p5 <- d_acc_rt_individual |> 
     ggplot(aes(x = accuracy, y = condition, fill = condition)) + geom_density_ridges2(scale = 0.5, alpha = 0.5) +
@@ -512,8 +514,6 @@ p6 <- d_acc_rt_individual |>
 
 p5 + p6
 ```
-
-<aside> [Hier](http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)) finden Sie weitere Code-Beispiele für das Plotten von Verteilungsmassen.</aside> 
 
 
 ## Aggregierte Statistiken 
@@ -562,11 +562,17 @@ p7 + p8
 
 ```
 
-<aside> [Hier](https://kogpsy.github.io/neuroscicomplabFS22/pages/chapters/07_response_times_i.html#zusammenfassen-zentrale-tendenz-und-dispersion) finden Sie Informationen, wie die Reaktionszeiten zusammengefasst und visualisiert werden könnten.</aside> 
+- [Hier](http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)) finden Sie weitere Code-Beispiele für das Plotten von Verteilungsmassen.
+
+- [Hier](https://kogpsy.github.io/neuroscicomplabFS22/pages/chapters/07_response_times_i.html#zusammenfassen-zentrale-tendenz-und-dispersion) finden Sie Informationen, wie Reaktionszeiten zusammengefasst und visualisiert werden könnten.
 
 ## Visualisieren von Modellschätzungen
 
 Wenn für die statistische Analyse ein Modell geschätzt wurde, kann auch dies visualisiert werden. Auf diese Form der Visualisierung wird hier aber nicht eingegangen. Wir lernen dies im Rahmen der noch kommenden Versanstaltungen kennen.
+
+- [sjPlot](https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_model_estimates.html): Package zum Plotten von Fixed Effects
+
+- [see](https://dominiquemakowski.github.io/publication/ludecke2021see/ludecke2021see.pdf): Package zum Visualisieren von Statistischen Modellen
 
 
 # Kommunikation: Forschungsergebnisse visualisieren
@@ -628,7 +634,7 @@ Das tönt simpel, wird aber oft nicht berücksichtigt. Bei einer Grafik geht es 
 
 #### 4. Optimieren des *data-ink ratio*s 
 
-Das *Daten-Tinte-Verhältnis* sollte so optimal wie möglich sein. Das bedeutet, das idealerweite jeder Strich, jeder Punkt, jedes Textfeld Information beinhaltet. Alles was keine Information transportiert oder nur wiederholt kann weggelassen werden.
+Das *Daten-Tinte-Verhältnis* sollte so optimal wie möglich sein. Das bedeutet, das idealerweise jeder Strich, jeder Punkt, jedes Textfeld Information beinhaltet. Alles was keine Information transportiert oder nur wiederholt kann weggelassen werden.
 
 👉 Was kann ich weglassen?
 

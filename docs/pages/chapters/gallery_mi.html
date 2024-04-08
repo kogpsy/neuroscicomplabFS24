@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gerda Wyssen">
 <meta name="author" content="Daniel Fitze">
-<meta name="description" content="Data Reports mit Text und Code.">
+<meta name="author" content="Gerda Wyssen">
 
-<title>Neurowissenschaft Computerlab - RStudio Projects und RMarkdown</title>
+<title>Neurowissenschaft Computerlab - Plot Gallery- Mi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,8 +104,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles/global.css">
 <link rel="stylesheet" href="../../include/webex.css">
@@ -130,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">RStudio Projects und RMarkdown</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Daten visualisieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/gallery_mi.html">Plot Gallery- Mi</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -249,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RStudio Projects und RMarkdown</span></a>
   </div>
 </li>
@@ -308,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/gallery_mi.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/chapters/gallery_mi.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Plot Gallery- Mi</span></a>
   </div>
 </li>
@@ -328,42 +359,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link active" data-scroll-target="#rstudio-projects">RStudio Projects</a></li>
-  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown">R Markdown</a>
-  <ul class="collapse">
-  <li><a href="#r-markdown-file-erstellen-und-ausführen" id="toc-r-markdown-file-erstellen-und-ausführen" class="nav-link" data-scroll-target="#r-markdown-file-erstellen-und-ausführen">R Markdown File erstellen und ausführen</a></li>
-  <li><a href="#knitten" id="toc-knitten" class="nav-link" data-scroll-target="#knitten">Knitten</a></li>
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">YAML header</a></li>
-  <li><a href="#text-erstellen-in-r-markdown" id="toc-text-erstellen-in-r-markdown" class="nav-link" data-scroll-target="#text-erstellen-in-r-markdown">Text erstellen in R Markdown</a></li>
-  <li><a href="#code-erstellen-in-r-markdown" id="toc-code-erstellen-in-r-markdown" class="nav-link" data-scroll-target="#code-erstellen-in-r-markdown">Code erstellen in R Markdown</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/rmarkdown.html">RStudio Projects und RMarkdown</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_visualization_1.html">Daten visualisieren</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/gallery_mi.html">Plot Gallery- Mi</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">RStudio Projects und RMarkdown</h1>
+<h1 class="title">Plot Gallery- Mi</h1>
 </div>
 
-<div>
-  <div class="description">
-    Data Reports mit Text und Code.
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -373,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -394,212 +406,37 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="rstudio-projects" class="level1">
-<h1>RStudio Projects</h1>
-<p>RStudio Projekte ermöglichen vereinfachtes Arbeiten mit R, da alle Dateien, die in diesem Projektordner gespeichert sind, direkt verfügbar sind. So kann die aktuelle R Session abgespeichert werden und beim nächsten Öffnen kann dort weitergearbeitet werden wo man aufgehört hat. Projekte ermöglichen somit ein stabiles <code>working directory</code> für ein Datenanalyse-Projekt.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Erstellen eines RStudio Projects
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="gallery_mi_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>Öffnen Sie RStudio.</p></li>
-<li><p>Erstellen Sie ein neues RStudio-Project</p>
-<ul>
-<li><p>Klicken Sie dafür auf <code>File</code> &gt; <code>New Project</code></p></li>
-<li><p>Benennen Sie das Project <code>neurosci_complab_rmarkdown</code> und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer.</p></li>
-</ul></li>
-</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> qsec)) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Es empfiehlt sich bei RProjekten eine Einstellungsänderung (<code>Tools</code>&gt; <code>Project Options...</code>) vorzunehmen, so dass die aktuell gespeicherten Variablen bei jedem Schliessen vom Projekt gelöscht werden. Dies verhindert, dass der aktuelle Code nur aufgrund früherer Speicherung läuft.</p>
-<p><img src="img/rprojects_saveworkspace.jpg" class="img-fluid"></p>
-</section>
-<section id="r-markdown" class="level1 page-columns page-full">
-<h1>R Markdown</h1>
-<p>R Markdown ist eine simple Markup-Sprache, die es ermöglicht reproduzierbare Data Reports zu erstellen. R Markdown ist praktisch, weil Text und Code gleichzeitig verwendet werden kann und der Output des Codes angezeigt wird. Text kann verwendet werden, ohne dass vor jeder Zeile ein <code>#</code> zum Auskommentieren gesetzt werden. Zudem kann Text formatiert werden, also z.B. <strong>dick</strong> oder <em>kursiv</em> dargestellt werden oder Auflistungen beinhalten.</p>
-<p>Das Skript der R Markdown Files wird <em>geknittet</em> und so - je nach Wahl - zu einem HTML, PDF oder Word-Dokument zusammengefügt. R Markdown kann also beispielsweise eine Text-Beschreibung, Code zum Erstellen einer Grafik und auch die erstellte Grafik in einem Dokument kombinieren.</p>
-<aside>
-Mit R Markdown können auch Präsentationen, Webseiten, Bücher, Lebensläufe, Artikel oder Arbeiten erstellt werden. <a href="https://rmarkdown.rstudio.com/gallery.html">Hier</a> finden Sie eine Galerie. Die Kurswebsite wurde ebenfalls in R erstellt.
-</aside>
-<p>Das <code>working memory</code> innerhalb eines R Markdown Files ist der Speicherort des Files. Von dort aus können somit <em>relative</em> Pfade angegeben werden. Das hat den Vorteil, dass andere Benutzer denselben Projekt-Ordner auf Ihrem Computer mit unveränderten Pfaden verwenden können.</p>
-<aside>
-<a href="https://bookdown.org/yihui/rmarkdown-cookbook/working-directory.html">Weitere Infos</a> zu Pfaden in R Markdown.
-</aside>
-<section id="r-markdown-file-erstellen-und-ausführen" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="r-markdown-file-erstellen-und-ausführen">R Markdown File erstellen und ausführen</h2>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: R Markdown File in einem Projekt erstellen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>Erstellen Sie ein neues <code>.Rmd</code>-File (<code>File</code> &gt; <code>New File</code> &gt; <code>R Markdown</code>).</p></li>
-<li><p>Geben Sie einen Titel und Ihren Namen ein und wählen Sie <code>HTML</code> als Output-Format.</p></li>
-<li><p>Speichern Sie dieses Dokument unter dem Namen <code>rmarkdown_example</code>ab.</p></li>
-</ol>
-<p>Welches Format (Endung) hat das abgespeicherte R Markdown Skript nun in Ihrem Ordner?</p>
-</div>
-</div>
-<aside>
-<p><strong>Weiterführende Informationen:</strong></p>
-<p>👉 Einführung in die Verwendung von R/RStudio/Notebooks im Rahmen des Psychologie Studiums von Andrew Ellis und Boris Mayer <a href="https://methodenlehre.github.io/einfuehrung-in-R/chapters/01-workflow.html#r-notebooks-verwenden">Einführung in R</a></p>
-👉 Sehr kompakte, praxisnahe Einführung in R Markdown von Danielle Navarro (Slidedeck in englisch) <a href="https://djnavarro.net/slides-starting-rmarkdown">Einführung in R Markdown</a>
-</aside>
-</section>
-<section id="knitten" class="level2">
-<h2 class="anchored" data-anchor-id="knitten">Knitten</h2>
-<p>Mit <strong>Knit</strong> wird das R Markdown Skript ausgeführt und eine zusätzliche Datei wird erstellt, z.B. ein <code>html</code>-File.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Knitten
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Führen Sie das File mit <code>Knit</code> aus und vergleichen Sie das R Markdown Skript mit dem Output den Sie erhalten haben. Was fällt Ihnen auf?</p>
-<ul>
-<li>Was ist nicht mehr zu sehen?</li>
-<li>Was ist zusätzlich zu sehen?</li>
-<li>Was hat sich im Projekt-Ordner verändert?</li>
-</ul>
-</div>
-</div>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Lösung 2 -->
-<!-- Nicht mehr zu sehen ist der vollständige YAML-header, ganz oben im R Markdown Skript.  -->
-<!-- Auch nicht mehr zu sehen ist die "Umrandung" des Code-Snippets. -->
-<!-- Neu sieht man nun den Output des Codes. -->
-<!-- Im Projektordner wurde ein `.html`-File erstellt. Sie können dieses öffnen, um zu schauen wie das aussieht. -->
-<!-- ::: -->
-</section>
-<section id="yaml-header" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="yaml-header">YAML header</h2>
-<p>Am Anfang des R Markdown Skripts befindet sich der <code>YAML header</code>. Hier werden Informationen zu Titel, Autor:Innen, Datum, Outputformat, Literaturverzeichnis und Layout festgelegt.</p>
-<aside>
-YAML: Yet Another Markdown Language
-</aside>
-<p>Das Layout kann unter <code>theme</code>geändert werden. Das kann beispielsweise wie folgt aussehen:</p>
-<pre><code>output:
-  html_document:
-    theme: cosmo</code></pre>
-<p>Achtung: Die Einrückungen müssen genau stimmen! Hier wurde das <code>theme</code> namens <code>cosmo</code> ausgewählt. Mögliche andere <code>themes</code>sind z.B. <code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>darkly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, <code>yeti</code>.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Namen und Einstellungen anpassen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Geben Sie dem Dokument einen neuen Titel z.B. <code>R Markdown Einführung</code></p></li>
-<li><p>Ändern Sie das Layout so, dass es Ihnen gefällt.</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="text-erstellen-in-r-markdown" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="text-erstellen-in-r-markdown">Text erstellen in R Markdown</h2>
-<p>Text kann in R Markdown Files nicht nur geschrieben, sondern auch relativ simpel formatiert werden.</p>
-<p>👉 <a href="https://github.com/rstudio/cheatsheets/raw/main/rmarkdown-2.0.pdf">Hier</a> können Sie das Cheatsheet herunterladen. Auf der rechten Seite finden Sie die Informationen für die Textformatierung.</p>
-<p>Es empfiehlt sich das Skript anfangs häufig zu knitten, so findet man den Fehler schneller, weil man noch weiss, was man als letztes verändert hat. Code kann aber auch einfach innerhalb der <em>Code-Chunks</em> überprüft werden.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Texte, Formeln und Bilder in R Markdown einfügen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Löschen Sie alles bis auf den YAML-Header</p></li>
-<li><p>Schreiben Sie im Textbereich eine Überschrift für ein Kapitel, ein Unterkapitel und normalen Text.</p></li>
-<li><p>Schreiben Sie im Text etwas kursiv und etwas fett.</p></li>
-<li><p>Erstellen Sie im Textbereich eine Liste mit 3 Punkten.</p></li>
-<li><p>Schreiben Sie <code>alpha</code> innerhalb von <code>$</code>, was passiert?</p></li>
-<li><p>Fügen Sie die untenstehende Formel in den Text ein. Verwenden Sie dafür zwei Dollarzeichen am Anfang und am Ende. Was passiert?</p></li>
-</ul>
-<p><span class="math display">\[
-a^2 + b^2 = c^2
-\]</span></p>
-<ul>
-<li><p>Fügen Sie einen Link ein, knitten Sie das File und schauen Sie ob der Link funktioniert. Können Sie einen Link nur mit einem unterstrichenen Text anzeigen, so dass die Linkadresse nicht sichtbar ist?</p></li>
-<li><p>Fügen Sie ein Bild ein. Speichern Sie dieses Bild zuerst in einem Ordner namens <code>img</code> im Projektordner.</p></li>
-</ul>
-</div>
-</div>
-<aside>
-<p>Hier finden Sie weiterführende Hilfe zum Einfügen von Mathnotationen.</p>
-<ul>
-<li><p><a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html">Mathematics in RMarkdown</a></p></li>
-<li><p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html#math-expressions">RMarkdown: The definitive Guide</a></p></li>
-</ul>
-</aside>
-</section>
-<section id="code-erstellen-in-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="code-erstellen-in-r-markdown">Code erstellen in R Markdown</h2>
-<p>Code muss jeweils in einem <em>Code-Chunk</em> eingefügt werden. Ein <em>Code-Chunk</em> kann unter <code>Code</code> &gt; <code>Insert Chunk</code> eingefügt werden oder mit dem Kürzel <code>Ctrl</code>+<code>Alt</code>+ <code>I</code>.</p>
-<p><em>Code-Chunks</em> werden mit <code>```</code> begonnen und beendet. In den geschweiften Klammern steht <code>r</code>, das bedeutet dass der Code in <code>R</code> geschrieben ist. In dieser Klammer kann dem <em>Code-Chunk</em> einen Namen gegeben und bestimmt werden, ob der Code ausgeführt und z.B. nur angezeigt werden soll, sowie ob der Output des Codes angezeigt werden soll.</p>
-<p>Mit dem grünen Pfeil kann der <em>Code-Chunk</em> einzeln ausgeführt werden. Aber auch einzelne Zeilen können ausgeführt werden, genau so wie in einem <code>.R</code>- Skript.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hands-on: Code in R Markdown einfügen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Erstellen Sie einen Code-Chunk, der ausgeführt, aber nicht angezeigt wird. Erstellen Sie eine Variable mit dem Namen <code>numbers</code>, die 10 Zahlen enthält.</p></li>
-<li><p>Erstellen Sie ein Code-Chunk, der ausgeführt wird und dessen Output angezeigt wird. Berechnen Sie in diesem Chunk den Mittelwert und die Standardabweichung von <code>numbers</code>.</p></li>
-<li><p>Erstellen Sie einen Plot mit <code>plot(numbers)</code>.</p></li>
-<li><p>Knitten Sie das File, um zu überprüfen, ob alles funktioniert</p></li>
-</ul>
-<p>👉 Schauen Sie für Hilfe nochmals im Cheatsheet nach oder drücken Sie auf das Zahnrädchen-Symbol beim Code-Chunk.</p>
-<p><strong>Für Fortgeschrittene:</strong></p>
-<ul>
-<li><p>Testen Sie, ob Sie Ihr File auch zu einem PDF knitten können.</p></li>
-<li><p>Erstellen Sie eine Tabelle</p></li>
-<li><p>Erstellen Sie einen <a href="https://debruine.github.io/glossary/">Glossar</a></p></li>
-<li><p>Erstellen Sie ein Dokument mit Reitern oben (z.B. Data, Preprocessing, Analysis, Conclusions)</p></li>
-<li><p>Fügen Sie <a href="https://shiny.posit.co/r/articles/build/interactive-docs/">interaktive Elemente</a> ein.</p></li>
-</ul>
 </div>
 </div>
 
 
-</section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
-  author = {Wyssen, Gerda and Fitze, Daniel},
-  title = {RStudio {Projects} Und {RMarkdown}},
-  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/rmarkdown.html},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{fitze,
+  author = {Fitze, Daniel and Wyssen, Gerda},
+  title = {Plot {Gallery-} {Mi}},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery_mi.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda, and Daniel Fitze. n.d. <span>“RStudio Projects Und
-RMarkdown.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/rmarkdown.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/rmarkdown.html</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-fitze" class="csl-entry quarto-appendix-citeas" role="listitem">
+Fitze, Daniel, and Gerda Wyssen. n.d. <span>“Plot Gallery- Mi.”</span>
+<a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery_mi.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/gallery_mi.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 

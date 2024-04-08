@@ -28,7 +28,7 @@ format:
 | Q1: Vorkenntnisse | Quiz auf Ilias | 19.02.2024 | 28.02.2024 23:55 | [Q1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/quiz_one.html) | Erheben der Vorkenntnisse |
 | Ü1: PsychoPy Experiment | Übung | 11.03.2024 | 21.03.2024 23:55 |[Ü1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html) | Datenerheben mit einem PsychoPy Experiment |
 | Ü2: Data wrangling | Übung | 25.03.2024 | 17.04.2024 23:55 | [Ü2](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_2_datawrangling.html) | Datensätze automatisiert einlesen und vorverarbeiten |
-| Ü3: Data visualization | Übung | 08.04.2024 | 28.04.2024 23:55 | [Ü3](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_3_plot.html) | Daten visualisieren: [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery.html) |
+| Ü3: Data visualization | Übung | 08.04.2024 | 28.04.2024 23:55 | [Ü3](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_3_plot.html) | Daten visualisieren: [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery_mo.html) |
 | Ü4: Data analysis I | Übung | 22.04.2024 | 10.05.2024 23:55 |  | |
 | Ü5: Data analysis II | Übung | 13.05.2024 | 31.05.2024 23:55 |  | |
 | Q2: Kursinhalte | Quiz auf Ilias | 20.05.2024 | 27.05.2024 23:55 | | |
@@ -40,7 +40,7 @@ format:
 | Q1: Vorkenntnisse | Quiz auf Ilias | 21.02.2024 | 28.02.2024 23:55 | [Q1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/quiz_one.html) | Erheben der Vorkenntnisse |
 | Ü1: PsychoPy Experiment | Übung | 13.03.2024 | 23.03.2024 23:55 |[Ü1](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_1_experiment.html) | Datenerheben mit einem PsychoPy Experiment |
 | Ü2: Data wrangling | Übung | 27.03.2024 | 17.04.2024 23:55 | [Ü2](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_2_datawrangling.html) | Datensätze automatisiert einlesen und vorverarbeiten |
-| Ü3: Data visualization | Übung | 10.04.2024 | 30.04.2024 23:55 | [Ü3](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_3_plot.html) | Daten visualisieren: [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery.html) |
+| Ü3: Data visualization | Übung | 10.04.2024 | 30.04.2024 23:55 | [Ü3](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_3_plot.html) | Daten visualisieren: [Galerie](https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery_mi.html) |
 | Ü4: Data analysis I | Übung | 24.04.2024 | 12.05.2024 23:55 |  | |
 | Ü5: Data analysis II | Übung | 15.05.2024 | 02.06.2024 23:55 | | |
 | Q2: Kursinhalte | Quiz auf Ilias | 20.05.2024 | 27.05.2024 23:55 | | |

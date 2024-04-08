@@ -335,8 +335,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/gallery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plot Gallery</span></a>
+  <a href="../../pages/chapters/gallery_mo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plot Gallery - Mo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/gallery_mi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plot Gallery- Mi</span></a>
   </div>
 </li>
       </ul>
@@ -450,7 +456,7 @@ Hands-on: Visualisierungen Random Dot Daten
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie <a href="../../downloadable_files/data-visualization.zip">hier</a> herunterladen. Die Daten stammen von unserem <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html">Random Dot Experiment</a>. Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können <em>inline</em> angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.</p>
+<p>Das Projekt mit Daten und Code für die untenstehenden Grafiken können Sie <a href="../../downloadable_files/data_visualization.zip">hier</a> herunterladen. Die Daten stammen von unserem <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/random_dot_experiment.html">Random Dot Experiment</a>. Im Projekt wird mit einem R-Markdown-File gearbetet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können <em>inline</em> angezeigt werden, zudem ermöglicht es reproduzierbare Grafiken.</p>
 <p>Der Ordner muss entzippt werden, um darin zu arbeiten.</p>
 <p>In diesem Projekt, können Sie in das R-Markdown-File den untenstehenden Code kopieren und modifizieren, um die Datenvisualisierungen nachzuvollziehen und damit zu üben.</p>
 </div>
@@ -711,7 +717,7 @@ Dasselbe könnte man für die Reaktionszeiten machen. Informationen dazu, wie Au
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">trial</span>, y <span class="op">=</span> <span class="va">rt</span>, color <span class="op">=</span> <span class="va">condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="st">"tomato2"</span>,</span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="st">"tomato3"</span>,</span>
 <span>                                 speed <span class="op">=</span> <span class="st">"skyblue3"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">id</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -810,7 +816,7 @@ Hands-on: Datenqualität
 </ul>
 </div>
 </div>
-</section></section><section id="analyse-daten-zusammenfassen-und-explorieren" class="level1 page-columns page-full"><h1>Analyse: Daten zusammenfassen und explorieren</h1>
+</section></section><section id="analyse-daten-zusammenfassen-und-explorieren" class="level1"><h1>Analyse: Daten zusammenfassen und explorieren</h1>
 <p>Grafiken können einerseits eine Ergänzung zur statistischen Datenanalyse sein, wie auch die Resultate der Analysen (bspw. geschätzte Parameterwerte) visualisieren. Sie haben den Vorteil, dass Informationen über Daten oder Analyseergebnisse gleichzeitig ersichtlich sind, sie können also vom Betrachtenden direkt verglichen werden.</p>
 <p>Wir möchten die Daten hinsichtlich der Forschungsfragen visualisieren. Die Grafiken müssen vor allem präzise und informativ sein. Um Schlüsse aus Daten ziehen zu können, müssen diese zusammengefasst werden. Dazu eignen sich <strong>Masse der zentralen Tendenz</strong>, also beispielsweise der Mittelwert, Median oder Modus. Gleichzeitig ist es wichtig, dass auch <strong>Verteilungsmasse</strong> berichtet werden, wie <em>Standardabweichungen</em> oder <em>Standardfehler</em>. Wir können auch mit Modellen berechnete Werte wie <em>Parameterschätzungen</em> und <em>Konfidenzintervalle</em> grafisch darstellen.</p>
 <p>Mit Hilfe von Visualisierungen können z.B. Aussagen können gemacht werden über:</p>
@@ -823,7 +829,7 @@ Hands-on: Datenqualität
 <p>Daten von neurowissenschaftlichen Studien können wichtige Informationen enthalten, die ohne Grafiken übersehen werden können (<span class="citation" data-cites="rousselet_beyond_2017">Rousselet, Pernet, and Wilcox (<a href="#ref-rousselet_beyond_2017" role="doc-biblioref">2017</a>)</span>). Das Visualisieren kann Muster zum Vorschein bringen, die durch statistische Auswertungen nicht sichtbar sind. Die Wichtigkeit von Datenvisualisierung für das Entdecken von Mustern in den Daten zeigte Francis Anscombe 1973 mit dem <em>Anscombe’s Quartet</em>. Dies diente als Inspiration für das Erstellen des “künstlichen” Datensatzes <code>DatasaurusDozen</code>, welchen wir in der letzten Veranstaltung visualisiert haben. Verschiedene Rohwerte, können dieselben Mittelwerte, Standardabweichungen und Korrelationen ergeben. Nur wenn man die Rohwerte plottet erkennt man, wie unterschiedlich die Datenpunkte verteilt sind.</p>
 <p>Dies wird ersichtlich, wenn wir die Mittelwerte und Standardabweichungen für jede Gruppe berechnen und plotten:</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load DatasaurusDozen dataset (bitte den Pfad "data_example/DatasaurusDozen.csv" verwenden)</span></span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load DatasaurusDozen dataset</span></span>
 <span><span class="va">dino_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"data/DatasaurusDozen.csv"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">condition</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -860,7 +866,7 @@ Hands-on: Datenqualität
 <figure class="figure"><p><img src="https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/gifs/same-stats-different-graphs/DinoSequentialSmaller.gif" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Datensatz und Visualisierung von <a href="https://www.autodesk.com/research/publications/same-stats-different-graphs"><span class="citation" data-cites="matejka_same_2017">Matejka and Fitzmaurice (<span>2017</span>)</span></a></figcaption></figure>
 </div>
-</section><section id="zentrale-tendenz-und-verteilungsmasse" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="zentrale-tendenz-und-verteilungsmasse">Zentrale Tendenz und Verteilungsmasse</h2>
+</section><section id="zentrale-tendenz-und-verteilungsmasse" class="level2"><h2 class="anchored" data-anchor-id="zentrale-tendenz-und-verteilungsmasse">Zentrale Tendenz und Verteilungsmasse</h2>
 <p>Masse der zentralen Tendenz sind beispielsweise der Mittelwert, der Median und Modus. Wenn wir uns dafür interessieren, wie sich die <em>accuracy</em> in Bezug auf alle Teilnehmenden verhält, schauen wir uns die zentrale Tendenz über alle Personen hinweg an. Es sollte nie nur die zentrale Tendenz, sondern immer auch ein passendes Verteilungsmass berichtet werden.</p>
 <p>Wie oben schon gezeigt können wir dies z.B. mit Boxplots umsetzen Diese zeigen uns den Median und die Quartile sowie Ausreisser an. Eine andere Möglichkeit Verteilungen anzuzeigen sind die Violinplots. Hier wurden mit <code><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter()</a></code> auch die Mittelwerte der einzelnen Personen im Plot eingefügt.</p>
 <div class="cell">
@@ -919,21 +925,14 @@ Hands-on: Datenqualität
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">p5</span> <span class="op">+</span> <span class="va">p6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.0455</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.246</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="data_visualization_2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<aside><a href="http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)">Hier</a> finden Sie weitere Code-Beispiele für das Plotten von Verteilungsmassen.
-</aside></section><section id="aggregierte-statistiken" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="aggregierte-statistiken">Aggregierte Statistiken</h2>
+</section><section id="aggregierte-statistiken" class="level2"><h2 class="anchored" data-anchor-id="aggregierte-statistiken">Aggregierte Statistiken</h2>
 <p>Wenn wir Mittelwerte und Standardfehler angeben möchten können wir dies wie folgt tun. Wichtig ist hier, dass wir within-subject Standardfehler berechnen. Genaueres zu den Unterschieden zwischen within- und between-subject Standardfehlern finden Sie <a href="https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/summarizing-data.html">hier</a>. Wir verwenden das <em>Package</em> <code>Rmisc</code>, da dieses jedoch wegen der Namensgebung oft Konflikte auslöst, laden wir <code>Rmisc</code> nicht mit der <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>-Funktion, sondern stellen es einfach vor die benötigte</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_acc_within</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_acc_within</span> <span class="op">&lt;-</span> <span class="va">d</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu">Rmisc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/Rmisc/man/summarySEwithin.html">summarySEwithin</a></span><span class="op">(</span>measurevar <span class="op">=</span> <span class="st">"corr"</span>,</span>
 <span>                               withinvars <span class="op">=</span> <span class="st">"condition"</span>,</span>
 <span>                               idvar <span class="op">=</span> <span class="st">"id"</span>,</span>
@@ -975,10 +974,15 @@ Hands-on: Datenqualität
 <p><img src="data_visualization_2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<aside><a href="https://kogpsy.github.io/neuroscicomplabFS22/pages/chapters/07_response_times_i.html#zusammenfassen-zentrale-tendenz-und-dispersion">Hier</a> finden Sie Informationen, wie die Reaktionszeiten zusammengefasst und visualisiert werden könnten.
-</aside></section><section id="visualisieren-von-modellschätzungen" class="level2"><h2 class="anchored" data-anchor-id="visualisieren-von-modellschätzungen">Visualisieren von Modellschätzungen</h2>
+<ul>
+<li><p><a href="http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)">Hier</a> finden Sie weitere Code-Beispiele für das Plotten von Verteilungsmassen.</p></li>
+<li><p><a href="https://kogpsy.github.io/neuroscicomplabFS22/pages/chapters/07_response_times_i.html#zusammenfassen-zentrale-tendenz-und-dispersion">Hier</a> finden Sie Informationen, wie Reaktionszeiten zusammengefasst und visualisiert werden könnten.</p></li>
+</ul></section><section id="visualisieren-von-modellschätzungen" class="level2"><h2 class="anchored" data-anchor-id="visualisieren-von-modellschätzungen">Visualisieren von Modellschätzungen</h2>
 <p>Wenn für die statistische Analyse ein Modell geschätzt wurde, kann auch dies visualisiert werden. Auf diese Form der Visualisierung wird hier aber nicht eingegangen. Wir lernen dies im Rahmen der noch kommenden Versanstaltungen kennen.</p>
-</section></section><section id="kommunikation-forschungsergebnisse-visualisieren" class="level1 page-columns page-full"><h1>Kommunikation: Forschungsergebnisse visualisieren</h1>
+<ul>
+<li><p><a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_model_estimates.html">sjPlot</a>: Package zum Plotten von Fixed Effects</p></li>
+<li><p><a href="https://dominiquemakowski.github.io/publication/ludecke2021see/ludecke2021see.pdf">see</a>: Package zum Visualisieren von Statistischen Modellen</p></li>
+</ul></section></section><section id="kommunikation-forschungsergebnisse-visualisieren" class="level1 page-columns page-full"><h1>Kommunikation: Forschungsergebnisse visualisieren</h1>
 <p>Kommunikation der Ergebnisse findet vor allem in den wissenschaftlichen Artikeln, Postern oder Präsentationen statt. Bei Visualisierungen die der Kommunkation dienen sind folgende Merkmale wichtig:</p>
 <section id="beschriftungen" class="level2"><h2 class="anchored" data-anchor-id="beschriftungen">Beschriftungen</h2>
 <p>Die genaue Beschriftung und deren Lesbarkeit ist für diese Form von Grafiken zentral. Achten Sie sich auf Folgendes:</p>
@@ -986,7 +990,7 @@ Hands-on: Datenqualität
 <li>Die Achsenbeschriftungen enthalten die verwendete Variable in Klartext (nicht den R Variablennamen) und wenn zutreffend auch die Masseinheit (z.B. <em>Response Time [ms]</em>). Beschriftungen können Sie einfügen mit <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_boxplot</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_boxplot</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Der Titel der Grafik"</span>, </span>
 <span>     subtitle <span class="op">=</span> <span class="st">"Der Subtitel der Grafik"</span>,</span>
 <span>     x <span class="op">=</span> <span class="st">"hier kommt Label x [Masseinheit]"</span>, </span>
@@ -1018,7 +1022,7 @@ Die Punkte 3-5 wurden aus dem Buch “The Visual Display of Quantitative Informa
 <ul>
 <li>Beispiele für verschiedenen Plots in R sind z.B. histogram, boxplot, violin plot, scatter plot / correlogram, jitter plot, raincloud plot, percentiles / shift functions, area chart, heat map.</li>
 </ul></section><section id="optimieren-des-data-ink-ratios" class="level4"><h4 class="anchored" data-anchor-id="optimieren-des-data-ink-ratios">4. Optimieren des <em>data-ink ratio</em>s</h4>
-<p>Das <em>Daten-Tinte-Verhältnis</em> sollte so optimal wie möglich sein. Das bedeutet, das idealerweite jeder Strich, jeder Punkt, jedes Textfeld Information beinhaltet. Alles was keine Information transportiert oder nur wiederholt kann weggelassen werden.</p>
+<p>Das <em>Daten-Tinte-Verhältnis</em> sollte so optimal wie möglich sein. Das bedeutet, das idealerweise jeder Strich, jeder Punkt, jedes Textfeld Information beinhaltet. Alles was keine Information transportiert oder nur wiederholt kann weggelassen werden.</p>
 <p>👉 Was kann ich weglassen?</p>
 <ul>
 <li>In R kann zum Schluss des Plots <code>+ theme_minimal()</code> hinzugefügt werden, dies entfernt u.a. den grauen Hintergrund. Das Grau des Hintergrunds ist Farbe (<em>ink</em>), welche keine Information transportiert, das Weglassen lässt die Grafik ruhiger wirken.</li>
