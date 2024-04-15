@@ -35,7 +35,7 @@ Erstellen Sie einen Plot der Stroop Daten. Verwenden Sie dazu `ggplot()`. Alle P
 
     - Öffnen Sie die die Datei _nachname_vorname_plot.R_. Der Inhalt dieser Datei muss gleich aussehen, wie im Beispiel unten. 
     
-    - Der Code auf von Zeile 1 bis Zeile 9 darf __nicht verändert werden!__
+    - Der Code auf von Zeile 1 bis Zeile 8 darf __nicht verändert werden!__
     
     - Fügen Sie den Code für Ihre Abbildung ab Zeile 9 ein. 
     
