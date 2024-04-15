@@ -10,7 +10,7 @@
 <meta name="author" content="Daniel Fitze">
 <meta name="description" content="Herausforderungen, Datenformate und Reproduzierbarkeit.">
 
-<title>Neurowissenschaft Computerlab - Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</title>
+<title>Neurowissenschaft Computerlab - Good Practices in der Datenverarbeitung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Good Practices in der Datenverarbeitung</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -266,6 +266,12 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/goodpractices_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Good Practices in der Datenverarbeitung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">RStudio Projects und RMarkdown</span></a>
   </div>
@@ -349,32 +355,38 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" id="toc-herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" class="nav-link active" data-scroll-target="#herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten">Herausforderungen im Umgang mit neurowissenschaftlichen Daten</a></li>
-  <li><a href="#neurowissenschaftliche-daten" id="toc-neurowissenschaftliche-daten" class="nav-link" data-scroll-target="#neurowissenschaftliche-daten">Neurowissenschaftliche Daten</a>
+  <li><a href="#herausforderungen-in-der-arbeit-mit-neurowissenschaftlichen-daten" id="toc-herausforderungen-in-der-arbeit-mit-neurowissenschaftlichen-daten" class="nav-link active" data-scroll-target="#herausforderungen-in-der-arbeit-mit-neurowissenschaftlichen-daten">Herausforderungen in der Arbeit mit neurowissenschaftlichen Daten</a>
   <ul class="collapse">
-  <li><a href="#datenquellen" id="toc-datenquellen" class="nav-link" data-scroll-target="#datenquellen">Datenquellen</a></li>
-  <li><a href="#datenformate" id="toc-datenformate" class="nav-link" data-scroll-target="#datenformate">Datenformate</a></li>
+  <li><a href="#datenquellen-datenformate-und-interdisziplinariät" id="toc-datenquellen-datenformate-und-interdisziplinariät" class="nav-link" data-scroll-target="#datenquellen-datenformate-und-interdisziplinariät">Datenquellen, Datenformate und Interdisziplinariät</a></li>
+  <li><a href="#grosse-und-komplexe-datensätze" id="toc-grosse-und-komplexe-datensätze" class="nav-link" data-scroll-target="#grosse-und-komplexe-datensätze">Grosse und komplexe Datensätze</a></li>
+  <li><a href="#open-science" id="toc-open-science" class="nav-link" data-scroll-target="#open-science">Open Science</a></li>
+  <li><a href="#zahlreiche-zwischenschritte" id="toc-zahlreiche-zwischenschritte" class="nav-link" data-scroll-target="#zahlreiche-zwischenschritte">Zahlreiche Zwischenschritte</a></li>
+  <li><a href="#verschiedene-standards" id="toc-verschiedene-standards" class="nav-link" data-scroll-target="#verschiedene-standards">Verschiedene Standards</a></li>
   </ul></li>
-  <li><a href="#good-practices-in-der-datenverarbeitung" id="toc-good-practices-in-der-datenverarbeitung" class="nav-link" data-scroll-target="#good-practices-in-der-datenverarbeitung">Good Practices in der Datenverarbeitung</a>
+  <li><a href="#good-practices-im-datenmanagement" id="toc-good-practices-im-datenmanagement" class="nav-link" data-scroll-target="#good-practices-im-datenmanagement">Good Practices im Datenmanagement</a>
   <ul class="collapse">
-  <li><a href="#replizierbarkeit" id="toc-replizierbarkeit" class="nav-link" data-scroll-target="#replizierbarkeit">Replizierbarkeit</a></li>
-  <li><a href="#reproduzierbarkeit" id="toc-reproduzierbarkeit" class="nav-link" data-scroll-target="#reproduzierbarkeit">Reproduzierbarkeit</a></li>
-  </ul></li>
-  <li><a href="#reproduzierbarkeit-1" id="toc-reproduzierbarkeit-1" class="nav-link" data-scroll-target="#reproduzierbarkeit-1">Reproduzierbarkeit</a>
+  <li><a href="#reproduzierbarkeit" id="toc-reproduzierbarkeit" class="nav-link" data-scroll-target="#reproduzierbarkeit">Reproduzierbarkeit</a>
   <ul class="collapse">
   <li><a href="#hindernisse-bei-der-reproduzierbarkeit" id="toc-hindernisse-bei-der-reproduzierbarkeit" class="nav-link" data-scroll-target="#hindernisse-bei-der-reproduzierbarkeit">Hindernisse bei der Reproduzierbarkeit</a></li>
-  </ul></li>
   <li><a href="#tools-für-reproduzierbarkeit" id="toc-tools-für-reproduzierbarkeit" class="nav-link" data-scroll-target="#tools-für-reproduzierbarkeit">Tools für Reproduzierbarkeit</a></li>
-  <li><a href="#code-kommentieren" id="toc-code-kommentieren" class="nav-link" data-scroll-target="#code-kommentieren">Code kommentieren</a></li>
+  <li><a href="#coding-best-practices" id="toc-coding-best-practices" class="nav-link" data-scroll-target="#coding-best-practices">Coding: Best practices</a></li>
+  </ul></li>
+  <li><a href="#datenqualität" id="toc-datenqualität" class="nav-link" data-scroll-target="#datenqualität">Datenqualität</a></li>
+  <li><a href="#datenmanagement" id="toc-datenmanagement" class="nav-link" data-scroll-target="#datenmanagement">Datenmanagement</a>
+  <ul class="collapse">
+  <li><a href="#data-collection-plan" id="toc-data-collection-plan" class="nav-link" data-scroll-target="#data-collection-plan">Data collection plan</a></li>
+  <li><a href="#data-dictionaries" id="toc-data-dictionaries" class="nav-link" data-scroll-target="#data-dictionaries">Data dictionaries</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Good Practices in der Datenverarbeitung</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Neurowissenschaftliche Daten &amp; Good Practices in der Datenverarbeitung</h1>
+<h1 class="title">Good Practices in der Datenverarbeitung</h1>
 </div>
 
 <div>
@@ -422,12 +434,9 @@ div.csl-indent {
 <!-- - Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices“, Data Cleaning, Reproduzierbarkeit)  -->
 <!--  kennen wichtige neurowissenschaftlichen Datenformen und ihre Eigenschaften -->
 <!-- - können Daten aus neurowissenschaftlichen Experimenten selber vorverarbeiten und informativ visualisieren -->
-<blockquote class="blockquote">
-<p>Neuroimaging experiments result in complicated data that can be arranged in many different ways. So far there is no consensus how to organize and share data obtained in neuroimaging experiments. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure. <a href="https://bids-specification.readthedocs.io/en/stable/introduction.html">BIDS Website (2024)</a></p>
-</blockquote>
-<section id="herausforderungen-im-umgang-mit-neurowissenschaftlichen-daten" class="level1 page-columns page-full">
-<h1>Herausforderungen im Umgang mit neurowissenschaftlichen Daten</h1>
-<p>In der neurowissenschaftlichen Forschung werden zunehmend sehr grosse und komplexe Datensätze generiert und Daten aus unterschiedlichen Datenerhebungsverfahren sollen miteinander verknüpft werden um neue Erkenntnisse zu gewinnen. Eine sehr häufige Kombination sind beispielsweise Verhaltens- und Bildgebungsdaten, wie es in vielen fMRI-Studien der Fall ist. Das erfordert Kenntnisse der unterschiedlichen Formate und Eigenschaften der Daten und Programmierkenntnisse um diese Daten möglichst automatisiert vorzuverarbeiten, zu verknüpfen, zu visualisieren und analysieren.</p>
+<section id="herausforderungen-in-der-arbeit-mit-neurowissenschaftlichen-daten" class="level1 page-columns page-full">
+<h1>Herausforderungen in der Arbeit mit neurowissenschaftlichen Daten</h1>
+<p>In der neurowissenschaftlichen Forschung werden zunehmend sehr grosse und komplexe Datensätze generiert. Daten aus unterschiedlichen Datenerhebungsverfahren sollen miteinander verknüpft (aggregiert) werden, um neue Erkenntnisse zu gewinnen. Eine sehr häufige Kombination sind beispielsweise Verhaltens- und Bildgebungsdaten, wie es in vielen fMRI-Studien der Fall ist. Das erfordert Kenntnisse der unterschiedlichen Formate und Eigenschaften dieser Daten sowie Programmierkenntnisse um diese Daten möglichst automatisiert vorzuverarbeiten, zu verknüpfen, visualisieren und analysieren.</p>
 <aside>
 <a href="https://opendatahandbook.org/glossary/en/terms/data-management/">Definition Datenmanagement</a>
 </aside>
@@ -450,73 +459,103 @@ Hands-on: Herausforderungen von neurowissenschaftlichen Daten
 <p>First, neuroscience research now routinely generates large datasets of high complexity. Examples include recordings of activity across large populations of neurons, often with high resolution behavioral tracking (Steinmetz et al., 2019; Stringer et al., 2019; Mathis et al., 2018; Siegle et al., 2021; Koch et al., 2022), analyses of neural connectivity at high spatial resolution and across large brain areas (Scheffer et al., 2020; Loomba et al., 2022), and detailed molecular profiling of neural cells (Yao et al., 2023; Langlieb et al., 2023; Braun et al., 2022; Callaway et al., 2021). Such large, multi-modal data sets are essential for solving major questions about brain function (Brose, 2016; Jorgenson et al., 2015; Koch and Jones, 2016).</p>
 <p>Second, the collection and analysis of such datasets requires interdisciplinary teams, incorporating expertise in systems neuroscience, engineering, molecular biology, data science, and theory. These two trends are reflected in the increasing numbers of authors on scientific publications (Wareham, 2016), and the creation of mechanisms to support team science by the NIH and similar research funding bodies (Cooke and Hilton, 2015; Volkow, 2022; Brose, 2016).</p>
 <p>There is also an increasing scope of research questions that can be addressed by aggregating “open data” from multiple studies across independent labs. Funding agencies and publishers have begun to aggressively promote data sharing and open data, with the goals of improving reproducibility and increasing data reuse (Dallmeier-Tiessen et al., 2014; Tenopir et al., 2015; Pasquetto et al., 2017). However, open data may be unusable if scattered in a wide variety of naming conventions and file formats lacking machine-readable metadata.</p>
-<p>Big data and team science necessitate new strategies for how to best organize data, with a key technical challenge being the development of standardized file formats for storing, sharing, and querying datasets. Prominent examples include the Brain Imaging Data Structure (BIDS) for neuroimaging, and Neurodata Without Borders (NWB) for neurophysiology data (Teeters et al., 2015; Gorgolewski et al., 2016; Rübel et al., 2022; Holdgraf et al., 2019). The Open Neurophysiology Environment (ONE), best known from adoption by The International Brain Laboratory (The International Brain Laboratory et al., 2020, 2023), has a similar application domain to NWB, but a highly different technical design.</p>
+<p>Big data and team science necessitate new strategies for how to best organize data, with a key technical challenge being the development of standardized file formats for storing, sharing, and querying datasets. Prominent examples include the Brain Imaging Data Structure (BIDS) for neuroimaging, and Neurodata Without Borders (NWB) for neurophysiology data (Teeters et al., 2015; Gorgolewski et al., 2016; Rübel et al., 2022; Holdgraf et al., 2019). The Open Neurophysiology Environment (ONE), best known from adoption by The International Brain Laboratory (The International Brain Laboratory et al., 2020, 2023), has a similar application domain to NWB, but a highly different technical design. (…)</p>
 <p>These initiatives provide technical tools for storing and accessing data in known formats, but more importantly provide conceptual frameworks with which to standardize data organization and description in an (ideally) universal, interoperable, and machine-readable way. <span class="citation" data-cites="pierre_perspective_2024">Pierré et al. (<a href="#ref-pierre_perspective_2024" role="doc-biblioref">2024</a>)</span> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10593085/">(Preprint)</a></p>
 </blockquote>
+<section id="datenquellen-datenformate-und-interdisziplinariät" class="level2">
+<h2 class="anchored" data-anchor-id="datenquellen-datenformate-und-interdisziplinariät">Datenquellen, Datenformate und Interdisziplinariät</h2>
+<p>Neurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen. Das bedeutet, dass sehr unterschiedliche Formate miteinander verknüpft werden müssen für die Analyse. Bei der Generierung von Daten sind oft auch Personen aus unterschiedlichen Fachrichtungen beteiligt, welche andere Hintergründe bezüglich Datenmanagement haben (z.B. bei fMRI Experimenten Fachpersonen aus den Bereichen Radiologie, Physik, Neurowissenschaften, Psychologie, Medizin, etc.). Auch bei der Analyse sind oft verschiedene Personen beteiligt, die alle darauf angewiesen sind, den Datensatz zu verstehen.</p>
 </section>
-<section id="neurowissenschaftliche-daten" class="level1">
-<h1>Neurowissenschaftliche Daten</h1>
-<section id="datenquellen" class="level2">
-<h2 class="anchored" data-anchor-id="datenquellen">Datenquellen</h2>
-<p>Neurowissenschaftliche Daten von Verhaltensdaten zu Bildgebungsdaten stammen aus unterschiedlichsten Quellen und haben alle spezifische Eigenschaften, die in der Datenverarbeitung berücksichtigt werden müssen.</p>
+<section id="grosse-und-komplexe-datensätze" class="level2">
+<h2 class="anchored" data-anchor-id="grosse-und-komplexe-datensätze">Grosse und komplexe Datensätze</h2>
+<p>Neurowissenschaftliche Datensätze sind oft sehr gross (pro Versuchsperson oft mehrere Gigabytes) und für die Speicherung und das Safety Back-up wird also viel Speicherplatz benötigt (mehrere Terrabytes). Komplexe Datensätze bedeutet, dass eine gute Dokumentation nötig ist, welche Variable welche Bedeutung hat und wo gegebenenfalls Änderungen gemacht wurden.</p>
 </section>
-<section id="datenformate" class="level2">
-<h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
-<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:</p>
+<section id="open-science" class="level2">
+<h2 class="anchored" data-anchor-id="open-science">Open Science</h2>
+<p>Falls dabei keine Persönlichkeitsrechte verletzt werden, sollten Daten möglichst zugänglich gemacht werden, um einerseits transparente Resultate zu ermöglichen und andererseits kann so ein Datensatz auch von anderen Forschenden für weitere Fragestellung verwendet werden. Dies ist aber nur möglich, wenn der Datensatz für Aussenstehende verständlich abgespeichert wurde.</p>
+</section>
+<section id="zahlreiche-zwischenschritte" class="level2">
+<h2 class="anchored" data-anchor-id="zahlreiche-zwischenschritte">Zahlreiche Zwischenschritte</h2>
+<p>Von der Datenerhebung bis zur Datenanalyse werden die Daten oft ausführlich vorverarbeitet. Dazu gehören u.a. folgende Schritte (wobei jeder eigene Fehlerquellen beinhalten kann):</p>
 <ul>
-<li><p>In welchem Dateiformat ist der Datensatz gespeichert? z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?`</p></li>
-<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
-<li><p>Gibt es ein <code>data dictionnary</code> mit Erklärungen zu den Variablen?</p></li>
+<li>Importieren der Rohdaten</li>
+<li>Verändern des Formats (z.B. <code>.dcm</code> -&gt; <code>.nii</code> in fMRI)</li>
+<li>Identifikation von Missings</li>
+<li>Ausschluss von ungültigen Messungen</li>
+<li>Anonymisierung</li>
+<li>Weglassen nicht benötigter Datenpunkte</li>
+<li>Fehlende Werte ergänzen</li>
+<li>Duplizierungen identifizieren und löschen</li>
+<li>Metadaten hinzufügen</li>
+<li>Datensätze zusammenfügen</li>
+<li>Spalten teilen</li>
+<li>Variablen umbenennen</li>
+<li>Variablen normalisieren/standardisieren</li>
+<li>Variablen verändern (z.B. ms zu sec)</li>
+<li>Variablentypen anpassen</li>
+<li>Variablen recodieren</li>
+<li>Neue Variablen erstellen</li>
+<li>Neuer Datensatz abspeichern</li>
 </ul>
-</section>
-</section>
-<section id="good-practices-in-der-datenverarbeitung" class="level1">
-<h1>Good Practices in der Datenverarbeitung</h1>
-<p>Die Replikationskrise hat in der Psychologie, aber auch in den kognitiven Neurowissenschaften ein Umdenken ausgelöst. Mit dem Ziel nachhaltigere Forschungsergebnisse zu erreichen sind verschiedene Begriffe wie Reproduzierbarkeit und Replizierbarkeit zu wichtigen Schlagworten geworden. Die Begrifflichkeiten werden verwirrenderweise aber oft unterschiedlich definiert und verwendet (<span class="citation" data-cites="plesser_reproducibility_2018">Plesser (<a href="#ref-plesser_reproducibility_2018" role="doc-biblioref">2018</a>)</span>).</p>
-<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hands-on: Wichtige Begriffe
+Tipp: Datencheck
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wichtige Begriffe hinsichtlich qualitativ guter Forschung sind</p>
+<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und folgendes zu identifizieren:</p>
 <ul>
-<li><p>reproducibility</p></li>
-<li><p>replicability</p></li>
-<li><p>reliability</p></li>
-<li><p>robustness</p></li>
-<li><p>generalizability</p></li>
+<li>In welchem Dateiformat ist der Datensatz gespeichert? z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?`</li>
+<li>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</li>
+<li>Gibt es ein <code>data dictionnary</code> mit Erklärungen zu den Variablen?</li>
 </ul>
-<p>Besprechen Sie in kleinen Gruppen diese Begrifflichkeiten und schreiben Sie für jeden 1 Satz als Definition auf.</p>
 </div>
 </div>
-<section id="replizierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="replizierbarkeit">Replizierbarkeit</h2>
-<p><em>Replizierbarkeit (replicability)</em> bedeutet, dass ein Experiment von einer anderen Forschungsgruppe mit einer neuen Stichprobe durchgeführt werden kann, und ähnliche oder dieselben Resultate hervorbringt, wie die Originalstudie. Wird eine Studie mehrmals repliziert, steigt die Wahrscheinlichkeit, dass kein Zufallsbefund vorliegt.</p>
+</section>
+<section id="verschiedene-standards" class="level2">
+<h2 class="anchored" data-anchor-id="verschiedene-standards">Verschiedene Standards</h2>
+<p>Es gibt zahlreiche Bemühungen Datenmanagement in den Neurowissenschaften zu vereinheitlichen. Viele verfügbare Standards und Tools machen die Datenverarbeitung aber nicht nur einfacher. Im nächsten Kapitel finden Sie deshalb eine Übersicht von Ansätzen, die uns sinnvoll und allgemein anwendbar erscheinen und sich in unseren Labors bewährt haben.</p>
+<p><img src="img/standards_xkcd.png" class="img-fluid"> <a href="https://imgs.xkcd.com/comics/standards_2x.png">xkcd Comic</a></p>
+</section>
+</section>
+<section id="good-practices-im-datenmanagement" class="level1 page-columns page-full">
+<h1>Good Practices im Datenmanagement</h1>
+<p>Im Folgenden wird auf einige wichtige <em>Good Practices</em> in der Datenverarbeitung eingegangen.</p>
+<section id="reproduzierbarkeit" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="reproduzierbarkeit">Reproduzierbarkeit</h2>
+<p>Die Replikationskrise hat in der Psychologie, aber auch in den kognitiven Neurowissenschaften ein Umdenken ausgelöst. Mit dem Ziel nachhaltigere Forschungsergebnisse zu erreichen sind verschiedene Begriffe wie Reproduzierbarkeit und Replizierbarkeit zu wichtigen Schlagworten geworden. Die Begrifflichkeiten werden verwirrenderweise aber oft unterschiedlich definiert und verwendet (<span class="citation" data-cites="plesser_reproducibility_2018">Plesser (<a href="#ref-plesser_reproducibility_2018" role="doc-biblioref">2018</a>)</span>).</p>
+<!-- :::callout-caution -->
+<!-- ## Hands-on: Wichtige Begriffe  -->
+<!-- Wichtige Begriffe hinsichtlich qualitativ guter Forschung sind -->
+<!-- - reproducibility -->
+<!-- - replicability -->
+<!-- - reliability -->
+<!-- - robustness -->
+<!-- - generalizability -->
+<!-- Besprechen Sie in kleinen Gruppen diese Begrifflichkeiten und schreiben Sie für jeden 1 Satz als Definition auf. -->
+<!-- ::: -->
+<p><strong>Replizierbarkeit (replicability)</strong> bedeutet, dass ein Experiment von einer anderen Forschungsgruppe mit einer neuen Stichprobe durchgeführt werden kann, und ähnliche oder dieselben Resultate hervorbringt, wie die Originalstudie. Wird eine Studie mehrmals repliziert, steigt die Wahrscheinlichkeit, dass kein Zufallsbefund vorliegt.</p>
 <blockquote class="blockquote">
 <p>Replicability refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected. <span class="citation" data-cites="cacioppo_social_2015">Cacioppo et al. (<a href="#ref-cacioppo_social_2015" role="doc-biblioref">2015</a>)</span></p>
 </blockquote>
-</section>
-<section id="reproduzierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="reproduzierbarkeit">Reproduzierbarkeit</h2>
-<p><em>Reproduzierbarkeit (reproducibility)</em> hängt eng mit der Replizierbarkeit zusammen. Der Begriff wird teilweise sehr allgemein verwendet, und bedeutet so dass Forschungsergebnisse wiederholt gefunden werden. Reproduzierbarkeit im engeren Sinn hingegen bezieht sich darauf, ob die durchgeführte Analyse wiederholt werden kann. Die Reproduzierbarkeit ist somit hoch, wenn Forschende die Daten und Datenanalyseskripts bereitstellen und andere Forschende damit dieselben Analysen durchführen können und zu gleichen Resultaten kommen.</p>
+<p><strong>Reproduzierbarkeit (reproducibility)</strong> hängt eng mit der Replizierbarkeit zusammen. Der Begriff wird teilweise sehr allgemein verwendet, und bedeutet so dass Forschungsergebnisse wiederholt gefunden werden. Reproduzierbarkeit im engeren Sinn hingegen bezieht sich darauf, ob die durchgeführte Analyse wiederholt werden kann. Die Reproduzierbarkeit ist somit hoch, wenn Forschende die Daten und Datenanalyseskripts bereitstellen und andere Forschende damit dieselben Analysen durchführen können und zu gleichen Resultaten kommen.</p>
 <blockquote class="blockquote">
 <p>Reproducibility refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. That is, a second researcher might use the same raw data to build the same analysis files and implement the same statistical analysis in an attempt to yield the same results…. Reproducibility is a minimum necessary condition for a finding to be believable and informative. <span class="citation" data-cites="cacioppo_social_2015">Cacioppo et al. (<a href="#ref-cacioppo_social_2015" role="doc-biblioref">2015</a>)</span></p>
 </blockquote>
-<p>Um die Begriffe zusammenzufassen schlugen <span class="citation" data-cites="goodman_what_2016">Goodman, Fanelli, and Ioannidis (<a href="#ref-goodman_what_2016" role="doc-biblioref">2016</a>)</span> vor von <em>Reproduzierbarkeit der Methoden</em> (Daten und Prozesse können exakt wiederholt werden), <em>Reproduzierbarkeit der Resultate</em> (andere Studien kommen auf dieselben Resultate) und <em>Reproduzierbarkeit der wissenschaftlichen Schlussfolgerung</em> (bei Repetition der Analyse oder der Experimente werden dieselben Schlüsse gezogen) zu sprechen.</p>
-<p>Grundsätzlich besteht das Ziel, dass in der Forschung möglichst viel Evidenz für eine Schlussfolgerung gesammelt werden kann. Dies gelingt, wenn die Prozesse transparent, fehlerfrei und wiederholbar sind.</p>
-</section>
-</section>
-<section id="reproduzierbarkeit-1" class="level1">
-<h1>Reproduzierbarkeit</h1>
-<p>Im Rahmen dieses Kurses beschäftigen wir uns vor allem, wie Reproduzierbarkeit erhöht werden kann.</p>
-<section id="hindernisse-bei-der-reproduzierbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="hindernisse-bei-der-reproduzierbarkeit">Hindernisse bei der Reproduzierbarkeit</h2>
-<p>Reproduzierbarkeit kann laut <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span> vor allem aus zwei Gründen nicht gegeben sein: Weil die Daten/Skripte nicht zur Verfügung stehen, oder weil diese Fehler enthalten:</p>
+<p>Um die Begriffe zusammenzufassen schlugen <span class="citation" data-cites="goodman_what_2016">Goodman, Fanelli, and Ioannidis (<a href="#ref-goodman_what_2016" role="doc-biblioref">2016</a>)</span> vor von</p>
+<ul>
+<li><strong>Reproduzierbarkeit der Methoden</strong> (Daten und Prozesse können exakt wiederholt werden)</li>
+<li><strong>Reproduzierbarkeit der Resultate</strong> (andere Studien kommen auf dieselben Resultate) und</li>
+<li><strong>Reproduzierbarkeit der wissenschaftlichen Schlussfolgerung</strong> (bei Repetition der Analyse oder der Experimente werden dieselben Schlüsse gezogen)</li>
+</ul>
+<p>zu sprechen. Die Reproduzierbarkeit von Resultaten und Schlussfolgerungen ist hier nicht klar abgrenzbar vom Begriff der Replizierbarkeit. Grundsätzlich besteht das Ziel, dass in der Forschung möglichst viel Evidenz für eine Schlussfolgerung gesammelt werden kann. Dies gelingt, wenn die Prozesse transparent, fehlerfrei und wiederholbar sind.</p>
+<section id="hindernisse-bei-der-reproduzierbarkeit" class="level3">
+<h3 class="anchored" data-anchor-id="hindernisse-bei-der-reproduzierbarkeit">Hindernisse bei der Reproduzierbarkeit</h3>
+<p>In diesem Kurs beschäftigen wir uns vor allem mit der Reproduzierbarkeit der Methoden als Grundlage für solide Erkenntnisgewinne. Reproduzierbarkeit kann laut <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span> vor allem aus zwei Gründen nicht gegeben sein: Weil die Daten/Skripte nicht zur Verfügung stehen, oder weil diese Fehler enthalten:</p>
 <blockquote class="blockquote">
 <p>In principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, the same result should occur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of the unavailability of data, code, information needed to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than the one reported originally. This can occur because of an error in either the original or the reproduction study. <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span></p>
 </blockquote>
@@ -524,53 +563,188 @@ Hands-on: Wichtige Begriffe
 <blockquote class="blockquote">
 <p>Achieving reproducibility is a basic foundation of credibility, and yet many efforts to test reproducibility reveal success rates below 100%. … Whereas an outcome reproducibility failure suggests that the original result may be wrong, a process reproducibility failure merely indicates that the original result cannot be verified. Either reason challenges credibility and increases uncertainty about the value of investing additional resources to replicate or extend the findings (Nuijten et al.&nbsp;2018). Sharing data and code reduces process reproducibility failures (Kidwell et al.&nbsp;2016), which can reveal more outcome reproducibility failures (Hardwicke et al.&nbsp;2018, 2021; Wicherts et al.&nbsp;2011). <span class="citation" data-cites="nosek_replicability_2022">Nosek et al. (<a href="#ref-nosek_replicability_2022" role="doc-biblioref">2022</a>)</span></p>
 </blockquote>
-<p>Das Teilen von Daten und Datenverarbeitungsskripten erhöht die Wahrscheinlichkeit, dass mögliche Fehler im Prozess gefunden werden, da auch andere Forschende die Daten/Skripts verwenden können. Das ist vorerst unangenehm, gehört aber zum Prozess der Wissenschaft dazu. Reproduzierbarkeit erhöht also indirekt auch die Replizierbarkeit.</p>
+<p>Das Teilen von Daten und Datenverarbeitungsskripten erhöht demnach die Wahrscheinlichkeit, dass mögliche Fehler im Prozess gefunden werden, da auch andere Forschende die Daten/Skripts verwenden können. Das ist vorerst unangenehm, gehört aber zum wissenschaftlichen Prozess dazu. Die Normalisierung einer Fehlerkultur in diesem Bereich würde indirekt auch die Replizierbarkeit von Ergebnissen erhöhen.</p>
+<blockquote class="blockquote">
+<p>Neuroimaging experiments result in complicated data that can be arranged in many different ways. So far there is no consensus how to organize and share data obtained in neuroimaging experiments. Even two researchers working in the same lab can opt to arrange their data in a different way. Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure. <a href="https://bids-specification.readthedocs.io/en/stable/introduction.html">BIDS Website (2024)</a></p>
+</blockquote>
 </section>
-</section>
-<section id="tools-für-reproduzierbarkeit" class="level1 page-columns page-full">
-<h1>Tools für Reproduzierbarkeit</h1>
+<section id="tools-für-reproduzierbarkeit" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="tools-für-reproduzierbarkeit">Tools für Reproduzierbarkeit</h3>
 <p>Für reproduzierbare Forschung gibt es inzwischen viele gute Tools:</p>
-<ul>
-<li>Website der <a href="https://osf.io/">Open Science Foundation</a>: Eine kostenfreie und unkomplizierte Möglichkeit Daten und Skripts zu teilen, und diese in Projekten abzulegen. Es lässt sich dafür sogar ein <em>doi</em> erstellen. Auch Preregistrationsformulare sind hier implementiert.</li>
-</ul>
-<p>Beim Veröffentlichen von wissenschaftlichen Artikeln ist es empfohlen, die Daten (falls anonymisiert möglich) sowie die Analyseskripts mitzuveröffentlichen.</p>
-<ul>
-<li>Für Datensätze gelten die <em>FAIR Guiding Principles</em> (<span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span>):
-<ul>
-<li><strong>F</strong> indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind</li>
-<li><strong>A</strong> ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären</li>
-<li><strong>I</strong> nteroperability: Verwendbare Datenformate/strukturen</li>
-<li><strong>R</strong> eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen</li>
-</ul></li>
-</ul>
+<p><strong>Website der <a href="https://osf.io/">Open Science Foundation</a></strong></p>
+<p>Eine kostenfreie und unkomplizierte Möglichkeit Daten und Skripts zu teilen, und diese in Projekten abzulegen. Es lässt sich dafür sogar ein <em>doi</em> erstellen. Auch Formulare für eine <a href="https://www.cos.io/initiatives/prereg">Präregistration</a> sind hier zu finden.</p>
+<p><strong>FAIR Guiding Principles</strong></p>
+<p>Beim Veröffentlichen von wissenschaftlichen Artikeln ist es empfohlen, die Daten (falls Anonymisierung möglich) sowie die Analyse-Skripte mitzuveröffentlichen.</p>
+<p>Für Datensätze gelten die <em>FAIR Guiding Principles</em> (<span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span>): - <strong>F</strong> indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind - <strong>A</strong> ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären - <strong>I</strong> nteroperability: Verwendbare Datenformate/strukturen - <strong>R</strong> eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen</p>
 <aside>
 <a href="https://www.go-fair.org/fair-principles">Hier</a> finden Sie weitere Informationen zu <em>FAIR</em>.
 </aside>
-<ul>
-<li>Für Neuroimaging-Daten gibt es beispielsweise vorgegebene Konventionen, wie ein Datensatz und die Verarbeitungsskripts abgespeichert werden. Ein Beispiel dafür ist <a href="https://bids.neuroimaging.io">Brain Imaging Data Structure (BIDS)</a>. So können Datensätze mit einer für alle verständlichen Struktur veröffentlicht und geteilt werden. <span class="citation" data-cites="gorgolewski_brain_2016">Gorgolewski et al. (<a href="#ref-gorgolewski_brain_2016" role="doc-biblioref">2016</a>)</span></li>
-</ul>
+<p><strong>Brain Imaging Data Structure (BIDS)</strong></p>
+<p>Für Neuroimaging-Daten gibt es beispielsweise vorgegebene Konventionen, wie ein Datensatz und die Verarbeitungsskripts abgespeichert werden. Ein Beispiel dafür ist <a href="https://bids.neuroimaging.io">Brain Imaging Data Structure (BIDS)</a>. So können Datensätze mit einer für alle verständlichen Struktur veröffentlicht und geteilt werden. <span class="citation" data-cites="gorgolewski_brain_2016">Gorgolewski et al. (<a href="#ref-gorgolewski_brain_2016" role="doc-biblioref">2016</a>)</span></p>
 <aside>
 <a href="https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/BIDS_Overview.html">Hier</a> finden Sie weitere Informationen zu <em>BIDS</em>.
 </aside>
-<ul>
-<li>Für das Veröffentlichen von Analyseskripts eignen sich Formate wie <em>RMarkdown</em> in <em>R</em>, oder <em>LiveScripts</em> in <em>MATLAB</em> sehr gut. Aber auch <code>.r</code>-Skripte, wie Sie sie in dieser Veranstaltung verwenden können veröffentlicht werden.</li>
-</ul>
-<aside>
-<a href="https://djnavarro.net/slides-starting-rmarkdown/#1">Hier</a> finden Sie eine sehr gut erklärte Einführung zu <em>RMarkdown</em>.
-</aside>
 </section>
-<section id="code-kommentieren" class="level1">
-<h1>Code kommentieren</h1>
-<p>Das Teilen von Skripts macht am meisten Sinn, wenn sie verständlich strukturiert und kommentiert sind. Beim Kommentieren von Code sollte folgendes beachtet werden:</p>
+<section id="coding-best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="coding-best-practices">Coding: Best practices</h3>
+<p>Für das Veröffentlichen von Analyseskripts eignen sich Formate wie <em>RMarkdown</em> in <em>R</em>, oder <em>LiveScripts</em> in <em>MATLAB</em> aber auch <code>.r</code>-Skripte sehr gut. Beim Teilen von Code erhöht sich die Reproduzierbarkeit, wenn dieser verständlich strukturiert und kommentiert ist.</p>
+<p>Wichtig ist hier:</p>
+<ul>
+<li><p>Das Verwenden relativer Pfade (<code>data/raw_data.csv</code> statt <code>C:/Users/IhrName/Desktop/Projekt/Versuch1/finaleDaten/raw_data.csv</code>)</p></li>
+<li><p>Konsequentes Löschen “alter” Variablen sowie Testen, ob der Code in sich läuft</p></li>
+<li><p>Versionskontrolle: Entweder konsistentes Umbenennen oder mittels Github/Gitlab o.ä., Erstellen von Changelogs</p></li>
+<li><p>Vor dem Veröffentlichen, lohnt es sich jemanden den Code ausführen lassen. So zeigt sich wo noch unklare Stellen sind, die Kommentare benötigen.</p></li>
+</ul>
+<p>Beim Kommentieren von Code sollte folgendes beachtet werden:</p>
 <ul>
 <li><p>Kommentare sollten geschrieben werden, wenn der Code erstellt wird und laufend überarbeitet werden. Oft wird es sonst nicht nachgeholt.</p></li>
 <li><p>Wenn man nicht genau kommentieren kann, was man im Code macht, dann ist evtl. der Code unklar, oder man versteht ihn noch nicht. Vielleicht kann man Variablennamen vereinfachen/präzisieren und es braucht weniger Kommentare?</p></li>
-<li><p>Wenn Code kopiert wird, sollte die Quelle angegeben werden.</p></li>
-<li><p>Vor dem Veröffentlichen, lohnt es sich jemanden den Code ausführen lassen. So zeigt sich wo noch unklare Stellen sind, die Kommentare benötigen.</p></li>
+<li><p>Wenn Code von anderen kopiert wird, sollte die Quelle angegeben werden.</p></li>
 </ul>
+</section>
+</section>
+<section id="datenqualität" class="level2">
+<h2 class="anchored" data-anchor-id="datenqualität">Datenqualität</h2>
+<p>Die folgenden sieben Indikatoren für gute Datenqualität wurden von C. Lewis (2024) zusammengefasst und sind <a href="https://cghlewis.github.io/ncme-data-cleaning-workshop/slides.html">hier</a> zu finden.</p>
+<section id="analysierbarkeit" class="level4">
+<h4 class="anchored" data-anchor-id="analysierbarkeit">1. Analysierbarkeit</h4>
+<p>Daten sollten in einem Format gespeichert werden in welchem sie analysiert werden sollen.</p>
+<ul>
+<li><p>Die Variablennamen stehen (nur!) in der ersten Zeile.</p></li>
+<li><p>Die restlichen Daten sind <em>Werte</em> in <em>Zellen</em>. Diese Werte sind analysierbar und Informationen sind explizit enthalten (keine leeren Felder, keine Farben als Information, nur 1 Information pro Variable).</p></li>
+</ul>
+</section>
+<section id="interpretierbarkeit" class="level4">
+<h4 class="anchored" data-anchor-id="interpretierbarkeit">2. Interpretierbarkeit</h4>
+<ul>
+<li><p>Variablennamen maschinenlesbar (kommen nur einmal vor, keine Lücken/spezielle Sonderzeichen/Farben, beginnen nicht mit einer Nummer, nicht zu lange)</p></li>
+<li><p>Variablennamen sind menschenlesbar (klare Bedeutung, konsistent formattiert, logisch geordnet)</p></li>
+<li><p>Datensätze sind in einem nicht-proprietären Format abgespeichert (z.B. <code>.csv</code> nicht <code>.xlsx</code> oder <code>.sav</code>)</p></li>
+</ul>
+</section>
+<section id="vollständigkeit" class="level4">
+<h4 class="anchored" data-anchor-id="vollständigkeit">3. Vollständigkeit</h4>
+<ul>
+<li><p>Keine Missings, keine Duplikationen</p></li>
+<li><p>Enthält alle erhobenen Variablen</p></li>
+<li><p>Erklärung für alle Variablen in zusätzlichem File (z.B. in einem <a href="">data dictionary</a>)</p></li>
+</ul>
+</section>
+<section id="validität" class="level4">
+<h4 class="anchored" data-anchor-id="validität">4. Validität</h4>
+<ul>
+<li><p>Variablen entsprechen den geplanten Inhalten, d.h. Variablentypen und -werte stimmen mit Daten überein (z.B. numerisch/kategorial, range: 1-5)</p></li>
+<li><p>Missings sind unverwechselbar angegeben (z.B. nicht -99, sondern <em>NA</em>)</p></li>
+</ul>
+</section>
+<section id="genauigkeit" class="level4">
+<h4 class="anchored" data-anchor-id="genauigkeit">5. Genauigkeit</h4>
+<ul>
+<li><p>Daten sollten in sich übereinstimmen</p></li>
+<li><p>Daten sollten doppelt kontrolliert werden, wenn sie eingegeben werden</p></li>
+</ul>
+</section>
+<section id="konsistenz" class="level4">
+<h4 class="anchored" data-anchor-id="konsistenz">6. Konsistenz</h4>
+<ul>
+<li><p>Variablennamen sollten konsistent gewählt werden</p></li>
+<li><p>Innerhalb wie auch zwischen den Variablen sollten Werte konsistent kodiert und formattiert sein</p></li>
+</ul>
+</section>
+<section id="anonymisiert" class="level4">
+<h4 class="anchored" data-anchor-id="anonymisiert">7. Anonymisiert</h4>
+<ul>
+<li><p>Alle Identifikationsmerkmale, sowohl direkte (Name, Adresse, E.Mail oder IP-Adresse, etc.) sowie indirekte (Alter, Geschlecht, Geburtsdatum, etc.) sollten so anonymisiert/kodiert sein, dass keine Rückschlüsse auf Personen möglich sind</p></li>
+<li><p>Besondere Vorsicht bei: Offenen Fragen mit wörtlichen Antworten, extremen Werten, kleinen Stichproben/kleinen Zellgrössen (&gt;3), Diagnosen, sensiblen Studienthemen</p></li>
+</ul>
+</section>
+</section>
+<section id="datenmanagement" class="level2">
+<h2 class="anchored" data-anchor-id="datenmanagement">Datenmanagement</h2>
+<section id="data-collection-plan" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-plan">Data collection plan</h3>
+<p>Die Datenqualität kann erhöht werden, indem diese Punkte schon bei der <strong>Planung</strong> der Datenerhebung beachtet und einbezogen werden. Wenn die Daten schon so eingegeben werden, werden die darauffolgenden <em>Data Cleaning</em> Schritte verkürzt und weniger Fehler passieren. Die Dateneingabe und -analyse sollte <strong>vor</strong> der Datenerhebung getestet und währenddessen immer wieder kontrolliert werden.</p>
+</section>
+<section id="data-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="data-dictionaries">Data dictionaries</h3>
+<p>Ein <em>data dictionary</em> ist eine Sammlung von Metadaten die beschreibt, welche Variablen ein Datensatz enthält und wie die Werte dieser Variable formattiert sind.</p>
+<p>Wichtige Inhalte für die Anwendung in den Neurowissenschaftlichen Forschung sind z.B. Name, Definition, Typ, Wertebereich (<em>values</em>), angewandte Transformationen, Geltungsbereiche (<em>universe</em>) und Format fehlender Angaben (<em>skip logic</em>).</p>
+<p><strong>Beispiel Data Dictionary</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>label</th>
+<th>type</th>
+<th>values</th>
+<th>source</th>
+<th>transformations</th>
+<th>universe</th>
+<th>skip_logic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>participant identification</td>
+<td>id</td>
+<td>character, factor</td>
+<td>“sub-001” - “sub-100”</td>
+<td>raw files</td>
+<td>anonymized variable “participant”</td>
+<td>all</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>participant age</td>
+<td>age</td>
+<td>integer</td>
+<td>18 - 55</td>
+<td>raw files</td>
+<td></td>
+<td>all</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>experimental block</td>
+<td>block</td>
+<td>integer</td>
+<td>1, 2</td>
+<td>raw files</td>
+<td></td>
+<td>all</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Erstellen Data Dictionary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie in kleinen Gruppen für eines unserer beiden Experimente ein Data Dictionary. Verwenden Sie hierfür die in den oben abgebildeten Beispielstabelle vorhandenen Spalten.</p>
+<p><em>Tipp: Sie können die Tabelle auch ganz simpel in RMarkdown erstellen, wie das funktioniert können Sie <a href="https://quarto.org/docs/authoring/tables.html">hier</a> nachlesen.</em></p>
+</div>
+</div>
 
 
 
+</section>
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -597,14 +771,13 @@ Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Applet
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
   author = {Wyssen, Gerda and Fitze, Daniel},
-  title = {Neurowissenschaftliche {Daten} \&amp; {Good} {Practices} in Der
-    {Datenverarbeitung}},
+  title = {Good {Practices} in Der {Datenverarbeitung}},
   url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
-Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Neurowissenschaftliche
-Daten &amp; Good Practices in Der Datenverarbeitung.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html</a>.
+Wyssen, Gerda, and Daniel Fitze. n.d. <span>“Good Practices in Der
+Datenverarbeitung.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/goodpractices_data.html</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 
