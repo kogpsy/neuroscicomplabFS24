@@ -46,7 +46,7 @@ website:
 
     - section: Data wrangling
       contents:
-      #- pages/chapters/goodpractices_data.qmd
+      - pages/chapters/goodpractices_data.qmd
       - pages/chapters/rmarkdown.qmd
       - pages/chapters/datawrangling.qmd
       - pages/chapters/datawrangling_automatisiert.qmd
