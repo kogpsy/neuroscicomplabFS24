@@ -363,7 +363,7 @@ div.csl-indent {
   <li><a href="#zahlreiche-zwischenschritte" id="toc-zahlreiche-zwischenschritte" class="nav-link" data-scroll-target="#zahlreiche-zwischenschritte">Zahlreiche Zwischenschritte</a></li>
   <li><a href="#verschiedene-standards" id="toc-verschiedene-standards" class="nav-link" data-scroll-target="#verschiedene-standards">Verschiedene Standards</a></li>
   </ul></li>
-  <li><a href="#good-practices-im-datenmanagement" id="toc-good-practices-im-datenmanagement" class="nav-link" data-scroll-target="#good-practices-im-datenmanagement">Good Practices im Datenmanagement</a>
+  <li><a href="#good-practices-in-der-datenverarbeitung" id="toc-good-practices-in-der-datenverarbeitung" class="nav-link" data-scroll-target="#good-practices-in-der-datenverarbeitung">Good Practices in der Datenverarbeitung</a>
   <ul class="collapse">
   <li><a href="#reproduzierbarkeit" id="toc-reproduzierbarkeit" class="nav-link" data-scroll-target="#reproduzierbarkeit">Reproduzierbarkeit</a>
   <ul class="collapse">
@@ -371,9 +371,9 @@ div.csl-indent {
   <li><a href="#tools-für-reproduzierbarkeit" id="toc-tools-für-reproduzierbarkeit" class="nav-link" data-scroll-target="#tools-für-reproduzierbarkeit">Tools für Reproduzierbarkeit</a></li>
   <li><a href="#coding-best-practices" id="toc-coding-best-practices" class="nav-link" data-scroll-target="#coding-best-practices">Coding: Best practices</a></li>
   </ul></li>
-  <li><a href="#datenqualität" id="toc-datenqualität" class="nav-link" data-scroll-target="#datenqualität">Datenqualität</a></li>
   <li><a href="#datenmanagement" id="toc-datenmanagement" class="nav-link" data-scroll-target="#datenmanagement">Datenmanagement</a>
   <ul class="collapse">
+  <li><a href="#datenqualität" id="toc-datenqualität" class="nav-link" data-scroll-target="#datenqualität">Datenqualität</a></li>
   <li><a href="#data-collection-plan" id="toc-data-collection-plan" class="nav-link" data-scroll-target="#data-collection-plan">Data collection plan</a></li>
   <li><a href="#data-dictionaries" id="toc-data-dictionaries" class="nav-link" data-scroll-target="#data-dictionaries">Data dictionaries</a></li>
   </ul></li>
@@ -522,9 +522,9 @@ Tipp: Datencheck
 <p><img src="img/standards_xkcd.png" class="img-fluid"> <a href="https://imgs.xkcd.com/comics/standards_2x.png">xkcd Comic</a></p>
 </section>
 </section>
-<section id="good-practices-im-datenmanagement" class="level1 page-columns page-full">
-<h1>Good Practices im Datenmanagement</h1>
-<p>Im Folgenden wird auf einige wichtige <em>Good Practices</em> in der Datenverarbeitung eingegangen.</p>
+<section id="good-practices-in-der-datenverarbeitung" class="level1 page-columns page-full">
+<h1>Good Practices in der Datenverarbeitung</h1>
+<p>Im Folgenden wird auf einige wichtige <em>Good Practices</em> in der Datenverarbeitung eingegangen. Wichtig sind hier die Reproduzierbarkeit der Datenverarbeitungs- und Datenanalysepipelines sowie die Sicherstellung der Datenqualität.</p>
 <section id="reproduzierbarkeit" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="reproduzierbarkeit">Reproduzierbarkeit</h2>
 <p>Die Replikationskrise hat in der Psychologie, aber auch in den kognitiven Neurowissenschaften ein Umdenken ausgelöst. Mit dem Ziel nachhaltigere Forschungsergebnisse zu erreichen sind verschiedene Begriffe wie Reproduzierbarkeit und Replizierbarkeit zu wichtigen Schlagworten geworden. Die Begrifflichkeiten werden verwirrenderweise aber oft unterschiedlich definiert und verwendet (<span class="citation" data-cites="plesser_reproducibility_2018">Plesser (<a href="#ref-plesser_reproducibility_2018" role="doc-biblioref">2018</a>)</span>).</p>
@@ -571,19 +571,33 @@ Tipp: Datencheck
 <section id="tools-für-reproduzierbarkeit" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="tools-für-reproduzierbarkeit">Tools für Reproduzierbarkeit</h3>
 <p>Für reproduzierbare Forschung gibt es inzwischen viele gute Tools:</p>
-<p><strong>Website der <a href="https://osf.io/">Open Science Foundation</a></strong></p>
+<section id="osf-website-der-open-science-foundation" class="level4">
+<h4 class="anchored" data-anchor-id="osf-website-der-open-science-foundation">OSF: Website der <a href="https://osf.io/">Open Science Foundation</a></h4>
 <p>Eine kostenfreie und unkomplizierte Möglichkeit Daten und Skripts zu teilen, und diese in Projekten abzulegen. Es lässt sich dafür sogar ein <em>doi</em> erstellen. Auch Formulare für eine <a href="https://www.cos.io/initiatives/prereg">Präregistration</a> sind hier zu finden.</p>
-<p><strong>FAIR Guiding Principles</strong></p>
+</section>
+<section id="fair-guiding-principles" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="fair-guiding-principles">FAIR Guiding Principles</h4>
 <p>Beim Veröffentlichen von wissenschaftlichen Artikeln ist es empfohlen, die Daten (falls Anonymisierung möglich) sowie die Analyse-Skripte mitzuveröffentlichen.</p>
-<p>Für Datensätze gelten die <em>FAIR Guiding Principles</em> (<span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span>): - <strong>F</strong> indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind - <strong>A</strong> ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären - <strong>I</strong> nteroperability: Verwendbare Datenformate/strukturen - <strong>R</strong> eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen</p>
+<p>Für Datensätze gelten die <em>FAIR Guiding Principles</em> (<span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span>):</p>
+<ul>
+<li><p><strong>F</strong> indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind</p></li>
+<li><p><strong>A</strong> ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären</p></li>
+<li><p><strong>I</strong> nteroperability: Verwendbare Datenformate/strukturen</p></li>
+<li><p><strong>R</strong> eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen</p></li>
+</ul>
 <aside>
 <a href="https://www.go-fair.org/fair-principles">Hier</a> finden Sie weitere Informationen zu <em>FAIR</em>.
 </aside>
-<p><strong>Brain Imaging Data Structure (BIDS)</strong></p>
+</section>
+<section id="bids-brain-imaging-data-structure" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="bids-brain-imaging-data-structure">BIDS: Brain Imaging Data Structure</h4>
 <p>Für Neuroimaging-Daten gibt es beispielsweise vorgegebene Konventionen, wie ein Datensatz und die Verarbeitungsskripts abgespeichert werden. Ein Beispiel dafür ist <a href="https://bids.neuroimaging.io">Brain Imaging Data Structure (BIDS)</a>. So können Datensätze mit einer für alle verständlichen Struktur veröffentlicht und geteilt werden. <span class="citation" data-cites="gorgolewski_brain_2016">Gorgolewski et al. (<a href="#ref-gorgolewski_brain_2016" role="doc-biblioref">2016</a>)</span></p>
 <aside>
 <a href="https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/BIDS_Overview.html">Hier</a> finden Sie weitere Informationen zu <em>BIDS</em>.
 </aside>
+<p>Hier sehen Sie ein Beispiel, wie ein fMRI Datensatz in BIDS Struktur umgewandelt wird:</p>
+<p><img src="img/bidsdata.jpg" class="img-fluid"> <span class="citation" data-cites="gorgolewski_brain_2016">Gorgolewski et al. (<a href="#ref-gorgolewski_brain_2016" role="doc-biblioref">2016</a>)</span></p>
+</section>
 </section>
 <section id="coding-best-practices" class="level3">
 <h3 class="anchored" data-anchor-id="coding-best-practices">Coding: Best practices</h3>
@@ -603,8 +617,11 @@ Tipp: Datencheck
 </ul>
 </section>
 </section>
-<section id="datenqualität" class="level2">
-<h2 class="anchored" data-anchor-id="datenqualität">Datenqualität</h2>
+<section id="datenmanagement" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="datenmanagement">Datenmanagement</h2>
+<p>In diesem Kapitel wird auf die Sicherstellung der <em>Datenqualität</em>, sowie die Wichtigkeit von <em>Data collection plans</em> und <em>Data dictionaries</em> eingegangen.</p>
+<section id="datenqualität" class="level3">
+<h3 class="anchored" data-anchor-id="datenqualität">Datenqualität</h3>
 <p>Die folgenden sieben Indikatoren für gute Datenqualität wurden von C. Lewis (2024) zusammengefasst und sind <a href="https://cghlewis.github.io/ncme-data-cleaning-workshop/slides.html">hier</a> zu finden.</p>
 <section id="analysierbarkeit" class="level4">
 <h4 class="anchored" data-anchor-id="analysierbarkeit">1. Analysierbarkeit</h4>
@@ -655,17 +672,16 @@ Tipp: Datencheck
 <h4 class="anchored" data-anchor-id="anonymisiert">7. Anonymisiert</h4>
 <ul>
 <li><p>Alle Identifikationsmerkmale, sowohl direkte (Name, Adresse, E.Mail oder IP-Adresse, etc.) sowie indirekte (Alter, Geschlecht, Geburtsdatum, etc.) sollten so anonymisiert/kodiert sein, dass keine Rückschlüsse auf Personen möglich sind</p></li>
-<li><p>Besondere Vorsicht bei: Offenen Fragen mit wörtlichen Antworten, extremen Werten, kleinen Stichproben/kleinen Zellgrössen (&gt;3), Diagnosen, sensiblen Studienthemen</p></li>
+<li><p>Besondere Vorsicht bei: Offenen Fragen mit wörtlichen Antworten, extremen Werten, kleinen Stichproben/kleinen Zellgrössen (&lt;3), Diagnosen, sensiblen Studienthemen</p></li>
 </ul>
+<p>Es empfiehlt sich vor der definitiven Abspeicherung oder gar Veröffentlichung des Datensatzes, diese Punkte durchzuarbeiten und zu kontrollieren.</p>
 </section>
 </section>
-<section id="datenmanagement" class="level2">
-<h2 class="anchored" data-anchor-id="datenmanagement">Datenmanagement</h2>
 <section id="data-collection-plan" class="level3">
 <h3 class="anchored" data-anchor-id="data-collection-plan">Data collection plan</h3>
-<p>Die Datenqualität kann erhöht werden, indem diese Punkte schon bei der <strong>Planung</strong> der Datenerhebung beachtet und einbezogen werden. Wenn die Daten schon so eingegeben werden, werden die darauffolgenden <em>Data Cleaning</em> Schritte verkürzt und weniger Fehler passieren. Die Dateneingabe und -analyse sollte <strong>vor</strong> der Datenerhebung getestet und währenddessen immer wieder kontrolliert werden.</p>
+<p>Die Datenqualität kann erhöht werden, indem die obenstehenden Punkte schon bei der Planung der Datenerhebung beachtet und einbezogen werden. Wenn die Daten schon so eingegeben werden, werden die darauffolgenden <em>Data Cleaning</em> Schritte verkürzt und weniger Fehler passieren. Die Dateneingabe und -analyse sollte <strong>vor</strong> der Datenerhebung getestet und währenddessen immer wieder kontrolliert werden.</p>
 </section>
-<section id="data-dictionaries" class="level3">
+<section id="data-dictionaries" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="data-dictionaries">Data dictionaries</h3>
 <p>Ein <em>data dictionary</em> ist eine Sammlung von Metadaten die beschreibt, welche Variablen ein Datensatz enthält und wie die Werte dieser Variable formattiert sind.</p>
 <p>Wichtige Inhalte für die Anwendung in den Neurowissenschaftlichen Forschung sind z.B. Name, Definition, Typ, Wertebereich (<em>values</em>), angewandte Transformationen, Geltungsbereiche (<em>universe</em>) und Format fehlender Angaben (<em>skip logic</em>).</p>
@@ -737,9 +753,60 @@ Hands-on: Erstellen Data Dictionary
 </div>
 <div class="callout-body-container callout-body">
 <p>Erstellen Sie in kleinen Gruppen für eines unserer beiden Experimente ein Data Dictionary. Verwenden Sie hierfür die in den oben abgebildeten Beispielstabelle vorhandenen Spalten.</p>
-<p><em>Tipp: Sie können die Tabelle auch ganz simpel in RMarkdown erstellen, wie das funktioniert können Sie <a href="https://quarto.org/docs/authoring/tables.html">hier</a> nachlesen.</em></p>
+<p><em>Tipp: Sie können die Tabelle auch ganz simpel in RMarkdown erstellen in dem Sie die Tabelle als Text (nicht im Codechunk) erstellen. Wie das funktioniert können Sie <a href="https://quarto.org/docs/authoring/tables.html">hier</a> nachlesen.</em></p>
 </div>
 </div>
+<aside>
+Ausführlichere Informationen über das Erstellen von <em>data dictionaries</em> finden Sie z.B. <a href="https://journals.sagepub.com/doi/full/10.1177/2515245920928007">hier</a> und <a href="https://osf.io/3y2ex/">hier</a>.
+</aside>
+<p>Informationen zu Datentypen finden Sie <a href="https://databasecamp.de/daten/datentypen">hier</a> oder in der untenstehenden Tabelle</p>
+<p><strong>Datentypen</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Datentyp</th>
+<th>Beschrieb</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>integer</td>
+<td>Ganzzahliger Wert</td>
+<td>1, 2, 3, 29</td>
+</tr>
+<tr class="even">
+<td>double, float</td>
+<td>Zahl mit Kommastellen</td>
+<td>1.234, 89.3, 1.0</td>
+</tr>
+<tr class="odd">
+<td>character, factor</td>
+<td>Text oder Kategorie (nicht numerisch interpretiert)</td>
+<td>speed, 0</td>
+</tr>
+<tr class="even">
+<td>string</td>
+<td>Text oder Kategorie in “” oder ’’</td>
+<td>“sub-001”</td>
+</tr>
+<tr class="odd">
+<td>datetime</td>
+<td>Datum, Zeitpunkt</td>
+<td>2024-04-13, 21.12.23, 00:45:45</td>
+</tr>
+<tr class="even">
+<td>boolean</td>
+<td>Einer von 2 möglichen Werten</td>
+<td>FALSE, 0</td>
+</tr>
+</tbody>
+</table>
 
 
 

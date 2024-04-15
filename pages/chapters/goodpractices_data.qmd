@@ -105,9 +105,9 @@ Es gibt zahlreiche Bemühungen Datenmanagement in den Neurowissenschaften zu ver
 ![](img/standards_xkcd.png)
 [xkcd Comic](https://imgs.xkcd.com/comics/standards_2x.png)
 
-# Good Practices im Datenmanagement
+# Good Practices in der Datenverarbeitung
 
-Im Folgenden wird auf einige wichtige _Good Practices_ in der Datenverarbeitung eingegangen.
+Im Folgenden wird auf einige wichtige _Good Practices_ in der Datenverarbeitung eingegangen. Wichtig sind hier die Reproduzierbarkeit der Datenverarbeitungs- und Datenanalysepipelines sowie die Sicherstellung der Datenqualität.
 
 ## Reproduzierbarkeit
 
@@ -167,30 +167,38 @@ Das Teilen von Daten und Datenverarbeitungsskripten erhöht demnach die Wahrsche
 
 Für reproduzierbare Forschung gibt es inzwischen viele gute Tools:
 
-__Website der [Open Science Foundation](https://osf.io/)__
+#### OSF: Website der [Open Science Foundation](https://osf.io/)
 
 Eine kostenfreie und unkomplizierte Möglichkeit Daten und Skripts zu teilen, und diese in Projekten abzulegen. Es lässt sich dafür sogar ein *doi* erstellen. Auch Formulare für eine [Präregistration](https://www.cos.io/initiatives/prereg) sind hier zu finden.
 
-
-__FAIR Guiding Principles__
+#### FAIR Guiding Principles
 
 Beim Veröffentlichen von wissenschaftlichen Artikeln ist es empfohlen, die Daten (falls Anonymisierung möglich) sowie die Analyse-Skripte mitzuveröffentlichen. 
 
 Für Datensätze gelten die _FAIR Guiding Principles_ (@wilkinson_fair_2016): 
-    - **F** indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind
-    - **A** ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären
-    - **I** nteroperability: Verwendbare Datenformate/strukturen
-    - **R** eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen
+
+- __F__ indability: Es ist klar unter welchen Umständen und wie die Daten zugänglich sind
+
+- __A__ ccessibility: Daten sind zugänglich bzw. es ist klar wo sie zu finden wären
+    
+- __I__ nteroperability: Verwendbare Datenformate/strukturen
+    
+- __R__ eusability: gute Beschreibung des Datensatzes/der enthaltenen Variablen
     
 <aside> [Hier](https://www.go-fair.org/fair-principles) finden Sie weitere Informationen zu _FAIR_. </aside>
 
 
-__Brain Imaging Data Structure (BIDS)__
+#### BIDS: Brain Imaging Data Structure
 
 Für Neuroimaging-Daten gibt es beispielsweise vorgegebene Konventionen, wie ein Datensatz und die Verarbeitungsskripts abgespeichert werden. Ein Beispiel dafür ist [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io). So können Datensätze mit einer für alle verständlichen Struktur veröffentlicht und geteilt werden. @gorgolewski_brain_2016
 
 <aside> [Hier](https://andysbrainbook.readthedocs.io/en/latest/OpenScience/OS/BIDS_Overview.html) finden Sie weitere Informationen zu _BIDS_. </aside>
 
+
+Hier sehen Sie ein Beispiel, wie ein fMRI Datensatz in BIDS Struktur umgewandelt wird:
+
+![](img/bidsdata.jpg)
+@gorgolewski_brain_2016
 
 ### Coding: Best practices
 
@@ -215,7 +223,11 @@ Beim Kommentieren von Code sollte folgendes beachtet werden:
 -   Wenn Code von anderen kopiert wird, sollte die Quelle angegeben werden.
 
 
-## Datenqualität
+## Datenmanagement
+
+In diesem Kapitel wird auf die Sicherstellung der _Datenqualität_, sowie die Wichtigkeit von _Data collection plans_ und _Data dictionaries_ eingegangen.
+
+### Datenqualität
 
 Die folgenden sieben Indikatoren für gute Datenqualität wurden von C. Lewis (2024) zusammengefasst und sind [hier](https://cghlewis.github.io/ncme-data-cleaning-workshop/slides.html) zu finden.
 
@@ -264,14 +276,14 @@ Daten sollten in einem Format gespeichert werden in welchem sie analysiert werde
 
 - Alle Identifikationsmerkmale, sowohl direkte (Name, Adresse, E.Mail oder IP-Adresse, etc.) sowie indirekte (Alter, Geschlecht, Geburtsdatum, etc.) sollten so anonymisiert/kodiert sein, dass keine Rückschlüsse auf Personen möglich sind
 
-- Besondere Vorsicht bei: Offenen Fragen mit wörtlichen Antworten, extremen Werten, kleinen Stichproben/kleinen Zellgrössen (>3), Diagnosen, sensiblen Studienthemen
+- Besondere Vorsicht bei: Offenen Fragen mit wörtlichen Antworten, extremen Werten, kleinen Stichproben/kleinen Zellgrössen (<3), Diagnosen, sensiblen Studienthemen
 
 
-## Datenmanagement
+Es empfiehlt sich vor der definitiven Abspeicherung oder gar Veröffentlichung des Datensatzes, diese Punkte durchzuarbeiten und zu kontrollieren.
 
 ### Data collection plan
 
-Die Datenqualität kann erhöht werden, indem diese Punkte schon bei der __Planung__ der Datenerhebung beachtet und einbezogen werden. Wenn die Daten schon so eingegeben werden, werden die darauffolgenden _Data Cleaning_ Schritte verkürzt und weniger Fehler passieren. Die Dateneingabe und -analyse sollte __vor__ der Datenerhebung getestet und währenddessen immer wieder kontrolliert werden.
+Die Datenqualität kann erhöht werden, indem die obenstehenden Punkte schon bei der Planung der Datenerhebung beachtet und einbezogen werden. Wenn die Daten schon so eingegeben werden, werden die darauffolgenden _Data Cleaning_ Schritte verkürzt und weniger Fehler passieren. Die Dateneingabe und -analyse sollte __vor__ der Datenerhebung getestet und währenddessen immer wieder kontrolliert werden.
 
 
 ### Data dictionaries
@@ -289,16 +301,28 @@ __Beispiel Data Dictionary__
 | participant age | age | integer | 18 - 55 | raw files | | all | NA | 
 | experimental block | block | integer | 1, 2 | raw files | | all | NA | 
 
-
 :::callout-caution
 
 ## Hands-on: Erstellen Data Dictionary
 
 Erstellen Sie in kleinen Gruppen für eines unserer beiden Experimente ein Data Dictionary. Verwenden Sie hierfür die in den oben abgebildeten Beispielstabelle vorhandenen Spalten.
 
-_Tipp: Sie können die Tabelle auch ganz simpel in RMarkdown erstellen, wie das funktioniert können Sie [hier](https://quarto.org/docs/authoring/tables.html) nachlesen._
+_Tipp: Sie können die Tabelle auch ganz simpel in RMarkdown erstellen in dem Sie die Tabelle als Text (nicht im Codechunk) erstellen. Wie das funktioniert können Sie [hier](https://quarto.org/docs/authoring/tables.html) nachlesen._
 
 :::
 
+<aside>Ausführlichere Informationen über das Erstellen von _data dictionaries_ finden Sie z.B. [hier](https://journals.sagepub.com/doi/full/10.1177/2515245920928007) und [hier](https://osf.io/3y2ex/).</aside>
 
+Informationen zu Datentypen finden Sie [hier](https://databasecamp.de/daten/datentypen) oder in der untenstehenden Tabelle
+
+__Datentypen__
+
+| Datentyp | Beschrieb | Beispiel | Anwendungsbeispiel |
+|------|------|------|
+| integer | Ganzzahliger Wert | 1, 2, 3, 29 | Trialnummer |
+| double, float | Zahl mit Kommastellen | 1.234, 89.3, 1.0 | Reaktionszeit |
+| character, factor | Text oder Kategorie (nicht numerisch interpretiert) | speed, 0| Bedingung |
+| string | Text oder Kategorie in "" oder '' | "sub-001" | Versuchspersonen-identifikation |
+| datetime | Datum, Zeitpunkt | 2024-04-13, 21.12.23, 00:45:45 | Geburtsdatum, Experimentstart |
+| boolean | Einer von 2 möglichen Werten | FALSE, 0 | Antwort (rechts, links) | 
 
