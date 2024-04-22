@@ -62,7 +62,8 @@ website:
 
     - section: Analysemethoden
       contents:
-     # - pages/chapters/bayesian-statistics-1.qmd
+      - pages/chapters/data_analysis_intro.qmd
+      - pages/chapters/data_analysis_parameterestimates.qmd
      # - pages/chapters/bayesian-statistics-2.qmd
      # - pages/chapters/bayesian-statistics-3.qmd
      # - pages/chapters/uebung-5_bayesian_data_analysis.qmd
