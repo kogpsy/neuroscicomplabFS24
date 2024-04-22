@@ -103,6 +103,9 @@ __Gruppe Montag:__ 17. April 2024 23:55
 
 __Gruppe Mittwoch:__ 17. April 2024 23:55
 
+__Abgabetermin Korrektur:__ 30. April 2024 23:55
+(gilt für beide Gruppen, Abgabe in Extraordner auf Ilias)
+
 
 ## Trouble shooting
 
@@ -133,3 +136,23 @@ _Häufigste Fehlerquellen:_
 
 
 __Bei Problemen, fragen Sie bitte in der nächsten Veranstaltung nach.__
+
+
+## Feedback
+
+__Positiv aufgefallen:__
+
+- Kommentare zum Code und dem Vorgehen eingefügt (erleichtert spätere Nachvollziehbarkeit)
+
+- Kreative Lösungen (z.B. for-Loop zum Daten einlesen) und kreatives Layout (z.B. Inhaltsverzeichnis im Markdown für HTML-Datei)
+
+- Unterdrücken von `warnings` und `messages`: Diese können in RMarkdown im Output-File (z.B. `html`-File) unterdrückt werden, so kann der relevante Code nachvollzogen werden, aber es wird nicht für jeden Datensatz die Information abgedruckt (Leserlichkeit)
+
+- Neue Zeile nach der Pipe: Es muss zwar nicht nach jeder Pipe  eine neue Zeile genommen werden, der Code ist aber damit übersichtlicher und nachvollziehbarer.
+
+__Häufige Fehler:__
+
+- `glimpse()` vergessen (dies diente dazu, dass im `html`-File sictbar wird, ob bspw. alle relevanten Variablen im bereinigten Datensatz vorhanden sind, etc.)
+
+- Verwenden von _hard coded paths_: Der Pfad sollte in der Funktion, die für das Zusammenfügen und Vorbereiten der Datensätze ist als Variable eingefügt werden (z.B. `path`). Wird hier der Pfad einer Versuchsperson eingefügt, wird immer wieder derselbe Datensatz eingelesen! Auch sollte der Pfad immer von dem `.Rmd`-File aus gelesen werden können und keine lokalen Informationen (z.B. `C:/Users/...` verwenden).
+
