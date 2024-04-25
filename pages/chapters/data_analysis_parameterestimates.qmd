@@ -38,11 +38,13 @@ In der Bayesianischen Statistik hingegen wird für jeden möglichen Parameterwer
 
 :::callout-caution
 
+## Hands-on: Frequentistisch oder Bayesianisch?
+
 Ordnen Sie die untenstehenden Aussagen dem frequentistischen bzw. dem baysianischen Ansatz zu:
 
 - "Der Mittelwert liegt mit 95%-iger Wahrscheinlichkeit zwischen 0.75 und 0.85."
 
-- "Wenn das Experiment 100 Mal wiederholt wird, erhalten wir zu 95% einen Mittelwert zwischen 0.75 und 0.85."
+- "Wenn das Experiment 100 Mal wiederholt wird, enthält enthält der Konfidenzintervall zu 95% den wahren Wert."
 
 :::
 
