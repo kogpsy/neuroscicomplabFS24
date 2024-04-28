@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.221">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Daniel Fitze">
+
 <meta name="author" content="Gerda Wyssen">
-<title>Neurowissenschaft Computerlab - Automatisiertes importieren und vorverarbeiten</title>
+<meta name="author" content="Andrew Ellis">
+<meta name="author" content="Daniel Fitze">
+<meta name="description" content="Bayesianischer T-Test und Äquivalenztests">
+
+<title>Neurowissenschaft Computerlab - Hypothesentests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +24,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
+
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
@@ -73,7 +45,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,16 +70,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../../styles/global.css">
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles/global.css">
 <link rel="stylesheet" href="../../include/webex.css">
 </head>
+
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/logo.png" alt="" class="navbar-logo"></a>
+    <img src="../../assets/logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Neurowissenschaft Computerlab</span>
     </a>
@@ -117,12 +99,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item dropdown ">
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-admin" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">🗄️ Admin</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">
-<li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-admin">    
+        <li>
     <a class="dropdown-item" href="../../pages/admin/wichtiges.html" rel="" target="">
  <span class="dropdown-text">📚 Wichtiges zum Kurs</span></a>
   </li>  
@@ -131,9 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">📝 Terminübersicht</span></a>
   </li>  
     </ul>
-</li>
+  </li>
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -143,27 +125,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/datawrangling_automatisiert.html">Automatisiertes importieren und vorverarbeiten</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_hypothesistesting.html">Hypothesentests</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Einführung</span></a>
@@ -171,8 +159,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/computerlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computerlab</span></a>
@@ -209,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -218,8 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/neurowissenschaftliche_experimente.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
@@ -250,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -259,8 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/goodpractices_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Good Practices in der Datenverarbeitung</span></a>
@@ -280,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/datawrangling_automatisiert.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/chapters/datawrangling_automatisiert.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Automatisiertes importieren und vorverarbeiten</span></a>
   </div>
 </li>
@@ -291,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -300,8 +288,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/data_visualization_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Grafiken erstellen mit <code>ggplot</code></span></a>
@@ -332,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -341,8 +329,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/chapters/data_analysis_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einführung</span></a>
@@ -356,50 +344,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/chapters/data_analysis_hypothesistesting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/chapters/data_analysis_hypothesistesting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Hypothesentests</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Modellierung von Daten</span></span>
   </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#stroop-experiment-data-wrangling" id="toc-stroop-experiment-data-wrangling" class="nav-link" data-scroll-target="#stroop-experiment-data-wrangling"><strong>Stroop-Experiment</strong> data wrangling</a></li>
-  <li><a href="#daten-mit-eigener-funktion-einlesen" id="toc-daten-mit-eigener-funktion-einlesen" class="nav-link" data-scroll-target="#daten-mit-eigener-funktion-einlesen">Daten mit eigener Funktion einlesen</a></li>
-  <li>
-<a href="#einlesen-automatisieren" id="toc-einlesen-automatisieren" class="nav-link" data-scroll-target="#einlesen-automatisieren">Einlesen Automatisieren</a>
+  <li><a href="#bayesianische-hypothesentests" id="toc-bayesianische-hypothesentests" class="nav-link active" data-scroll-target="#bayesianische-hypothesentests">Bayesianische Hypothesentests</a>
   <ul class="collapse">
-<li><a href="#alle-files-von-hand-einlesen" id="toc-alle-files-von-hand-einlesen" class="nav-link" data-scroll-target="#alle-files-von-hand-einlesen">Alle Files von Hand einlesen</a></li>
-  <li><a href="#alle-files-mit-for-loop-einlesen" id="toc-alle-files-mit-for-loop-einlesen" class="nav-link" data-scroll-target="#alle-files-mit-for-loop-einlesen">Alle Files mit <code>for</code>-Loop einlesen</a></li>
-  <li><a href="#alle-files-mit-der-funktion-map-einlesen" id="toc-alle-files-mit-der-funktion-map-einlesen" class="nav-link" data-scroll-target="#alle-files-mit-der-funktion-map-einlesen">Alle Files mit der Funktion <code>map()</code> einlesen</a></li>
+  <li><a href="#modellvergleich" id="toc-modellvergleich" class="nav-link" data-scroll-target="#modellvergleich">Modellvergleich</a></li>
+  <li><a href="#bayes-factors" id="toc-bayes-factors" class="nav-link" data-scroll-target="#bayes-factors">Bayes Factors</a></li>
+  <li><a href="#bayesianischer-t-test" id="toc-bayesianischer-t-test" class="nav-link" data-scroll-target="#bayesianischer-t-test">Bayesianischer <span class="math inline">\(t\)</span>-Test</a></li>
+  </ul></li>
+  <li><a href="#äquivalenztests" id="toc-äquivalenztests" class="nav-link" data-scroll-target="#äquivalenztests">Äquivalenztests</a>
+  <ul class="collapse">
+  <li><a href="#festlegen-des-sesois" id="toc-festlegen-des-sesois" class="nav-link" data-scroll-target="#festlegen-des-sesois">Festlegen des SESOIs</a></li>
+  <li><a href="#tost-verfahren" id="toc-tost-verfahren" class="nav-link" data-scroll-target="#tost-verfahren">TOST-Verfahren</a></li>
+  </ul></li>
   </ul>
-</li>
-  <li><a href="#kompletter-stroop-code-an-einem-ort" id="toc-kompletter-stroop-code-an-einem-ort" class="nav-link" data-scroll-target="#kompletter-stroop-code-an-einem-ort">Kompletter Stroop Code an einem Ort</a></li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/goodpractices_data.html">Data wrangling</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/datawrangling_automatisiert.html">Automatisiertes importieren und vorverarbeiten</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Automatisiertes importieren und vorverarbeiten</h1>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_hypothesistesting.html">Hypothesentests</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Hypothesentests</h1>
 </div>
 
+<div>
+  <div class="description">
+    Bayesianischer T-Test und Äquivalenztests
+  </div>
+</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -409,7 +407,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    <p class="author">Gerda Wyssen <a href="https://orcid.org/0000-0001-7427-3149" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author"><a href="https://github.com/awellis">Andrew Ellis</a> <a href="https://orcid.org/0000-0002-2788-936X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern
+          </p>
+      </div>
+      <div class="quarto-title-meta-contents">
+    <p class="author">Daniel Fitze <a href="https://orcid.org/0000-0003-0158-7459" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -428,133 +434,188 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-</header><p>Für diesen Teil benötigen Sie das <em>R-Project</em> <code>complab_datawrangling_stroop</code> mit den 3 von Ihnen erhobenen Datensätzen des Stroop Experiments.</p>
-<section id="setup" class="level2"><h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<div class="cell" data-warnings="false" data-errors="false">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="stroop-experiment-data-wrangling" class="level2"><h2 class="anchored" data-anchor-id="stroop-experiment-data-wrangling">
-<strong>Stroop-Experiment</strong> data wrangling</h2>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Daten vorverarbeiten</span></span>
-<span><span class="va">d_stroop</span> <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/stroop_example_1.csv"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">trials_test.thisN</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>trial <span class="op">=</span> <span class="va">trials_test.thisN</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>id <span class="op">=</span> <span class="va">participant</span>, </span>
-<span>           <span class="va">trial</span>,</span>
-<span>           <span class="va">word</span>, </span>
-<span>           <span class="va">color</span>, </span>
-<span>           <span class="va">congruent</span>, </span>
-<span>           resp <span class="op">=</span> <span class="va">keyResp_test_run.keys</span>, </span>
-<span>           corr <span class="op">=</span> <span class="va">keyResp_test_run.corr</span>, </span>
-<span>           rt <span class="op">=</span> <span class="va">keyResp_test_run.rt</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="daten-mit-eigener-funktion-einlesen" class="level2"><h2 class="anchored" data-anchor-id="daten-mit-eigener-funktion-einlesen">Daten mit eigener <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/programmieren_2.html#funktionen">Funktion</a> einlesen</h2>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">read_stroop</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">path</span><span class="op">)</span><span class="op">{</span></span>
-<span>    <span class="co"># Code kopiert von oben</span></span>
-<span>    <span class="va">d_stroop</span> <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">path</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">trials_test.thisN</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>trial <span class="op">=</span> <span class="va">trials_test.thisN</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>id <span class="op">=</span> <span class="va">participant</span>, </span>
-<span>           <span class="va">trial</span>,</span>
-<span>           <span class="va">word</span>, </span>
-<span>           <span class="va">color</span>, </span>
-<span>           <span class="va">congruent</span>, </span>
-<span>           resp <span class="op">=</span> <span class="va">keyResp_test_run.keys</span>, </span>
-<span>           corr <span class="op">=</span> <span class="va">keyResp_test_run.corr</span>, </span>
-<span>           rt <span class="op">=</span> <span class="va">keyResp_test_run.rt</span><span class="op">)</span></span>
-<span>    <span class="co"># ---------------------</span></span>
-<span>    <span class="va">d_stroop</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu">read_stroop</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"data/stroop_example_1.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="einlesen-automatisieren" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="einlesen-automatisieren">Einlesen Automatisieren</h2>
-<p>Wir benötigen eine Liste aller Daten files. Die Funktion <code><a href="https://rdrr.io/r/base/list.files.html">list.files()</a></code> gibt einer liste aller Dokumente in einem Ordner zurück.</p>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">'data/'</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">'data/'</span>, pattern <span class="op">=</span> <span class="st">'stroop'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Um die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.</p>
-<div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">files</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">'data/'</span>, pattern <span class="op">=</span> <span class="st">'stroop'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">'data/'</span>, <span class="va">.</span>, sep <span class="op">=</span> <span class="st">''</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+</header>
+
+<p>In den Neurowissenschaften ist es wichtig zu wissen, welche experimentellen Manipulationen einen Effekt haben. Genauso wichtig ist es jedoch zu wissen, welche Manipulationen keinen Effekt haben. Diese Frage zu beantworten ist jedoch mit traditionellen statistischen Ansätzen schwierig. Nicht signifikante Ergebnisse sind schwer zu interpretieren: Unterstützen sie die Nullhypothese (<em>evidence of absence</em>) oder sind sie einfach nicht informativ (<em>absence of evidence</em>)?</p>
+<p>Zwei Ansätze zur Beantwortung dieser Frage werden im Folgenden, anhand des Beispiels von <span class="math inline">\(t\)</span>-Tests, vorgestellt:</p>
+<ul>
+<li>Bayes Factors für Null- und Alternativhypothese</li>
+<li>Äquivalenztests (TOST Verfahren)</li>
+</ul>
+<section id="bayesianische-hypothesentests" class="level1 page-columns page-full">
+<h1>Bayesianische Hypothesentests</h1>
+<section id="modellvergleich" class="level2">
+<h2 class="anchored" data-anchor-id="modellvergleich">Modellvergleich</h2>
+<p>Beim Modellvergleich interessiert welches Modell die Daten besser erklärt. Die Bayes’sche Regel kann verwendet werden, um die Wahrscheinlichkeit zweier Modelle <span class="math inline">\(\mathcal{M1}\)</span> und <span class="math inline">\(\mathcal{M2}\)</span> zu berechnen (gemittelt über alle möglichen Parameterwerte innerhalb des Modells):</p>
+<p><span class="math display">\[
+p(\mathcal{M}_1 | y) = \frac{P(y | \mathcal{M}_1) p(\mathcal{M}_1)}{p(y)}
+\]</span></p>
+<p>und</p>
+<p><span class="math display">\[
+p(\mathcal{M}_2 | y) = \frac{P(y | \mathcal{M}_2) p(\mathcal{M}_2)}{p(y)}
+\]</span></p>
+<p>Hierfür kann das Verhältnis der beiden Wahrscheinlichkeiten (_Posterior Odds__) berechnet werden: <span class="math inline">\(p(\mathcal{M}_1 | y) / p(\mathcal{M}_2 | y)\)</span>, was gekürzt folgende Formel ergibt:</p>
+<p><span class="math display">\[
+\underbrace{\frac{p(\mathcal{M}_1 | y)} {p(\mathcal{M}_2 | y)}}_\text{Posterior odds} = \underbrace{\frac{P(y | \mathcal{M}_1)}{P(y | \mathcal{M}_2)}}_\text{Ratio of marginal likelihoods} \cdot \underbrace{ \frac{p(\mathcal{M}_1)}{p(\mathcal{M}_2)}}_\text{Prior odds}
+\]</span></p>
+<p>Auf der linken Seite steht das Verhältnis der <em>a-posteriori Wahrscheinlichkeiten</em> der beiden Modelle, auf der rechten Seite das Verhältnis der <em>Marginal Likelihoods</em> der beiden Modelle, multipliziert mit den <em>a-priori Wahrscheinlichkeiten</em> jedes Modells.</p>
+<p>Die <strong>Marginal Likelihoods</strong> (auch bekannt als Modell-Evidenz) zeigen, wie gut jedes Modell die Daten erklärt. Diese geben darüber Auskunft, wie wahrscheinlich die Daten sind, wenn wir alle möglichen Parameterwerte berücksichtigen. Die Marginal Likelihoods sind also die Wahrscheinlichkeit der Daten, gemittelt über alle möglichen Parameterwerte.</p>
+</section>
+<section id="bayes-factors" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="bayes-factors">Bayes Factors</h2>
+<p>Die <strong>Posterior Odds</strong> sagen uns, welches Modell wir a-priori und a-posteriori für wahrscheinlicher halten. Da unsere a-priori Überzeugungen aber subjektiv sein können, sind wir eigentlich nur an dem Verhältnis der marginalen Likelihoods interessiert. Wir können annehmen, dass a-priori die beiden Modelle gleichwahrscheinlich sind; das heisst, wir setzen die Prior Odds auf 1 setzen. So erhalten wir den <strong>Bayes Factor</strong>:</p>
+<p><span class="math display">\[
+\frac{P(y | \mathcal{M}_1)}{P(y | \mathcal{M}_2)}
+\]</span></p>
+<p>Wenn <span class="math inline">\(P(y | \mathcal{M}_1)\)</span> grösser ist als <span class="math inline">\(P(y | \mathcal{M}_2)\)</span>, dann ist der Bayes Factor grösser als 1. Falls <span class="math inline">\(P(y | \mathcal{M}_1)\)</span> kleiner ist als <span class="math inline">\(P(y | \mathcal{M}_2)\)</span>, dann ist der Bayes Factor kleiner als 1. Der <strong>Bayes Factor</strong> gibt also direkt an, welches Modell die Daten besser erklärt.</p>
+<p>Wenn wir zwei Modelle <span class="math inline">\(\mathcal{M}_1\)</span> und <span class="math inline">\(\mathcal{M}_2\)</span> vergleichen, wird der <strong>Bayes Factor</strong> oftmals so geschrieben:</p>
+<p><span class="math display">\[ BF_{12} = \frac{P(y | \mathcal{M}_1)}{P(y | \mathcal{M}_2)}\]</span></p>
+<p><span class="math inline">\(BF_{12}\)</span> ist also der Bayes Factor für <span class="math inline">\(\mathcal{M}_1\)</span> und gibt an um wieviel <span class="math inline">\(\mathcal{M}_1\)</span> die Daten besser “erklärt”.</p>
+<p>Als Beispiel, wenn wir ein <span class="math inline">\(BF_{12} = 5\)</span> erhalten, bedeutet dies, dass die Daten 5 Mal wahrscheinlicher unter Modell 1 als unter Modell 2 aufgetreten sind. Umgekehrt, wenn <span class="math inline">\(BF_{12} = 0.2\)</span>, dann sind die Daten 5 Mal wahrscheinlicher unter Modell 2 aufgetreten.</p>
+<p>Wenn wir <span class="math inline">\(BF_{12} = 0.2\)</span> erhalten, ist es einfacher, Zähler und Nenner zu vertauschen:</p>
+<p><span class="math display">\[ BF_{21} = \frac{P(y | \mathcal{M}_2)}{P(y | \mathcal{M}_1)}\]</span></p>
+<p>Die folgenden <a href="https://www.statology.org/bayes-factor/">Interpretationen</a> von Bayes Factors werden manchmal verwendet, obwohl es nicht wirklich notwendig ist, diese zu klassifizieren. Bayes Factors sind ein kontinuierliches Mass für Evidenz.</p>
+<p>Zusammenfassend kann gesagt werden:</p>
+<blockquote class="blockquote">
+<p>Der Bayes Factor ist ein Verhältnis zweier konkurrierender statistischer Modelle, die durch ihre Evidenz dargestellt werden, und wird verwendet, um die Unterstützung für ein Modell gegenüber dem anderen zu quantifizieren. Die fraglichen Modelle können einen gemeinsamen Satz von Parametern haben, z. B. eine Nullhypothese und eine Alternative, dies ist jedoch nicht erforderlich. Zum Beispiel könnte es sich auch um ein nichtlineares Modell im Vergleich zu seiner linearen Näherung handeln. <a href="https://en.wikipedia.org/wiki/Bayes_factor">Wikipedia</a></p>
+</blockquote>
+<p>Bayes Factors sind eine alternative Methode, um Evidenz zu quantifizieren. Alternativ zu p-Werten bieten Bayes Factors Evidenz <strong>für</strong> oder <strong>gegen</strong> eine Hypothese.</p>
 <aside>
-Hier wird die <em>Pipe</em> des <code>magritter</code>-<em>Packages</em> verwendet (<code>%&gt;%</code>) statt die <em>Base-R Pipe</em> (<code>|&gt;</code>). Mit <code>%&gt;%</code> haben wir die Möglichkeit mit dem <code>.</code> zu bestimmen wo die weitergeleiteten Inhalte der Pipe eingefügt werden (nach <code>data/</code>). Informationen zu den Unterschieden der <em>Pipes</em> finden Sie <a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">hier</a>.
-</aside><section id="alle-files-von-hand-einlesen" class="level3"><h3 class="anchored" data-anchor-id="alle-files-von-hand-einlesen">Alle Files von Hand einlesen</h3>
-<p>Jedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">file1</span> <span class="op">=</span> <span class="va">files</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="va">file2</span> <span class="op">=</span> <span class="va">files</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
-<span><span class="va">file3</span> <span class="op">=</span> <span class="va">files</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
-<span></span>
-<span><span class="va">d1</span> <span class="op">=</span> <span class="fu">read_stroop</span><span class="op">(</span><span class="va">file1</span><span class="op">)</span></span>
-<span><span class="va">d2</span> <span class="op">=</span> <span class="fu">read_stroop</span><span class="op">(</span><span class="va">file2</span><span class="op">)</span></span>
-<span><span class="va">d3</span> <span class="op">=</span> <span class="fu">read_stroop</span><span class="op">(</span><span class="va">file3</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">d_hand</span> <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">d1</span>, <span class="va">d2</span>, <span class="va">d3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span class="math inline">\(p\)</span>-Werte sind schwierig zu erklären, auch für erfahrene Forschende, wie dieses <a href="https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">Video</a> zeigt.
+</aside>
+</section>
+<section id="bayesianischer-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="bayesianischer-t-test">Bayesianischer <span class="math inline">\(t\)</span>-Test</h2>
+<p>Wir führen oft Modellvergleiche zwischen einer Nullhypothese <span class="math inline">\(\mathcal{H}_0\)</span> und einer alternativen Hypothese <span class="math inline">\(\mathcal{H}_1\)</span> durch (Die Begriffe “Modell” und “Hypothese” werden synonym verwendet). Eine Nullhypothese bedeutet, dass wir den Wert des Parameters auf einen bestimmten Wert festlegen, z.B. <span class="math inline">\(\theta = 0.5\)</span>. Die alternative Hypothese bedeutet, dass wir den Wert des Parameters nicht festlegen, sondern eine a-priori Verteilung annehmen. Im Gegensatz zu NHST muss die Alternativhypothese spezifiziert werden. Mit anderen Worten, die Parameter müssen eine a-priori Verteilung erhalten.</p>
+<p>In JASP werden Bayes Factors (BF) so berichtet:</p>
+<p><span class="math display">\[ BF_{10} = \frac{P(y | \mathcal{H}_1)}{P(y | \mathcal{H}_0)}\]</span></p>
+<p>Dies ist ein BF für eine ungerichtete Alternative <span class="math inline">\(\mathcal{H}_1\)</span> gegen die Nullhypothese <span class="math inline">\(\mathcal{H}_0\)</span>. Wenn wir einen gerichteten Test durchführen, dann wird der BF entweder so (<span class="math inline">\(&gt;0\)</span>):</p>
+<p><span class="math display">\[ BF_{+0} = \frac{P(y | \mathcal{H}_+)}{P(y | \mathcal{H}_0)}\]</span></p>
+<p>oder so (<span class="math inline">\(&lt;0\)</span>) berichtet. <span class="math display">\[ BF_{-0} = \frac{P(y | \mathcal{H}_-)}{P(y | \mathcal{H}_0)}\]</span></p>
+<p>Wenn wir nun einen BF für die Nullhypothese wollen, können wir einfach den Kehrwert von <span class="math inline">\(BF_{10}\)</span> nehmen:</p>
+<p><span class="math display">\[ BF_{01} = \frac{1}{BF_{10}}\]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section><section id="alle-files-mit-for-loop-einlesen" class="level3"><h3 class="anchored" data-anchor-id="alle-files-mit-for-loop-einlesen">Alle Files mit <code>for</code>-Loop einlesen</h3>
-<p>Das Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame <code>d_loop</code> erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame <code>d_loop</code> angehängt.</p>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_loop</span> <span class="op">=</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">file</span> <span class="kw">in</span> <span class="va">files</span><span class="op">)</span><span class="op">{</span></span>
-<span>    <span class="va">d_tmp</span> <span class="op">=</span> <span class="fu">read_stroop</span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span>
-<span>    <span class="va">d_loop</span> <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">d_loop</span>, <span class="va">d_tmp</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Hands-on: Bayesiansicher <span class="math inline">\(t\)</span>-Test in JASP
 </div>
-</section><section id="alle-files-mit-der-funktion-map-einlesen" class="level3"><h3 class="anchored" data-anchor-id="alle-files-mit-der-funktion-map-einlesen">Alle Files mit der Funktion <code>map()</code> einlesen</h3>
-<p><code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor <code>files</code> enthält die Pfade zu den Daten Files. Mit <code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> können wir also unsere selbst erstellte Funktion <code>read_stroop()</code> auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.</p>
-<div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_map1</span> <span class="op">=</span> <span class="va">files</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">read_stroop</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Die Funktion <code><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr()</a></code> macht das gleiche wie <code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.</p>
-<div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">d_map2</span> <span class="op">=</span> <span class="va">files</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr</a></span><span class="op">(</span><span class="va">read_stroop</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Laden Sie <a href="../../downloadable_files/data_stroop_wide.csv">hier</a> den Stroop Datensatz herunter. Der Datensatz wurde für diese Zwecke ins <code>wide</code>-Format angepasst, das R-Skript dafür können Sie sich <a href="../../downloadable_files/generate_dataset_jasp.R">hier</a> ansehen.</p></li>
+<li><p>Laden Sie den Datensatz in JASP und schauen Sie ihn an.</p></li>
+<li><p>Wie könnte die Forschungsfrage lauten? Was ist die Null- und Alternativhypothese?</p></li>
+<li><p>Führen Sie einen `Bayesian Paired Sample <span class="math inline">\(t\)</span>-Test aus.</p></li>
+<li><p>Explorieren Sie die Resultate und welche Optionen Sie für weitere Einstellungen haben.</p></li>
+<li><p>Welche Bayes Factors finden Sie für die Nullhypothese? Und für die Alternativhypothese?</p></li>
+</ul>
 </div>
-</section></section><section id="kompletter-stroop-code-an-einem-ort" class="level2"><h2 class="anchored" data-anchor-id="kompletter-stroop-code-an-einem-ort">Kompletter Stroop Code an einem Ort</h2>
-<div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">read_stroop</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">path</span><span class="op">)</span><span class="op">{</span></span>
-<span>    <span class="va">d_stroop</span> <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">path</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">trials_test.thisN</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>trial <span class="op">=</span> <span class="va">trials_test.thisN</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>id <span class="op">=</span> <span class="va">participant</span>, </span>
-<span>           <span class="va">trial</span>,</span>
-<span>           <span class="va">word</span>, </span>
-<span>           <span class="va">color</span>, </span>
-<span>           <span class="va">congruent</span>, </span>
-<span>           resp <span class="op">=</span> <span class="va">keyResp_test_run.keys</span>, </span>
-<span>           corr <span class="op">=</span> <span class="va">keyResp_test_run.corr</span>, </span>
-<span>           rt <span class="op">=</span> <span class="va">keyResp_test_run.rt</span><span class="op">)</span></span>
-<span>    <span class="va">d_stroop</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="va">d</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">'data/'</span>, pattern <span class="op">=</span> <span class="st">'stroop'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">'data/'</span>, <span class="va">.</span>, sep <span class="op">=</span> <span class="st">''</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr</a></span><span class="op">(</span><span class="va">read_stroop</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">d</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"data/clean/dataset_stroop_clean.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="co"># neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Weiterführende Informationen zu Bayesianischem Hypothesentesten
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Vertiefende Informationen, inkl. Herleitung, zu Bayesianischen Hypothesentest finden Sie <a href="https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/bayesian-statistics-3.html">hier</a>.</p></li>
+<li><p><a href="https://rpsychologist.com/d3/bayes/">Hier</a> finden Sie eine interaktive Visualisierung.</p></li>
+<li><p><a href="https://www.rdocumentation.org/packages/brms/versions/2.21.0"><code>brms</code></a> ist ein <em>R-Package</em>, welches sich für Bayesianische Multilevel-Modelle eignet, da JASP relativ rasch an die Grenzen stösst für komplexere Modelle.</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="äquivalenztests" class="level1">
+<h1>Äquivalenztests</h1>
+<p>Ein nicht signifikanter Nullhypothesensignifikanztest (NHST) bedeutet nicht, dass kein Unterschied zwischen Gruppen/Bedingungen besteht, nur dass keiner gefunden werden konnte. Statt also aussschliesslich einen NHST durchzuführen und gegen <em>Null</em> zu testen, können Äquivalenztests, wie das “Two One-Sided Tests” (TOST) Verfahren durchgeführt werden. Dabei werden zwei einseitige <span class="math inline">\(t\)</span>-Tests ausgeführt, um zu testen, ob der Mittelwertsunterschied innerhalb eines gewissen Rahmens liegt. Dieser Rahmen muss von den Forschenden festgelegt werden und bezeichnet die kleinstmöglichste interessierende Effekt: <em>Smallest Effect Size of Interest</em> (SESOI). Mit dem TOST-Verfahren wird festgestellt, ob der gefundene Unterschied überraschend gering ist, wenn ein Effekt mindestens so gross wie der definierte SESOI tatsächlich existiert. <a href="https://journals.sagepub.com/doi/10.1177/2515245918770963">Lakens, Scheel &amp; Isager, 2018</a>.</p>
+<section id="festlegen-des-sesois" class="level3">
+<h3 class="anchored" data-anchor-id="festlegen-des-sesois">Festlegen des SESOIs</h3>
+<p>Der SESOI wird durch eine untere (<em>lower bound</em> <span class="math inline">\(\Delta\)</span>L) und obere Grenze (<em>upper bound</em> <span class="math inline">\(\Delta\)</span>U).</p>
+<p>Es gibt keine vorgegebenen Regeln für das Festlegen von SESOIs. Sie müssen von den Forschenden (<strong>vor</strong> der Datenanalyse) passend für Fragestellung und Feld festgelegt werden. Dafür gibt es folgende Ansätze:</p>
+<ul>
+<li><p>Subjektive Ansätze:</p>
+<ul>
+<li><p>Benchmarks (z.B. Standardisierte Effektgrössen wie <span class="math inline">\(d\)</span> = 0.5)</p></li>
+<li><p>vorherige Studien</p></li>
+<li><p>begründet in vorhandenen Ressourcen für die Studie</p></li>
+</ul></li>
+<li><p>Objektive Ansätze:</p>
+<ul>
+<li><p>theoretische Begründungen (z.B. just-noticeable difference, JND)</p></li>
+<li><p>basierend auf quantifizierbaren theoretischen Vorhersagen (z.B. durch computational models)</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="tost-verfahren" class="level3">
+<h3 class="anchored" data-anchor-id="tost-verfahren">TOST-Verfahren</h3>
+<p>Nach dem Festlegen des SESOIs werden <strong>zwei</strong> einseitige <span class="math inline">\(t\)</span>-Tests durchgeführt:</p>
+<ul>
+<li>Test, ob Unterschied signifikant höher als untere Grenze (<span class="math inline">\(\Delta\)</span>L)</li>
+<li>Test, ob Unterschied signifikant tiefere als obere Grenze (<span class="math inline">\(\Delta\)</span>U)</li>
+</ul>
+<p>Wenn beide signifikant ausfallen sind die Gruppen/Bedingungen äquivalent. Es muss nicht für zweifaches Testen korrigiert werden, weil beide Tests signifikant sein müssen, um Äquivalenz anzunehmen. Statt <span class="math inline">\(p\)</span>-Werte können auch Konfidenzintervalle verwendet werden: Wenn das 90% Konfidenzintervall innerhalb des SESOIs liegt wird Äquivalenz angenommen. Das Konfidenzintervall muss festgelegt werden, es könnte auch z.B. 95%, 87% oder 99% sein (oder eine andere Zahl), es muss daher vor dem Test gewählt werden.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hands-on: Äquivalenztests in JASP
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Definieren Sie einen SESOI für den Unterschied der Reaktionszeiten zwischen der kongruenten und inkongruenten Bedingung im Stroop Task. Was ist <span class="math inline">\(\Delta\)</span>L, was ist <span class="math inline">\(\Delta\)</span>U?</p></li>
+<li><p>Aktivieren Sie in JASP das Modul <strong>Equivalence T-Tests</strong></p></li>
+<li><p>Sie können wieder dieselben Daten wie vorhin verwenden.</p></li>
+<li><p>Wählen Sie die beiden Variablen zum Vergleich aus.</p></li>
+<li><p>Geben Sie bei <code>Equivalence Region</code> Ihren SESOI ein.</p></li>
+<li><p>Explorieren Sie die Resultate und welche Optionen Sie für weitere Einstellungen haben.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Weiterführende Informationen zu Äquivalenztests
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Vertiefende Informationen finden Sie <a href="https://journals.sagepub.com/doi/10.1177/2515245918770963">in diesem Paper</a>.</p></li>
+<li><p><a href="https://rpsychologist.com/d3/equivalence/">Hier</a> finden Sie eine interaktive Visualisierung.</p></li>
+<li><p><a href="https://jasp-stats.org/2020/06/02/frequentist-and-bayesian-equivalence-testing-in-jasp/">Equivalence-Testing in JASP</a></p></li>
+<li><p>In <em>Jamovi</em> können Äquivalenztest mit dem Modul <em>TOSTER</em> durchgeführt werden (<a href="https://daniellakens.blogspot.com/2017/03/equivalence-testing-in-jamovi.html">weitere Informationen</a>)</p></li>
+</ul>
+</div>
 </div>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{fitze,
-  author = {Fitze, Daniel and Wyssen, Gerda},
-  title = {Automatisiertes Importieren Und Vorverarbeiten},
-  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling_automatisiert.html},
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
+  author = {Wyssen, Gerda and Ellis, Andrew and Fitze, Daniel},
+  title = {Hypothesentests},
+  url = {https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_analysis_hypothesistesting.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-fitze" class="csl-entry quarto-appendix-citeas" role="listitem">
-Fitze, Daniel, and Gerda Wyssen. n.d. <span>“Automatisiertes Importieren
-Und Vorverarbeiten.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling_automatisiert.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/datawrangling_automatisiert.html</a>.
-</div></div></section></div></main><!-- /main --><script>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-wyssen" class="csl-entry quarto-appendix-citeas" role="listitem">
+Wyssen, Gerda, Andrew Ellis, and Daniel Fitze. n.d.
+<span>“Hypothesentests.”</span> <a href="https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_analysis_hypothesistesting.html">https://kogpsy.github.io/neuroscicomplabFS24//pages/chapters/data_analysis_hypothesistesting.html</a>.
+</div></div></section></div></main> <!-- /main -->
+<script>
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
@@ -759,7 +820,8 @@ window.onload = function() {
   update_total_correct();
 }
 
-</script><script id="quarto-html-after-body" type="application/javascript">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1214,7 +1276,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1223,16 +1286,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/kogpsy/neuroscicomplabFS24">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

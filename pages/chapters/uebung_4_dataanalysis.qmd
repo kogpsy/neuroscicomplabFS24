@@ -1,0 +1,69 @@
+---
+title: "Übung 4 - Daten Analyse"
+description: Bayesianischer $t$-Test oder Äquivalenztest durchführen.
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
+license: CC BY
+citation: true
+#bibliography: ../../bibliography_gw.bib
+format:
+    html:
+        toc: true
+---
+
+## Auftrag
+
+Beantworten Sie eine Fragestellung mit einem Bayesianischen $t$-Test oder einem TOST-Äquivalenztest in JASP. Interpretieren Sie die Resultate und ordnen Sie die Erkenntnisse kritisch ein. 
+Laden Sie anschliessend sowohl das JASP File, sowie das ausgefüllte Formular mit Ihren Antworten hoch.
+
+## Vorgehen
+
+- Laden Sie [hier](../../downloadable_files/data_rdk_wide.csv) das Datenfile herunter.
+    
+- Laden Sie [hier](../../downloadable_files/Name_Vorname_Uebung_4.docx) das auszufüllende Word-File mit der Arbeitsanleitung herunter.
+
+- Arbeiten Sie entlang der Arbeitsanleitung.
+
+- Speichern Sie das Word-File und `.jasp`-File unter `Name_Vorname_Uebung_4` ab. Kontrollieren Sie das Word-File auf Vollständigkeit.
+
+- Laden Sie das `.jasp`-Analyse-File __und__ das Word-File auf Ilias hoch.
+
+
+## Informationen zum Datensatz
+
+Der Datensatz stammt aus dem Random-Dot Experiment und wurde vom `long` zum `wide` Format umgewandelt.
+
+<aside>Falls Sie der Code dafür interessiert, ist dieser [hier](../../downloadable_files/generate_dataset_jasp.R) zu finden, diesen brauchen Sie aber für die Übung nicht. </aside>
+
+Er enthält folgende Variablen:
+
+- Versuchspersonenidentifikation (`id`)
+
+- Variablenpaar (`speed`, `accuracy`)
+
+...
+  
+## Abgabetermine
+
+__Gruppe Montag:__ 17.05.2024 23:55
+
+__Gruppe Mittwoch:__ 19.05.2024 23:55
+
+<!-- __Abgabetermin Korrektur:__ 30. April 2024 23:55 -->
+<!-- (gilt für beide Gruppen, Abgabe in Extraordner auf Ilias) -->
+
+
+
+## Trouble Shooting
+
+__Equivalence Testing funktioniert nicht in JASP__
+
+Stellen Sie sicher, dass Sie die neuste Version (0.18.3.0) installiert haben, in früheren Versionen gab es bei diesem Modul einen Bug, der aber jetzt geflickt ist.
+
