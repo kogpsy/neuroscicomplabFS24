@@ -1,6 +1,6 @@
 ---
 title: "Hypothesentests"
-description: "Bayesianischer T-Test und Äquivalenztests"
+description: "Bayesianischer $t$-Test und Äquivalenztests (TOST)"
 author:
   - name: Gerda Wyssen
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
@@ -24,7 +24,7 @@ format:
         code-link: true
 ---
 
-In den Neurowissenschaften ist es wichtig zu wissen, welche experimentellen Manipulationen einen Effekt haben. Genauso wichtig ist es jedoch zu wissen, welche Manipulationen keinen Effekt haben. Diese Frage zu beantworten ist jedoch mit traditionellen statistischen Ansätzen schwierig. Nicht signifikante Ergebnisse sind schwer zu interpretieren: Unterstützen sie die Nullhypothese (_evidence of absence_) oder sind sie einfach nicht informativ (_absence of evidence_)?
+In den Neurowissenschaften ist es wichtig zu wissen, welche experimentellen Manipulationen einen Effekt haben. Genauso wichtig ist es jedoch zu wissen, welche Manipulationen keinen Effekt haben. Diese Frage zu beantworten ist jedoch mit traditionellen statistischen Ansätzen schwierig. Nicht signifikante Ergebnisse sind schwer zu interpretieren: Unterstützen sie die Nullhypothese (__evidence of absence__) oder sind sie einfach nicht informativ (__absence of evidence__)?
 
 Zwei Ansätze zur Beantwortung dieser Frage werden im Folgenden, anhand des Beispiels von $t$-Tests, vorgestellt:
 
@@ -113,7 +113,6 @@ $$ BF_{-0} = \frac{P(y | \mathcal{H}_-)}{P(y | \mathcal{H}_0)}$$
 Wenn wir nun einen BF für die Nullhypothese wollen, können wir einfach den Kehrwert von $BF_{10}$ nehmen:
 
 $$ BF_{01} = \frac{1}{BF_{10}}$$
-
 
 
 :::callout-caution

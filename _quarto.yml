@@ -65,7 +65,7 @@ website:
       - pages/chapters/data_analysis_intro.qmd
       - pages/chapters/data_analysis_parameterestimates.qmd
       - pages/chapters/data_analysis_hypothesistesting.qmd
-     # - pages/chapters/uebung_4_dataanalysis.qmd
+      - pages/chapters/uebung_4_dataanalysis.qmd
 
     - section: Modellierung von Daten
       contents:
