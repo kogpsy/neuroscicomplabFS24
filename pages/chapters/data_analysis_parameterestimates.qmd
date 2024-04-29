@@ -1,6 +1,6 @@
 ---
 title: "Parameterschätzung"
-description: "Einführung in die Bayesianische Statistik I"
+description: "Einführung in die Bayesianische Statistik"
 author:
   - name: Gerda Wyssen
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
@@ -10,7 +10,7 @@ author:
     url: https://github.com/awellis
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation_url: https://www.kog.psy.unibe.ch
-    orcid_id: 0000-0002-2788-936X
+    orcid: 0000-0002-2788-936X
   - name: Daniel Fitze
     affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
     affiliation-url: https://www.kog.psy.unibe.ch
@@ -44,7 +44,7 @@ Ordnen Sie die untenstehenden Aussagen dem frequentistischen bzw. dem baysianisc
 
 - "Der Mittelwert liegt mit 95%-iger Wahrscheinlichkeit zwischen 0.75 und 0.85."
 
-- "Wenn das Experiment 100 Mal wiederholt wird, enthält enthält der Konfidenzintervall zu 95% den wahren Wert."
+- "Wenn das Experiment 100 Mal wiederholt wird, ist der wahre Wert in 95% der Konfidenzintervalle enthalten."
 
 :::
 
@@ -158,18 +158,24 @@ Stellen Sie sich vor, sie untersuchen eine Person, welche behauptet, extrasensor
 
 - Wie würden Sie die Behauptung der Person überprüfen?
 
-- Glauben Sie, dass die Person über extra-sensorische Fähigkeiten verfügt? Sind Sie skeptisch?
-
+- Glauben Sie, dass die Person über extra-sensorische Fähigkeiten verfügt? Sind Sie skeptisch? 
 - Unter den Dropdown Menus Model, Prior and Posterior Distributions und Plots gibt es verschiedene Checkboxes. Versuchen Sie herauszufinden, was diese bewirken.
 
-- Wie können Sie Ihr Vorwissen in die Analyse einbeziehen? Wie verbinden Sie Ihr Vorwissen mit den beobachteten Daten?
+- Wie können Sie Ihr Vorwissen in die Analyse einbeziehen? Wie verbinden Sie Ihr Vorwissen mit den beobachteten Daten? Passen Sie Ihren Prior für $\theta$ an:
+
+__Beta Verteilungen__
+
+![](img/betadistributions.png)
 
 :::
+
 
 ## Wrap-up
 
 Zusammenfassend kann gesagt werden:
 
-- In der frequentistischen Statistik wird angenommen, dass der Parameter einen _wahren Wert_ hat, den wir aber nicht kennen. Wir erhalten eine Punktschätzung für den Parameter.
+- In der frequentistischen Statistik wird angenommen, dass der Parameter einen _wahren Wert_ hat, den wir aber nicht kennen. Wir erhalten eine Punktschätzung für den Parameter und können keine Aussage über die Wahrscheinlichkeit eines Parameterwerts machen. Der 95%-CI (__confidence interval__) sagt aus, dass bei Wiederholung des Experiments der "wahre" Parameterwert in 95% der Konfidenzintervalle enthalten sein wird.
 
-- In der bayesianischen Statistik nehmen wir an, dass der Parameter eine Wahrscheinlichkeitsverteilung hat, die wir schätzen können. Es muss zusätzlich eine Priorverteilung festgelegt werden. Wir erhalten eine Posterior Verteilung für die Parameterwerte. 
+- In der bayesianischen Statistik nehmen wir an, dass der Parameter eine Wahrscheinlichkeitsverteilung hat, die wir schätzen können. Es muss zusätzlich eine Priorverteilung festgelegt werden. Wir erhalten eine Posterior Verteilung für die Parameterwerte und können eine Aussage über Wahrscheinlichkeit eines Parameterwerts oder eines Modelles machen. Der 95%-CI (__credible interval__) enthält zu 95% den "wahren" Parameterwert.
+
+<aside>"Wahr" bedeutet hier, den Parameterwert der  (wenn wir ein passendes Modell verwendet haben)  zu diesen Daten geführt hat.</aside>

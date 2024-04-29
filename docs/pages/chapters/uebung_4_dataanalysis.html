@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Übung 4 - Daten Analyse</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_4_dataanalysis.html">Übung 4 - Daten Analyse</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -347,6 +347,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Hypothesentests</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_4_dataanalysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Übung 4 - Daten Analyse</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -374,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/uebung_4_dataanalysis.html">Übung 4 - Daten Analyse</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Übung 4 - Daten Analyse</h1>
 </div>
@@ -441,24 +447,29 @@ ul.task-list li input[type="checkbox"] {
 <aside>
 Falls Sie der Code dafür interessiert, ist dieser <a href="../../downloadable_files/generate_dataset_jasp.R">hier</a> zu finden, diesen brauchen Sie aber für die Übung nicht.
 </aside>
-<p>Er enthält folgende Variablen:</p>
+<p>Er enthält folgende Variablen(paare), von denen Sie für die Übung eines auslesen müssen:</p>
 <ul>
 <li><p>Versuchspersonenidentifikation (<code>id</code>)</p></li>
-<li><p>Variablenpaar (<code>speed</code>, <code>accuracy</code>)</p></li>
+<li><p><code>rt_speed</code> und <code>rt_accuracy</code>: Mittelwerte der <strong>Reaktionszeiten</strong> für die Instruktion <code>speed</code>(so schnell wie möglich antworten) oder <code>accuracy</code> (so richtig wie möglich antworten) pro Versuchsperson und Bedingung</p></li>
+<li><p><code>corr_speed</code> und <code>corr_accuracy</code>: Mittelwerte der <strong>korrekten Antworten</strong> für die Instruktion <code>speed</code>(so schnell wie möglich antworten) oder <code>accuracy</code> (so richtig wie möglich antworten) pro Versuchsperson und Bedingung</p></li>
+<li><p><code>rt_speed_left</code> und <code>rt_speed_right</code>: Mittelwerte der <strong>Reaktionszeiten</strong> für die Instruktion <code>speed</code>(so schnell wie möglich antworten), bei Bewegung der Punkte nach links (<code>left</code>) oder gegen rechts (<code>right</code>) pro Versuchsperson und Bedingung</p></li>
+<li><p><code>rt_accuracy_left</code> und <code>rt_accuracy_right</code>: Mittelwerte der <strong>Reaktionszeiten</strong> für die Instruktion <code>accuracy</code>(so richtig wie möglich antworten), bei Bewegung der Punkte nach links (<code>left</code>) oder gegen rechts (<code>right</code>) pro Versuchsperson und Bedingung</p></li>
+<li><p><code>corr_speed_left</code> und <code>corr_speed_right</code>: Mittelwerte der <strong>korrekten Antworten</strong> für die Instruktion <code>speed</code>(so schnell wie möglich antworten), bei Bewegung der Punkte nach links (<code>left</code>) oder gegen rechts (<code>right</code>) pro Versuchsperson und Bedingung</p></li>
+<li><p><code>corr_accuracy_left</code> und <code>corr_accuracy_right</code>: Mittelwerte der <strong>korrekten Antworten</strong> für die Instruktion <code>accuracy</code>(so richtig wie möglich antworten), bei Bewegung der Punkte nach links (<code>left</code>) oder gegen rechts (<code>right</code>) pro Versuchsperson und Bedingung</p></li>
 </ul>
-<p>…</p>
 </section>
 <section id="abgabetermine" class="level2">
 <h2 class="anchored" data-anchor-id="abgabetermine">Abgabetermine</h2>
 <p><strong>Gruppe Montag:</strong> 17.05.2024 23:55</p>
 <p><strong>Gruppe Mittwoch:</strong> 19.05.2024 23:55</p>
-<!-- __Abgabetermin Korrektur:__ 30. April 2024 23:55 -->
+<!-- __Abgabetermin Korrektur:__ 31. Mai 2024 23:55 -->
 <!-- (gilt für beide Gruppen, Abgabe in Extraordner auf Ilias) -->
 </section>
 <section id="trouble-shooting" class="level2">
 <h2 class="anchored" data-anchor-id="trouble-shooting">Trouble Shooting</h2>
 <p><strong>Equivalence Testing funktioniert nicht in JASP</strong></p>
 <p>Stellen Sie sicher, dass Sie die neuste Version (0.18.3.0) installiert haben, in früheren Versionen gab es bei diesem Modul einen Bug, der aber jetzt geflickt ist.</p>
+<!-- ## Feedback -->
 
 
 </section>

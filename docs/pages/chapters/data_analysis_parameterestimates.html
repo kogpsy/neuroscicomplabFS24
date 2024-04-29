@@ -7,7 +7,7 @@
 <meta name="author" content="Gerda Wyssen">
 <meta name="author" content="Andrew Ellis">
 <meta name="author" content="Daniel Fitze">
-<meta name="description" content="Einführung in die Bayesianische Statistik I">
+<meta name="description" content="Einführung in die Bayesianische Statistik">
 <title>Neurowissenschaft Computerlab - Parameterschätzung</title>
 <style>
 code{white-space: pre-wrap;}
@@ -362,6 +362,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Hypothesentests</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/chapters/uebung_4_dataanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 4 - Daten Analyse</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -387,13 +393,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_parameterestimates.html">Parameterschätzung</a></li></ol></nav><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_intro.html">Analysemethoden</a></li><li class="breadcrumb-item"><a href="../../pages/chapters/data_analysis_parameterestimates.html">Parameterschätzung</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Parameterschätzung</h1>
 </div>
 
 <div>
   <div class="description">
-    Einführung in die Bayesianische Statistik I
+    Einführung in die Bayesianische Statistik
   </div>
 </div>
 
@@ -412,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </p>
       </div>
       <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://github.com/awellis">Andrew Ellis</a> </p>
+    <p class="author"><a href="https://github.com/awellis">Andrew Ellis</a> <a href="https://orcid.org/0000-0002-2788-936X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -444,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Parameterschätzung</strong>: Bei der Parameterschätzung wird ein Wert geschätzt, der den Daten zugrundeliegt. Sie erlaubt das Quantifizieren eines Parameters, z.B. der Schätzung eines Mittelwerts.</p></li>
 <li><p><strong>Hypothesentests</strong>: Hypothesentests vergleichen zwei Modelle, sie erlauben eine Entscheidung z.B. ist ein signifikanter Unterschied vorhanden oder nicht?</p></li>
 </ol>
-<section id="frequentistische-und-bayesianische-parameterschätzung" class="level1"><h1>Frequentistische und Bayesianische Parameterschätzung</h1>
+<section id="frequentistische-und-bayesianische-parameterschätzung" class="level1 page-columns page-full"><h1>Frequentistische und Bayesianische Parameterschätzung</h1>
 <p>In der Frequentistischen Statistik wird angenommen, dass ein Parameter einen wahren (aber unbekannten) Wert hat. Die frequentistische Parameterschätzung ergibt eine Punktschätzung, der geschätzte Parameter hat damit genau <strong>einen</strong> Wert und keine Wahrscheinlichkeitsverteilung. Daher dürfen keine Aussagen über die Wahrscheinlichkeit eines Parameters gemacht werden. Nur Ereignisse die wiederholt werden können eine Wahrscheinlichkeit (eine Häufigkeitsverteilung) haben.</p>
 <p>In der Bayesianischen Statistik hingegen wird für jeden möglichen Parameterwert geschätzt, wie wahrscheinlich dieser einzelne Wert ist. Das bedeutet wir erhalten für jeden dieser Werte eine Wahrscheinlichkeit, diese wird in der Posterior-Verteilung zusammengefasst. Der Posterior Wahrscheinlichkeit beschreibt unser <em>degree of belief</em>, also unser aktuelles Wissen darüber, wie wahrscheinlich dieser Parameterwert wirklich hinter den Daten steckt.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -460,7 +466,7 @@ Hands-on: Frequentistisch oder Bayesianisch?
 <p>Ordnen Sie die untenstehenden Aussagen dem frequentistischen bzw. dem baysianischen Ansatz zu:</p>
 <ul>
 <li><p>“Der Mittelwert liegt mit 95%-iger Wahrscheinlichkeit zwischen 0.75 und 0.85.”</p></li>
-<li><p>“Wenn das Experiment 100 Mal wiederholt wird, enthält enthält der Konfidenzintervall zu 95% den wahren Wert.”</p></li>
+<li><p>“Wenn das Experiment 100 Mal wiederholt wird, ist der wahre Wert in 95% der Konfidenzintervalle enthalten.”</p></li>
 </ul>
 </div>
 </div>
@@ -572,17 +578,21 @@ Hands-on: Bayesianische Parameterschätzung in JASP
 <li><p>Wie würden Sie die Behauptung der Person überprüfen?</p></li>
 <li><p>Glauben Sie, dass die Person über extra-sensorische Fähigkeiten verfügt? Sind Sie skeptisch?</p></li>
 <li><p>Unter den Dropdown Menus Model, Prior and Posterior Distributions und Plots gibt es verschiedene Checkboxes. Versuchen Sie herauszufinden, was diese bewirken.</p></li>
-<li><p>Wie können Sie Ihr Vorwissen in die Analyse einbeziehen? Wie verbinden Sie Ihr Vorwissen mit den beobachteten Daten?</p></li>
+<li><p>Wie können Sie Ihr Vorwissen in die Analyse einbeziehen? Wie verbinden Sie Ihr Vorwissen mit den beobachteten Daten? Passen Sie Ihren Prior für <span class="math inline">\(\theta\)</span> an:</p></li>
 </ul>
+<p><strong>Beta Verteilungen</strong></p>
+<p><img src="img/betadistributions.png" class="img-fluid"></p>
 </div>
 </div>
-</section><section id="wrap-up" class="level2"><h2 class="anchored" data-anchor-id="wrap-up">Wrap-up</h2>
+</section><section id="wrap-up" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="wrap-up">Wrap-up</h2>
 <p>Zusammenfassend kann gesagt werden:</p>
 <ul>
-<li><p>In der frequentistischen Statistik wird angenommen, dass der Parameter einen <em>wahren Wert</em> hat, den wir aber nicht kennen. Wir erhalten eine Punktschätzung für den Parameter.</p></li>
-<li><p>In der bayesianischen Statistik nehmen wir an, dass der Parameter eine Wahrscheinlichkeitsverteilung hat, die wir schätzen können. Es muss zusätzlich eine Priorverteilung festgelegt werden. Wir erhalten eine Posterior Verteilung für die Parameterwerte.</p></li>
+<li><p>In der frequentistischen Statistik wird angenommen, dass der Parameter einen <em>wahren Wert</em> hat, den wir aber nicht kennen. Wir erhalten eine Punktschätzung für den Parameter und können keine Aussage über die Wahrscheinlichkeit eines Parameterwerts machen. Der 95%-CI (<strong>confidence interval</strong>) sagt aus, dass bei Wiederholung des Experiments der “wahre” Parameterwert in 95% der Konfidenzintervalle enthalten sein wird.</p></li>
+<li><p>In der bayesianischen Statistik nehmen wir an, dass der Parameter eine Wahrscheinlichkeitsverteilung hat, die wir schätzen können. Es muss zusätzlich eine Priorverteilung festgelegt werden. Wir erhalten eine Posterior Verteilung für die Parameterwerte und können eine Aussage über Wahrscheinlichkeit eines Parameterwerts oder eines Modelles machen. Der 95%-CI (<strong>credible interval</strong>) enthält zu 95% den “wahren” Parameterwert.</p></li>
 </ul>
-
+<aside>
+“Wahr” bedeutet hier, den Parameterwert der (wenn wir ein passendes Modell verwendet haben) zu diesen Daten geführt hat.
+</aside>
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{wyssen,
   author = {Wyssen, Gerda and Ellis, Andrew and Fitze, Daniel},
