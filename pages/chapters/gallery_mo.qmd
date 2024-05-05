@@ -23,7 +23,7 @@ format:
 #| echo: false
 #| output: false
 library(tidyverse)
-library(ggdist)
+d = read_csv('data/dataset_stroop_clean.csv')
 ```
 
-{{< include _plots.qmd >}}
+{{< include _plots_mo.qmd >}}

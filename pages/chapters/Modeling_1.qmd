@@ -1,0 +1,433 @@
+---
+title: "Modellierung von Daten"
+author:
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY-SA 4.0
+citation: true
+bibliography: ../../bibliography.bib
+format:
+    html:
+        toc: true
+---
+
+```{r}
+#| echo: false
+#| output: false 
+library(tidyverse)
+library(cowplot)
+```
+
+Das Ziel ist es, zu verstehen wie der Mensch / das Hirn funktioniert. We want to describe, predict, and explain behavior. Idealerweise so, wie in der Physik z.B. die Bewegung eines geworfenen Steins beschrieben werden kann. Consideration of the data and verbal theorizing are insufficient on their own. 
+
+# Planetare Bewegung
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+
+### Beobachtung/Daten:
+- Position der Planeten am Himmel über die Zeit
+- Einige Planeten änderen plötzlich ihre Richtung
+- Nach einiger Zeit nehmen sie ihren ursprünglichen Weg wieder auf
+
+:::
+
+::: {#second-column}
+
+![](img/planet_motion.png)
+
+:::
+::::
+
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+
+### Geozentrisches Modell
+
+![](img/geo_centric.png)
+
+:::
+
+::: {#second-column}
+
+### Heliozentrisches Modell
+
+![](img/helio_centric.png)
+
+:::
+::::
+
+👉 Die Daten lassen sich nur mit einem Modell des zugrunde liegenden  Prozesses erklären
+
+👉 Modelle an sich können nicht beobachtet werden
+
+👉 Es gibt fast immer mehrere Modelle, welche die Daten erklären können
+
+
+
+# Daten generierender Prozess
+
+Im Beispiel oben versuchen wir anhand der Daten heraus zu finden, wie das Universum aufgebaut ist. Wir verwenden ein Modell um Informationen aus den Daten zu gewinnen. Wechseln wir nun zu einem etwas einfacheren Beispiel. 
+Stellen Sie sich vor wir werfen einen Stein. Die Endposition des Steins hängt von den Kräften ab, die auf den Stein wirken.
+
+![ [Bildquelle](https://etc.usf.edu/clipart/36300/36322/proj_mot_36322.htm)](img/stone_throw.png)
+
+## Verbales Modell
+Beginnen wir mit einem verbalen Modell von diesem Prozess. Die Endposition des Steins hängt von der Kraft und der Richtung (Input) des Wurfs ab. Faktoren wie z.B. der Luftwiderstand oder die Gravitationskraft berücksichtigen wir vorerst nicht in unserem Modell, da sie konstant sind.
+
+:::: {layout="[ 50, 50]"}
+
+:::{}
+
+```{mermaid}
+%%| fig-align: center
+flowchart TD
+  i((Input)):::A --> p((Position)):::B
+  
+  classDef A fill:#ffffff, r:40px
+  classDef B fill:#e5e4e4
+```
+
+:::
+
+:::{}
+
+```{r}
+#| echo: false
+#| warning: false
+tibble(n = 1:1,
+       start = 0,
+       pos = rnorm(1, 5, .2)) |>
+    ggplot(aes(x = pos, y = 0)) +
+    geom_segment(aes(x = 0, xend = 6, y = 0, yend = 0),
+                 arrow = arrow(length = unit(0.03, "npc")),
+                 alpha = .5) +
+    geom_point(alpha = 1) +
+    geom_curve(aes(x = 0, xend = pos, y = 0.025, yend = 0),
+               curvature = -.5,
+               linetype = 1,
+               alpha = 1) +
+    lims(x = c(0,6),
+         y = c(0,.1)) +
+    labs(x = '',
+         y = '') +
+    theme_minimal() +
+    theme(axis.ticks.y = element_blank(),
+          axis.text.y = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_blank(),
+          plot.margin = unit(c(0,0,0,0), "cm"),
+          plot.title=element_text(margin=margin(t=40,b=-20)))
+```
+
+
+:::
+
+::::
+
+
+:::callout-caution
+## Hands-on: Simulation verbales DAG
+
+Den Prozess, der durch das verbale DAG beschrieben wird, wiederholen wir 10 Mal. Der Input bleibt konstant. Bei jeder Durchführung notieren wir die Endposition des Steins.
+
+1. Überlegen Sie sich, wie diese Daten aussehen.
+
+2. Simulieren (generieren) Sie diese Daten in R.
+
+3. Machen Sie eine sinnvolle Abbildung der simulierten Daten.
+
+:::
+
+
+## Statistisches Modell
+Berücksichtigen wir nun, dass der Stein von einer Person geworfen wird.
+Die Person zielt immer auf die gleiche Stelle (μ). 
+Es ist aber unmöglich den Stein jedes Mal exakt gleich zu werfen. 
+Es gibt also eine gewisse Variation der beobachteten Endpositionen (σ).
+
+:::: {layout="[ 50, 50 ]"}
+
+:::{}
+
+
+```{mermaid}
+flowchart TD
+  mu((μ)):::a --> i((Input)):::A
+  s((σ)):::a --> i
+  i(("Input \n N(μ,σ)")):::A --> p((Position)):::B
+
+  classDef a fill:#ffffff, r:20px
+  classDef A fill:#ffffff, r:40px
+  classDef B fill:#e5e4e4
+```
+
+:::
+
+:::{}
+
+```{r}
+#| echo: false
+#| warning: false
+p3 = tibble(n = 1:100,
+       start = 0,
+       pos = rnorm(100, 5, .2)) |>
+    ggplot(aes(x = pos, y = 0)) +
+    geom_segment(aes(x = 0, xend = 6, y = 0, yend = 0),
+                 arrow = arrow(length = unit(0.03, "npc")),
+                 alpha = .03) +
+    geom_point(alpha = .4) +
+    geom_curve(aes(x = 0, xend = pos, y = 0.025, yend = 0),
+               curvature = -.5,
+               linetype = 1,
+               alpha = .5) +
+    lims(x = c(0,6),
+         y = c(0,.1)) +
+    labs(x = '',
+         y = '') +
+    theme_minimal() +
+    theme(axis.ticks.y = element_blank(),
+          axis.text.y = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_blank(),
+          plot.margin = unit(c(0,0,0,0), "cm"),
+          plot.title=element_text(margin=margin(t=40,b=-20)))
+
+p4 = ggplot() +
+    stat_function(fun = dnorm,
+                  args = list(mean = 5, sd = .2),
+                  colour ='red',
+                  size =1,
+                  n = 300) +
+    lims(x = c(0,6)) +
+    labs(x = '',
+         y = '') +
+    theme_minimal() +
+    theme(axis.ticks.y = element_blank(),
+          axis.text.y = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_blank(),
+          plot.margin = unit(c(0,0,0,0), "cm")) +
+    scale_y_reverse()
+
+plot_grid(p3, NULL, p4,
+          ncol = 1,
+          rel_heights = c(1, -.1, 0.5))
+```
+
+
+:::
+
+::::
+
+
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+
+
+
+:::
+
+::: {#second-column}
+
+
+:::
+::::
+
+:::callout-caution
+## Hands-on: Simulation
+
+Den Prozess, der durch das (statistische) DAG beschrieben wird, wiederholen wir 10 Mal. Der Input ist nun normal verteilt. Bei jeder Durchführung notieren wir die Endposition des Steins.
+
+1. Überlegen Sie sich, wie diese Daten aussehen.
+
+2. Simulieren (generieren) Sie diese Daten in R.
+
+3. Machen Sie eine sinnvolle Abbildung der simulierten Daten.
+
+:::
+
+
+### Simulation vs. Inferenz
+
+
+![](img/sim_inf.png){fig-align="center" width=650}
+
+
+:::: {layout="[ 50, 50 ]"}
+::: {#first-column}
+### Simulation
+Wir wählen Werte für die Modell-Parameter:
+```{r}
+mu = 5
+sigma = 0.2
+
+```
+
+Damit können wir Daten simulieren:
+```{r}
+#| code-overflow: scroll
+sim_data = tibble(
+    pos = rnorm(n = 10, mu, sigma)
+    )
+
+head(sim_data)
+```
+
+:::
+
+::: {#second-column}
+### Inferenz (Parameterschätzung)
+Wir beginnen mit Daten. Die Modell parameter sind uns nicht bekannt.
+
+```{r}
+#| eval: true
+#| echo: false
+d = tibble(x = rnorm(50, 4.3, 0.08))
+```
+
+```{r}
+head(d)
+```
+
+Basierend auf dem DAG formulieren wir ein lineares Modell. In diesem Fall schätzen wir nur den Intercept. Mit der Funktion `lm()` können wir die Parameter von diesem Modell schätzen (frequentistisch).
+```{r}
+fit = lm(x ~ 1,
+         data = d)
+
+coef(fit)["(Intercept)"]
+sigma(fit)
+
+```
+
+:::
+::::
+
+### Kategorialer Prädiktor - Planet
+
+:::: {layout="[ 50, 50 ]"}
+:::{}
+
+```{mermaid}
+flowchart TD
+  g((Gravitation)):::A --> p((Position)):::B
+  i((Input)):::A --> p
+  
+  classDef A fill:#ffffff, r:40px
+  classDef B fill:#e5e4e4
+```
+:::
+
+:::{}
+In diesem Fall haben wir die Endposition auf der Erde und auf dem Mond gemessen.
+```{r}
+#| echo: false
+tibble(planet = rep(c('erde', 'mond'), each = 3),
+       pos = c(rnorm(3, 5.2, 0.2), rnorm(3, 7, 0.2))) |> 
+    head()
+       
+```
+:::
+::::
+
+```{r}
+#| echo: false
+#| output: false
+d_cat = tibble(planet = rep(c('erde', 'mond'), each = 20),
+               pos = c(rnorm(20, 5, 0.2), rnorm(20, 7, 0.2))) |> 
+    mutate(planet = as_factor(planet))
+
+```
+
+Hier fügen wir dem linearen Modell einen kategorialen Prädiktor hinzu und schätzen die Parameter mit der Funktion `lm()`.
+```{r}
+lm(pos ~ 1 + planet,
+   data = d_cat)
+```
+
+### Kontinuierlicher Prädiktor - Körpergrösse
+
+:::: {layout="[ 50, 50 ]"}
+:::{}
+
+```{mermaid}
+flowchart TD
+  g((Körpergrösse)):::A --> p((Position)):::B
+  i((Input)):::A --> p
+  
+  classDef A fill:#ffffff, r:40px
+  classDef B fill:#e5e4e4
+```
+:::
+
+:::{}
+Hier interessiert uns der Einfluss der Körpergrösse auf die Endposition eines geworfenen Steins. 
+```{r}
+#| echo: false
+tibble(grösse = rep(c(165,170,175), each = 3),
+       pos = c(rnorm(3, 5, 0.2), rnorm(3, 6, 0.2), rnorm(3, 7, 0.2))) |> 
+    head()
+       
+```
+:::
+::::
+
+```{r}
+#| echo: false
+#| output: false
+d_cont = tibble(grösse = rep(c(165,170,175), each = 3),
+       pos = c(rnorm(3, 5, 0.2), rnorm(3, 6, 0.2), rnorm(3, 7, 0.2)))
+
+```
+
+Hier fügen wir dem linearen Modell einen kontinuierlichen Prädiktor hinzu und schätzen die Parameter mit der Funktion `lm()`.
+```{r}
+lm(pos ~ 1 + grösse,
+   data = d_cont)
+```
+
+:::callout-caution
+## Hands-on: Parameter Recovery
+
+Mit parameter recovery kann überprüft werden, wie gut die Parameter des Modells geschätzt werden können. Dazu werden zu erst Daten simuliert. In der anschliessenden Analyse der Daten sieht man wie nahe die geschätzten Parameter den wahren (in der Simulation verwendeten) sind.
+
+1. Entscheiden Sie sich für ein Modell mit einem kategorialen oder einem kontinuierlichen Prädiktor.
+
+2. Simulieren (generieren) Sie die entsprechenden Daten in R.
+
+3. Analysieren Sie die Simulierten Daten mit dem entsprechenden Modell. 
+    - Wie nahe ist die Schätzung an den wahren Parametern? 
+    - Von welchen Faktoren könnte das abhängen?
+
+:::
+
+
+<!-- ## Ausblick Modell für RD-Motion  -->
+
+<!-- :::: {layout="[ 50, 50 ]"} -->
+<!-- :::{} -->
+
+<!-- ```{mermaid} -->
+<!-- flowchart TD -->
+<!--   g((Sensitivität)):::A  p((Antwort)):::B -->
+
+<!--   classDef A fill:#ffffff, r:40px -->
+<!--   classDef B fill:#e5e4e4 -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- :::{} -->
+<!-- {{< video https://www.youtube.com/watch?v=7OdCe95IiLw >}} -->
+<!-- ::: -->
+<!-- :::: -->
+

@@ -1,0 +1,1883 @@
+::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+#d <- as.data.frame()
+
+# Plot erstellen
+# Rohdaten plotten
+plot_rohdaten <- ggplot(d, aes(x = trial, y = rt, color = congruent)) +
+  geom_point() +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung",
+       x = "Versuch",
+       y = "Reaktionszeit (s)",
+       color = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Zusammenfassendes Maß (Boxplot) erstellen
+plot_zusammenfassung <- ggplot(d, aes(x = as.factor(congruent), y = rt, fill = as.factor(congruent))) +
+  geom_boxplot() +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Verteilung der Reaktionszeiten nach Kongruenz",
+       x = "Kongruenz",
+       y = "Reaktionszeit (s)",
+       fill = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Optional: Facets verwenden, um nach weiteren Variablen zu unterscheiden
+# Hier müsstest du die entsprechenden Facets anpassen und deine Daten entsprechend strukturieren
+plot_facets <- ggplot(d, aes(x = trial, y = rt, color = congruent)) +
+  geom_point() +
+  facet_wrap(~word) +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung und Worttyp",
+       x = "Versuch",
+       y = "Reaktionszeit (s)",
+       color = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+print (d)
+# Optional: Speichern des Plots als Bild
+#ggsave("stroop_plot.png", plot_rohdaten, width = 8, height = 6, units = "in")
+
+# Plots anzeigen
+#plot_rohdaten
+#plot_zusammenfassung
+#plot_facets
+
+
+
+# Plot erstellen übereinander
+plot_all <- ggplot(d, aes(x = trial, y = rt)) +
+  geom_point(aes(color = factor(congruent)), position = position_jitter(width = 0.2), alpha = 0.5) +  # Rohdaten anzeigen
+  geom_boxplot(aes(fill = factor(congruent)), alpha = 0.8, outlier.shape = NA) +  # Zusammenfassende Boxplots
+  labs(title = "Stroop Task: Reaktionszeiten",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung",
+       x = "Versuch",
+       y = "Reaktionszeit (in Sekunden)",
+       color = "Kongruenz",
+       fill = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Plot anzeigen
+print(plot_all)
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+#d <- as.data.frame()
+
+# Plot erstellen
+# Rohdaten plotten
+plot_rohdaten <- ggplot(d, aes(x = trial, y = rt, color = congruent)) +
+  geom_point() +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung",
+       x = "Versuch",
+       y = "Reaktionszeit (s)",
+       color = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Zusammenfassendes Maß (Boxplot) erstellen
+plot_zusammenfassung <- ggplot(d, aes(x = as.factor(congruent), y = rt, fill = as.factor(congruent))) +
+  geom_boxplot() +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Verteilung der Reaktionszeiten nach Kongruenz",
+       x = "Kongruenz",
+       y = "Reaktionszeit (s)",
+       fill = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Optional: Facets verwenden, um nach weiteren Variablen zu unterscheiden
+# Hier müsstest du die entsprechenden Facets anpassen und deine Daten entsprechend strukturieren
+plot_facets <- ggplot(d, aes(x = trial, y = rt, color = congruent)) +
+  geom_point() +
+  facet_wrap(~word) +
+  labs(title = "Stroop Aufgabe",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung und Worttyp",
+       x = "Versuch",
+       y = "Reaktionszeit (s)",
+       color = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+print (d)
+# Optional: Speichern des Plots als Bild
+#ggsave("stroop_plot.png", plot_rohdaten, width = 8, height = 6, units = "in")
+
+# Plots anzeigen
+#plot_rohdaten
+#plot_zusammenfassung
+#plot_facets
+
+
+
+# Plot erstellen übereinander
+plot_all <- ggplot(d, aes(x = trial, y = rt)) +
+  geom_point(aes(color = factor(congruent)), position = position_jitter(width = 0.2), alpha = 0.5) +  # Rohdaten anzeigen
+  geom_boxplot(aes(fill = factor(congruent)), alpha = 0.8, outlier.shape = NA) +  # Zusammenfassende Boxplots
+  labs(title = "Stroop Task: Reaktionszeiten",
+       subtitle = "Vergleich der Reaktionszeiten nach Bedingung",
+       x = "Versuch",
+       y = "Reaktionszeit (in Sekunden)",
+       color = "Kongruenz",
+       fill = "Kongruenz",
+       caption = "dataset_stroop_clean") +
+  theme_minimal()
+
+# Plot anzeigen
+print(plot_all)
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d |>
+    filter(rt > 0.1 & rt < 1.75) |>
+    select(id, trial, congruent, rt)|>
+    mutate (congruent = as.factor(congruent)) |>
+    mutate(congruent = case_match(congruent,
+                      "0" ~ "inkongruent",
+                      "1" ~ "kongruent"))
+
+p_boxplot <- d |>
+    filter(id %in% c("sub-10318869", "sub-1106725", "sub-113945", "sub-11959984",
+                     "sub-12224605", "sub-12242654", "sub-13366559", "sub-13662910",
+                     "sub-13937586", "sub-13771505", "sub-73916681", "sub-74487595",
+                     "sub-75143607", "sub-89031395", "sub-90289188")) |>
+    ggplot(aes(x = congruent, y = rt, color = congruent)) +
+    geom_jitter(alpha = 0.25, width = 0.2) +
+    geom_boxplot(alpha = 0, width = 0.2, color = "black") +
+    scale_color_manual(values = c(kongruent  = "green2",
+                                  inkongruent = "pink")) +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none") +
+    labs(title = "Reaktionszeit bei In- & Kongruenz",
+         subtitle = "Ist die Reaktionszeit geringer bei Kongurenz?",
+         x = "Kongruenz",
+         y = "Reaktionszeit",
+         caption = "Daten von 15 Vpn" )
+
+p_boxplot
+
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d |>
+    filter(rt > 0.1 & rt < 1.75) |>
+    select(id, trial, congruent, rt)|>
+    mutate (congruent = as.factor(congruent)) |>
+    mutate(congruent = case_match(congruent,
+                      "0" ~ "inkongruent",
+                      "1" ~ "kongruent"))
+
+p_boxplot <- d |>
+    filter(id %in% c("sub-10318869", "sub-1106725", "sub-113945", "sub-11959984",
+                     "sub-12224605", "sub-12242654", "sub-13366559", "sub-13662910",
+                     "sub-13937586", "sub-13771505", "sub-73916681", "sub-74487595",
+                     "sub-75143607", "sub-89031395", "sub-90289188")) |>
+    ggplot(aes(x = congruent, y = rt, color = congruent)) +
+    geom_jitter(alpha = 0.25, width = 0.2) +
+    geom_boxplot(alpha = 0, width = 0.2, color = "black") +
+    scale_color_manual(values = c(kongruent  = "green2",
+                                  inkongruent = "pink")) +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none") +
+    labs(title = "Reaktionszeit bei In- & Kongruenz",
+         subtitle = "Ist die Reaktionszeit geringer bei Kongurenz?",
+         x = "Kongruenz",
+         y = "Reaktionszeit",
+         caption = "Daten von 15 Vpn" )
+
+p_boxplot
+
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+#Fragestellung: Zeigt sich ein grösserer Lerneffekt (der sich in einer schnelleren Reaktionszeit wiederspiegelt) bei inkongruenten im Verlgeich zu kongruenten Items über die Trials hinweg?
+
+#Erstellen eines Datensatzes mit den für die Fragestellung relevanten Variablen ausgewählt werden und Gruppieren der Trials in 6 Trialgruppen
+d_grouped <- d %>%
+    na.omit() %>%
+    group_by(trial) %>%
+    reframe(id,
+            rt,
+            congruent = congruent == 1,
+            trial_group = case_when(
+                trial >= 1 & trial <= 20 ~ "Trials 1-20",
+                trial >= 21 & trial <= 40 ~ "Trials 21-40",
+                trial >= 41 & trial <= 60 ~ "Trials 41-60",
+                trial >= 61 & trial <= 80 ~ "Trials 61-80",
+                trial >= 81 & trial <= 100 ~ "Trials 81-100",
+                trial >= 101 & trial <= 120 ~ "Trials 101-120"
+            )) %>%
+    mutate(trial_group = factor(trial_group, levels = c("Trials 1-20", "Trials 21-40", "Trials 41-60", "Trials 61-80", "Trials 81-100", "Trials 101-120")))
+
+#Erstellen einer Variable die den Gesammittelwert der Variable Reaktionszeit beinhaltet
+overall_mean <- mean(d$rt, na.rm = TRUE)
+
+#Erstellen eines Datensatzes in dem zufällig Trials einzelner Teilnehmer:innen ausgewählt und gespeichert werden
+random_participants <- d_grouped %>%
+    filter(rt <= 5.0) %>%
+    group_by(trial_group) %>%
+    sample_n(300, replace = FALSE)
+
+#Erstellen des Plots der die genannte Fragestellung beantwortet
+p = d_grouped %>%
+    filter(rt <= 5.0) %>%
+    ggplot(mapping = aes(x = trial_group,
+                         y = rt,
+                         fill = congruent)) +
+    geom_boxplot(color = "black") +
+    geom_hline(yintercept = overall_mean, linetype = "dashed", color = "blue", size = 0.8) +
+    geom_jitter(data = random_participants, aes(x = trial_group, y = rt, color = congruent, alpha = 0.3)) +
+    labs(title = "Reaktionszeiten von kongruenten und inkongruenten Items",
+         subtitle = "Zeigt sich ein grösserer Lerneffekt bei inkongruenten im Vergleich zu kongruenten Items über die Trials hinweg?",
+         x = "Trialgruppen",
+         y = "Reaktionszeit in s",
+         fill = "kongruent",
+         color = "kongruent") +
+    theme_light()
+
+p
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+#Fragestellung: Zeigt sich ein grösserer Lerneffekt (der sich in einer schnelleren Reaktionszeit wiederspiegelt) bei inkongruenten im Verlgeich zu kongruenten Items über die Trials hinweg?
+
+#Erstellen eines Datensatzes mit den für die Fragestellung relevanten Variablen ausgewählt werden und Gruppieren der Trials in 6 Trialgruppen
+d_grouped <- d %>%
+    na.omit() %>%
+    group_by(trial) %>%
+    reframe(id,
+            rt,
+            congruent = congruent == 1,
+            trial_group = case_when(
+                trial >= 1 & trial <= 20 ~ "Trials 1-20",
+                trial >= 21 & trial <= 40 ~ "Trials 21-40",
+                trial >= 41 & trial <= 60 ~ "Trials 41-60",
+                trial >= 61 & trial <= 80 ~ "Trials 61-80",
+                trial >= 81 & trial <= 100 ~ "Trials 81-100",
+                trial >= 101 & trial <= 120 ~ "Trials 101-120"
+            )) %>%
+    mutate(trial_group = factor(trial_group, levels = c("Trials 1-20", "Trials 21-40", "Trials 41-60", "Trials 61-80", "Trials 81-100", "Trials 101-120")))
+
+#Erstellen einer Variable die den Gesammittelwert der Variable Reaktionszeit beinhaltet
+overall_mean <- mean(d$rt, na.rm = TRUE)
+
+#Erstellen eines Datensatzes in dem zufällig Trials einzelner Teilnehmer:innen ausgewählt und gespeichert werden
+random_participants <- d_grouped %>%
+    filter(rt <= 5.0) %>%
+    group_by(trial_group) %>%
+    sample_n(300, replace = FALSE)
+
+#Erstellen des Plots der die genannte Fragestellung beantwortet
+p = d_grouped %>%
+    filter(rt <= 5.0) %>%
+    ggplot(mapping = aes(x = trial_group,
+                         y = rt,
+                         fill = congruent)) +
+    geom_boxplot(color = "black") +
+    geom_hline(yintercept = overall_mean, linetype = "dashed", color = "blue", size = 0.8) +
+    geom_jitter(data = random_participants, aes(x = trial_group, y = rt, color = congruent, alpha = 0.3)) +
+    labs(title = "Reaktionszeiten von kongruenten und inkongruenten Items",
+         subtitle = "Zeigt sich ein grösserer Lerneffekt bei inkongruenten im Vergleich zu kongruenten Items über die Trials hinweg?",
+         x = "Trialgruppen",
+         y = "Reaktionszeit in s",
+         fill = "kongruent",
+         color = "kongruent") +
+    theme_light()
+
+p
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# daten vorbereiten
+d_clean <- d %>%
+    drop_na() %>%
+    mutate(across(where(is.character),
+           as.factor)) %>%  # aller text zu factors
+    mutate(corr_fct = as.factor(corr),
+           congr_fct = as.factor(congruent))  # neue vars mit corr und congr als fct
+# plot
+d_clean %>%
+    filter(corr_fct == 1 & rt < 1.5) %>%
+    ggplot(aes(
+    x = color,
+    y = rt,
+    color = color,
+    fill = color)) +
+    geom_jitter(alpha = 0.3, width = 0.2, size = 0.5) +
+    geom_violin(alpha = 0.3, color = "white") +
+    geom_boxplot(alpha = 0.1, width = 0.2, color = "white") +
+    theme_minimal() +
+    labs(title = "BLAU MACHT SCHNELL",
+         subtitle = "Stoop-Test: Unterscheiden sich die Reaktionszeiten je nach Farbe des Stimulusmaterials?
+(Verwendete Daten: Nur kongruente Stimuluspaare und korrekte Antworten)",
+         x = "Farbe Stimulusmaterial",
+         y = "Reaktionszeit (s)",
+         caption = "Konklusion: Ich streiche mein Studierzimmer blau") +
+    theme(plot.title = element_text(face = "bold")) +
+    scale_color_manual(values = c("blue" = "royalblue3",
+                                  "red"="red3",
+                                  "yellow"="gold3")) +
+    scale_fill_manual(values = c("blue" = "royalblue3",
+                                  "red"="red3",
+                                  "yellow"="gold3"))
+
+
+### links:
+# https://www.statology.org/color-by-factor-ggplot2/
+# https://sape.inf.usi.ch/quick-reference/ggplot2/colour
+# https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_1.html
+# https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_2.html
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# daten vorbereiten
+d_clean <- d %>%
+    drop_na() %>%
+    mutate(across(where(is.character),
+           as.factor)) %>%  # aller text zu factors
+    mutate(corr_fct = as.factor(corr),
+           congr_fct = as.factor(congruent))  # neue vars mit corr und congr als fct
+# plot
+d_clean %>%
+    filter(corr_fct == 1 & rt < 1.5) %>%
+    ggplot(aes(
+    x = color,
+    y = rt,
+    color = color,
+    fill = color)) +
+    geom_jitter(alpha = 0.3, width = 0.2, size = 0.5) +
+    geom_violin(alpha = 0.3, color = "white") +
+    geom_boxplot(alpha = 0.1, width = 0.2, color = "white") +
+    theme_minimal() +
+    labs(title = "BLAU MACHT SCHNELL",
+         subtitle = "Stoop-Test: Unterscheiden sich die Reaktionszeiten je nach Farbe des Stimulusmaterials?
+(Verwendete Daten: Nur kongruente Stimuluspaare und korrekte Antworten)",
+         x = "Farbe Stimulusmaterial",
+         y = "Reaktionszeit (s)",
+         caption = "Konklusion: Ich streiche mein Studierzimmer blau") +
+    theme(plot.title = element_text(face = "bold")) +
+    scale_color_manual(values = c("blue" = "royalblue3",
+                                  "red"="red3",
+                                  "yellow"="gold3")) +
+    scale_fill_manual(values = c("blue" = "royalblue3",
+                                  "red"="red3",
+                                  "yellow"="gold3"))
+
+
+### links:
+# https://www.statology.org/color-by-factor-ggplot2/
+# https://sape.inf.usi.ch/quick-reference/ggplot2/colour
+# https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_1.html
+# https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_2.html
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d |>
+  filter(rt > 0.09 & rt < 15)
+
+
+d_color_rt <- d |>
+  group_by(id, color) |>
+  summarise(
+    mean_rt = mean(rt)
+  )
+
+
+p = d_color_rt |>
+  ggplot(aes(x = color, y = mean_rt, color = color)) +
+  geom_jitter(size = 1.5, alpha = 0.4,
+              width = 0.2, height = 0) +
+  geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+  scale_color_manual(values = c(blue = "blue2",
+                                red = "red1",
+                                yellow = "yellow1")) +
+  labs(title = "Uebung 3",
+       subtitle = "Unterscheidet sich die Reaktionszeit der Probanden, je nach Farbe die präsentiert wird?") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none")
+
+p
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d |>
+  filter(rt > 0.09 & rt < 15)
+
+
+d_color_rt <- d |>
+  group_by(id, color) |>
+  summarise(
+    mean_rt = mean(rt)
+  )
+
+
+p = d_color_rt |>
+  ggplot(aes(x = color, y = mean_rt, color = color)) +
+  geom_jitter(size = 1.5, alpha = 0.4,
+              width = 0.2, height = 0) +
+  geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+  scale_color_manual(values = c(blue = "blue2",
+                                red = "red1",
+                                yellow = "yellow1")) +
+  labs(title = "Uebung 3",
+       subtitle = "Unterscheidet sich die Reaktionszeit der Probanden, je nach Farbe die präsentiert wird?") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none")
+
+p
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+library(ggplot2)
+
+# Datensatz anschauen
+glimpse(d)
+
+unique(d$color)
+
+d_congruent <- d %>%
+    mutate(congruent = as.factor(congruent))%>%
+    filter(rt < 4 & rt > 0.1)
+
+
+d_rt_summary <- d_congruent %>%
+summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+
+
+glimpse(d_rt_summary)
+
+#plot
+p = d_congruent |>
+    ggplot(mapping = aes(x =congruent ,
+                         y = rt, color= congruent)) +
+    geom_jitter(width = 0.4, alpha= 0.09) +
+    scale_y_continuous(breaks = seq(0, 4, by = 0.5))+
+    geom_hline(yintercept = d_rt_summary$mean_rt, linetype = "dashed", color = "red", linewidth= 1)+
+    scale_color_manual(values= c("darkviolet", "darkblue"))+
+    labs(title = "Geringere Reaktionszeit in der kongruenten Bedingungen",
+         subtitle = "Unterscheidet sich die Reaktionszeit zwischen der kongruenten und inkongruenten Bedinung?",
+         x = "inkongruent vs. kongruent",
+         y = "Reaktionszeit in Sekunden") +
+    theme_classic() +
+    guides(color = FALSE)
+p
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+library(ggplot2)
+
+# Datensatz anschauen
+glimpse(d)
+
+unique(d$color)
+
+d_congruent <- d %>%
+    mutate(congruent = as.factor(congruent))%>%
+    filter(rt < 4 & rt > 0.1)
+
+
+d_rt_summary <- d_congruent %>%
+summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+
+
+glimpse(d_rt_summary)
+
+#plot
+p = d_congruent |>
+    ggplot(mapping = aes(x =congruent ,
+                         y = rt, color= congruent)) +
+    geom_jitter(width = 0.4, alpha= 0.09) +
+    scale_y_continuous(breaks = seq(0, 4, by = 0.5))+
+    geom_hline(yintercept = d_rt_summary$mean_rt, linetype = "dashed", color = "red", linewidth= 1)+
+    scale_color_manual(values= c("darkviolet", "darkblue"))+
+    labs(title = "Geringere Reaktionszeit in der kongruenten Bedingungen",
+         subtitle = "Unterscheidet sich die Reaktionszeit zwischen der kongruenten und inkongruenten Bedinung?",
+         x = "inkongruent vs. kongruent",
+         y = "Reaktionszeit in Sekunden") +
+    theme_classic() +
+    guides(color = FALSE)
+p
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+#Libraries laden
+library(patchwork)
+library(naniar)
+library(psych)
+library(ggpubr)
+
+#Daten vorverarbeiten
+
+d_factor <- d %>%
+    mutate(across(where(is.character), as.factor))
+
+d_filtered <- d_factor %>%
+    filter(rt > 0.09 & rt < 15)
+
+
+d_acc_rt_trial <- d_filtered %>%
+    group_by(congruent, trial) %>%
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)) %>%
+    mutate(median_rt = median_rt*1000) %>%
+    filter(accuracy > 0.5)
+
+#Bedingungen in Faktor umwandeln und Levels umbenennen
+d_acc_rt_trial$congruent_string <- factor(d_acc_rt_trial$congruent, levels = c("0", "1"))
+levels(d_acc_rt_trial$congruent_string) <- list(inkongruent = "0", kongruent = "1")
+
+
+#Plots erstellen
+my_comparisonsp1 <- list(c("kongruent", "inkongruent"))
+
+p1 <- d_acc_rt_trial %>%
+    ggplot(aes(x = congruent_string, y= accuracy, color = congruent_string)) +
+    geom_jitter(size = 2.5, alpha = 0.4,
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    labs(x = "Bedingung",
+         y = "Genauigkeit",
+         title = "Mittlere Genauigkeit pro Bedingung",
+         subtitle = "Unterscheidet sich die Genauigkeit\nzwischen den Bedingungen?") +
+    theme_classic(base_size = 12) +
+    theme(legend.position = "none") +
+    stat_compare_means(comparisons = my_comparisonsp1, label = "p.signif", method = "wilcox.test", paired = TRUE, ref.group = "inkongruent")
+
+
+my_comparisonsp2 <- list(c("kongruent", "inkongruent"))
+
+p2 <- d_acc_rt_trial %>%
+    ggplot(aes(x = congruent_string, y= median_rt, color = congruent_string)) +
+    geom_jitter(size = 2.5, alpha = 0.4,
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    labs(x = "Bedingung",
+         y = "Mittlere Reaktionszeit [ms]",
+         title = "Mittlere Reaktionszeit pro Bedingung",
+         subtitle = "Unterscheidet sich die mittlere Reaktionszeit\nzwischen den Bedingungen?") +
+    theme_classic(base_size = 12) +
+    theme(legend.position = "none") +
+    stat_compare_means(comparisons = my_comparisonsp1, label = "p.signif", method = "wilcox.test", paired = TRUE, ref.group = "inkongruent")
+
+p1 + p2
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+#Libraries laden
+library(patchwork)
+library(naniar)
+library(psych)
+library(ggpubr)
+
+#Daten vorverarbeiten
+
+d_factor <- d %>%
+    mutate(across(where(is.character), as.factor))
+
+d_filtered <- d_factor %>%
+    filter(rt > 0.09 & rt < 15)
+
+
+d_acc_rt_trial <- d_filtered %>%
+    group_by(congruent, trial) %>%
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)) %>%
+    mutate(median_rt = median_rt*1000) %>%
+    filter(accuracy > 0.5)
+
+#Bedingungen in Faktor umwandeln und Levels umbenennen
+d_acc_rt_trial$congruent_string <- factor(d_acc_rt_trial$congruent, levels = c("0", "1"))
+levels(d_acc_rt_trial$congruent_string) <- list(inkongruent = "0", kongruent = "1")
+
+
+#Plots erstellen
+my_comparisonsp1 <- list(c("kongruent", "inkongruent"))
+
+p1 <- d_acc_rt_trial %>%
+    ggplot(aes(x = congruent_string, y= accuracy, color = congruent_string)) +
+    geom_jitter(size = 2.5, alpha = 0.4,
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    labs(x = "Bedingung",
+         y = "Genauigkeit",
+         title = "Mittlere Genauigkeit pro Bedingung",
+         subtitle = "Unterscheidet sich die Genauigkeit\nzwischen den Bedingungen?") +
+    theme_classic(base_size = 12) +
+    theme(legend.position = "none") +
+    stat_compare_means(comparisons = my_comparisonsp1, label = "p.signif", method = "wilcox.test", paired = TRUE, ref.group = "inkongruent")
+
+
+my_comparisonsp2 <- list(c("kongruent", "inkongruent"))
+
+p2 <- d_acc_rt_trial %>%
+    ggplot(aes(x = congruent_string, y= median_rt, color = congruent_string)) +
+    geom_jitter(size = 2.5, alpha = 0.4,
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    labs(x = "Bedingung",
+         y = "Mittlere Reaktionszeit [ms]",
+         title = "Mittlere Reaktionszeit pro Bedingung",
+         subtitle = "Unterscheidet sich die mittlere Reaktionszeit\nzwischen den Bedingungen?") +
+    theme_classic(base_size = 12) +
+    theme(legend.position = "none") +
+    stat_compare_means(comparisons = my_comparisonsp1, label = "p.signif", method = "wilcox.test", paired = TRUE, ref.group = "inkongruent")
+
+p1 + p2
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+p = d |>
+    ggplot(aes(x = color, y = rt, color = color)) +
+    geom_jitter(width = 0.2, size = 0.5, alpha = 0.25) +
+    geom_boxplot(width = 0.4, alpha = 0, color = "black") +
+    scale_color_manual(values = c(blue = "blue",
+                                 red = "red",
+                                 yellow = "yellow")) +
+    theme_minimal() +
+    labs(x = "color of presented word",
+         y = "reaction time [s]",
+         title = "Reaction times per color",
+         subtitle = "Were the reaction times different for the 3 colors presented?")
+
+p
+
+
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+p = d |>
+    ggplot(aes(x = color, y = rt, color = color)) +
+    geom_jitter(width = 0.2, size = 0.5, alpha = 0.25) +
+    geom_boxplot(width = 0.4, alpha = 0, color = "black") +
+    scale_color_manual(values = c(blue = "blue",
+                                 red = "red",
+                                 yellow = "yellow")) +
+    theme_minimal() +
+    labs(x = "color of presented word",
+         y = "reaction time [s]",
+         title = "Reaction times per color",
+         subtitle = "Were the reaction times different for the 3 colors presented?")
+
+p
+
+
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+t_test_resultate <- t.test(rt ~ congruent, data = d)
+
+p_wert <- t_test_resultate$p.value
+
+signifikanz_label <- ifelse(p_wert < 0.05, "Es besteht eine Signifikante Interaktion (p < 0.05) zwischen den Kongruenbedingugen.", "Es besteht keine signifikante Interaktion (p >= 0.05) zwischen den Kongruenzbedingungen.")
+
+p = d %>%
+    ggplot(aes(x = as.factor(congruent), y = rt, fill = congruent)) +
+    geom_violin(position = 'dodge', alpha = 0.5, color = "red", fill = "orange") +
+    geom_point(size = 0.5, alpha = 0.5, color = "red") +
+    stat_summary(fun = mean, geom = "point", size = 3, color = "black") +
+    stat_summary(fun = mean, geom = "line", aes(group = 1), linetype = "dashed", color = "black") +
+    stat_summary(fun = mean, geom = "text", aes(label = paste(round(..y.., digits = 2))), vjust = -0.5, color = "black") +
+    labs(
+        title = "Stroop Task: Reaktionszeit nach Kongruenz",
+        subtitle = "Gibt es Unterschiede in den Reaktionszeiten zwischen den Kongruenzbedingungen?",
+        x = "Kongruenz",
+        y = "Reaktionszeit (ms)",
+        caption = signifikanz_label) +
+    theme_grey() +
+    theme(legend.position = "none") +
+    scale_x_discrete(
+        breaks = c(0, 1),
+        labels = c("Nicht Kongruent", "Kongruent")
+    )
+
+p
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+t_test_resultate <- t.test(rt ~ congruent, data = d)
+
+p_wert <- t_test_resultate$p.value
+
+signifikanz_label <- ifelse(p_wert < 0.05, "Es besteht eine Signifikante Interaktion (p < 0.05) zwischen den Kongruenbedingugen.", "Es besteht keine signifikante Interaktion (p >= 0.05) zwischen den Kongruenzbedingungen.")
+
+p = d %>%
+    ggplot(aes(x = as.factor(congruent), y = rt, fill = congruent)) +
+    geom_violin(position = 'dodge', alpha = 0.5, color = "red", fill = "orange") +
+    geom_point(size = 0.5, alpha = 0.5, color = "red") +
+    stat_summary(fun = mean, geom = "point", size = 3, color = "black") +
+    stat_summary(fun = mean, geom = "line", aes(group = 1), linetype = "dashed", color = "black") +
+    stat_summary(fun = mean, geom = "text", aes(label = paste(round(..y.., digits = 2))), vjust = -0.5, color = "black") +
+    labs(
+        title = "Stroop Task: Reaktionszeit nach Kongruenz",
+        subtitle = "Gibt es Unterschiede in den Reaktionszeiten zwischen den Kongruenzbedingungen?",
+        x = "Kongruenz",
+        y = "Reaktionszeit (ms)",
+        caption = signifikanz_label) +
+    theme_grey() +
+    theme(legend.position = "none") +
+    scale_x_discrete(
+        breaks = c(0, 1),
+        labels = c("Nicht Kongruent", "Kongruent")
+    )
+
+p
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- factor(d$congruent, levels = c(0, 1), labels = c("Inkongruent", "Kongruent"))
+
+p <-  ggplot(d, aes(x = congruent, y = rt, color = congruent)) +
+    geom_jitter(size = 3, alpha = 0.4, width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    scale_color_manual(values = c("Inkongruent" = "tomato2", "Kongruent" = "skyblue3")) +
+    labs(title = "Reaktionszeiten beim Stroop-test",
+         subtitle = "Reaktionszeiten bei unterschiedlicher Farb/Schrift-Kongruenz",
+         x = "Kongruenz von Farbe und Schrift",
+         y = "Reaktionszeit in Sekunden") +
+    theme_minimal() +
+    guides(color = FALSE)
+p
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- factor(d$congruent, levels = c(0, 1), labels = c("Inkongruent", "Kongruent"))
+
+p <-  ggplot(d, aes(x = congruent, y = rt, color = congruent)) +
+    geom_jitter(size = 3, alpha = 0.4, width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    scale_color_manual(values = c("Inkongruent" = "tomato2", "Kongruent" = "skyblue3")) +
+    labs(title = "Reaktionszeiten beim Stroop-test",
+         subtitle = "Reaktionszeiten bei unterschiedlicher Farb/Schrift-Kongruenz",
+         x = "Kongruenz von Farbe und Schrift",
+         y = "Reaktionszeit in Sekunden") +
+    theme_minimal() +
+    guides(color = FALSE)
+p
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+#Frage: Unterscheidet sich die Geschwindigkeit je nach Farbe?
+
+# Daten zusammenfassen und fehlende Werte entfernen
+d_summary <- d %>%
+    filter(!is.na(rt)) %>%
+    group_by(color) %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt)) # Standardabweichung berechnen
+glimpse(d_summary)
+
+#Rohdaten verarbeiten damit nur relevanter Bereich gezeigt wird
+d = d %>% filter(rt<1.5)
+
+# Erstellen einer Zuordnung von Farben zu Farben
+color_mapping <- c("blue" = "dodgerblue4", "red" = "firebrick", "yellow" = "gold")
+
+# ggplot mit individuellen Farben für jeden Balken, Standardabweichung und Rohdaten
+
+p <- ggplot(d_summary, aes(y = color, x = mean_rt, fill = color)) +
+    geom_bar(stat = 'identity') +
+    geom_point(data = d, aes(x = rt, group = color), position = position_jitter(width = 0.2), color = "lightgrey", size = 2.5, alpha = 0.05)+
+    geom_errorbar(aes(xmin = mean_rt - sd_rt, xmax = mean_rt + sd_rt), width = 0.2)+ # Fehlerbalken für Standardabweichung
+    geom_text(aes(label = paste("mw =", round(mean_rt, 3)), x = 0.15), vjust = 0, color = "black", size = 3) + # Mittelwert als Zahl in die Balken schreiben
+    geom_text(aes(label = paste("sd")), vjust = -0.5, color = "black", size = 3)+ # sd beschriften
+    scale_fill_manual(values = color_mapping) +
+    labs(title = "Stroop-Test",
+         subtitle = "Unterscheidet sich die Reaktionsgeschwindigkeit je nach Farbe?",
+         y = "Farbe",
+         x = "Durchschnittliche Reaktionszeit in s")+
+    theme_light() +
+    theme(legend.position = "none")  # Farbskala entfernen
+p
+
+
+
+
+
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+#Frage: Unterscheidet sich die Geschwindigkeit je nach Farbe?
+
+# Daten zusammenfassen und fehlende Werte entfernen
+d_summary <- d %>%
+    filter(!is.na(rt)) %>%
+    group_by(color) %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt)) # Standardabweichung berechnen
+glimpse(d_summary)
+
+#Rohdaten verarbeiten damit nur relevanter Bereich gezeigt wird
+d = d %>% filter(rt<1.5)
+
+# Erstellen einer Zuordnung von Farben zu Farben
+color_mapping <- c("blue" = "dodgerblue4", "red" = "firebrick", "yellow" = "gold")
+
+# ggplot mit individuellen Farben für jeden Balken, Standardabweichung und Rohdaten
+
+p <- ggplot(d_summary, aes(y = color, x = mean_rt, fill = color)) +
+    geom_bar(stat = 'identity') +
+    geom_point(data = d, aes(x = rt, group = color), position = position_jitter(width = 0.2), color = "lightgrey", size = 2.5, alpha = 0.05)+
+    geom_errorbar(aes(xmin = mean_rt - sd_rt, xmax = mean_rt + sd_rt), width = 0.2)+ # Fehlerbalken für Standardabweichung
+    geom_text(aes(label = paste("mw =", round(mean_rt, 3)), x = 0.15), vjust = 0, color = "black", size = 3) + # Mittelwert als Zahl in die Balken schreiben
+    geom_text(aes(label = paste("sd")), vjust = -0.5, color = "black", size = 3)+ # sd beschriften
+    scale_fill_manual(values = color_mapping) +
+    labs(title = "Stroop-Test",
+         subtitle = "Unterscheidet sich die Reaktionsgeschwindigkeit je nach Farbe?",
+         y = "Farbe",
+         x = "Durchschnittliche Reaktionszeit in s")+
+    theme_light() +
+    theme(legend.position = "none")  # Farbskala entfernen
+p
+
+
+
+
+
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d %>% mutate(congruent = as.factor(congruent))
+
+palette <- c ("#F56598", "#74E8CE")
+
+#Fragestellung: Ist die Reaktionszeit schneller, wenn die Farbe des Worts mit dem Text übereinstimmt?
+glimpse(d)
+minigrafik = d |>
+    ggplot(mapping =
+           aes(x = congruent,
+               y = rt,
+               color = congruent,
+               fill = congruent)) +
+    geom_jitter(size= 1,
+                alpha = 0.5,) +
+    geom_boxplot(width = 0.3, fill = "white", color ="black", alpha = 0.5, outlier.colour = "black", outlier.shape = NA) +
+    scale_color_manual(values = palette, name = "Kongruenz", labels = c("Inkongruent = 0", "Kongruent = 1")) +
+    scale_fill_manual(values = palette) +
+
+    # Mittelwert
+    stat_summary(fun=mean,
+                 geom="point",
+                 shape=19,
+                 size=1,
+                 color="black",
+                 fill="black",
+                 position=position_dodge(width=0.5)) +
+
+    # Linie um Mittelwert-Differenz darzustellen
+    stat_summary(fun=mean,
+                geom="line",
+                aes(group=1),
+                linetype="solid",
+                color="black",
+                position=position_dodge(width=0.5)) +
+
+    # Mittelwert beschriften
+    geom_text(aes(label = paste("MW:", round(..y.., 2))),
+              stat = "summary",
+              vjust = -0.5,
+              color = "black",
+              fill = "black",
+              position=position_dodge(width=0.5))  +
+
+    # Achsenbeschriftung
+    labs(title = "Stroop-Experiment",
+         subtitle = "Ist die Reaktionszeit schneller, wenn die Farbe des Worts mit dem Text kongruent ist?",
+         x = "Kongruenz von Wort und Farbe",
+         y = "Reaktionszeit",
+         caption = "Datenquelle: Computerlab Neurowissenschaften") +
+
+    # Definiert die Achsenskalierung für die y-Achse
+    scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, by = 0.5)) +
+
+    guides(fill = FALSE) +
+    theme_classic()
+
+minigrafik
+
+#ggsave(filename = "grafik_yael_hess.png",
+#       plot = minigrafik)
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d <- d %>% mutate(congruent = as.factor(congruent))
+
+palette <- c ("#F56598", "#74E8CE")
+
+#Fragestellung: Ist die Reaktionszeit schneller, wenn die Farbe des Worts mit dem Text übereinstimmt?
+glimpse(d)
+minigrafik = d |>
+    ggplot(mapping =
+           aes(x = congruent,
+               y = rt,
+               color = congruent,
+               fill = congruent)) +
+    geom_jitter(size= 1,
+                alpha = 0.5,) +
+    geom_boxplot(width = 0.3, fill = "white", color ="black", alpha = 0.5, outlier.colour = "black", outlier.shape = NA) +
+    scale_color_manual(values = palette, name = "Kongruenz", labels = c("Inkongruent = 0", "Kongruent = 1")) +
+    scale_fill_manual(values = palette) +
+
+    # Mittelwert
+    stat_summary(fun=mean,
+                 geom="point",
+                 shape=19,
+                 size=1,
+                 color="black",
+                 fill="black",
+                 position=position_dodge(width=0.5)) +
+
+    # Linie um Mittelwert-Differenz darzustellen
+    stat_summary(fun=mean,
+                geom="line",
+                aes(group=1),
+                linetype="solid",
+                color="black",
+                position=position_dodge(width=0.5)) +
+
+    # Mittelwert beschriften
+    geom_text(aes(label = paste("MW:", round(..y.., 2))),
+              stat = "summary",
+              vjust = -0.5,
+              color = "black",
+              fill = "black",
+              position=position_dodge(width=0.5))  +
+
+    # Achsenbeschriftung
+    labs(title = "Stroop-Experiment",
+         subtitle = "Ist die Reaktionszeit schneller, wenn die Farbe des Worts mit dem Text kongruent ist?",
+         x = "Kongruenz von Wort und Farbe",
+         y = "Reaktionszeit",
+         caption = "Datenquelle: Computerlab Neurowissenschaften") +
+
+    # Definiert die Achsenskalierung für die y-Achse
+    scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, by = 0.5)) +
+
+    guides(fill = FALSE) +
+    theme_classic()
+
+minigrafik
+
+#ggsave(filename = "grafik_yael_hess.png",
+#       plot = minigrafik)
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+
+d_grouped_and_summarized <- d %>%
+    group_by(id, congruent) %>%
+    summarise(
+        sum_corr = sum(corr),
+        mean_corr = mean(sum_corr)
+    )
+
+p = ggplot(data = d_grouped_and_summarized,
+       aes(x = factor(congruent),
+           y = mean_corr,
+           fill = factor(congruent))) +
+    geom_boxplot() +
+    geom_point(position = position_jitter(width = 0.2), alpha = 0.5) +
+    labs(x = "Kongruenz", y = "Anzahl der richtigen Antworten", fill = "Kongruenz") +
+    scale_fill_manual(values = c("1" = "lightblue", "0" = "lightgreen"),
+                      labels = c("kongruent", "inkongruent")) +
+    scale_x_discrete(labels = c("1" = "kongruent", "0" = "inkongruent")) +  # Ändern der Labels auf der x-Achse
+    coord_cartesian(ylim = c(40, 65)) + # limitieren der Spannweite der y-Achse zur besseren Übersicht
+    theme_minimal() +
+    theme(legend.position = "right") +
+    ggtitle("Einfluss der Kongruenz auf die Korrektheit der Antwort") +  # Titel hinzufügen
+    labs(subtitle = "Wie unterscheiden sich kongruente Trials von inkongruenten in Bezug auf die Häufigkeit korrekter Antworten?")  # Untertitel hinzufügen
+p
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+
+d_grouped_and_summarized <- d %>%
+    group_by(id, congruent) %>%
+    summarise(
+        sum_corr = sum(corr),
+        mean_corr = mean(sum_corr)
+    )
+
+p = ggplot(data = d_grouped_and_summarized,
+       aes(x = factor(congruent),
+           y = mean_corr,
+           fill = factor(congruent))) +
+    geom_boxplot() +
+    geom_point(position = position_jitter(width = 0.2), alpha = 0.5) +
+    labs(x = "Kongruenz", y = "Anzahl der richtigen Antworten", fill = "Kongruenz") +
+    scale_fill_manual(values = c("1" = "lightblue", "0" = "lightgreen"),
+                      labels = c("kongruent", "inkongruent")) +
+    scale_x_discrete(labels = c("1" = "kongruent", "0" = "inkongruent")) +  # Ändern der Labels auf der x-Achse
+    coord_cartesian(ylim = c(40, 65)) + # limitieren der Spannweite der y-Achse zur besseren Übersicht
+    theme_minimal() +
+    theme(legend.position = "right") +
+    ggtitle("Einfluss der Kongruenz auf die Korrektheit der Antwort") +  # Titel hinzufügen
+    labs(subtitle = "Wie unterscheiden sich kongruente Trials von inkongruenten in Bezug auf die Häufigkeit korrekter Antworten?")  # Untertitel hinzufügen
+p
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Rohdaten und Zusammenfassung
+p <- d %>%
+  ggplot(aes(x = as.factor(congruent), y = rt, fill = as.factor(congruent))) +
+  geom_jitter( width = 0.2, alpha = 0.5, size = 2, color = "lightgrey") +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 3, position = position_dodge(width = 0.75)) +
+  stat_summary(fun = mean, geom = "errorbar", position = position_dodge(width = 0.75), width = 0.3, color = "black", size = 1.5) +
+  geom_line(stat = "summary", aes(group = 1), position = position_dodge(width = 0.75), linetype = "dashed") +
+  geom_text(stat = "summary", aes(label = round(..y.., 2)), vjust = -1, position = position_dodge(width = 0.8)) +
+  labs(
+    title = "Durchschnittliche Reaktionszeiten zwischen den Bedingungen",
+    subtitle = "Unterschiede in den durchschnittlichen Reaktionszeiten zwischen kongruent und inkongruent",
+    x = "Kongruenz",
+    y = "Durchschnittliche Reaktionszeit (in ms)",
+    fill = "Kongruenz"
+  ) +
+  scale_fill_manual(values = c("magenta","blue")) +
+  scale_x_discrete(labels = c("Nicht kongruent","Kongruent")) +
+  theme_minimal()
+
+print(p)
+
+
+
+
+
+
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Rohdaten und Zusammenfassung
+p <- d %>%
+  ggplot(aes(x = as.factor(congruent), y = rt, fill = as.factor(congruent))) +
+  geom_jitter( width = 0.2, alpha = 0.5, size = 2, color = "lightgrey") +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 3, position = position_dodge(width = 0.75)) +
+  stat_summary(fun = mean, geom = "errorbar", position = position_dodge(width = 0.75), width = 0.3, color = "black", size = 1.5) +
+  geom_line(stat = "summary", aes(group = 1), position = position_dodge(width = 0.75), linetype = "dashed") +
+  geom_text(stat = "summary", aes(label = round(..y.., 2)), vjust = -1, position = position_dodge(width = 0.8)) +
+  labs(
+    title = "Durchschnittliche Reaktionszeiten zwischen den Bedingungen",
+    subtitle = "Unterschiede in den durchschnittlichen Reaktionszeiten zwischen kongruent und inkongruent",
+    x = "Kongruenz",
+    y = "Durchschnittliche Reaktionszeit (in ms)",
+    fill = "Kongruenz"
+  ) +
+  scale_fill_manual(values = c("magenta","blue")) +
+  scale_x_discrete(labels = c("Nicht kongruent","Kongruent")) +
+  theme_minimal()
+
+print(p)
+
+
+
+
+
+
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+#Frage: Unterscheidet sich die Geschwindigkeit je nach Farbe?
+
+# Daten zusammenfassen und fehlende Werte entfernen
+d_summary <- d %>%
+    filter(!is.na(rt)) %>%
+    group_by(color) %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+glimpse(d_summary)
+
+#Rohdaten verarbeiten damit nur ein reduzierter Bereich gezeigt wird (dort wo MW & SD liegen)
+d= d %>%
+    filter(rt<1.2)
+
+
+# Erstellen einer Zuordnung von Farben zu Farben
+color_mapping <- c("blue" = "lightskyblue", "red" = "lightcoral", "yellow" = "lightgoldenrod1")
+
+# ggplot mit MW,SD & individuellen Datenpunkten
+
+p<- ggplot(d_summary, aes(x = color, y = mean_rt, fill = color)) +
+    geom_bar(stat = 'identity') +
+    geom_point(data = d, aes(y = rt, group = color), position = position_jitter(width = 0.2), color = "lightgrey", size = 2.5, alpha=0.05)+
+    geom_errorbar(aes(ymin = mean_rt - sd_rt, ymax = mean_rt + sd_rt), width = 0.2)+ # errorbars=sd
+    scale_fill_manual(values = color_mapping) +
+    labs(title = "Forschungsfrage",
+         subtitle = "Unterscheidet sich die Reaktionsgeschwindigkeit je nach Farbe?",
+         x = "Farbe",
+         y = "Durchschnittliche Reaktionszeit [ms]",
+         caption= "Errorbar= Standardabweichung")+
+    theme_linedraw()
+p
+
+
+
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+#Frage: Unterscheidet sich die Geschwindigkeit je nach Farbe?
+
+# Daten zusammenfassen und fehlende Werte entfernen
+d_summary <- d %>%
+    filter(!is.na(rt)) %>%
+    group_by(color) %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+glimpse(d_summary)
+
+#Rohdaten verarbeiten damit nur ein reduzierter Bereich gezeigt wird (dort wo MW & SD liegen)
+d= d %>%
+    filter(rt<1.2)
+
+
+# Erstellen einer Zuordnung von Farben zu Farben
+color_mapping <- c("blue" = "lightskyblue", "red" = "lightcoral", "yellow" = "lightgoldenrod1")
+
+# ggplot mit MW,SD & individuellen Datenpunkten
+
+p<- ggplot(d_summary, aes(x = color, y = mean_rt, fill = color)) +
+    geom_bar(stat = 'identity') +
+    geom_point(data = d, aes(y = rt, group = color), position = position_jitter(width = 0.2), color = "lightgrey", size = 2.5, alpha=0.05)+
+    geom_errorbar(aes(ymin = mean_rt - sd_rt, ymax = mean_rt + sd_rt), width = 0.2)+ # errorbars=sd
+    scale_fill_manual(values = color_mapping) +
+    labs(title = "Forschungsfrage",
+         subtitle = "Unterscheidet sich die Reaktionsgeschwindigkeit je nach Farbe?",
+         x = "Farbe",
+         y = "Durchschnittliche Reaktionszeit [ms]",
+         caption= "Errorbar= Standardabweichung")+
+    theme_linedraw()
+p
+
+
+
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Fragestellung:
+# Ist die Reaktionszeit der Versuchspersonen länger bei inkongruenten Items im Vergleich zu kongruenten Items?
+
+# Daten bereinigen und Überblick verschaffen:
+d_clean <- d %>%
+  filter(!is.na(rt))
+
+summary_data <- d_clean %>%
+  group_by(congruent) %>%
+  summarize(median_rt = median(rt),
+            mean_rt = mean(rt),
+            sd_rt = sd(rt))
+
+# Anzeigen der summary
+summary_data
+
+# congruent zu Faktor umwandeln (inkongruent = 0; kongruent = 1)
+d_final <- d_clean %>%
+  mutate(congruent = factor(congruent))
+
+
+# Plot erstellen
+p <- ggplot(d_final, aes(x = congruent, y = rt, fill = congruent)) +
+  geom_jitter(width = 0.25, alpha = 0.6, color = "#000000", shape = 21, size = 3, stroke = 0.4) +
+  geom_boxplot(alpha = 0.8) +
+  labs(title = "Reaktionszeiten nach Kongruenz im Stroop Task",
+       subtitle = "Ist die Reaktionszeit der Versuchspersonen länger bei inkongruenten Items im Vergleich zu kongruenten Items?",
+       x = "Kongruenz",
+       y = "Reaktionszeit [s]",
+       fill = "Kongruenz",
+       caption = "Neurowissenschaft Computerlab - Stroop Task - Universität Bern") +
+  scale_fill_manual(values = c("#9bcd9b", "#68829E"), labels = c("inkongruent", "kongruent")) +
+  scale_x_discrete(labels = c("inkongruent", "kongruent")) +
+  theme_bw()
+
+# Plot anzeigen
+p
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Fragestellung:
+# Ist die Reaktionszeit der Versuchspersonen länger bei inkongruenten Items im Vergleich zu kongruenten Items?
+
+# Daten bereinigen und Überblick verschaffen:
+d_clean <- d %>%
+  filter(!is.na(rt))
+
+summary_data <- d_clean %>%
+  group_by(congruent) %>%
+  summarize(median_rt = median(rt),
+            mean_rt = mean(rt),
+            sd_rt = sd(rt))
+
+# Anzeigen der summary
+summary_data
+
+# congruent zu Faktor umwandeln (inkongruent = 0; kongruent = 1)
+d_final <- d_clean %>%
+  mutate(congruent = factor(congruent))
+
+
+# Plot erstellen
+p <- ggplot(d_final, aes(x = congruent, y = rt, fill = congruent)) +
+  geom_jitter(width = 0.25, alpha = 0.6, color = "#000000", shape = 21, size = 3, stroke = 0.4) +
+  geom_boxplot(alpha = 0.8) +
+  labs(title = "Reaktionszeiten nach Kongruenz im Stroop Task",
+       subtitle = "Ist die Reaktionszeit der Versuchspersonen länger bei inkongruenten Items im Vergleich zu kongruenten Items?",
+       x = "Kongruenz",
+       y = "Reaktionszeit [s]",
+       fill = "Kongruenz",
+       caption = "Neurowissenschaft Computerlab - Stroop Task - Universität Bern") +
+  scale_fill_manual(values = c("#9bcd9b", "#68829E"), labels = c("inkongruent", "kongruent")) +
+  scale_x_discrete(labels = c("inkongruent", "kongruent")) +
+  theme_bw()
+
+# Plot anzeigen
+p
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Fragestellung: Reaktionszeit bei kongruenten oder bei inkroguenten Stimuli + mean von rt in Form von Linie einfügen zum Vergleich
+glimpse(d)
+
+#Variable congruent in Faktor umrechnen weil sonst alle Werte möglich zwischen 0 & 1
+d1 <- d %>%
+    mutate(congruent = as.factor(congruent)) %>%
+    filter(rt < 4 & rt > 0.1)
+
+#Mittelwert von rt bilden um diesen als Vergleich in den plot einzufügen
+d2 <- d1 %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+#Plot
+p = d1 %>%
+    ggplot(mapping = aes(x = congruent, y = rt, color = congruent)) +
+    scale_y_continuous(breaks = seq(0, 4, by = 0.5)) +
+    geom_jitter(width = 0.35, alpha = 0.1) +
+    geom_hline(yintercept = d2$mean_rt, linetype = "dashed", color = "black", linewidth = 0.8) +
+    scale_color_manual(values = c("darkgreen", "darkorange")) +
+    labs(title = "Kongruente Stimuli gehen mit einer kürzeren Reaktionszeit einher",
+         subtitle = "Weist die kongruente Bedingung schnellere Reaktionszeiten auf als die inkongruente?",
+         x = "inkongruent vs. kongruent",
+         y = "Reaktionszeit in Sekunden") +
+    guides(color = FALSE) #Ausblenden der Farb-Legende
+    theme_classic()
+p
+
+#glimpse(p)
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+# Fragestellung: Reaktionszeit bei kongruenten oder bei inkroguenten Stimuli + mean von rt in Form von Linie einfügen zum Vergleich
+glimpse(d)
+
+#Variable congruent in Faktor umrechnen weil sonst alle Werte möglich zwischen 0 & 1
+d1 <- d %>%
+    mutate(congruent = as.factor(congruent)) %>%
+    filter(rt < 4 & rt > 0.1)
+
+#Mittelwert von rt bilden um diesen als Vergleich in den plot einzufügen
+d2 <- d1 %>%
+    summarise(mean_rt = mean(rt),
+              sd_rt = sd(rt))
+#Plot
+p = d1 %>%
+    ggplot(mapping = aes(x = congruent, y = rt, color = congruent)) +
+    scale_y_continuous(breaks = seq(0, 4, by = 0.5)) +
+    geom_jitter(width = 0.35, alpha = 0.1) +
+    geom_hline(yintercept = d2$mean_rt, linetype = "dashed", color = "black", linewidth = 0.8) +
+    scale_color_manual(values = c("darkgreen", "darkorange")) +
+    labs(title = "Kongruente Stimuli gehen mit einer kürzeren Reaktionszeit einher",
+         subtitle = "Weist die kongruente Bedingung schnellere Reaktionszeiten auf als die inkongruente?",
+         x = "inkongruent vs. kongruent",
+         y = "Reaktionszeit in Sekunden") +
+    guides(color = FALSE) #Ausblenden der Farb-Legende
+    theme_classic()
+p
+
+#glimpse(p)
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+glimpse(d)
+
+#Datensatz gruppiert und summarized anhand der für die Beantwortung der Fragestellung relevanten Daten.
+d_grouped_and_summarized_data <- d |>
+  mutate(corr = as.factor(corr))|>
+  group_by(id, corr, rt)|>
+  summarise(
+    ncorrect = corr,
+  )
+
+#Plot erstellt anhand des erstellten Datensatzes
+p = d_grouped_and_summarized_data |>
+  filter(rt < 5)|>
+  ggplot(mapping =
+           aes(x= ncorrect, y= rt, color = ncorrect)) +
+  geom_jitter(size= 1, width= 0.4) +
+  geom_boxplot(width = 0.3, color= "black") +
+  labs(title = "Reaktionzeiten und falsche Antworten",
+       subtitle = "Haben die VP schneller geantwortet wenn sie falsch geantwortet haben?",
+       x="Antwort",
+       y = "Reaktionszeit")+
+  scale_x_discrete(labels = c("Falsch", "Richtig"))+
+  theme_bw()
+
+#Ausgabe des Plots
+p
+
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+glimpse(d)
+
+#Datensatz gruppiert und summarized anhand der für die Beantwortung der Fragestellung relevanten Daten.
+d_grouped_and_summarized_data <- d |>
+  mutate(corr = as.factor(corr))|>
+  group_by(id, corr, rt)|>
+  summarise(
+    ncorrect = corr,
+  )
+
+#Plot erstellt anhand des erstellten Datensatzes
+p = d_grouped_and_summarized_data |>
+  filter(rt < 5)|>
+  ggplot(mapping =
+           aes(x= ncorrect, y= rt, color = ncorrect)) +
+  geom_jitter(size= 1, width= 0.4) +
+  geom_boxplot(width = 0.3, color= "black") +
+  labs(title = "Reaktionzeiten und falsche Antworten",
+       subtitle = "Haben die VP schneller geantwortet wenn sie falsch geantwortet haben?",
+       x="Antwort",
+       y = "Reaktionszeit")+
+  scale_x_discrete(labels = c("Falsch", "Richtig"))+
+  theme_bw()
+
+#Ausgabe des Plots
+p
+
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- factor(d$congruent, levels = c(0, 1), labels = c("Nicht-Kongruent", "Kongruent"))
+
+# Zufällige Auswahl von 15 Personen
+random_ids <- sample(unique(d$id), 15)
+
+r_d <- d %>%
+    filter(id %in% random_ids)
+
+p = r_d |>
+    ggplot(aes(x = congruent, y = rt, fill = congruent)) +
+    geom_jitter(width = 0.3, alpha = 0.5) +
+    geom_boxplot(outlier.color = "darkorange", alpha = 0.75) +
+    scale_fill_manual(values = c("cornflowerblue", "darkmagenta")) +
+    labs(title = "Die Reaktionszeiten von der kongruenten und nicht-kongruenten Bedingung",
+         subtitle = "Besteht ein Unterschied in den Reaktionszeiten zwischen der kongruenten und nicht-kongruenten Bedingung?",
+         x = "Kongruenz",
+         y = "Reaktionszeit [s]") +
+    theme_bw() +
+    theme(legend.position = "none")
+
+print(p)
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- factor(d$congruent, levels = c(0, 1), labels = c("Nicht-Kongruent", "Kongruent"))
+
+# Zufällige Auswahl von 15 Personen
+random_ids <- sample(unique(d$id), 15)
+
+r_d <- d %>%
+    filter(id %in% random_ids)
+
+p = r_d |>
+    ggplot(aes(x = congruent, y = rt, fill = congruent)) +
+    geom_jitter(width = 0.3, alpha = 0.5) +
+    geom_boxplot(outlier.color = "darkorange", alpha = 0.75) +
+    scale_fill_manual(values = c("cornflowerblue", "darkmagenta")) +
+    labs(title = "Die Reaktionszeiten von der kongruenten und nicht-kongruenten Bedingung",
+         subtitle = "Besteht ein Unterschied in den Reaktionszeiten zwischen der kongruenten und nicht-kongruenten Bedingung?",
+         x = "Kongruenz",
+         y = "Reaktionszeit [s]") +
+    theme_bw() +
+    theme(legend.position = "none")
+
+print(p)
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- as.factor(d$congruent)
+levels(d$congruent) <- c("inkongruent", "kongruent")
+
+p = d %>%
+    ggplot(mapping = aes(congruent,
+                         rt))+
+    geom_jitter(alpha = 0.4, color = "grey18")+
+    geom_boxplot(color = "lightsalmon2", alpha = 0.5)+
+    labs(x = "Kongruenz",
+         y = "Reaktionszeit",
+         title = "Kongruenz macht schneller!",
+         subtitle = "Hat die Übereinstimmung der Farben mit den Wörtern einen Einfluss auf die Reaktionszeit?")+
+    theme_bw()
+
+p
+
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+
+d$congruent <- as.factor(d$congruent)
+levels(d$congruent) <- c("inkongruent", "kongruent")
+
+p = d %>%
+    ggplot(mapping = aes(congruent,
+                         rt))+
+    geom_jitter(alpha = 0.4, color = "grey18")+
+    geom_boxplot(color = "lightsalmon2", alpha = 0.5)+
+    labs(x = "Kongruenz",
+         y = "Reaktionszeit",
+         title = "Kongruenz macht schneller!",
+         subtitle = "Hat die Übereinstimmung der Farben mit den Wörtern einen Einfluss auf die Reaktionszeit?")+
+    theme_bw()
+
+p
+
+
+
+```:::::: panel-tabset## Plot```{r}
+#| echo: false
+#| output: false
+
+d = read_csv('data/dataset_stroop_clean.csv')
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Beginnen Sie hier mit Ihrem Code:
+#alles zu faktoren machen
+d <- d |>
+    mutate(across(where(is.character), as.factor))
+
+#daten anschauen
+d |>
+    slice_head(n = 10)
+
+# Daten gruppieren:  Anzahl Trials, Accuracy und mittlere Reaktionszeit berechnen
+d_acc_rt_individual <- d |>
+    group_by(id, congruent) |>
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)
+    )
+
+
+# Plot erstellen
+
+p <- d_acc_rt_individual |>
+    ggplot(aes(x = congruent, y = median_rt, fill = factor(congruent))) +
+    geom_boxplot(alpha = .5) +
+    geom_jitter(alpha = .25, width = .2) +
+    scale_fill_manual(values = c("0" = "red", "1" = "green")) +
+    labs(title = "Inhibitionsfähigkeit",
+         subtitle = "Ist die Reaktionszeit bei der inkongruenten Bedingung verlangsamt?",
+         x = "Kongruenz [Nein (0), Ja (1)]",
+         y = "Reaktionszeit [ms]") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+#Plot ausgeben
+p
+
+
+```## Code```{r}#| echo: true#| eval: false
+
+# Beginnen Sie hier mit Ihrem Code:
+#alles zu faktoren machen
+d <- d |>
+    mutate(across(where(is.character), as.factor))
+
+#daten anschauen
+d |>
+    slice_head(n = 10)
+
+# Daten gruppieren:  Anzahl Trials, Accuracy und mittlere Reaktionszeit berechnen
+d_acc_rt_individual <- d |>
+    group_by(id, congruent) |>
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)
+    )
+
+
+# Plot erstellen
+
+p <- d_acc_rt_individual |>
+    ggplot(aes(x = congruent, y = median_rt, fill = factor(congruent))) +
+    geom_boxplot(alpha = .5) +
+    geom_jitter(alpha = .25, width = .2) +
+    scale_fill_manual(values = c("0" = "red", "1" = "green")) +
+    labs(title = "Inhibitionsfähigkeit",
+         subtitle = "Ist die Reaktionszeit bei der inkongruenten Bedingung verlangsamt?",
+         x = "Kongruenz [Nein (0), Ja (1)]",
+         y = "Reaktionszeit [ms]") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+#Plot ausgeben
+p
+
+
+```:::

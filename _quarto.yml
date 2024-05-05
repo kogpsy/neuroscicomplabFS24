@@ -69,6 +69,7 @@ website:
 
     - section: Modellierung von Daten
       contents:
+      - pages/chapters/Modeling_1.qmd
      # - pages/chapters/signal-detection-1.qmd
      # - pages/chapters/signal-detection-2.qmd
 
