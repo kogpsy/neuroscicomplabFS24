@@ -26,7 +26,7 @@ library(tidyverse)
 library(cowplot)
 ```
 
-Das Ziel ist es, zu verstehen wie der Mensch / das Hirn funktioniert. We want to describe, predict, and explain behavior. Idealerweise so, wie in der Physik z.B. die Bewegung eines geworfenen Steins beschrieben werden kann. Consideration of the data and verbal theorizing are insufficient on their own. 
+Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären.  
 
 # Planetare Bewegung
 :::: {layout="[ 50, 50 ]"}
