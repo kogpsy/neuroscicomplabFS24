@@ -523,94 +523,6 @@ d = read_csv('data/dataset_stroop_clean.csv')
 
 
 # Beginnen Sie hier mit Ihrem Code:
-library(ggplot2)
-
-# Datensatz anschauen
-glimpse(d)
-
-unique(d$color)
-
-d_congruent <- d %>%
-    mutate(congruent = as.factor(congruent))%>%
-    filter(rt < 4 & rt > 0.1)
-
-
-d_rt_summary <- d_congruent %>%
-summarise(mean_rt = mean(rt),
-              sd_rt = sd(rt))
-
-
-glimpse(d_rt_summary)
-
-#plot
-p = d_congruent |>
-    ggplot(mapping = aes(x =congruent ,
-                         y = rt, color= congruent)) +
-    geom_jitter(width = 0.4, alpha= 0.09) +
-    scale_y_continuous(breaks = seq(0, 4, by = 0.5))+
-    geom_hline(yintercept = d_rt_summary$mean_rt, linetype = "dashed", color = "red", linewidth= 1)+
-    scale_color_manual(values= c("darkviolet", "darkblue"))+
-    labs(title = "Geringere Reaktionszeit in der kongruenten Bedingungen",
-         subtitle = "Unterscheidet sich die Reaktionszeit zwischen der kongruenten und inkongruenten Bedinung?",
-         x = "inkongruent vs. kongruent",
-         y = "Reaktionszeit in Sekunden") +
-    theme_classic() +
-    guides(color = FALSE)
-p
-
-
-```## Code```{r}#| echo: true#| eval: false
-
-# Beginnen Sie hier mit Ihrem Code:
-library(ggplot2)
-
-# Datensatz anschauen
-glimpse(d)
-
-unique(d$color)
-
-d_congruent <- d %>%
-    mutate(congruent = as.factor(congruent))%>%
-    filter(rt < 4 & rt > 0.1)
-
-
-d_rt_summary <- d_congruent %>%
-summarise(mean_rt = mean(rt),
-              sd_rt = sd(rt))
-
-
-glimpse(d_rt_summary)
-
-#plot
-p = d_congruent |>
-    ggplot(mapping = aes(x =congruent ,
-                         y = rt, color= congruent)) +
-    geom_jitter(width = 0.4, alpha= 0.09) +
-    scale_y_continuous(breaks = seq(0, 4, by = 0.5))+
-    geom_hline(yintercept = d_rt_summary$mean_rt, linetype = "dashed", color = "red", linewidth= 1)+
-    scale_color_manual(values= c("darkviolet", "darkblue"))+
-    labs(title = "Geringere Reaktionszeit in der kongruenten Bedingungen",
-         subtitle = "Unterscheidet sich die Reaktionszeit zwischen der kongruenten und inkongruenten Bedinung?",
-         x = "inkongruent vs. kongruent",
-         y = "Reaktionszeit in Sekunden") +
-    theme_classic() +
-    guides(color = FALSE)
-p
-
-
-```:::::: panel-tabset## Plot```{r}
-#| echo: false
-#| output: false
-
-d = read_csv('data/dataset_stroop_clean.csv')
-```
-
-```{r}
-#| echo: false
-#| warning: false
-
-
-# Beginnen Sie hier mit Ihrem Code:
 
 #Libraries laden
 library(patchwork)
@@ -1509,88 +1421,6 @@ p <- ggplot(d_final, aes(x = congruent, y = rt, fill = congruent)) +
 
 # Plot anzeigen
 p
-
-
-
-```:::::: panel-tabset## Plot```{r}
-#| echo: false
-#| output: false
-
-d = read_csv('data/dataset_stroop_clean.csv')
-```
-
-```{r}
-#| echo: false
-#| warning: false
-
-
-# Beginnen Sie hier mit Ihrem Code:
-
-# Fragestellung: Reaktionszeit bei kongruenten oder bei inkroguenten Stimuli + mean von rt in Form von Linie einfügen zum Vergleich
-glimpse(d)
-
-#Variable congruent in Faktor umrechnen weil sonst alle Werte möglich zwischen 0 & 1
-d1 <- d %>%
-    mutate(congruent = as.factor(congruent)) %>%
-    filter(rt < 4 & rt > 0.1)
-
-#Mittelwert von rt bilden um diesen als Vergleich in den plot einzufügen
-d2 <- d1 %>%
-    summarise(mean_rt = mean(rt),
-              sd_rt = sd(rt))
-#Plot
-p = d1 %>%
-    ggplot(mapping = aes(x = congruent, y = rt, color = congruent)) +
-    scale_y_continuous(breaks = seq(0, 4, by = 0.5)) +
-    geom_jitter(width = 0.35, alpha = 0.1) +
-    geom_hline(yintercept = d2$mean_rt, linetype = "dashed", color = "black", linewidth = 0.8) +
-    scale_color_manual(values = c("darkgreen", "darkorange")) +
-    labs(title = "Kongruente Stimuli gehen mit einer kürzeren Reaktionszeit einher",
-         subtitle = "Weist die kongruente Bedingung schnellere Reaktionszeiten auf als die inkongruente?",
-         x = "inkongruent vs. kongruent",
-         y = "Reaktionszeit in Sekunden") +
-    guides(color = FALSE) #Ausblenden der Farb-Legende
-    theme_classic()
-p
-
-#glimpse(p)
-
-
-
-
-```## Code```{r}#| echo: true#| eval: false
-
-# Beginnen Sie hier mit Ihrem Code:
-
-# Fragestellung: Reaktionszeit bei kongruenten oder bei inkroguenten Stimuli + mean von rt in Form von Linie einfügen zum Vergleich
-glimpse(d)
-
-#Variable congruent in Faktor umrechnen weil sonst alle Werte möglich zwischen 0 & 1
-d1 <- d %>%
-    mutate(congruent = as.factor(congruent)) %>%
-    filter(rt < 4 & rt > 0.1)
-
-#Mittelwert von rt bilden um diesen als Vergleich in den plot einzufügen
-d2 <- d1 %>%
-    summarise(mean_rt = mean(rt),
-              sd_rt = sd(rt))
-#Plot
-p = d1 %>%
-    ggplot(mapping = aes(x = congruent, y = rt, color = congruent)) +
-    scale_y_continuous(breaks = seq(0, 4, by = 0.5)) +
-    geom_jitter(width = 0.35, alpha = 0.1) +
-    geom_hline(yintercept = d2$mean_rt, linetype = "dashed", color = "black", linewidth = 0.8) +
-    scale_color_manual(values = c("darkgreen", "darkorange")) +
-    labs(title = "Kongruente Stimuli gehen mit einer kürzeren Reaktionszeit einher",
-         subtitle = "Weist die kongruente Bedingung schnellere Reaktionszeiten auf als die inkongruente?",
-         x = "inkongruent vs. kongruent",
-         y = "Reaktionszeit in Sekunden") +
-    guides(color = FALSE) #Ausblenden der Farb-Legende
-    theme_classic()
-p
-
-#glimpse(p)
-
 
 
 
