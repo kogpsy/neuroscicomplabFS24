@@ -469,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Das Ziel ist es, zu verstehen wie der Mensch / das Hirn funktioniert. We want to describe, predict, and explain behavior. Idealerweise so, wie in der Physik z.B. die Bewegung eines geworfenen Steins beschrieben werden kann. Consideration of the data and verbal theorizing are insufficient on their own.</p>
+<p>Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären.</p>
 <section id="planetare-bewegung" class="level1">
 <h1>Planetare Bewegung</h1>
 <div class="quarto-layout-panel">
@@ -657,12 +657,12 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 1
     pos
   &lt;dbl&gt;
-1  5.14
-2  5.06
+1  5.26
+2  5.15
 3  4.86
-4  5.02
-5  5.11
-6  4.87</code></pre>
+4  4.87
+5  5.21
+6  5.06</code></pre>
 </div>
 </div>
 </section>
@@ -677,12 +677,12 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 1
       x
   &lt;dbl&gt;
-1  4.37
-2  4.31
-3  4.25
-4  4.20
-5  4.24
-6  4.35</code></pre>
+1  4.39
+2  4.38
+3  4.38
+4  4.42
+5  4.20
+6  4.39</code></pre>
 </div>
 </div>
 <p>Basierend auf dem DAG formulieren wir ein lineares Modell. In diesem Fall schätzen wir nur den Intercept. Mit der Funktion <code>lm()</code> können wir die Parameter von diesem Modell schätzen (frequentistisch).</p>
@@ -693,11 +693,11 @@ Hands-on: Simulation
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)[<span class="st">"(Intercept)"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept) 
-   4.293887 </code></pre>
+   4.321113 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sigma</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.07224559</code></pre>
+<pre><code>[1] 0.08101973</code></pre>
 </div>
 </div>
 </section>
@@ -732,12 +732,12 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 2
   planet   pos
   &lt;chr&gt;  &lt;dbl&gt;
-1 erde    5.34
-2 erde    5.29
-3 erde    5.21
+1 erde    5.36
+2 erde    5.15
+3 erde    4.99
 4 mond    6.88
-5 mond    6.89
-6 mond    7.06</code></pre>
+5 mond    7.33
+6 mond    7.03</code></pre>
 </div>
 </div>
 </div>
@@ -754,7 +754,7 @@ lm(formula = pos ~ 1 + planet, data = d_cat)
 
 Coefficients:
 (Intercept)   planetmond  
-      4.967        1.971  </code></pre>
+      5.035        2.006  </code></pre>
 </div>
 </div>
 </section>
@@ -787,11 +787,11 @@ Coefficients:
   grösse   pos
    &lt;dbl&gt; &lt;dbl&gt;
 1    165  4.76
-2    165  4.86
-3    165  5.22
-4    170  6.00
-5    170  5.63
-6    170  6.36</code></pre>
+2    165  4.83
+3    165  4.87
+4    170  6.09
+5    170  5.93
+6    170  5.96</code></pre>
 </div>
 </div>
 </div>
@@ -808,7 +808,7 @@ lm(formula = pos ~ 1 + grösse, data = d_cont)
 
 Coefficients:
 (Intercept)       grösse  
-   -33.0087       0.2294  </code></pre>
+   -26.9336       0.1939  </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
