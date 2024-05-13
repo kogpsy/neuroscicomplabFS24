@@ -26,4 +26,4 @@ library(tidyverse)
 library(ggdist)
 ```
 
-{{< include _plots.qmd >}}
+<!-- {{< include _plots_mi.qmd >}} -->
