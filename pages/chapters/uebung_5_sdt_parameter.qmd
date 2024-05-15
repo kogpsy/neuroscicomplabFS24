@@ -1,0 +1,232 @@
+---
+title: "Übung 5 - SDT Parameter"
+description: d' und c berechnen
+author:
+  - name: Gerda Wyssen
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+  - name: Daniel Fitze
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459 
+license: CC BY
+citation: true
+#bibliography: ../../bibliography_gw.bib
+format:
+    html:
+        toc: true
+---
+
+# Auftrag
+
+Berechnen Sie die zwei SDT Parameter $d'$ und $c$ und beantworen anschliessend die Lückentextfrage auf Ilias.  
+
+# Vorgehen
+
+- Laden Sie [hier](../../downloadable_files/Uebung_5.zip) das r-Projekt herunter.
+
+- Im r-Markdown File `Uebung_5.Rmd` werden Sie durch die Berechnung der Parameter geführt. Das geknittete r-Markdown File finden Sie weiter unten auf dieser Seite.
+
+- In den Code-Chunks im r-Markdown File `Uebung_5.Rmd` gibt es Lücken (`__`). Vervollständigen Sie diesen Code. **Ändern Sie den Code nur bei den Lücken!**  
+    
+- Beantworten Sie die Lückentextfrage auf Ilias.
+
+
+# Abgabetermine
+
+__Gruppe Montag:__ 31.05.2024 23:55
+
+__Gruppe Mittwoch:__ 31.05.2024 23:55
+
+\vspace{20em}
+
+# Inhalt r-Markdown File
+
+In dieser Übung berechnen Sie aus den Daten von 15 Versuchspersonen aus dem PsychoPy Experiment die Signal Detection Kennzahlen $d'$, $k$ und $c$. Anschliessen berechnen Sie Mittelwerte der drei Bedingungen für $d'$ und $c$ unter Berücksichtigung der Messwiederholung.
+
+## Vorbereitung
+
+```{r}
+#| eval: false
+library(tidyverse)
+
+d = read_csv('data/dataset_rdk_clean.csv')
+```
+
+### Variablen bearbeiten
+
+Zu `factor` konvertieren, etc.
+
+```{r}
+#| eval: false
+d = d |>
+    select(id, condition, stimulus = direction, resp) |>
+    mutate(across(where(is.character), ~as_factor(.))) |>
+    drop_na()
+```
+
+Wir definieren nun eine Antowrt als "Hit", wenn die Vp "rechts" gesagt, und die Richtung war tatsächlich "rechts" (also eine korrekte "rechts" Antowrt). Ein "False Alarm" ist dann eine inkorrekte "rechts" Antwort.
+
+```{r}
+#| eval: false
+sdt <- d |>
+    mutate(type = case_when(
+        stimulus == ____ & resp == _____ ~ ____,
+        ____
+        ____
+        ____))
+```
+
+Für jede Vpn in beiden Instruktions Bedingungen zählen wir die verschiedenen Antworttypen.
+
+```{r}
+#| eval: false
+sdt_summary <- sdt |>
+    group_by(____, ____) |>
+    count(____)
+```
+
+```{r}
+#| eval: false
+sdt_summary
+```
+
+### Von `long` zu `wide` konvertieren
+
+Nun wollen wir die 4 Antworttypen in jeweils eigenen Variablen.
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    pivot_wider(names_from = type, 
+                values_from = n)
+```
+
+```{r}
+#| eval: false
+sdt_summary
+```
+
+### Funktionen definieren
+
+Die erste Funktion ersetzt alle fehlenden Werte (`NA`) durch 0, die zweite Funktion ersetzt bei den Hit und False Alarm Rates alle 0 und 1 Werte durch 0.001 oder 0.999. Dies machen wir, damit wir bei der Berechnung der z-Werte nicht $\pm \infty$ erhalten. 
+
+```{r}
+#| eval: false
+replace_NA <- function(x) {
+    x = ifelse(is.na(x), 0, x)
+    x
+}
+
+correct_zero_one <- function(x) {
+    if (identical(x, 0)) {
+        x = x + 0.001
+    } else if (identical(x, 1)) {
+        x = x - 0.001
+    }
+    x
+}
+```
+
+### NAs ersetzen
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    mutate(across(c(Hit, Miss, FA, CR), replace_NA))
+```
+
+```{r}
+#| eval: false
+sdt_summary
+```
+
+### Hit Rate und False Alarm Rate berechnen
+
+Nun berechnen wir die Hit Rate und die False Alarm Rate anhand der folgenden Formeln:
+
+$$ Hit~Rate = \frac{Hits}{Hits + Misses} $$
+
+$$ FA~Rate = \frac{False Alarms}{False Alarms + Correct Rejections} $$
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    mutate(hit_rate = ____,
+           fa_rate = ____)
+```
+
+### Werte 0 und 1 korrigieren
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    mutate(across(c(hit_rate, fa_rate), correct_zero_one))
+```
+
+```{r}
+#| eval: false
+sdt_summary
+```
+
+### Z-Transformation
+
+Als nächstes berechnen wir die z-Werte der Hit Rate und der False Alarm Rate. Dazu verwenden wir die Funktion `qnorm()`.
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    mutate(zhr = ____,
+           zfa = ____)
+```
+
+```{r}
+#| eval: false
+sdt_summary
+```
+
+### SDT Parameter berechnen
+Nun können wir die SDT Parameter anhand der folgenden Formeln berechnen:
+
+$$d' = z(Hit~Rate) - z(FA~Rate)$$
+
+$$c = -0.5 * (z(Hit~Rate) + z(FA~Rate))$$
+
+```{r}
+#| eval: false
+sdt_summary <- sdt_summary |>
+    mutate(dprime = ____,
+           c = ____) |>
+    mutate(across(c(dprime, c), round, 2))
+```
+
+### Variablen auswählen
+
+```{r}
+#| eval: false
+sdt_final <- sdt_summary |>
+    select(id, condition, dprime, c)
+```
+
+Im finalen Datensatz haben wir nun `d'` und `c` für jede Person in jeder Bedingung.
+
+```{r}
+#| eval: false
+sdt_final
+```
+
+### Deskriptive Werte Berechnen
+
+Um die SDT parameter zwischen den Bedingungen zu vergleichen berechnen wir für $d'$ und $c$ den Mittelwert (`mean()`) und die Standardabweichung (`sd()`) in beiden Bedingungen (`speed` und `accuracy`).
+
+```{r}
+#| eval: false
+sdt_final |>
+    group_by(____) |>
+    summarise(mean_dprime = ____,
+              sd_dprime = ____,
+              mean_c = ____,
+              sd_c = ____)
+
+```
