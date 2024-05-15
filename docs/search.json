@@ -51,23 +51,35 @@
   {
     "objectID": "pages/chapters/Modeling_1.html",
     "href": "pages/chapters/Modeling_1.html",
-    "title": "Modellierung von Daten",
+    "title": "Einführung",
     "section": "",
-    "text": "Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären."
+    "text": "Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären.",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Einführung"
+    ]
   },
   {
     "objectID": "pages/chapters/Modeling_1.html#verbales-modell",
     "href": "pages/chapters/Modeling_1.html#verbales-modell",
-    "title": "Modellierung von Daten",
+    "title": "Einführung",
     "section": "Verbales Modell",
-    "text": "Verbales Modell\nBeginnen wir mit einem verbalen Modell von diesem Prozess. Die Endposition des Steins hängt von der Kraft und der Richtung (Input) des Wurfs ab. Faktoren wie z.B. der Luftwiderstand oder die Gravitationskraft berücksichtigen wir vorerst nicht in unserem Modell, da sie konstant sind.\n\n\n\n\n\n\n\nflowchart TD\n  i((Input)):::A --&gt; p((Position)):::B\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHands-on: Simulation verbales DAG\n\n\n\nDen Prozess, der durch das verbale DAG beschrieben wird, wiederholen wir 10 Mal. Der Input bleibt konstant. Bei jeder Durchführung notieren wir die Endposition des Steins.\n\nÜberlegen Sie sich, wie diese Daten aussehen.\nSimulieren (generieren) Sie diese Daten in R.\nMachen Sie eine sinnvolle Abbildung der simulierten Daten."
+    "text": "Verbales Modell\nBeginnen wir mit einem verbalen Modell von diesem Prozess. Die Endposition des Steins hängt von der Kraft und der Richtung (Input) des Wurfs ab. Faktoren wie z.B. der Luftwiderstand oder die Gravitationskraft berücksichtigen wir vorerst nicht in unserem Modell, da sie konstant sind.\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  i((Input)):::A --&gt; p((Position)):::B\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHands-on: Simulation verbales DAG\n\n\n\nDen Prozess, der durch das verbale DAG beschrieben wird, wiederholen wir 10 Mal. Der Input bleibt konstant. Bei jeder Durchführung notieren wir die Endposition des Steins.\n\nÜberlegen Sie sich, wie diese Daten aussehen.\nSimulieren (generieren) Sie diese Daten in R.\nMachen Sie eine sinnvolle Abbildung der simulierten Daten.",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Einführung"
+    ]
   },
   {
     "objectID": "pages/chapters/Modeling_1.html#statistisches-modell",
     "href": "pages/chapters/Modeling_1.html#statistisches-modell",
-    "title": "Modellierung von Daten",
+    "title": "Einführung",
     "section": "Statistisches Modell",
-    "text": "Statistisches Modell\nBerücksichtigen wir nun, dass der Stein von einer Person geworfen wird. Die Person zielt immer auf die gleiche Stelle (μ). Es ist aber unmöglich den Stein jedes Mal exakt gleich zu werfen. Es gibt also eine gewisse Variation der beobachteten Endpositionen (σ).\n\n\n\n\n\n\n\nflowchart TD\n  mu((μ)):::a --&gt; i((Input)):::A\n  s((σ)):::a --&gt; i\n  i((\"Input \\n N(μ,σ)\")):::A --&gt; p((Position)):::B\n\n  classDef a fill:#ffffff, r:20px\n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHands-on: Simulation\n\n\n\nDen Prozess, der durch das (statistische) DAG beschrieben wird, wiederholen wir 10 Mal. Der Input ist nun normal verteilt. Bei jeder Durchführung notieren wir die Endposition des Steins.\n\nÜberlegen Sie sich, wie diese Daten aussehen.\nSimulieren (generieren) Sie diese Daten in R.\nMachen Sie eine sinnvolle Abbildung der simulierten Daten.\n\n\n\n\nSimulation vs. Inferenz\n\n\n\n\n\n\n\n\n\n\nSimulation\nWir wählen Werte für die Modell-Parameter:\n\nmu = 5\nsigma = 0.2\n\nDamit können wir Daten simulieren:\n\nsim_data = tibble(\n    pos = rnorm(n = 10, mu, sigma)\n    )\n\nhead(sim_data)\n\n# A tibble: 6 × 1\n    pos\n  &lt;dbl&gt;\n1  5.26\n2  5.15\n3  4.86\n4  4.87\n5  5.21\n6  5.06\n\n\n\n\n\n\nInferenz (Parameterschätzung)\nWir beginnen mit Daten. Die Modell parameter sind uns nicht bekannt.\n\nhead(d)\n\n# A tibble: 6 × 1\n      x\n  &lt;dbl&gt;\n1  4.39\n2  4.38\n3  4.38\n4  4.42\n5  4.20\n6  4.39\n\n\nBasierend auf dem DAG formulieren wir ein lineares Modell. In diesem Fall schätzen wir nur den Intercept. Mit der Funktion lm() können wir die Parameter von diesem Modell schätzen (frequentistisch).\n\nfit = lm(x ~ 1,\n         data = d)\n\ncoef(fit)[\"(Intercept)\"]\n\n(Intercept) \n   4.321113 \n\nsigma(fit)\n\n[1] 0.08101973\n\n\n\n\n\n\n\nKategorialer Prädiktor - Planet\n\n\n\n\n\n\n\nflowchart TD\n  g((Gravitation)):::A --&gt; p((Position)):::B\n  i((Input)):::A --&gt; p\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\nIn diesem Fall haben wir die Endposition auf der Erde und auf dem Mond gemessen.\n\n\n# A tibble: 6 × 2\n  planet   pos\n  &lt;chr&gt;  &lt;dbl&gt;\n1 erde    5.36\n2 erde    5.15\n3 erde    4.99\n4 mond    6.88\n5 mond    7.33\n6 mond    7.03\n\n\n\n\n\nHier fügen wir dem linearen Modell einen kategorialen Prädiktor hinzu und schätzen die Parameter mit der Funktion lm().\n\nlm(pos ~ 1 + planet,\n   data = d_cat)\n\n\nCall:\nlm(formula = pos ~ 1 + planet, data = d_cat)\n\nCoefficients:\n(Intercept)   planetmond  \n      5.035        2.006  \n\n\n\n\nKontinuierlicher Prädiktor - Körpergrösse\n\n\n\n\n\n\n\nflowchart TD\n  g((Körpergrösse)):::A --&gt; p((Position)):::B\n  i((Input)):::A --&gt; p\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\nHier interessiert uns der Einfluss der Körpergrösse auf die Endposition eines geworfenen Steins.\n\n\n# A tibble: 6 × 2\n  grösse   pos\n   &lt;dbl&gt; &lt;dbl&gt;\n1    165  4.76\n2    165  4.83\n3    165  4.87\n4    170  6.09\n5    170  5.93\n6    170  5.96\n\n\n\n\n\nHier fügen wir dem linearen Modell einen kontinuierlichen Prädiktor hinzu und schätzen die Parameter mit der Funktion lm().\n\nlm(pos ~ 1 + grösse,\n   data = d_cont)\n\n\nCall:\nlm(formula = pos ~ 1 + grösse, data = d_cont)\n\nCoefficients:\n(Intercept)       grösse  \n   -26.9336       0.1939  \n\n\n\n\n\n\n\n\nHands-on: Parameter Recovery\n\n\n\nMit parameter recovery kann überprüft werden, wie gut die Parameter des Modells geschätzt werden können. Dazu werden zu erst Daten simuliert. In der anschliessenden Analyse der Daten sieht man wie nahe die geschätzten Parameter den wahren (in der Simulation verwendeten) sind.\n\nEntscheiden Sie sich für ein Modell mit einem kategorialen oder einem kontinuierlichen Prädiktor.\nSimulieren (generieren) Sie die entsprechenden Daten in R.\nAnalysieren Sie die Simulierten Daten mit dem entsprechenden Modell.\n\nWie nahe ist die Schätzung an den wahren Parametern?\nVon welchen Faktoren könnte das abhängen?"
+    "text": "Statistisches Modell\nBerücksichtigen wir nun, dass der Stein von einer Person geworfen wird. Die Person zielt immer auf die gleiche Stelle (μ). Es ist aber unmöglich den Stein jedes Mal exakt gleich zu werfen. Es gibt also eine gewisse Variation der beobachteten Endpositionen (σ).\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  mu((μ)):::a --&gt; i((Input)):::A\n  s((σ)):::a --&gt; i\n  i((\"Input \\n N(μ,σ)\")):::A --&gt; p((Position)):::B\n\n  classDef a fill:#ffffff, r:20px\n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHands-on: Simulation\n\n\n\nDen Prozess, der durch das (statistische) DAG beschrieben wird, wiederholen wir 10 Mal. Der Input ist nun normal verteilt. Bei jeder Durchführung notieren wir die Endposition des Steins.\n\nÜberlegen Sie sich, wie diese Daten aussehen.\nSimulieren (generieren) Sie diese Daten in R.\nMachen Sie eine sinnvolle Abbildung der simulierten Daten.\n\n\n\n\nSimulation vs. Inferenz\n\n\n\n\n\nmu = 5\nsigma = 0.2\nsim_data = tibble(\n    pos = rnorm(n = 10, mu, sigma)\n    )\n\nhead(sim_data)\nhead(d)\nfit = lm(x ~ 1,\n         data = d)\n\ncoef(fit)[\"(Intercept)\"]\nsigma(fit)\n\n\n\n\n\nSimulation\nWir wählen Werte für die Modell-Parameter:\nDamit können wir Daten simulieren:\n\n\n# A tibble: 6 × 1\n    pos\n  &lt;dbl&gt;\n1  5.00\n2  5.05\n3  4.81\n4  4.78\n5  4.89\n6  4.89\n\n\n\n\n\n\nInferenz (Parameterschätzung)\nWir beginnen mit Daten. Die Modell parameter sind uns nicht bekannt.\n\n\n# A tibble: 6 × 1\n      x\n  &lt;dbl&gt;\n1  4.25\n2  4.26\n3  4.29\n4  4.24\n5  4.37\n6  4.39\n\n\nBasierend auf dem DAG formulieren wir ein lineares Modell. In diesem Fall schätzen wir nur den Intercept. Mit der Funktion lm() können wir die Parameter von diesem Modell schätzen (frequentistisch).\n\n\n(Intercept) \n   4.285552 \n\n\n[1] 0.07948327\n\n\n\n\n\n\n\nKategorialer Prädiktor - Planet\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  g((Gravitation)):::A --&gt; p((Position)):::B\n  i((Input)):::A --&gt; p\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\nIn diesem Fall haben wir die Endposition auf der Erde und auf dem Mond gemessen.\n\n\n# A tibble: 6 × 2\n  planet   pos\n  &lt;chr&gt;  &lt;dbl&gt;\n1 erde    5.35\n2 erde    5.12\n3 erde    5.38\n4 mond    6.92\n5 mond    7.17\n6 mond    7.18\n\n\n\n\n\nHier fügen wir dem linearen Modell einen kategorialen Prädiktor hinzu und schätzen die Parameter mit der Funktion lm().\n\nlm(pos ~ 1 + planet,\n   data = d_cat)\n\n\nCall:\nlm(formula = pos ~ 1 + planet, data = d_cat)\n\nCoefficients:\n(Intercept)   planetmond  \n      5.001        1.986  \n\n\n\n\nKontinuierlicher Prädiktor - Körpergrösse\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  g((Körpergrösse)):::A --&gt; p((Position)):::B\n  i((Input)):::A --&gt; p\n  \n  classDef A fill:#ffffff, r:40px\n  classDef B fill:#e5e4e4\n\n\n\n\n\n\n\n\nHier interessiert uns der Einfluss der Körpergrösse auf die Endposition eines geworfenen Steins.\n\n\n# A tibble: 6 × 2\n  grösse   pos\n   &lt;dbl&gt; &lt;dbl&gt;\n1    165  5.44\n2    165  4.79\n3    165  4.97\n4    170  6.05\n5    170  6.23\n6    170  5.97\n\n\n\n\n\nHier fügen wir dem linearen Modell einen kontinuierlichen Prädiktor hinzu und schätzen die Parameter mit der Funktion lm().\n\nlm(pos ~ 1 + grösse,\n   data = d_cont)\n\n\nCall:\nlm(formula = pos ~ 1 + grösse, data = d_cont)\n\nCoefficients:\n(Intercept)       grösse  \n   -29.0323       0.2058  \n\n\n\n\n\n\n\n\nHands-on: Parameter Recovery\n\n\n\nMit parameter recovery kann überprüft werden, wie gut die Parameter des Modells geschätzt werden können. Dazu werden zu erst Daten simuliert. In der anschliessenden Analyse der Daten sieht man wie nahe die geschätzten Parameter den wahren (in der Simulation verwendeten) sind.\n\nEntscheiden Sie sich für ein Modell mit einem kategorialen oder einem kontinuierlichen Prädiktor.\nSimulieren (generieren) Sie die entsprechenden Daten in R.\nAnalysieren Sie die Simulierten Daten mit dem entsprechenden Modell.\n\nWie nahe ist die Schätzung an den wahren Parametern?\nVon welchen Faktoren könnte das abhängen?",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Einführung"
+    ]
   },
   {
     "objectID": "pages/chapters/computerlab.html",
@@ -772,37 +784,57 @@
   {
     "objectID": "pages/chapters/sdt_1.html",
     "href": "pages/chapters/sdt_1.html",
-    "title": "Modellieren 2",
+    "title": "Signal-Detektionstheorie",
     "section": "",
-    "text": "Im Random Dot Experiment mussten die Versuchspersonen ein perzeptuelle Entscheidungsaufgabe bearbeiten. Dabei musste jeweils entscheiden werden, in welche Richtung sich eine Punktewolke bewegt.\nEs gibt verschiedene möglichkeiten die Leistung der Versuchspersonen im Random Dot Task zu beschreiben.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  %%c((Condition)):::A --&gt; r\n  s((Sensitivität)):::A --&gt; r((resp)):::B\n  \n  \n  classDef A fill:#ffffff, r:45px\n  classDef B fill:#e5e4e4, r:45px\n\n\n\n\n\n\n\n\n\n\n# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1"
+    "text": "Im Random Dot Experiment mussten die Versuchspersonen ein perzeptuelle Entscheidungsaufgabe bearbeiten. Dabei musste jeweils entscheiden werden, in welche Richtung sich eine Punktewolke bewegt.\nEs gibt verschiedene möglichkeiten die Leistung der Versuchspersonen im Random Dot Task zu beschreiben.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nflowchart TD\n  %%c((Condition)):::A --&gt; r\n  s((Sensitivität)):::A --&gt; r((resp)):::B\n  \n  \n  classDef A fill:#ffffff, r:45px\n  classDef B fill:#e5e4e4, r:45px\n\n\n\n\n\n\n\n\n\n\n\n# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Signal-Detektionstheorie"
+    ]
   },
   {
     "objectID": "pages/chapters/sdt_1.html#dag",
     "href": "pages/chapters/sdt_1.html#dag",
-    "title": "Modellieren 2",
+    "title": "Signal-Detektionstheorie",
     "section": "",
-    "text": "flowchart TD\n  %%c((Condition)):::A --&gt; r\n  s((Sensitivität)):::A --&gt; r((resp)):::B\n  \n  \n  classDef A fill:#ffffff, r:45px\n  classDef B fill:#e5e4e4, r:45px"
+    "text": "flowchart TD\n  %%c((Condition)):::A --&gt; r\n  s((Sensitivität)):::A --&gt; r((resp)):::B\n  \n  \n  classDef A fill:#ffffff, r:45px\n  classDef B fill:#e5e4e4, r:45px",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Signal-Detektionstheorie"
+    ]
   },
   {
     "objectID": "pages/chapters/sdt_1.html#daten",
     "href": "pages/chapters/sdt_1.html#daten",
-    "title": "Modellieren 2",
+    "title": "Signal-Detektionstheorie",
     "section": "",
-    "text": "# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1"
+    "text": "# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Signal-Detektionstheorie"
+    ]
   },
   {
     "objectID": "pages/chapters/sdt_1.html#dag-1",
     "href": "pages/chapters/sdt_1.html#dag-1",
-    "title": "Modellieren 2",
+    "title": "Signal-Detektionstheorie",
     "section": "DAG",
-    "text": "DAG\n\n\n\n\nflowchart TD\n  %%c((Condition)):::A --&gt; r\n  c((c)):::A --&gt; r\n  s((d')):::A --&gt; r((resp)):::B\n  \n  classDef A fill:#ffffff, r:30px\n  classDef B fill:#e5e4e4, r:30px"
+    "text": "DAG\n\n\n\n\n\nflowchart TD\n  %%c((Condition)):::A --&gt; r\n  c((c)):::A --&gt; r\n  s((d')):::A --&gt; r((resp)):::B\n  \n  classDef A fill:#ffffff, r:30px\n  classDef B fill:#e5e4e4, r:30px",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Signal-Detektionstheorie"
+    ]
   },
   {
     "objectID": "pages/chapters/sdt_1.html#daten-1",
     "href": "pages/chapters/sdt_1.html#daten-1",
-    "title": "Modellieren 2",
+    "title": "Signal-Detektionstheorie",
     "section": "Daten",
-    "text": "Daten\n\n\n# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1"
+    "text": "Daten\n\n\n# A tibble: 6 × 5\n  id           condition stimulus resp   corr\n  &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n1 sub-10209782 speed     left     right     0\n2 sub-10209782 speed     right    right     1\n3 sub-10209782 speed     left     left      1\n4 sub-10209782 speed     right    right     1\n5 sub-10209782 speed     right    right     1\n6 sub-10209782 speed     left     left      1",
+    "crumbs": [
+      "Modellierung von Daten",
+      "Signal-Detektionstheorie"
+    ]
   },
   {
     "objectID": "pages/chapters/setup.html",
@@ -1006,5 +1038,19 @@
     "title": "Übung 4 - Daten Analyse",
     "section": "Trouble Shooting",
     "text": "Trouble Shooting\nEquivalence Testing funktioniert nicht in JASP\nStellen Sie sicher, dass Sie die neuste Version (0.18.3.0) installiert haben, in früheren Versionen gab es bei diesem Modul einen Bug, der aber jetzt geflickt ist."
+  },
+  {
+    "objectID": "pages/chapters/ddm.html",
+    "href": "pages/chapters/ddm.html",
+    "title": "Drift Diffusion Modell",
+    "section": "",
+    "text": "ddm blog post\nThis is a webR-enabled code cell in a Quarto HTML document."
+  },
+  {
+    "objectID": "pages/chapters/ddm.html#random-walk-simulieren",
+    "href": "pages/chapters/ddm.html#random-walk-simulieren",
+    "title": "Drift Diffusion Modell",
+    "section": "Random Walk simulieren",
+    "text": "Random Walk simulieren\nEin random walk ist das Resultat der Aufsummierung von Zufallszahlen. Probieren Sie es selber aus; simulieren Sie einen random walk mit 100 Zeitschritten. Fangen Sie bei \\(0\\) an, ziehen Sie 99 normalverteilte Zufallszahlen und berechnen Sie die kumulierte Summe. Plotten Sie das Resultat.\nDieser random walk hat keinen Trend, weil wir immer aus einer Normalverteilung mit Mittelwert \\(\\mu = 0\\) ziehen. Wenn wir stattdessen aus einer Verteilung mit \\(\\mu = 0.1\\) ziehen, erhalten wir einen positiven Trend.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]

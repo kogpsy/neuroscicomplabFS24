@@ -1,5 +1,5 @@
 ---
-title: "Signal-Detektionstheorie"
+title: "Drift Diffusion Modell"
 author:
   - name: Daniel Fitze
     # url: https://github.com/awellis

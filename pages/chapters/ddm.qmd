@@ -1,0 +1,71 @@
+---
+title: "Drift Diffusion Modell"
+author:
+  - name: Daniel Fitze
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0003-0158-7459  
+  - name: Andrew Ellis
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0002-2788-936X
+  - name: Gerda Wyssen
+    # url: https://github.com/awellis
+    affiliation: Kognitive Psychologie, Wahrnehmung und Methodenlehre, Universität Bern 
+    affiliation-url: https://www.kog.psy.unibe.ch
+    orcid: 0000-0001-7427-3149
+license: CC BY-SA 4.0
+format: html
+engine: knitr
+filters:
+  - webr
+---
+
+[ddm blog post](https://www.gingjehli.com/single-post/the-power-of-diffusion-models-in-cognitive-decision-and-clinical-sciences-a-brief-introduction)
+
+This is a webR-enabled code cell in a Quarto HTML document.
+
+```{webr-r}
+fit = lm(mpg ~ am, data = mtcars)
+
+summary(fit)
+```
+
+
+## Random Walk simulieren
+
+Ein random walk ist das Resultat der Aufsummierung von Zufallszahlen. Probieren Sie es selber aus; simulieren Sie einen random walk mit 100 Zeitschritten. Fangen Sie bei $0$ an, ziehen Sie 99 normalverteilte Zufallszahlen und berechnen Sie die kumulierte Summe. Plotten Sie das Resultat.
+
+Dieser random walk hat keinen Trend, weil wir immer aus einer Normalverteilung mit Mittelwert $\mu = 0$ ziehen. Wenn wir stattdessen aus einer Verteilung mit $\mu = 0.1$ ziehen, erhalten wir einen positiven Trend.
+
+```{webr}
+#| echo: false
+#| output: false
+library(tidyverse)
+```
+
+
+```{webr}
+set.seed(546)
+
+tibble(
+    time = 1:100,
+    rand_walk_1 = c(0, rnorm(99, 0, 1)),
+    # rand_walk_2 = c(0, rnorm(99, 0, 1))
+) |>
+    mutate(
+        rand_walk_1 = cumsum(rand_walk_1),
+        # rand_walk_2 = cumsum(rand_walk_2)
+        ) |>
+    pivot_longer(cols = c(rand_walk_1, rand_walk_2), 
+                 names_to = 'rand_walk',
+                 values_to = 'value') |>
+    
+    ggplot(aes(x = time, y = value, color = rand_walk)) +
+    geom_step(show.legend = F) +
+    theme_minimal()
+```
+
+
