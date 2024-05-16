@@ -43,7 +43,7 @@ __Gruppe Mittwoch:__ 31.05.2024 23:55
 
 # Inhalt r-Markdown File
 
-In dieser Übung berechnen Sie aus den Daten von 15 Versuchspersonen aus dem PsychoPy Experiment die Signal Detection Kennzahlen $d'$, $k$ und $c$. Anschliessen berechnen Sie Mittelwerte der drei Bedingungen für $d'$ und $c$ unter Berücksichtigung der Messwiederholung.
+In dieser Übung berechnen Sie aus den Daten des Random Dot Experiments die Signal Detection Kennzahlen $d'$, $k$ und $c$. Anschliessen berechnen Sie Mittelwerte der drei Bedingungen für $d'$ und $c$ unter Berücksichtigung der Messwiederholung.
 
 ## Vorbereitung
 
