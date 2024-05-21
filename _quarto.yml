@@ -58,7 +58,7 @@ website:
       - pages/chapters/data_visualization_2.qmd
       - pages/chapters/uebung_3_plot.qmd
       - pages/chapters/gallery_mo.qmd
-      # - pages/chapters/gallery_mi.qmd
+      - pages/chapters/gallery_mi.qmd
 
     - section: Analysemethoden
       contents:
