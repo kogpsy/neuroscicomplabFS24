@@ -72,7 +72,7 @@ website:
       - pages/chapters/Modeling_1.qmd
       - pages/chapters/sdt_1.qmd
       - pages/chapters/uebung_5_sdt_parameter.qmd
-     # - pages/chapters/signal-detection-2.qmd
+      - pages/chapters/ddm.qmd     # - pages/chapters/signal-detection-2.qmd
 
   page-footer:
     right:

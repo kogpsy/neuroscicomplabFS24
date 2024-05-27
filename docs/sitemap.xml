@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_5_sdt_parameter.html</loc>
-    <lastmod>2024-05-16T11:50:19.316Z</lastmod>
+    <lastmod>2024-05-27T07:54:35.348Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/uebung_3_plot.html</loc>
@@ -38,59 +38,63 @@
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery_mi.html</loc>
-    <lastmod>2024-05-16T12:42:59.629Z</lastmod>
+    <lastmod>2024-05-27T07:54:35.348Z</lastmod>
   </url>
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling.html</loc>
-    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_2.html</loc>
-    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_parameterestimates.html</loc>
-    <lastmod>2024-05-05T20:34:23.038Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_hypothesistesting.html</loc>
-    <lastmod>2024-05-05T20:34:23.037Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/Modeling_1.html</loc>
-    <lastmod>2024-05-13T06:36:11.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html</loc>
-    <lastmod>2024-04-29T07:15:51.783Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/index.html</loc>
-    <lastmod>2024-02-15T14:58:38.241Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/wichtiges.html</loc>
-    <lastmod>2024-04-29T07:15:46.747Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/computerlab.html</loc>
-    <lastmod>2024-02-21T07:05:32.889Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_intro.html</loc>
-    <lastmod>2024-04-29T07:15:51.783Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_1.html</loc>
-    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html</loc>
+    <lastmod>2024-04-29T07:15:46.749Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datacamp.html</loc>
     <lastmod>2024-03-15T13:34:29.961Z</lastmod>
   </url>
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling_automatisiert.html</loc>
-    <lastmod>2024-04-29T07:15:46.749Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_1.html</loc>
+    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_intro.html</loc>
+    <lastmod>2024-04-29T07:15:51.783Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/computerlab.html</loc>
+    <lastmod>2024-02-21T07:05:32.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/wichtiges.html</loc>
+    <lastmod>2024-04-29T07:15:46.747Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/index.html</loc>
+    <lastmod>2024-02-15T14:58:38.241Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/admin/termine.html</loc>
+    <lastmod>2024-04-29T07:15:51.783Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/Modeling_1.html</loc>
+    <lastmod>2024-05-13T06:36:11.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_hypothesistesting.html</loc>
+    <lastmod>2024-05-05T20:34:23.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_analysis_parameterestimates.html</loc>
+    <lastmod>2024-05-05T20:34:23.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/data_visualization_2.html</loc>
+    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/datawrangling.html</loc>
+    <lastmod>2024-04-29T07:15:46.748Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/ddm.html</loc>
+    <lastmod>2024-05-27T07:58:43.957Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/gallery_mo.html</loc>
@@ -114,7 +118,7 @@
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/sdt_1.html</loc>
-    <lastmod>2024-05-15T14:19:08.741Z</lastmod>
+    <lastmod>2024-05-27T07:54:35.348Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/stroop_experiment.html</loc>
