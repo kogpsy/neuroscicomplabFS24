@@ -77,16 +77,53 @@ Jetzt schauen wir uns genauer an, wie sich eine Entscheidung innerhalb eines Tri
 ```{r}
 #| echo: false
 
+# DIESEN PLOT WIEDERHOLEN UND IMMER WEITER AUSFÜllEN
+
 ggplot() +
     geom_hline(yintercept = c(-1, 1)) +
+    geom_hline(yintercept = 0, linetype = 3) +
     labs(x = 'Time', y = 'Evidence (dv)') +
     scale_y_continuous(breaks = c(-1, 0, 1),
                        labels = c('links', '0', 'rechts')) +
     theme_minimal()
 ```
 
+## Random Walk
+
+Ein random walk ist das Resultat der Aufsummierung von Zufallszahlen. Wir können das in R selbst ausprobieren. Dazu simulieren wir einen random walk mit 100 Zeitschritten. Wir beginnen bei $0$, ziehen 99 normalverteilte Zufallszahlen und berechnen die kumulierte Summe.
+
+
+```{r}
+#| echo: false
+#| warning: false
+set.seed(546)
+
+# hier z.B> standardnormalverteilte Zahlen
+zufallszahlen_1 = c(0, rnorm(99, 0, 1))
+random_walk_1 = cumsum(zufallszahlen_1)
+
+d1 = tibble(nb = 1:100,
+            rand_walk = random_walk_1)
+
+d1 |>
+    ggplot(aes(x = nb, y = rand_walk)) +
+    geom_step() +
+    geom_hline(yintercept = c(-30, 30)) +
+    geom_hline(yintercept = 0, linetype = 3) +
+    # lims(y = c(-30, 30)) +
+    labs(x = 'Time', y = 'Random Walk') +
+    scale_y_continuous(breaks = c(-30, 0, 30),
+                       labels = c('links', '0', 'rechts')) +
+    theme_minimal()
+```
+
+Dieser random walk hat keinen Trend, weil wir immer aus einer Normalverteilung mit Mittelwert $\mu=0$ ziehen. Wenn wir stattdessen aus einer Verteilung mit $\mu=0.1$ ziehen, erhalten wir einen positiven Trend.
 
 Wir modellieren die aktuelle Decision Variable zu Zeitpunkt $t$ als normalverteilte Zufallszahl, bei der die `driftrate` den Mittelwert der Evidenz repräsentiert, und `sd` die Standardabweichung.
+
+::: {.panel-tabset}
+
+## Evidence
 
 ```{r}
 driftrate = 0.5
@@ -100,47 +137,35 @@ evidence
 
 Dies bedeutet, dass zum Zeitpunkt $t$ die Evidenz ungefähr `r round(evidence, 2)` beträgt. Da die Evidenz die durchschnittliche Steigung repräsentiert, wird Evidenz $>0$ dazu führen, dass ein Schritt in Richtung der oberen Grenze gemacht wird. Wäre die Evidenz negativ, wird ein Schritt nach unten gemacht. Da die Evidenz aus einer Normalverteilung gezogen wird, ist es also möglich, dass die Evidenz zufällig negativ wird, obwohl die drift rate, d.h. die Repräsentation der Stimulusstärke, positiv ist.
 
-:::{.callout-note}
-Es wird angenommen, dass dieser Aspekt einigermassen gut die Vorgänge im Gehirn abbildet, da die neuronalen Antworten auf einen Reiz variabel sind (dies bedeutet, dass Neurone immer unterschiedlich auf einen Reiz reagieren, auch wenn dieser gleich bleibt).
-:::
-
+## Evidenz über die Zeit
 
 Wenn wir dieses Prozess nun über einen Zeitraum wiederholen, und die `evidence` Werte aufsummieren, erhalten wir die *decision variable*. Diese sieht aus wie ein *random walk* mit einem Drift in die Richtung der durchschnittlichen Evidenz.
 
-
-## Random walk simulieren
-
-Ein random walk ist das Resultat der Aufsummierung von Zufallszahlen. Wir können das in R selbst ausprobieren. Dazu simulieren wir einen random walk mit 100 Zeitschritten. Wir beginnen bei $0$, ziehen 99 normalverteilte Zufallszahlen und berechnen die kumulierte Summe.
-
-
 ```{r}
+#| echo: false
+#| warning: false
 set.seed(546)
 
 # hier z.B> standardnormalverteilte Zahlen
-zufallszahlen_1 = c(0, rnorm(99, 0, 1))
-random_walk_1 = cumsum(zufallszahlen_1)
-
-plot(1:100, random_walk_1, type = "s", col = "#7fc97f", 
-     ylim=c(-10,30), lwd = 2, 
-     xlab = "Zeit", ylab="Random Walk")
-```
-
-Dieser random walk hat keinen Trend, weil wir immer aus einer Normalverteilung mit Mittelwert $\mu=0$ ziehen. Wenn wir stattdessen aus einer Verteilung mit $\mu=0.1$ ziehen, erhalten wir einen positiven Trend.
-
-```{r}
-zufallszahlen_2 = c(0, rnorm(99, 0.3, 1))
+zufallszahlen_2 = c(0, rnorm(99, 0.4, 1))
 random_walk_2 = cumsum(zufallszahlen_2)
 
-plot(1:100, random_walk_1, type = "s", col = "#7fc97f", 
-     ylim=c(-10,30), lwd = 2, 
-     xlab = "Zeit", ylab="Random Walk")
-lines(1:100, random_walk_2, pch = 18, col = "#beaed4", 
-      type = "s", lwd = 2)
-
-legend("topleft", legend=c("Ohne Trend", "Mit Trend"),
-       col=c("#7fc97f", "#beaed4"), lty = c(1, 1))
+d1 |> 
+    mutate(rand_walk2 = random_walk_2) |>
+    pivot_longer(c(rand_walk, rand_walk2)) |>
+    ggplot(aes(x = nb, y = value, color = name)) +
+    geom_step() +
+    geom_hline(yintercept = c(-30, 30)) +
+    geom_hline(yintercept = 0, linetype = 3) +
+    # lims(y = c(-30, 30)) +
+    labs(x = 'Time', y = 'Random Walk', color = '') +
+    scale_y_continuous(breaks = c(-30, 0, 30),
+                       labels = c('links', '0', 'rechts')) +
+    scale_color_manual(labels = c('Ohne Trend', 'Mit Trend'), values = c("#7fc97f", "#beaed4")) +
+    theme_minimal()
 ```
 
+:::
 
 ## Evidenzakkumulierung
 
@@ -168,16 +193,45 @@ for (t in 2:n_steps) {
 }
 ```
 
+:::callout-caution
+## Hands-on:
 
+1. Machen Sie eine custom Funktion aus dem Code oben
+  - Was sind **Inputs** der Funktion?
+  - Der Output der Funktion soll ein Data Frame sein.
+  
 ```{r}
-tibble(time_steps, evidence, dv) |> 
-    pivot_longer(c(evidence, dv), names_to = "type", values_to = "value") |> 
-    ggplot(aes(time_steps, value, linetype = type, color = type)) +
-    geom_line() +
-    geom_point(size = 4) +
-    scale_color_viridis_d(begin = 0.2, end = 0.5)
+#| eval: false
+
+# Zur Erinnerung die Struktur einer custom Funktion
+
+name = function(){
+    ...
+    ...
+}
+```
+  
+
+2. Machen Sie eine Abbildung dieser Daten
+  
+```{r}
+#| eval: false
+#| echo: true
+
+# Mit diesem Code können Sie der Abbildung die decision boundaries hinzufügen
+
+ggplot() +
+    ...
+    ...
+    geom_hline(yintercept = c(-1, 1)) +
+    geom_hline(yintercept = 0, linetype = 3) +
+    labs(x = 'Time', y = 'Evidence (dv)') +
+    scale_y_continuous(breaks = c(-1, 0, 1),
+                       labels = c('links', '0', 'rechts')) +
+    theme_minimal()
 ```
 
+:::
 
 Die Decision Variable `dv` repräsentiert nun die kumulierten Evidenz, aufgrund dessen das Gehirn eine Entscheiung treffen kann. Wenn die Decision Variable entweder grösser als die ober Grenze ist, oder kleiner als die untere Grenze, wird die Evidenzakkumulierung abgebrochen, und eine Antwort wird ausgelöst. Wir können nun noch die "non-decision time" hinzufügen, und den Anfangspunkt der Evidenzakkumulierung. Dieser Anfangspunkt ist ein sehr wichtiger Parameter, denn wenn der Anfagnspunkt nicht genau in der Mitte zwischen den beiden Grenzen liegt, dann braucht es natürlich weniger Evindenz, um die Grenze zu erreichen, welche näher beim Anfangspunkt liegt.
 
@@ -262,6 +316,7 @@ Wir fangen an mit der drift rate. Wenn diese $>> 0$ ist, wird die Obergrenze sch
 
 ```{r code_folding=TRUE}
 #| warning: false
+#| echo: false
 
 set.seed(829)
 
@@ -276,7 +331,8 @@ fastslow |>
     geom_line() +
     scale_color_viridis_d(end = 0.8) +
     geom_hline(yintercept = c(-2, 2), color = "black", size = 1) +
-    ggtitle("Grosse vs. kleine Drift Rate")
+    ggtitle("Grosse vs. kleine Drift Rate") +
+    theme_minimal()
 ```
 
 ### Bias
@@ -284,6 +340,7 @@ fastslow |>
 Wenn der bias $>0.5$ ist, wird die Obergrenze schneller erreicht. Hier gibt es nun eine Interaktion mit der drift rate---ist diese klein, und der bias $<0.5$, ist die Chance, schnelle Fehler zu machen erhöht.
 
 ```{r code_folding = TRUE}
+#| echo: false
 set.seed(29)
 
 unbiased = drift_diffusion(bias = 0.5) |> mutate(type = "unbiased")
@@ -300,7 +357,8 @@ bias |>
     geom_line() +
     scale_color_viridis_d(end = 0.8) +
     geom_hline(yintercept = c(-2, 2), color = "black", size = 1) +
-    ggtitle("Anfangspunkte")
+    ggtitle("Anfangspunkte") +
+    theme_minimal()
 ```
 
 
@@ -310,6 +368,7 @@ Liegen die Grenzen weiter auseinander, braucht es mehr akkumulierte Evidenz, um 
 
 
 ```{r code_folding = TRUE}
+#| echo: false
 set.seed(84)
 
 carefree = drift_diffusion(decision_boundary = 1.6) |> mutate(type = "carefree")
@@ -327,7 +386,8 @@ cautiouscareless |>
     scale_color_viridis_d(end = 0.8) +
     geom_hline(aes(yintercept = decision_boundary, color = type), data = decision_boundaries) +
     geom_hline(aes(yintercept = -decision_boundary, color = type), data = decision_boundaries) +
-    ggtitle("Unterschiede im Abstand zwischen den Grenzen")
+    ggtitle("Unterschiede im Abstand zwischen den Grenzen") +
+    theme_minimal()
 ```
 
 ### Non-decision time
@@ -336,6 +396,7 @@ Eine Veränderung der non-decision time hat eine Auswirkung auf die durschnittli
 
 
 ```{r code_folding = TRUE}
+#| echo: false
 set.seed(4534)
 
 longndt = drift_diffusion(ndt = 0.7) |> mutate(type = "longndt")
@@ -354,7 +415,8 @@ ndt |>
     scale_color_viridis_d(end = 0.8) +
     geom_vline(aes(xintercept = ndt, color = type), data = ndts) +
     geom_hline(yintercept = c(-2, 2), color = "black", size = 1) +
-    ggtitle("Unterschiede in der Non-Decision Time")
+    ggtitle("Unterschiede in der Non-Decision Time") +
+    theme_minimal()
 ```
 
 
