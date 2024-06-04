@@ -497,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären.</p>
+<p>Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären. Das folgende Beispiel basiert auf diesem <a href="https://sk.sagepub.com/books/computational-modeling-in-cognition">Buch</a>.</p>
 <section id="planetare-bewegung" class="level1">
 <h1>Planetare Bewegung</h1>
 <div>
@@ -716,12 +716,12 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 1
     pos
   &lt;dbl&gt;
-1  4.89
+1  5.24
 2  4.84
-3  4.90
-4  4.68
-5  4.97
-6  5.16</code></pre>
+3  5.23
+4  5.07
+5  5.16
+6  5.00</code></pre>
 </div>
 </div>
 </section>
@@ -735,22 +735,22 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 1
       x
   &lt;dbl&gt;
-1  4.39
-2  4.22
-3  4.39
-4  4.18
-5  4.36
-6  4.30</code></pre>
+1  4.31
+2  4.26
+3  4.23
+4  4.44
+5  4.38
+6  4.12</code></pre>
 </div>
 </div>
 <p>Basierend auf dem DAG formulieren wir ein lineares Modell. In diesem Fall schätzen wir nur den Intercept. Mit der Funktion <code>lm()</code> können wir die Parameter von diesem Modell schätzen (frequentistisch).</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept) 
-   4.289853 </code></pre>
+    4.29956 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.08287332</code></pre>
+<pre><code>[1] 0.07045796</code></pre>
 </div>
 </div>
 </section>
@@ -790,12 +790,12 @@ Hands-on: Simulation
 <pre><code># A tibble: 6 × 2
   planet   pos
   &lt;chr&gt;  &lt;dbl&gt;
-1 erde    5.00
-2 erde    5.35
-3 erde    5.10
-4 mond    7.53
-5 mond    7.09
-6 mond    6.98</code></pre>
+1 erde    5.19
+2 erde    5.10
+3 erde    5.14
+4 mond    7.26
+5 mond    6.87
+6 mond    6.80</code></pre>
 </div>
 </div>
 </div>
@@ -812,7 +812,7 @@ lm(formula = pos ~ 1 + planet, data = d_cat)
 
 Coefficients:
 (Intercept)   planetmond  
-      4.951        2.055  </code></pre>
+      5.000        2.058  </code></pre>
 </div>
 </div>
 </section>
@@ -849,12 +849,12 @@ Coefficients:
 <pre><code># A tibble: 6 × 2
   grösse   pos
    &lt;dbl&gt; &lt;dbl&gt;
-1    165  5.21
-2    165  4.82
-3    165  5.35
-4    170  5.72
-5    170  6.01
-6    170  6.33</code></pre>
+1    165  5.06
+2    165  5.11
+3    165  5.08
+4    170  6.04
+5    170  6.19
+6    170  5.87</code></pre>
 </div>
 </div>
 </div>
@@ -871,7 +871,7 @@ lm(formula = pos ~ 1 + grösse, data = d_cont)
 
 Coefficients:
 (Intercept)       grösse  
-   -30.1571       0.2133  </code></pre>
+   -30.1772       0.2122  </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">

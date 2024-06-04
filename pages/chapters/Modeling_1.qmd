@@ -26,7 +26,7 @@ library(tidyverse)
 library(cowplot)
 ```
 
-Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären.  
+Uns interessiert, wie Daten entstanden sind. Wir können Daten deskriptiv beschreiben. Aber auch da haben wir bereits ein Vorstellung vom Prozess, der die Daten generiert hat. Das Ziel ist es, von den Daten zu lernen, sie zu beschreiben, vorherzusagen und zu erklären. Das folgende Beispiel basiert auf diesem [Buch](https://sk.sagepub.com/books/computational-modeling-in-cognition). 
 
 # Planetare Bewegung
 :::: {layout="[ 50, 50 ]"}
